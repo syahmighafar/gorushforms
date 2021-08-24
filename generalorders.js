@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Mandatory-Option").required = false;
 
      		$('#Pickup-or-Delivery').change(function(){
-	     
-	     		$("#paymentarea").hide();
 			
 			if($(this).val().length == 0) {
         			$("#senderarea").hide();
@@ -52,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
-	
+				$("#paymentarea").hide();
      			}
 	     
 
@@ -78,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
+				$("#paymentarea").show();
 	
      			}
      	
@@ -104,6 +103,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
+				$("#paymentarea").show();
 				
 				$('#Delivery-Type').change(function(){
 					if($(this).val().length == 0) {
@@ -165,6 +165,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
 				
+				$("#paymentarea").show();
+				
 				$('#Delivery-Type').change(function(){
 					
 					if($(this).val().length == 0) {
@@ -202,9 +204,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		     
 		    
 	     		}
-
-	     		$("#paymentarea").show();
-
   		});
 
 	});

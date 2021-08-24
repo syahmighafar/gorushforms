@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Mandatory-Option").required = false;
 
      		$('#Currently-in-Quarantine').change(function(){
+			
+			if($(this).val().length == 0) {
+
+				$("#uploadarea").hide();
+	     			document.getElementById("uploadbruhealthproof").required = false;
+     			}
 	     
      			if($(this).val()=="Yes") {
 
@@ -44,7 +50,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
     		$('#Payment-Method').change(function(){
 	     
-     			if($(this).val()=="Bank Transfer") {
+     			if($(this).val().length == 0) {
+				$("#paymentnoticearea").hide();
+     			}
+			
+			if($(this).val()=="Bank Transfer") {
 				$("#paymentnoticearea").show();
      			}
 			
@@ -54,6 +64,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('#Type-Of-Mandatory').change(function(){
+			
+			if($(this).val().length == 0) {
+				$("#deliverychoicearea").hide();
+				document.getElementById("Mandatory-Option").required = false;
+				$("#expressnoticearea").hide();
+     			}
 	     
      			if($(this).val().includes("Delivery")) {
 				$("#deliverychoicearea").show();

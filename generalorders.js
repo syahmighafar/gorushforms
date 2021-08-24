@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	     
 	     		$("#paymentarea").hide();
 			
-			if($(this).val()===" ") {
+			if($(this).val().length == 0) {
         			$("#senderarea").hide();
         			$("#receiverarea").hide();
 	     
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Mandatory-Option").required = false;
 				
 				$('#Delivery-Type').change(function(){
-					if($(this).val()===" ") {
+					if($(this).val().length == 0) {
 			    			 $("#deliverychoicearea").hide();
 						document.getElementById("Mandatory-Option").required = false;
 		     			}
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 	     
 	     			$('#codrequired').change(function(){
-					if($(this).val()===" ") {
+					if($(this).val().length == 0) {
 			     			$("#codamountarea").hide();
 			     			document.getElementById("COD-Amount").required = false;
 		     			}
@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				$('#Delivery-Type').change(function(){
 					
-					if($(this).val()===" ") {
+					if($(this).val().length == 0) {
 			    			 $("#deliverychoicearea").hide();
 						document.getElementById("Mandatory-Option").required = false;
 		     			}
@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 		
 				$('#codrequired').change(function(){
-					if($(this).val()===" ") {
+					if($(this).val().length == 0) {
 			    			 $("#codamountarea").hide();
 			     			document.getElementById("COD-Amount").required = true;
 		     			}

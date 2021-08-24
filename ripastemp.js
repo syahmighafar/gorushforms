@@ -22,6 +22,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("uploadbruhealthproof").required = false;
 		
 		document.getElementById("Type-Of-Mandatory").required = true;
+		
+		$("#deliverychoicearea").hide();
+		document.getElementById("Mandatory-Option").required = false;
 
      		$('#Currently-in-Quarantine').change(function(){
 	     
@@ -38,16 +41,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
     
-    $('#Payment-Method').change(function(){
+    		$('#Payment-Method').change(function(){
 	     
-     					if($(this).val()=="Bank Transfer") {
-						$("#paymentnoticearea").show();
-     					}
+     			if($(this).val()=="Bank Transfer") {
+				$("#paymentnoticearea").show();
+     			}
 			
-     					if($(this).val()=="Cash on Delivery") {
-						$("#paymentnoticearea").hide();
-					}
-			});
+     			if($(this).val()=="Cash on Delivery") {
+				$("#paymentnoticearea").hide();
+			}
+		});
+		
+		$('#Type-Of-Mandatory').change(function(){
+	     
+     			if($(this).val().includes("Delivery")) {
+				$("#deliverychoicearea").show();
+				document.getElementById("Mandatory-Option").required = true;
+     			}
+			
+     			if($(this).val().includes("Self Collect")) {
+				$("#deliverychoicearea").hide();
+				document.getElementById("Mandatory-Option").required = false;
+			}
+		});
 
 	});
 		

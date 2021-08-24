@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#autorefillarea").hide();
 		$("#confirmationarea").show();
 		$("#paymentnoticearea").hide();
+		$("#expressnoticearea").hide();
 		
 		document.getElementById("Full-Name-2").required = true;
 		document.getElementById("Bru-HIMS-Number").required = true;
@@ -57,11 +58,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			if($(this).val().includes("Delivery")) {
 				$("#deliverychoicearea").show();
 				document.getElementById("Mandatory-Option").required = true;
+				$("#expressnoticearea").hide();
      			}
 			
      			if($(this).val().includes("Self Collect")) {
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
+				$("#expressnoticearea").hide();
+			}
+			
+			if($(this).val().includes("Delivery Express")) {
+				$("#deliverychoicearea").show();
+				document.getElementById("Mandatory-Option").required = true;
+				$("#expressnoticearea").show();
 			}
 		});
 

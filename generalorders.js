@@ -29,6 +29,31 @@ document.addEventListener("DOMContentLoaded", function(event) {
      		$('#Pickup-or-Delivery').change(function(){
 	     
 	     		$("#paymentarea").hide();
+			
+			if($(this).val()==" ") {
+        			$("#senderarea").hide();
+        			$("#receiverarea").hide();
+	     
+				document.getElementById("Sender-Name").required = false;
+				document.getElementById("Sender-Phone").required = false;
+				document.getElementById("email").required = false;
+				document.getElementById("Pick-Up-Address").required = false;
+				document.getElementsByName("Pick-Up Date").required = false;
+	
+				document.getElementById("Delivery-Type").required = false;
+				document.getElementById("Receiver-Name").required = false;
+				document.getElementById("Receiver-Phone").required = false;
+				document.getElementById("Delivery-Address").required = false;
+				document.getElementsByName("Delivery Date").required = false;
+				document.getElementById("Product-Type").required = false;
+				document.getElementById("Product-Weight").required = false;
+				document.getElementById("codrequired").required = false;
+				document.getElementById("COD-Amount").required = false;
+				
+				$("#deliverychoicearea").hide();
+				document.getElementById("Mandatory-Option").required = false;
+	
+     			}
 	     
 
      			if($(this).val()=="Pickup") {
@@ -81,6 +106,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Mandatory-Option").required = false;
 				
 				$('#Delivery-Type').change(function(){
+					if($(this).val()==" ") {
+			    			 $("#deliverychoicearea").hide();
+						document.getElementById("Mandatory-Option").required = false;
+		     			}
 	     
      					if($(this).val().includes("Delivery")) {
 						$("#deliverychoicearea").show();
@@ -94,6 +123,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 	     
 	     			$('#codrequired').change(function(){
+					if($(this).val()==" ") {
+			     			$("#codamountarea").hide();
+			     			document.getElementById("COD-Amount").required = false;
+		     			}
+					
 		     			if($(this).val()=="Yes") {
 			     			$("#codamountarea").show();
 			     			document.getElementById("COD-Amount").required = true;
@@ -132,6 +166,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Mandatory-Option").required = false;
 				
 				$('#Delivery-Type').change(function(){
+					
+					if($(this).val()==" ") {
+			    			 $("#deliverychoicearea").hide();
+						document.getElementById("Mandatory-Option").required = false;
+		     			}
 	     
      					if($(this).val().includes("Delivery")) {
 						$("#deliverychoicearea").show();
@@ -145,6 +184,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 		
 				$('#codrequired').change(function(){
+					if($(this).val()==" ") {
+			    			 $("#codamountarea").hide();
+			     			document.getElementById("COD-Amount").required = true;
+		     			}
+					
 		     			if($(this).val()=="Yes") {
 			    			 $("#codamountarea").show();
 			     			document.getElementById("COD-Amount").required = true;

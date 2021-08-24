@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#uploadarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#uploadbruhealthproof").attr("required", "false");
+		$("#deliverychoicearea").hide();
 
      		$('#Currently-in-Quarantine').change(function(){
 	     
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
     
-    $('#JPMC-or-PJSC').change(function(){
+    		$('#JPMC-or-PJSC').change(function(){
 	     
       			if($(this).val()=="JPMC") {
         			$("#Patient-Number-2").attr("minlength", "8");
@@ -43,5 +44,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
         			$("#Patient-Number-2").attr("size", "6");
       			}
     		});
+		
+		$('#Type-Of-Delivery').change(function(){
+	     
+     			if($(this).val().includes("Delivery")) {
+				$("#deliverychoicearea").show();
+     			}
+			
+     			if($(this).val().includes("Self Collect")) {
+				$("#deliverychoicearea").hide();
+			}
+		});
 	});	
 });

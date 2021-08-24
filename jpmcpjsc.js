@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#uploadbruhealthproof").attr("required", "false");
 		$("#deliverychoicearea").hide();
 		document.getElementById("Mandatory-Option").required = false;
+		$("#expressnoticearea").hide();
 
      		$('#Currently-in-Quarantine').change(function(){
 	     
@@ -51,11 +52,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			if($(this).val().includes("Delivery")) {
 				$("#deliverychoicearea").show();
 				document.getElementById("Mandatory-Option").required = true;
+				$("#expressnoticearea").hide();
      			}
 			
      			if($(this).val().includes("Self Collect")) {
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
+				$("#expressnoticearea").hide();
+			}
+			
+			if($(this).val().includes("Delivery Express")) {
+				$("#deliverychoicearea").show();
+				document.getElementById("Mandatory-Option").required = true;
+				$("#expressnoticearea").show();
 			}
 		});
 	});	

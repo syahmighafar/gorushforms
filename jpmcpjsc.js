@@ -10,7 +10,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
      		$('#Currently-in-Quarantine').change(function(){
 	     
-     			if($(this).val()=="Yes") {
+     			if($(this).val().length == 0) {
+				$("#uploadarea").hide();
+				$("#uploadbruhealthproof").attr("required", "false");
+     			}
+			
+			if($(this).val()=="Yes") {
 				$("#uploadarea").show();
 				$("#uploadbruhealthproof").attr("required", "true");
      			}
@@ -22,6 +27,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('#Payment-Method').change(function(){
+			if($(this).val().length == 0) {
+				$("#paymentnoticearea").hide();
+     			}
 	     
      			if($(this).val()=="Bank Transfer") {
 				$("#paymentnoticearea").show();
@@ -33,6 +41,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
     
     		$('#JPMC-or-PJSC').change(function(){
+			
+			if($(this).val().length == 0) {
+	      			$("#Patient-Number-2").attr("minlength", "0");
+				$("#Patient-Number-2").attr("maxlength", "0");
+        			$("#Patient-Number-2").attr("size", "0");
+      			}
 	     
       			if($(this).val()=="JPMC") {
         			$("#Patient-Number-2").attr("minlength", "8");
@@ -48,6 +62,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     		});
 		
 		$('#Type-Of-Delivery').change(function(){
+			
+			if($(this).val().length == 0) {
+				$("#deliverychoicearea").hide();
+				document.getElementById("Mandatory-Option").required = false;
+				$("#expressnoticearea").hide();
+     			}
 	     
      			if($(this).val().includes("Delivery")) {
 				$("#deliverychoicearea").show();

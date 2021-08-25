@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Contact-Number").required = true;
 		document.getElementById("Delivery-Address-2").required = true;
 		document.getElementById("Payment-Method").required = true;
-		document.getElementById("Remarks").required = true;
 	
 		document.getElementById("uploadbruhealthproof").required = false;
 		

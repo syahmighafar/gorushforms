@@ -68,20 +68,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Mandatory-Option").required = false;
 				$("#expressnoticearea").hide();
      			}
-	     
-     			if($(this).val().includes("Delivery")) {
-				$("#deliverychoicearea").show();
-				document.getElementById("Mandatory-Option").required = true;
-				$("#expressnoticearea").hide();
-     			}
 			
-     			if($(this).val().includes("Self Collect")) {
+			if($(this).val().includes("Self Collect")) {
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
 				$("#expressnoticearea").hide();
 			}
-			
-			if($(this).val().includes("Delivery Express")) {
+	     
+     			if( ($(this).val()=="Standard $3 (BSB)") || ($(this).val()=="Standard $5 (Temburong)") || ($(this).val()=="Standard $7 (Tutong/KB)") ) {
+				$("#deliverychoicearea").show();
+				document.getElementById("Mandatory-Option").required = true;
+				$("#expressnoticearea").hide();
+     			}
+
+			if($(this).val()=="Express $5 (27/08/2021)") {
 				$("#deliverychoicearea").show();
 				document.getElementById("Mandatory-Option").required = true;
 				$("#expressnoticearea").show();

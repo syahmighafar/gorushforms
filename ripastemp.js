@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#expressnoticearea").hide();
 			}
 	     
-     			if( ($(this).val()=="Standard $3 (BSB)") || ($(this).val()=="Standard $5 (Temburong)") || ($(this).val()=="Standard $7 (Tutong/KB)") ) {
+     			if ($(this).val()=="Standard $3") {
 				$("#deliverychoicearea").show();
 				document.getElementById("Mandatory-Option").required = true;
 				$("#expressnoticearea").hide();

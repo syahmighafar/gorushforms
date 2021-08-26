@@ -48,15 +48,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Mandatory-Option").required = false;
      			}
 	     
-     			if($(this).val().includes("Delivery")) {
+     			if($(this).val()=="Standard $3") {
 				$("#deliverychoicearea").show();
 				document.getElementById("Mandatory-Option").required = true;
      			}
-			
-     			if($(this).val().includes("Self Collect")) {
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
-			}
 		});
 	});	
 });

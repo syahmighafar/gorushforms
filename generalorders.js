@@ -106,20 +106,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#paymentarea").show();
 				
 				$('#Delivery-Type').change(function(){
+					
 					if($(this).val().length == 0) {
 			    			 $("#deliverychoicearea").hide();
 						document.getElementById("Mandatory-Option").required = false;
 		     			}
 	     
-     					if($(this).val().includes("Delivery")) {
+     					if($(this).val()=="Standard") {
 						$("#deliverychoicearea").show();
 						document.getElementById("Mandatory-Option").required = true;
      					}
-			
-     					if($(this).val().includes("Self Collect")) {
-						$("#deliverychoicearea").hide();
-						document.getElementById("Mandatory-Option").required = false;
-					}
 				});
 	     
 	     			$('#codrequired').change(function(){
@@ -174,15 +170,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						document.getElementById("Mandatory-Option").required = false;
 		     			}
 	     
-     					if($(this).val().includes("Delivery")) {
+     					if($(this).val()=="Standard") {
 						$("#deliverychoicearea").show();
 						document.getElementById("Mandatory-Option").required = true;
      					}
-			
-     					if($(this).val().includes("Self Collect")) {
-						$("#deliverychoicearea").hide();
-						document.getElementById("Mandatory-Option").required = false;
-					}
 				});
 		
 				$('#codrequired').change(function(){

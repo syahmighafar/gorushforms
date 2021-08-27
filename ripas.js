@@ -100,21 +100,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#botharea").hide();
 				$("#easycollectarea").hide();
 				$("#autorefillarea").hide();
-				
-				setTimeout(function() {
-				document.getElementById("Full-Name-2").required = false;
-				document.getElementById("Bru-HIMS-Number").required = false;
-				document.getElementById("Date-of-Birth").required = false;
-				document.getElementById("IC-Number").required = false;
-				document.getElementById("Contact-Number").required = false;
-				document.getElementById("Delivery-Address-2").required = false;
-				
-				document.getElementById("Pharmacy-HC-Request").required = false;
-				document.getElementById("Easy-Collect-Number").required = false;
-				document.getElementById("Auto-Refill-Number").required = false;
-				}, 5000);
-				
-				
+
      			}
 	     
      			if($(this).val()=="New Registration") {
@@ -124,17 +110,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#easycollectarea").hide();
 				$("#autorefillarea").hide();
 				
-				setTimeout(function() { document.getElementById("Full-Name-2").required = true;
-				document.getElementById("Bru-HIMS-Number").required = true;
-				document.getElementById("Date-of-Birth").required = true;
-				document.getElementById("IC-Number").required = true;
-				document.getElementById("Contact-Number").required = true;
-				document.getElementById("Delivery-Address-2").required = true;
-				
-				document.getElementById("Pharmacy-HC-Request").required = false;
-				document.getElementById("Easy-Collect-Number").required = false;
-				document.getElementById("Auto-Refill-Number").required = false; 
-						      
+   
 						       if (($("#Full-Name-2").val().length == 0) || ($("#Bru-HIMS-Number").val().length == 0) || ($("#Date-of-Birth").val().length == 0) || ($("#IC-Number").val().length == 0) || ($("#Contact-Number").val().length == 0) || ($("#Delivery-Address-2").val().length == 0)) {
 					$("#otherarea").hide();
 				}
@@ -142,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				if (($("#Full-Name-2").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) && ($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address-2").val().length != 0)) {
 					$("#otherarea").fadeIn();
 				}
-						      }, 5000);
+
 				
 				
 				
@@ -155,17 +131,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#botharea").fadeIn();
 				$("#easycollectarea").fadeIn();
 				$("#autorefillarea").hide();
-				
-				setTimeout(function() { document.getElementById("Full-Name-2").required = false;
-				document.getElementById("Bru-HIMS-Number").required = false;
-				document.getElementById("Date-of-Birth").required = false;
-				document.getElementById("IC-Number").required = false;
-				document.getElementById("Contact-Number").required = false;
-				document.getElementById("Delivery-Address-2").required = false;
-				
-				document.getElementById("Pharmacy-HC-Request").required = true;
-				document.getElementById("Easy-Collect-Number").required = true;
-				document.getElementById("Auto-Refill-Number").required = false; 
 						      
 						      if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Easy-Collect-Number").val().length == 0)) {
 					$("#otherarea").hide();
@@ -173,7 +138,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Easy-Collect-Number").val().length != 0)) {
 					$("#otherarea").fadeIn();
-				}}, 5000);
+				}
 
 				
 				
@@ -186,25 +151,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#botharea").fadeIn();
 				$("#easycollectarea").hide();
 				$("#autorefillarea").fadeIn();
-				
-				setTimeout(function() { document.getElementById("Full-Name-2").required = false;
-				document.getElementById("Bru-HIMS-Number").required = false;
-				document.getElementById("Date-of-Birth").required = false;
-				document.getElementById("IC-Number").required = false;
-				document.getElementById("Contact-Number").required = false;
-				document.getElementById("Delivery-Address-2").required = false;
-				
-				document.getElementById("Pharmacy-HC-Request").required = true;
-				document.getElementById("Easy-Collect-Number").required = false;
-				document.getElementById("Auto-Refill-Number").required = true; 
-						      
+      
 						      if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Auto-Refill-Number").val().length == 0)) {
 					$("#otherarea").hide();
 				}
 				
 				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Auto-Refill-Number").val().length != 0)) {
 					$("#otherarea").fadeIn();
-				}}, 5000);
+				}
 				
 				
 				

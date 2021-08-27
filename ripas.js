@@ -23,17 +23,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		document.getElementById("Type-of-Registration").required = true;
 		
-		document.getElementById("Full-Name-2").required = false;
-		document.getElementById("Bru-HIMS-Number").required = false;
-		document.getElementById("Date-of-Birth").required = false;
-		document.getElementById("IC-Number").required = false;
-		document.getElementById("Contact-Number").required = false;
-		document.getElementById("Delivery-Address-2").required = false;
-		
-		document.getElementById("Pharmacy-HC-Request").required = false;
-		document.getElementById("Easy-Collect-Number").required = false;
-		document.getElementById("Auto-Refill-Number").required = false;
-		
      		$('#Currently-in-Quarantine').change(function(){
 			
 			if($(this).val().length == 0) {

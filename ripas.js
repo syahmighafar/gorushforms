@@ -111,18 +111,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#autorefillarea").hide();
 				
    
-				if (($("#Full-Name-2").val().length === undefined) || ($("#Bru-HIMS-Number").val().length ===undefined ) || ($("#Date-of-Birth").val().length ===undefined ) || ($("#IC-Number").val().length ===undefined ) || ($("#Contact-Number").val().length ===undefined) || ($("#Delivery-Address-2").val().length ===undefined)) {
+				if (($("#Full-Name-2").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) ||
+				    ($("#Date-of-Birth").val().length == 0 ) || ($("#IC-Number").val().length == 0 ) ||
+				    ($("#Contact-Number").val().length == 0) || ($("#Delivery-Address-2").val().length == 0)) {
 					$("#otherarea").hide();
 				}
 				
-				if (($("#Full-Name-2").val().length != undefined) && ($("#Bru-HIMS-Number").val().length != undefined) && ($("#Date-of-Birth").val().length != undefined) && ($("#IC-Number").val().length != undefined) && ($("#Contact-Number").val().length != undefined) && ($("#Delivery-Address-2").val().length != undefined)) {
+				if (($("#Full-Name-2").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
+				    ($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address-2").val().length != 0)) {
 					$("#otherarea").fadeIn();
 				}
 
-				
-				
-				
-				
      			}
 		
      			if($(this).val()=="Easy Collect") {
@@ -132,11 +131,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#easycollectarea").fadeIn();
 				$("#autorefillarea").hide();
 						      
-						      if (($("#Pharmacy-HC-Request").val().length === undefined) || ($("#Easy-Collect-Number").val().length === undefined)) {
+						      if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Easy-Collect-Number").val().length == 0)) {
 					$("#otherarea").hide();
 				}
 				
-				if (($("#Pharmacy-HC-Request").val().length != undefined) && ($("#Easy-Collect-Number").val().length != undefined)) {
+				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Easy-Collect-Number").val().length != 0)) {
 					$("#otherarea").fadeIn();
 				}
 
@@ -152,11 +151,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#easycollectarea").hide();
 				$("#autorefillarea").fadeIn();
       
-						      if (($("#Pharmacy-HC-Request").val().length === undefined) || ($("#Auto-Refill-Number").val().length === undefined)) {
+						      if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Auto-Refill-Number").val().length == 0)) {
 					$("#otherarea").hide();
 				}
 				
-				if (($("#Pharmacy-HC-Request").val().length != undefined) && ($("#Auto-Refill-Number").val().length != undefined)) {
+				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Auto-Refill-Number").val().length != 0)) {
 					$("#otherarea").fadeIn();
 				}
 				

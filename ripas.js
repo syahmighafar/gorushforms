@@ -124,8 +124,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Contact-Number").required = true;
 				document.getElementById("Delivery-Address-2").required = true;
 				
-   
-				if (($("#Full-Name-2").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) ||
+				document.getElementById("submitnewregistrationbutton").addEventListener("click", function() {
+  					if (($("#Full-Name-2").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) ||
 				    ($("#Date-of-Birth").val().length == 0 ) || ($("#IC-Number").val().length == 0 ) ||
 				    ($("#Contact-Number").val().length == 0) || ($("#Delivery-Address-2").val().length == 0)) {
 					$("#otherarea").hide();
@@ -133,8 +133,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				if (($("#Full-Name-2").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
 				    ($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address-2").val().length != 0)) {
+					$("#submitnewregistrationbutton").hide();
 					$("#otherarea").fadeIn();
 				}
+				});
+				
+   
+				
 
      			}
 		
@@ -152,17 +157,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Contact-Number").required = false;
 				document.getElementById("Delivery-Address-2").required = false;
 						      
-						      if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Easy-Collect-Number").val().length == 0)) {
+						      
+				
+				document.getElementById("submiteasycollectbutton").addEventListener("click", function() {
+  					if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Easy-Collect-Number").val().length == 0)) {
 					$("#otherarea").hide();
 				}
 				
 				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Easy-Collect-Number").val().length != 0)) {
 					$("#otherarea").fadeIn();
+					$("#submiteasycollectbutton").hide();
 				}
+				});
 
-				
-				
-				
      			}
 			
 			if($(this).val()=="Auto Refill") {
@@ -179,14 +186,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Contact-Number").required = false;
 				document.getElementById("Delivery-Address-2").required = false;
       
-						      if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Auto-Refill-Number").val().length == 0)) {
+						      
+				
+				document.getElementById("submitautorefillbutton").addEventListener("click", function() {
+  					if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Auto-Refill-Number").val().length == 0)) {
 					$("#otherarea").hide();
 				}
 				
 				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Auto-Refill-Number").val().length != 0)) {
 					$("#otherarea").fadeIn();
+					$("#submitautorefillbutton").hide();
 				}
-				
+				});
 				
 				
 				

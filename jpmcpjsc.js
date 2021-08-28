@@ -95,23 +95,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('#JPMC-or-PJSC').change(function(){
 			
 			if($(this).val().length == 0) {
-	      			$("#Patient-Number-2").attr("minlength", "0");
-				$("#Patient-Number-2").attr("maxlength", "0");
-        			$("#Patient-Number-2").attr("size", "0");
+	      			$("#Patient-Number").attr("minlength", "0");
+				$("#Patient-Number").attr("maxlength", "0");
+        			$("#Patient-Number").attr("size", "0");
 				$("#normalarea").hide();
       			}
 	     
       			if($(this).val()=="JPMC") {
-        			$("#Patient-Number-2").attr("minlength", "8");
-				$("#Patient-Number-2").attr("maxlength", "8");
-        			$("#Patient-Number-2").attr("size", "8");
+        			$("#Patient-Number").attr("minlength", "8");
+				$("#Patient-Number").attr("maxlength", "8");
+        			$("#Patient-Number").attr("size", "8");
 				$("#normalarea").fadeIn();
       			}
       		
 			if($(this).val()=="PJSC") {
-	      			$("#Patient-Number-2").attr("minlength", "6");
-				$("#Patient-Number-2").attr("maxlength", "6");
-        			$("#Patient-Number-2").attr("size", "6");
+	      			$("#Patient-Number").attr("minlength", "6");
+				$("#Patient-Number").attr("maxlength", "6");
+        			$("#Patient-Number").attr("size", "6");
 				$("#normalarea").fadeIn();
       			}
     		});

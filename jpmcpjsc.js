@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	
 		$("#uploadarea").hide();
 		$("#deliverytypearea").hide();
+		$("#jpmcpjscarea").hide();
 		$("#expressnoticearea").hide();
 		$("#deliverychoicearea").hide();
 		$("#normalarea").hide();

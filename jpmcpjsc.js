@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#normalarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
+		$("#confirmationarea").hide();
 		
 		document.getElementById("uploadbruhealthproof").required = false;
 		

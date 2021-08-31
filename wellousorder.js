@@ -1,19 +1,18 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-
 	$(document).ready(function(){
     
-    $("#deliverytypearea").hide();
-    $("#deliverychoicearea").hide();
-    $("#receiverarea").hide();
-    $("#codarea").hide();
-    $("#codamountarea").hide();
-    $("#paymentarea").hide();
-    $("#confirmationarea").hide();
+    		$("#deliverytypearea").hide();
+    		$("#deliverychoicearea").hide();
+    		$("#receiverarea").hide();
+    		$("#codarea").hide();
+    		$("#codamountarea").hide();
+    		$("#paymentarea").hide();
+    		$("#confirmationarea").hide();
 	
 		document.getElementById("COD-Amount").required = false;
-    document.getElementById("Mandatory-Option").required = false;
+    		document.getElementById("Mandatory-Option").required = false;
     
-    document.getElementById("intronextbutton").addEventListener("click", function() {
+    		document.getElementById("intronextbutton").addEventListener("click", function() {
   			if (($("#Agent-Name").val().length == 0 ) || ($("#Item-Description").val().length == 0 )) {
 				$("#deliverytypearea").hide();
 				alert("Please do not leave the required fields empty!");
@@ -28,161 +27,86 @@ document.addEventListener("DOMContentLoaded", function(event) {
      		$('#Delivery-Type').change(function(){
 			
 			if($(this).val().length == 0) {
-        $("#deliverychoicearea").hide();
-        $("#receiverarea").hide();
-        document.getElementById("Mandatory-Option").required = false;
+        			$("#deliverychoicearea").hide();
+        			$("#receiverarea").hide();
+        			document.getElementById("Mandatory-Option").required = false;
      			}
           
-          if($(this).val()=="Standard") {
-        $("#deliverychoicearea").fadeIn();
-        $("#receiverarea").hide();
-        document.getElementById("Mandatory-Option").required = true;
-     			}
-	     
-
-     			if($(this).val()=="Pickup") {
-        			$("#senderarea").show();
+          		if($(this).val()=="Standard") {
+        			$("#deliverychoicearea").fadeIn();
         			$("#receiverarea").hide();
-	     
-				document.getElementById("Sender-Name").required = true;
-				document.getElementById("Sender-Phone").required = true;
-				document.getElementById("email").required = true;
-				document.getElementById("Pick-Up-Address").required = true;
-				document.getElementsByName("Pick-Up Date").required = true;
-	
-				document.getElementById("Delivery-Type").required = false;
-				document.getElementById("Receiver-Name").required = false;
-				document.getElementById("Receiver-Phone").required = false;
-				document.getElementById("Delivery-Address").required = false;
-				document.getElementsByName("Delivery Date").required = false;
-				document.getElementById("Product-Type").required = false;
-				document.getElementById("Product-Weight").required = false;
-				document.getElementById("codrequired").required = false;
-				document.getElementById("COD-Amount").required = false;
-				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
-				$("#paymentarea").show();
-	
+        			document.getElementById("Mandatory-Option").required = true;
      			}
-     	
-			if($(this).val()=="Delivery") {
-	     
-				$("#receiverarea").show();
-				$("#senderarea").hide();
-	
-				document.getElementById("Sender-Name").required = false;
-				document.getElementById("Sender-Phone").required = false;
-				document.getElementById("email").required = false;
-				document.getElementById("Pick-Up-Address").required = false;
-				document.getElementsByName("Pick-Up Date").required = false;
-	
-				document.getElementById("Delivery-Type").required = true;
-				document.getElementById("Receiver-Name").required = true;
-				document.getElementById("Receiver-Phone").required = true;
-				document.getElementById("Delivery-Address").required = true;
-				document.getElementsByName("Delivery Date").required = true;
-				document.getElementById("Product-Type").required = true;
-				document.getElementById("Product-Weight").required = true;
-				document.getElementById("codrequired").required = true;
-				document.getElementById("COD-Amount").required = false;
+	     	});
+		
+		$('#Mandatory-Option').change(function(){
+			if($(this).val().length == 0) {
+				$("#receiverarea").hide();
+     			}
+			
+			if($(this).val().length != 0) {
+				$("#receiverarea").fadeIn();
+     			}
+		});
+		
+		document.getElementById("deliverydetailsnextbutton").addEventListener("click", function() {
+  			if (($("#Receiver-Name").val().length == 0 ) || ($("#Receiver-Phone").val().length == 0 ) ||
+				($("#Delivery-Address").val().length == 0 ) || ($("#Delivery-Date").val().length == 0 ) ||
+				($("#Product-Type").val().length == 0) || ($("#Product-Weight").val().length == 0)) {
+				$("#codarea").hide();
+				alert("Please do not leave the required fields empty!");
+			}
 				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
-				$("#paymentarea").show();
-				
-				$('#Delivery-Type').change(function(){
+			if (($("#Receiver-Name").val().length != 0) && ($("#Receiver-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0) &&
+				($("#Delivery-Date").val().length != 0) && ($("#Product-Type").val().length != 0) && ($("#Product-Weight").val().length != 0)) {
+				$("#deliverydetailsnextbutton").hide();
+				$("#codarea").fadeIn();
+			}
+		});
+		
+		$('#COD-required').change(function(){
+			if($(this).val().length == 0) {
+			     	$("#codamountarea").hide();
+				$("#paymentarea").hide();
+			     	document.getElementById("COD-Amount").required = false;
+		     	}
 					
-					if($(this).val().length == 0) {
-			    			 $("#deliverychoicearea").hide();
-						document.getElementById("Mandatory-Option").required = false;
+		     	if($(this).val()=="Yes") {
+			     	$("#codamountarea").fadeIn();
+				$("#paymentarea").hide();
+			     	document.getElementById("COD-Amount").required = true;
+				
+				document.getElementById("codbuttonnext").addEventListener("click", function() {
+  					if (($("#COD-Amount").val().length == 0 )) {
+						$("#paymentarea").hide();
+						alert("Please do not leave the required fields empty!");
+					}
+				
+					if (($("#COD-Amount").val().length != 0)) {
+						$("#codbuttonnext").hide();
+						$("#paymentarea").fadeIn();
 		     			}
-	     
-     					if($(this).val()=="Standard") {
-						$("#deliverychoicearea").show();
-						document.getElementById("Mandatory-Option").required = true;
-     					}
 				});
-	     
-	     			$('#codrequired').change(function(){
-					if($(this).val().length == 0) {
-			     			$("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = false;
-		     			}
-					
-		     			if($(this).val()=="Yes") {
-			     			$("#codamountarea").show();
-			     			document.getElementById("COD-Amount").required = true;
-		     			}
 		     		
-					if($(this).val()=="No") {
-			     			$("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = false;
-		     			}
-	     			});
-	     
-	     
+			if($(this).val()=="No") {
+			     	$("#codamountarea").hide();
+				$("#paymentarea").fadeIn();
+			     	document.getElementById("COD-Amount").required = false;
+		     	}
+	     	});
+			
+		$('#Payment-Method').change(function(){
+			if($(this).val().length == 0) {
+				$("#confirmationarea").hide();
      			}
-		
-			if($(this).val()==="Pickup and Delivery") {
-        			$("#senderarea").show();
-        			$("#receiverarea").show();
-		
-				document.getElementById("Sender-Name").required = true;
-				document.getElementById("Sender-Phone").required = true;
-				document.getElementById("email").required = true;
-				document.getElementById("Pick-Up-Address").required = true;
-				document.getElementsByName("Pick-Up Date").required = true;
-		
-				document.getElementById("Delivery-Type").required = true;
-				document.getElementById("Receiver-Name").required = true;
-				document.getElementById("Receiver-Phone").required = true;
-				document.getElementById("Delivery-Address").required = true;
-				document.getElementsByName("Delivery Date").required = true;
-				document.getElementById("Product-Type").required = true;
-				document.getElementById("Product-Weight").required = true;
-				document.getElementById("codrequired").required = true;
-				document.getElementById("COD-Amount").required = false;
-				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
-				
-				$("#paymentarea").show();
-				
-				$('#Delivery-Type').change(function(){
-					
-					if($(this).val().length == 0) {
-			    			 $("#deliverychoicearea").hide();
-						document.getElementById("Mandatory-Option").required = false;
-		     			}
 	     
-     					if($(this).val()=="Standard") {
-						$("#deliverychoicearea").show();
-						document.getElementById("Mandatory-Option").required = true;
-     					}
-				});
-		
-				$('#codrequired').change(function(){
-					if($(this).val().length == 0) {
-			    			 $("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = true;
-		     			}
-					
-		     			if($(this).val()=="Yes") {
-			    			 $("#codamountarea").show();
-			     			document.getElementById("COD-Amount").required = true;
-		     			}
-		     
-					if($(this).val()=="No") {
-			     			$("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = false;
-		     			}
-	     			});
-		     
-		    
-	     		}
-  		});
-
-	});
-	
+     			if($(this).val()=="Bank Transfer") {
+				$("#confirmationarea").fadeIn();
+     			}
+			
+     			if($(this).val()=="Cash on Delivery") {
+				$("#confirmationarea").fadeIn();
+			}
+		});
+	});	
 });

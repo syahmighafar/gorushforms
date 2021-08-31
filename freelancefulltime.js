@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				alert("Please do not leave the required fields empty!");
 			}
 				
-			if (($("#Full-Name").val().length != 0) && ($("#Email-Address").val().length != 0) && ($("#Date-of-Birth").val().length != 0)) {
+			if (($("#iccardupload").val().length != 0) && ($("#drivinglicenseupload").val().length != 0) && ($("#cvupload").val().length != 0)) {
 				$("#confirmationarea").fadeIn();
 				$("#uploadnextbutton").hide();
 			}

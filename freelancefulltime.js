@@ -67,25 +67,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
   			if (($("#Full-Name").val().length == 0) || ($("#Email-Address").val().length == 0) || ($("#Date-of-Birth").val().length == 0) ||
 			   ($("#IC-Number").val().length == 0) || ($("#Contact-Number").val().length == 0) || ($("#Home-Address").val().length == 0)) {
 				$("#uploadarea").hide();
+				$("#confirmationarea").hide();
 				alert("Please do not leave the required fields empty!");
 			}
 				
 			if (($("#Full-Name").val().length != 0) && ($("#Email-Address").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
 			   ($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Home-Address").val().length != 0)) {
 				$("#uploadarea").fadeIn();
-				$("#registrationnextbutton").hide();
-			}
-		});
-		
-		document.getElementById("uploadnextbutton").addEventListener("click", function() {
-  			if (($("#iccardupload").val().length == 0) || ($("#drivinglicenseupload").val().length == 0) || ($("#cvupload").val().length == 0)) {
-				$("#confirmationarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
-				
-			if (($("#iccardupload").val().length != 0) && ($("#drivinglicenseupload").val().length != 0) && ($("#cvupload").val().length != 0)) {
 				$("#confirmationarea").fadeIn();
-				$("#uploadnextbutton").hide();
+				$("#registrationnextbutton").hide();
 			}
 		});
 	});	

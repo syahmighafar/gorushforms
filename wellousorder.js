@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						$("#paymentarea").fadeIn();
 		     			}
 				});
+			}
 		     		
 			if($(this).val()=="No") {
 			     	$("#codamountarea").hide();

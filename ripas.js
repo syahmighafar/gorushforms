@@ -23,34 +23,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Easy-Collect-Auto-Refill-Available").required = true;
 		
      		$('#Currently-in-Quarantine').change(function(){
-			
 			if($(this).val().length == 0) {
-
 				$("#uploadarea").hide();
 	     			document.getElementById("uploadbruhealthproof").required = false;
 				$("#deliverytypearea").hide();
-				
      			}
 	     
      			if($(this).val()=="Yes") {
-
 				$("#uploadarea").fadeIn();
 	     			document.getElementById("uploadbruhealthproof").required = true;
 				$("#deliverytypearea").fadeIn();
-				
      			}
 		
      			if($(this).val()=="No") {
-	     
 				$("#uploadarea").hide();
 	     			document.getElementById("uploadbruhealthproof").required = false;
 				$("#deliverytypearea").fadeIn();
-				
      			}
 		});
 		
 		$('#Type-Of-Mandatory').change(function(){
-			
 			if($(this).val().length == 0) {
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
@@ -81,7 +73,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('#Mandatory-Option').change(function(){
-			
 			if($(this).val().length == 0) {
 				$("#normalarea").hide();
      			}
@@ -107,7 +98,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 
 		$('#Easy-Collect-Auto-Refill-Available').change(function(){
-			
 			if($(this).val().length == 0) {
 				$("#otherarea").hide();
 				$("#easycollectautorefillarea").hide();
@@ -140,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		
      			if($(this).val()=="No") {
-				
 				$("#otherarea").fadeIn();
 				$("#easycollectautorefillarea").hide();
 				$("#bookingnumarea").hide();
@@ -151,7 +140,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('#Payment-Method').change(function(){
-			
 			if($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();
 				$("#confirmationarea").hide();

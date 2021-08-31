@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#normalarea").hide();
      			}
 			
-			if($(this).val()=="Express $5 (31/08/2021)") {
+			if($(this).val()=="Express $5 (01/09/2021)") {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;

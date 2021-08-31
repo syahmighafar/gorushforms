@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 			if (($("#Days-Available").val().length != 0)) {
 				$("#registrationarea").fadeIn();
-				$("#bookingbutton").hide();
+				$("#daysavailablenextbutton").hide();
 			}
 		});
 		

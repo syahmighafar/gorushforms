@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
      			}
 
-			if($(this).val()=="Express $5 (27/08/2021)") {
+			if($(this).val()=="Express $5 (31/08/2021)") {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;
@@ -121,6 +121,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				    ($("#Date-of-Birth").val().length == 0 ) || ($("#IC-Number").val().length == 0 ) ||
 				    ($("#Contact-Number").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
 					$("#otherarea").hide();
+						alert("Please do not leave the required fields empty!");
 				}
 				
 				if (($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&

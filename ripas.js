@@ -6,11 +6,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#deliverytypearea").hide();
 		$("#expressnoticearea").hide();
 		$("#deliverychoicearea").hide();
-		$("#registrationtypearea").hide();
+		$("#easyautochoicearea").hide();
 		$("#normalarea").hide();
-		$("#botharea").hide();
-		$("#easycollectarea").hide();
-		$("#autorefillarea").hide();
+		$("#easycollectautorefillarea").hide();
+		$("#bookingnumarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		document.getElementById("Mandatory-Option").required = false;
 		
-		document.getElementById("Type-of-Registration").required = true;
+		document.getElementById("Easy-Collect-Auto-Refill-Available").required = true;
 		
      		$('#Currently-in-Quarantine').change(function(){
 			
@@ -56,171 +55,118 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
-				$("#registrationtypearea").hide();
+				$("#normalarea").hide();
      			}
 			
 			if($(this).val().includes("Self Collect")) {
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
-				$("#registrationtypearea").fadeIn();
+				$("#normalarea").fadeIn();
 			}
 	     
      			if (($(this).val()=="Standard $3")||($(this).val()=="Immediate $20")) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = true;
-				$("#registrationtypearea").hide();
+				$("#normalarea").hide();
      			}
 			
-			if($(this).val()=="Express $5 (28/08/2021)") {
+			if($(this).val()=="Express $5 (31/08/2021)") {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;
-				$("#registrationtypearea").hide();
+				$("#normalarea").hide();
 			}
 		});
 		
 		$('#Mandatory-Option').change(function(){
 			
 			if($(this).val().length == 0) {
-				$("#registrationtypearea").hide();
+				$("#normalarea").hide();
      			}
 			
 			if($(this).val().length != 0) {
-				$("#registrationtypearea").fadeIn();
+				$("#normalarea").fadeIn();
      			}
 		});
+		
+		document.getElementById("submitnewregistrationbutton").addEventListener("click", function() {
+  			if (($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) ||
+				($("#Date-of-Birth").val().length == 0 ) || ($("#IC-Number").val().length == 0 ) ||
+				($("#Contact-Number").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
+				$("#easyautochoicearea").hide();
+				alert("Please do not leave the required fields empty!");
+			}
+				
+			if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
+				($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
+				$("#submitnewregistrationbutton").hide();
+				$("#easyautochoicearea").fadeIn();
+			}
+		});
 
-		$('#Type-of-Registration').change(function(){
+		$('#Easy-Collect-Auto-Refill-Available').change(function(){
 			
 			if($(this).val().length == 0) {
-
-				$("#normalarea").hide();
-				$("#botharea").hide();
-				$("#easycollectarea").hide();
-				$("#autorefillarea").hide();
+				$("#otherarea").hide();
+				$("#easycollectautorefillarea").hide();
+				$("#bookingnumarea").hide();
 				
-				document.getElementById("Full-Name").required = false;
-				document.getElementById("Bru-HIMS-Number").required = false;
-				document.getElementById("Date-of-Birth").required = false;
-				document.getElementById("IC-Number").required = false;
-				document.getElementById("Contact-Number").required = false;
-				document.getElementById("Delivery-Address").required = false;
-
+				document.getElementById("Easy-Collect-or-Auto-Refill").required = false;
+				document.getElementById("Booking-Number").required = false;
      			}
 	     
-     			if($(this).val()=="New Registration") {
-
-				$("#normalarea").fadeIn();
-				$("#botharea").hide();
-				$("#easycollectarea").hide();
-				$("#autorefillarea").hide();
+     			if($(this).val()=="Yes") {
+				$("#otherarea").hide();
+				$("#easycollectautorefillarea").fadeIn();
+				$("#bookingnumarea").fadeIn();
 				
-				document.getElementById("Full-Name").required = true;
-				document.getElementById("Bru-HIMS-Number").required = true;
-				document.getElementById("Date-of-Birth").required = true;
-				document.getElementById("IC-Number").required = true;
-				document.getElementById("Contact-Number").required = true;
-				document.getElementById("Delivery-Address").required = true;
+				document.getElementById("Easy-Collect-or-Auto-Refill").required = true;
+				document.getElementById("Booking-Number").required = true;
 				
-				document.getElementById("submitnewregistrationbutton").addEventListener("click", function() {
-  					if (($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) ||
-				    ($("#Date-of-Birth").val().length == 0 ) || ($("#IC-Number").val().length == 0 ) ||
-				    ($("#Contact-Number").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
-					$("#otherarea").hide();
-				}
+				document.getElementById("bookingbutton").addEventListener("click", function() {
+  					if (($("#Easy-Collect-or-Auto-Refill").val().length == 0) || ($("#Booking-Number").val().length == 0)) {
+						$("#otherarea").hide();
+						alert("Please do not leave the required fields empty!");
+					}
 				
-				if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
-				    ($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
-					$("#submitnewregistrationbutton").hide();
-					$("#otherarea").fadeIn();
-				}
+					if (($("#Easy-Collect-or-Auto-Refill").val().length != 0) && ($("#Booking-Number").val().length != 0)) {
+						$("#otherarea").fadeIn();
+						$("#bookingbutton").hide();
+					}
 				});
 				
-   
-				
-
      			}
 		
-     			if($(this).val()=="Easy Collect") {
+     			if($(this).val()=="No") {
 				
-				$("#normalarea").hide();
-				$("#botharea").fadeIn();
-				$("#easycollectarea").fadeIn();
-				$("#autorefillarea").hide();
+				$("#otherarea").fadeIn();
+				$("#easycollectautorefillarea").hide();
+				$("#bookingnumarea").hide();
 				
-				document.getElementById("Full-Name").required = false;
-				document.getElementById("Bru-HIMS-Number").required = false;
-				document.getElementById("Date-of-Birth").required = false;
-				document.getElementById("IC-Number").required = false;
-				document.getElementById("Contact-Number").required = false;
-				document.getElementById("Delivery-Address").required = false;
-						      
-						      
-				
-				document.getElementById("submiteasycollectbutton").addEventListener("click", function() {
-  					if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Easy-Collect-Number").val().length == 0)) {
-					$("#otherarea").hide();
-				}
-				
-				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Easy-Collect-Number").val().length != 0)) {
-					$("#otherarea").fadeIn();
-					$("#submiteasycollectbutton").hide();
-				}
-				});
-
-     			}
-			
-			if($(this).val()=="Auto Refill") {
-				
-				$("#normalarea").hide();
-				$("#botharea").fadeIn();
-				$("#easycollectarea").hide();
-				$("#autorefillarea").fadeIn();
-				
-				document.getElementById("Full-Name").required = false;
-				document.getElementById("Bru-HIMS-Number").required = false;
-				document.getElementById("Date-of-Birth").required = false;
-				document.getElementById("IC-Number").required = false;
-				document.getElementById("Contact-Number").required = false;
-				document.getElementById("Delivery-Address").required = false;
-      
-						      
-				
-				document.getElementById("submitautorefillbutton").addEventListener("click", function() {
-  					if (($("#Pharmacy-HC-Request").val().length == 0) || ($("#Auto-Refill-Number").val().length == 0)) {
-					$("#otherarea").hide();
-				}
-				
-				if (($("#Pharmacy-HC-Request").val().length != 0) && ($("#Auto-Refill-Number").val().length != 0)) {
-					$("#otherarea").fadeIn();
-					$("#submitautorefillbutton").hide();
-				}
-				});
-				
-				
-				
+				document.getElementById("Easy-Collect-or-Auto-Refill").required = false;
+				document.getElementById("Booking-Number").required = false;
      			}
 		});
 		
 		$('#Payment-Method').change(function(){
 			
-					if($(this).val().length == 0) {
-						$("#paymentnoticearea").hide();
-						$("#confirmationarea").hide();
-     					}
+			if($(this).val().length == 0) {
+				$("#paymentnoticearea").hide();
+				$("#confirmationarea").hide();
+     			}
 	     
-     					if($(this).val()=="Bank Transfer") {
-						$("#paymentnoticearea").fadeIn();
-						$("#confirmationarea").fadeIn();
-     					}
+     			if($(this).val()=="Bank Transfer") {
+				$("#paymentnoticearea").fadeIn();
+				$("#confirmationarea").fadeIn();
+     			}
 			
-     					if($(this).val()=="Cash on Delivery") {
-						$("#paymentnoticearea").hide();
-						$("#confirmationarea").fadeIn();
-					}
-				});
+     			if($(this).val()=="Cash on Delivery") {
+				$("#paymentnoticearea").hide();
+				$("#confirmationarea").fadeIn();
+			}
+		});
 	});
 		
 });

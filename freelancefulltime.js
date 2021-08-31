@@ -33,21 +33,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('#Employment').change(function(){
 			if($(this).val().length == 0) {
-				$("#Days-Available").hide();
+				$("#daysavailablearea").hide();
      			}
 	     
      			if($(this).val().length != 0) {
-				$("#Days-Available").fadeIn();
+				$("#daysavailablearea").fadeIn();
      			}
 		});
 		
 		$('#Employment-2').change(function(){
 			if($(this).val().length == 0) {
-				$("#Days-Available").hide();
+				$("#daysavailablearea").hide();
      			}
 	     
      			if($(this).val().length != 0) {
-				$("#Days-Available").fadeIn();
+				$("#daysavailablearea").fadeIn();
      			}
 		});
 		

@@ -50,21 +50,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#normalarea").hide();
      			}
 			
-			if($(this).val().includes("Self Collect")) {
+			if(($(this).val()=="Self Collect $3")) {
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
 				$("#normalarea").fadeIn();
 			}
 	     
-     			if (($(this).val()=="Standard $3")||($(this).val()=="Immediate $20")) {
+     			if (($(this).val()=="Standard $3")||($(this).val()=="Immediate $20 (Only for BSB)")) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = true;
 				$("#normalarea").hide();
      			}
 			
-			if($(this).val()=="Express $5 (02/09/2021)") {
+			if($(this).val().includes("Express $5")) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;

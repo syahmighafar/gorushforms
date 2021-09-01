@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
      			}
 			
-			if($(this).val().includes("Self Collect")) {
+			if(($(this).val()=="Self Collect $3")) {
 				
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
      			}
 
-			if($(this).val()=="Express $5 (01/09/2021)") {
+			if($(this).val().includes("Express $5")) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;

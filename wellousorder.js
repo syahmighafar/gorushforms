@@ -27,38 +27,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
      		$('#Delivery-Type').change(function(){
 			
 			if($(this).val().length == 0) {
-        			$("#deliverychoicearea").hide();
         			$("#receiverarea").hide();
-        			document.getElementById("Mandatory-Option").required = false;
      			}
           
-          		if($(this).val()=="Standard") {
-        			$("#deliverychoicearea").fadeIn();
-        			$("#receiverarea").hide();
-        			document.getElementById("Mandatory-Option").required = true;
+          		if ( ($(this).val()=="Standard") && ($(this).val()=="Self Pick Up at Go Rush") ) {
+        			$("#receiverarea").fadeIn();
      			}
 	     	});
 		
-		$('#Mandatory-Option').change(function(){
-			if($(this).val().length == 0) {
-				$("#receiverarea").hide();
-     			}
-			
-			if($(this).val().length != 0) {
-				$("#receiverarea").fadeIn();
-     			}
-		});
-		
 		document.getElementById("deliverydetailsnextbutton").addEventListener("click", function() {
   			if (($("#Receiver-Name").val().length == 0 ) || ($("#Receiver-Phone").val().length == 0 ) ||
-				($("#Delivery-Address").val().length == 0 ) || ($("#Delivery-Date").val().length == 0 ) ||
-				($("#Product-Type").val().length == 0) || ($("#Product-Weight").val().length == 0)) {
+				($("#Delivery-Address").val().length == 0 )) {
 				$("#codarea").hide();
 				alert("Please do not leave the required fields empty!");
 			}
 				
-			if (($("#Receiver-Name").val().length != 0) && ($("#Receiver-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0) &&
-				($("#Delivery-Date").val().length != 0) && ($("#Product-Type").val().length != 0) && ($("#Product-Weight").val().length != 0)) {
+			if (($("#Receiver-Name").val().length != 0) && ($("#Receiver-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
 				$("#deliverydetailsnextbutton").hide();
 				$("#codarea").fadeIn();
 			}

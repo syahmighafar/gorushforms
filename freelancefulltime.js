@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#employementarea1").hide();
 		$("#employementarea2").hide();
 		$("#daysavailablearea").hide();
+		$("#driverlicensearea").hide();
 	
 		$("#dispatcherareanotice").hide();
 
@@ -22,12 +23,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#dispatcherareanotice").fadeIn();
 				$("#employementarea1").fadeIn();
 				$("#employementarea2").hide();
+				$("#driverlicensearea").show();
      			}
 			
      			if(($(this).val()=="Customer Services") || ($(this).val()=="Warehouse Operations") || ($(this).val()=="Back Office Operation") ) {
 				$("#dispatcherareanotice").hide();
 				$("#employementarea1").hide();
 				$("#employementarea2").fadeIn();
+				$("#driverlicensearea").hide();
      			}
 		});
 		

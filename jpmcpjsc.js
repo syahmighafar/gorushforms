@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('#Type-Of-Delivery').change(function(){
 			
-			if($(this).val().length == 0) {
+			if ( $(this).val().length == 0) ) {
 
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
      			}
 			
-			if(($(this).val().includes("Self Collect")) {
+			if ( $(this).val().includes("Self Collect") ) {
 				
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 			}
 	     
-     			if( ($(this).val().includes("Standard") ) {
+     			if ( $(this).val().includes("Standard") ) {
 				
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
      			}
 
-			if($(this).val().includes("Express")) {
+			if ( $(this).val().includes("Express") ) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;

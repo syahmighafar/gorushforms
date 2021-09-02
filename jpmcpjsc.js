@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#confirmationarea").hide();
 		$("#icnumarea").hide();
 		$("#passportnumarea").hide();
+		$("#submitregistrationbutton").hide();
+		$("#submitregistrationpassbutton").hide();
 		
 		document.getElementById("uploadbruhealthproof").required = false;
 		

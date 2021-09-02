@@ -43,21 +43,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('#Type-Of-Mandatory').change(function(){
-			if($(this).val().length == 0) {
+			if ($(this).val().length == 0)) {
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
 				$("#normalarea").hide();
      			}
 			
-			if(($(this).val().includes("Self Collect")) {
+			if($(this).val().includes("Self Collect")) {
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = false;
 				$("#normalarea").fadeIn();
 			}
 	     
-     			if (($(this).val()=="Standard")||($(this).val().includes("Immediate")) {
+     			if ( ($(this).val()=="Standard") || ($(this).val().includes("Immediate")) ) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = true;

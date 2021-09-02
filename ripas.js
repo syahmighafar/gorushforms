@@ -6,9 +6,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#deliverytypearea").hide();
 		$("#expressnoticearea").hide();
 		$("#deliverychoicearea").hide();
-		$("#easyautochoicearea").hide();
 		$("#normalarea").hide();
-		$("#bookingnumarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
@@ -18,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Type-Of-Mandatory").required = true;
 		
 		document.getElementById("Mandatory-Option").required = false;
-		
-		document.getElementById("Easy-Collect-Auto-Refill-Available").required = true;
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
@@ -85,53 +81,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
   			if (($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) ||
 				($("#Date-of-Birth").val().length == 0 ) || ($("#IC-Number").val().length == 0 ) ||
 				($("#Contact-Number").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
-				$("#easyautochoicearea").hide();
+				$("#otherarea").hide();
 				alert("Please do not leave the required fields empty!");
 			}
 				
 			if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
 				($("#IC-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
 				$("#submitnewregistrationbutton").hide();
-				$("#easyautochoicearea").fadeIn();
+				$("#otherarea").fadeIn();
 			}
 		});
 
-		$('#Easy-Collect-Auto-Refill-Available').change(function(){
-			if($(this).val().length == 0) {
-				$("#otherarea").hide();
-				$("#bookingnumarea").hide();
-				
-				document.getElementById("Booking-Number").required = false;
-     			}
-	     
-     			if($(this).val()=="Yes") {
-				$("#otherarea").hide();
-				$("#bookingnumarea").fadeIn();
-				
-				document.getElementById("Booking-Number").required = true;
-				
-				document.getElementById("bookingbutton").addEventListener("click", function() {
-  					if (($("#Booking-Number").val().length == 0)) {
-						$("#otherarea").hide();
-						alert("Please do not leave the required fields empty!");
-					}
-				
-					if (($("#Booking-Number").val().length != 0)) {
-						$("#otherarea").fadeIn();
-						$("#bookingbutton").hide();
-					}
-				});
-				
-     			}
-		
-     			if($(this).val()=="No") {
-				$("#otherarea").fadeIn();
-				$("#bookingnumarea").hide();
-				
-				document.getElementById("Booking-Number").required = false;
-     			}
-		});
-		
 		$('#Payment-Method').change(function(){
 			if($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();

@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
+		$("#icnumarea").hide();
+		$("#passportnumarea").hide();
 		
 		document.getElementById("uploadbruhealthproof").required = false;
 		
@@ -116,20 +118,64 @@ document.addEventListener("DOMContentLoaded", function(event) {
       			}
     		});
 		
+		$('#IC-or-Passport').change(function(){
+			
+			if($(this).val().length == 0) {
+
+				$("#icnumarea").hide();
+				$("#passportnumarea").hide();
+				$("#submitregistrationbutton").hide();
+				$("#submitregistrationpassbutton").hide();
+      			}
+	     
+      			if($(this).val()=="IC") {
+
+				$("#icnumarea").fadeIn();
+				$("#passportnumarea").hide();
+				$("#submitregistrationbutton").fadeIn();
+				$("#submitregistrationpassbutton").hide();
+      			}
+      		
+			if($(this).val()=="Passport") {
+
+				$("#icnumarea").hide();
+				$("#passportnumarea").fadeIn();
+				$("#submitregistrationbutton").hide();
+				$("#submitregistrationpassbutton").fadeIn();
+      			}
+    		});
+		
 		document.getElementById("submitregistrationbutton").addEventListener("click", function() {
-  					if (($("#Full-Name").val().length == 0 ) || ($("#Patient-Number").val().length == 0 ) ||
-				    ($("#Date-of-Birth").val().length == 0 ) ||
-				    ($("#Contact-Number").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
-					$("#otherarea").hide();
-						alert("Please do not leave the required fields empty!");
-				}
+  			if (($("#Full-Name").val().length == 0 ) || ($("#Patient-Number").val().length == 0 ) ||  ($("#Contact-Number").val().length == 0) ||
+			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0) ||
+			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+				$("#otherarea").hide();
+				alert("Please do not leave the required fields empty!");
+			}
 				
-				if (($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Date-of-Birth").val().length != 0) &&
-				     ($("#Contact-Number").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
-					$("#submitregistrationbutton").hide();
-					$("#otherarea").fadeIn();
-				}
-				});
+			if (($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
+			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
+				$("#submitregistrationbutton").hide();
+				$("#otherarea").fadeIn();
+			}
+		});
+		
+		document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
+  			if (($("#Full-Name").val().length == 0 ) || ($("#Patient-Number").val().length == 0 ) ||  ($("#Contact-Number").val().length == 0) ||
+			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#Passport-Number").val().length == 0) ||
+			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+				$("#otherarea").hide();
+				alert("Please do not leave the required fields empty!");
+			}
+				
+			if (($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#Passport-Number").val().length != 0) &&
+			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
+				$("#submitregistrationpassbutton").hide();
+				$("#otherarea").fadeIn();
+			}
+		});
 		
 		$('#Payment-Method').change(function(){
 			if($(this).val().length == 0) {

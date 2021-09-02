@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
      			}
 			
-			if(($(this).val()=="Self Collect $3")) {
+			if(($(this).val().includes("Self Collect")) {
 				
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 			}
 	     
-     			if( ($(this).val()=="Standard $3 (BSB)") || ($(this).val()=="Standard $5 (Temburong)") || ($(this).val()=="Standard $7 (Tutong/KB)") ) {
+     			if( ($(this).val().includes("Standard") ) {
 				
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
      			}
 
-			if($(this).val().includes("Express $5")) {
+			if($(this).val().includes("Express")) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
 				document.getElementById("Mandatory-Option").required = true;

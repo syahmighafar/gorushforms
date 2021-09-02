@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#deliverychoicearea").hide();
 		$("#easyautochoicearea").hide();
 		$("#normalarea").hide();
-		$("#easycollectautorefillarea").hide();
 		$("#bookingnumarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
@@ -100,28 +99,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('#Easy-Collect-Auto-Refill-Available').change(function(){
 			if($(this).val().length == 0) {
 				$("#otherarea").hide();
-				$("#easycollectautorefillarea").hide();
 				$("#bookingnumarea").hide();
 				
-				document.getElementById("Easy-Collect-or-Auto-Refill").required = false;
 				document.getElementById("Booking-Number").required = false;
      			}
 	     
      			if($(this).val()=="Yes") {
 				$("#otherarea").hide();
-				$("#easycollectautorefillarea").fadeIn();
 				$("#bookingnumarea").fadeIn();
 				
-				document.getElementById("Easy-Collect-or-Auto-Refill").required = true;
 				document.getElementById("Booking-Number").required = true;
 				
 				document.getElementById("bookingbutton").addEventListener("click", function() {
-  					if (($("#Easy-Collect-or-Auto-Refill").val().length == 0) || ($("#Booking-Number").val().length == 0)) {
+  					if (($("#Booking-Number").val().length == 0)) {
 						$("#otherarea").hide();
 						alert("Please do not leave the required fields empty!");
 					}
 				
-					if (($("#Easy-Collect-or-Auto-Refill").val().length != 0) && ($("#Booking-Number").val().length != 0)) {
+					if (($("#Booking-Number").val().length != 0)) {
 						$("#otherarea").fadeIn();
 						$("#bookingbutton").hide();
 					}
@@ -131,10 +126,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
      			if($(this).val()=="No") {
 				$("#otherarea").fadeIn();
-				$("#easycollectautorefillarea").hide();
 				$("#bookingnumarea").hide();
 				
-				document.getElementById("Easy-Collect-or-Auto-Refill").required = false;
 				document.getElementById("Booking-Number").required = false;
      			}
 		});

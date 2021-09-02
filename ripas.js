@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       			}
     		});
 		
-		document.getElementById("submitnewregistrationbutton").addEventListener("click", function() {
+		document.getElementById("submitregistrationbutton").addEventListener("click", function() {
   			if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
 			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0 ) ||
 			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
 			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
 			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0)) {
-				$("#submitnewregistrationbutton").hide();
+				$("#submitregistrationbutton").hide();
 				$("#otherarea").fadeIn();
 			}
 		});

@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#normalarea").fadeIn();
 			}
 	     
-     			if ( ($(this).val().includes("Standard") || ($(this).val().includes("Immediate")) ) {
+     			if ( ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) ) {
 				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
 				document.getElementById("Mandatory-Option").required = true;

@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('#Type-Of-Delivery').change(function(){
 			
-			if ( $(this).val().length == 0) ) {
+			if ( ($(this).val().length == 0) ) {
 
 				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();

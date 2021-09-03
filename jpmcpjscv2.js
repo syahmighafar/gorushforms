@@ -5,95 +5,49 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#deliverytypearea").hide();
 		$("#jpmcpjscarea").hide();
 		$("#expressnoticearea").hide();
-		$("#deliverychoicearea").hide();
 		$("#normalarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
-		$("#icnumarea").hide();
-		$("#passportnumarea").hide();
 		$("#submitregistrationbutton").hide();
-		$("#submitregistrationpassbutton").hide();
-		
-		document.getElementById("uploadbruhealthproof").required = false;
-		
-		document.getElementById("Type-Of-Delivery").required = true;
-		
-		document.getElementById("Mandatory-Option").required = false;
 
      		$('#Currently-in-Quarantine').change(function(){
 			
 			if($(this).val().length == 0) {
-
 				$("#uploadarea").hide();
-	     			document.getElementById("uploadbruhealthproof").required = false;
 				$("#deliverytypearea").hide();
 				
      			}
 	     
      			if($(this).val()=="Yes") {
-
 				$("#uploadarea").fadeIn();
-	     			document.getElementById("uploadbruhealthproof").required = true;
 				$("#deliverytypearea").fadeIn();
 				
      			}
 		
      			if($(this).val()=="No") {
-	     
 				$("#uploadarea").hide();
-	     			document.getElementById("uploadbruhealthproof").required = false;
 				$("#deliverytypearea").fadeIn();
-				
      			}
 		});
 		
 		$('#Type-Of-Delivery').change(function(){
 			
 			if ( $(this).val().length == 0 ) {
-
-				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
 				$("#jpmcpjscarea").hide();
 				
      			}
 			
-			if ( $(this).val().includes("Self Collect") ) {
-				
-				$("#deliverychoicearea").hide();
+			if ( ( $(this).val().includes("Self Collect") ) || ( $(this).val().includes("Standard") ) ) {
 				$("#expressnoticearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
 				$("#jpmcpjscarea").fadeIn();
-				
 			}
-	     
-     			if ( $(this).val().includes("Standard") ) {
-				
-				$("#deliverychoicearea").fadeIn();
-				$("#expressnoticearea").hide();
-				document.getElementById("Mandatory-Option").required = true;
-				$("#jpmcpjscarea").hide();
-
-     			}
 
 			if ( $(this).val().includes("Express") ) {
-				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
-				document.getElementById("Mandatory-Option").required = true;
-				$("#jpmcpjscarea").hide();
-			}
-		});
-		
-		$('#Mandatory-Option').change(function(){
-			
-			if($(this).val().length == 0) {
-				$("#jpmcpjscarea").hide();
-     			}
-			
-			if($(this).val().length != 0) {
 				$("#jpmcpjscarea").fadeIn();
-     			}
+			}
 		});
 		
 		$('#JPMC-or-PJSC').change(function(){
@@ -120,61 +74,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
       			}
     		});
 		
-		$('#IC-or-Passport').change(function(){
-			
-			if($(this).val().length == 0) {
-
-				$("#icnumarea").hide();
-				$("#passportnumarea").hide();
-				$("#submitregistrationbutton").hide();
-				$("#submitregistrationpassbutton").hide();
-      			}
-	     
-      			if($(this).val()=="IC") {
-
-				$("#icnumarea").fadeIn();
-				$("#passportnumarea").hide();
-				$("#submitregistrationbutton").fadeIn();
-				$("#submitregistrationpassbutton").hide();
-      			}
-      		
-			if($(this).val()=="Passport") {
-
-				$("#icnumarea").hide();
-				$("#passportnumarea").fadeIn();
-				$("#submitregistrationbutton").hide();
-				$("#submitregistrationpassbutton").fadeIn();
-      			}
-    		});
-		
 		document.getElementById("submitregistrationbutton").addEventListener("click", function() {
   			if (($("#Full-Name").val().length == 0 ) || ($("#Patient-Number").val().length == 0 ) ||  ($("#Contact-Number").val().length == 0) ||
-			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0) ||
 			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
 				$("#otherarea").hide();
 				alert("Please do not leave the required fields empty!");
 			}
 				
 			if (($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
 			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
 				$("#submitregistrationbutton").hide();
-				$("#otherarea").fadeIn();
-			}
-		});
-		
-		document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
-  			if (($("#Full-Name").val().length == 0 ) || ($("#Patient-Number").val().length == 0 ) ||  ($("#Contact-Number").val().length == 0) ||
-			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#Passport-Number").val().length == 0) ||
-			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
-				$("#otherarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
-				
-			if (($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#Passport-Number").val().length != 0) &&
-			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
-				$("#submitregistrationpassbutton").hide();
 				$("#otherarea").fadeIn();
 			}
 		});

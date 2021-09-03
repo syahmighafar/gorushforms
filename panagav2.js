@@ -51,20 +51,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
-  			if ( ($("#Full-Name").val().length == 0 ) || ($("#Patient-Service-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
-			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
-				$("#otherarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
-				
-			if (($("#Full-Name").val().length != 0) && ($("#Patient-Service-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0)) {
-				$("#submitregistrationpassbutton").hide();
-				$("#otherarea").fadeIn();
-			}
-		});
-		
 		$('#Payment-Method').change(function(){
 			if($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();

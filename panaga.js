@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$("#uploadarea").hide();
 		$("#deliverytypearea").hide();
-		$("#expressnoticearea").hide();
 		$("#deliverychoicearea").hide();
 		$("#normalarea").hide();
 		$("#otherarea").hide();
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		document.getElementById("uploadbruhealthproof").required = false;
 		
-		document.getElementById("Type-Of-Mandatory").required = true;
+		document.getElementById("Type-of-Mandatory").required = true;
 		
 		document.getElementById("Mandatory-Option").required = false;
 
@@ -40,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
 		
-		$('#Type-Of-Mandatory').change(function(){
+		$('#Type-of-Mandatory').change(function(){
 			if ( $(this).val().length == 0 ) {
 				$("#deliverychoicearea").hide();
 				document.getElementById("Mandatory-Option").required = false;

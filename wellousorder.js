@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         			$("#receiverarea").hide();
      			}
           
-          		if ( ($(this).val()=="Standard") && ($(this).val()=="Self Pick Up at Go Rush") ) {
+          		if ( ($(this).val()=="Standard") || ($(this).val()=="Self Collect at Go Rush Kiarong") ) {
         			$("#receiverarea").fadeIn();
      			}
 	     	});

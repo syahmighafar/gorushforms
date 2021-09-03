@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     		$("#confirmationarea").hide();
 	
 		document.getElementById("COD-Amount").required = false;
-    		document.getElementById("Mandatory-Option").required = false;
     
     		document.getElementById("intronextbutton").addEventListener("click", function() {
   			if (($("#Agent-Name").val().length == 0 ) || ($("#Item-Description").val().length == 0 )) {

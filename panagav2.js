@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
-		$("#submitregistrationbutton").hide();
 
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {

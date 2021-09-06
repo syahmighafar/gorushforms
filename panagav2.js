@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
 		$("#addressarea").hide();
-		$("#selfcollectdatearea").hide();
 
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
@@ -31,11 +30,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ( $(this).val().length == 0 ) {
 				$("#deliverychoicearea").hide();
 				$("#normalarea").hide();
+				$("#addressarea").hide();
      			}
 	     
      			if ( $(this).val().includes("Standard") ) {
 				$("#deliverychoicearea").fadeIn();
 				$("#normalarea").fadeIn();
+				$("#addressarea").fadeIn();
      			}
 		});
 		

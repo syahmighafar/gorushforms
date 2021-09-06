@@ -8,6 +8,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
+		$("#addressarea").hide();
+		$("#selfcollectdatearea").hide();
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
@@ -30,30 +32,75 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ( $(this).val().length == 0 ) {
 				$("#expressnoticearea").hide();
 				$("#normalarea").hide();
+				$("#addressarea").hide();
+				$("#selfcollectdatearea").hide();
      			}
 			
-     			if ( ($(this).val().includes("Self Collect")) || ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) ) {
+     			if ( ($(this).val().includes("Self Collect")) ) {
 				$("#expressnoticearea").hide();
 				$("#normalarea").fadeIn();
+				$("#addressarea").hide();
+				$("#selfcollectdatearea").fadeIn();
+				
+				document.getElementById("submitregistrationbutton").addEventListener("click", function() {
+  					if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+					($("#Selfcollect-Date").val().length == 0) ) {
+						$("#otherarea").hide();
+						alert("Please do not leave the required fields empty!");
+					}
+				
+					if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+					($("#Selfcollect-Date").val().length != 0) ) {
+						$("#submitregistrationbutton").hide();
+						$("#otherarea").fadeIn();
+					}
+				});
+     			}
+			
+			if ( ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) ) {
+				$("#expressnoticearea").hide();
+				$("#normalarea").fadeIn();
+				$("#addressarea").fadeIn();
+				$("#selfcollectdatearea").hide();
+				
+				document.getElementById("submitregistrationbutton").addEventListener("click", function() {
+  					if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+					($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+					($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) ) {
+						$("#otherarea").hide();
+						alert("Please do not leave the required fields empty!");
+					}
+				
+					if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+					($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+					($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) ) {
+						$("#submitregistrationbutton").hide();
+						$("#otherarea").fadeIn();
+					}
+				});
      			}
 			
 			if ( $(this).val().includes("Express") ) {
 				$("#expressnoticearea").fadeIn();
 				$("#normalarea").fadeIn();
-			}
-		});
-		
-		document.getElementById("submitregistrationbutton").addEventListener("click", function() {
-  			if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
-			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
-				$("#otherarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
+				$("#addressarea").fadeIn();
+				$("#selfcollectdatearea").hide();
 				
-			if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0)) {
-				$("#submitregistrationbutton").hide();
-				$("#otherarea").fadeIn();
+				document.getElementById("submitregistrationbutton").addEventListener("click", function() {
+  					if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+					($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+					($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) ) {
+						$("#otherarea").hide();
+						alert("Please do not leave the required fields empty!");
+					}
+				
+					if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+					($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+					($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) ) {
+						$("#submitregistrationbutton").hide();
+						$("#otherarea").fadeIn();
+					}
+				});
 			}
 		});
 

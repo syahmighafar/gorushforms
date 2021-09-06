@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
 		$("#confirmationarea").hide();
+		$("#addressarea").hide();
+		$("#selfcollectdatearea").hide();
 
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
@@ -39,13 +41,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		document.getElementById("submitregistrationbutton").addEventListener("click", function() {
   			if ( ($("#Full-Name").val().length == 0 ) || ($("#Patient-Service-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
-			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+			($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+			($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) ) {
 				$("#otherarea").hide();
 				alert("Please do not leave the required fields empty!");
 			}
 				
-			if (($("#Full-Name").val().length != 0) && ($("#Patient-Service-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0)) {
+			if ( ($("#Full-Name").val().length != 0) && ($("#Patient-Service-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+			($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+			($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) ) {
 				$("#submitregistrationbutton").hide();
 				$("#otherarea").fadeIn();
 			}

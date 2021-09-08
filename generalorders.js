@@ -11,13 +11,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Sender-Phone").required = false;
 		document.getElementById("email").required = false;
 		document.getElementById("Pick-Up-Address").required = false;
-		document.getElementsByName("Pick-Up Date").required = false;
 	
 		document.getElementById("Delivery-Type").required = false;
 		document.getElementById("Receiver-Name").required = false;
 		document.getElementById("Receiver-Phone").required = false;
 		document.getElementById("Delivery-Address").required = false;
-		document.getElementsByName("Delivery Date").required = false;
 		document.getElementById("Product-Type").required = false;
 		document.getElementById("Product-Weight").required = false;
 		document.getElementById("codrequired").required = false;
@@ -36,13 +34,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = false;
 				document.getElementById("email").required = false;
 				document.getElementById("Pick-Up-Address").required = false;
-				document.getElementsByName("Pick-Up Date").required = false;
 	
 				document.getElementById("Delivery-Type").required = false;
 				document.getElementById("Receiver-Name").required = false;
 				document.getElementById("Receiver-Phone").required = false;
 				document.getElementById("Delivery-Address").required = false;
-				document.getElementsByName("Delivery Date").required = false;
 				document.getElementById("Product-Type").required = false;
 				document.getElementById("Product-Weight").required = false;
 				document.getElementById("codrequired").required = false;
@@ -62,13 +58,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = true;
 				document.getElementById("email").required = true;
 				document.getElementById("Pick-Up-Address").required = true;
-				document.getElementsByName("Pick-Up Date").required = true;
 	
 				document.getElementById("Delivery-Type").required = false;
 				document.getElementById("Receiver-Name").required = false;
 				document.getElementById("Receiver-Phone").required = false;
 				document.getElementById("Delivery-Address").required = false;
-				document.getElementsByName("Delivery Date").required = false;
 				document.getElementById("Product-Type").required = false;
 				document.getElementById("Product-Weight").required = false;
 				document.getElementById("codrequired").required = false;
@@ -89,13 +83,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = false;
 				document.getElementById("email").required = false;
 				document.getElementById("Pick-Up-Address").required = false;
-				document.getElementsByName("Pick-Up Date").required = false;
 	
 				document.getElementById("Delivery-Type").required = true;
 				document.getElementById("Receiver-Name").required = true;
 				document.getElementById("Receiver-Phone").required = true;
 				document.getElementById("Delivery-Address").required = true;
-				document.getElementsByName("Delivery Date").required = true;
 				document.getElementById("Product-Type").required = true;
 				document.getElementById("Product-Weight").required = true;
 				document.getElementById("codrequired").required = true;
@@ -146,13 +138,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = true;
 				document.getElementById("email").required = true;
 				document.getElementById("Pick-Up-Address").required = true;
-				document.getElementsByName("Pick-Up Date").required = true;
 		
 				document.getElementById("Delivery-Type").required = true;
 				document.getElementById("Receiver-Name").required = true;
 				document.getElementById("Receiver-Phone").required = true;
 				document.getElementById("Delivery-Address").required = true;
-				document.getElementsByName("Delivery Date").required = true;
 				document.getElementById("Product-Type").required = true;
 				document.getElementById("Product-Weight").required = true;
 				document.getElementById("codrequired").required = true;

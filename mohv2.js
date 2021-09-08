@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#confirmationarea").hide();
 		$("#addressarea").hide();
 		$("#selfcollectdatearea").hide();
-		$("#bruphonechoicearea").fadeIn();
-		$("#brucontactnumarea").fadeIn();
+		$("#bruphonechoicearea").hide();
+		$("#brucontactnumarea").hide();
 		$("#nonbrucontactnumarea").hide();
-		$("#addcontactnumarea").fadeIn();
-		$("#submitphonebutton").fadeIn();
+		$("#addcontactnumarea").hide();
+		$("#submitphonebutton").hide();
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {

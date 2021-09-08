@@ -79,13 +79,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById("submitregistrationbutton").addEventListener("click", function() {
   					if ( ($("#Full-Name").val().length == 0 ) || ($("#Patient-Number").val().length == 0 ) || ($("#Selfcollect-Date").val().length == 0) ) {
-						$("#otherarea").hide();
+						$("#bruphonechoicearea").hide();
 						alert("Please do not leave the required fields empty!");
 					}
 				
 					if ( ($("#Full-Name").val().length != 0) && ($("#Patient-Number").val().length != 0) && ($("#Selfcollect-Date").val().length != 0) ) {
 						$("#submitregistrationbutton").hide();
-						$("#otherarea").fadeIn();
+						$("#bruphonechoicearea").fadeIn();
 					}
 				});
 			}

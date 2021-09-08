@@ -122,12 +122,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#submitphonebutton").fadeIn();
 				
 				document.getElementById("submitphonebutton").addEventListener("click", function() {
-  					if ( ($("#Contact-Number").val().length == 0 ) || ($("#Additional-Contact-Number").val().length == 0 ) ) {
+  					if ( ($("#Contact-Number").val().length == 0 ) ) {
 						$("#otherarea").hide();
 						alert("Please do not leave the required fields empty!");
 					}
 				
-					if ( ($("#Contact-Number").val().length != 0) && ($("#Additional-Contact-Number").val().length != 0) ) {
+					if ( ($("#Contact-Number").val().length != 0) ) {
 						$("#submitphonebutton").hide();
 						$("#otherarea").fadeIn();
 					}
@@ -141,12 +141,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#submitphonebutton").fadeIn();
 				
 				document.getElementById("submitphonebutton").addEventListener("click", function() {
-  					if ( ($("#Non-Brunei-Contact-Number").val().length == 0 ) || ($("#Additional-Contact-Number").val().length == 0 ) ) {
+  					if ( ($("#Non-Brunei-Contact-Number").val().length == 0 ) ) {
 						$("#otherarea").hide();
 						alert("Please do not leave the required fields empty!");
 					}
 				
-					if ( ($("#Non-Brunei-Contact-Number").val().length != 0) && ($("#Additional-Contact-Number").val().length != 0) ) {
+					if ( ($("#Non-Brunei-Contact-Number").val().length != 0) ) {
 						$("#submitphonebutton").hide();
 						$("#otherarea").fadeIn();
 					}

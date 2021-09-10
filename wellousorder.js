@@ -4,10 +4,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
     		$("#deliverytypearea").hide();
     		$("#deliverychoicearea").hide();
     		$("#receiverarea").hide();
-    		$("#codarea").hide();
-    		$("#codamountarea").hide();
     		$("#paymentarea").hide();
     		$("#confirmationarea").hide();
+		addressarea
+		selfcollectdatearea
+		delete-item-1
+		item-area-1
 	
 		document.getElementById("COD-Amount").required = false;
     

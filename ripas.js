@@ -5,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#uploadarea").hide();
 		$("#deliverytypearea").hide();
 		$("#expressnoticearea").hide();
-		$("#deliverychoicearea").hide();
 		$("#normalarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
@@ -18,8 +17,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("uploadbruhealthproof").required = false;
 		
 		document.getElementById("Type-Of-Mandatory").required = true;
-		
-		document.getElementById("Mandatory-Option").required = false;
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
@@ -43,42 +40,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('#Type-Of-Mandatory').change(function(){
 			if ( $(this).val().length == 0 ) {
-				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
 				$("#normalarea").hide();
      			}
 			
 			if ( $(this).val().includes("Self Collect") ) {
-				$("#deliverychoicearea").hide();
 				$("#expressnoticearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
 				$("#normalarea").fadeIn();
 			}
 	     
      			if ( ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) ) {
-				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").hide();
-				document.getElementById("Mandatory-Option").required = true;
-				$("#normalarea").hide();
+				$("#normalarea").fadeIn();
      			}
 			
 			if ( $(this).val().includes("Express") ) {
-				$("#deliverychoicearea").fadeIn();
 				$("#expressnoticearea").fadeIn();
-				document.getElementById("Mandatory-Option").required = true;
-				$("#normalarea").hide();
-			}
-		});
-		
-		$('#Mandatory-Option').change(function(){
-			if($(this).val().length == 0) {
-				$("#normalarea").hide();
-     			}
-			
-			if($(this).val().length != 0) {
 				$("#normalarea").fadeIn();
-     			}
+			}
 		});
 		
 		$('#IC-or-Passport').change(function(){

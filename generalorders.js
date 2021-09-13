@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Product-Weight").required = false;
 		document.getElementById("codrequired").required = false;
 		document.getElementById("COD-Amount").required = false;
-	
-		$("#deliverychoicearea").hide();
-		document.getElementById("Mandatory-Option").required = false;
 
      		$('#Pickup-or-Delivery').change(function(){
 			
@@ -44,8 +41,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = false;
 				document.getElementById("COD-Amount").required = false;
 				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
 				$("#paymentarea").hide();
      			}
 	     
@@ -67,9 +62,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Product-Weight").required = false;
 				document.getElementById("codrequired").required = false;
 				document.getElementById("COD-Amount").required = false;
-				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
+			
 				$("#paymentarea").show();
 	
      			}
@@ -93,22 +86,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = true;
 				document.getElementById("COD-Amount").required = false;
 				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
 				$("#paymentarea").show();
-				
-				$('#Delivery-Type').change(function(){
-					
-					if($(this).val().length == 0) {
-			    			 $("#deliverychoicearea").hide();
-						document.getElementById("Mandatory-Option").required = false;
-		     			}
-	     
-     					if($(this).val()=="Standard") {
-						$("#deliverychoicearea").show();
-						document.getElementById("Mandatory-Option").required = true;
-     					}
-				});
 	     
 	     			$('#codrequired').change(function(){
 					if($(this).val().length == 0) {
@@ -126,8 +104,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			     			document.getElementById("COD-Amount").required = false;
 		     			}
 	     			});
-	     
-	     
      			}
 		
 			if($(this).val()==="Pickup and Delivery") {
@@ -148,23 +124,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = true;
 				document.getElementById("COD-Amount").required = false;
 				
-				$("#deliverychoicearea").hide();
-				document.getElementById("Mandatory-Option").required = false;
-				
 				$("#paymentarea").show();
-				
-				$('#Delivery-Type').change(function(){
-					
-					if($(this).val().length == 0) {
-			    			 $("#deliverychoicearea").hide();
-						document.getElementById("Mandatory-Option").required = false;
-		     			}
-	     
-     					if($(this).val()=="Standard") {
-						$("#deliverychoicearea").show();
-						document.getElementById("Mandatory-Option").required = true;
-     					}
-				});
 		
 				$('#codrequired').change(function(){
 					if($(this).val().length == 0) {

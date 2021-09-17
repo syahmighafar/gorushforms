@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#patientcontrolarea").hide();
 				$("#completeaddpatient").hide();
 				$("#otherarea").hide();
+				$("#addpatientbutton").hide();
       			}
 	     
       			if($(this).val()=="Yes") {
@@ -141,6 +142,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#patientcontrolarea").fadeIn();
 				$("#completeaddpatient").fadeIn();
 				$("#otherarea").hide();
+				$("#addpatientbutton").fadeIn();
 				
 				var additional_patient = document.getElementById('addpatientarea2');
 				countadd = 0;
@@ -220,6 +222,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#patientcontrolarea").hide();
 				$("#completeaddpatient").hide();
 				$("#otherarea").fadeIn();
+				$("#addpatientbutton").hide();
       			}
     		});
 		

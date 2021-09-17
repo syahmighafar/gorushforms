@@ -22,9 +22,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		document.getElementById("Type-Of-Mandatory").required = true;
 		
-		document.getElementById("Additional-Full-Name").required = false;
-		document.getElementById("Additional-Bru-HIMS-Number").required = false;
-		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
 				$("#uploadarea").hide();
@@ -140,9 +137,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#otherarea").hide();
 				$("#addpatientbutton").hide();
 				
-				document.getElementById("Additional-Full-Name").required = false;
-				document.getElementById("Additional-Bru-HIMS-Number").required = false;
-				
 				document.getElementById('Additional-Full-Name').value = '';
 				document.getElementById('Additional-Bru-HIMS-Number').value = '';
       			}
@@ -225,8 +219,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
 				
 				document.getElementById("completeaddpatient").addEventListener("click", function() {
-  					$("#completeaddpatient").hide();
-					$("#otherarea").fadeIn();
+					if ( ($("#Additional-Full-Name-1").val().length == 0 ) || ($("#Additional-Bru-HIMS-Number-1").val().length == 0 ) ) {
+					$("#addpatientarea").hide();
+					alert("Please do not leave the required fields empty!");
+					}
+
+					if ( ($("#Additional-Full-Name-1").val().length != 0) && ($("#Additional-Bru-HIMS-Number-1").val().length != 0) ) {
+						$("#completeaddpatient").hide();
+						$("#otherarea").fadeIn();
+					}
 				});
 			}
       		
@@ -237,9 +238,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").hide();
 				$("#otherarea").fadeIn();
 				$("#addpatientbutton").hide();
-				
-				document.getElementById("Additional-Full-Name").required = false;
-				document.getElementById("Additional-Bru-HIMS-Number").required = false;
 				
 				document.getElementById('Additional-Full-Name').value = '';
 				document.getElementById('Additional-Bru-HIMS-Number').value = '';

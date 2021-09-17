@@ -183,7 +183,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 					var newField = document.createElement('input');
 					newField.setAttribute('type','text');
-					newField.setAttribute('class','Bru HIMS Number');
+					newField.setAttribute('class','text-field w-input');
 					newField.setAttribute('minlength','10');
 					newField.setAttribute('name','Additional Bru HIMS Number ' + (countadd+1));
 					newField.setAttribute('data-name','Bru HIMS Number ' + (countadd+1));

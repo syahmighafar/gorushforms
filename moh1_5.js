@@ -149,7 +149,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Additional-Bru-HIMS-Number").required = true;
 				
 				var additional_patient = document.getElementById('addpatientarea2');
-				countadd = 0;
+				countadd = 1;
 				
 				document.getElementById("addpatientbutton").addEventListener("click", function() {
 					var newheading = document.createElement('h4');
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					newField.setAttribute('maxlength','256');
 					newField.setAttribute('name','Full Name ' + (countadd+1));
 					newField.setAttribute('data-name','Full Name ' + (countadd+1));
-					newField.setAttribute('id','Full-Name'+ (countadd+1));
+					newField.setAttribute('id','Additional-Full-Name-'+ (countadd+1));
 					newField.setAttribute('placeholder','Full Name');
 					newField.required = true;
 					document.getElementById("fullnamearea"+ (countadd+1)).appendChild(newField);
@@ -187,9 +187,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					newField.setAttribute('type','text');
 					newField.setAttribute('class','Bru HIMS Number');
 					newField.setAttribute('minlength','10');
-					newField.setAttribute('name','Bru-HIMS-Number-' + (countadd+1));
+					newField.setAttribute('name','Additional Bru HIMS Number ' + (countadd+1));
 					newField.setAttribute('data-name','Bru HIMS Number ' + (countadd+1));
-					newField.setAttribute('id','Bru-HIMS-Number-'+ (countadd+1));
+					newField.setAttribute('id','Additional-Bru-HIMS-Number-'+ (countadd+1));
 					newField.setAttribute('placeholder','BNxxxxxxxx');
 					newField.required = true;
 					document.getElementById("bruhimsnumarea"+ (countadd+1)).appendChild(newField);

@@ -72,6 +72,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#passportnumarea").hide();
 				$("#submitregistrationbutton").hide();
 				$("#submitregistrationpassbutton").hide();
+				
+				document.getElementById('IC-Number').value = '';
+				document.getElementById('Passport-Number').value = '';
       			}
 	     
       			if($(this).val()=="IC") {
@@ -80,6 +83,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#passportnumarea").hide();
 				$("#submitregistrationbutton").fadeIn();
 				$("#submitregistrationpassbutton").hide();
+				
+				document.getElementById('Passport-Number').value = '';
       			}
       		
 			if($(this).val()=="Passport") {
@@ -88,6 +93,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#passportnumarea").fadeIn();
 				$("#submitregistrationbutton").hide();
 				$("#submitregistrationpassbutton").fadeIn();
+				
+				document.getElementById('IC-Number').value = '';
       			}
     		});
 		
@@ -135,6 +142,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById("Additional-Full-Name").required = false;
 				document.getElementById("Additional-Bru-HIMS-Number").required = false;
+				
+				document.getElementById('Additional-Full-Name').value = '';
+				document.getElementById('Additional-Bru-HIMS-Number').value = '';
       			}
 	     
       			if($(this).val()=="Yes") {
@@ -230,6 +240,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById("Additional-Full-Name").required = false;
 				document.getElementById("Additional-Bru-HIMS-Number").required = false;
+				
+				document.getElementById('Additional-Full-Name').value = '';
+				document.getElementById('Additional-Bru-HIMS-Number').value = '';
       			}
     		});
 		

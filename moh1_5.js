@@ -20,26 +20,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#addpatientbutton").hide();
 		$("#removepatientbutton").hide();
 
-		document.getElementById("uploadbruhealthproof").required = false;
-		
 		document.getElementById("Type-Of-Mandatory").required = true;
+		
+		document.getElementById("Additional-Full-Name").required = false;
+		document.getElementById("Additional-Bru-HIMS-Number").required = false;
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
 				$("#uploadarea").hide();
-	     			document.getElementById("uploadbruhealthproof").required = false;
 				$("#deliverytypearea").hide();
      			}
 	     
      			if($(this).val()=="Yes") {
 				$("#uploadarea").fadeIn();
-	     			document.getElementById("uploadbruhealthproof").required = true;
 				$("#deliverytypearea").fadeIn();
      			}
 		
      			if($(this).val()=="No") {
 				$("#uploadarea").hide();
-	     			document.getElementById("uploadbruhealthproof").required = false;
 				$("#deliverytypearea").fadeIn();
      			}
 		});
@@ -134,6 +132,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").hide();
 				$("#otherarea").hide();
 				$("#addpatientbutton").hide();
+				
+				document.getElementById("Additional-Full-Name").required = false;
+				document.getElementById("Additional-Bru-HIMS-Number").required = false;
       			}
 	     
       			if($(this).val()=="Yes") {
@@ -143,6 +144,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").fadeIn();
 				$("#otherarea").hide();
 				$("#addpatientbutton").fadeIn();
+				
+				document.getElementById("Additional-Full-Name").required = true;
+				document.getElementById("Additional-Bru-HIMS-Number").required = true;
 				
 				var additional_patient = document.getElementById('addpatientarea2');
 				countadd = 0;
@@ -223,6 +227,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").hide();
 				$("#otherarea").fadeIn();
 				$("#addpatientbutton").hide();
+				
+				document.getElementById("Additional-Full-Name").required = false;
+				document.getElementById("Additional-Bru-HIMS-Number").required = false;
       			}
     		});
 		

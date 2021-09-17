@@ -136,9 +136,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").hide();
 				$("#otherarea").hide();
 				$("#addpatientbutton").hide();
-				
-				document.getElementById('Additional-Full-Name').value = '';
-				document.getElementById('Additional-Bru-HIMS-Number').value = '';
       			}
 	     
       			if($(this).val()=="Yes") {
@@ -148,9 +145,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").fadeIn();
 				$("#otherarea").hide();
 				$("#addpatientbutton").fadeIn();
-				
-				document.getElementById("Additional-Full-Name").required = true;
-				document.getElementById("Additional-Bru-HIMS-Number").required = true;
 				
 				var additional_patient = document.getElementById('addpatientarea2');
 				countadd = 1;
@@ -238,9 +232,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#completeaddpatient").hide();
 				$("#otherarea").fadeIn();
 				$("#addpatientbutton").hide();
-				
-				document.getElementById('Additional-Full-Name').value = '';
-				document.getElementById('Additional-Bru-HIMS-Number').value = '';
       			}
     		});
 		

@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById("completeaddpatient").addEventListener("click", function() {
 					if ( ($("#Additional-Full-Name-1").val().length == 0 ) || ($("#Additional-Bru-HIMS-Number-1").val().length == 0 ) ) {
-					$("#addpatientarea").hide();
+					$("#otherarea").hide();
 					alert("Please do not leave the required fields empty!");
 					}
 

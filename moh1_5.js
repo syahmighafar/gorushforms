@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if($(this).val().length == 0) {
 				$("#requesterarea").hide();
 				$("#quarantinearea").hide();
+				$("#requesternextbutton").hide();
 				
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';
@@ -39,6 +40,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			if($(this).val()=="Yes") {
 				$("#requesterarea").fadeIn();
 				$("#quarantinearea").hide();
+				$("#requesternextbutton").fadeIn();
 				
 				document.getElementById("requesternextbutton").addEventListener("click", function() {
 					if ( ($("#Requester-Name").val().length == 0 ) || ($("#Requester-Contact-Number").val().length == 0 ) ) {
@@ -56,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			if($(this).val()=="No") {
 				$("#requesterarea").hide();
 				$("#quarantinearea").fadeIn();
+				$("#requesternextbutton").hide();
 				
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';

@@ -19,8 +19,50 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#completeaddpatient").hide();
 		$("#addpatientbutton").hide();
 		$("#removepatientbutton").hide();
+		$("#addressarea").hide();
+		$("#selfcollectdatearea").hide();
+		$("#requesterarea").hide();
+		$("#quarantinearea").hide();
+		$("#requesternextbutton").hide();
 
 		document.getElementById("Type-Of-Mandatory").required = true;
+		
+		$('#Register-For-Other-Person').change(function(){
+			if($(this).val().length == 0) {
+				$("#requesterarea").hide();
+				$("#quarantinearea").hide();
+				
+				document.getElementById('Requester-Name').value = '';
+				document.getElementById('Requester-Contact-Number').value = '';
+     			}
+	     
+     			if($(this).val()=="Yes") {
+				$("#requesterarea").fadeIn();
+				$("#quarantinearea").hide();
+				
+				requesternextbutton
+				
+				document.getElementById("requesternextbutton").addEventListener("click", function() {
+					if ( ($("#Requester-Name").val().length == 0 ) || ($("#Requester-Contact-Number").val().length == 0 ) ) {
+					$("#quarantinearea").hide();
+					alert("Please do not leave the required fields empty!");
+					}
+
+					if ( ($("#Requester-Name").val().length != 0) && ($("#Requester-Contact-Number").val().length != 0) ) {
+						$("#requesternextbutton").hide();
+						$("#quarantinearea").fadeIn();
+					}
+				});
+     			}
+		
+     			if($(this).val()=="No") {
+				$("#requesterarea").hide();
+				$("#quarantinearea").fadeIn();
+				
+				document.getElementById('Requester-Name').value = '';
+				document.getElementById('Requester-Contact-Number').value = '';
+     			}
+		});
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
@@ -43,87 +85,238 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ( $(this).val().length == 0 ) {
 				$("#expressnoticearea").hide();
 				$("#normalarea").hide();
+				
+				$("#addressarea").hide();
+				$("#selfcollectdatearea").hide();
      			}
 			
 			if ( $(this).val().includes("Self Collect") ) {
 				$("#expressnoticearea").hide();
 				$("#normalarea").fadeIn();
+				
+				$("#addressarea").hide();
+				$("#selfcollectdatearea").fadeIn();
+				
+				$('#IC-or-Passport').change(function(){
+					if($(this).val().length == 0) {
+
+						$("#icnumarea").hide();
+						$("#passportnumarea").hide();
+						$("#submitregistrationbutton").hide();
+						$("#submitregistrationpassbutton").hide();
+
+						document.getElementById('IC-Number').value = '';
+						document.getElementById('Passport-Number').value = '';
+					}
+
+					if($(this).val()=="IC") {
+
+						$("#icnumarea").fadeIn();
+						$("#passportnumarea").hide();
+						$("#submitregistrationbutton").fadeIn();
+						$("#submitregistrationpassbutton").hide();
+
+						document.getElementById('Passport-Number').value = '';
+						
+						document.getElementById("submitregistrationbutton").addEventListener("click", function() {
+							if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+							($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0 ) ||
+							($("#Selfcollect-Date").val().length == 0) ) {
+								$("#addpatientarea").hide();
+								alert("Please do not leave the required fields empty!");
+							}
+
+							if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+							($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
+							($("#Selfcollect-Date").val().length != 0) ) {
+								$("#submitregistrationbutton").hide();
+								$("#addpatientarea").fadeIn();
+							}
+						});
+					}
+
+					if($(this).val()=="Passport") {
+
+						$("#icnumarea").hide();
+						$("#passportnumarea").fadeIn();
+						$("#submitregistrationbutton").hide();
+						$("#submitregistrationpassbutton").fadeIn();
+
+						document.getElementById('IC-Number').value = '';
+						
+						document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
+							if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+							($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#Passport-Number").val().length == 0 ) ||
+							($("#Selfcollect-Date").val().length == 0) ) {
+								$("#addpatientarea").hide();
+								alert("Please do not leave the required fields empty!");
+							}
+
+							if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+							($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#Passport-Number").val().length != 0) &&
+							($("#Selfcollect-Date").val().length != 0) ) {
+								$("#submitregistrationpassbutton").hide();
+								$("#addpatientarea").fadeIn();
+							}
+						});
+					}
+				});
+				
+				
 			}
 	     
      			if ( ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) ) {
 				$("#expressnoticearea").hide();
 				$("#normalarea").fadeIn();
+				
+				$("#addressarea").fadeIn();
+				$("#selfcollectdatearea").hide();
+				
+				$('#IC-or-Passport').change(function(){
+					if($(this).val().length == 0) {
+
+						$("#icnumarea").hide();
+						$("#passportnumarea").hide();
+						$("#submitregistrationbutton").hide();
+						$("#submitregistrationpassbutton").hide();
+
+						document.getElementById('IC-Number').value = '';
+						document.getElementById('Passport-Number').value = '';
+					}
+
+					if($(this).val()=="IC") {
+
+						$("#icnumarea").fadeIn();
+						$("#passportnumarea").hide();
+						$("#submitregistrationbutton").fadeIn();
+						$("#submitregistrationpassbutton").hide();
+
+						document.getElementById('Passport-Number').value = '';
+						
+						document.getElementById("submitregistrationbutton").addEventListener("click", function() {
+							if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+							($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0 ) ||
+							($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+							($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+								$("#addpatientarea").hide();
+								alert("Please do not leave the required fields empty!");
+							}
+
+							if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+							($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
+							($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+							($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
+								$("#submitregistrationbutton").hide();
+								$("#addpatientarea").fadeIn();
+							}
+						});
+					}
+
+					if($(this).val()=="Passport") {
+
+						$("#icnumarea").hide();
+						$("#passportnumarea").fadeIn();
+						$("#submitregistrationbutton").hide();
+						$("#submitregistrationpassbutton").fadeIn();
+
+						document.getElementById('IC-Number').value = '';
+						
+						document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
+							if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+							($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#Passport-Number").val().length == 0 ) ||
+							($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+							($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+								$("#addpatientarea").hide();
+								alert("Please do not leave the required fields empty!");
+							}
+
+							if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+							($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#Passport-Number").val().length != 0) &&
+							($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+							($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
+								$("#submitregistrationpassbutton").hide();
+								$("#addpatientarea").fadeIn();
+							}
+						});
+					}
+				});
      			}
 			
 			if ( $(this).val().includes("Express") ) {
 				$("#expressnoticearea").fadeIn();
 				$("#normalarea").fadeIn();
-			}
-		});
-		
-		$('#IC-or-Passport').change(function(){
-			
-			if($(this).val().length == 0) {
+				
+				$("#addressarea").fadeIn();
+				$("#selfcollectdatearea").fadeIn();
+				
+				$('#IC-or-Passport').change(function(){
+					if($(this).val().length == 0) {
 
-				$("#icnumarea").hide();
-				$("#passportnumarea").hide();
-				$("#submitregistrationbutton").hide();
-				$("#submitregistrationpassbutton").hide();
-				
-				document.getElementById('IC-Number').value = '';
-				document.getElementById('Passport-Number').value = '';
-      			}
-	     
-      			if($(this).val()=="IC") {
+						$("#icnumarea").hide();
+						$("#passportnumarea").hide();
+						$("#submitregistrationbutton").hide();
+						$("#submitregistrationpassbutton").hide();
 
-				$("#icnumarea").fadeIn();
-				$("#passportnumarea").hide();
-				$("#submitregistrationbutton").fadeIn();
-				$("#submitregistrationpassbutton").hide();
-				
-				document.getElementById('Passport-Number').value = '';
-      			}
-      		
-			if($(this).val()=="Passport") {
+						document.getElementById('IC-Number').value = '';
+						document.getElementById('Passport-Number').value = '';
+					}
 
-				$("#icnumarea").hide();
-				$("#passportnumarea").fadeIn();
-				$("#submitregistrationbutton").hide();
-				$("#submitregistrationpassbutton").fadeIn();
-				
-				document.getElementById('IC-Number').value = '';
-      			}
-    		});
-		
-		document.getElementById("submitregistrationbutton").addEventListener("click", function() {
-  			if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
-			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0 ) ||
-			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
-				$("#addpatientarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
-				
-			if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
-			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0)) {
-				$("#submitregistrationbutton").hide();
-				$("#addpatientarea").fadeIn();
-			}
-		});
-		
-		document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
-  			if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
-			($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#Passport-Number").val().length == 0 ) ||
-			($("#Delivery-Address").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
-				$("#addpatientarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
-				
-			if (($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
-			($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#Passport-Number").val().length != 0) &&
-			($("#Delivery-Address").val().length != 0) && ($("#Postal-Code").val().length != 0)) {
-				$("#submitregistrationpassbutton").hide();
-				$("#addpatientarea").fadeIn();
+					if($(this).val()=="IC") {
+
+						$("#icnumarea").fadeIn();
+						$("#passportnumarea").hide();
+						$("#submitregistrationbutton").fadeIn();
+						$("#submitregistrationpassbutton").hide();
+
+						document.getElementById('Passport-Number').value = '';
+						
+						document.getElementById("submitregistrationbutton").addEventListener("click", function() {
+							if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+							($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#IC-Number").val().length == 0 ) ||
+							($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+							($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+								$("#addpatientarea").hide();
+								alert("Please do not leave the required fields empty!");
+							}
+
+							if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+							($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#IC-Number").val().length != 0) &&
+							($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+							($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
+								$("#submitregistrationbutton").hide();
+								$("#addpatientarea").fadeIn();
+							}
+						});
+					}
+
+					if($(this).val()=="Passport") {
+
+						$("#icnumarea").hide();
+						$("#passportnumarea").fadeIn();
+						$("#submitregistrationbutton").hide();
+						$("#submitregistrationpassbutton").fadeIn();
+
+						document.getElementById('IC-Number').value = '';
+						
+						document.getElementById("submitregistrationpassbutton").addEventListener("click", function() {
+							if ( ($("#Full-Name").val().length == 0 ) || ($("#Bru-HIMS-Number").val().length == 0 ) || ($("#Contact-Number").val().length == 0) ||
+							($("#Date-of-Birth").val().length == 0 ) || ($("#IC-or-Passport").val().length == 0) || ($("#Passport-Number").val().length == 0 ) ||
+							($("#District").val().length == 0) || ($("#Kampung").val().length == 0) || ($("#Jalan-Location").val().length == 0) ||
+							($("#Simpang-Number").val().length == 0) || ($("#House-Unit-Number").val().length == 0) || ($("#Postal-Code").val().length == 0) ) {
+								$("#addpatientarea").hide();
+								alert("Please do not leave the required fields empty!");
+							}
+
+							if ( ($("#Full-Name").val().length != 0) && ($("#Bru-HIMS-Number").val().length != 0) && ($("#Contact-Number").val().length != 0) &&
+							($("#Date-of-Birth").val().length != 0) && ($("#IC-or-Passport").val().length != 0) && ($("#Passport-Number").val().length != 0) &&
+							($("#District").val().length != 0) && ($("#Kampung").val().length != 0) && ($("#Jalan-Location").val().length != 0) &&
+							($("#Simpang-Number").val().length != 0) && ($("#House-Unit-Number").val().length != 0) && ($("#Postal-Code").val().length != 0) ) {
+								$("#submitregistrationpassbutton").hide();
+								$("#addpatientarea").fadeIn();
+							}
+						});
+					}
+				});
 			}
 		});
 		
@@ -191,6 +384,40 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					newField.setAttribute('placeholder','BNxxxxxxxx');
 					newField.required = true;
 					document.getElementById("bruhimsnumarea"+ (countadd+1)).appendChild(newField);
+					
+					var newDiv = document.createElement("div");
+					newDiv.setAttribute("id","addcontactnumarea"+ (countadd+1))
+					additional_patient.appendChild(newDiv);
+
+					var newLabel = document.createElement('label');
+					newLabel.innerHTML = "Patient Contact Number:*";
+					document.getElementById("addcontactnumarea"+ (countadd+1)).appendChild(newLabel);
+
+					var newField = document.createElement('input');
+					newField.setAttribute('type','text');
+					newField.setAttribute('class','text-field w-input');
+					newField.setAttribute('name','Additional Contact Number ' + (countadd+1));
+					newField.setAttribute('data-name','Additional Contact Number ' + (countadd+1));
+					newField.setAttribute('id','Additional-Contact-Number-'+ (countadd+1));
+					newField.required = true;
+					document.getElementById("addcontactnumarea"+ (countadd+1)).appendChild(newField);
+
+					var newDiv = document.createElement("div");
+					newDiv.setAttribute("id","addicnumarea"+ (countadd+1))
+					additional_patient.appendChild(newDiv);
+
+					var newLabel = document.createElement('label');
+					newLabel.innerHTML = "IC Number:*";
+					document.getElementById("addicnumarea"+ (countadd+1)).appendChild(newLabel);
+
+					var newField = document.createElement('input');
+					newField.setAttribute('type','text');
+					newField.setAttribute('class','text-field w-input');
+					newField.setAttribute('name','Additional IC ' + (countadd+1));
+					newField.setAttribute('data-name','Additional IC ' + (countadd+1));
+					newField.setAttribute('id','Additional-IC-'+ (countadd+1));
+					newField.required = true;
+					document.getElementById("addicnumarea"+ (countadd+1)).appendChild(newField);
 
 					countadd = countadd + 1;
 					
@@ -201,6 +428,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					var div_tags = additional_patient.getElementsByTagName('div');
 					var heading_tags = additional_patient.getElementsByTagName('h4');
 					if(div_tags.length != 0) {
+						additional_patient.removeChild(div_tags[(div_tags.length) - 1]);
+						additional_patient.removeChild(div_tags[(div_tags.length) - 1]);
 						additional_patient.removeChild(div_tags[(div_tags.length) - 1]);
 						additional_patient.removeChild(div_tags[(div_tags.length) - 1]);
 						additional_patient.removeChild(heading_tags[(heading_tags.length) - 1]);

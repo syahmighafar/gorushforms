@@ -40,8 +40,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#requesterarea").fadeIn();
 				$("#quarantinearea").hide();
 				
-				requesternextbutton
-				
 				document.getElementById("requesternextbutton").addEventListener("click", function() {
 					if ( ($("#Requester-Name").val().length == 0 ) || ($("#Requester-Contact-Number").val().length == 0 ) ) {
 					$("#quarantinearea").hide();

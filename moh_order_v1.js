@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						alert("Please do not leave the required fields empty!");
 					}
 
-					if ( ($("#Full-Name").val().length != 0) && ($("#Selfcollect-Date").val().length != 0) ) {
+					if ( ($("#Bru-HIMS-Number").val().length != 0) && ($("#Selfcollect-Date").val().length != 0) ) {
 						$("#submitregistrationbutton").hide();
 						$("#addpatientarea").fadeIn();
 					}

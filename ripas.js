@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$("#uploadarea").hide();
 		$("#deliverytypearea").hide();
-		$("#expressnoticearea").hide();
 		$("#normalarea").hide();
 		$("#otherarea").hide();
 		$("#paymentnoticearea").hide();
@@ -13,51 +12,51 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#passportnumarea").hide();
 		$("#submitregistrationbutton").hide();
 		$("#submitregistrationpassbutton").hide();
-		
-		document.getElementById("uploadbruhealthproof").required = false;
-		
+		$("#docappointarea").hide();
+
 		document.getElementById("Type-Of-Mandatory").required = true;
 		
      		$('#Currently-in-Quarantine').change(function(){
 			if($(this).val().length == 0) {
 				$("#uploadarea").hide();
-	     			document.getElementById("uploadbruhealthproof").required = false;
-				$("#deliverytypearea").hide();
+				$("#docappointarea").hide();
      			}
 	     
      			if($(this).val()=="Yes") {
 				$("#uploadarea").fadeIn();
-	     			document.getElementById("uploadbruhealthproof").required = true;
-				$("#deliverytypearea").fadeIn();
+				$("#docappointarea").fadeIn();
      			}
 		
      			if($(this).val()=="No") {
 				$("#uploadarea").hide();
-	     			document.getElementById("uploadbruhealthproof").required = false;
-				$("#deliverytypearea").fadeIn();
+				$("#docappointarea").fadeIn();
      			}
+		});
+		
+		document.getElementById("docareasubmit").addEventListener("click", function() {
+  			if ( ($("#Doctor-Appointment-Area").val().length == 0 ) ) {
+				$("#deliverytypearea").hide();
+				alert("Please do not leave the required fields empty!");
+			}
+				
+			if ( ($("#Doctor-Appointment-Area").val().length != 0) ) {
+				$("#docareasubmit").hide();
+				$("#deliverytypearea").fadeIn();
+			}
 		});
 		
 		$('#Type-Of-Mandatory').change(function(){
 			if ( $(this).val().length == 0 ) {
-				$("#expressnoticearea").hide();
 				$("#normalarea").hide();
      			}
 			
 			if ( $(this).val().includes("Self Collect") ) {
-				$("#expressnoticearea").hide();
 				$("#normalarea").fadeIn();
 			}
 	     
-     			if ( ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) ) {
-				$("#expressnoticearea").hide();
+     			if ( ($(this).val().includes("Standard")) || ($(this).val().includes("Immediate")) || ($(this).val().includes("Express")) ) {
 				$("#normalarea").fadeIn();
      			}
-			
-			if ( $(this).val().includes("Express") ) {
-				$("#expressnoticearea").fadeIn();
-				$("#normalarea").fadeIn();
-			}
 		});
 		
 		$('#IC-or-Passport').change(function(){

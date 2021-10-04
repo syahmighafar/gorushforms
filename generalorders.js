@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Sender-Phone").required = false;
 		document.getElementById("email").required = false;
 		document.getElementById("Pick-Up-Address").required = false;
+		document.getElementById("Pickup-Date").required = false;
 	
 		document.getElementById("Delivery-Type").required = false;
 		document.getElementById("Receiver-Name").required = false;
@@ -31,6 +32,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = false;
 				document.getElementById("email").required = false;
 				document.getElementById("Pick-Up-Address").required = false;
+				document.getElementById("Pickup-Date").required = false;
 	
 				document.getElementById("Delivery-Type").required = false;
 				document.getElementById("Receiver-Name").required = false;
@@ -53,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = true;
 				document.getElementById("email").required = true;
 				document.getElementById("Pick-Up-Address").required = true;
+				document.getElementById("Pickup-Date").required = true;
 	
 				document.getElementById("Delivery-Type").required = false;
 				document.getElementById("Receiver-Name").required = false;
@@ -76,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = false;
 				document.getElementById("email").required = false;
 				document.getElementById("Pick-Up-Address").required = false;
+				document.getElementById("Pickup-Date").required = false;
 	
 				document.getElementById("Delivery-Type").required = true;
 				document.getElementById("Receiver-Name").required = true;
@@ -114,6 +118,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Sender-Phone").required = true;
 				document.getElementById("email").required = true;
 				document.getElementById("Pick-Up-Address").required = true;
+				document.getElementById("Pickup-Date").required = true;
 		
 				document.getElementById("Delivery-Type").required = true;
 				document.getElementById("Receiver-Name").required = true;

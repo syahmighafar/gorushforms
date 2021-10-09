@@ -19,14 +19,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#employementarea2").hide();
      			}
 	     
-     			if($(this).val()=="Dispatcher") {
+     			if($(this).val()=="Field Courier Logistic Support (Dispatchers - Full Time)") {
 				$("#dispatcherareanotice").fadeIn();
 				$("#employementarea1").fadeIn();
 				$("#employementarea2").hide();
 				$("#driverlicensearea").show();
      			}
 			
-     			if(($(this).val()=="Customer Services") || ($(this).val()=="Warehouse Operations") || ($(this).val()=="Back Office Operation") ) {
+     			if(($(this).val()=="Operation Officer") || ($(this).val()=="Warehouse Assistant") ) {
 				$("#dispatcherareanotice").hide();
 				$("#employementarea1").hide();
 				$("#employementarea2").fadeIn();

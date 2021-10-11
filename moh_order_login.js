@@ -34,6 +34,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").hide();
 				$("#temburonghcarea").hide();
+				
+				document.getElementById('BNHC').value = '';
+				document.getElementById('TUHC').value = '';
+				document.getElementById('BHC').value = '';
+				document.getElementById('TEHC').value = '';
 			}
 
 			if ($(this).val()=="Brunei Muara") {
@@ -41,6 +46,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").hide();
 				$("#temburonghcarea").hide();
+				
+				document.getElementById('BNHC').value = '';
+				document.getElementById('TUHC').value = '';
+				document.getElementById('BHC').value = '';
+				document.getElementById('TEHC').value = '';
 			}
 			
 			if ($(this).val()=="Tutong") {
@@ -48,6 +58,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#tutonghcarea").fadeIn();
 				$("#belaithcarea").hide();
 				$("#temburonghcarea").hide();
+				
+				document.getElementById('BNHC').value = '';
+				document.getElementById('TUHC').value = '';
+				document.getElementById('BHC').value = '';
+				document.getElementById('TEHC').value = '';
 			}
 			
 			if ($(this).val()=="Belait") {
@@ -55,6 +70,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").fadeIn();
 				$("#temburonghcarea").hide();
+				
+				document.getElementById('BNHC').value = '';
+				document.getElementById('TUHC').value = '';
+				document.getElementById('BHC').value = '';
+				document.getElementById('TEHC').value = '';
 			}
 			
 			if ($(this).val()=="Temburong") {
@@ -62,6 +82,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").hide();
 				$("#temburonghcarea").fadeIn();
+				
+				document.getElementById('BNHC').value = '';
+				document.getElementById('TUHC').value = '';
+				document.getElementById('BHC').value = '';
+				document.getElementById('TEHC').value = '';
 			}
 		});
 		
@@ -152,18 +177,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#notifyoftenarea").hide();
 				$("#remarkarea").hide();
 				$("#submitbutton").hide();
+				
+				$('input[name=radioOFTEN]').value = '';
 			}
 
 			if ($(this).val()=="Yes") {
 				$("#notifyoftenarea").fadeIn();
 				$("#remarkarea").hide();
 				$("#submitbutton").hide();
+				
+				$('input[name=radioOFTEN]').value = '';
 			}
 			
 			if ($(this).val()=="No") {
 				$("#notifyoftenarea").hide();
 				$("#remarkarea").fadeIn();
 				$("#submitbutton").fadeIn();
+				
+				$('input[name=radioOFTEN]').value = '';
 			}
 		});
 		

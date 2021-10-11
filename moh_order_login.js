@@ -15,9 +15,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#asknotifyarea").hide();
 		$("#notifyoftenarea").hide();
 		$("#submitarea").hide();
-		
-		
-		
 
 		$('input[name=radioQO]').change(function(){
 			if ($(this).val().length == 0) {

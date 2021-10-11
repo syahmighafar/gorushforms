@@ -135,18 +135,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").hide();
 				$("#selfcollectnextbutton").hide();
+				
+				document.getElementById('scDate').value = '';
 			}
 
 			if ( ($(this).val()=="Standard") || ($(this).val()=="Express") || ($(this).val()=="Immediate") ) {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
+				
+				document.getElementById('scDate').value = '';
 			}
 			
 			if ($(this).val()=="Self Collect") {
 				$("#selfcollectarea").fadeIn();
 				$("#paymentmethodarea").hide();
 				$("#selfcollectnextbutton").fadeIn();
+				
+				document.getElementById('scDate').value = '';
 			}
 		});
 		
@@ -178,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#remarkarea").hide();
 				$("#submitbutton").hide();
 				
-				$('input[name=radioOFTEN]').value = '';
+				$('input[name=radioOFTEN]').checked = false;
 			}
 
 			if ($(this).val()=="Yes") {
@@ -186,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#remarkarea").hide();
 				$("#submitbutton").hide();
 				
-				$('input[name=radioOFTEN]').value = '';
+				$('input[name=radioOFTEN]').checked = false;
 			}
 			
 			if ($(this).val()=="No") {
@@ -194,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#remarkarea").fadeIn();
 				$("#submitbutton").fadeIn();
 				
-				$('input[name=radioOFTEN]').value = '';
+				$('input[name=radioOFTEN]').checked = false;
 			}
 		});
 		

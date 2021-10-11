@@ -184,7 +184,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#remarkarea").hide();
 				$("#submitbutton").hide();
 				
-				$('input[name=radioOFTEN]').checked = false;
+				$('input[name=radioOFTEN]').prop('checked', false);
 			}
 
 			if ($(this).val()=="Yes") {
@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#remarkarea").hide();
 				$("#submitbutton").hide();
 				
-				$('input[name=radioOFTEN]').checked = false;
+				$('input[name=radioOFTEN]').prop('checked', false);
 			}
 			
 			if ($(this).val()=="No") {
@@ -200,7 +200,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#remarkarea").fadeIn();
 				$("#submitbutton").fadeIn();
 				
-				$('input[name=radioOFTEN]').checked = false;
+				$('input[name=radioOFTEN]').prop('checked', false);
 			}
 		});
 		

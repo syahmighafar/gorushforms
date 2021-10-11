@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
     
 		$("#uploadbruhealtharea").hide();
 		$("#selecthcarea").hide();
-		$("#bmhcarea").hide();
 		$("#deliverymethodarea").hide();
 		$("#selfcollectarea").hide();
 		$("#selfcollectnextbutton").hide();

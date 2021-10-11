@@ -161,7 +161,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="No") {
-				$("#notifyoftenarea").fadeIn();
+				$("#notifyoftenarea").hide();
 				$("#remarkarea").fadeIn();
 				$("#submitbutton").fadeIn();
 			}

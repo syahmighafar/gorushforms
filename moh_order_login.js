@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#remarkarea").hide();
 		$("#asknotifyarea").hide();
 		$("#notifyoftenarea").hide();
-		$("#submitarea").hide();
+		$("#submitbutton").hide();
 
 		$('input[name=radioQO]').change(function(){
 			if ($(this).val().length == 0) {
@@ -151,19 +151,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ($(this).val().length == 0) {
 				$("#notifyoftenarea").hide();
 				$("#remarkarea").hide();
-				$("#submitarea").hide();
+				$("#submitbutton").hide();
 			}
 
 			if ($(this).val()=="Yes") {
 				$("#notifyoftenarea").fadeIn();
 				$("#remarkarea").hide();
-				$("#submitarea").hide();
+				$("#submitbutton").hide();
 			}
 			
 			if ($(this).val()=="No") {
 				$("#notifyoftenarea").fadeIn();
 				$("#remarkarea").fadeIn();
-				$("#submitarea").fadeIn();
+				$("#submitbutton").fadeIn();
 			}
 		});
 		

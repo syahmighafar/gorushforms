@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
   
-  document.getElementById("submitbutton").addEventListener("click", tracknumber);
+  document.getElementById("submitbutton").addEventListener("click", wfToTookan);
   
   function wfToTookan(){
   

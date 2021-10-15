@@ -31,6 +31,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('input[name=radioDistrict]').change(function(){
 			if ($(this).val().length == 0) {
+				
+				document.getElementById("mapSource").src="";
+				$("#hcAreaMapAddress").hide();
+				
 				$("#bmhcarea").hide();
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").hide();
@@ -43,6 +47,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 
 			if ($(this).val()=="Brunei Muara") {
+				
+				document.getElementById("mapSource").src="";
+				$("#hcAreaMapAddress").hide();
+				
 				$("#bmhcarea").fadeIn();
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").hide();
@@ -55,6 +63,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Tutong") {
+				
+				document.getElementById("mapSource").src="";
+				$("#hcAreaMapAddress").hide();
+				
 				$("#bmhcarea").hide();
 				$("#tutonghcarea").fadeIn();
 				$("#belaithcarea").hide();
@@ -67,6 +79,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Belait") {
+				
+				document.getElementById("mapSource").src="";
+				$("#hcAreaMapAddress").hide();
+				
 				$("#bmhcarea").hide();
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").fadeIn();
@@ -79,6 +95,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Temburong") {
+				
+				document.getElementById("mapSource").src="";
+				$("#hcAreaMapAddress").hide();
+				
 				$("#bmhcarea").hide();
 				$("#tutonghcarea").hide();
 				$("#belaithcarea").hide();

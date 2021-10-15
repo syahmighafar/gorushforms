@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#tutonghcarea").hide();
 		$("#belaithcarea").hide();
 		$("#temburonghcarea").hide();
+		$("#hcAreaMapAddress").hide();
 		$("#deliverymethodarea").hide();
 		$("#selfcollectarea").hide();
 		$("#selfcollectnextbutton").hide();

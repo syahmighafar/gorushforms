@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#hcAreaMapAddress").hide();
      			}
 			
-     			if($(this).val().length != 0) && ($(this).val()!="Raja Isteri Pengiran Anak Saleha Hospital") {
+     			if (($(this).val().length != 0) && ($(this).val()!="Raja Isteri Pengiran Anak Saleha Hospital")) {
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="";
 				$("#hcAreaMapAddress").hide();

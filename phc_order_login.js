@@ -1,8 +1,17 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	$(document).ready(function(){
     
-		$("#uploadbruhealtharea").hide();
+		$("#colourbruhealtharea").hide();
 		$("#deliverymethodarea").hide();
+		
+		$("#pricedurationarea").hide();
+		$("#stdselfPrice").hide();
+		$("#expPrice").hide();
+		$("#immPrice").hide();
+		$("#stdDuration").hide();
+		$("#expDuration").hide();
+		$("#immDuration").hide();
+		
 		$("#selfcollectarea").hide();
 		$("#selfcollectnextbutton").hide();
 		$("#paymentmethodarea").hide();
@@ -13,12 +22,20 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		$('input[name=radioQO]').change(function(){
 			if ($(this).val().length == 0) {
-				$("#uploadbruhealtharea").hide();
-				$("#deliverymethodarea").hide();
+				$("#colourbruhealtharea").hide();
 			}
 
 			if ( ($(this).val()=="No") || ($(this).val()=="Yes") ) {
-				$("#uploadbruhealtharea").fadeIn();
+				$("#colourbruhealtharea").fadeIn();
+			}
+		});
+		
+		$('input[name=radioColourCode]').change(function(){
+			if ($(this).val().length == 0) {
+				$("#deliverymethodarea").hide();
+			}
+
+			if ($(this).val().length != 0) {
 				$("#deliverymethodarea").fadeIn();
 			}
 		});
@@ -29,13 +46,29 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#paymentmethodarea").hide();
 				$("#selfcollectnextbutton").hide();
 				
+				$("#pricedurationarea").hide();
+				$("#stdselfPrice").hide();
+				$("#expPrice").hide();
+				$("#immPrice").hide();
+				$("#stdDuration").hide();
+				$("#expDuration").hide();
+				$("#immDuration").hide();
+				
 				document.getElementById('scDate').value = '';
 			}
 
-			if ( ($(this).val()=="Standard") ) {
+			if ($(this).val()=="Standard") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
+				
+				$("#pricedurationarea").fadeIn();
+				$("#stdselfPrice").fadeIn();
+				$("#expPrice").hide();
+				$("#immPrice").hide();
+				$("#stdDuration").fadeIn();
+				$("#expDuration").hide();
+				$("#immDuration").hide();
 				
 				document.getElementById('scDate').value = '';
 			}
@@ -44,6 +77,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#selfcollectarea").fadeIn();
 				$("#paymentmethodarea").hide();
 				$("#selfcollectnextbutton").fadeIn();
+				
+				$("#pricedurationarea").fadeIn();
+				$("#stdselfPrice").fadeIn();
+				$("#expPrice").hide();
+				$("#immPrice").hide();
+				$("#stdDuration").hide();
+				$("#expDuration").hide();
+				$("#immDuration").hide();
 				
 				document.getElementById('scDate').value = '';
 			}

@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	$(document).ready(function(){
     
-		$("#colourbruhealtharea").hide();
 		$("#deliverymethodarea").hide();
 		
 		$("#pricedurationarea").hide();
@@ -12,30 +11,34 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#expDuration").hide();
 		$("#immDuration").hide();
 		
+		$("#stdexpselfMessage").hide();
+		$("#immMessage").hide();
+		
 		$("#selfcollectarea").hide();
 		$("#selfcollectnextbutton").hide();
 		$("#paymentmethodarea").hide();
+		
+		$("#paymentnoticearea").hide();
+		
 		$("#remarkarea").hide();
 		$("#asknotifyarea").hide();
 		$("#notifyoftenarea").hide();
+		
+		$("#agreementArea").hide();
+		$("#stdAgree").hide();
+		$("#expAgree").hide();
+		$("#immAgree").hide();
+
+		$("#captchaBox").hide();
+		
 		$("#submitbutton").hide();
 
 		$('input[name=radioQO]').change(function(){
 			if ($(this).val().length == 0) {
-				$("#colourbruhealtharea").hide();
-			}
-
-			if ( ($(this).val()=="No") || ($(this).val()=="Yes") ) {
-				$("#colourbruhealtharea").fadeIn();
-			}
-		});
-		
-		$('input[name=radioColourCode]').change(function(){
-			if ($(this).val().length == 0) {
 				$("#deliverymethodarea").hide();
 			}
 
-			if ($(this).val().length != 0) {
+			if ( ($(this).val()=="No") || ($(this).val()=="Yes") ) {
 				$("#deliverymethodarea").fadeIn();
 			}
 		});
@@ -54,6 +57,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#expDuration").hide();
 				$("#immDuration").hide();
 				
+				$("#stdexpselfMessage").hide();
+				$("#immMessage").hide();
+
+				$("#stdAgree").hide();
+				$("#expAgree").hide();
+				$("#immAgree").hide();
+				
 				document.getElementById('scDate').value = '';
 			}
 
@@ -70,6 +80,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#expDuration").hide();
 				$("#immDuration").hide();
 				
+				$("#stdexpselfMessage").fadeIn();
+				$("#immMessage").hide();
+
+				$("#stdAgree").fadeIn();
+				$("#expAgree").hide();
+				$("#immAgree").hide();
+				
 				document.getElementById('scDate').value = '';
 			}
 			
@@ -85,6 +102,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#stdDuration").hide();
 				$("#expDuration").hide();
 				$("#immDuration").hide();
+				
+				$("#stdexpselfMessage").fadeIn();
+				$("#immMessage").hide();
+
+				$("#stdAgree").hide();
+				$("#expAgree").hide();
+				$("#immAgree").hide();
 				
 				document.getElementById('scDate').value = '';
 			}
@@ -104,10 +128,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('input[name=radioPAY]').change(function(){
 			if ($(this).val().length == 0) {
+				$("#paymentnoticearea").hide();
 				$("#asknotifyarea").hide();
 			}
 
-			if ( ($(this).val()=="Cash") || ($(this).val()=="Bank Transfer") ) {
+			if ($(this).val()=="Cash") {
+				$("#paymentnoticearea").hide();
+				$("#asknotifyarea").fadeIn();
+			}
+			
+			if ($(this).val()=="Bank Transfer") {
+				$("#paymentnoticearea").fadeIn();
 				$("#asknotifyarea").fadeIn();
 			}
 		});
@@ -116,6 +147,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ($(this).val().length == 0) {
 				$("#notifyoftenarea").hide();
 				$("#remarkarea").hide();
+				$("#agreementArea").hide();
+				$("#captchaBox").hide();
 				$("#submitbutton").hide();
 				
 				$('input[name=radioOFTEN]').prop('checked', false);
@@ -124,6 +157,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ($(this).val()=="Yes") {
 				$("#notifyoftenarea").fadeIn();
 				$("#remarkarea").hide();
+				$("#agreementArea").hide();
+				$("#captchaBox").hide();
 				$("#submitbutton").hide();
 				
 				$('input[name=radioOFTEN]').prop('checked', false);
@@ -132,6 +167,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ($(this).val()=="No") {
 				$("#notifyoftenarea").hide();
 				$("#remarkarea").fadeIn();
+				$("#agreementArea").fadeIn();
+				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
 				
 				$('input[name=radioOFTEN]').prop('checked', false);
@@ -141,11 +178,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('input[name=radioOFTEN]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#remarkarea").hide();
+				$("#agreementArea").hide();
+				$("#captchaBox").hide();
 				$("#submitbutton").hide();
 			}
 
 			if ( ($(this).val().length != 0) ) {
 				$("#remarkarea").fadeIn();
+				$("#agreementArea").fadeIn();
+				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
 			}
 		});

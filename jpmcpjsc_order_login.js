@@ -196,8 +196,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ($(this).val()=="Yes") {
 				$("#notifyoftenarea").fadeIn();
 				$("#remarkarea").hide();
-				$("#agreementArea").fadeIn();
-				$("#captchaBox").fadeIn();
+				$("#agreementArea").hide();
+				$("#captchaBox").hide();
 				$("#submitbutton").hide();
 				
 				$('input[name=radioOFTEN]').prop('checked', false);
@@ -206,8 +206,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if ($(this).val()=="No") {
 				$("#notifyoftenarea").hide();
 				$("#remarkarea").fadeIn();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
+				$("#agreementArea").fadeIn();
+				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
 				
 				$('input[name=radioOFTEN]').prop('checked', false);

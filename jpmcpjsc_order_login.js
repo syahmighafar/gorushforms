@@ -215,14 +215,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('input[name=radioOFTEN]').change(function(){
-			if ($(this).val().length == 0) {
+			if ( $(this).val().length == 0) {
 				$("#remarkarea").hide();
 				$("#agreementArea").hide();
 				$("#captchaBox").hide();
 				$("#submitbutton").hide();
 			}
 
-			if ( ($(this).val().length != 0) ) {
+			if ( $(this).val().length != 0) {
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
 				$("#captchaBox").fadeIn();

@@ -175,7 +175,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		$('input[name=radioOFTEN]').change(function(){
+		$('input[name=radioDURATION]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#remarkarea").hide();
 				$("#agreementArea").hide();

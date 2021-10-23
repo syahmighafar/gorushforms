@@ -106,6 +106,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
+		$('input[name=ICorPassport]').change(function(){
+			if ($(this).val().length == 0) {
+				$("#icarea").hide();
+				$("#passportarea").hide();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
+
+			if ($(this).val()=="icNumber") {
+				$("#icarea").fadeIn();
+				$("#passportarea").hide();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
+      
+      			if ($(this).val()=="passport") {
+				$("#icarea").hide();
+				$("#passportarea").fadeIn();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
+		});
+		
 		$('input[name=TypeofDelivery]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#mohnormalregArea").hide();

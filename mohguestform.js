@@ -15,6 +15,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#clinicAddress").hide();
 		
 		$("#deliverymethodarea").hide();
+		
+		$("#expressArea").hide();
+		$("#immediateArea").hide();
+	
 		$("#pricedurationarea").hide();
 		$("#stdselfPrice").hide();
 		$("#expPrice").hide();
@@ -34,9 +38,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$("#paymentmethodarea").hide();
 		$("#paymentnoticearea").hide();
-		
-		$("#asknotifyarea").hide();
-		$("#notifyoftenarea").hide();
 		
 		$("#remarkarea").hide();
 		
@@ -98,6 +99,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('input[name=radioDistrict]').change(function(){
 			if ($(this).val().length == 0) {
 				
+				$("#expressArea").hide();
+				$("#immediateArea").hide();
+				
 				document.getElementById("mapSource").src="";
 				$("#hcAreaMapAddress").hide();
 				$("#clinicAddress").hide();
@@ -114,6 +118,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 
 			if ($(this).val()=="Brunei Muara") {
+				
+				$("#expressArea").fadeIn();
+				$("#immediateArea").fadeIn();
 				
 				document.getElementById("mapSource").src="";
 				$("#hcAreaMapAddress").hide();
@@ -132,6 +139,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
 			if ($(this).val()=="Tutong") {
 				
+				$("#expressArea").hide();
+				$("#immediateArea").hide();
+				
 				document.getElementById("mapSource").src="";
 				$("#hcAreaMapAddress").hide();
 				$("#clinicAddress").hide();
@@ -149,6 +159,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
 			if ($(this).val()=="Belait") {
 				
+				$("#expressArea").hide();
+				$("#immediateArea").hide();
+				
 				document.getElementById("mapSource").src="";
 				$("#hcAreaMapAddress").hide();
 				$("#clinicAddress").hide();
@@ -165,6 +178,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Temburong") {
+				
+				$("#expressArea").hide();
+				$("#immediateArea").hide();
 				
 				document.getElementById("mapSource").src="";
 				$("#hcAreaMapAddress").hide();
@@ -368,6 +384,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$('input[name=radioTOD]').change(function(){
 			if ($(this).val().length == 0) {
+				$("#mohnormalregArea").hide();
+				
+				$("#addressArea").hide();
+				$("#addressnextbutton").hide();
+
 				$("#selfcollectarea").hide();
 				$("#selfcollectnextbutton").hide();
 				
@@ -378,10 +399,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#stdDuration").hide();
 				$("#expDuration").hide();
 				$("#immDuration").hide();
-				
 				$("#stdexpselfMessage").hide();
 				$("#immMessage").hide();
-				
 				$("#stdAgree").hide();
 				$("#expAgree").hide();
 				$("#immAgree").hide();
@@ -390,8 +409,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 
 			if ($(this).val()=="Standard") {
+				$("#mohnormalregArea").fadeIn();
+				
+				$("#addressArea").fadeIn();
+				$("#addressnextbutton").fadeIn();
+
 				$("#selfcollectarea").hide();
-				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
 				
 				$("#pricedurationarea").fadeIn();
@@ -401,10 +424,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#stdDuration").fadeIn();
 				$("#expDuration").hide();
 				$("#immDuration").hide();
-				
 				$("#stdexpselfMessage").fadeIn();
 				$("#immMessage").hide();
-				
 				$("#stdAgree").fadeIn();
 				$("#expAgree").hide();
 				$("#immAgree").hide();
@@ -413,8 +434,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Express") {
+				$("#mohnormalregArea").fadeIn();
+				
+				$("#addressArea").fadeIn();
+				$("#addressnextbutton").fadeIn();
+
 				$("#selfcollectarea").hide();
-				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
 				
 				$("#pricedurationarea").fadeIn();
@@ -424,10 +449,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#stdDuration").hide();
 				$("#expDuration").fadeIn();
 				$("#immDuration").hide();
-				
 				$("#stdexpselfMessage").fadeIn();
 				$("#immMessage").hide();
-				
 				$("#stdAgree").hide();
 				$("#expAgree").fadeIn();
 				$("#immAgree").hide();
@@ -436,8 +459,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Immediate") {
+				$("#mohnormalregArea").fadeIn();
+				
+				$("#addressArea").fadeIn();
+				$("#addressnextbutton").fadeIn();
+
 				$("#selfcollectarea").hide();
-				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
 				
 				$("#pricedurationarea").fadeIn();
@@ -447,10 +474,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#stdDuration").hide();
 				$("#expDuration").hide();
 				$("#immDuration").fadeIn();
-				
 				$("#stdexpselfMessage").hide();
 				$("#immMessage").fadeIn();
-				
 				$("#stdAgree").hide();
 				$("#expAgree").hide();
 				$("#immAgree").fadeIn();
@@ -459,8 +484,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 			
 			if ($(this).val()=="Self Collect") {
+				$("#mohnormalregArea").fadeIn();
+				
+				$("#addressArea").hide();
+				$("#addressnextbutton").hide();
+
 				$("#selfcollectarea").fadeIn();
-				$("#paymentmethodarea").hide();
 				$("#selfcollectnextbutton").fadeIn();
 				
 				$("#pricedurationarea").fadeIn();
@@ -470,10 +499,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#stdDuration").hide();
 				$("#expDuration").hide();
 				$("#immDuration").hide();
-				
 				$("#stdexpselfMessage").fadeIn();
 				$("#immMessage").hide();
-				
 				$("#stdAgree").hide();
 				$("#expAgree").hide();
 				$("#immAgree").hide();
@@ -482,80 +509,90 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		document.getElementById("selfcollectnextbutton").addEventListener("click", function() {
-			if ($("#scDate").val().length == 0 ) {
-				$("#paymentmethodarea").hide();
-				alert("Please do not leave the required fields empty!");
-			}
+		document.getElementById("addressnextbutton").addEventListener("click", function() {
+			if ($('input[name=radioCred]').val() == "icNumber"){
+				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
+				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#address_1").val().length == 0 )
+				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
+					$("#paymentmethodarea").hide();
+					alert("Please do not leave the required fields empty!");
+				}
 
-			if ($("#scDate").val().length != 0) {
-				$("#selfcollectnextbutton").hide();
-				$("#paymentmethodarea").fadeIn();
-			}
+				if ( ($("#name").val().length != 0)&&($("#icNumber").val().length != 0)&&($("#dob").val().length != 0)
+				    &&($("#contact_1").val().length != 0)&&($("#bruhims").val().length != 0)&&($("#address_1").val().length != 0)
+				    &&($("#address_2").val().length != 0)&&($("#address_4").val().length != 0)) {
+					$("#addressnextbutton").hide();
+					$("#paymentmethodarea").fadeIn();
+				}
+			});
+			
+			if ($('input[name=radioCred]').val() == "passport"){
+				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
+				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#address_1").val().length == 0 )
+				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
+					$("#paymentmethodarea").hide();
+					alert("Please do not leave the required fields empty!");
+				}
+
+				if ( ($("#name").val().length != 0)&&($("#passport").val().length != 0)&&($("#dob").val().length != 0)
+				    &&($("#contact_1").val().length != 0)&&($("#bruhims").val().length != 0)&&($("#address_1").val().length != 0)
+				    &&($("#address_2").val().length != 0)&&($("#address_4").val().length != 0)) {
+					$("#addressnextbutton").hide();
+					$("#paymentmethodarea").fadeIn();
+				}
+			});
+		});
+		
+		document.getElementById("selfcollectnextbutton").addEventListener("click", function() {
+			if ($('input[name=radioCred]').val() == "icNumber"){
+				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
+				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
+					$("#paymentmethodarea").hide();
+					alert("Please do not leave the required fields empty!");
+				}
+
+				if ( ($("#name").val().length != 0)&&($("#icNumber").val().length != 0)&&($("#dob").val().length != 0)
+				    &&($("#contact_1").val().length != 0)&&($("#bruhims").val().length != 0)&&($("#scDate").val().length != 0) ) {
+					$("#selfcollectnextbutton").hide();
+					$("#paymentmethodarea").fadeIn();
+				}
+			});
+			
+			if ($('input[name=radioCred]').val() == "passport"){
+				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
+				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
+					$("#paymentmethodarea").hide();
+					alert("Please do not leave the required fields empty!");
+				}
+
+				if ( ($("#name").val().length != 0)&&($("#passport").val().length != 0)&&($("#dob").val().length != 0)
+				    &&($("#contact_1").val().length != 0)&&($("#bruhims").val().length != 0)&&($("#scDate").val().length != 0) ) {
+					$("#selfcollectnextbutton").hide();
+					$("#paymentmethodarea").fadeIn();
+				}
+			});
 		});
 		
 		$('input[name=radioPAY]').change(function(){
 			
 			if ($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();
-				$("#asknotifyarea").hide();
+				$("#remarkarea").hide();
+				$("#agreementArea").hide();
+				$("#submitbutton").hide();
 			}
 
 			if ($(this).val()=="Cash") {
 				$("#paymentnoticearea").hide();
-				$("#asknotifyarea").fadeIn();
+				$("#remarkarea").fadeIn();
+				$("#agreementArea").fadeIn();
+				$("#submitbutton").fadeIn();
 			}
 			
 			if ($(this).val()=="Bank Transfer") {
 				$("#paymentnoticearea").fadeIn();
-				$("#asknotifyarea").fadeIn();
-			}
-		});
-		
-		$('input[name=radioNOTI]').change(function(){
-			if ($(this).val().length == 0) {
-				$("#notifyoftenarea").hide();
-				$("#remarkarea").hide();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-				
-				$('input[name=radioOFTEN]').prop('checked', false);
-			}
-
-			if ($(this).val()=="Yes") {
-				$("#notifyoftenarea").fadeIn();
-				$("#remarkarea").hide();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-				
-				$('input[name=radioOFTEN]').prop('checked', false);
-			}
-			
-			if ($(this).val()=="No") {
-				$("#notifyoftenarea").hide();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
-				$("#captchaBox").fadeIn();
-				$("#submitbutton").fadeIn();
-				
-				$('input[name=radioOFTEN]').prop('checked', false);
-			}
-		});
-		
-		$('input[name=radioDURATION]').change(function(){
-			if ($(this).val().length == 0) {
-				$("#remarkarea").hide();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-			}
-
-			if ( ($(this).val().length != 0) ) {
-				$("#remarkarea").fadeIn();
-				$("#agreementArea").fadeIn();
-				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
 			}
 		});

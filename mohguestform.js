@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
 
-		$('input[name=Quarantine Order?]').change(function(){
+		$('input[name=QuarantineOrder]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#selecthcarea").hide();
 			}
@@ -406,7 +406,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
 		
-		$('input[name=IC or Passport?]').change(function(){
+		$('input[name=ICorPassport]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#icarea").hide();
 				$("#passportarea").hide();
@@ -432,7 +432,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		$('input[name=Type of Delivery]').change(function(){
+		$('input[name=TypeofDelivery]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#mohnormalregArea").hide();
 				
@@ -623,7 +623,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		$('input[name=Payment Method]').change(function(){
+		$('input[name=PaymentMethod]').change(function(){
 			
 			if ($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();

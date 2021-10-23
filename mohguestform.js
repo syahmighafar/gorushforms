@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		$("#submitbutton").hide();
 		
-		$('input[name=Register for someone else]').change(function(){
+		$('input[name=Requester]').change(function(){
 			if($(this).val().length == 0) {
 				$("#requesterarea").hide();
 				$("#quarantineArea").hide();

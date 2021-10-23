@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		$("#submitbutton").hide();
 		
-		$('#Register-For-Other-Person').change(function(){
+		$('input[name=radioRequest]').change(function(){
 			if($(this).val().length == 0) {
 				$("#requesterarea").hide();
 				$("#quarantineArea").hide();
@@ -60,10 +60,19 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';
      			}
+			
+			if($(this).val()=="No") {
+				$("#requesterarea").hide();
+				$("#quarantineArea").fadeIn();
+				$("#requesternextbutton").hide();
+				
+				document.getElementById('Requester-Name').value = '';
+				document.getElementById('Requester-Contact-Number').value = '';
+     			}
 	     
      			if($(this).val()=="Yes") {
 				$("#requesterarea").fadeIn();
-				$("#quarantinearea").hide();
+				$("#quarantineArea").hide();
 				$("#requesternextbutton").fadeIn();
 				
 				document.getElementById("requesternextbutton").addEventListener("click", function() {
@@ -77,15 +86,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 						$("#quarantineArea").fadeIn();
 					}
 				});
-     			}
-		
-     			if($(this).val()=="No") {
-				$("#requesterarea").hide();
-				$("#quarantineArea").fadeIn();
-				$("#requesternextbutton").hide();
-				
-				document.getElementById('Requester-Name').value = '';
-				document.getElementById('Requester-Contact-Number').value = '';
      			}
 		});
 

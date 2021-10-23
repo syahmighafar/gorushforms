@@ -88,10 +88,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('input[name=QuarantineOrder]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#selecthcarea").hide();
+				$("#jpmcpjscInfo").hide();
 			}
 
 			if ($(this).val().length != 0) {
 				$("#selecthcarea").fadeIn();
+				$("#jpmcpjscInfo").fadeIn();
 			}
 		});
 		

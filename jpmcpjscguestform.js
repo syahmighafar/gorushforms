@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		$("#deliverymethodarea").hide();
 		
-		$("#expressArea").hide();
 		$("#immediateArea").hide();
 	
 		$("#pricedurationarea").hide();

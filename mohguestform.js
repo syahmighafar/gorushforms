@@ -1,6 +1,11 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	$(document).ready(function(){
-    
+		
+		$("#requesterarea").hide();
+		$("#requesternextbutton").hide();
+		
+		$("#quarantineArea").hide();
+		
 		$("#selecthcarea").hide();
 		$("#bmhcarea").hide();
 		$("#tutonghcarea").hide();
@@ -8,8 +13,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#temburonghcarea").hide();
 		$("#hcAreaMapAddress").hide();
 		$("#clinicAddress").hide();
-		$("#deliverymethodarea").hide();
 		
+		$("#deliverymethodarea").hide();
 		$("#pricedurationarea").hide();
 		$("#stdselfPrice").hide();
 		$("#expPrice").hide();
@@ -17,28 +22,68 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#stdDuration").hide();
 		$("#expDuration").hide();
 		$("#immDuration").hide();
-		
 		$("#stdexpselfMessage").hide();
 		$("#immMessage").hide();
 		
+		$("#mohnormalregArea").hide();
+		$("#addressArea").hide();
+		$("#addressnextbutton").hide();
+		
 		$("#selfcollectarea").hide();
 		$("#selfcollectnextbutton").hide();
-		$("#paymentmethodarea").hide();
 		
+		$("#paymentmethodarea").hide();
 		$("#paymentnoticearea").hide();
 		
-		$("#remarkarea").hide();
 		$("#asknotifyarea").hide();
 		$("#notifyoftenarea").hide();
+		
+		$("#remarkarea").hide();
 		
 		$("#agreementArea").hide();
 		$("#stdAgree").hide();
 		$("#expAgree").hide();
 		$("#immAgree").hide();
-		
-		$("#captchaBox").hide();
 
 		$("#submitbutton").hide();
+		
+		$('#Register-For-Other-Person').change(function(){
+			if($(this).val().length == 0) {
+				$("#requesterarea").hide();
+				$("#quarantineArea").hide();
+				$("#requesternextbutton").hide();
+				
+				document.getElementById('Requester-Name').value = '';
+				document.getElementById('Requester-Contact-Number').value = '';
+     			}
+	     
+     			if($(this).val()=="Yes") {
+				$("#requesterarea").fadeIn();
+				$("#quarantinearea").hide();
+				$("#requesternextbutton").fadeIn();
+				
+				document.getElementById("requesternextbutton").addEventListener("click", function() {
+					if ( ($("#Requester-Name").val().length == 0 ) || ($("#Requester-Contact-Number").val().length == 0 ) ) {
+					$("#quarantineArea").hide();
+					alert("Please do not leave the required fields empty!");
+					}
+
+					if ( ($("#Requester-Name").val().length != 0) && ($("#Requester-Contact-Number").val().length != 0) ) {
+						$("#requesternextbutton").hide();
+						$("#quarantineArea").fadeIn();
+					}
+				});
+     			}
+		
+     			if($(this).val()=="No") {
+				$("#requesterarea").hide();
+				$("#quarantineArea").fadeIn();
+				$("#requesternextbutton").hide();
+				
+				document.getElementById('Requester-Name').value = '';
+				document.getElementById('Requester-Contact-Number').value = '';
+     			}
+		});
 
 		$('input[name=radioQO]').change(function(){
 			if ($(this).val().length == 0) {
@@ -324,7 +369,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('input[name=radioTOD]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#selfcollectarea").hide();
-				$("#paymentmethodarea").hide();
 				$("#selfcollectnextbutton").hide();
 				
 				$("#pricedurationarea").hide();

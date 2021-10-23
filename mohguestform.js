@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		document.getElementById("addressnextbutton").addEventListener("click", function() {
-			if ($('input[name=IC or Passport?]').val() == "icNumber"){
+			if ($('input[name=ICorPassport]').val() == "icNumber"){
 				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
@@ -576,7 +576,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				}
 			}
 			
-			if ($('input[name=IC or Passport?]').val() == "passport"){
+			if ($('input[name=ICorPassport]').val() == "passport"){
 				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
@@ -594,7 +594,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		document.getElementById("selfcollectnextbutton").addEventListener("click", function() {
-			if ($('input[name=radioCred]').val() == "icNumber"){
+			if ($('input[name=ICorPassport]').val() == "icNumber"){
 				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
 					$("#paymentmethodarea").hide();
@@ -608,7 +608,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				}
 			}
 			
-			if ($('input[name=radioCred]').val() == "passport"){
+			if ($('input[name=ICorPassport]').val() == "passport"){
 				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
 					$("#paymentmethodarea").hide();

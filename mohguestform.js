@@ -553,7 +553,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					$("#addressnextbutton").hide();
 					$("#paymentmethodarea").fadeIn();
 				}
-			});
+			}
 			
 			if ($('input[name=radioCred]').val() == "passport"){
 				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
@@ -569,7 +569,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					$("#addressnextbutton").hide();
 					$("#paymentmethodarea").fadeIn();
 				}
-			});
+			}
 		});
 		
 		document.getElementById("selfcollectnextbutton").addEventListener("click", function() {
@@ -585,7 +585,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					$("#selfcollectnextbutton").hide();
 					$("#paymentmethodarea").fadeIn();
 				}
-			});
+			}
 			
 			if ($('input[name=radioCred]').val() == "passport"){
 				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
@@ -599,7 +599,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 					$("#selfcollectnextbutton").hide();
 					$("#paymentmethodarea").fadeIn();
 				}
-			});
+			}
 		});
 		
 		$('input[name=radioPAY]').change(function(){

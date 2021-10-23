@@ -276,6 +276,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.4576007276696!2d115.06447081532535!3d5.029285440119686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f06dcb40542b%3A0xdce8b6a5b55c836d!2sMuara%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285963322!5m2!1sen!2sbn";
 				$("#hcAreaMapAddress").fadeIn();	
      			}
+			
+			if($(this).val()=="Psychiatry Department, Ministry of Health") {
+				$("#immediateArea").hide();
+				$("#clinicAddress").hide();
+				$("#deliverymethodarea").fadeIn();
+				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.254386052767!2d114.90992181532567!3d4.897028391286052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f553a7c821df%3A0x65c23364c25df9!2sPsychiatry%20Department%2C%20Ministry%20of%20Health!5e0!3m2!1sen!2sbn!4v1634992947581!5m2!1sen!2sbn";
+				$("#hcAreaMapAddress").fadeIn();	
+     			}
 
 			if($(this).val()=="KG Bolkiah") {
 				$("#immediateArea").hide();

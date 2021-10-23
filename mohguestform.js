@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 		$("#submitbutton").hide();
 		
-		$('input[name=radioRequest]').change(function(){
+		$('input[name=Register for someone else?]').change(function(){
 			if($(this).val().length == 0) {
 				$("#requesterarea").hide();
 				$("#quarantineArea").hide();
@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
 
-		$('input[name=radioQO]').change(function(){
+		$('input[name=Quarantine Order?]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#selecthcarea").hide();
 			}
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		$('input[name=radioDistrict]').change(function(){
+		$('input[name=District]').change(function(){
 			if ($(this).val().length == 0) {
 				
 				$("#expressArea").hide();
@@ -398,7 +398,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
 		
-		$('input[name=radioCred]').change(function(){
+		$('input[name=IC or Passport?]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#icarea").hide();
 				$("#passportarea").hide();
@@ -424,7 +424,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		$('input[name=radioTOD]').change(function(){
+		$('input[name=Type of Delivery]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#mohnormalregArea").hide();
 				
@@ -552,7 +552,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		document.getElementById("addressnextbutton").addEventListener("click", function() {
-			if ($('input[name=radioCred]').val() == "icNumber"){
+			if ($('input[name=IC or Passport?]').val() == "icNumber"){
 				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				}
 			}
 			
-			if ($('input[name=radioCred]').val() == "passport"){
+			if ($('input[name=IC or Passport?]').val() == "passport"){
 				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#bruhims").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
@@ -615,7 +615,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		$('input[name=radioPAY]').change(function(){
+		$('input[name=Payment Method]').change(function(){
 			
 			if ($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();

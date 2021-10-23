@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#stdAgree").hide();
 		$("#expAgree").hide();
 		$("#immAgree").hide();
+		
+		$("#captchaBox").hide();
 
 		$("#submitbutton").hide();
 		
@@ -619,6 +621,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#paymentnoticearea").hide();
 				$("#remarkarea").hide();
 				$("#agreementArea").hide();
+				$("#captchaBox").hide();
 				$("#submitbutton").hide();
 			}
 
@@ -626,6 +629,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#paymentnoticearea").hide();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
+				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
 			}
 			
@@ -633,6 +637,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#paymentnoticearea").fadeIn();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
+				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
 			}
 		});

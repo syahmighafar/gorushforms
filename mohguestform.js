@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#immMessage").hide();
 		
 		$("#mohnormalregArea").hide();
+		$("#icarea").hide();
+		$("#passportarea").hide();
+		
 		$("#addressArea").hide();
 		$("#addressnextbutton").hide();
 		
@@ -380,6 +383,32 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.337380807763!2d115.07532101532566!3d4.711329842875782!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x322285c84bc026a1%3A0xcf7e5ef899e3115!2sKlinik%20Kesihatan%20Bangar%2C%20Temburong!5e0!3m2!1sen!2sbn!4v1634286972450!5m2!1sen!2sbn";
 				$("#hcAreaMapAddress").fadeIn();
      			}
+		});
+		
+		$('input[name=radioCred]').change(function(){
+			if ($(this).val().length == 0) {
+				$("#icarea").hide();
+				$("#passportarea").hide();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
+
+			if ($(this).val()=="icNumber") {
+				$("#icarea").fadeIn();
+				$("#passportarea").hide();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
+      
+      			if ($(this).val()=="passport") {
+				$("#icarea").hide();
+				$("#passportarea").fadeIn();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
 		});
 		
 		$('input[name=radioTOD]').change(function(){

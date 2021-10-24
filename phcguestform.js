@@ -228,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('passport').value = '';
 			}
 
-			if ($(this).val()=="icNumber") {
+			if ($(this).val()=="IC Number") {
 				$("#icarea").fadeIn();
 				$("#passportarea").hide();
         
@@ -236,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('passport').value = '';
 			}
       
-      			if ($(this).val()=="passport") {
+      			if ($(this).val()=="Passport") {
 				$("#icarea").hide();
 				$("#passportarea").fadeIn();
         
@@ -251,7 +251,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				alert("Please do not leave the required fields empty!");
 			}
 			
-			if ($('input[name=ICorPassport]').val() == "icNumber"){
+			if ($('input[name=ICorPassport]').val() == "IC Number"){
 				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
@@ -267,7 +267,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				}
 			}
 			
-			if ($('input[name=ICorPassport]').val() == "passport"){
+			if ($('input[name=ICorPassport]').val() == "Passport"){
 				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
 				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {

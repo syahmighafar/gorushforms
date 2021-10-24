@@ -246,7 +246,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		document.getElementById("addressnextbutton").addEventListener("click", function() {
-			if ($('input[name=ICorPassport]').length == 0){
+			
+			if ($('input[name=ICorPassport]').val().length == 0){
 				$("#paymentmethodarea").hide();
 				alert("Please do not leave the required fields empty! ic passport");
 			}

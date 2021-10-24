@@ -55,6 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';
+				document.getElementById('Relationship-to-Patient').value = '';
      			}
 			
 			if($(this).val()=="No") {
@@ -64,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';
+				document.getElementById('Relationship-to-Patient').value = '';
      			}
 	     
      			if($(this).val()=="Yes") {
@@ -104,32 +106,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
 			if ($(this).val().length != 0) {
 				$("#deliverymethodarea").fadeIn();
-			}
-		});
-		
-		$('input[name=ICorPassport]').change(function(){
-			if ($(this).val().length == 0) {
-				$("#icarea").hide();
-				$("#passportarea").hide();
-        
-        			document.getElementById('icNumber').value = '';
-				document.getElementById('passport').value = '';
-			}
-
-			if ($(this).val()=="icNumber") {
-				$("#icarea").fadeIn();
-				$("#passportarea").hide();
-        
-        			document.getElementById('icNumber').value = '';
-				document.getElementById('passport').value = '';
-			}
-      
-      			if ($(this).val()=="passport") {
-				$("#icarea").hide();
-				$("#passportarea").fadeIn();
-        
-        			document.getElementById('icNumber').value = '';
-				document.getElementById('passport').value = '';
 			}
 		});
 		
@@ -260,67 +236,59 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 		});
 		
-		document.getElementById("addressnextbutton").addEventListener("click", function() {
-			if ($('input[name=ICorPassport]').val() == "icNumber"){
-				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
-				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
-				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
-					$("#paymentmethodarea").hide();
-					alert("Please do not leave the required fields empty!");
-				}
-
-				if ( ($("#name").val().length != 0)&&($("#icNumber").val().length != 0)&&($("#dob").val().length != 0)
-				    &&($("#contact_1").val().length != 0)&&($("#Patient-Number").val().length != 0)&&($("#address_1").val().length != 0)
-				    &&($("#address_2").val().length != 0)&&($("#address_4").val().length != 0)) {
-					$("#addressnextbutton").hide();
-					$("#paymentmethodarea").fadeIn();
-				}
+		$('input[name=ICorPassport]').change(function(){
+			if ($(this).val().length == 0) {
+				$("#icarea").hide();
+				$("#passportarea").hide();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
 			}
-			
-			if ($('input[name=ICorPassport]').val() == "passport"){
-				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
-				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
-				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
-					$("#paymentmethodarea").hide();
-					alert("Please do not leave the required fields empty!");
-				}
 
-				if ( ($("#name").val().length != 0)&&($("#passport").val().length != 0)&&($("#dob").val().length != 0)
-				    &&($("#contact_1").val().length != 0)&&($("#Patient-Number").val().length != 0)&&($("#address_1").val().length != 0)
-				    &&($("#address_2").val().length != 0)&&($("#address_4").val().length != 0)) {
-					$("#addressnextbutton").hide();
-					$("#paymentmethodarea").fadeIn();
-				}
+			if ($(this).val()=="icNumber") {
+				$("#icarea").fadeIn();
+				$("#passportarea").hide();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
+			}
+      
+      			if ($(this).val()=="passport") {
+				$("#icarea").hide();
+				$("#passportarea").fadeIn();
+        
+        			document.getElementById('icNumber').value = '';
+				document.getElementById('passport').value = '';
 			}
 		});
 		
-		document.getElementById("selfcollectnextbutton").addEventListener("click", function() {
-			if ($('input[name=ICorPassport]').val() == "icNumber"){
-				if ( ($("#name").val().length == 0 )||($("#icNumber").val().length == 0 )||($("#dob").val().length == 0 )
-				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
-					$("#paymentmethodarea").hide();
-					alert("Please do not leave the required fields empty!");
-				}
-
-				if ( ($("#name").val().length != 0)&&($("#icNumber").val().length != 0)&&($("#dob").val().length != 0)
-				    &&($("#contact_1").val().length != 0)&&($("#Patient-Number").val().length != 0)&&($("#scDate").val().length != 0) ) {
-					$("#selfcollectnextbutton").hide();
-					$("#paymentmethodarea").fadeIn();
-				}
+		document.getElementById("addressnextbutton").addEventListener("click", function() {
+			if ( ($("#name").val().length == 0 )||($("#dob").val().length == 0 )
+			    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
+			    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
+				$("#paymentmethodarea").hide();
+				alert("Please do not leave the required fields empty!");
 			}
-			
-			if ($('input[name=ICorPassport]').val() == "passport"){
-				if ( ($("#name").val().length == 0 )||($("#passport").val().length == 0 )||($("#dob").val().length == 0 )
-				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
-					$("#paymentmethodarea").hide();
-					alert("Please do not leave the required fields empty!");
-				}
 
-				if ( ($("#name").val().length != 0)&&($("#passport").val().length != 0)&&($("#dob").val().length != 0)
-				    &&($("#contact_1").val().length != 0)&&($("#Patient-Number").val().length != 0)&&($("#scDate").val().length != 0) ) {
-					$("#selfcollectnextbutton").hide();
-					$("#paymentmethodarea").fadeIn();
-				}
+			if ( ($("#name").val().length != 0)&&($("#dob").val().length != 0)
+			    &&($("#contact_1").val().length != 0)&&($("#Patient-Number").val().length != 0)&&($("#address_1").val().length != 0)
+			    &&($("#address_2").val().length != 0)&&($("#address_4").val().length != 0)) {
+				$("#addressnextbutton").hide();
+				$("#paymentmethodarea").fadeIn();
+			}
+	});
+		
+		document.getElementById("selfcollectnextbutton").addEventListener("click", function() {
+			if ( ($("#name").val().length == 0 )||($("#dob").val().length == 0 )
+			    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#scDate").val().length == 0 ) ) {
+				$("#paymentmethodarea").hide();
+				alert("Please do not leave the required fields empty!");
+			}
+
+			if ( ($("#name").val().length != 0)&&($("#dob").val().length != 0)
+			    &&($("#contact_1").val().length != 0)&&($("#Patient-Number").val().length != 0)&&($("#scDate").val().length != 0) ) {
+				$("#selfcollectnextbutton").hide();
+				$("#paymentmethodarea").fadeIn();
 			}
 		});
 		

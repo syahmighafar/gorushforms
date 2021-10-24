@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';
+				document.getElementById('Relationship-to-Patient').value = '';
      			}
 			
 			if($(this).val()=="No") {
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				
 				document.getElementById('Requester-Name').value = '';
 				document.getElementById('Requester-Contact-Number').value = '';
+				document.getElementById('Relationship-to-Patient').value = '';
      			}
 	     
      			if($(this).val()=="Yes") {

@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("addressnextbutton").addEventListener("click", function() {
 			if ($('input[name=ICorPassport]').length == 0){
 				$("#paymentmethodarea").hide();
-				alert("Please do not leave the required fields empty!");
+				alert("Please do not leave the required fields empty! ic passport");
 			}
 			
 			if ($('input[name=ICorPassport]').val() == "IC Number"){
@@ -256,7 +256,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
 					$("#paymentmethodarea").hide();
-					alert("Please do not leave the required fields empty!");
+					alert("Please do not leave the required fields empty! ic");
 				}
 
 				if ( ($("#name").val().length != 0)&&($("#icNumber").val().length != 0)&&($("#dob").val().length != 0)
@@ -272,7 +272,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				    ||($("#contact_1").val().length == 0 )||($("#Patient-Number").val().length == 0 )||($("#address_1").val().length == 0 )
 				    ||($("#address_2").val().length == 0 )||($("#address_4").val().length == 0 )) {
 					$("#paymentmethodarea").hide();
-					alert("Please do not leave the required fields empty!");
+					alert("Please do not leave the required fields empty! passport");
 				}
 
 				if ( ($("#name").val().length != 0)&&($("#passport").val().length != 0)&&($("#dob").val().length != 0)

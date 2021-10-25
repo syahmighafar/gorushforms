@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		
 		const d = new Date();
 		let hour = d.getHours();
+		let day = d.getDay();
 		
 		$("#requesterarea").hide();
 		$("#requesternextbutton").hide();
@@ -219,12 +220,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
 			if($(this).val()=="Raja Isteri Pengiran Anak Saleha Hospital") {
 				
-				if ((hour >= 8) && (hour < 12)){
-					$("#immediateArea").fadeIn();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
 				}else{
-				
 					$("#immediateArea").hide();
-				}
+				}				
 				
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();

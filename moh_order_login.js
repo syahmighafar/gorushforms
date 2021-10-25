@@ -1,5 +1,8 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	$(document).ready(function(){
+		
+		const d = new Date();
+		let hour = d.getHours();
     
 		$("#selecthcarea").hide();
 		$("#bmhcarea").hide();
@@ -165,7 +168,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 			
 			if($(this).val()=="Raja Isteri Pengiran Anak Saleha Hospital") {
-				$("#immediateArea").fadeIn();
+				
+				if ((hour >= 8) && (hour < 12)){
+					$("#immediateArea").fadeIn();
+				}else{
+				
+					$("#immediateArea").hide();
+				}
+				
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.2805202346863!2d114.93130540523119!3d4.892630019678778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32228acb18b46725%3A0x9118155b10d353ca!2sRaja%20Isteri%20Pengiran%20Anak%20Saleha%20Hospital!5e0!3m2!1sen!2sbn!4v1634281650713!5m2!1sen!2sbn";

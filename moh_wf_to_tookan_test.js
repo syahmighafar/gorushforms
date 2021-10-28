@@ -4,11 +4,37 @@ document.addEventListener("DOMContentLoaded", function(event) {
   
   function wfToTookan(){
   
-    let orderId = document.getElementById("Bru-HIMS-Number").value;
-    let jobDescription = document.getElementById("Type-Of-Mandatory").value;
-    let customerEmail = document.getElementById("id-Email").value;
-    let customerUsername = document.getElementById("Full-Name").value;
-    let customerPhone = document.getElementById("Contact-Number").value;
+    let orderId = document.getElementById("bruhims").value;
+    let jobDescription = document.getElementsByName("radioTOD").value;
+    let customerEmail = document.getElementById("email").value;
+    let customerUsername = document.getElementById("name").value;
+    let customerPhone = document.getElementById("contact_1").value;
+    let customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_3").value
+     + ", " + document.getElementById("address_4").value;
+    
+    var todaysDate = new Date();
+    
+    if(jobDescription == "Standard"){
+      if (todaysDate.getDate()>=){
+          }
+        
+       var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
+      var time = "17" + ":" + 00 + ":" + 00;
+    }
+    
+    if(jobDescription == "Express"){
+       var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+4);
+      var time = "17" + ":" + 00 + ":" + 00;
+    }
+    
+    if(jobDescription == "Immediate"){
+       var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+todaysDate.getDate();
+      var time = "23" + ":" + 00 + ":" + 00;
+    }
+    
+    var fullDateTime = date+' '+time;
+    
+    let jobdeliverydatetime = fullDateTime;
     
     var request = new XMLHttpRequest();
 
@@ -31,10 +57,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
       'customer_email': customerEmail,
       'customer_username': customerUsername,
       'customer_phone': customerPhone,
-      'customer_address': 'Brunei',
+      'customer_address': customerAddress,
       'latitude': '',
       'longitude': '',
-      'job_delivery_datetime': '2021-10-31 21:00:00',
+      'job_delivery_datetime': jobdeliverydatetime,
       'custom_field_template': '',
       'meta_data': [
 

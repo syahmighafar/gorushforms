@@ -187,7 +187,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 			
 			if($(this).val()=="Pengkalan Batu Health Centre") {
-				$("#immediateArea").hide();
+				
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
+
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.9930134353094!2d114.81397081532558!3d4.771159642369682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x322263643d7b9bf9%3A0xab86d8cb5835ceda!2sPengkalan%20Batu%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285210387!5m2!1sen!2sbn";
@@ -196,7 +206,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
 			
 			if($(this).val()=="Jubli Perak Sengkurong Health Centre") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.2877506842783!2d114.84314291532539!3d4.891412441334922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32226084b479a23b%3A0xf3137ef638ed3cfd!2sJubli%20Perak%20Sengkurong%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285543314!5m2!1sen!2sbn";
@@ -204,7 +222,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 
 			if($(this).val()=="Jubli Emas Kg Perpindahan Bunut Health Centre") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.547397189751!2d114.88291741532552!3d4.847486841715639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x322261c61f38a619%3A0x3a6a37bd46269d3a!2sJubli%20Emas%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285599556!5m2!1sen!2sbn";
@@ -212,7 +238,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 
 			if($(this).val()=="Pengiran Anak Puteri Hajah Rashidah Sa'adatul Bolkiah Health Centre") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.3769360804904!2d114.9340483153255!3d4.876369041465689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32228ac25aec45df%3A0x8707ccd2be1d106b!2sPAPHRSB%20SG%20ASAM%20HEALTH%20CENTRE!5e0!3m2!1sen!2sbn!4v1634285838280!5m2!1sen!2sbn";
@@ -220,7 +254,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 			
 			if($(this).val()=="Pengiran Anak Puteri Hajah Muta-Wakillah Hayatul Bolkiah Health Centre") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.0479626441015!2d114.90431041532548!3d4.9316318409836315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f57fa2c50b8f%3A0x5e99dc6cafc60b21!2sPengiran%20Anak%20Puteri%20Hajah%20Muta-Wakillah%20Hayatul%20Bolkiah%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285881919!5m2!1sen!2sbn";
@@ -228,7 +270,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 			
 			if($(this).val()=="Berakas Health Centre") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.828175459776!2d114.9636824153256!3d4.96821124066185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f42787932131%3A0xf9ab86325b87674!2sPusat%20Kesihatan%20Berakas!5e0!3m2!1sen!2sbn!4v1634285920206!5m2!1sen!2sbn";
@@ -236,7 +286,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 
 			if($(this).val()=="Muara Health Centre") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.4576007276696!2d115.06447081532535!3d5.029285440119686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f06dcb40542b%3A0xdce8b6a5b55c836d!2sMuara%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285963322!5m2!1sen!2sbn";
@@ -244,7 +302,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 			
 			if($(this).val()=="Psychiatry Department, Ministry of Health") {
-				$("#immediateArea").hide();
+				if ((day != 0) && (day != 5)){
+					if ((hour >= 8) && (hour < 12)){
+						$("#immediateArea").fadeIn();
+					}else{
+						$("#immediateArea").hide();
+					}
+				}else{
+					$("#immediateArea").hide();
+				}
 				$("#clinicAddress").hide();
 				$("#deliverymethodarea").fadeIn();
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.254386052767!2d114.90992181532567!3d4.897028391286052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f553a7c821df%3A0x65c23364c25df9!2sPsychiatry%20Department%2C%20Ministry%20of%20Health!5e0!3m2!1sen!2sbn!4v1634992947581!5m2!1sen!2sbn";

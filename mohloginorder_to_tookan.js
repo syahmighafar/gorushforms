@@ -2,6 +2,8 @@ document.addEventListener("submit", function(event) {
   
   event.preventDefault();
   
+  $(document).ready(function(){
+  
   let orderId = document.getElementById("bruhims").value;
   let jobDescription = document.getElementsByName("radioTOD").value;
   let customerEmail = document.getElementById("email").value;
@@ -16,80 +18,17 @@ document.addEventListener("submit", function(event) {
     customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_3").value
    + ", " + document.getElementById("address_4").value;
   }
+  var jobdeliverydatetime = "";
   var todaysDate = new Date();
 
-  var lastDate = "";
-
-  if(jobDescription == "Standard"){
-    if ( (todaysDate.getMonth() == 0)||(todaysDate.getMonth() == 2)||(todaysDate.getMonth() == 4)||(todaysDate.getMonth() == 6)||(todaysDate.getMonth() == 7)||
-       (todaysDate.getMonth() == 9)||(todaysDate.getMonth() == 11) ){
-        lastDate = todaysDate.getDate()+7;
-        if(lastDate > 31){
-          var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
-        }else{
-          var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+(todaysDate.getDate()+7);
-        }
-     }
-
-    if ( (todaysDate.getMonth() == 3)||(todaysDate.getMonth() == 5)||(todaysDate.getMonth() == 8)||(todaysDate.getMonth() == 10) ){
-        lastDate = todaysDate.getDate()+7;
-        if(lastDate > 30){
-          var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
-        }else{
-          var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+(todaysDate.getDate()+7);
-        }
-     }
-
-    if (todaysDate.getMonth() == 1){
-        lastDate = todaysDate.getDate()+7;
-        if(lastDate > 28){
-          var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
-        }else{
-          var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+(todaysDate.getDate()+7);
-        }
-     }
-    var time = "17" + ":" + 00 + ":" + 00;
+  if (todaysDate.getDate() >= 25){
+    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+3)+'-'+(todaysDate.getDate());
+  } else {
+    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+2)+'-'+(todaysDate.getDate());
   }
 
-  if(jobDescription == "Express"){
-     if ( (todaysDate.getMonth() == 0)||(todaysDate.getMonth() == 2)||(todaysDate.getMonth() == 4)||(todaysDate.getMonth() == 6)||(todaysDate.getMonth() == 7)||
-       (todaysDate.getMonth() == 9)||(todaysDate.getMonth() == 11) ){
-        lastDate = todaysDate.getDate()+4;
-        if(lastDate > 31){
-          var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
-        }else{
-          var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+(todaysDate.getDate()+7);
-        }
-     }
-
-    if ( (todaysDate.getMonth() == 3)||(todaysDate.getMonth() == 5)||(todaysDate.getMonth() == 8)||(todaysDate.getMonth() == 10) ){
-        lastDate = todaysDate.getDate()+4;
-        if(lastDate > 30){
-          var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
-        }else{
-          var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+(todaysDate.getDate()+7);
-        }
-     }
-
-    if (todaysDate.getMonth() == 1){
-        lastDate = todaysDate.getDate()+4;
-        if(lastDate > 28){
-          var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+(todaysDate.getDate()+7);
-        }else{
-          var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+(todaysDate.getDate()+7);
-        }
-     }
-    var time = "17" + ":" + 00 + ":" + 00;
-  }
-
-  if(jobDescription == "Immediate"){
-     var date = todaysDate.getFullYear()+'-'+todaysDate.getMonth()+'-'+todaysDate.getDate();
-    var time = "17" + ":" + 00 + ":" + 00;
-  }
-
-  var fullDateTime = date+' '+time;
-
-  let jobdeliverydatetime = fullDateTime;
+    var time = "17:00:00";
+  jobdeliverydatetime = date+' '+time;
 
   var request = new XMLHttpRequest();
 
@@ -138,3 +77,4 @@ document.addEventListener("submit", function(event) {
 
   request.send(JSON.stringify(body));
 });
+  });

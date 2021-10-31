@@ -5,7 +5,7 @@ document.addEventListener("submit", function(event) {
   $(document).ready(function(){
   
   let orderId = document.getElementById("jpmc").value;
-  let jobDescription = document.getElementsByName("radioTOD").value;
+  let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
   let customerEmail = document.getElementById("email").value;
   let customerUsername = document.getElementById("name").value;
   let customerPhone = document.getElementById("contact_1").value;
@@ -29,6 +29,10 @@ document.addEventListener("submit", function(event) {
 
     var time = "17:00:00";
   jobdeliverydatetime = date+' '+time;
+    
+    let customerIC = document.getElementById("icNumber").value;
+  let customerRemarks = document.getElementById("re").value;
+  let customerPM = document.querySelector('input[name=radioPAY]:checked').value
 
   var request = new XMLHttpRequest();
 
@@ -56,10 +60,9 @@ document.addEventListener("submit", function(event) {
     'latitude': '',
     'longitude': '',
     'job_delivery_datetime': jobdeliverydatetime,
-    'custom_field_template': '',
-    'meta_data': [
-
-    ],
+    'custom_field_template': 'Local_Delivery',
+      'meta_data': [{"label":"IC","data":customerIC},{"label":"BRUHIMS","data":orderId},{"label":"Remarks","data":customerRemarks},
+      {"label":"Type","data":jobDescription},{"label":"Method","data":customerPM},{"label":"Barcode","data":orderId}],
     'team_id': '921691',
     'auto_assignment': '0',
     'has_pickup': '0',

@@ -21,10 +21,10 @@ document.addEventListener("submit", function(event) {
   var jobdeliverydatetime = "";
   var todaysDate = new Date();
 
-  if (todaysDate.getDate() >= 25){
-    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+3)+'-'+(todaysDate.getDate());
+  if (todaysDate.getDate() >= 28){
+    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+2)+'-'+ 28);
   } else {
-    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+2)+'-'+(todaysDate.getDate());
+    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+ 28);
   }
 
     var time = "17:00:00";

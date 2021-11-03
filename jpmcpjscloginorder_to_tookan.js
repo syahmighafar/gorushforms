@@ -22,9 +22,9 @@ document.addEventListener("submit", function(event) {
   var todaysDate = new Date();
 
   if (todaysDate.getDate() >= 28){
-    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+2)+'-'+ 28);
+    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+2)+'-'+ 28;
   } else {
-    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+ 28);
+    var date = todaysDate.getFullYear()+'-'+(todaysDate.getMonth()+1)+'-'+ 28;
   }
 
     var time = "17:00:00";

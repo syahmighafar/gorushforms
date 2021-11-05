@@ -5,17 +5,17 @@ document.addEventListener("submit", function(event) {
   $(document).ready(function(){
   
   let orderId = document.getElementById("bruhims").value;
-  let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
-  let customerEmail = document.getElementById("email").value;
+  let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
+  let customerEmail = document.getElementById("id-Email").value;
   let customerUsername = document.getElementById("name").value;
   let customerPhone = document.getElementById("contact_1").value;
   
   var customerAddress = "";
   
-  if (document.getElementById("address_3").value.length == 0){
+  if (document.getElementById("Simpang").value.length == 0){
     customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_4").value;
   } else{
-    customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_3").value
+    customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("Simpang").value
    + ", " + document.getElementById("address_4").value;
   }
   var jobdeliverydatetime = "";
@@ -32,7 +32,7 @@ document.addEventListener("submit", function(event) {
     
     let customerIC = document.getElementById("icNumber").value;
   let customerRemarks = document.getElementById("re").value;
-  let customerPM = document.querySelector('input[name=radioPAY]:checked').value
+  let customerPM = document.querySelector('input[name=PaymentMethod]:checked').value
 
   var request = new XMLHttpRequest();
 

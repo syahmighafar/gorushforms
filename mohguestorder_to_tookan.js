@@ -45,7 +45,7 @@ document.addEventListener("submit", function(event) {
       console.log('Status:', this.status);
       console.log('Headers:', this.getAllResponseHeaders());
       console.log('Body:', this.responseText);
-      document.getElementById("mohloginform").submit();
+      document.getElementById("mohguestform").submit();
     }
   };
 

@@ -268,6 +268,14 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#hcAreaMapAddress").fadeIn();
      			}
 			
+			if($(this).val()=="Rimba Dialysis Centre") {
+				$("#immediateArea").hide();
+				$("#clinicAddress").hide();
+				$("#deliverymethodarea").fadeIn();
+				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d993.762589183511!2d114.9064117!3d4.9312319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f57fb34628ab%3A0xe11b4fd5ed3d2ce1!2sRimba%20Dialysis%20Centre!5e0!3m2!1sen!2sbn!4v1636339406654!5m2!1sen!2sbn";
+				$("#hcAreaMapAddress").fadeIn();
+     			}
+			
 			if($(this).val()=="Berakas Health Centre") {
 				$("#immediateArea").hide();
 				$("#clinicAddress").hide();

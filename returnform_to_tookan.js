@@ -4,7 +4,6 @@ document.addEventListener("submit", function(event) {
   
   $(document).ready(function(){
     
-  let jobDescription = document.querySelector('input[name=return-method-radio]:checked').value
   let customerEmail = document.getElementById("id-Email").value;
   let customerUsername = document.getElementById("Full-Name").value;
   let customerPhone = document.getElementById("Contact-Number-2").value;
@@ -39,16 +38,16 @@ document.addEventListener("submit", function(event) {
   var body = {
     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
     'order_id': '',
-    'job_description': jobDescription,
+    'job_description': 'RTN TO MY',
     'customer_email': customerEmail,
     'customer_username': customerUsername,
     'customer_phone': customerPhone,
-    'customer_address': "JADE E SERVICES MALAYSIA SDN BHD, Block A , Mapletree Distripark Persiaran Perusahan, Seksyen 23,Shah Alam, Selangor, Malaysia,",
+    'customer_address': 'JADE E SERVICES MALAYSIA SDN BHD, Block A , Mapletree Distripark Persiaran Perusahan, Seksyen 23,Shah Alam, Selangor, Malaysia,',
     'latitude': '',
     'longitude': '',
     'job_delivery_datetime': jobdeliverydatetime,
-    'custom_field_template': 'Local_Delivery',
-      'meta_data': [{"label":"Type","data":jobDescription}],
+    'custom_field_template': '',
+      'meta_data': '',
     'team_id': '921691',
     'auto_assignment': '0',
     'has_pickup': '0',

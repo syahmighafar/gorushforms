@@ -12,7 +12,7 @@ document.addEventListener("submit", function(event) {
   
   var customerAddress = "";
   
-  if (document.getElementById("address_3").value.length == 0){
+  if (document.getElementById("Simpang").value.length == 0){
     customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_4").value;
   } else{
     customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("Simpang").value

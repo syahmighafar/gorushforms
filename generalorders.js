@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('Sender-Phone').value = '';
 				document.getElementById('email').value = '';
 				document.getElementById('Pick-Up-Address').value = '';
-				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Pickup-Date').value = '';
 				document.getElementById('Delivery-Type').value = '';
 				document.getElementById('Sender-Name-Delivery').value = '';
 				document.getElementById('Sender-Phone-Delivery').value = '';
@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('Sender-Phone').value = '';
 				document.getElementById('email').value = '';
 				document.getElementById('Pick-Up-Address').value = '';
-				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Pickup-Date').value = '';
 				document.getElementById('Delivery-Type').value = '';
 				document.getElementById('Sender-Name-Delivery').value = '';
 				document.getElementById('Sender-Phone-Delivery').value = '';
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('Sender-Phone').value = '';
 				document.getElementById('email').value = '';
 				document.getElementById('Pick-Up-Address').value = '';
-				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Pickup-Date').value = '';
 				document.getElementById('Delivery-Type').value = '';
 				document.getElementById('Sender-Name-Delivery').value = '';
 				document.getElementById('Sender-Phone-Delivery').value = '';
@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('Sender-Phone').value = '';
 				document.getElementById('email').value = '';
 				document.getElementById('Pick-Up-Address').value = '';
-				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Pickup-Date').value = '';
 				document.getElementById('Delivery-Type').value = '';
 				document.getElementById('Sender-Name-Delivery').value = '';
 				document.getElementById('Sender-Phone-Delivery').value = '';

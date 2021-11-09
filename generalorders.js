@@ -58,6 +58,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = false;
 				document.getElementById("COD-Amount").required = false;
 				
+				document.getElementById('Sender-Name').value = '';
+				document.getElementById('Sender-Phone').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('Pick-Up-Address').value = '';
+				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Delivery-Type').value = '';
+				document.getElementById('Sender-Name-Delivery').value = '';
+				document.getElementById('Sender-Phone-Delivery').value = '';
+				document.getElementById('Receiver-Name').value = '';
+				document.getElementById('Receiver-Phone').value = '';
+				document.getElementById('Delivery-Address').value = '';
+				document.getElementById('Product-Type').value = '';
+				document.getElementById('Product-Weight').value = '';
+				document.getElementById('codrequired').value = '';
+				document.getElementById('COD-Amount').value = '';
+				
 				$("#paymentarea").hide();
      			}
 	     
@@ -87,9 +103,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Product-Weight").required = false;
 				document.getElementById("codrequired").required = false;
 				document.getElementById("COD-Amount").required = false;
+				
+				document.getElementById('Sender-Name').value = '';
+				document.getElementById('Sender-Phone').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('Pick-Up-Address').value = '';
+				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Delivery-Type').value = '';
+				document.getElementById('Sender-Name-Delivery').value = '';
+				document.getElementById('Sender-Phone-Delivery').value = '';
+				document.getElementById('Receiver-Name').value = '';
+				document.getElementById('Receiver-Phone').value = '';
+				document.getElementById('Delivery-Address').value = '';
+				document.getElementById('Product-Type').value = '';
+				document.getElementById('Product-Weight').value = '';
+				document.getElementById('codrequired').value = '';
+				document.getElementById('COD-Amount').value = '';
 			
 				$("#paymentarea").fadeIn();
-	
      			}
      	
 			if($(this).val()=="Delivery") {
@@ -119,24 +150,23 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = true;
 				document.getElementById("COD-Amount").required = false;
 				
+				document.getElementById('Sender-Name').value = '';
+				document.getElementById('Sender-Phone').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('Pick-Up-Address').value = '';
+				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Delivery-Type').value = '';
+				document.getElementById('Sender-Name-Delivery').value = '';
+				document.getElementById('Sender-Phone-Delivery').value = '';
+				document.getElementById('Receiver-Name').value = '';
+				document.getElementById('Receiver-Phone').value = '';
+				document.getElementById('Delivery-Address').value = '';
+				document.getElementById('Product-Type').value = '';
+				document.getElementById('Product-Weight').value = '';
+				document.getElementById('codrequired').value = '';
+				document.getElementById('COD-Amount').value = '';
+				
 				$("#paymentarea").show();
-	     
-	     			$('#codrequired').change(function(){
-					if($(this).val().length == 0) {
-			     			$("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = false;
-		     			}
-					
-		     			if($(this).val()=="Yes") {
-			     			$("#codamountarea").fadeIn();
-			     			document.getElementById("COD-Amount").required = true;
-		     			}
-		     		
-					if($(this).val()=="No") {
-			     			$("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = false;
-		     			}
-	     			});
      			}
 		
 			if($(this).val()==="Pickup and Delivery") {
@@ -165,27 +195,41 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = true;
 				document.getElementById("COD-Amount").required = false;
 				
+				document.getElementById('Sender-Name').value = '';
+				document.getElementById('Sender-Phone').value = '';
+				document.getElementById('email').value = '';
+				document.getElementById('Pick-Up-Address').value = '';
+				document.getElementById('Pickup-Dater').value = '';
+				document.getElementById('Delivery-Type').value = '';
+				document.getElementById('Sender-Name-Delivery').value = '';
+				document.getElementById('Sender-Phone-Delivery').value = '';
+				document.getElementById('Receiver-Name').value = '';
+				document.getElementById('Receiver-Phone').value = '';
+				document.getElementById('Delivery-Address').value = '';
+				document.getElementById('Product-Type').value = '';
+				document.getElementById('Product-Weight').value = '';
+				document.getElementById('codrequired').value = '';
+				document.getElementById('COD-Amount').value = '';
+				
 				$("#paymentarea").fadeIn();
-		
-				$('#codrequired').change(function(){
-					if($(this).val().length == 0) {
-			    			 $("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = true;
-		     			}
-					
-		     			if($(this).val()=="Yes") {
-			    			 $("#codamountarea").fadeIn();
-			     			document.getElementById("COD-Amount").required = true;
-		     			}
-		     
-					if($(this).val()=="No") {
-			     			$("#codamountarea").hide();
-			     			document.getElementById("COD-Amount").required = false;
-		     			}
-	     			});
-		     
-		    
 	     		}
+			
+			$('#codrequired').change(function(){
+				if($(this).val().length == 0) {
+					 $("#codamountarea").hide();
+					document.getElementById("COD-Amount").required = true;
+				}
+
+				if($(this).val()=="Yes") {
+					 $("#codamountarea").fadeIn();
+					document.getElementById("COD-Amount").required = true;
+				}
+
+				if($(this).val()=="No") {
+					$("#codamountarea").hide();
+					document.getElementById("COD-Amount").required = false;
+				}
+			});
 			
 			$('#Payment-Method').change(function(){
 			

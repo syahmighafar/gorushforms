@@ -6,7 +6,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
         	$("#receiverarea").hide();
 		$("#paymentarea").hide();
 		$("#codamountarea").hide();
-	
+		
+		$("#sendernameArea").hide();
+		$("#senderphoneArea").hide();
+		$("#paymentnoticearea").hide();
+		
 		document.getElementById("Sender-Name").required = false;
 		document.getElementById("Sender-Phone").required = false;
 		document.getElementById("email").required = false;
@@ -14,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		document.getElementById("Pickup-Date").required = false;
 	
 		document.getElementById("Delivery-Type").required = false;
+		
+		document.getElementById("Sender-Name-Delivery").required = false;
+		document.getElementById("Sender-Phone-Delivery").required = false;
+
 		document.getElementById("Receiver-Name").required = false;
 		document.getElementById("Receiver-Phone").required = false;
 		document.getElementById("Delivery-Address").required = false;
@@ -27,6 +35,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			if($(this).val().length == 0) {
         			$("#senderarea").hide();
         			$("#receiverarea").hide();
+				
+				$("#sendernameArea").hide();
+				$("#senderphoneArea").hide();
 	     
 				document.getElementById("Sender-Name").required = false;
 				document.getElementById("Sender-Phone").required = false;
@@ -35,6 +46,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Pickup-Date").required = false;
 	
 				document.getElementById("Delivery-Type").required = false;
+				
+				document.getElementById("Sender-Name-Delivery").required = false;
+				document.getElementById("Sender-Phone-Delivery").required = false;
+				
 				document.getElementById("Receiver-Name").required = false;
 				document.getElementById("Receiver-Phone").required = false;
 				document.getElementById("Delivery-Address").required = false;
@@ -48,8 +63,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	     
 
      			if($(this).val()=="Pickup") {
-        			$("#senderarea").show();
+        			$("#senderarea").fadeIn();
         			$("#receiverarea").hide();
+				
+				$("#sendernameArea").hide();
+				$("#senderphoneArea").hide();
 	     
 				document.getElementById("Sender-Name").required = true;
 				document.getElementById("Sender-Phone").required = true;
@@ -58,6 +76,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Pickup-Date").required = true;
 	
 				document.getElementById("Delivery-Type").required = false;
+				
+				document.getElementById("Sender-Name-Delivery").required = false;
+				document.getElementById("Sender-Phone-Delivery").required = false;
+				
 				document.getElementById("Receiver-Name").required = false;
 				document.getElementById("Receiver-Phone").required = false;
 				document.getElementById("Delivery-Address").required = false;
@@ -66,14 +88,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = false;
 				document.getElementById("COD-Amount").required = false;
 			
-				$("#paymentarea").show();
+				$("#paymentarea").fadeIn();
 	
      			}
      	
 			if($(this).val()=="Delivery") {
 	     
-				$("#receiverarea").show();
+				$("#receiverarea").fadeIn();
 				$("#senderarea").hide();
+				
+				$("#sendernameArea").fadeIn();
+				$("#senderphoneArea").fadeIn();
 	
 				document.getElementById("Sender-Name").required = false;
 				document.getElementById("Sender-Phone").required = false;
@@ -82,6 +107,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Pickup-Date").required = false;
 	
 				document.getElementById("Delivery-Type").required = true;
+				
+				document.getElementById("Sender-Name-Delivery").required = true;
+				document.getElementById("Sender-Phone-Delivery").required = true;
+				
 				document.getElementById("Receiver-Name").required = true;
 				document.getElementById("Receiver-Phone").required = true;
 				document.getElementById("Delivery-Address").required = true;
@@ -99,7 +128,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		     			}
 					
 		     			if($(this).val()=="Yes") {
-			     			$("#codamountarea").show();
+			     			$("#codamountarea").fadeIn();
 			     			document.getElementById("COD-Amount").required = true;
 		     			}
 		     		
@@ -111,8 +140,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		
 			if($(this).val()==="Pickup and Delivery") {
-        			$("#senderarea").show();
-        			$("#receiverarea").show();
+        			$("#senderarea").fadeIn();
+        			$("#receiverarea").fadeIn();
+				
+				$("#sendernameArea").hide();
+				$("#senderphoneArea").hide();
 		
 				document.getElementById("Sender-Name").required = true;
 				document.getElementById("Sender-Phone").required = true;
@@ -121,6 +153,10 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("Pickup-Date").required = true;
 		
 				document.getElementById("Delivery-Type").required = true;
+				
+				document.getElementById("Sender-Name-Delivery").required = false;
+				document.getElementById("Sender-Phone-Delivery").required = false;
+				
 				document.getElementById("Receiver-Name").required = true;
 				document.getElementById("Receiver-Phone").required = true;
 				document.getElementById("Delivery-Address").required = true;
@@ -129,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("codrequired").required = true;
 				document.getElementById("COD-Amount").required = false;
 				
-				$("#paymentarea").show();
+				$("#paymentarea").fadeIn();
 		
 				$('#codrequired').change(function(){
 					if($(this).val().length == 0) {
@@ -138,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		     			}
 					
 		     			if($(this).val()=="Yes") {
-			    			 $("#codamountarea").show();
+			    			 $("#codamountarea").fadeIn();
 			     			document.getElementById("COD-Amount").required = true;
 		     			}
 		     
@@ -150,6 +186,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		     
 		    
 	     		}
+			
+			$('#Payment-Method').change(function(){
+			
+				if ($(this).val().length == 0) {
+					$("#paymentnoticearea").hide();
+				}
+
+				if ($(this).val()=="Cash On Delivery") {
+					$("#paymentnoticearea").hide();
+				}
+
+				if ($(this).val()=="Bank Transfer") {
+					$("#paymentnoticearea").fadeIn();
+				}
+			});
   		});
 
 	});

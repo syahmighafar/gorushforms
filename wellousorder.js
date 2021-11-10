@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				($("#District").val().length == 0 )||
 				($("#Kampung").val().length == 0 )||
 				($("#Jalan-Location").val().length == 0 )||
-				($("#Simpang-Number").val().length == 0 )||
 				($("#House-Unit-Number").val().length == 0 ) ) {
 				$("#paymentarea").hide();
 				alert("Please do not leave the required fields empty!");
@@ -45,7 +44,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			    && ($("#District").val().length != 0)
 			   && ($("#Kampung").val().length != 0)
 			   && ($("#Jalan-Location").val().length != 0)
-			   && ($("#Simpang-Number").val().length != 0)
 			   && ($("#House-Unit-Number").val().length != 0)) {
 				$("#deliverydetailsnextbutton").hide();
 				$("#paymentarea").fadeIn();

@@ -631,7 +631,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#submitbutton").fadeIn();
      			}
 	     
-     			if($(this).val().checked = false;) {
+     			if($(this).val().checked = false) {
 				$("#captchaBox").hide();
 				$("#submitbutton").hide();
      			}

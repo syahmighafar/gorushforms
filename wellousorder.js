@@ -31,20 +31,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	     	});
 		
 		document.getElementById("deliverydetailsnextbutton").addEventListener("click", function() {
-  			if ( ($("#Receiver-Name").val().length == 0 ) || ($("#Receiver-Phone").val().length == 0 ) ||
-				($("#District").val().length == 0 )||
-				($("#Kampung").val().length == 0 )||
-				($("#Jalan-Location").val().length == 0 )||
-				($("#House-Unit-Number").val().length == 0 ) ) {
+  			if ( ($("#Receiver-Name").val().length == 0 ) || ($("#contact_1").val().length == 0 ) ||
+				($("#address_1").val().length == 0 )||
+				($("#address_2").val().length == 0 )||
+				($("#address_4").val().length == 0 ) ) {
 				$("#paymentarea").hide();
 				alert("Please do not leave the required fields empty!");
 			}
 				
-			if (($("#Receiver-Name").val().length != 0) && ($("#Receiver-Phone").val().length != 0)
-			    && ($("#District").val().length != 0)
-			   && ($("#Kampung").val().length != 0)
-			   && ($("#Jalan-Location").val().length != 0)
-			   && ($("#House-Unit-Number").val().length != 0)) {
+			if (($("#Receiver-Name").val().length != 0) && ($("#contact_1").val().length != 0)
+			    && ($("#address_1").val().length != 0)
+			   && ($("#address_2").val().length != 0)
+			   && ($("#address_4").val().length != 0) ) {
 				$("#deliverydetailsnextbutton").hide();
 				$("#paymentarea").fadeIn();
 			}

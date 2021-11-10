@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(event) {
 	$(document).ready(function(){
-    
-    		$("#deliverytypearea").hide();
+ 
     		$("#deliverychoicearea").hide();
     		$("#receiverarea").hide();
     		$("#confirmationarea").hide();

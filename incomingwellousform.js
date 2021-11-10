@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			}
 				
 			if (($("#Tracking-Number").val().length != 0) && ($("#AWB-Number").val().length != 0)
-			    && ($("Reference-Number").val().length != 0)
+			    && ($("#Reference-Number").val().length != 0)
 			   && ($("#Arrival-Date").val().length != 0) ) {
 				$("#deliverydetailsnextbutton").hide();
 				$("#confirmationarea").fadeIn();

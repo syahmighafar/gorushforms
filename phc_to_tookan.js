@@ -96,7 +96,7 @@ document.addEventListener("submit", function(event) {
     'longitude': '',
     'job_delivery_datetime': jobdeliverydatetime,
     'custom_field_template': 'Local_Delivery',
-      'meta_data': [{"label":"IC","data":customerIC},{"label":"BRUHIMS","data":orderId},{"label":"Remarks","data":customerRemarks},
+      'meta_data': [{"label":"IC","data":customerIC},{"label":"Patient_Number","data":orderId},{"label":"Remarks","data":customerRemarks},
       {"label":"Type","data":jobDescription},{"label":"Method","data":customerPM},{"label":"Barcode","data":orderId},{"label":"OrderOriginFrom","data":order_Origin}],
     'team_id': '921691',
     'auto_assignment': '0',

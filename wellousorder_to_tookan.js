@@ -7,7 +7,7 @@ document.addEventListener("submit", function(event) {
   let agentName = document.getElementById("Agent-Name").value; 
   
   let wellousItems = document.getElementById("Items").value;
-  let receiverName = document.getElementById("name").value;
+  let receiverName = document.getElementById("Receiver-Name").value;
   let receiverPhone = document.getElementById("contact_1").value;
   let jobDescription = document.getElementById("Delivery-Type").value;
   

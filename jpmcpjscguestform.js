@@ -298,25 +298,26 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#paymentnoticearea").hide();
 				$("#remarkarea").hide();
 				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
 			}
 
 			if ($(this).val()=="Cash") {
 				$("#paymentnoticearea").hide();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
-				$("#captchaBox").fadeIn();
-				$("#submitbutton").fadeIn();
 			}
 			
 			if ($(this).val()=="Bank Transfer") {
 				$("#paymentnoticearea").fadeIn();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
+			}
+		});
+		
+		$('#Agreement').change(function(){
+			if($(this).val().checked = true) {
 				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
-			}
+     			}
 		});
 	});		
 });

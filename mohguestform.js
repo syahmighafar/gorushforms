@@ -626,19 +626,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		});
 		
 		$('#Agreement').change(function(){
-			if($(this).val().length == 0) {
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-     			}
-			
 			if($(this).val().checked = true) {
 				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
-     			}
-	     
-     			if($(this).val().checked = false) {
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
      			}
 		});
 	});		

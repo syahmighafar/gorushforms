@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('scDate').value = '';
 			}
 
-			if ($(this).val()=="Standard") {
+			if ($(this).val()=="Standard ($3)") {
 				$("#mohnormalregArea").fadeIn();
 				
 				$("#addressArea").fadeIn();
@@ -145,7 +145,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('scDate').value = '';
 			}
 			
-			if ($(this).val()=="Express") {
+			if ($(this).val()=="Express ($5)") {
 				$("#mohnormalregArea").fadeIn();
 				
 				$("#addressArea").fadeIn();
@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('scDate').value = '';
 			}
 			
-			if ($(this).val()=="Immediate") {
+			if ($(this).val()=="Immediate ($20)") {
 				$("#mohnormalregArea").fadeIn();
 				
 				$("#addressArea").fadeIn();

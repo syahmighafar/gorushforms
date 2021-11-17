@@ -33,6 +33,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#parttimearea").hide();				
 				$("#driverlicensearea").hide();
 				$("#employementarea").fadeIn();
+				$("#daysavailablearea").hide();
+				$("#registrationarea").hide();
+				
 				
 				$('input[name=Employment]').change(function(){
 					if($(this).val().length == 0) {
@@ -47,13 +50,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
      			}
 	     
-     			if( ($(this).val()=="Field Courier Logistic Support (Dispatchers - Full Time)") ) {
+     			if( ($(this).val()=="Field Courier Logistic Support (Dispatchers)") ) {
 				$("#dispatcherareanotice").fadeIn();
 				$("#freelancearea").fadeIn();
 				$("#fulltimearea").fadeIn();
 				$("#parttimearea").hide();				
 				$("#driverlicensearea").show();
 				$("#employementarea").fadeIn();
+				$("#daysavailablearea").hide();
+				$("#registrationarea").hide();
 				
 				$('input[name=Employment]').change(function(){
 					if($(this).val().length == 0) {
@@ -75,6 +80,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#parttimearea").fadeIn();
 				$("#driverlicensearea").hide();
 				$("#employementarea").fadeIn();
+				$("#daysavailablearea").hide();
+				$("#registrationarea").hide();
 				
 				$('input[name=Employment]').change(function(){
 					if($(this).val().length == 0) {

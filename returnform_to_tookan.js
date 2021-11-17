@@ -5,6 +5,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#submitbutton").hide();
 
+        document.getElementById("nextbutton").addEventListener("click", function () {
+            if (($("#Full-Name").val().length == 0) || ($("#id-Email").val().length == 0) || ($("#Contact-Number-2").val().length == 0) || ($("#Postal-Code").val().length == 0) || ($("#Home-Address-2").val().length == 0) || ($("#Item-Description").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the required fields empty!");
+            }
+
+            if (($("#Full-Name").val().length != 0) && ($("#id-Email").val().length != 0) && ($("#Contact-Number-2").val().length != 0) && ($("#Postal-Code").val().length != 0) && ($("#Home-Address-2").val().length != 0) && ($("#Item-Description").val().length != 0)) {
+                $("#nextbutton").hide();
+                $("#agreementArea").fadeIn();
+            }
+        });
+
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
 

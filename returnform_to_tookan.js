@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        
+        $("#agreementArea").hide();
 
         $("#pleasewait").hide();
 

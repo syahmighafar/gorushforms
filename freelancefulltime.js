@@ -4,47 +4,55 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$("#registrationarea").hide();
 		$("#uploadarea").hide();
 		$("#confirmationarea").hide();
-		$("#employementarea1").hide();
-		$("#employementarea2").hide();
+		$("#freelancearea").hide();
+		$("#fulltimearea").hide();
+		$("#parttimearea").hide();
 		$("#daysavailablearea").hide();
 		$("#driverlicensearea").hide();
+		$("#employementarea").hide();
 	
 		$("#dispatcherareanotice").hide();
-
-     		$('#Position-Applied').change(function(){
+		
+		$('#Position-Applied').change(function(){
 			
 			if($(this).val().length == 0) {
 				$("#dispatcherareanotice").hide();
-				$("#employementarea1").hide();
-				$("#employementarea2").hide();
+				$("#freelancearea").hide();
+				$("#fulltimearea").hide();
+				$("#parttimearea").hide();
+				$("#driverlicensearea").hide();
+				$("#employementarea").hide();
+     			}
+			
+     			if( ($(this).val()=="Accountant") ) {
+				$("#dispatcherareanotice").hide();
+				$("#freelancearea").hide();
+				$("#fulltimearea").fadeIn();
+				$("#parttimearea").hide();				
+				$("#driverlicensearea").hide();
+				$("#employementarea").fadeIn();
      			}
 	     
-     			if($(this).val()=="Field Courier Logistic Support (Dispatchers - Full Time)") {
+     			if( ($(this).val()=="Field Courier Logistic Support (Dispatchers - Full Time)") ) {
 				$("#dispatcherareanotice").fadeIn();
-				$("#employementarea1").fadeIn();
-				$("#employementarea2").hide();
+				$("#freelancearea").fadeIn();
+				$("#fulltimearea").fadeIn();
+				$("#parttimearea").hide();				
 				$("#driverlicensearea").show();
+				$("#employementarea").fadeIn();
      			}
 			
      			if(($(this).val()=="Operation Officer") || ($(this).val()=="Warehouse Assistant") ) {
 				$("#dispatcherareanotice").hide();
-				$("#employementarea1").hide();
-				$("#employementarea2").fadeIn();
+				$("#freelancearea").fadeIn();
+				$("#fulltimearea").fadeIn();
+				$("#parttimearea").hide();
 				$("#driverlicensearea").hide();
+				$("#employementarea").fadeIn();
      			}
 		});
 		
 		$('#Employment').change(function(){
-			if($(this).val().length == 0) {
-				$("#daysavailablearea").hide();
-     			}
-	     
-     			if($(this).val().length != 0) {
-				$("#daysavailablearea").fadeIn();
-     			}
-		});
-		
-		$('#Employment-2').change(function(){
 			if($(this).val().length == 0) {
 				$("#daysavailablearea").hide();
      			}

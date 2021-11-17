@@ -641,7 +641,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
-                $("#submitbutton").fadeIn();
+                $("#pleasewait").fadeIn();
 
                 let orderId = document.getElementById("bruhims").value;
                 let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
@@ -685,6 +685,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Status:', this.status);
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
+                        $("#pleasewait").hide();
+                        $("#submitbutton").fadeIn();
                     }
                 };
 

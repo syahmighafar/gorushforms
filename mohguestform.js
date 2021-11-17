@@ -52,6 +52,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#stdAgree").hide();
         $("#expAgree").hide();
         $("#immAgree").hide();
+        
+        $("#pleasewait").hide();
 
         $("#submitbutton").hide();
 

@@ -22,6 +22,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#parttimearea").hide();
 				$("#driverlicensearea").hide();
 				$("#employementarea").hide();
+				$("#daysavailablearea").hide();
+				$("#registrationarea").hide();
      			}
 			
      			if( ($(this).val()=="Accountant") ) {
@@ -31,6 +33,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#parttimearea").hide();				
 				$("#driverlicensearea").hide();
 				$("#employementarea").fadeIn();
+				
+				$('input[name=Employment]').change(function(){
+					if($(this).val().length == 0) {
+						$("#daysavailablearea").hide();
+						$("#registrationarea").hide();
+					}
+
+					if($(this).val().length != 0) {
+						$("#daysavailablearea").hide();
+						$("#registrationarea").fadeIn();
+					}
+				});
      			}
 	     
      			if( ($(this).val()=="Field Courier Logistic Support (Dispatchers - Full Time)") ) {
@@ -40,6 +54,18 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#parttimearea").hide();				
 				$("#driverlicensearea").show();
 				$("#employementarea").fadeIn();
+				
+				$('input[name=Employment]').change(function(){
+					if($(this).val().length == 0) {
+						$("#daysavailablearea").hide();
+						$("#registrationarea").hide();
+					}
+
+					if($(this).val().length != 0) {
+						$("#daysavailablearea").fadeIn();
+						$("#registrationarea").hide();
+					}
+				});
      			}
 			
      			if(($(this).val()=="Operation Officer") || ($(this).val()=="Warehouse Assistant") ) {
@@ -49,19 +75,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#parttimearea").fadeIn();
 				$("#driverlicensearea").hide();
 				$("#employementarea").fadeIn();
+				
+				$('input[name=Employment]').change(function(){
+					if($(this).val().length == 0) {
+						$("#daysavailablearea").hide();
+						$("#registrationarea").hide();
+					}
+
+					if($(this).val().length != 0) {
+						$("#daysavailablearea").hide();
+						$("#registrationarea").fadeIn();
+					}
+				});
      			}
 		});
-		
-		$('input[name=Employment]').change(function(){
-			if($(this).val().length == 0) {
-				$("#daysavailablearea").hide();
-     			}
-	     
-     			if($(this).val().length != 0) {
-				$("#daysavailablearea").fadeIn();
-     			}
-		});
-		
+
 		document.getElementById("daysavailablenextbutton").addEventListener("click", function() {
   			if (($("#Days-Available").val().length == 0)) {
 				$("#registrationarea").hide();

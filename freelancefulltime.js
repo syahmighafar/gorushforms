@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      			}
 		});
 		
-		$('#Employment').change(function(){
+		$('input[name=Employment]').change(function(){
 			if($(this).val().length == 0) {
 				$("#daysavailablearea").hide();
      			}

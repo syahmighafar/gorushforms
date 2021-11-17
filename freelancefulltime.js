@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
 			
      			if(($(this).val()=="Operation Officer") || ($(this).val()=="Warehouse Assistant") ) {
 				$("#dispatcherareanotice").hide();
-				$("#freelancearea").fadeIn();
+				$("#freelancearea").hide();
 				$("#fulltimearea").fadeIn();
-				$("#parttimearea").hide();
+				$("#parttimearea").fadeIn();
 				$("#driverlicensearea").hide();
 				$("#employementarea").fadeIn();
      			}

@@ -35,17 +35,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("deliverydetailsnextbutton").addEventListener("click", function () {
             if (($("#Receiver-Name").val().length == 0) || ($("#contact_1").val().length == 0) ||
-                ($("#address_1").val().length == 0) ||
-                ($("#address_2").val().length == 0) ||
-                ($("#address_4").val().length == 0)) {
+                ($("#address_1").val().length == 0)) {
                 $("#paymentarea").hide();
                 alert("Please do not leave the required fields empty!");
             }
 
             if (($("#Receiver-Name").val().length != 0) && ($("#contact_1").val().length != 0)
-                && ($("#address_1").val().length != 0)
-                && ($("#address_2").val().length != 0)
-                && ($("#address_4").val().length != 0)) {
+                && ($("#address_1").val().length != 0)) {
                 $("#deliverydetailsnextbutton").hide();
                 $("#paymentarea").fadeIn();
             }
@@ -76,15 +72,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let receiverPhone = document.getElementById("contact_1").value;
                 let jobDescription = document.getElementById("Delivery-Type").value;
                 let sellerName = document.getElementById("Seller-Name").value;
-
-                var receiverAddress = "";
-
-                if (document.getElementById("Simpang").value.length == 0) {
-                    receiverAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_4").value;
-                } else {
-                    receiverAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("Simpang").value
-                        + ", " + document.getElementById("address_4").value;
-                }
+                let receiverAddress = document.getElementById("address_1").value;
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
 

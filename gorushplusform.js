@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
+                
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwj9CLVaYMlqIslasLwv_lL5JDFD99y0qCPDv4o4-m5I3q_s-_3JUy3vIJ8MLIjAic22w/exec'
+                const form = document.forms['Go Rush Plus Order']
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
 
                 let orderId = document.getElementById("Tracking-Number").value;
                 let customerUsername = document.getElementById("Consignee-s-Name").value;

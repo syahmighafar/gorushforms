@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let orderId = document.getElementById("Tracking-Number").value;
                 let customerUsername = document.getElementById("Consignee-s-Name").value;
                 let customerPhone = document.getElementById("Consignee-s-Phone-2").value;
-                let customerAddress = document.getElementById("Consignee-s-Phone-2").value;
 
                 let supplierName = document.getElementById("Supplier-Name").value;
                 let totalPrice = document.getElementById("Price-2").value;

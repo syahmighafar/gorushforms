@@ -18,13 +18,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let orderId = document.getElementById("Tracking-Number").value;
                 let customerUsername = document.getElementById("Consignee-s-Name").value;
-                let customerPhone = document.getElementById("Consignee-s-Phone-2").value;
+                let customerPhone = document.getElementById("Consignee-s-Phone").value;
 
                 let supplierName = document.getElementById("Supplier-Name").value;
-                let totalPrice = document.getElementById("Price-2").value;
+                let totalPrice = document.getElementById("Total-Price-RM").value;
 
 
-                var customerAddress = document.getElementById("address_1").value;
+                var customerAddress = document.getElementById("Delivery-Address").value;
 
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();

@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
                 
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbxK8Aq46hmRbuXL36ECsn8B_NMDpq2gEzH2MXHLX425JFD-AOM99_FyXaSP5Zl5SqAolw/exec'
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbwj9CLVaYMlqIslasLwv_lL5JDFD99y0qCPDv4o4-m5I3q_s-_3JUy3vIJ8MLIjAic22w/exec'
                 const form = document.forms['google-sheet']
 
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})

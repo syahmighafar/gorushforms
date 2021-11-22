@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
+                
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbxK8Aq46hmRbuXL36ECsn8B_NMDpq2gEzH2MXHLX425JFD-AOM99_FyXaSP5Zl5SqAolw/exec'
+                const form = document.forms['google-sheet']
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                .catch(error => console.error('Error!', error.message))
 
                 let orderId = document.getElementById("Tracking-Number").value;
                 let customerUsername = document.getElementById("Consignee-s-Name").value;

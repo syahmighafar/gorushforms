@@ -13,8 +13,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!', error.message))
 
                 let orderId = document.getElementById("Tracking-Number").value;
                 let customerUsername = document.getElementById("Consignee-s-Name").value;

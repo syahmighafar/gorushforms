@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        
+        var todChoice = 0;
 
         const d = new Date();
         let hour = d.getHours();
@@ -461,6 +463,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 0;
             }
 
             if ($(this).val() == "Standard ($3)") {
@@ -486,6 +490,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 1;
             }
 
             if ($(this).val() == "Express ($5)") {
@@ -511,6 +517,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 2;
             }
 
             if ($(this).val() == "Immediate ($20)") {
@@ -536,6 +544,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").fadeIn();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 3;
             }
 
             if ($(this).val() == "Self Collect") {
@@ -645,18 +655,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
                 
-                
-
-                if ($('input[name=TypeofDelivery]').val().includes("Standard")) {
-
+                if (todChoice == 1){
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwjaWj2_4wMj6VnXpymPAcROLhnS8mT2E963_0JQ0wnIoGz3-zwe9lw-_AxZUfA2pZh/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
-                }
+                } 
                 
-                if ($('input[name=TypeofDelivery]').val().includes("Express")) {
+                if (todChoice == 2){
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwJrdVGovPIKHJaDq6spjMDZbX2o9o2w3aRqWD-WII4iFC6Kz04PygI-mWf2Xmp9Ghu/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
@@ -665,7 +672,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         .catch(error => console.error('Error!', error.message))
                 }
                 
-                if ($('input[name=TypeofDelivery]').val().includes("Immediate")) {
+                if (todChoice == 3){
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycby65apU30DEjBwE8VfYzROE1llAHChJi35iHh8nalVuTlp0FxN7D0IM2MqK3zcpuSDZ/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']

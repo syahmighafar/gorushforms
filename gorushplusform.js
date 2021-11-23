@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 fetch(scriptURL, { method: 'POST', body: new FormData(form)})
 
                 let orderId = document.getElementById("Tracking-Number").value;
-                let customerUsername = document.getElementById("Consignee-s-Name").value;
-                let customerPhone = document.getElementById("Consignee-s-Phone").value;
+                let customerUsername = document.getElementById("Consignee-Name").value;
+                let customerPhone = document.getElementById("Consignee-Phone").value;
 
                 let supplierName = document.getElementById("Supplier-Name").value;
                 let totalPrice = document.getElementById("Total-Price-RM").value;

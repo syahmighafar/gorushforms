@@ -647,8 +647,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if ($('input[name=TypeofDelivery]').val() == "Standard ($3)") {
 
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyJIqWdHdS65yX5SUMYsGdAiacXXKnYA0EXkPSH3UVtUZ4a6lbZsy40VtzllvAxKYoWgw/exec'
-                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzJ4_FsMyTpJd1iCRiTAOZG7dL05Yy8g9vOyqBu8grFtecmAN5ROiExQsaPGgw36b2lQA/exec'
+                    const form = document.forms['mohguestform']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))

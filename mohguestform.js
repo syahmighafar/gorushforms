@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#stdAgree").hide();
         $("#expAgree").hide();
         $("#immAgree").hide();
-        
+
         $("#pleasewait").hide();
 
         $("#submitbutton").hide();
@@ -644,13 +644,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
-                
+
                 if ($('input[name=TypeofDelivery]').val() == "Standard ($3)") {
-                
+
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyJIqWdHdS65yX5SUMYsGdAiacXXKnYA0EXkPSH3UVtUZ4a6lbZsy40VtzllvAxKYoWgw/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
-                
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
                 }
 

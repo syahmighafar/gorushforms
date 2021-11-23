@@ -644,8 +644,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
+                
+                
 
-                if ($('input[name=TypeofDelivery]').val() === "Standard ($3)") {
+                if ($('input[name=TypeofDelivery]').val().includes("Standard")) {
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwjaWj2_4wMj6VnXpymPAcROLhnS8mT2E963_0JQ0wnIoGz3-zwe9lw-_AxZUfA2pZh/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
@@ -654,7 +656,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         .catch(error => console.error('Error!', error.message))
                 }
                 
-                if ($('input[name=TypeofDelivery]').val() === "Express ($5)") {
+                if ($('input[name=TypeofDelivery]').val().includes("Express")) {
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwJrdVGovPIKHJaDq6spjMDZbX2o9o2w3aRqWD-WII4iFC6Kz04PygI-mWf2Xmp9Ghu/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
@@ -663,7 +665,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         .catch(error => console.error('Error!', error.message))
                 }
                 
-                if ($('input[name=TypeofDelivery]').val() === "Immediate ($20)") {
+                if ($('input[name=TypeofDelivery]').val().includes("Immediate")) {
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycby65apU30DEjBwE8VfYzROE1llAHChJi35iHh8nalVuTlp0FxN7D0IM2MqK3zcpuSDZ/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']

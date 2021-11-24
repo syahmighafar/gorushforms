@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("itemBtn").addEventListener("click", function () {
             if (($("#Item").val().length == 0) || ($("#Quantity").val().length == 0)
-                || ($("#Item-Price-RM").val().length == 0)) {
+                || ($("#Total-Item-Price-RM").val().length == 0)) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
                 $("#supplierNext").hide();
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($("#Item").val().length != 0) && ($("#Quantity").val().length != 0)
-                && ($("#Item-Price-RM").val().length != 0)) {
+                && ($("#Total-Item-Price-RM").val().length != 0)) {
                 $("#itemBtn").hide();
                 $("#supplierName").fadeIn();
                 $("#supplierNext").fadeIn();

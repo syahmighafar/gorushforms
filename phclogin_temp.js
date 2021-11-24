@@ -127,23 +127,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('input[name=radioPAY]').change(function () {
             if ($(this).val().length == 0) {
                 $("#paymentnoticearea").hide();
-                $("#asknotifyarea").hide();
-            }
-
-            if ($(this).val() == "Cash") {
-                $("#paymentnoticearea").hide();
-                $("#asknotifyarea").fadeIn();
-            }
-
-            if ($(this).val() == "Bank Transfer") {
-                $("#paymentnoticearea").fadeIn();
-                $("#asknotifyarea").fadeIn();
-            }
-        });
-
-        $('input[name=radioNOTI]').change(function () {
-            if ($(this).val().length == 0) {
-                $("#paymentnoticearea").hide();
                 $("#remarkarea").hide();
                 $("#agreementArea").hide();
             }

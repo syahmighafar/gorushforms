@@ -1,40 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
-        
-        var today = new Date();
-        var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 
-        var ampm = '';
-        var ampmhour = '';
-        var ampmmin = '';
-
-        if (today.getHours()<12){
-          ampm = 'am';
-          ampmhour = (today.getHours());
-        }
-
-        if (today.getHours()==12){
-          ampm = 'pm';
-          ampmhour = (today.getHours());
-        }
-
-        if (today.getHours()>12){
-          ampm = 'pm';
-          ampmhour = (today.getHours() - 12);
-        }
-
-        if (today.getMinutes()<10){
-          ampmmin = "0" + (today.getMinutes());
-        }
-
-        if (today.getMinutes()>=10){
-          ampmmin = (today.getMinutes());
-        }
-        var time = ampmhour + ":" + ampmmin + " " + ampm;
-
-        var dateTime = date+' '+time;
-        document.getElementById("dateSubmitted").value = dateTime;
-        
         var todChoice = 0;
 
         const d = new Date();
@@ -497,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
-                
+
                 todChoice = 0;
             }
 
@@ -524,7 +490,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
-                
+
                 todChoice = 1;
             }
 
@@ -551,7 +517,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
-                
+
                 todChoice = 2;
             }
 
@@ -578,7 +544,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").fadeIn();
 
                 document.getElementById('scDate').value = '';
-                
+
                 todChoice = 3;
             }
 
@@ -688,16 +654,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
-                
-                if (todChoice == 1){
+
+                var today = new Date();
+                var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+
+                var ampm = '';
+                var ampmhour = '';
+                var ampmmin = '';
+
+                if (today.getHours() < 12) {
+                    ampm = 'am';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() == 12) {
+                    ampm = 'pm';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() > 12) {
+                    ampm = 'pm';
+                    ampmhour = (today.getHours() - 12);
+                }
+
+                if (today.getMinutes() < 10) {
+                    ampmmin = "0" + (today.getMinutes());
+                }
+
+                if (today.getMinutes() >= 10) {
+                    ampmmin = (today.getMinutes());
+                }
+                var time = ampmhour + ":" + ampmmin + " " + ampm;
+
+                var dateTime = date + ' ' + time;
+                document.getElementById("dateSubmitted").value = dateTime;
+
+                if (todChoice == 1) {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwjaWj2_4wMj6VnXpymPAcROLhnS8mT2E963_0JQ0wnIoGz3-zwe9lw-_AxZUfA2pZh/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
-                } 
-                
-                if (todChoice == 2){
+                }
+
+                if (todChoice == 2) {
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwJrdVGovPIKHJaDq6spjMDZbX2o9o2w3aRqWD-WII4iFC6Kz04PygI-mWf2Xmp9Ghu/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
@@ -705,8 +705,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
                 }
-                
-                if (todChoice == 3){
+
+                if (todChoice == 3) {
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycby65apU30DEjBwE8VfYzROE1llAHChJi35iHh8nalVuTlp0FxN7D0IM2MqK3zcpuSDZ/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
@@ -714,7 +714,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
                 }
-                
+
                 let orderId = document.getElementById("bruhims").value;
                 let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
                 let customerEmail = document.getElementById("id-Email").value;

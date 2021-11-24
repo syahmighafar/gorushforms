@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#submitbutton").hide();
         $("#additional_item").hide();
+        $("#controls").hide();
+        
+        $("#itemBtn").hide();
+        $("#supplierNext").hide();
 
         $("#totalPrice").hide();
         $("#supplierName").hide();

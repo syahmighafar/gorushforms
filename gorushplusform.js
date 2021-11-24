@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#confirmationarea").hide();
         
-        $(document).on("change", ".itemPrice", function () {
+        $(document).on("change", ".itemprice", function () {
             var sum = 0;
-            $(".itemPrice").each(function () {
+            $(".itemprice").each(function () {
                 sum += +$(this).val();
             });
             $("#Total-Price-RM").val(sum);

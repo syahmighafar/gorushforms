@@ -1,40 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
 
-        var today = new Date();
-        var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
-
-        var ampm = '';
-        var ampmhour = '';
-        var ampmmin = '';
-
-        if (today.getHours() < 12) {
-            ampm = 'am';
-            ampmhour = (today.getHours());
-        }
-
-        if (today.getHours() == 12) {
-            ampm = 'pm';
-            ampmhour = (today.getHours());
-        }
-
-        if (today.getHours() > 12) {
-            ampm = 'pm';
-            ampmhour = (today.getHours() - 12);
-        }
-
-        if (today.getMinutes() < 10) {
-            ampmmin = "0" + (today.getMinutes());
-        }
-
-        if (today.getMinutes() >= 10) {
-            ampmmin = (today.getMinutes());
-        }
-        var time = ampmhour + ":" + ampmmin + " " + ampm;
-
-        var dateTime = date + ' ' + time;
-        document.getElementById("dateSubmitted").value = dateTime;
-
         const d = new Date();
         let hour = d.getHours();
         let day = d.getDay();
@@ -671,6 +637,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
 
+                var today = new Date();
+                var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+
+                var ampm = '';
+                var ampmhour = '';
+                var ampmmin = '';
+
+                if (today.getHours() < 12) {
+                    ampm = 'am';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() == 12) {
+                    ampm = 'pm';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() > 12) {
+                    ampm = 'pm';
+                    ampmhour = (today.getHours() - 12);
+                }
+
+                if (today.getMinutes() < 10) {
+                    ampmmin = "0" + (today.getMinutes());
+                }
+
+                if (today.getMinutes() >= 10) {
+                    ampmmin = (today.getMinutes());
+                }
+                var time = ampmhour + ":" + ampmmin + " " + ampm;
+
+                var dateTime = date + ' ' + time;
+                document.getElementById("dateSubmitted").value = dateTime;
+
                 let orderId = document.getElementById("bruhims").value;
                 let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
                 let customerEmail = document.getElementById("email").value;
@@ -713,7 +713,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Status:', this.status);
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
-                        document.getElementById("mohloginform").submit();
+                        $("#pleasewait").hide();
+                        $("#submitbutton").fadeIn();
                     }
                 };
 

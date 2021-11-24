@@ -4,15 +4,73 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#pleasewait").hide();
 
         $("#submitbutton").hide();
+        $("#additional_item").hide();
+
+        $("#totalPrice").hide();
+        $("#supplierName").hide();
+
+        $("#confirmationarea").hide();
+        
+        $(document).on("change", ".itemPrice", function () {
+            var sum = 0;
+            $(".itemPrice").each(function () {
+                sum += +$(this).val();
+            });
+            $("#Total-Price-RM").val(sum);
+        });
+
+        document.getElementById("custDetailBtn").addEventListener("click", function () {
+            if (($("#Tracking-Number").val().length == 0) || ($("#Consignee-Name").val().length == 0)
+                || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
+                $("#additional_item").hide();
+                alert("Please do not leave the required fields empty!");
+            }
+
+            if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
+                && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
+                $("#custDetailBtn").hide();
+                $("#additional_item").fadeIn();
+            }
+        });
+
+        document.getElementById("itemBtn").addEventListener("click", function () {
+            if (($("#Item").val().length == 0) || ($("#Quantity").val().length == 0)
+                || ($("#Item-Price-RM").val().length == 0)) {
+                $("#totalPrice").hide();
+                $("#supplierName").hide();
+                $("#supplierNext").hide();
+                alert("Please do not leave the required fields empty!");
+            }
+
+            if (($("#Item").val().length != 0) && ($("#Quantity").val().length != 0)
+                && ($("#Item-Price-RM").val().length != 0)) {
+                $("#itemBtn").hide();
+                $("#supplierName").fadeIn();
+                $("#supplierNext").fadeIn();
+                $("#totalPrice").fadeIn();
+            }
+        });
+
+        document.getElementById("supplierNext").addEventListener("click", function () {
+            if (($("#Total-Price-RM").val().length == 0) || ($("#Supplier-Name").val().length == 0)) {
+                $("#confirmationarea").hide();
+                alert("Please do not leave the required fields empty!");
+            }
+
+            if (($("#Total-Price-RM").val().length != 0) && ($("#Supplier-Name").val().length != 0)) {
+                $("#supplierNext").hide();
+                $("#confirmationarea").fadeIn();
+            }
+        });
 
         $('#Agreement').change(function () {
             if ($(this).val().checked = true) {
                 $("#pleasewait").fadeIn();
-                
+
                 const scriptURL = 'https://script.google.com/macros/s/AKfycbwj9CLVaYMlqIslasLwv_lL5JDFD99y0qCPDv4o4-m5I3q_s-_3JUy3vIJ8MLIjAic22w/exec'
                 const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
-                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 
                 let orderId = document.getElementById("Tracking-Number").value;
                 let customerUsername = document.getElementById("Consignee-Name").value;

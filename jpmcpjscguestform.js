@@ -318,9 +318,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 $("#pleasewait").fadeIn();
 
-                let orderId = document.getElementById("Patient-Number").value;
-                let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
-                let customerEmail = document.getElementById("id-Email").value;
+                var today = new Date();
+                var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+
+                var ampm = '';
+                var ampmhour = '';
+                var ampmmin = '';
+
+                if (today.getHours() < 12) {
+                    ampm = 'am';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() == 12) {
+                    ampm = 'pm';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() > 12) {
+                    ampm = 'pm';
+                    ampmhour = (today.getHours() - 12);
+                }
+
+                if (today.getMinutes() < 10) {
+                    ampmmin = "0" + (today.getMinutes());
+                }
+
+                if (today.getMinutes() >= 10) {
+                    ampmmin = (today.getMinutes());
+                }
+                var time = ampmhour + ":" + ampmmin + " " + ampm;
+
+                var dateTime = date + ' ' + time;
+                document.getElementById("dateSubmitted").value = dateTime;
+
+                let orderId = document.getElementById("jpmc").value;
+                let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
+                let customerEmail = document.getElementById("email").value;
                 let customerUsername = document.getElementById("name").value;
                 let customerPhone = document.getElementById("contact_1").value;
 
@@ -346,7 +380,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let customerIC = document.getElementById("icNumber").value;
                 let customerRemarks = document.getElementById("re").value;
-                let customerPM = document.querySelector('input[name=PaymentMethod]:checked').value
+                let customerPM = document.querySelector('input[name=radioPAY]:checked').value
                 let order_Origin = document.getElementById("orderOrigin").value;
 
                 var request = new XMLHttpRequest();
@@ -360,8 +394,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Status:', this.status);
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
-                        $("#pleasewait").hide();
-                        $("#submitbutton").fadeIn();
+                        document.getElementById("jpmcpjscloginform").submit();
                     }
                 };
 
@@ -393,6 +426,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'tags': '',
                     'geofence': 0
                 };
+
                 request.send(JSON.stringify(body));
             }
         });

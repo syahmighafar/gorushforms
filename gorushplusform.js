@@ -28,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
                 $("#additional_item").hide();
                 $("#controls").hide();
+                $("#itemBtn").hide();
                 alert("Please do not leave the required fields empty!");
             }
 
@@ -36,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#custDetailBtn").hide();
                 $("#additional_item").fadeIn();
                 $("#controls").fadeIn();
+                $("#itemBtn").fadeIn();
             }
         });
 

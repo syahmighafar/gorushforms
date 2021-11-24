@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($("#Tracking-Number").val().length == 0) || ($("#Consignee-Name").val().length == 0)
                 || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
                 $("#additional_item").hide();
+                $("#controls").hide();
                 alert("Please do not leave the required fields empty!");
             }
 
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
                 $("#custDetailBtn").hide();
                 $("#additional_item").fadeIn();
+                $("#controls").fadeIn();
             }
         });
 

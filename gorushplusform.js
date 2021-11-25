@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("itemBtn").addEventListener("click", function () {
-            if (($("#Item").val().length == 0) || ($("#Quantity").val().length == 0)
+            if (($("#Item-Description").val().length == 0) || ($("#Quantity").val().length == 0)
                 || ($("#Total-Item-Price-RM").val().length == 0)) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please do not leave the required fields empty!");
             }
 
-            if (($("#Item").val().length != 0) && ($("#Quantity").val().length != 0)
+            if (($("#Item-Description").val().length != 0) && ($("#Quantity").val().length != 0)
                 && ($("#Total-Item-Price-RM").val().length != 0)) {
                 $("#itemBtn").hide();
                 $("#supplierName").fadeIn();

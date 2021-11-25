@@ -168,61 +168,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
 		$('input[name=radioPAY]').change(function(){
 			if ($(this).val().length == 0) {
 				$("#paymentnoticearea").hide();
-				$("#asknotifyarea").hide();
+				$("#remarkarea").hide();
+				$("#agreementArea").hide();
+				$("#captchaBox").hide();
+				$("#submitbutton").hide();
 			}
 
 			if ($(this).val()=="Cash") {
 				$("#paymentnoticearea").hide();
-				$("#asknotifyarea").fadeIn();
-			}
-			
-			if ($(this).val()=="Bank Transfer") {
-				$("#paymentnoticearea").fadeIn();
-				$("#asknotifyarea").fadeIn();
-			}
-		});
-		
-		$('input[name=radioNOTI]').change(function(){
-			if ($(this).val().length == 0) {
-				$("#notifyoftenarea").hide();
-				$("#remarkarea").hide();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-				
-				$('input[name=radioOFTEN]').prop('checked', false);
-			}
-
-			if ($(this).val()=="Yes") {
-				$("#notifyoftenarea").fadeIn();
-				$("#remarkarea").hide();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-				
-				$('input[name=radioOFTEN]').prop('checked', false);
-			}
-			
-			if ($(this).val()=="No") {
-				$("#notifyoftenarea").hide();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
 				$("#captchaBox").fadeIn();
 				$("#submitbutton").fadeIn();
-				
-				$('input[name=radioOFTEN]').prop('checked', false);
 			}
-		});
-		
-		$('input[name=radioDURATION]').change(function(){
-			if ( $(this).val().length == 0) {
-				$("#remarkarea").hide();
-				$("#agreementArea").hide();
-				$("#captchaBox").hide();
-				$("#submitbutton").hide();
-			}
-
-			if ( $(this).val().length != 0) {
+			
+			if ($(this).val()=="Bank Transfer") {
+				$("#paymentnoticearea").fadeIn();
 				$("#remarkarea").fadeIn();
 				$("#agreementArea").fadeIn();
 				$("#captchaBox").fadeIn();

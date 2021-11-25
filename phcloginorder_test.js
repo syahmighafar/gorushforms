@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#pleasewait").hide();
 
-        $("#submitbutton").hide();
 
         $('input[name=radioQO]').change(function () {
             if ($(this).val().length == 0) {
@@ -141,13 +140,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#paymentnoticearea").fadeIn();
                 $("#remarkarea").fadeIn();
                 $("#agreementArea").fadeIn();
-            }
-        });
-
-        $('#Agreement').change(function () {
-            if ($(this).val().checked = true) {
-
-                $("#submitbutton").fadeIn();
             }
         });
     });

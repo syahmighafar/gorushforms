@@ -632,6 +632,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#agreementArea").fadeIn();
             }
         });
+        
+        $('#Agreement').change(function () {
+            if ($(this).val().checked = true) {
+                $("#submitbutton").fadeIn(); 
+            }
+        });
 
         document.addEventListener("submit", function (event) {
 

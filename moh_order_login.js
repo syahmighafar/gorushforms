@@ -348,6 +348,38 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById("mapSource").src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.1432004986946!2d115.01193264313245!3d4.915696991808234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f36f1f0926d9%3A0x5eb0de579e4e2269!2sSungai%20Bunga%20Health%20Clinic%2C%20Kampong%20Sungai%20Bunga!5e0!3m2!1sen!2sbn!4v1634286214099!5m2!1sen!2sbn";
 				$("#hcAreaMapAddress").fadeIn();
      			}
+			
+			if ($(this).val() == "JPMC") {
+                if ((day != 0) && (day != 5)) {
+                    if ((hour >= 8) && (hour < 12)) {
+                        $("#immediateArea").fadeIn();
+                    } else {
+                        $("#immediateArea").hide();
+                    }
+                } else {
+                    $("#immediateArea").hide();
+                }
+                $("#clinicAddress").hide();
+                $("#deliverymethodarea").fadeIn();
+                document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.7582787740073!2d114.82977193840651!3d4.948768090298503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32225e93638da5b1%3A0x90bf9d36cc534c7c!2sJerudong%20Park%20Medical%20Centre!5e0!3m2!1sen!2sbn!4v1637046171509!5m2!1sen!2sbn";
+                $("#hcAreaMapAddress").fadeIn();
+            }
+
+            if ($(this).val() == "PJSC") {
+                if ((day != 0) && (day != 5)) {
+                    if ((hour >= 8) && (hour < 12)) {
+                        $("#immediateArea").fadeIn();
+                    } else {
+                        $("#immediateArea").hide();
+                    }
+                } else {
+                    $("#immediateArea").hide();
+                }
+                $("#clinicAddress").hide();
+                $("#deliverymethodarea").fadeIn();
+                document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.7576714939253!2d114.83085643710163!3d4.949108116049822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32225e9367a66cc1%3A0x3a6601d28e30b574!2sPantai%20Jerudong%20Specialist%20Centre%20(PJSC)!5e0!3m2!1sen!2sbn!4v1637046289863!5m2!1sen!2sbn";
+                $("#hcAreaMapAddress").fadeIn();
+            }
 		});
 		
 		$('#TUHC').change(function(){
@@ -478,7 +510,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('scDate').value = '';
 			}
 
-			if ($(this).val()=="Standard") {
+			if ($(this).val()=="Standard ($3)") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
@@ -501,7 +533,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('scDate').value = '';
 			}
 			
-			if ($(this).val()=="Express") {
+			if ($(this).val()=="Express ($5)") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
@@ -524,7 +556,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				document.getElementById('scDate').value = '';
 			}
 			
-			if ($(this).val()=="Immediate") {
+			if ($(this).val()=="Immediate ($20)") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();

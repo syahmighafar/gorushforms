@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerUsername = document.getElementById("Consignee-Name").value;
                 let customerPhone = document.getElementById("Consignee-Phone").value;
 
-                let supplierName = document.getElementById("Supplier-Name").value;
+                let commodity = document.getElementById("Commodity").value;
                 let totalPrice = document.getElementById("Total-Price-RM").value;
 
 
@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 var body = {
                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                    'merchant_id': '1175683',
+                    'merchant_id': '1180025',
                     'order_id': orderId,
                     'job_description': 'Go Rush Plus Order',
                     'customer_email': '',
@@ -133,8 +133,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'custom_field_template': 'Go_Rush_Plus',
                     'meta_data': [
                         {
-                            'label': 'Supplier_Name',
-                            'data': supplierName
+                            'label': 'Commodity',
+                            'data': commodity
                         },
                         {
                             'label': 'Total Price',

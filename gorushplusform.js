@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {
             if (($("#Tracking-Number").val().length == 0) || ($("#Consignee-Name").val().length == 0)
-                || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0)) {
+                || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0) || ($("#Commodity").val().length == 0)) {
                 $("#additional_item").hide();
                 $("#controls").hide();
                 $("#itemBtn").hide();
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
-                && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)) {
+                && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0) && ($("#Commodity").val().length != 0)) {
                 $("#custDetailBtn").hide();
                 $("#additional_item").fadeIn();
                 $("#controls").fadeIn();

@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {
             if (($("#Tracking-Number").val().length == 0) || ($("#Consignee-Name").val().length == 0)
-                || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0) || ($("#Commodity").val().length == 0)) {
+                || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0)
+                || ($("#Commodity").val().length == 0) || ($("#Currency").val().length == 0)) {
                 $("#additional_item").hide();
                 $("#controls").hide();
                 $("#itemBtn").hide();
@@ -33,7 +34,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
-                && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0) && ($("#Commodity").val().length != 0)) {
+                && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)
+                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0)) {
                 $("#custDetailBtn").hide();
                 $("#additional_item").fadeIn();
                 $("#controls").fadeIn();
@@ -43,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("itemBtn").addEventListener("click", function () {
             if (($("#Item-Description").val().length == 0) || ($("#Quantity").val().length == 0)
-                || ($("#Total-Item-Price-RM").val().length == 0)) {
+                || ($("#Total-Item-Price").val().length == 0)) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
                 $("#supplierNext").hide();
@@ -51,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($("#Item-Description").val().length != 0) && ($("#Quantity").val().length != 0)
-                && ($("#Total-Item-Price-RM").val().length != 0)) {
+                && ($("#Total-Item-Price").val().length != 0)) {
                 $("#itemBtn").hide();
                 $("#supplierName").fadeIn();
                 $("#supplierNext").fadeIn();
@@ -60,12 +62,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("supplierNext").addEventListener("click", function () {
-            if (($("#Total-Price-RM").val().length == 0) || ($("#Supplier-Name").val().length == 0)) {
+            if (($("#Total-Price").val().length == 0) || ($("#Supplier-Name").val().length == 0)) {
                 $("#confirmationarea").hide();
                 alert("Please do not leave the required fields empty!");
             }
 
-            if (($("#Total-Price-RM").val().length != 0) && ($("#Supplier-Name").val().length != 0)) {
+            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0)) {
                 $("#supplierNext").hide();
                 $("#confirmationarea").fadeIn();
             }
@@ -85,8 +87,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerPhone = document.getElementById("Consignee-Phone").value;
 
                 let commodity = document.getElementById("Commodity").value;
-                let totalPrice = document.getElementById("Total-Price-RM").value;
-
+                let totalPrice = document.getElementById("Total-Price").value;
+                let itemCurrency = document.getElementById("Currency").value;
 
                 var customerAddress = document.getElementById("Delivery-Address").value;
 
@@ -139,7 +141,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         {
                             'label': 'Total Price',
                             'data': totalPrice
+                        },
+                        {
+                            'label': 'Currency',
+                            'data': itemCurrency
                         }
+                        
                     ],
                     'team_id': '921691',
                     'auto_assignment': '0',

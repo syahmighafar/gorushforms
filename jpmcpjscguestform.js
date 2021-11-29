@@ -141,10 +141,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#stdtodtu").hide();
                 $("#expressArea").fadeIn();
                 
-                $("#stdselfPrice").fadeIn();
+                $("#stdselfPrice").hide();
                 $("#stdTB").hide();
                 $("#stdTU").hide();
-                $("#expPrice").fadeIn();
+                $("#expPrice").hide();
                 $("#immPrice").hide(); 
             }
             

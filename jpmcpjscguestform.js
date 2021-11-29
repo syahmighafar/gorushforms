@@ -8,6 +8,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#selecthcarea").hide();
         $("#jpmcpjscInfo").hide();
+        
+        $("#selectdistrictarea").hide();
+        
+        $("#stdtodbm").hide();
+        $("#stdtodtb").hide();
+        $("#stdtodtu").hide();
+        $("#expressArea").hide();
+        
+        $("#stdTB").hide();
+        $("#stdTU").hide();
 
         $("#deliverymethodarea").hide();
 
@@ -101,11 +111,69 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('input[name=Pharmacy]').change(function () {
             if ($(this).val().length == 0) {
-                $("#deliverymethodarea").hide();
+                $("#selectdistrictarea").hide();
             }
 
             if ($(this).val().length != 0) {
+                $("#selectdistrictarea").fadeIn();
+            }
+        });
+        
+        $('input[name=District]').change(function () {
+            if ($(this).val().length == 0) {
+                $("#deliverymethodarea").hide();
+                $("#stdtodbm").hide();
+                $("#stdtodtb").hide();
+                $("#stdtodtu").hide();
+                $("#expressArea").hide();
+                
+                $("#stdselfPrice").hide();
+                $("#stdTB").hide();
+                $("#stdTU").hide();
+                $("#expPrice").hide();
+                $("#immPrice").hide();    
+            }
+
+            if ($(this).val() == "Brunei-Muara") {
                 $("#deliverymethodarea").fadeIn();
+                $("#stdtodbm").fadeIn();
+                $("#stdtodtb").hide();
+                $("#stdtodtu").hide();
+                $("#expressArea").fadeIn();
+                
+                $("#stdselfPrice").fadeIn();
+                $("#stdTB").hide();
+                $("#stdTU").hide();
+                $("#expPrice").fadeIn();
+                $("#immPrice").hide(); 
+            }
+            
+            if ( ($(this).val() == "Tutong") || ($(this).val() == "Belait") )  {
+                $("#deliverymethodarea").fadeIn();
+                $("#stdtodbm").hide();
+                $("#stdtodtb").fadeIn();
+                $("#stdtodtu").hide();
+                $("#expressArea").hide();
+                
+                $("#stdselfPrice").hide();
+                $("#stdTB").fadeIn();
+                $("#stdTU").hide();
+                $("#expPrice").hide();
+                $("#immPrice").hide(); 
+            }
+            
+            if ($(this).val() == "Temburong") {
+                $("#deliverymethodarea").fadeIn();
+                $("#stdtodbm").hide();
+                $("#stdtodtb").hide();
+                $("#stdtodtu").fadeIn();
+                $("#expressArea").hide();
+                
+                $("#stdselfPrice").hide();
+                $("#stdTB").hide();
+                $("#stdTU").fadeIn();
+                $("#expPrice").hide();
+                $("#immPrice").hide(); 
             }
         });
 
@@ -120,9 +188,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#selfcollectnextbutton").hide();
 
                 $("#pricedurationarea").hide();
-                $("#stdselfPrice").hide();
-                $("#expPrice").hide();
-                $("#immPrice").hide();
                 $("#stdDuration").hide();
                 $("#expDuration").hide();
                 $("#immDuration").hide();
@@ -131,6 +196,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#stdAgree").hide();
                 $("#expAgree").hide();
                 $("#immAgree").hide();
+                
+                $("#stdselfPrice").hide();
+                $("#expressArea").hide();
 
                 document.getElementById('scDate').value = '';
             }
@@ -145,9 +213,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#selfcollectnextbutton").hide();
 
                 $("#pricedurationarea").fadeIn();
-                $("#stdselfPrice").fadeIn();
-                $("#expPrice").hide();
-                $("#immPrice").hide();
                 $("#stdDuration").fadeIn();
                 $("#expDuration").hide();
                 $("#immDuration").hide();
@@ -156,6 +221,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#stdAgree").fadeIn();
                 $("#expAgree").hide();
                 $("#immAgree").hide();
+                
+                $("#stdselfPrice").fadeIn();
+                $("#expressArea").hide();
+
+                document.getElementById('scDate').value = '';
+            }
+            
+            if ( ($(this).val() == "Standard ($7)") || ($(this).val() == "Standard ($10)") ) {
+                $("#mohnormalregArea").fadeIn();
+
+                $("#addressArea").fadeIn();
+                $("#addressnextbutton").fadeIn();
+
+                $("#selfcollectarea").hide();
+                $("#selfcollectnextbutton").hide();
+
+                $("#pricedurationarea").fadeIn();
+                $("#stdDuration").fadeIn();
+                $("#expDuration").hide();
+                $("#immDuration").hide();
+                $("#stdexpselfMessage").fadeIn();
+                $("#immMessage").hide();
+                $("#stdAgree").fadeIn();
+                $("#expAgree").hide();
+                $("#immAgree").hide();
+                
+                $("#stdselfPrice").hide();
+                $("#expressArea").hide();
 
                 document.getElementById('scDate').value = '';
             }
@@ -170,9 +263,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#selfcollectnextbutton").hide();
 
                 $("#pricedurationarea").fadeIn();
-                $("#stdselfPrice").hide();
-                $("#expPrice").fadeIn();
-                $("#immPrice").hide();
                 $("#stdDuration").hide();
                 $("#expDuration").fadeIn();
                 $("#immDuration").hide();
@@ -181,31 +271,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#stdAgree").hide();
                 $("#expAgree").fadeIn();
                 $("#immAgree").hide();
-
-                document.getElementById('scDate').value = '';
-            }
-
-            if ($(this).val() == "Immediate ($20)") {
-                $("#mohnormalregArea").fadeIn();
-
-                $("#addressArea").fadeIn();
-                $("#addressnextbutton").fadeIn();
-
-                $("#selfcollectarea").hide();
-                $("#selfcollectnextbutton").hide();
-
-                $("#pricedurationarea").fadeIn();
+                
                 $("#stdselfPrice").hide();
-                $("#expPrice").hide();
-                $("#immPrice").fadeIn();
-                $("#stdDuration").hide();
-                $("#expDuration").hide();
-                $("#immDuration").fadeIn();
-                $("#stdexpselfMessage").hide();
-                $("#immMessage").fadeIn();
-                $("#stdAgree").hide();
-                $("#expAgree").hide();
-                $("#immAgree").fadeIn();
+                $("#expressArea").fadeIn();
 
                 document.getElementById('scDate').value = '';
             }
@@ -220,9 +288,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#selfcollectnextbutton").fadeIn();
 
                 $("#pricedurationarea").fadeIn();
-                $("#stdselfPrice").fadeIn();
-                $("#expPrice").hide();
-                $("#immPrice").hide();
                 $("#stdDuration").hide();
                 $("#expDuration").hide();
                 $("#immDuration").hide();
@@ -231,6 +296,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#stdAgree").hide();
                 $("#expAgree").hide();
                 $("#immAgree").hide();
+                
+                $("#stdselfPrice").hide();
+                $("#expressArea").hide();
 
                 document.getElementById('scDate').value = '';
             }

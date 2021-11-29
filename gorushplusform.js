@@ -20,17 +20,50 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(".itemprice").each(function () {
                 sum += +$(this).val();
             });
-            $("#Total-Price-RM").val(sum);
+            $("#Total-Price").val(sum);
         });
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {
-            if (($("#Tracking-Number").val().length == 0) || ($("#Consignee-Name").val().length == 0)
-                || ($("#Consignee-Phone").val().length == 0) || ($("#Delivery-Address").val().length == 0)
-                || ($("#Commodity").val().length == 0) || ($("#Currency").val().length == 0)) {
+            if ($("#Tracking-Number").val().length == 0) {
                 $("#additional_item").hide();
                 $("#controls").hide();
                 $("#itemBtn").hide();
-                alert("Please do not leave the required fields empty!");
+                alert("Please do not leave the Tracking Number field empty!");
+            }
+            
+            if ($("#Consignee-Name").val().length == 0) {
+                $("#additional_item").hide();
+                $("#controls").hide();
+                $("#itemBtn").hide();
+                alert("Please do not leave the Consignee's Name field empty!");
+            }
+            
+            if ($("#Consignee-Phone").val().length == 0) {
+                $("#additional_item").hide();
+                $("#controls").hide();
+                $("#itemBtn").hide();
+                alert("Please do not leave the Consignee's Phone Number field empty!");
+            }
+            
+            if ($("#Delivery-Address").val().length == 0) {
+                $("#additional_item").hide();
+                $("#controls").hide();
+                $("#itemBtn").hide();
+                alert("Please do not leave the Delivery Address field empty!");
+            }
+            
+            if ($("#Commodity").val().length == 0) {
+                $("#additional_item").hide();
+                $("#controls").hide();
+                $("#itemBtn").hide();
+                alert("Please do not leave the Item Type field empty!");
+            }
+            
+            if ($("#Currency").val().length == 0) {
+                $("#additional_item").hide();
+                $("#controls").hide();
+                $("#itemBtn").hide();
+                alert("Please do not leave the Currency field empty!");
             }
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
@@ -44,12 +77,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("itemBtn").addEventListener("click", function () {
-            if (($("#Item-Description").val().length == 0) || ($("#Quantity").val().length == 0)
-                || ($("#Total-Item-Price").val().length == 0)) {
+            if ($("#Item-Description").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
                 $("#supplierNext").hide();
-                alert("Please do not leave the required fields empty!");
+                alert("Please do not leave the Item Description field empty!");
+            }
+            
+             if ($("#Quantity").val().length == 0) {
+                $("#totalPrice").hide();
+                $("#supplierName").hide();
+                $("#supplierNext").hide();
+                alert("Please do not leave the Quantity field empty!");
+            }
+            
+            if ($("#Total-Item-Price").val().length == 0) {
+                $("#totalPrice").hide();
+                $("#supplierName").hide();
+                $("#supplierNext").hide();
+                alert("Please do not leave the Total Item Price field empty!");
             }
 
             if (($("#Item-Description").val().length != 0) && ($("#Quantity").val().length != 0)
@@ -62,9 +108,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("supplierNext").addEventListener("click", function () {
-            if (($("#Total-Price").val().length == 0) || ($("#Supplier-Name").val().length == 0)) {
+            if ($("#Total-Price").val().length == 0) {
                 $("#confirmationarea").hide();
-                alert("Please do not leave the required fields empty!");
+                alert("Please do not leave the Total Price field empty!");
+            }
+            
+            if ($("#Supplier-Name").val().length == 0) {
+                $("#confirmationarea").hide();
+                alert("Please do not leave the Suppier Name field empty!");
             }
 
             if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0)) {

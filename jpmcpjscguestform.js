@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
                 
                 $("#stdselfPrice").hide();
-                $("#expressArea").hide();
+                $("#expPrice").hide();
 
                 document.getElementById('scDate').value = '';
             }
@@ -223,7 +223,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
                 
                 $("#stdselfPrice").fadeIn();
-                $("#expressArea").hide();
+                $("#expPrice").hide();
 
                 document.getElementById('scDate').value = '';
             }
@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
                 
                 $("#stdselfPrice").hide();
-                $("#expressArea").hide();
+                $("#expPrice").hide();
 
                 document.getElementById('scDate').value = '';
             }
@@ -273,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
                 
                 $("#stdselfPrice").hide();
-                $("#expressArea").fadeIn();
+                $("#expPrice").fadeIn();
 
                 document.getElementById('scDate').value = '';
             }
@@ -298,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
                 
                 $("#stdselfPrice").hide();
-                $("#expressArea").hide();
+                $("#expPrice").hide();
 
                 document.getElementById('scDate').value = '';
             }

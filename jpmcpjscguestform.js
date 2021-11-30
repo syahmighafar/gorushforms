@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 			}
 		});
 
-		$('input[name=District]').change(function () {
+		$('input[name=DistrictAddress]').change(function () {
 			if ($(this).val().length == 0) {
 				$("#deliverymethodarea").hide();
 				$("#stdtodbm").hide();
@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				$("#immPrice").hide();
 			}
 
-			if ($(this).val() == "Brunei-Muara") {
+			if ($(this).val() == "Brunei Muara") {
 				$("#deliverymethodarea").fadeIn();
 				$("#stdtodbm").fadeIn();
 				$("#stdtodtb").hide();

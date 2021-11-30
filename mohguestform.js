@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				$("#selectdistrictarea").hide();
 
 				$("#expressArea").fadeIn();
-				$("#immediateArea").fadeIn();
+				$("#immediateArea").hide();
 
 				document.getElementById("mapSource").src = "";
 				$("#hcAreaMapAddress").hide();

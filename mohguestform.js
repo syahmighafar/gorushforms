@@ -688,9 +688,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 var dateTime = date + ' ' + time;
                 document.getElementById("dateSubmitted").value = dateTime;
+                
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzCJ9gyB2XpMMjBrl-_lmt0b9EejxbDKDCZedCt11fNHw6R4mEf0xpVGgcD0bcmDlr_/exec'
+                const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                    .catch(error => console.error('Error!', error.message))
 
                 if (todChoice == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwjaWj2_4wMj6VnXpymPAcROLhnS8mT2E963_0JQ0wnIoGz3-zwe9lw-_AxZUfA2pZh/exec'
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwonfADS7GmfHrV1U5JbIkZ1c_fcZZNZOyLHgpX4fLJt49on7ur0AwwnM270rsg5OS_/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
@@ -699,16 +705,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (todChoice == 2) {
 
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwJrdVGovPIKHJaDq6spjMDZbX2o9o2w3aRqWD-WII4iFC6Kz04PygI-mWf2Xmp9Ghu/exec'
-                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-                }
-
-                if (todChoice == 3) {
-
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycby65apU30DEjBwE8VfYzROE1llAHChJi35iHh8nalVuTlp0FxN7D0IM2MqK3zcpuSDZ/exec'
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbycp82YFWx0oQyShPHqOQQADVhqCjt0kaISN34wVP1MmLmAz3uIncYPs39PNNitUSJF/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		$('input[name=District]').change(function () {
 			if ($(this).val().length == 0) {
 				$("#selectdistrictarea").hide();
+				$("#deliverymethodarea").hide();
 
 				$("#expressArea").hide();
 				$("#immediateArea").hide();
@@ -131,13 +132,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				document.getElementById('TUHC').value = '';
 				document.getElementById('BHC').value = '';
 				document.getElementById('TEHC').value = '';
-                
-                $('input[name=DistrictAddress]').attr('checked',false);
-                $('input[name=TypeofDelivery]').attr('checked',false);
+
+				$('input[name=DistrictAddress]').attr('checked', false);
+				$('input[name=TypeofDelivery]').attr('checked', false);
 			}
 
 			if ($(this).val() == "Brunei Muara") {
 				$("#selectdistrictarea").hide();
+				$("#deliverymethodarea").hide();
 
 				$("#expressArea").fadeIn();
 				$("#immediateArea").hide();
@@ -155,13 +157,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				document.getElementById('TUHC').value = '';
 				document.getElementById('BHC').value = '';
 				document.getElementById('TEHC').value = '';
-                
-                $('input[name=DistrictAddress]').attr('checked',false);
-                $('input[name=TypeofDelivery]').attr('checked',false);
+
+				$('input[name=DistrictAddress]').attr('checked', false);
+				$('input[name=TypeofDelivery]').attr('checked', false);
 			}
 
 			if ($(this).val() == "Tutong") {
 				$("#selectdistrictarea").hide();
+				$("#deliverymethodarea").hide();
 
 				$("#expressArea").hide();
 				$("#immediateArea").hide();
@@ -179,13 +182,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				document.getElementById('TUHC').value = '';
 				document.getElementById('BHC').value = '';
 				document.getElementById('TEHC').value = '';
-                
-                $('input[name=DistrictAddress]').attr('checked',false);
-                $('input[name=TypeofDelivery]').attr('checked',false);
+
+				$('input[name=DistrictAddress]').attr('checked', false);
+				$('input[name=TypeofDelivery]').attr('checked', false);
 			}
 
 			if ($(this).val() == "Belait") {
 				$("#selectdistrictarea").hide();
+				$("#deliverymethodarea").hide();
 
 				$("#expressArea").hide();
 				$("#immediateArea").hide();
@@ -203,13 +207,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				document.getElementById('TUHC').value = '';
 				document.getElementById('BHC').value = '';
 				document.getElementById('TEHC').value = '';
-                
-                $('input[name=DistrictAddress]').attr('checked',false);
-                $('input[name=TypeofDelivery]').attr('checked',false);
+
+				$('input[name=DistrictAddress]').attr('checked', false);
+				$('input[name=TypeofDelivery]').attr('checked', false);
 			}
 
 			if ($(this).val() == "Temburong") {
 				$("#selectdistrictarea").hide();
+				$("#deliverymethodarea").hide();
 
 				$("#expressArea").hide();
 				$("#immediateArea").hide();
@@ -227,9 +232,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				document.getElementById('TUHC').value = '';
 				document.getElementById('BHC').value = '';
 				document.getElementById('TEHC').value = '';
-                
-                $('input[name=DistrictAddress]').attr('checked',false);
-                $('input[name=TypeofDelivery]').attr('checked',false);
+
+				$('input[name=DistrictAddress]').attr('checked', false);
+				$('input[name=TypeofDelivery]').attr('checked', false);
 			}
 		});
 

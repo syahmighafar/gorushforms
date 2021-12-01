@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             'data': commodity
                         },
                         {
-                            'label': 'Total Price',
+                            'label': 'Total_Price',
                             'data': totalPrice
                         },
                         {

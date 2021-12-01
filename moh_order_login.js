@@ -548,7 +548,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				todChoice = 0;
 			}
 
-			if ($(this).val() == "Standard") {
+			if ($(this).val() == "Standard ($3)") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
@@ -573,7 +573,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				todChoice = 1;
 			}
 
-			if ($(this).val() == "Express") {
+			if ($(this).val() == "Express ($5)") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();
@@ -598,7 +598,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				todChoice = 2;
 			}
 
-			if ($(this).val() == "Immediate") {
+			if ($(this).val() == "Immediate ($20)") {
 				$("#selfcollectarea").hide();
 				$("#paymentmethodarea").fadeIn();
 				$("#selfcollectnextbutton").hide();

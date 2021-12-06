@@ -140,6 +140,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let commodity = document.getElementById("Commodity").value;
                 let totalPrice = document.getElementById("Total-Price").value;
                 let itemCurrency = document.getElementById("Currency").value;
+                
+                let customerEmail = document.getElementById("Email").value;
 
                 var customerAddress = document.getElementById("Delivery-Address").value;
 
@@ -176,7 +178,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'merchant_id': '1180025',
                     'order_id': orderId,
                     'job_description': 'Go Rush Plus Order',
-                    'customer_email': '',
+                    'customer_email': customerEmail,
                     'customer_username': customerUsername,
                     'customer_phone': customerPhone,
                     'customer_address': customerAddress,

@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				var dateTime = date + ' ' + time;
 				document.getElementById("dateSubmitted").value = dateTime;
 
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbwj9CLVaYMlqIslasLwv_lL5JDFD99y0qCPDv4o4-m5I3q_s-_3JUy3vIJ8MLIjAic22w/exec'
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
                 const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })

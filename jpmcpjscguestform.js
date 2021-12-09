@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 	$(document).ready(function () {
+		
+						var split = 1;
 
 		$("#requesterarea").hide();
 		$("#requesternextbutton").hide();
@@ -450,11 +452,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 					.catch(error => console.error('Error!', error.message))
 				
+				if (split == 1){
+					
 				const scriptURL = 'https://script.google.com/macros/s/AKfycby_15K0elbIbyOTUUn_Npwyu7qyXqchQ5HCthw7IBqb7qiA3L6RQ11lTyWrmeuGeLTuSg/exec'
 				const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
 
 				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 					.catch(error => console.error('Error!', error.message))
+					
+				}
 
 				var jobdeliverydatetime = "";
 				var todaysDate = new Date();

@@ -424,7 +424,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
 				let customerEmail = document.getElementById("id-Email").value;
 				let customerUsername = document.getElementById("name").value;
-				let customerPhone = document.getElementById("contact_1").value;
 
 				var customerAddress = "";
 
@@ -436,7 +435,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				}
 
 				document.getElementById("customerAddress").value = customerAddress;
+				
+				var customerPhone = document.getElementById("code").value + document.getElementById("contact_1").value;
+				var additionalPhone = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+				var requesterPhone = document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
+				
+				document.getElementById("customerPhone").value = customerPhone;
+				document.getElementById("additionalPhone").value = additionalPhone;
+				document.getElementById("requesterPhone").value = requesterPhone;
+				
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbx8ZYmIx4tygxtJs7m-2XlM7IxR_zikakiSjqxhXvhaVag-IGJUy_Am-61KpZfPeIza/exec'
+				const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
 
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.catch(error => console.error('Error!', error.message))
+				
 				const scriptURL = 'https://script.google.com/macros/s/AKfycby_15K0elbIbyOTUUn_Npwyu7qyXqchQ5HCthw7IBqb7qiA3L6RQ11lTyWrmeuGeLTuSg/exec'
 				const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
 

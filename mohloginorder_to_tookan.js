@@ -52,6 +52,42 @@ document.addEventListener("submit", function(event) {
     customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_3").value
    + ", " + document.getElementById("address_4").value;
   }
+    
+    document.getElementById("customerAddress").value = customerAddress;
+    
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwnXnUR2LKTVgQLAcuxa8lJn-_L7Qx6WYw_CTAp52PK5Z4J29YIiUNsuDE_Bp5bL2MN/exec'
+				const form = document.forms['wf-form-MOH-Order-Form']
+
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.catch(error => console.error('Error!', error.message))
+    
+    if (todChoice == 1) {
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbzRqkefb8xdEsS3qvKFwGwRGPJ74QrkrtYPteTjIOxSaHArgNZrw7kjC2lDc0cAgbPe/exec'
+				const form = document.forms['wf-form-MOH-Order-Form']
+
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.catch(error => console.error('Error!', error.message))
+
+				}
+
+				if (todChoice == 2) {
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbxTiVlpyNyLo0T5bEKqN9Kwkkf18thYFkBcZzPSljflIzy8L_Y6o7kSBhEKrn0vAPy3/exec'
+				const form = document.forms['wf-form-MOH-Order-Form']
+
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.catch(error => console.error('Error!', error.message))
+
+				}
+    
+    if (todChoice == 3) {
+          const scriptURL = 'https://script.google.com/macros/s/AKfycbwkLPAS6Yr8hTqmhQOqF2Q5cDoxNUW6StYQCX9RDNE2MM4gqZvSFfnirNyBVz7rpHeG/exec'
+				const form = document.forms['wf-form-MOH-Order-Form']
+
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.catch(error => console.error('Error!', error.message))
+
+				}
+    
   var jobdeliverydatetime = "";
   var todaysDate = new Date();
 

@@ -308,7 +308,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
                 let customerEmail = document.getElementById("id-Email").value;
                 let customerUsername = document.getElementById("name").value;
-                let customerPhone = document.getElementById("contact_1").value;
 
                 var customerAddress = "";
 
@@ -318,6 +317,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("Simpang").value
                         + ", " + document.getElementById("address_4").value;
                 }
+                
+                document.getElementById("customerAddress").value = customerAddress;
+				
+				var customerPhone = document.getElementById("code").value + document.getElementById("contact_1").value;
+				var additionalPhone = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+				var requesterPhone = document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
+				var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
+				+ document.getElementById("BHC").value + document.getElementById("TEHC").value;
+				
+				document.getElementById("customerPhone").value = customerPhone;
+				document.getElementById("additionalPhone").value = additionalPhone;
+				document.getElementById("requesterPhone").value = requesterPhone;
+				ocument.getElementById("appointmentPlace").value = appointmentPlace;
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
 

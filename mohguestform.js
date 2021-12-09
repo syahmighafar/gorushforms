@@ -756,7 +756,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				document.getElementById("customerPhone").value = customerPhone;
 				document.getElementById("additionalPhone").value = additionalPhone;
 				document.getElementById("requesterPhone").value = requesterPhone;
-				ocument.getElementById("appointmentPlace").value = appointmentPlace;
+				document.getElementById("appointmentPlace").value = appointmentPlace;
 
 				const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
 				const form = document.forms['wf-form-Guest-MOH-Order-Form']

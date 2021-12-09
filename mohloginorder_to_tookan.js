@@ -54,6 +54,11 @@ document.addEventListener("submit", function(event) {
   }
     
     document.getElementById("customerAddress").value = customerAddress;
+	  
+	  var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
+				+ document.getElementById("BHC").value + document.getElementById("TEHC").value;
+	  
+	  document.getElementById("appointmentPlace").value = appointmentPlace;
     
     const scriptURL = 'https://script.google.com/macros/s/AKfycbwnXnUR2LKTVgQLAcuxa8lJn-_L7Qx6WYw_CTAp52PK5Z4J29YIiUNsuDE_Bp5bL2MN/exec'
 				const form = document.forms['wf-form-MOH-Order-Form']

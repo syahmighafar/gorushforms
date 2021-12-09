@@ -763,21 +763,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 					.catch(error => console.error('Error!', error.message))
-				
-				const scriptURL = 'https://script.google.com/macros/s/AKfycbzCJ9gyB2XpMMjBrl-_lmt0b9EejxbDKDCZedCt11fNHw6R4mEf0xpVGgcD0bcmDlr_/exec'
-				const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-					.catch(error => console.error('Error!', error.message))
 
 				if (todChoice == 1) {
 					const scriptURL = 'https://script.google.com/macros/s/AKfycbx-GkhT8Zt5eHyAC89cSIivYKpobOq-eeorDC3IGHfn08IzG3revcVViYinzWCwDsrK/exec'
-					const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-						.catch(error => console.error('Error!', error.message))
-					
-					const scriptURL = 'https://script.google.com/macros/s/AKfycbwonfADS7GmfHrV1U5JbIkZ1c_fcZZNZOyLHgpX4fLJt49on7ur0AwwnM270rsg5OS_/exec'
 					const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
 					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
@@ -786,12 +774,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 				if (todChoice == 2) {
 					const scriptURL = 'https://script.google.com/macros/s/AKfycbzm4De2NEaYJIC027JRLJ21HHYFC7I7KcTMbsLhWVbjM8Ant804oyhtIZrZIwzLKm7S/exec'
-					const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-						.catch(error => console.error('Error!', error.message))
-
-					const scriptURL = 'https://script.google.com/macros/s/AKfycbycp82YFWx0oQyShPHqOQQADVhqCjt0kaISN34wVP1MmLmAz3uIncYPs39PNNitUSJF/exec'
 					const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
 					fetch(scriptURL, { method: 'POST', body: new FormData(form) })

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 	$(document).ready(function () {
 
 		var todChoice = 0;
+		var split = 1;
 
 		const d = new Date();
 		let hour = d.getHours();
@@ -763,6 +764,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 					.catch(error => console.error('Error!', error.message))
+				
+				if (split == 1) {
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbxNNuzSznT6M_wABWvNugeQt4Tzn_UawdKto4VzDi7ma_o_mCfB9Hwp_nzAMH-_BLMU/exec'
+					const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.catch(error => console.error('Error!', error.message))
+					
+					if (todChoice == 1) {
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbwonfADS7GmfHrV1U5JbIkZ1c_fcZZNZOyLHgpX4fLJt49on7ur0AwwnM270rsg5OS_/exec'
+					const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.catch(error => console.error('Error!', error.message))
+				}
+
+				if (todChoice == 2) {
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbycp82YFWx0oQyShPHqOQQADVhqCjt0kaISN34wVP1MmLmAz3uIncYPs39PNNitUSJF/exec'
+					const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.catch(error => console.error('Error!', error.message))
+				}
+				}
+				
+				
 
 				if (todChoice == 1) {
 					const scriptURL = 'https://script.google.com/macros/s/AKfycbx-GkhT8Zt5eHyAC89cSIivYKpobOq-eeorDC3IGHfn08IzG3revcVViYinzWCwDsrK/exec'

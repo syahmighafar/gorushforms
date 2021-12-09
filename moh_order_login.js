@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        
+        var todChoice = 0;
 
         const d = new Date();
         let hour = d.getHours();
@@ -508,6 +510,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 0;
             }
 
             if ($(this).val() == "Standard") {
@@ -531,6 +535,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 1;
             }
 
             if ($(this).val() == "Express") {
@@ -554,6 +560,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 2;
             }
 
             if ($(this).val() == "Immediate") {
@@ -577,6 +585,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").fadeIn();
 
                 document.getElementById('scDate').value = '';
+                
+                todChoice = 3;
             }
 
             if ($(this).val() == "Self Collect") {

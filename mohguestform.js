@@ -735,7 +735,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
 				let customerEmail = document.getElementById("id-Email").value;
 				let customerUsername = document.getElementById("name").value;
-				let customerPhone = document.getElementById("contact_1").value;
 
 				var customerAddress = "";
 
@@ -745,9 +744,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("Simpang").value
 						+ ", " + document.getElementById("address_4").value;
 				}
-
+				
 				document.getElementById("customerAddress").value = customerAddress;
+				
+				var customerPhone = document.getElementById("code").value + document.getElementById("contact_1").value;
+				var additionalPhone = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+				var requesterPhone = document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
+				var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
+				+ document.getElementById("BHC").value + document.getElementById("TEHC").value;
+				
+				document.getElementById("customerPhone").value = customerPhone;
+				document.getElementById("additionalPhone").value = additionalPhone;
+				document.getElementById("requesterPhone").value = requesterPhone;
+				ocument.getElementById("appointmentPlace").value = appointmentPlace;
 
+				const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
+				const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+					.catch(error => console.error('Error!', error.message))
+				
 				const scriptURL = 'https://script.google.com/macros/s/AKfycbzCJ9gyB2XpMMjBrl-_lmt0b9EejxbDKDCZedCt11fNHw6R4mEf0xpVGgcD0bcmDlr_/exec'
 				const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
@@ -755,6 +771,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					.catch(error => console.error('Error!', error.message))
 
 				if (todChoice == 1) {
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbx-GkhT8Zt5eHyAC89cSIivYKpobOq-eeorDC3IGHfn08IzG3revcVViYinzWCwDsrK/exec'
+					const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.catch(error => console.error('Error!', error.message))
+					
 					const scriptURL = 'https://script.google.com/macros/s/AKfycbwonfADS7GmfHrV1U5JbIkZ1c_fcZZNZOyLHgpX4fLJt49on7ur0AwwnM270rsg5OS_/exec'
 					const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
@@ -763,6 +785,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				}
 
 				if (todChoice == 2) {
+					const scriptURL = 'https://script.google.com/macros/s/AKfycbzm4De2NEaYJIC027JRLJ21HHYFC7I7KcTMbsLhWVbjM8Ant804oyhtIZrZIwzLKm7S/exec'
+					const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+					fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+						.catch(error => console.error('Error!', error.message))
 
 					const scriptURL = 'https://script.google.com/macros/s/AKfycbycp82YFWx0oQyShPHqOQQADVhqCjt0kaISN34wVP1MmLmAz3uIncYPs39PNNitUSJF/exec'
 					const form = document.forms['wf-form-Guest-MOH-Order-Form']

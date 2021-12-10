@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#pleasewait").fadeIn();
 
                 let agentName = document.getElementById("Agent-Name").value;
+                let customerEmail = document.getElementById("Agent-Email").value;
 
                 let wellousItems = document.getElementById("Items").value;
                 let receiverName = document.getElementById("Receiver-Name").value;
@@ -109,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
                     'order_id': '',
                     'job_description': jobDescription,
-                    'customer_email': '',
+                    'customer_email': customerEmail,
                     'customer_username': receiverName,
                     'customer_phone': receiverPhone,
                     'customer_address': receiverAddress,

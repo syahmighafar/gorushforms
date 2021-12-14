@@ -161,6 +161,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 				var dateTime = date + ' ' + time;
 				document.getElementById("dateSubmitted").value = dateTime;
+		    
+		    document.getElementById("buyerName").value = document.getElementById("Consignee-Name").value + "/GRP";
 
                 const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
                 const form = document.forms['wf-form-Go-Rush-Plus-Order']
@@ -168,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 
                 let orderId = document.getElementById("Tracking-Number").value;
-                let customerUsername = document.getElementById("Consignee-Name").value;
+                let customerUsername = document.getElementById("buyerName").value;
                 let customerPhone = document.getElementById("Consignee-Phone").value;
 
                 let commodity = document.getElementById("Commodity").value;

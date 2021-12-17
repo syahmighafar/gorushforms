@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
 
         $("#pleasewait").hide();
+	    
+	$("#itemContainsArea").hide();
 
         $("#submitbutton").hide();
         $("#additional_item").hide();
@@ -14,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#supplierName").hide();
 
         $("#confirmationarea").hide();
-        
+
         $(document).on("change", ".itemprice", function () {
             var sum = 0;
             $(".itemprice").each(function () {
@@ -25,63 +27,56 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {
             if ($("#Tracking-Number").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
+                $("#itemContainsArea").hide();
                 alert("Please do not leave the Tracking Number field empty!");
             }
             
             if ($("#Consignee-Name").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
+                $("#itemContainsArea").hide();
                 alert("Please do not leave the Consignee's Name field empty!");
             }
             
             if ($("#Consignee-Phone").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
+                $("#itemContainsArea").hide();
                 alert("Please do not leave the Consignee's Phone Number field empty!");
             }
             
             if ($("#Delivery-Address").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
+                $("#itemContainsArea").hide();
                 alert("Please do not leave the Delivery Address field empty!");
             }
             
             if ($("#Commodity").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
+                $("#itemContainsArea").hide();
                 alert("Please do not leave the Item Type field empty!");
             }
 		
 	    if ($("#Currency").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
+                $("#itemContainsArea").hide();
                 alert("Please do not leave the Currency field empty!");
-            }
-            
-            if ($("input[name=itemContains]").val().length == 0) {
-                $("#additional_item").hide();
-                $("#controls").hide();
-                $("#itemBtn").hide();
-                alert("Please do not leave the Item Contains field empty!");
             }
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
                 && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)
-                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0) && ($("input[name=itemContains]").val().length != 0)) {
+                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0)) {
+	    	$("#itemContainsArea").fadeIn();
                 $("#custDetailBtn").hide();
-                $("#additional_item").fadeIn();
-                $("#controls").fadeIn();
-                $("#itemBtn").fadeIn();
             }
         });
+	    
+    	$('input[name=itemContains]').change(function () {
+		if ($(this).val().length == 0) {
+			$("#additional_item").hide();
+			$("#controls").hide();
+			$("#itemBtn").hide();
+		}
+
+		if ($(this).val().length != 0) {
+			$("#additional_item").fadeIn();
+			$("#controls").fadeIn();
+			$("#itemBtn").fadeIn();
+		}
+	});
 
         document.getElementById("itemBtn").addEventListener("click", function () {
             if ($("#Item-Description").val().length == 0) {

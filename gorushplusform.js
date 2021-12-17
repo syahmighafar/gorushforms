@@ -58,17 +58,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#itemBtn").hide();
                 alert("Please do not leave the Item Type field empty!");
             }
-            
-            if ($("#Currency").val().length == 0) {
+		
+	    if ($("#Currency").val().length == 0) {
                 $("#additional_item").hide();
                 $("#controls").hide();
                 $("#itemBtn").hide();
                 alert("Please do not leave the Currency field empty!");
             }
+            
+            if ($("input[name=itemContains]").val().length == 0) {
+                $("#additional_item").hide();
+                $("#controls").hide();
+                $("#itemBtn").hide();
+                alert("Please do not leave the Item Contains field empty!");
+            }
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
                 && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)
-                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0)) {
+                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0) && ($("input[name=itemContains]").val().length != 0)) {
                 $("#custDetailBtn").hide();
                 $("#additional_item").fadeIn();
                 $("#controls").fadeIn();

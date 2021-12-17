@@ -186,6 +186,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let commodity = document.getElementById("Commodity").value;
                 let totalPrice = document.getElementById("Total-Price").value;
                 let itemCurrency = document.getElementById("Currency").value;
+	    	let itemContains = document.querySelector('input[name=itemContains]:checked').value
                 
                 let customerEmail = document.getElementById("Email").value;
 
@@ -244,6 +245,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         {
                             'label': 'Currency',
                             'data': itemCurrency
+                        },
+		    	{
+                            'label': 'DG',
+                            'data': itemContains
                         }
                         
                     ],

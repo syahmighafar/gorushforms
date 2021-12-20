@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 		var todChoice = 0;
 		var split = 1;
+		var countAgree = 0;
 
 		const d = new Date();
 		let hour = d.getHours();
@@ -695,7 +696,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		});
 
 		$('#Agreement').change(function () {
-			if ($(this).val().checked = true) {
+			if (countAgree == 0){
+                		countAgree = countAgree + 1;
+				
 				$("#pleasewait").fadeIn();
 
 				var today = new Date();

@@ -813,15 +813,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 								json_responseo = JSON.parse(responseo);
 
 								var counttaskhistory = json_responseo.data["length"];
-								var checkPatientOrderId = "";
 
 								for (let i = 0; i < counttaskhistory; i++) {
-									if (json_responseo.data[i].custom_field["length"] = 7) {
-										checkPatientOrderId = json_responseo.data[i].custom_field[6].data;
-										if (checkPatientOrderId = patientOrderId) {
-											document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
-											i = counttaskhistory;
-										}
+									if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
+										document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+										i = counttaskhistory;
 									}
 								}
 

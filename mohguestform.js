@@ -815,9 +815,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 								var counttaskhistory = json_responseo.data["length"];
 
 								for (let i = 0; i < counttaskhistory; i++) {
-									if (json_responseo.data[i].custom_field[6].data = patientOrderId) {
-										document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
-										i = counttaskhistory;
+									if (json_responseo.data[i].custom_field["length"] = 7) {
+										if (json_responseo.data[i].custom_field[6].data = patientOrderId) {
+											document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+											i = counttaskhistory;
+										}
 									}
 								}
 
@@ -828,7 +830,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 									.catch(error => console.error('Error!', error.message))
 
 								if (split == 1) {
-									const scriptURL = 'https://script.google.com/macros/s/AKfycbzCJ9gyB2XpMMjBrl-_lmt0b9EejxbDKDCZedCt11fNHw6R4mEf0xpVGgcD0bcmDlr_/exec'
+									const scriptURL = 'https://script.google.com/macros/s/AKfycbxNNuzSznT6M_wABWvNugeQt4Tzn_UawdKto4VzDi7ma_o_mCfB9Hwp_nzAMH-_BLMU/exec'
 									const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
 									fetch(scriptURL, { method: 'POST', body: new FormData(form) })

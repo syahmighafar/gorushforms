@@ -742,7 +742,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 				document.getElementById("dateSubmitted").value = dateTime;
 
-
 				let orderId = document.getElementById("bruhims").value;
 				let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value
 				let customerEmail = document.getElementById("id-Email").value;
@@ -815,9 +814,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 								var counttaskhistory = json_responseo.data["length"];
 
 								for (let i = 0; i < counttaskhistory; i++) {
-									if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
-										document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
-										i = counttaskhistory;
+									if (json_responseo.data[i].custom_field["length"] == 7) {
+										if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
+											document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+											i = counttaskhistory;
+										}
 									}
 								}
 

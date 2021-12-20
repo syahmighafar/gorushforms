@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 	$(document).ready(function () {
-		
-						var split = 1;
+		var countAgree = 0;
+		var split = 1;
 
 		$("#requesterarea").hide();
 		$("#requesternextbutton").hide();
@@ -384,7 +384,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		});
 
 		$('#Agreement').change(function () {
-			if ($(this).val().checked = true) {
+			if (countAgree == 0){
+                		countAgree = countAgree + 1;
 
 				$("#pleasewait").fadeIn();
 

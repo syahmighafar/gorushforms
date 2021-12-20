@@ -828,7 +828,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 									.catch(error => console.error('Error!', error.message))
 
 								if (split == 1) {
-									const scriptURL = 'https://script.google.com/macros/s/AKfycbxNNuzSznT6M_wABWvNugeQt4Tzn_UawdKto4VzDi7ma_o_mCfB9Hwp_nzAMH-_BLMU/exec'
+									const scriptURL = 'https://script.google.com/macros/s/AKfycbzCJ9gyB2XpMMjBrl-_lmt0b9EejxbDKDCZedCt11fNHw6R4mEf0xpVGgcD0bcmDlr_/exec'
 									const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
 									fetch(scriptURL, { method: 'POST', body: new FormData(form) })

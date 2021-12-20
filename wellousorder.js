@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        var countAgree = 0;
 
         $("#deliverytypearea").hide();
         $("#deliverychoicearea").hide();
@@ -62,7 +63,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         $('#Agreement').change(function () {
-            if ($(this).val().checked = true) {
+            if (countAgree == 0){
+                countAgree = countAgree + 1;
                 $("#pleasewait").fadeIn();
 
                 let agentName = document.getElementById("Agent-Name").value;

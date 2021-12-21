@@ -384,8 +384,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 		});
 
 		$('#Agreement').change(function () {
-			if (countAgree == 0){
-                		countAgree = countAgree + 1;
+			if (countAgree == 0) {
+				countAgree = countAgree + 1;
 
 				$("#pleasewait").fadeIn();
 
@@ -395,18 +395,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				var ampm = '';
 				var ampmhour = '';
 				var ampmmin = '';
+				var ampmNum = '';
 
 				if (today.getHours() < 12) {
+					ampmNum = 0;
 					ampm = 'am';
 					ampmhour = (today.getHours());
 				}
 
 				if (today.getHours() == 12) {
+					ampmNum = 1;
 					ampm = 'pm';
 					ampmhour = (today.getHours());
 				}
 
 				if (today.getHours() > 12) {
+					ampmNum = 1;
 					ampm = 'pm';
 					ampmhour = (today.getHours() - 12);
 				}
@@ -421,6 +425,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				var time = ampmhour + ":" + ampmmin + " " + ampm;
 
 				var dateTime = date + ' ' + time;
+
+				var patientOrderId = "JPMCPJSC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
+
 				document.getElementById("dateSubmitted").value = dateTime;
 
 				let orderId = document.getElementById("Patient-Number").value;
@@ -438,30 +445,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 				}
 
 				document.getElementById("customerAddress").value = customerAddress;
-				
+
 				var customerPhone = document.getElementById("code").value + document.getElementById("contact_1").value;
 				var additionalPhone = document.getElementById("code_2").value + document.getElementById("contact_2").value;
 				var requesterPhone = document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
-				
+
 				document.getElementById("customerPhone").value = customerPhone;
 				document.getElementById("additionalPhone").value = additionalPhone;
 				document.getElementById("requesterPhone").value = requesterPhone;
-				
-				const scriptURL = 'https://script.google.com/macros/s/AKfycbx8ZYmIx4tygxtJs7m-2XlM7IxR_zikakiSjqxhXvhaVag-IGJUy_Am-61KpZfPeIza/exec'
-				const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
-
-				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-					.catch(error => console.error('Error!', error.message))
-				
-				if (split == 1){
-					
-				const scriptURL = 'https://script.google.com/macros/s/AKfycby_15K0elbIbyOTUUn_Npwyu7qyXqchQ5HCthw7IBqb7qiA3L6RQ11lTyWrmeuGeLTuSg/exec'
-				const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
-
-				fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-					.catch(error => console.error('Error!', error.message))
-					
-				}
 
 				var jobdeliverydatetime = "";
 				var todaysDate = new Date();
@@ -491,8 +482,61 @@ document.addEventListener("DOMContentLoaded", function (event) {
 						console.log('Status:', this.status);
 						console.log('Headers:', this.getAllResponseHeaders());
 						console.log('Body:', this.responseText);
-						$("#pleasewait").hide();
-						$("#submitbutton").fadeIn();
+
+						request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
+
+						request.setRequestHeader('Content-Type', 'application/json');
+
+						request.onreadystatechange = function () {
+							if (this.readyState === 4) {
+								console.log('Status:', this.status);
+								console.log('Headers:', this.getAllResponseHeaders());
+								console.log('Body:', this.responseText);
+
+								responseo = this.responseText;
+								json_responseo = JSON.parse(responseo);
+
+								var counttaskhistory = json_responseo.data["length"];
+
+								for (let i = 0; i < counttaskhistory; i++) {
+									if (json_responseo.data[i].custom_field["length"] == 7) {
+										if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
+											document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+											i = counttaskhistory;
+										}
+									}
+								}
+
+								const scriptURL = 'https://script.google.com/macros/s/AKfycbx8ZYmIx4tygxtJs7m-2XlM7IxR_zikakiSjqxhXvhaVag-IGJUy_Am-61KpZfPeIza/exec'
+								const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
+
+								fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+									.catch(error => console.error('Error!', error.message))
+
+								if (split == 1) {
+
+									const scriptURL = 'https://script.google.com/macros/s/AKfycby_15K0elbIbyOTUUn_Npwyu7qyXqchQ5HCthw7IBqb7qiA3L6RQ11lTyWrmeuGeLTuSg/exec'
+									const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
+
+									fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+										.catch(error => console.error('Error!', error.message))
+
+								}
+
+								$("#pleasewait").hide();
+								$("#submitbutton").fadeIn();
+							}
+						};
+
+						var body = {
+							'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+							'order_ids': [
+								orderId
+							],
+							'include_task_history': 0
+						};
+
+						request.send(JSON.stringify(body));
 					}
 				};
 
@@ -509,7 +553,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 					'job_delivery_datetime': jobdeliverydatetime,
 					'custom_field_template': 'Local_Delivery',
 					'meta_data': [{ "label": "IC", "data": customerIC }, { "label": "Patient_Number", "data": orderId }, { "label": "Remarks", "data": customerRemarks },
-					{ "label": "Type", "data": jobDescription }, { "label": "Method", "data": customerPM }, { "label": "Barcode", "data": orderId }, { "label": "OrderOriginFrom", "data": order_Origin }],
+					{ "label": "Type", "data": jobDescription }, { "label": "Method", "data": customerPM }, { "label": "Barcode", "data": orderId },
+					{ "label": "OrderOriginFrom", "data": order_Origin }, { "label": "Patient_Order_ID", "data": patientOrderId }],
 					'team_id': '921691',
 					'auto_assignment': '0',
 					'has_pickup': '0',

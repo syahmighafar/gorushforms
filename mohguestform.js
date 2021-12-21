@@ -824,12 +824,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 								const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
 								const form = document.forms['wf-form-Guest-MOH-Order-Form']
+								
+								
 
 								fetch(scriptURL, { method: 'POST', body: new FormData(form) })
 									.catch(error => console.error('Error!', error.message))
 
 								if (split == 1) {
-									const scriptURL = 'https://script.google.com/macros/s/AKfycbxNNuzSznT6M_wABWvNugeQt4Tzn_UawdKto4VzDi7ma_o_mCfB9Hwp_nzAMH-_BLMU/exec'
+									const scriptURL = 'https://script.google.com/macros/s/AKfycbwJ72tj7gj629knV7iVFRNAOemUyMGSFzUzFPFie70KN3S5cBo573kL3j9c14Q64Ccb/exec'
 									const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
 									fetch(scriptURL, { method: 'POST', body: new FormData(form) })

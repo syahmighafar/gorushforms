@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
         var countAgree = 0;
+        var tempSplit = 1;
 
         $("#pleasewait").hide();
 
@@ -222,11 +223,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 json_responseo = JSON.parse(responseo);
 
                                 document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
-
-                                const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
+                                
+                                const scriptURL = 'https://script.google.com/macros/s/AKfycbyoJMDxUwWvWoKjv1o_Us0Xu79WsrKVF6GJldTc5IXlP9x6eNICQIm-reiRih0cis1iHQ/exec'
                                 const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                
+                                if (tempSplit == 1){
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
+                                    const form = document.forms['wf-form-Go-Rush-Plus-Order']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                }
 
                                 $("#pleasewait").hide();
                                 $("#submitbutton").fadeIn();

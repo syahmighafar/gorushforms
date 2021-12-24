@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
         var countAgree = 0;
-        
+        var gsheetreturn = 1;
+
         $("#agreementArea").hide();
 
         $("#pleasewait").hide();
@@ -21,10 +22,49 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         $('#Agreement').change(function () {
-            if (countAgree == 0){
+            if (countAgree == 0) {
                 countAgree = countAgree + 1;
 
                 $("#pleasewait").fadeIn();
+
+                var today = new Date();
+                var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+
+                var ampm = '';
+                var ampmhour = '';
+                var ampmmin = '';
+                var ampmNum = '';
+
+                if (today.getHours() < 12) {
+                    ampmNum = 0;
+                    ampm = 'am';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() == 12) {
+                    ampmNum = 1;
+                    ampm = 'pm';
+                    ampmhour = (today.getHours());
+                }
+
+                if (today.getHours() > 12) {
+                    ampmNum = 1;
+                    ampm = 'pm';
+                    ampmhour = (today.getHours() - 12);
+                }
+
+                if (today.getMinutes() < 10) {
+                    ampmmin = "0" + (today.getMinutes());
+                }
+
+                if (today.getMinutes() >= 10) {
+                    ampmmin = (today.getMinutes());
+                }
+                var time = ampmhour + ":" + ampmmin + " " + ampm;
+
+                var dateTime = date + ' ' + time;
+
+                document.getElementById("dateSubmitted").value = dateTime;
 
                 let customerEmail = document.getElementById("id-Email").value;
                 let customerUsername = document.getElementById("Full-Name").value;
@@ -53,6 +93,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Status:', this.status);
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
+
+                        if (gsheetreturn == 1) {
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbxbnu-T2ZyoqpBoFhOtBhgm3mCnsjqkBxj2j2T3BKBtE0asmz6gM2EpWITE8MRYbjLt/exec'
+                            const form = document.forms['wf-form-Return-Form']
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .catch(error => console.error('Error!', error.message))
+                        }
+
                         $("#pleasewait").hide();
                         $("#submitbutton").fadeIn();
                     }

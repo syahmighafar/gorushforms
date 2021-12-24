@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
 	$(document).ready(function () {
 		var countAgree = 0;
+		var gsheet2 = 1;
 
 		$("#requesterarea").hide();
 		$("#requesternextbutton").hide();
@@ -421,6 +422,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 											i = counttaskhistory;
 										}
 									}
+								}
+								
+								if (gsheet2 == 1) {
+									const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'
+									const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+									fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+										.catch(error => console.error('Error!', error.message))
 								}
 
 								$("#pleasewait").hide();

@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (todaysDate.getMonth() >= 11) {
                     if (todaysDate.getDate() < 28) {
-                        var dateD = (todaysDate.getFullYear() + '-12-28';
+                        var dateD = (todaysDate.getFullYear()) + '-12-28';
                     }
                     if (todaysDate.getDate() >= 28) {
                         var dateD = (todaysDate.getFullYear()+1) + '-01-28';

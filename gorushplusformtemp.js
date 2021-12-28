@@ -208,6 +208,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 }
+                
+                $("#pleasewait").hide();
+                $("#submitbutton").fadeIn();
             }
         });
     });

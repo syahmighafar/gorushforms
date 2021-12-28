@@ -199,10 +199,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (todaysDate.getMonth() >= 11) {
                     if (todaysDate.getDate() < 28) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
+                        var dateD = (todaysDate.getFullYear()+1) + '-' + (todaysDate.getMonth() + 2) + '-28';
                     }
                     if (todaysDate.getDate() >= 28) {
-                        var dateD = todaysDate.getFullYear() + '-02-28';
+                        var dateD = (todaysDate.getFullYear()+1) + '-02-28';
                     }
                 }
 

@@ -189,9 +189,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 var todaysDate = new Date();
 
                 if (todaysDate.getDate() >= 28) {
-                    var date =  (todaysDate.getMonth() + 2) + '/' + 28 + '/' + todaysDate.getFullYear();
+                    if (todaysDate.getMonth() != 11) {
+                        var date = (todaysDate.getMonth() + 2) + '/28/' + todaysDate.getFullYear();
+                    } else {
+                        var date = '02/28/' + todaysDate.getFullYear();
+                    }
                 } else {
-                    var date = (todaysDate.getMonth() + 1) + '/' + 28 + '/' + todaysDate.getFullYear();
+                    if (todaysDate.getMonth() != 11) {
+                        var date = (todaysDate.getMonth() + 1) + '/28/' + todaysDate.getFullYear();
+                    } else {
+                        var date = '01/28/' + todaysDate.getFullYear();
+                    }
                 }
 
                 var time = "17:00";

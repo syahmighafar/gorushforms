@@ -193,16 +193,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
                     }
                     if (todaysDate.getDate() >= 28) {
-                        var dateD = todaysDate.getFullYear() + '-01-28';
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
                     }
                 }
 
                 if (todaysDate.getMonth() >= 11) {
                     if (todaysDate.getDate() < 28) {
-                        var dateD = (todaysDate.getFullYear()+1) + '-' + (todaysDate.getMonth() + 2) + '-28';
+                        var dateD = (todaysDate.getFullYear() + '-12-28';
                     }
                     if (todaysDate.getDate() >= 28) {
-                        var dateD = (todaysDate.getFullYear()+1) + '-02-28';
+                        var dateD = (todaysDate.getFullYear()+1) + '-01-28';
                     }
                 }
 

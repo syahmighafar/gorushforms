@@ -187,18 +187,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
-
-                if (todaysDate.getDate() >= 28) {
-                    if (todaysDate.getMonth() != 11) {
-                        var date = (todaysDate.getMonth() + 2) + '/28/' + todaysDate.getFullYear();
-                    } else {
-                        var date = '02/28/' + todaysDate.getFullYear();
-                    }
-                } else {
-                    if (todaysDate.getMonth() != 11) {
+                
+                if (todaysDate.getMonth() < 11){
+                    if (todaysDate.getDate() < 28) {
                         var date = (todaysDate.getMonth() + 1) + '/28/' + todaysDate.getFullYear();
-                    } else {
+                    }
+                    if (todaysDate.getDate() >= 28) {
                         var date = '01/28/' + todaysDate.getFullYear();
+                    }
+                }
+
+                if (todaysDate.getMonth() >= 11){
+                    if (todaysDate.getDate() < 28) {
+                        var date = (todaysDate.getMonth() + 2) + '/28/' + todaysDate.getFullYear();
+                    }
+                    if (todaysDate.getDate() >= 28) {
+                        var date = '02/28/' + todaysDate.getFullYear();
                     }
                 }
 

@@ -190,24 +190,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 
                 if (todaysDate.getMonth() < 11) {
                     if (todaysDate.getDate() < 28) {
-                        var date = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
                     }
                     if (todaysDate.getDate() >= 28) {
-                        var date = todaysDate.getFullYear() + '-01-28';
+                        var dateD = todaysDate.getFullYear() + '-01-28';
                     }
                 }
 
                 if (todaysDate.getMonth() >= 11) {
                     if (todaysDate.getDate() < 28) {
-                        var date = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
                     }
                     if (todaysDate.getDate() >= 28) {
-                        var date = todaysDate.getFullYear() + '-02-28';
+                        var dateD = todaysDate.getFullYear() + '-02-28';
                     }
                 }
 
-                var time = "17:00:00";
-                jobdeliverydatetime = date + ' ' + time;
+                var timeD = "17:00:00";
+                jobdeliverydatetime = dateD + ' ' + timeD;
 
                 var request = new XMLHttpRequest();
 

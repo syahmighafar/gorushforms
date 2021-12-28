@@ -189,12 +189,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 var todaysDate = new Date();
 
                 if (todaysDate.getDate() >= 28) {
-                    var date = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-' + 28;
+                    var date =  (todaysDate.getMonth() + 2) + '/' + 28 + '/' + todaysDate.getFullYear();
                 } else {
-                    var date = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-' + 28;
+                    var date = (todaysDate.getMonth() + 1) + '-' + 28 + '-' + todaysDate.getFullYear();
                 }
 
-                var time = "17:00:00";
+                var time = "17:00";
                 jobdeliverydatetime = date + ' ' + time;
 
                 var request = new XMLHttpRequest();

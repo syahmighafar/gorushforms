@@ -79,14 +79,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
 
-                if (todaysDate.getDate() >= 28) {
-                    var date = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-' + 28;
-                } else {
-                    var date = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-' + 28;
+                if (todaysDate.getMonth() < 11) {
+                    if (todaysDate.getDate() < 28) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
+                    }
+                    if (todaysDate.getDate() >= 28) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
+                    }
                 }
 
-                var time = "17:00:00";
-                jobdeliverydatetime = date + ' ' + time;
+                if (todaysDate.getMonth() >= 11) {
+                    if (todaysDate.getDate() < 28) {
+                        var dateD = (todaysDate.getFullYear()) + '-12-28';
+                    }
+                    if (todaysDate.getDate() >= 28) {
+                        var dateD = (todaysDate.getFullYear()+1) + '-01-28';
+                    }
+                }
+
+                var timeD = "17:00:00";
+                jobdeliverydatetime = dateD + ' ' + timeD;
 
                 let customerPM = document.getElementById("Payment-Method").value;
                 let order_Origin = document.getElementById("orderOrigin").value;

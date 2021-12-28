@@ -206,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                var time = "17:00";
+                var time = "17:00:00";
                 jobdeliverydatetime = date + ' ' + time;
 
                 var request = new XMLHttpRequest();

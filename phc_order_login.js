@@ -234,7 +234,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                var time = "17:00:00";
+                var timeD = "17:00:00";
                 jobdeliverydatetime = dateD + ' ' + timeD;
 
                 let customerIC = document.getElementById("icNumber").value;

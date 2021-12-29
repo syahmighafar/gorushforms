@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
         var countAgree = 0;
-        var gsheet2 = 1;
+        var gsheetPanagaHC = 1;
 
         $("#requesterarea").hide();
         $("#requesternextbutton").hide();
@@ -395,6 +395,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 var timeD = "17:00:00";
                 jobdeliverydatetime = dateD + ' ' + timeD;
+                
+                let customerIC = document.getElementById("icNumber").value;
+                let customerRemarks = document.getElementById("re").value;
+                let customerPM = document.querySelector('input[name=PaymentMethod]:checked').value
+                let order_Origin = document.getElementById("orderOrigin").value;
 
                 var request = new XMLHttpRequest();
 
@@ -431,9 +436,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                 }
 
-                                if (gsheet2 == 1) {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'
-                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
+                                if (gsheetPanagaHC == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxlggx7CrM8psD-yaX4Sb2JRgTk_1Q7UQSLEzT-gvzkEP_nX59MGcJvaTa86jWWxAvfSQ/exec'
+                                    const form = document.forms['wf-form-Guest-PANAGA-Order-Form']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                         .catch(error => console.error('Error!', error.message))

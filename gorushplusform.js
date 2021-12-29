@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
         var countAgree = 0;
         var tempSplit = 1;
+        var gobeliDailyReceiveSheet = 1;
 
         $("#pleasewait").hide();
 
@@ -243,6 +244,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 
                                 if (tempSplit == 1){
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
+                                    const form = document.forms['wf-form-Go-Rush-Plus-Order']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                }
+                                
+                                if (gobeliDailyReceiveSheet == 1){
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzViBaiBK_MByx3r6HOgVZcJcgA2oP7gpPDG6iItCX13zNYelgv7e4Z0rSL2ClG4nJQ/exec'
                                     const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 console.log('Body:', this.responseText);
 
                                 responseo = this.responseText;
-                                json_responseo = JSON.parse(responseo);
+                                json_responseo = JSON.parse(responseo);              
 
                                 document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
                                 
@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
                                 
                                 if (gobeliDailyReceiveSheet == 1){
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzViBaiBK_MByx3r6HOgVZcJcgA2oP7gpPDG6iItCX13zNYelgv7e4Z0rSL2ClG4nJQ/exec'
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxNHKzgMQRRPGdYX9iJlQPl48w04CRF3KlIzDiZMRVI3cVLe5l3ojMa8xvXur4Pi4FR/exec'
                                     const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

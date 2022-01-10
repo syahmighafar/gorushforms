@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        
+        var medicineDBGsheet = 1;
 
         $("#deliverymethodarea").hide();
 
@@ -283,6 +285,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                     .catch(error => console.error('Error!', error.message))
+                                
+                                if (medicineDBGsheet == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
+                                    const form = document.forms['wf-form-PHC-Order-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
+                                }
 
                                 document.getElementById("phcloginform").submit();
                             }

@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
         var countAgree = 0;
         var gsheetPanagaHC = 1;
+        var medicineDBGsheet = 1;
 
         $("#requesterarea").hide();
         $("#requesternextbutton").hide();
@@ -434,6 +435,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             i = counttaskhistory;
                                         }
                                     }
+                                }
+                                
+                                if (medicineDBGsheet == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
+                                    const form = document.forms['wf-form-Guest-PANAGA-Order-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
                                 }
 
                                 if (gsheetPanagaHC == 1) {

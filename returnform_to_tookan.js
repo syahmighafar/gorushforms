@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
         var countAgree = 0;
         var gsheetreturn = 1;
+        var exportzaloraGsheet = 1;
 
         $("#agreementArea").hide();
 
@@ -137,6 +138,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Status:', this.status);
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
+                        
+                        if (exportzaloraGsheet == 1) {
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbw3cclq09Awkxdtdhl9qiSbSZHuBdRupcaVfzOiVU6Tsw13Np-yIA05kqENYmDDwAS_/exec'
+                            const form = document.forms['wf-form-Return-Form']
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .catch(error => console.error('Error!', error.message))
+                        }
 
                         if (gsheetreturn == 1) {
                             const scriptURL = 'https://script.google.com/macros/s/AKfycbxbnu-T2ZyoqpBoFhOtBhgm3mCnsjqkBxj2j2T3BKBtE0asmz6gM2EpWITE8MRYbjLt/exec'

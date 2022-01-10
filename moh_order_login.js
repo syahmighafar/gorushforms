@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         var todChoice = 0;
         var split = 1;
+        var medicineDBGsheet = 1;
 
         const d = new Date();
         let hour = d.getHours();
@@ -792,6 +793,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                     .catch(error => console.error('Error!', error.message))
+                                
+                                if (medicineDBGsheet == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
+                                    const form = document.forms['wf-form-MOH-Order-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
+                                }
 
                                 if (todChoice == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbzRqkefb8xdEsS3qvKFwGwRGPJ74QrkrtYPteTjIOxSaHArgNZrw7kjC2lDc0cAgbPe/exec'

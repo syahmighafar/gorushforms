@@ -4,6 +4,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var tempSplit = 1;
         var gobeliDailyReceiveSheet = 1;
 
+        var gorushplusmy = 0;
+        var gorushpluschn = 0;
+        var gorushplussg = 0;
+
         $("#pleasewait").hide();
 
         $("#itemContainsArea").hide();
@@ -17,6 +21,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#totalPrice").hide();
         $("#supplierName").hide();
+        $("#countryofpurchasearea").hide();
 
         $("#confirmationarea").hide();
 
@@ -85,6 +90,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($("#Item-Description").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
+                $("#countryofpurchasearea").hide();
                 $("#supplierNext").hide();
                 alert("Please do not leave the Item Description field empty!");
             }
@@ -92,6 +98,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($("#Quantity").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
+                $("#countryofpurchasearea").hide();
                 $("#supplierNext").hide();
                 alert("Please do not leave the Quantity field empty!");
             }
@@ -99,6 +106,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($("#Total-Item-Price").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
+                $("#countryofpurchasearea").hide();
                 $("#supplierNext").hide();
                 alert("Please do not leave the Total Item Price field empty!");
             }
@@ -107,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 && ($("#Total-Item-Price").val().length != 0)) {
                 $("#itemBtn").hide();
                 $("#supplierName").fadeIn();
+                $("#countryofpurchasearea").fadeIn();
                 $("#supplierNext").fadeIn();
                 $("#totalPrice").fadeIn();
             }
@@ -123,9 +132,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please do not leave the Suppier Name field empty!");
             }
 
-            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0)) {
+            if ($("#CountryOfPurchase").val().length == 0) {
+                $("#confirmationarea").hide();
+                alert("Please do not leave the Country of Purchase field empty!");
+            }
+
+            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0) && ($("#CountryOfPurchase").val().length != 0)) {
                 $("#supplierNext").hide();
                 $("#confirmationarea").fadeIn();
+            }
+        });
+
+        $('#CountryOfPurchase').change(function () {
+            if ($(this).val().length == 0) {
+                gorushplusmy = 0;
+                gorushpluschn = 0;
+                gorushplussg = 0;
+            }
+
+            if ($(this).val() == "MALAYSIA") {
+                gorushplusmy = 1;
+                gorushpluschn = 0;
+                gorushplussg = 0;
+            }
+
+            if ($(this).val() == "CHINA") {
+                gorushplusmy = 0;
+                gorushpluschn = 1;
+                gorushplussg = 0;
+            }
+
+            if ($(this).val() == "SINGAPORE") {
+                gorushplusmy = 0;
+                gorushpluschn = 0;
+                gorushplussg = 1;
             }
         });
 
@@ -188,7 +228,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
-                
+
                 if (todaysDate.getMonth() < 11) {
                     if (todaysDate.getDate() < 28) {
                         var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
@@ -203,7 +243,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         var dateD = (todaysDate.getFullYear()) + '-12-28';
                     }
                     if (todaysDate.getDate() >= 28) {
-                        var dateD = (todaysDate.getFullYear()+1) + '-01-28';
+                        var dateD = (todaysDate.getFullYear() + 1) + '-01-28';
                     }
                 }
 
@@ -233,24 +273,40 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 console.log('Body:', this.responseText);
 
                                 responseo = this.responseText;
-                                json_responseo = JSON.parse(responseo);              
+                                json_responseo = JSON.parse(responseo);
 
                                 document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
-                                
-                                const scriptURL = 'https://script.google.com/macros/s/AKfycbyoJMDxUwWvWoKjv1o_Us0Xu79WsrKVF6GJldTc5IXlP9x6eNICQIm-reiRih0cis1iHQ/exec'
-                                const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
-                                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                
-                                if (tempSplit == 1){
+                                if (tempSplit == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
                                     const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                 }
-                                
-                                if (gobeliDailyReceiveSheet == 1){
+
+                                if (gobeliDailyReceiveSheet == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbxNHKzgMQRRPGdYX9iJlQPl48w04CRF3KlIzDiZMRVI3cVLe5l3ojMa8xvXur4Pi4FR/exec'
+                                    const form = document.forms['wf-form-Go-Rush-Plus-Order']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                }
+
+                                if (gorushplusmy == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyoJMDxUwWvWoKjv1o_Us0Xu79WsrKVF6GJldTc5IXlP9x6eNICQIm-reiRih0cis1iHQ/exec'
+                                    const form = document.forms['wf-form-Go-Rush-Plus-Order']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                }
+
+                                if (gorushpluschn == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzHDabrr8LnVfL4hlO7-JPbf6BJWi98UkiaX7tsRu_EQdBZjmhRC2B17qC7hwNv3iVh/exec'
+                                    const form = document.forms['wf-form-Go-Rush-Plus-Order']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                }
+
+                                if (gorushplussg == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwh8fwGxsFuXLRmc6NI1WW65iSq7ClLoBGBrOOLXwSgVS4Oae-bMAYTR8EGIdE_hVnU7w/exec'
                                     const form = document.forms['wf-form-Go-Rush-Plus-Order']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

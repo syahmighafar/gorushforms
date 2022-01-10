@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var split = 1;
         var gsheet2 = 1;
         var countAgree = 0;
+        var medicineDBGsheet = 1;
 
         const d = new Date();
         let hour = d.getHours();
@@ -838,10 +839,16 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
                                 const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
-
-
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                     .catch(error => console.error('Error!', error.message))
+                                
+                                if (medicineDBGsheet == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
+                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
+                                }
 
                                 if (gsheet2 == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'

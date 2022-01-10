@@ -10,12 +10,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#submitbutton").hide();
 
         document.getElementById("nextbutton").addEventListener("click", function () {
-            if (($("#Full-Name").val().length == 0) || ($("#id-Email").val().length == 0) || ($("#Contact-Number-2").val().length == 0) || ($("#Postal-Code").val().length == 0) || ($("#Home-Address-2").val().length == 0) || ($("#Item-Description").val().length == 0)) {
+            if (($("#Full-Name").val().length == 0)) {
                 $("#agreementArea").hide();
-                alert("Please do not leave the required fields empty!");
+                alert("Please do not leave the full name field empty!");
+            }
+            
+            if (($("#id-Email").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the email field empty!");
+            }
+            
+            if (($("#Contact-Number-2").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the contact number field empty!");
+            }
+            
+            if (($("#Postal-Code").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the postal code field empty!");
+            }
+            
+            if (($("#Home-Address-2").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the home address field empty!");
+            }
+            
+            if (($("#Item-Description").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the item description field empty!");
+            }
+            
+            if (($("#OriginalTrackingNumber").val().length == 0)) {
+                $("#agreementArea").hide();
+                alert("Please do not leave the original tracking number field empty!");
             }
 
-            if (($("#Full-Name").val().length != 0) && ($("#id-Email").val().length != 0) && ($("#Contact-Number-2").val().length != 0) && ($("#Postal-Code").val().length != 0) && ($("#Home-Address-2").val().length != 0) && ($("#Item-Description").val().length != 0)) {
+            if (($("#Full-Name").val().length != 0) && ($("#id-Email").val().length != 0) && ($("#Contact-Number-2").val().length != 0) &&
+                ($("#Postal-Code").val().length != 0) && ($("#Home-Address-2").val().length != 0) && ($("#Item-Description").val().length != 0) &&
+                ($("#OriginalTrackingNumber").val().length != 0)) {
                 $("#nextbutton").hide();
                 $("#agreementArea").fadeIn();
             }

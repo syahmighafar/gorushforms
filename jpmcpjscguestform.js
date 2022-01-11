@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var split = 1;
         var gsheet2 = 1;
         var medicineDBGsheet = 1;
+        var medicineDBjpmcGsheet = 1;
 
         $("#requesterarea").hide();
         $("#requesternextbutton").hide();
@@ -529,6 +530,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 
                                 if (medicineDBGsheet == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
+                                    const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
+                                }
+                                
+                                if (medicineDBjpmcGsheet == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbypovbPZ5icrus4WPpW_V5wAKc9Rgu0gfx5HnKpP9jYvxa3prL35Yb2e98DNyvyW92ZpA/exec'
                                     const form = document.forms['wf-form-Guest-JPMC-PJSC-Order-Form']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

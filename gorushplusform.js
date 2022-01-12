@@ -130,12 +130,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please do not leave the Suppier Name field empty!");
             }
 
-            if ($("#CountryOfPurchase").val().length == 0) {
-                $("#confirmationarea").hide();
-                alert("Please do not leave the Country of Purchase field empty!");
-            }
-
-            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0) && ($("#CountryOfPurchase").val().length != 0)) {
+            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0)) {
                 $("#supplierNext").hide();
                 $("#confirmationarea").fadeIn();
             }

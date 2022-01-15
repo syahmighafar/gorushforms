@@ -132,18 +132,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please do not leave the Suppier Name field empty!");
             }
 
-            if ($("#CountryOfPurchase").val().length == 0) {
+            if ($("#GoRushReceivingCountry").val().length == 0) {
                 $("#confirmationarea").hide();
-                alert("Please do not leave the Country of Purchase field empty!");
+                alert("Please do not leave the Go Rush Receiving Country field empty!");
             }
 
-            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0) && ($("#CountryOfPurchase").val().length != 0)) {
+            if (($("#Total-Price").val().length != 0) && ($("#Supplier-Name").val().length != 0) && ($("#GoRushReceivingCountry").val().length != 0)) {
                 $("#supplierNext").hide();
                 $("#confirmationarea").fadeIn();
             }
         });
 
-        $('#CountryOfPurchase').change(function () {
+        $('#GoRushReceivingCountry').change(function () {
             if ($(this).val().length == 0) {
                 gorushplusmy = 0;
                 gorushpluschn = 0;

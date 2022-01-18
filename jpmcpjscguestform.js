@@ -206,6 +206,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#expPrice").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '';
             }
 
             if ($(this).val() == "Standard ($3)") {
@@ -231,6 +232,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#expPrice").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '3';
             }
 
             if (($(this).val() == "Standard ($7)") || ($(this).val() == "Standard ($10)")) {
@@ -257,7 +259,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById('scDate').value = '';
             }
-
+            
+            if ($(this).val() == "Standard ($7)") {
+                document.getElementById('price').value = '7';
+            }
+            
+            if ($(this).val() == "Standard ($10)") {
+                document.getElementById('price').value = '10';
+            }
+            
             if ($(this).val() == "Express ($5)") {
                 $("#mohnormalregArea").fadeIn();
 
@@ -281,6 +291,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#expPrice").fadeIn();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '5';
             }
 
             if ($(this).val() == "Self Collect") {

@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '';
             }
 
             if ($(this).val() == "Standard") {
@@ -90,6 +91,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '3';
             }
 
             if ($(this).val() == "Self Collect") {

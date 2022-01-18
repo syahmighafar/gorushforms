@@ -509,6 +509,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '';
 
                 todChoice = 0;
             }
@@ -536,6 +537,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '3';
 
                 todChoice = 1;
             }
@@ -563,6 +565,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").hide();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '5';
 
                 todChoice = 2;
             }
@@ -590,6 +593,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#immAgree").fadeIn();
 
                 document.getElementById('scDate').value = '';
+                document.getElementById('price').value = '20';
 
                 todChoice = 3;
             }

@@ -238,12 +238,112 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                if (todaysDate.getMonth() >= 11) {
-                    if (todaysDate.getDate() < 28) {
-                        var dateD = (todaysDate.getFullYear()) + '-12-28';
+                //31 January to Feburary
+                if (todaysDate.getMonth() == 0) {
+                    if (todaysDate.getDate() < 31) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
                     }
-                    if (todaysDate.getDate() >= 28) {
-                        var dateD = (todaysDate.getFullYear() + 1) + '-01-28';
+                    if (todaysDate.getDate() >= 31) {
+                        if (todaysDate.getHours() < 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                        }
+                        if (todaysDate.getHours() >= 17) {
+                            if ((0 == todaysDate.getFullYear() % 4) && (0 != todaysDate.getFullYear() % 100) || (0 == todaysDate.getFullYear() % 400)) {
+                                var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-29';
+                            } else {
+                                var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
+                            }
+                        }
+                    }
+                }
+
+                //February
+                if (todaysDate.getMonth() == 1) {
+                    //Leap year
+                    if ((0 == todaysDate.getFullYear() % 4) && (0 != todaysDate.getFullYear() % 100) || (0 == todaysDate.getFullYear() % 400)) {
+                        if (todaysDate.getDate() < 29) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-29';
+                        }
+                        if (todaysDate.getDate() >= 29) {
+                            if (todaysDate.getHours() < 17) {
+                                var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-29';
+                            }
+                            if (todaysDate.getHours() >= 17) {
+                                var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
+                            }
+                        }
+                    } else {
+                        if (todaysDate.getDate() < 28) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
+                        }
+                        if (todaysDate.getDate() >= 28) {
+                            if (todaysDate.getHours() < 17) {
+                                var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
+                            }
+                            if (todaysDate.getHours() >= 17) {
+                                var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
+                            }
+                        }
+                    }
+                }
+
+                //31 July to August
+                if (todaysDate.getMonth() == 6) {
+                    if (todaysDate.getDate() < 31) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                    }
+                    if (todaysDate.getDate() >= 31) {
+                        if (todaysDate.getHours() < 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                        }
+                        if (todaysDate.getHours() >= 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
+                        }
+                    }
+                }
+
+                //December
+                if (todaysDate.getMonth() == 11) {
+                    if (todaysDate.getDate() < 31) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                    }
+                    if (todaysDate.getDate() >= 31) {
+                        if (todaysDate.getHours() < 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                        }
+                        if (todaysDate.getHours() >= 17) {
+                            var dateD = (todaysDate.getFullYear() + 1) + '-01-31';
+                        }
+                    }
+                }
+
+                //31
+                if ((todaysDate.getMonth() == 2) || (todaysDate.getMonth() == 4) || (todaysDate.getMonth() == 7) || (todaysDate.getMonth() == 9)) {
+                    if (todaysDate.getDate() < 31) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                    }
+                    if (todaysDate.getDate() >= 31) {
+                        if (todaysDate.getHours() < 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
+                        }
+                        if (todaysDate.getHours() >= 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-30';
+                        }
+                    }
+                }
+
+                //30
+                if ((todaysDate.getMonth() == 3) || (todaysDate.getMonth() == 5) || (todaysDate.getMonth() == 8) || (todaysDate.getMonth() == 10)) {
+                    if (todaysDate.getDate() < 30) {
+                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-30';
+                    }
+                    if (todaysDate.getDate() >= 30) {
+                        if (todaysDate.getHours() < 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-30';
+                        }
+                        if (todaysDate.getHours() >= 17) {
+                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
+                        }
                     }
                 }
 

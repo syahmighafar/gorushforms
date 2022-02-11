@@ -36,12 +36,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
         
         document.getElementById("orderNow").addEventListener("click", function () {
-            if ($("#agreeTC").val().length == 0) {
+            if ($("#agreeTC").checked == false) {
                 $("#wellousorder-form").hide();
                 alert("Please read the Terms and Condition for Go Rush Plus!");
             }
-            
-            if ($("#agreeTC").val().length != 0) {
+
+            if ($("#agreeTC").checked == true) {
                 $("#beforeProceed").hide();
                 $("#wellousorder-form").fadeIn();
             }

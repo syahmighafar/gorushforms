@@ -24,6 +24,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#countryofpurchasearea").hide();
 
         $("#confirmationarea").hide();
+        
+        $("#wellousorder-form").hide();
 
         $(document).on("change", ".itemprice", function () {
             var sum = 0;
@@ -31,6 +33,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 sum += +$(this).val();
             });
             $("#Total-Price").val(sum);
+        });
+        
+        document.getElementById("orderNow").addEventListener("click", function () {
+            $("#beforeProceed").hide();
+            $("#wellousorder-form").fadeIn();
         });
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {

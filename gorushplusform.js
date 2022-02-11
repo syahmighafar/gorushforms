@@ -36,11 +36,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
         
         document.getElementById("orderNow").addEventListener("click", function () {
-            if ($("#agreeTC").checked) {
+            if ($("#agreeTC").is(":checked")) {
                 $("#beforeProceed").hide();
                 $("#wellousorder-form").fadeIn();
-                
-            }else{
+            } else {
                 $("#wellousorder-form").hide();
                 alert("Please read the Terms and Condition for Go Rush Plus!");
             }

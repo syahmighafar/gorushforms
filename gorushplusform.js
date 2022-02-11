@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#confirmationarea").hide();
         
-        $("#wellousorder-form").hide();
+        $("#grpFormInput").hide();
 
         $(document).on("change", ".itemprice", function () {
             var sum = 0;
@@ -38,9 +38,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("orderNow").addEventListener("click", function () {
             if ($("#agreeTC").is(":checked")) {
                 $("#beforeProceed").hide();
-                $("#wellousorder-form").fadeIn();
+                $("#grpFormInput").fadeIn();
             } else {
-                $("#wellousorder-form").hide();
+                $("#grpFormInput").hide();
                 alert("Please read the Terms and Condition for Go Rush Plus!");
             }
         });

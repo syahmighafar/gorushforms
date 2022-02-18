@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
-
     $(document).ready(function () {
+
+        var countAgree = 0;
 
         $("#senderarea").hide();
         $("#receiverarea").hide();

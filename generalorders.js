@@ -346,6 +346,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("dateSubmitted").value = dateTime;
 
+                    let itemDescription = document.getElementById("Item-Description").value;
+
                     let jobDescription = document.getElementById("Delivery-Type").value;
                     let jobType = document.getElementById("Pickup-or-Delivery").value;
 
@@ -544,7 +546,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Receiver_Name", "data": receiverName }, { "label": "Receiver_Phone", "data": receiverPhone },
                         { "label": "Product_Type", "data": productType }, { "label": "Product_Weight", "data": productWeight },
                         { "label": "COD_Amount", "data": codAmount }, { "label": "Bill_To", "data": billTo },
-                        { "label": "Pickup_Address", "data": pickupAddress }, { "label": "Pickup_Date", "data": pickupDate }],
+                        { "label": "Pickup_Address", "data": pickupAddress }, { "label": "Pickup_Date", "data": pickupDate },
+                        { "label": "Item_Description", "data": itemDescription }],
                         'team_id': '921691',
                         'auto_assignment': '0',
                         'has_pickup': '0',

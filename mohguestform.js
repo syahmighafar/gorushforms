@@ -764,7 +764,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("customerAddress").value = customerAddress;
 
-                var customerPhone = document.getElementById("code").value + document.getElementById("contact_1").value;
+                var customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
                 var additionalPhone = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 var requesterPhone = document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
                 var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value

@@ -207,7 +207,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
                 let customerEmail = document.getElementById("email").value;
                 let customerUsername = document.getElementById("name").value;
-                let customerPhone = document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("contact_1").value;
+
+                document.getElementById("customerPhone").value = customerPhone;
 
                 var customerAddress = "";
 

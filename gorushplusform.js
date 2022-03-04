@@ -117,11 +117,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#itemContainsArea").hide();
                 alert("Please do not leave the Go Rush Receiving Country field empty!");
             }
-            
-            if ($("#warehouseDropdown").val().length == 0) {
-                $("#itemContainsArea").hide();
-                alert("Please do not leave the Warehouse Reference field empty!");
-            }
 
             if ($("#Consignee-Name").val().length == 0) {
                 $("#itemContainsArea").hide();
@@ -151,7 +146,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
                 && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)
                 && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0)
-                && ($("#warehouseDropdown").val().length != 0) && ($("#GoRushReceivingCountry").val().length != 0)) {
+                && ($("#GoRushReceivingCountry").val().length != 0)) {
                 $("#itemContainsArea").fadeIn();
                 $("#custDetailBtn").hide();
             }

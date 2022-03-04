@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#itemContainsArea").hide();
                 alert("Please do not leave the Tracking Number field empty!");
             }
+            
+            if ($("#warehouseDropdown").val().length == 0) {
+                $("#itemContainsArea").hide();
+                alert("Please do not leave the Warehouse Reference field empty!");
+            }
 
             if ($("#Consignee-Name").val().length == 0) {
                 $("#itemContainsArea").hide();
@@ -78,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
                 && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)
-                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0)) {
+                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0) && ($("#warehouseDropdown").val().length != 0)) {
                 $("#itemContainsArea").fadeIn();
                 $("#custDetailBtn").hide();
             }
@@ -237,6 +242,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerEmail = document.getElementById("Email").value;
 
                 var customerAddress = document.getElementById("Delivery-Address").value;
+                
+                document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdown").value + " - " + conN;
+                
+                let warehouseReference = document.getElementById("warehouseReference").value;
 
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
@@ -460,6 +469,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         {
                             'label': 'DG',
                             'data': itemContains
+                        },
+                        {
+                            'label': 'Warehouse_Reference',
+                            'data': warehouseReference
                         }
 
                     ],

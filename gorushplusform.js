@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#totalPrice").hide();
         $("#supplierName").hide();
-        $("#countryofpurchasearea").hide();
 
         $("#confirmationarea").hide();
         
@@ -44,11 +43,75 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please read the Terms and Condition for Go Rush Plus!");
             }
         });
+        
+        $('#GoRushReceivingCountry').change(function () {
+            if ($(this).val().length == 0) {
+                gorushplusmy = 0;
+                gorushpluschn = 0;
+                gorushplussg = 0;
+                
+                $("#warehouseReferenceMALarea").hide();
+                $("#warehouseReferenceSINarea").hide();
+                $("#warehouseReferenceGZarea").hide();
+                
+                document.getElementById('warehouseDropdownMAL').value = '';
+                document.getElementById('warehouseDropdownSIN').value = '';
+                document.getElementById('warehouseDropdownGZ').value = '';
+            }
+
+            if ($(this).val() == "MALAYSIA") {
+                gorushplusmy = 1;
+                gorushpluschn = 0;
+                gorushplussg = 0;
+                
+                $("#warehouseReferenceMALarea").fadeIn();
+                $("#warehouseReferenceSINarea").hide();
+                $("#warehouseReferenceGZarea").hide();
+                
+                document.getElementById('warehouseDropdownMAL').value = '';
+                document.getElementById('warehouseDropdownSIN').value = '';
+                document.getElementById('warehouseDropdownGZ').value = '';
+            }
+
+            if ($(this).val() == "CHINA") {
+                gorushplusmy = 0;
+                gorushpluschn = 1;
+                gorushplussg = 0;
+                
+                $("#warehouseReferenceMALarea").hide();
+                $("#warehouseReferenceSINarea").hide();
+                $("#warehouseReferenceGZarea").fadeIn();
+                
+                document.getElementById('warehouseDropdownMAL').value = '';
+                document.getElementById('warehouseDropdownSIN').value = '';
+                document.getElementById('warehouseDropdownGZ').value = '';
+            }
+
+            if ($(this).val() == "SINGAPORE") {
+                gorushplusmy = 0;
+                gorushpluschn = 0;
+                gorushplussg = 1;
+                
+                $("#warehouseReferenceMALarea").hide();
+                $("#warehouseReferenceSINarea").fadeIn();
+                $("#warehouseReferenceGZarea").hide();
+                
+                document.getElementById('warehouseDropdownMAL').value = '';
+                document.getElementById('warehouseDropdownSIN').value = '';
+                document.getElementById('warehouseDropdownGZ').value = '';
+            }
+        });
+
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {
             if ($("#Tracking-Number").val().length == 0) {
                 $("#itemContainsArea").hide();
                 alert("Please do not leave the Tracking Number field empty!");
+            }
+            
+            if ($("#GoRushReceivingCountry").val().length == 0) {
+                $("#itemContainsArea").hide();
+                alert("Please do not leave the Go Rush Receiving Country field empty!");
             }
             
             if ($("#warehouseDropdown").val().length == 0) {
@@ -83,7 +146,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if (($("#Tracking-Number").val().length != 0) && ($("#Consignee-Name").val().length != 0)
                 && ($("#Consignee-Phone").val().length != 0) && ($("#Delivery-Address").val().length != 0)
-                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0) && ($("#warehouseDropdown").val().length != 0)) {
+                && ($("#Commodity").val().length != 0) && ($("#Currency").val().length != 0)
+                && ($("#warehouseDropdown").val().length != 0) && ($("#GoRushReceivingCountry").val().length != 0)) {
                 $("#itemContainsArea").fadeIn();
                 $("#custDetailBtn").hide();
             }
@@ -107,7 +171,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($("#Item-Description").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
-                $("#countryofpurchasearea").hide();
                 $("#supplierNext").hide();
                 alert("Please do not leave the Item Description field empty!");
             }
@@ -115,7 +178,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($("#Quantity").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
-                $("#countryofpurchasearea").hide();
                 $("#supplierNext").hide();
                 alert("Please do not leave the Quantity field empty!");
             }
@@ -123,7 +185,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($("#Total-Item-Price").val().length == 0) {
                 $("#totalPrice").hide();
                 $("#supplierName").hide();
-                $("#countryofpurchasearea").hide();
                 $("#supplierNext").hide();
                 alert("Please do not leave the Total Item Price field empty!");
             }
@@ -132,7 +193,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 && ($("#Total-Item-Price").val().length != 0)) {
                 $("#itemBtn").hide();
                 $("#supplierName").fadeIn();
-                $("#countryofpurchasearea").fadeIn();
                 $("#supplierNext").fadeIn();
                 $("#totalPrice").fadeIn();
             }
@@ -159,33 +219,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#confirmationarea").fadeIn();
             }
         });
-
-        $('#GoRushReceivingCountry').change(function () {
-            if ($(this).val().length == 0) {
-                gorushplusmy = 0;
-                gorushpluschn = 0;
-                gorushplussg = 0;
-            }
-
-            if ($(this).val() == "MALAYSIA") {
-                gorushplusmy = 1;
-                gorushpluschn = 0;
-                gorushplussg = 0;
-            }
-
-            if ($(this).val() == "CHINA") {
-                gorushplusmy = 0;
-                gorushpluschn = 1;
-                gorushplussg = 0;
-            }
-
-            if ($(this).val() == "SINGAPORE") {
-                gorushplusmy = 0;
-                gorushpluschn = 0;
-                gorushplussg = 1;
-            }
-        });
-
+        
         $('#Agreement').change(function () {
             if (countAgree == 0) {
                 countAgree = countAgree + 1;
@@ -243,7 +277,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 var customerAddress = document.getElementById("Delivery-Address").value;
                 
-                document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdown").value + " - " + conN;
+                if (gorushplusmy == 1) {
+                    document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownMAL").value + " - " + conN;
+                }
+                
+                if (gorushpluschn == 1) {
+                    document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownGZ").value + " - " + conN;
+                }
+
+                if (gorushplussg == 1) {
+                    document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownSIN").value + " - " + conN;
+                }
                 
                 let warehouseReference = document.getElementById("warehouseReference").value;
 

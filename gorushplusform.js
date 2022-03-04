@@ -25,6 +25,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#confirmationarea").hide();
         
         $("#grpFormInput").hide();
+        
+        $("#warehouseReferenceMALarea").hide();
+        $("#warehouseReferenceSINarea").hide();
+        $("#warehouseReferenceGZarea").hide();
 
         $(document).on("change", ".itemprice", function () {
             var sum = 0;

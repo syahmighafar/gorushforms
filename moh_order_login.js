@@ -890,9 +890,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("icPassportNum").value = document.getElementById("icNumber").value + document.getElementById("passport").value;
                 let icPassportNum = document.getElementById("icPassportNum").value;
 
-                var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
-                    + document.getElementById("BHC").value + document.getElementById("TEHC").value;
-
                 let customerPhone = "+" + document.getElementById("contact_1").value;
                 let additionalPhone = "+" + document.getElementById("contact_2").value;
                 let appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value

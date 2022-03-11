@@ -706,7 +706,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 countAgree = countAgree + 1;
 
                 $("#pleasewait").fadeIn();
-                
+
                 //getSubmittedDate
                 var today = new Date();
                 var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
@@ -741,43 +741,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (today.getMinutes() >= 10) {
                     ampmmin = (today.getMinutes());
                 }
-                
+
                 var time = ampmhour + ":" + ampmmin + " " + ampm;
-                
+
                 let dateSubmitted = date + ' ' + time;
-                
+
                 document.getElementById("dateSubmitted").value = dateSubmitted;
 
                 let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 //getCustomerFullAddress
                 if (document.getElementById("Simpang").value.length == 0) {
-                    var customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_4").value;
+                    var customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " +
+                        document.getElementById("address_4").value;
                 } else {
-                    var customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("Simpang").value
-                        + ", " + document.getElementById("address_4").value;
+                    var customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " +
+                        document.getElementById("Simpang").value + ", " + document.getElementById("address_4").value;
                 }
 
                 document.getElementById("customerAddress").value = customerAddress;
-                
+
                 if (document.querySelector('input[name=District]:checked').value == "Brunei Muara") {
-                    if ( (document.getElementById("BNHC").value == "Raja Isteri Pengiran Anak Saleha Hospital") ||
+                    if ((document.getElementById("BNHC").value == "Raja Isteri Pengiran Anak Saleha Hospital") ||
                         (document.getElementById("BNHC").value == "Rimba Dialysis Centre") || (document.getElementById("BNHC").value == "Pengkalan Batu Health Centre") ||
                         (document.getElementById("BNHC").value == "PJSC") || (document.getElementById("BNHC").value == "JPMC") ||
-                        (document.getElementById("BNHC").value == "Psychiatry Department, Ministry of Health") ) {
+                        (document.getElementById("BNHC").value == "Psychiatry Department, Ministry of Health")) {
                         document.getElementById("sendOrderTo").value = "OPD";
                     } else {
-                        document.getElementById("sendOrderTo").value = "BHC"; 
+                        document.getElementById("sendOrderTo").value = "BHC";
+                    }
                 }
 
                 if (document.querySelector('input[name=District]:checked').value == "Tutong") {
                     document.getElementById("sendOrderTo").value = "PMMH";
                 }
-                
+
                 if (document.querySelector('input[name=District]:checked').value == "Belait") {
                     document.getElementById("sendOrderTo").value = "SSPH";
                 }
-                
+
                 if (document.querySelector('input[name=District]:checked').value == "Temburong") {
                     document.getElementById("sendOrderTo").value = "OPD";
                 }
@@ -786,7 +788,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var deliveryType = "STD";
                     document.getElementById("deliveryType").value = deliveryType;
                 }
-                
+
                 if (todChoice == "Express") {
                     var deliveryType = "EXP";
                     document.getElementById("deliveryType").value = deliveryType;
@@ -905,27 +907,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 var timeD = "23:59:00";
-                
+
                 let jobdeliverydatetime = dateD + ' ' + timeD;
-                    
+
                 let quarantineOrder = document.querySelector('input[name=QuarantineOrder]:checked').value;
                 let area = document.getElementById("area").value;
                 let price = document.getElementById('price').value;
                 let appointmentPlaceDistrict = document.querySelector('input[name=District]:checked').value;
-                let sendOrderTo = document.getElementById("sendOrderTo").value
+                let sendOrderTo = document.getElementById("sendOrderTo").value;
 
                 let customerRemarks = document.getElementById("re").value;
                 let customerPM = document.querySelector('input[name=PaymentMethod]:checked').value;
                 let order_Origin = document.getElementById("orderOrigin").value;
-                    
+
                 let orderId = document.getElementById("bruhims").value;
                 let jobDescription = document.querySelector('input[name=TypeofDelivery]:checked').value;
                 let customerEmail = document.getElementById("id-Email").value;
                 let customerUsername = document.getElementById("name").value;
-                    
+
                 document.getElementById("icPassportNum").value = document.getElementById("icNumber").value + document.getElementById("passport").value;
                 let icPassportNum = document.getElementById("icPassportNum").value;
-                    
+
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
                 let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 let requesterPhone = "+" + document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;

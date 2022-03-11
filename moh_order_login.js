@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var todChoice = 0;
         var split = 1;
         var medicineDBGsheet = 1;
+        var createPharmacySheet = 1;
 
         const d = new Date();
         let hour = d.getHours();
@@ -540,7 +541,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('scDate').value = '';
                 document.getElementById('price').value = '3';
 
-                todChoice = 1;
+                todChoice = "Standard";
             }
 
             if ($(this).val() == "Express") {
@@ -566,7 +567,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('scDate').value = '';
                 document.getElementById('price').value = '5';
 
-                todChoice = 2;
+                todChoice = "Express";
             }
 
             if ($(this).val() == "Immediate") {
@@ -592,7 +593,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('scDate').value = '';
                 document.getElementById('price').value = '20';
 
-                todChoice = 3;
+                todChoice = "Immediate";
             }
 
             if ($(this).val() == "Self Collect") {
@@ -697,39 +698,65 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (today.getMinutes() >= 10) {
                     ampmmin = (today.getMinutes());
                 }
+
                 var time = ampmhour + ":" + ampmmin + " " + ampm;
 
-                var dateTime = date + ' ' + time;
+                let dateSubmitted = date + ' ' + time;
 
-                var patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
+                document.getElementById("dateSubmitted").value = dateSubmitted;
 
-                document.getElementById("dateSubmitted").value = dateTime;
+                let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
-                let orderId = document.getElementById("bruhims").value;
-                let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
-                let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("name").value;
-                let customerPhone = "+" + document.getElementById("contact_1").value;
-                
-                document.getElementById("customerPhone").value = customerPhone;
-
-                var customerAddress = "";
+                //getCustomerFullAddress
 
                 if (document.getElementById("address_3").value.length == 0) {
-                    customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_4").value;
+                    var customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_4").value;
                 } else {
-                    customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_3").value
+                    var customerAddress = document.getElementById("address_1").value + ", " + document.getElementById("address_2").value + ", " + document.getElementById("address_3").value
                         + ", " + document.getElementById("address_4").value;
                 }
 
                 document.getElementById("customerAddress").value = customerAddress;
 
-                var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
-                    + document.getElementById("BHC").value + document.getElementById("TEHC").value;
+                if (document.querySelector('input[name=radioDistrict]:checked').value == "Brunei Muara") {
+                    if ((document.getElementById("BNHC").value == "Raja Isteri Pengiran Anak Saleha Hospital") ||
+                        (document.getElementById("BNHC").value == "Rimba Dialysis Centre") || (document.getElementById("BNHC").value == "Pengkalan Batu Health Centre") ||
+                        (document.getElementById("BNHC").value == "PJSC") || (document.getElementById("BNHC").value == "JPMC") ||
+                        (document.getElementById("BNHC").value == "Psychiatry Department, Ministry of Health")) {
+                        document.getElementById("sendOrderTo").value = "OPD";
+                    } else {
+                        document.getElementById("sendOrderTo").value = "BHC";
+                    }
+                }
 
-                document.getElementById("appointmentPlace").value = appointmentPlace;
+                if (document.querySelector('input[name=radioDistrict]:checked').value == "Tutong") {
+                    document.getElementById("sendOrderTo").value = "PMMH";
+                }
 
-                var jobdeliverydatetime = "";
+                if (document.querySelector('input[name=radioDistrict]:checked').value == "Belait") {
+                    document.getElementById("sendOrderTo").value = "SSPH";
+                }
+
+                if (document.querySelector('input[name=radioDistrict]:checked').value == "Temburong") {
+                    document.getElementById("sendOrderTo").value = "OPD";
+                }
+
+                if (todChoice == "Standard") {
+                    var deliveryType = "STD";
+                    document.getElementById("deliveryType").value = deliveryType;
+                }
+
+                if (todChoice == "Express") {
+                    var deliveryType = "EXP";
+                    document.getElementById("deliveryType").value = deliveryType;
+                }
+
+                if (todChoice == "Immediate") {
+                    var deliveryType = "IMM";
+                    document.getElementById("deliveryType").value = deliveryType;
+                }
+
+                //getCompletionDate
                 var todaysDate = new Date();
 
                 //31 January to Feburary
@@ -842,12 +869,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 var timeD = "23:59:00";
-                jobdeliverydatetime = dateD + ' ' + timeD;
 
-                let customerIC = document.getElementById("icNumber").value;
+                let jobdeliverydatetime = dateD + ' ' + timeD;
+
+                let quarantineOrder = document.querySelector('input[name=radioQO]:checked').value;
+                let area = document.getElementById("area").value;
+                let price = document.getElementById('price').value;
+                let appointmentPlaceDistrict = document.querySelector('input[name=radioDistrict]:checked').value;
+                let sendOrderTo = document.getElementById("sendOrderTo").value;
+
                 let customerRemarks = document.getElementById("re").value;
                 let customerPM = document.querySelector('input[name=radioPAY]:checked').value
                 let order_Origin = document.getElementById("orderOrigin").value;
+
+                let orderId = document.getElementById("bruhims").value;
+                let jobDescription = document.querySelector('input[name=radioTOD]:checked').value
+                let customerEmail = document.getElementById("email").value;
+                let customerUsername = document.getElementById("name").value;
+
+                document.getElementById("icPassportNum").value = document.getElementById("icNumber").value + document.getElementById("passport").value;
+                let icPassportNum = document.getElementById("icPassportNum").value;
+
+                var appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
+                    + document.getElementById("BHC").value + document.getElementById("TEHC").value;
+
+                let customerPhone = "+" + document.getElementById("contact_1").value;
+                let additionalPhone = "+" + document.getElementById("contact_2").value;
+                let appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
+                    + document.getElementById("BHC").value + document.getElementById("TEHC").value;
+
+
+                document.getElementById("customerPhone").value = customerPhone;
+                document.getElementById("additionalPhone").value = additionalPhone;
+                document.getElementById("appointmentPlace").value = appointmentPlace;
 
                 var request = new XMLHttpRequest();
 
@@ -877,8 +931,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 var counttaskhistory = json_responseo.data["length"];
 
                                 for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 7) {
-                                        if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
+                                    if (json_responseo.data[i].custom_field["length"] == 18) {
+                                        if (json_responseo.data[i].custom_field[17].data == patientOrderId) {
                                             document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
                                             i = counttaskhistory;
                                         }
@@ -891,6 +945,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                     .catch(error => console.error('Error!', error.message))
 
+                                if (createPharmacySheet == 1) {
+                                    if (todChoice == "Standard") {
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzL6XkKveQ42lrKUHGKWkYn-Wg89iL6GFRsmkkUpW3-CwZ4ljCEONxZlhR5RaucXIAxbA/exec'
+                                        const form = document.forms['wf-form-MOH-Order-Form']
+
+                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                            .catch(error => console.error('Error!', error.message))
+                                    }
+
+                                    if (todChoice == "Express") {
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbx-CzV_n3dF0Ox0etTFKMQcFqmvmqC5XO-zgg-cWTweXRI9COcUCj5t7i0-6o2u4xUqdQ/exec'
+                                        const form = document.forms['wf-form-MOH-Order-Form']
+
+                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                            .catch(error => console.error('Error!', error.message))
+                                    }
+
+                                    if (todChoice == "Immediate") {
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzo0mbf6Rh8rJBRJ-FO6JaxiuhUt0lzDpKwkO63m8kwaPLn2LtVe5CZPLZqxYDA6xeouA/exec'
+                                        const form = document.forms['wf-form-MOH-Order-Form']
+
+                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                            .catch(error => console.error('Error!', error.message))
+                                    }
+                                }
+
                                 if (medicineDBGsheet == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
                                     const form = document.forms['wf-form-MOH-Order-Form']
@@ -899,7 +979,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         .catch(error => console.error('Error!', error.message))
                                 }
 
-                                if (todChoice == 1) {
+                                if (todChoice == "Standard") {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbzRqkefb8xdEsS3qvKFwGwRGPJ74QrkrtYPteTjIOxSaHArgNZrw7kjC2lDc0cAgbPe/exec'
                                     const form = document.forms['wf-form-MOH-Order-Form']
 
@@ -908,7 +988,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 }
 
-                                if (todChoice == 2) {
+                                if (todChoice == "Express") {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbxTiVlpyNyLo0T5bEKqN9Kwkkf18thYFkBcZzPSljflIzy8L_Y6o7kSBhEKrn0vAPy3/exec'
                                     const form = document.forms['wf-form-MOH-Order-Form']
 
@@ -917,7 +997,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 }
 
-                                if (todChoice == 3) {
+                                if (todChoice == "Immediate") {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwkLPAS6Yr8hTqmhQOqF2Q5cDoxNUW6StYQCX9RDNE2MM4gqZvSFfnirNyBVz7rpHeG/exec'
                                     const form = document.forms['wf-form-MOH-Order-Form']
 
@@ -933,7 +1013,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                         .catch(error => console.error('Error!', error.message))
 
-                                    if (todChoice == 1) {
+                                    if (todChoice == "Standard") {
                                         const scriptURL = 'https://script.google.com/macros/s/AKfycbz7lCB9fVvPqnU7q0tpEsehRjnMY43HVamAPBUyjKcxw5Rg8gummT4fFJdfGQE4BwWU/exec'
                                         const form = document.forms['wf-form-MOH-Order-Form']
 
@@ -942,7 +1022,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     }
 
-                                    if (todChoice == 2) {
+                                    if (todChoice == "Express") {
                                         const scriptURL = 'https://script.google.com/macros/s/AKfycbxnFdAxgwHpiOGdzZe-hbjjAUEw83snPT3bbmhobECqo2NDbIBebRi-DXAX3euxH_Vn/exec'
                                         const form = document.forms['wf-form-MOH-Order-Form']
 
@@ -951,7 +1031,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     }
 
-                                    if (todChoice == 3) {
+                                    if (todChoice == "Immediate") {
                                         const scriptURL = 'https://script.google.com/macros/s/AKfycbzNymxOq-U4XidfVWOj928T8eq9KE_UtMkO-A50YZMzpiaLJejkn9LOreVRz5J0k9jA/exec'
                                         const form = document.forms['wf-form-MOH-Order-Form']
 
@@ -985,10 +1065,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'latitude': '',
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
-                    'custom_field_template': 'Local_Delivery',
-                    'meta_data': [{ "label": "IC", "data": customerIC }, { "label": "Patient_Number", "data": orderId }, { "label": "Remarks", "data": customerRemarks },
-                    { "label": "Type", "data": jobDescription }, { "label": "Method", "data": customerPM }, { "label": "Barcode", "data": orderId },
-                    { "label": "OrderOriginFrom", "data": order_Origin }, { "label": "Patient_Order_ID", "data": patientOrderId }],
+                    'custom_field_template': 'Pharmacy_MOH',
+                    'meta_data': [
+                        { "label": "Quarantine_Order", "data": quarantineOrder },
+                        { "label": "Contact_Name", "data": customerUsername },
+                        { "label": "Address", "data": customerAddress },
+                        { "label": "Area", "data": area },
+                        { "label": "Patient_Number", "data": orderId },
+                        { "label": "IC_Passport_Number", "data": icPassportNum },
+                        { "label": "Appointment_Place", "data": appointmentPlace },
+                        { "label": "Phone_Number", "data": customerPhone },
+                        { "label": "Additional_Phone_Number", "data": additionalPhone },
+                        { "label": "Delivery_Type", "data": deliveryType },
+                        { "label": "Remarks", "data": customerRemarks },
+                        { "label": "Payment_Type", "data": customerPM },
+                        { "label": "Submitted_Date", "data": dateSubmitted },
+                        { "label": "Appointment_Place_District", "data": appointmentPlaceDistrict },
+                        { "label": "Send_Order_To", "data": sendOrderTo },
+                        { "label": "Price", "data": price },
+                        { "label": "Order_Origin", "data": order_Origin },
+                        { "label": "Patient_Order_ID", "data": patientOrderId }
+                    ],
                     'team_id': '921691',
                     'auto_assignment': '0',
                     'has_pickup': '0',

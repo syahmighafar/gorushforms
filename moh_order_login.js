@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#paymentmethodarea").hide();
 
         $("#paymentnoticearea").hide();
+        $(".radio-button-field-14 w-radio").hide();
 
         $("#remarkarea").hide();
         $("#asknotifyarea").hide();

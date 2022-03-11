@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var gsheet2 = 1;
         var countAgree = 0;
         var medicineDBGsheet = 1;
+        var createPharmacySheet = 1;
 
         const d = new Date();
         let hour = d.getHours();
@@ -980,6 +981,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                     .catch(error => console.error('Error!', error.message))
+                                
+                                if (createPharmacySheet == 1) {
+                                    if (todChoice == "Standard") {
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbxdYQJuBV1dA2o8Z0IPYjm4Mf2WSu5i6FqIBPXYC370075gbQHAk6P_Fn0mV2zILtzCqQ/exec'
+                                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                            .catch(error => console.error('Error!', error.message))
+                                    }
+
+                                    if (todChoice == "Express") {
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwdfqleu6vo554R9o8Im2f9h76k2S5ktnEnjYu2b49bx-61gA0gK9TcnhPG2SFZVbSVmw/exec'
+                                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                            .catch(error => console.error('Error!', error.message))
+                                    }
+                                }
 
                                 if (medicineDBGsheet == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'

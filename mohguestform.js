@@ -984,7 +984,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 
                                 if (createPharmacySheet == 1) {
                                     if (todChoice == "Standard") {
-                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbxdYQJuBV1dA2o8Z0IPYjm4Mf2WSu5i6FqIBPXYC370075gbQHAk6P_Fn0mV2zILtzCqQ/exec'
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbxxRcpKi-hcJiyKBvvB12ZYbEeZ6YS2XE9byGVO3031_91nXja45Qa62jieHfZ3cLPOdw/exec'
                                         const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
                                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
@@ -992,7 +992,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
 
                                     if (todChoice == "Express") {
-                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwdfqleu6vo554R9o8Im2f9h76k2S5ktnEnjYu2b49bx-61gA0gK9TcnhPG2SFZVbSVmw/exec'
+                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwFchxYwmJ5DWf3KLb0ER1uIfWUmGST2h1EAo02gNIXXmYGHMNSg98N0hsr0913c1hqeQ/exec'
                                         const form = document.forms['wf-form-Guest-MOH-Order-Form']
 
                                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })

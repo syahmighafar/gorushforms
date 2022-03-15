@@ -699,6 +699,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("dateSubmitted").value = dateSubmitted;
 
                 let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
+                
+                let area = "";
 
                 //getCustomerFullAddress
 

@@ -1033,8 +1033,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerEmail = document.getElementById("id-Email").value;
                 let customerUsername = document.getElementById("name").value;
 
-                document.getElementById("icPassportNum").value = document.getElementById("icNumber").value + document.getElementById("passport").value;
-                let icPassportNum = document.getElementById("icPassportNum").value;
+                if (document.getElementById("icNumber").value.length != 0){
+                    document.getElementById("icPassportNum").value = document.getElementById("icNumber").value;
+                }
+
+                if (document.getElementById("passport").value.length != 0){
+                    document.getElementById("icPassportNum").value = document.getElementById("passport").value;
+                }
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 

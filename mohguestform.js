@@ -1020,7 +1020,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let jobdeliverydatetime = dateD + ' ' + timeD;
 
                 let quarantineOrder = document.querySelector('input[name=QuarantineOrder]:checked').value;
-                let area = document.getElementById("area").value;
                 let price = document.getElementById('price').value;
                 let appointmentPlaceDistrict = document.querySelector('input[name=District]:checked').value;
                 let sendOrderTo = document.getElementById("sendOrderTo").value;

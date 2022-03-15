@@ -742,7 +742,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
-                var area = "";
+                let area = "";
 
                 //getCustomerFullAddress
                 if (document.getElementById("Simpang").value.length == 0) {

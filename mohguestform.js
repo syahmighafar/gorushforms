@@ -1037,14 +1037,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let icPassportNum = document.getElementById("icPassportNum").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
-                let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
-                let requesterPhone = "+" + document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
+
+                if (document.getElementById("contact_2").value.length != 0){
+                    let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = additionalPhone;
+                }
+
+                let additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+
+                if (document.getElementById("Requester-Contact-Number").value.length != 0){
+                    let requesterPhone = "+" + document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
+                    document.getElementById("requesterPhone").value = requesterPhone;
+                }
+
+                let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
+                
                 let appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
                     + document.getElementById("BHC").value + document.getElementById("TEHC").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
-                document.getElementById("additionalPhone").value = additionalPhone;
-                document.getElementById("requesterPhone").value = requesterPhone;
+                
                 document.getElementById("appointmentPlace").value = appointmentPlace;
 
                 var request = new XMLHttpRequest();
@@ -1201,8 +1213,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Patient_Number", "data": orderId },
                         { "label": "IC_Passport_Number", "data": icPassportNum },
                         { "label": "Appointment_Place", "data": appointmentPlace },
-                        { "label": "Phone_Number", "data": customerPhone },
-                        { "label": "Additional_Phone_Number", "data": additionalPhone },
+                        { "label": "Phone_Number", "data": customerPhoneNoPlus },
+                        { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
                         { "label": "Delivery_Type", "data": deliveryType },
                         { "label": "Remarks", "data": customerRemarks },
                         { "label": "Payment_Type", "data": customerPM },

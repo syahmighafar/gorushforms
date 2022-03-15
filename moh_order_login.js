@@ -1005,7 +1005,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 let customerPhone = "+" + document.getElementById("contact_1").value;
-                let additionalPhone = "+" + document.getElementById("contact_2").value;
 
                 if (document.getElementById("contact_2").value.length != 0){
                     let additionalPhone = "+" + document.getElementById("contact_2").value;

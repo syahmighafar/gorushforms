@@ -983,7 +983,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let jobdeliverydatetime = dateD + ' ' + timeD;
 
                 let quarantineOrder = document.querySelector('input[name=radioQO]:checked').value;
-                let area = document.getElementById("area").value;
                 let price = document.getElementById('price').value;
                 let appointmentPlaceDistrict = document.querySelector('input[name=radioDistrict]:checked').value;
                 let sendOrderTo = document.getElementById("sendOrderTo").value;
@@ -997,17 +996,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerEmail = document.getElementById("email").value;
                 let customerUsername = document.getElementById("name").value;
 
-                document.getElementById("icPassportNum").value = document.getElementById("icNumber").value + document.getElementById("passport").value;
-                let icPassportNum = document.getElementById("icPassportNum").value;
+                if (document.getElementById("icNumber").value.length != 0){
+                    document.getElementById("icPassportNum").value = document.getElementById("icNumber").value;
+                }
+
+                if (document.getElementById("passport").value.length != 0){
+                    document.getElementById("icPassportNum").value = document.getElementById("passport").value;
+                }
 
                 let customerPhone = "+" + document.getElementById("contact_1").value;
                 let additionalPhone = "+" + document.getElementById("contact_2").value;
+
+                if (document.getElementById("contact_2").value.length != 0){
+                    let additionalPhone = "+" + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = additionalPhone;
+                }
+
+                let additionalPhoneNoPlus = document.getElementById("contact_2").value;
+
+                let customerPhoneNoPlus = document.getElementById("contact_1").value;
+
                 let appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
                     + document.getElementById("BHC").value + document.getElementById("TEHC").value;
 
 
                 document.getElementById("customerPhone").value = customerPhone;
-                document.getElementById("additionalPhone").value = additionalPhone;
                 document.getElementById("appointmentPlace").value = appointmentPlace;
 
                 var request = new XMLHttpRequest();
@@ -1181,8 +1194,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Patient_Number", "data": orderId },
                         { "label": "IC_Passport_Number", "data": icPassportNum },
                         { "label": "Appointment_Place", "data": appointmentPlace },
-                        { "label": "Phone_Number", "data": customerPhone },
-                        { "label": "Additional_Phone_Number", "data": additionalPhone },
+                        { "label": "Phone_Number", "data": customerPhoneNoPlus  },
+                        { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus  },
                         { "label": "Delivery_Type", "data": deliveryType },
                         { "label": "Remarks", "data": customerRemarks },
                         { "label": "Payment_Type", "data": customerPM },

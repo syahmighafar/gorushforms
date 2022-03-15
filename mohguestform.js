@@ -1040,6 +1040,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (document.getElementById("passport").value.length != 0){
                     document.getElementById("icPassportNum").value = document.getElementById("passport").value;
                 }
+                
+                let icPassportNum =  document.getElementById("icPassportNum").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 

@@ -528,7 +528,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         'order_id': '',
                         'job_description': jobDescription,
                         'customer_email': senderEmail,
-                        'customer_username': finalSenderName,
+                        'customer_username': receiverName,
                         'customer_phone': '',
                         'customer_address': deliveryAddress,
                         'latitude': '',

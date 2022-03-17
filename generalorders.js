@@ -305,30 +305,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     $("#pleasewait").fadeIn();
 
+                    //getSubmittedDate
                     var today = new Date();
-                    var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+                    var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
 
-                    var ampm = '';
                     var ampmhour = '';
                     var ampmmin = '';
                     var ampmNum = '';
 
                     if (today.getHours() < 12) {
                         ampmNum = 0;
-                        ampm = 'am';
                         ampmhour = (today.getHours());
                     }
 
-                    if (today.getHours() == 12) {
+                    if (today.getHours() >= 12) {
                         ampmNum = 1;
-                        ampm = 'pm';
                         ampmhour = (today.getHours());
-                    }
-
-                    if (today.getHours() > 12) {
-                        ampmNum = 1;
-                        ampm = 'pm';
-                        ampmhour = (today.getHours() - 12);
                     }
 
                     if (today.getMinutes() < 10) {
@@ -338,13 +330,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (today.getMinutes() >= 10) {
                         ampmmin = (today.getMinutes());
                     }
-                    var time = ampmhour + ":" + ampmmin + " " + ampm;
 
-                    var dateTime = date + ' ' + time;
+                    var time = ampmhour + ":" + ampmmin;
+
+                    let dateSubmitted = date + ' ' + time;
+
+                    document.getElementById("dateSubmitted").value = dateSubmitted;
 
                     var customerOrderId = "GO" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
-
-                    document.getElementById("dateSubmitted").value = dateTime;
 
                     let itemDescription = document.getElementById("Item-Description").value;
 
@@ -373,7 +366,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("senderName").value = finalSenderName;
                     document.getElementById("senderPhone").value = finalSenderPhone;
 
-                    let Email = document.getElementById("email").value;
+                    let senderEmail = document.getElementById("email").value;
 
                     let deliveryAddress = document.getElementById("Delivery-Address").value;
 
@@ -381,7 +374,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     let receiverPhone = document.getElementById("Receiver-Phone").value;
                     let productType = document.getElementById("Product-Type").value;
                     let productWeight = document.getElementById("Product-Weight").value;
-                    let codAmount = document.getElementById("COD-Amount").value;
+                    let codRequired = document.getElementById("codrequired").value;
+                    let codAmount = document.getElementById("COD-Amount").value;  
                     let billTo = document.getElementById("Bill-to").value;
 
                     let pickupAddress = document.getElementById("Pick-Up-Address").value;
@@ -533,21 +527,34 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
                         'order_id': '',
                         'job_description': jobDescription,
-                        'customer_email': Email,
+                        'customer_email': senderEmail,
                         'customer_username': finalSenderName,
-                        'customer_phone': finalSenderPhone,
+                        'customer_phone': '',
                         'customer_address': deliveryAddress,
                         'latitude': '',
                         'longitude': '',
                         'job_delivery_datetime': jobdeliverydatetime,
                         'custom_field_template': 'General_Order',
-                        'meta_data': [{ "label": "Job_Type", "data": jobType }, { "label": "Payment_Method", "data": customerPM },
-                        { "label": "OrderOriginFrom", "data": order_Origin }, { "label": "Customer_Order_ID", "data": customerOrderId },
-                        { "label": "Receiver_Name", "data": receiverName }, { "label": "Receiver_Phone", "data": receiverPhone },
-                        { "label": "Product_Type", "data": productType }, { "label": "Product_Weight", "data": productWeight },
-                        { "label": "COD_Amount", "data": codAmount }, { "label": "Bill_To", "data": billTo },
-                        { "label": "Pickup_Address", "data": pickupAddress }, { "label": "Pickup_Date", "data": pickupDate },
-                        { "label": "Item_Description", "data": itemDescription }],
+                        'meta_data': [
+                            { "label": "Item_Description", "data": itemDescription },
+                            { "label": "Job_Type", "data": jobType },
+                            { "label": "Sender_Name", "data": finalSenderName },
+                            { "label": "Sender_Phone", "data": finalSenderPhone },
+                            { "label": "Sender_Email", "data": senderEmail },
+                            { "label": "Pickup_Address", "data": pickupAddress },
+                            { "label": "Pickup_Date", "data": pickupDate },
+                            { "label": "Delivery_Type", "data": jobDescription },
+                            { "label": "Receiver_Name", "data": receiverName },
+                            { "label": "Receiver_Phone", "data": receiverPhone },
+                            { "label": "Receiver_Address", "data": deliveryAddress },
+                            { "label": "Product_Type", "data": productType },
+                            { "label": "Product_Weight", "data": productWeight },
+                            { "label": "COD_Required", "data": codRequired },
+                            { "label": "COD_Amount", "data": codAmount },
+                            { "label": "Payment_Method", "data": customerPM },
+                            { "label": "Bill_To", "data": billTo },
+                            { "label": "Customer_Order_ID", "data": customerOrderId },
+                            { "label": "Submitted_Date", "data": dateSubmitted }],
                         'team_id': '921691',
                         'auto_assignment': '0',
                         'has_pickup': '0',

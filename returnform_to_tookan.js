@@ -248,7 +248,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 if (exportzaloraGsheet == 1) {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbw3cclq09Awkxdtdhl9qiSbSZHuBdRupcaVfzOiVU6Tsw13Np-yIA05kqENYmDDwAS_/exec'
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxKsUipQWVqgMdAXkpmyxMogwEGo08WMqzh51CmPETIXpOdBbvBt-34uUwPdbBSysBX/exec'
                                     const form = document.forms['wf-form-Return-Form']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })

@@ -239,8 +239,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 var counttaskhistory = json_responseo.data["length"];
 
                                 for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 7) {
-                                        if (json_responseo.data[i].custom_field[6].data == returnOrderId) {
+                                    if (json_responseo.data[i].custom_field["length"] == 6) {
+                                        if (json_responseo.data[i].custom_field[5].data == returnOrderId) {
                                             document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
                                             i = counttaskhistory;
                                         }

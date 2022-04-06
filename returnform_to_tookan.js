@@ -60,30 +60,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 $("#pleasewait").fadeIn();
 
+                //getSubmittedDate
                 var today = new Date();
-                var date = today.getDate() + '-' + (today.getMonth() + 1) + '-' + today.getFullYear();
+                var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
 
-                var ampm = '';
                 var ampmhour = '';
                 var ampmmin = '';
                 var ampmNum = '';
 
                 if (today.getHours() < 12) {
                     ampmNum = 0;
-                    ampm = 'am';
                     ampmhour = (today.getHours());
                 }
 
-                if (today.getHours() == 12) {
+                if (today.getHours() >= 12) {
                     ampmNum = 1;
-                    ampm = 'pm';
                     ampmhour = (today.getHours());
-                }
-
-                if (today.getHours() > 12) {
-                    ampmNum = 1;
-                    ampm = 'pm';
-                    ampmhour = (today.getHours() - 12);
                 }
 
                 if (today.getMinutes() < 10) {
@@ -93,15 +85,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (today.getMinutes() >= 10) {
                     ampmmin = (today.getMinutes());
                 }
-                var time = ampmhour + ":" + ampmmin + " " + ampm;
 
-                var dateTime = date + ' ' + time;
+                var time = ampmhour + ":" + ampmmin;
 
-                document.getElementById("dateSubmitted").value = dateTime;
+                let dateSubmitted = date + ' ' + time;
+
+                document.getElementById("dateSubmitted").value = dateSubmitted;
+
+                let returnOrderId = "RTN" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerEmail = document.getElementById("id-Email").value;
                 let customerUsername = document.getElementById("Full-Name").value;
                 let customerPhone = document.getElementById("Contact-Number-2").value;
+                let originalTrackingNum = document.getElementById("OriginalTrackingNumber").value;
+                let customerAddress = document.getElementById("Home-Address-2").value
 
                 var jobdeliverydatetime = "";
                 var todaysDate = new Date();
@@ -221,39 +218,71 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
-
                 request.setRequestHeader('Content-Type', 'application/json');
-
                 request.onreadystatechange = function () {
                     if (this.readyState === 4) {
                         console.log('Status:', this.status);
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
 
-                        if (exportzaloraGsheet == 1) {
-                            const scriptURL = 'https://script.google.com/macros/s/AKfycbw3cclq09Awkxdtdhl9qiSbSZHuBdRupcaVfzOiVU6Tsw13Np-yIA05kqENYmDDwAS_/exec'
-                            const form = document.forms['wf-form-Return-Form']
+                        request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
+                        request.setRequestHeader('Content-Type', 'application/json');
+                        request.onreadystatechange = function () {
+                            if (this.readyState === 4) {
+                                console.log('Status:', this.status);
+                                console.log('Headers:', this.getAllResponseHeaders());
+                                console.log('Body:', this.responseText);
 
-                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                .catch(error => console.error('Error!', error.message))
-                        }
+                                responseo = this.responseText;
+                                json_responseo = JSON.parse(responseo);
 
-                        if (gsheetreturn == 1) {
-                            const scriptURL = 'https://script.google.com/macros/s/AKfycbxbnu-T2ZyoqpBoFhOtBhgm3mCnsjqkBxj2j2T3BKBtE0asmz6gM2EpWITE8MRYbjLt/exec'
-                            const form = document.forms['wf-form-Return-Form']
+                                var counttaskhistory = json_responseo.data["length"];
 
-                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                .catch(error => console.error('Error!', error.message))
-                        }
+                                for (let i = 0; i < counttaskhistory; i++) {
+                                    if (json_responseo.data[i].custom_field["length"] == 6) {
+                                        if (json_responseo.data[i].custom_field[5].data == returnOrderId) {
+                                            document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+                                            i = counttaskhistory;
+                                        }
+                                    }
+                                }
 
-                        $("#pleasewait").hide();
-                        $("#submitbutton").fadeIn();
+                                if (exportzaloraGsheet == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbw3cclq09Awkxdtdhl9qiSbSZHuBdRupcaVfzOiVU6Tsw13Np-yIA05kqENYmDDwAS_/exec'
+                                    const form = document.forms['wf-form-Return-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
+                                }
+
+                                if (gsheetreturn == 1) {
+                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxbnu-T2ZyoqpBoFhOtBhgm3mCnsjqkBxj2j2T3BKBtE0asmz6gM2EpWITE8MRYbjLt/exec'
+                                    const form = document.forms['wf-form-Return-Form']
+
+                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                        .catch(error => console.error('Error!', error.message))
+                                }
+
+                                $("#pleasewait").hide();
+                                $("#submitbutton").fadeIn();
+                            }
+                        };
+
+                        var body = {
+                            'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                            'order_ids': [
+                                originalTrackingNum
+                            ],
+                            'include_task_history': 0
+                        };
+
+                        request.send(JSON.stringify(body));
                     }
                 };
 
                 var body = {
                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                    'order_id': '',
+                    'order_id': originalTrackingNum,
                     'job_description': 'RTN TO MY',
                     'customer_email': customerEmail,
                     'customer_username': customerUsername,
@@ -262,8 +291,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'latitude': '',
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
-                    'custom_field_template': '',
-                    'meta_data': '',
+                    'custom_field_template': 'Returns',
+                    'meta_data': [
+                        { "label": "Old_Tracking_Number", "data": originalTrackingNum },
+                        { "label": "Customer_Name", "data": customerUsername },
+                        { "label": "Phone_Number", "data": customerPhone },
+                        { "label": "Address", "data": customerAddress },
+                        { "label": "Date_Time_Submitted", "data": dateSubmitted },
+                        { "label": "Return_Order_ID", "data": returnOrderId }
+                    ],
                     'team_id': '921691',
                     'auto_assignment': '0',
                     'has_pickup': '0',

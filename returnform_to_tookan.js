@@ -263,6 +263,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         .catch(error => console.error('Error!', error.message))
                                 }
 
+                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
+                                request.setRequestHeader('Content-Type', 'application/json');
+
+                                request.onreadystatechange = function () {
+                                    if (this.readyState === 4) {
+                                        console.log('Status:', this.status);
+                                        console.log('Headers:', this.getAllResponseHeaders());
+                                        console.log('Body:', this.responseText);
+                                    }
+                                };
+
+                                var body = {
+                                    'barcode': document.getElementById("Tookan-Tracking").value,
+                                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                                    'job_id': document.getElementById("Tookan-Tracking").value,
+                                    'notify': 1
+                                };
+
+                                request.send(JSON.stringify(body));
+
                                 $("#pleasewait").hide();
                                 $("#submitbutton").fadeIn();
                             }

@@ -24,9 +24,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#employementarea").hide();
 				$("#daysavailablearea").hide();
 				$("#registrationarea").hide();
+				
+				$('input[name=Employment]').attr('checked', false);
      			}
 			
-     			if( ($(this).val()=="Accountant") ) {
+     			if( ($(this).val()=="Customer Service") ) {
 				$("#dispatcherareanotice").hide();
 				$("#freelancearea").hide();
 				$("#fulltimearea").fadeIn();
@@ -36,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				$("#daysavailablearea").hide();
 				$("#registrationarea").hide();
 				
+			 	$('input[name=Employment]').attr('checked', false);
 				
 				$('input[name=Employment]').change(function(){
 					if($(this).val().length == 0) {
@@ -52,13 +55,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	     
      			if( ($(this).val()=="Field Courier Logistic Support (Dispatchers)") ) {
 				$("#dispatcherareanotice").fadeIn();
-				$("#freelancearea").fadeIn();
+				$("#freelancearea").hide();
 				$("#fulltimearea").fadeIn();
 				$("#parttimearea").hide();				
 				$("#driverlicensearea").show();
 				$("#employementarea").fadeIn();
 				$("#daysavailablearea").hide();
 				$("#registrationarea").hide();
+				
+				$('input[name=Employment]').attr('checked', false);
 				
 				$('input[name=Employment]').change(function(){
 					if($(this).val().length == 0) {
@@ -73,15 +78,17 @@ document.addEventListener("DOMContentLoaded", function(event) {
 				});
      			}
 			
-     			if(($(this).val()=="Operation Officer") || ($(this).val()=="Warehouse Assistant") ) {
+     			if( ($(this).val()=="Warehouse Assistant") ) {
 				$("#dispatcherareanotice").hide();
 				$("#freelancearea").hide();
-				$("#fulltimearea").fadeIn();
+				$("#fulltimearea").hide();
 				$("#parttimearea").fadeIn();
 				$("#driverlicensearea").hide();
 				$("#employementarea").fadeIn();
 				$("#daysavailablearea").hide();
 				$("#registrationarea").hide();
+				
+				$('input[name=Employment]').attr('checked', false);
 				
 				$('input[name=Employment]').change(function(){
 					if($(this).val().length == 0) {

@@ -692,7 +692,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'latitude': '',
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
-                    'custom_field_template': 'Local_Delivery',
+                    'custom_field_template': 'Pharmacy_JPMC',
                     'meta_data': [{ "label": "IC", "data": customerIC }, { "label": "Patient_Number", "data": orderId }, { "label": "Remarks", "data": customerRemarks },
                     { "label": "Type", "data": jobDescription }, { "label": "Method", "data": customerPM }, { "label": "Barcode", "data": orderId },
                     { "label": "OrderOriginFrom", "data": order_Origin }, { "label": "Patient_Order_ID", "data": patientOrderId }],

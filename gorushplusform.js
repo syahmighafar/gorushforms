@@ -23,9 +23,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#supplierName").hide();
 
         $("#confirmationarea").hide();
-        
+
         $("#grpFormInput").hide();
-        
+
         $("#warehouseReferenceMALarea").hide();
         $("#warehouseReferenceSINarea").hide();
         $("#warehouseReferenceGZarea").hide();
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             });
             $("#Total-Price").val(sum);
         });
-        
+
         document.getElementById("orderNow").addEventListener("click", function () {
             if ($("#agreeTC").is(":checked")) {
                 $("#beforeProceed").hide();
@@ -47,17 +47,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please read the Terms and Condition for Go Rush Plus!");
             }
         });
-        
+
         $('#GoRushReceivingCountry').change(function () {
             if ($(this).val().length == 0) {
                 gorushplusmy = 0;
                 gorushpluschn = 0;
                 gorushplussg = 0;
-                
+
                 $("#warehouseReferenceMALarea").hide();
                 $("#warehouseReferenceSINarea").hide();
                 $("#warehouseReferenceGZarea").hide();
-                
+
                 document.getElementById('warehouseDropdownMAL').value = '';
                 document.getElementById('warehouseDropdownSIN').value = '';
                 document.getElementById('warehouseDropdownGZ').value = '';
@@ -67,11 +67,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 gorushplusmy = 1;
                 gorushpluschn = 0;
                 gorushplussg = 0;
-                
+
                 $("#warehouseReferenceMALarea").fadeIn();
                 $("#warehouseReferenceSINarea").hide();
                 $("#warehouseReferenceGZarea").hide();
-                
+
                 document.getElementById('warehouseDropdownMAL').value = '';
                 document.getElementById('warehouseDropdownSIN').value = '';
                 document.getElementById('warehouseDropdownGZ').value = '';
@@ -81,11 +81,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 gorushplusmy = 0;
                 gorushpluschn = 1;
                 gorushplussg = 0;
-                
+
                 $("#warehouseReferenceMALarea").hide();
                 $("#warehouseReferenceSINarea").hide();
                 $("#warehouseReferenceGZarea").fadeIn();
-                
+
                 document.getElementById('warehouseDropdownMAL').value = '';
                 document.getElementById('warehouseDropdownSIN').value = '';
                 document.getElementById('warehouseDropdownGZ').value = '';
@@ -95,11 +95,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 gorushplusmy = 0;
                 gorushpluschn = 0;
                 gorushplussg = 1;
-                
+
                 $("#warehouseReferenceMALarea").hide();
                 $("#warehouseReferenceSINarea").fadeIn();
                 $("#warehouseReferenceGZarea").hide();
-                
+
                 document.getElementById('warehouseDropdownMAL').value = '';
                 document.getElementById('warehouseDropdownSIN').value = '';
                 document.getElementById('warehouseDropdownGZ').value = '';
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#itemContainsArea").hide();
                 alert("Please do not leave the Tracking Number field empty!");
             }
-            
+
             if ($("#GoRushReceivingCountry").val().length == 0) {
                 $("#itemContainsArea").hide();
                 alert("Please do not leave the Go Rush Receiving Country field empty!");
@@ -218,7 +218,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#confirmationarea").fadeIn();
             }
         });
-        
+
         $('#Agreement').change(function () {
             if (countAgree == 0) {
                 countAgree = countAgree + 1;
@@ -275,11 +275,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerEmail = document.getElementById("Email").value;
 
                 var customerAddress = document.getElementById("Delivery-Address").value;
-                
+
                 if (gorushplusmy == 1) {
                     document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownMAL").value + " - " + conN;
                 }
-                
+
                 if (gorushpluschn == 1) {
                     document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownGZ").value + " - " + conN;
                 }
@@ -287,7 +287,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (gorushplussg == 1) {
                     document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownSIN").value + " - " + conN;
                 }
-                
+
                 let warehouseReference = document.getElementById("warehouseReference").value;
 
                 var jobdeliverydatetime = "";
@@ -467,8 +467,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                 }
 
-                                $("#pleasewait").hide();
-                                $("#submitbutton").fadeIn();
+                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
+                                request.setRequestHeader('Content-Type', 'application/json');
+
+                                request.onreadystatechange = function () {
+                                    if (this.readyState === 4) {
+                                        console.log('Status:', this.status);
+                                        console.log('Headers:', this.getAllResponseHeaders());
+                                        console.log('Body:', this.responseText);
+
+                                        $("#pleasewait").hide();
+                                        $("#submitbutton").fadeIn();
+                                    }
+                                };
+
+                                var body = {
+                                    'barcode': document.getElementById("Tookan-Tracking").value,
+                                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                                    'job_id': document.getElementById("Tookan-Tracking").value,
+                                    'notify': 1
+                                };
+
+                                request.send(JSON.stringify(body));
                             }
                         };
 

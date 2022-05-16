@@ -271,6 +271,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         console.log('Status:', this.status);
                                         console.log('Headers:', this.getAllResponseHeaders());
                                         console.log('Body:', this.responseText);
+                                        
+                                        
+                                        $("#pleasewait").hide();
+                                        $("#submitbutton").fadeIn();
                                     }
                                 };
 
@@ -282,9 +286,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 };
 
                                 request.send(JSON.stringify(body));
-
-                                $("#pleasewait").hide();
-                                $("#submitbutton").fadeIn();
                             }
                         };
 

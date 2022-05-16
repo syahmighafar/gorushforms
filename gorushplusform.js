@@ -485,6 +485,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     'barcode': document.getElementById("Tookan-Tracking").value,
                                     'api_key': '53626885f0400f401d527c6514516c471ae7cdfe2fdf7c38591403c4',
                                     'job_id': document.getElementById("Tookan-Tracking").value,
+                                    'merchant_id': '1180025',
                                     'notify': 1
                                 };
 

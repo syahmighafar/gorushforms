@@ -332,7 +332,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': '',
+                    'tags': 'Return',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));

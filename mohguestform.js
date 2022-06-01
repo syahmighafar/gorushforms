@@ -1066,107 +1066,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("appointmentPlace").value = appointmentPlace;
 
-                function createTask() {
-                    var request = new XMLHttpRequest();
-
-                    request.open('POST', 'https://api.tookanapp.com/v2/create_task');
-
-                    request.setRequestHeader('Content-Type', 'application/json');
-
-                    request.onreadystatechange = function () {
-                        if (this.readyState === 4) {
-                            console.log('Status:', this.status);
-                            console.log('Headers:', this.getAllResponseHeaders());
-                            console.log('Body:', this.responseText);
-                        }
-                    };
-
-                    var body = {
-                        'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                        'order_id': orderId,
-                        'job_description': jobDescription,
-                        'customer_email': customerEmail,
-                        'customer_username': customerUsername,
-                        'customer_phone': customerPhone,
-                        'customer_address': customerAddress,
-                        'latitude': '',
-                        'longitude': '',
-                        'job_delivery_datetime': jobdeliverydatetime,
-                        'custom_field_template': 'Pharmacy_MOH',
-                        'meta_data': [
-                            { "label": "Quarantine_Order", "data": quarantineOrder },
-                            { "label": "Contact_Name", "data": customerUsername },
-                            { "label": "Address", "data": customerAddress },
-                            { "label": "Area", "data": area },
-                            { "label": "Patient_Number", "data": orderId },
-                            { "label": "IC_Passport_Number", "data": icPassportNum },
-                            { "label": "Appointment_Place", "data": appointmentPlace },
-                            { "label": "Phone_Number", "data": customerPhoneNoPlus },
-                            { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
-                            { "label": "Delivery_Type", "data": deliveryType },
-                            { "label": "Remarks", "data": customerRemarks },
-                            { "label": "Payment_Type", "data": customerPM },
-                            { "label": "Submitted_Date", "data": dateSubmitted },
-                            { "label": "Appointment_Place_District", "data": appointmentPlaceDistrict },
-                            { "label": "Send_Order_To", "data": sendOrderTo },
-                            { "label": "Price", "data": price },
-                            { "label": "Order_Origin", "data": order_Origin },
-                            { "label": "Patient_Order_ID", "data": patientOrderId }
-                        ],
-                        'team_id': '1309479',
-                        'auto_assignment': '0',
-                        'has_pickup': '0',
-                        'has_delivery': '1',
-                        'layout_type': '0',
-                        'tracking_link': 0,
-                        'timezone': '-480',
-                        'fleet_id': '',
-                        'ref_images': [
-                        ],
-                        'notify': 1,
-                        'tags': '',
-                        'geofence': 0
-                    };
-                    request.send(JSON.stringify(body));
-                }
-
-                function getTrackingNum() {
-                    var request = new XMLHttpRequest();
-                    request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
-                    request.setRequestHeader('Content-Type', 'application/json');
-                    request.onreadystatechange = function () {
-                        if (this.readyState === 4) {
-                            console.log('Status:', this.status);
-                            console.log('Headers:', this.getAllResponseHeaders());
-                            console.log('Body:', this.responseText);
-
-                            responseo = this.responseText;
-                            json_responseo = JSON.parse(responseo);
-
-                            var counttaskhistory = json_responseo.data["length"];
-
-                            for (let i = 0; i < counttaskhistory; i++) {
-                                if (json_responseo.data[i].custom_field["length"] == 18) {
-                                    if (json_responseo.data[i].custom_field[17].data == patientOrderId) {
-                                        document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
-                                        i = counttaskhistory;
-                                    }
-                                }
-                            }
-                        }
-                    };
-
-                    var body = {
-                        'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                        'order_ids': [
-                            orderId
-                        ],
-                        'include_task_history': 0
-                    };
-
-                    request.send(JSON.stringify(body));
-                }
-
                 function pushtoGsheet() {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
                     const form = document.forms['wf-form-Guest-MOH-Order-Form']
@@ -1247,6 +1146,107 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                             .catch(error => console.error('Error!', error.message))
                     }
+                }
+
+                function getTrackingNum() {
+                    var request = new XMLHttpRequest();
+                    request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
+                    request.setRequestHeader('Content-Type', 'application/json');
+                    request.onreadystatechange = function () {
+                        if (this.readyState === 4) {
+                            console.log('Status:', this.status);
+                            console.log('Headers:', this.getAllResponseHeaders());
+                            console.log('Body:', this.responseText);
+
+                            responseo = this.responseText;
+                            json_responseo = JSON.parse(responseo);
+
+                            var counttaskhistory = json_responseo.data["length"];
+
+                            for (let i = 0; i < counttaskhistory; i++) {
+                                if (json_responseo.data[i].custom_field["length"] == 18) {
+                                    if (json_responseo.data[i].custom_field[17].data == patientOrderId) {
+                                        document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+                                        i = counttaskhistory;
+                                    }
+                                }
+                            }
+                        }
+                    };
+
+                    var body = {
+                        'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                        'order_ids': [
+                            orderId
+                        ],
+                        'include_task_history': 0
+                    };
+
+                    request.send(JSON.stringify(body));
+                }
+
+                function createTask() {
+                    var request = new XMLHttpRequest();
+
+                    request.open('POST', 'https://api.tookanapp.com/v2/create_task');
+
+                    request.setRequestHeader('Content-Type', 'application/json');
+
+                    request.onreadystatechange = function () {
+                        if (this.readyState === 4) {
+                            console.log('Status:', this.status);
+                            console.log('Headers:', this.getAllResponseHeaders());
+                            console.log('Body:', this.responseText);
+                        }
+                    };
+
+                    var body = {
+                        'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                        'order_id': orderId,
+                        'job_description': jobDescription,
+                        'customer_email': customerEmail,
+                        'customer_username': customerUsername,
+                        'customer_phone': customerPhone,
+                        'customer_address': customerAddress,
+                        'latitude': '',
+                        'longitude': '',
+                        'job_delivery_datetime': jobdeliverydatetime,
+                        'custom_field_template': 'Pharmacy_MOH',
+                        'meta_data': [
+                            { "label": "Quarantine_Order", "data": quarantineOrder },
+                            { "label": "Contact_Name", "data": customerUsername },
+                            { "label": "Address", "data": customerAddress },
+                            { "label": "Area", "data": area },
+                            { "label": "Patient_Number", "data": orderId },
+                            { "label": "IC_Passport_Number", "data": icPassportNum },
+                            { "label": "Appointment_Place", "data": appointmentPlace },
+                            { "label": "Phone_Number", "data": customerPhoneNoPlus },
+                            { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
+                            { "label": "Delivery_Type", "data": deliveryType },
+                            { "label": "Remarks", "data": customerRemarks },
+                            { "label": "Payment_Type", "data": customerPM },
+                            { "label": "Submitted_Date", "data": dateSubmitted },
+                            { "label": "Appointment_Place_District", "data": appointmentPlaceDistrict },
+                            { "label": "Send_Order_To", "data": sendOrderTo },
+                            { "label": "Price", "data": price },
+                            { "label": "Order_Origin", "data": order_Origin },
+                            { "label": "Patient_Order_ID", "data": patientOrderId }
+                        ],
+                        'team_id': '1309479',
+                        'auto_assignment': '0',
+                        'has_pickup': '0',
+                        'has_delivery': '1',
+                        'layout_type': '0',
+                        'tracking_link': 0,
+                        'timezone': '-480',
+                        'fleet_id': '',
+                        'ref_images': [
+                        ],
+                        'notify': 1,
+                        'tags': '',
+                        'geofence': 0
+                    };
+                    request.send(JSON.stringify(body));
                 }
 
                 createTask();

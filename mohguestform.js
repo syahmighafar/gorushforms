@@ -1033,220 +1033,228 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerEmail = document.getElementById("id-Email").value;
                 let customerUsername = document.getElementById("name").value;
 
-                if (document.getElementById("icNumber").value.length != 0){
+                if (document.getElementById("icNumber").value.length != 0) {
                     document.getElementById("icPassportNum").value = document.getElementById("icNumber").value;
                 }
 
-                if (document.getElementById("passport").value.length != 0){
+                if (document.getElementById("passport").value.length != 0) {
                     document.getElementById("icPassportNum").value = document.getElementById("passport").value;
                 }
-                
-                let icPassportNum =  document.getElementById("icPassportNum").value;
+
+                let icPassportNum = document.getElementById("icPassportNum").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
-                if (document.getElementById("contact_2").value.length != 0){
+                if (document.getElementById("contact_2").value.length != 0) {
                     let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
                 }
 
                 let additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
 
-                if (document.getElementById("Requester-Contact-Number").value.length != 0){
+                if (document.getElementById("Requester-Contact-Number").value.length != 0) {
                     let requesterPhone = "+" + document.getElementById("code_3").value + document.getElementById("Requester-Contact-Number").value;
                     document.getElementById("requesterPhone").value = requesterPhone;
                 }
 
                 let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
-                
+
                 let appointmentPlace = document.getElementById("BNHC").value + document.getElementById("TUHC").value
                     + document.getElementById("BHC").value + document.getElementById("TEHC").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
-                
+
                 document.getElementById("appointmentPlace").value = appointmentPlace;
 
-                var request = new XMLHttpRequest();
+                function createTask() {
+                    var request = new XMLHttpRequest();
 
-                request.open('POST', 'https://api.tookanapp.com/v2/create_task');
+                    request.open('POST', 'https://api.tookanapp.com/v2/create_task');
 
-                request.setRequestHeader('Content-Type', 'application/json');
+                    request.setRequestHeader('Content-Type', 'application/json');
 
-                request.onreadystatechange = function () {
-                    if (this.readyState === 4) {
-                        console.log('Status:', this.status);
-                        console.log('Headers:', this.getAllResponseHeaders());
-                        console.log('Body:', this.responseText);
+                    request.onreadystatechange = function () {
+                        if (this.readyState === 4) {
+                            console.log('Status:', this.status);
+                            console.log('Headers:', this.getAllResponseHeaders());
+                            console.log('Body:', this.responseText);
+                        }
+                    };
 
-                        request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
+                    var body = {
+                        'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                        'order_id': orderId,
+                        'job_description': jobDescription,
+                        'customer_email': customerEmail,
+                        'customer_username': customerUsername,
+                        'customer_phone': customerPhone,
+                        'customer_address': customerAddress,
+                        'latitude': '',
+                        'longitude': '',
+                        'job_delivery_datetime': jobdeliverydatetime,
+                        'custom_field_template': 'Pharmacy_MOH',
+                        'meta_data': [
+                            { "label": "Quarantine_Order", "data": quarantineOrder },
+                            { "label": "Contact_Name", "data": customerUsername },
+                            { "label": "Address", "data": customerAddress },
+                            { "label": "Area", "data": area },
+                            { "label": "Patient_Number", "data": orderId },
+                            { "label": "IC_Passport_Number", "data": icPassportNum },
+                            { "label": "Appointment_Place", "data": appointmentPlace },
+                            { "label": "Phone_Number", "data": customerPhoneNoPlus },
+                            { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
+                            { "label": "Delivery_Type", "data": deliveryType },
+                            { "label": "Remarks", "data": customerRemarks },
+                            { "label": "Payment_Type", "data": customerPM },
+                            { "label": "Submitted_Date", "data": dateSubmitted },
+                            { "label": "Appointment_Place_District", "data": appointmentPlaceDistrict },
+                            { "label": "Send_Order_To", "data": sendOrderTo },
+                            { "label": "Price", "data": price },
+                            { "label": "Order_Origin", "data": order_Origin },
+                            { "label": "Patient_Order_ID", "data": patientOrderId }
+                        ],
+                        'team_id': '1309479',
+                        'auto_assignment': '0',
+                        'has_pickup': '0',
+                        'has_delivery': '1',
+                        'layout_type': '0',
+                        'tracking_link': 0,
+                        'timezone': '-480',
+                        'fleet_id': '',
+                        'ref_images': [
+                        ],
+                        'notify': 1,
+                        'tags': '',
+                        'geofence': 0
+                    };
+                    request.send(JSON.stringify(body));
+                }
 
-                        request.setRequestHeader('Content-Type', 'application/json');
+                function getTrackingNum() {
+                    var request = new XMLHttpRequest();
+                    request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
+                    request.setRequestHeader('Content-Type', 'application/json');
+                    request.onreadystatechange = function () {
+                        if (this.readyState === 4) {
+                            console.log('Status:', this.status);
+                            console.log('Headers:', this.getAllResponseHeaders());
+                            console.log('Body:', this.responseText);
 
-                        request.onreadystatechange = function () {
-                            if (this.readyState === 4) {
-                                console.log('Status:', this.status);
-                                console.log('Headers:', this.getAllResponseHeaders());
-                                console.log('Body:', this.responseText);
+                            responseo = this.responseText;
+                            json_responseo = JSON.parse(responseo);
 
-                                responseo = this.responseText;
-                                json_responseo = JSON.parse(responseo);
+                            var counttaskhistory = json_responseo.data["length"];
 
-                                var counttaskhistory = json_responseo.data["length"];
-
-                                for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 18) {
-                                        if (json_responseo.data[i].custom_field[17].data == patientOrderId) {
-                                            document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
-                                            i = counttaskhistory;
-                                        }
+                            for (let i = 0; i < counttaskhistory; i++) {
+                                if (json_responseo.data[i].custom_field["length"] == 18) {
+                                    if (json_responseo.data[i].custom_field[17].data == patientOrderId) {
+                                        document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
+                                        i = counttaskhistory;
                                     }
                                 }
-
-                                const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
-                                const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                    .catch(error => console.error('Error!', error.message))
-
-                                if (createPharmacySheet == 1) {
-                                    if (todChoice == "Standard") {
-                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbxxRcpKi-hcJiyKBvvB12ZYbEeZ6YS2XE9byGVO3031_91nXja45Qa62jieHfZ3cLPOdw/exec'
-                                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                            .catch(error => console.error('Error!', error.message))
-                                    }
-
-                                    if (todChoice == "Express") {
-                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwFchxYwmJ5DWf3KLb0ER1uIfWUmGST2h1EAo02gNIXXmYGHMNSg98N0hsr0913c1hqeQ/exec'
-                                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                            .catch(error => console.error('Error!', error.message))
-                                    }
-                                }
-
-                                if (medicineDBGsheet == 1) {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
-                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                        .catch(error => console.error('Error!', error.message))
-                                }
-
-                                if (gsheet2 == 1) {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'
-                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                        .catch(error => console.error('Error!', error.message))
-                                }
-
-                                if (split == 1) {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwJ72tj7gj629knV7iVFRNAOemUyMGSFzUzFPFie70KN3S5cBo573kL3j9c14Q64Ccb/exec'
-                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                        .catch(error => console.error('Error!', error.message))
-
-                                    if (todChoice == "Standard") {
-                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwonfADS7GmfHrV1U5JbIkZ1c_fcZZNZOyLHgpX4fLJt49on7ur0AwwnM270rsg5OS_/exec'
-                                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                            .catch(error => console.error('Error!', error.message))
-                                    }
-
-                                    if (todChoice == "Express") {
-                                        const scriptURL = 'https://script.google.com/macros/s/AKfycbycp82YFWx0oQyShPHqOQQADVhqCjt0kaISN34wVP1MmLmAz3uIncYPs39PNNitUSJF/exec'
-                                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                            .catch(error => console.error('Error!', error.message))
-                                    }
-                                }
-
-                                if (todChoice == "Standard") {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbx-GkhT8Zt5eHyAC89cSIivYKpobOq-eeorDC3IGHfn08IzG3revcVViYinzWCwDsrK/exec'
-                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                        .catch(error => console.error('Error!', error.message))
-                                }
-
-                                if (todChoice == "Express") {
-                                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzm4De2NEaYJIC027JRLJ21HHYFC7I7KcTMbsLhWVbjM8Ant804oyhtIZrZIwzLKm7S/exec'
-                                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
-
-                                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                        .catch(error => console.error('Error!', error.message))
-                                }
-
-                                $("#pleasewait").hide();
-                                $("#submitbutton").fadeIn();
                             }
-                        };
+                        }
+                    };
 
-                        var body = {
-                            'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                            'order_ids': [
-                                orderId
-                            ],
-                            'include_task_history': 0
-                        };
+                    var body = {
+                        'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                        'order_ids': [
+                            orderId
+                        ],
+                        'include_task_history': 0
+                    };
 
-                        request.send(JSON.stringify(body));
+                    request.send(JSON.stringify(body));
+                }
 
+                function pushtoGsheet() {
+                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
+                    const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                        .catch(error => console.error('Error!', error.message))
+
+                    if (createPharmacySheet == 1) {
+                        if (todChoice == "Standard") {
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbxxRcpKi-hcJiyKBvvB12ZYbEeZ6YS2XE9byGVO3031_91nXja45Qa62jieHfZ3cLPOdw/exec'
+                            const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .catch(error => console.error('Error!', error.message))
+                        }
+
+                        if (todChoice == "Express") {
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbwFchxYwmJ5DWf3KLb0ER1uIfWUmGST2h1EAo02gNIXXmYGHMNSg98N0hsr0913c1hqeQ/exec'
+                            const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .catch(error => console.error('Error!', error.message))
+                        }
                     }
-                };
 
-                var body = {
-                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                    'order_id': orderId,
-                    'job_description': jobDescription,
-                    'customer_email': customerEmail,
-                    'customer_username': customerUsername,
-                    'customer_phone': customerPhone,
-                    'customer_address': customerAddress,
-                    'latitude': '',
-                    'longitude': '',
-                    'job_delivery_datetime': jobdeliverydatetime,
-                    'custom_field_template': 'Pharmacy_MOH',
-                    'meta_data': [
-                        { "label": "Quarantine_Order", "data": quarantineOrder },
-                        { "label": "Contact_Name", "data": customerUsername },
-                        { "label": "Address", "data": customerAddress },
-                        { "label": "Area", "data": area },
-                        { "label": "Patient_Number", "data": orderId },
-                        { "label": "IC_Passport_Number", "data": icPassportNum },
-                        { "label": "Appointment_Place", "data": appointmentPlace },
-                        { "label": "Phone_Number", "data": customerPhoneNoPlus },
-                        { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
-                        { "label": "Delivery_Type", "data": deliveryType },
-                        { "label": "Remarks", "data": customerRemarks },
-                        { "label": "Payment_Type", "data": customerPM },
-                        { "label": "Submitted_Date", "data": dateSubmitted },
-                        { "label": "Appointment_Place_District", "data": appointmentPlaceDistrict },
-                        { "label": "Send_Order_To", "data": sendOrderTo },
-                        { "label": "Price", "data": price },
-                        { "label": "Order_Origin", "data": order_Origin },
-                        { "label": "Patient_Order_ID", "data": patientOrderId }
-                    ],
-                    'team_id': '921691',
-                    'auto_assignment': '0',
-                    'has_pickup': '0',
-                    'has_delivery': '1',
-                    'layout_type': '0',
-                    'tracking_link': 0,
-                    'timezone': '-480',
-                    'fleet_id': '',
-                    'ref_images': [
-                    ],
-                    'notify': 1,
-                    'tags': '',
-                    'geofence': 0
-                };
-                request.send(JSON.stringify(body));
+                    if (medicineDBGsheet == 1) {
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
+                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                            .catch(error => console.error('Error!', error.message))
+                    }
+
+                    if (gsheet2 == 1) {
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'
+                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                            .catch(error => console.error('Error!', error.message))
+                    }
+
+                    if (split == 1) {
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwJ72tj7gj629knV7iVFRNAOemUyMGSFzUzFPFie70KN3S5cBo573kL3j9c14Q64Ccb/exec'
+                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                            .catch(error => console.error('Error!', error.message))
+
+                        if (todChoice == "Standard") {
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbwonfADS7GmfHrV1U5JbIkZ1c_fcZZNZOyLHgpX4fLJt49on7ur0AwwnM270rsg5OS_/exec'
+                            const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .catch(error => console.error('Error!', error.message))
+                        }
+
+                        if (todChoice == "Express") {
+                            const scriptURL = 'https://script.google.com/macros/s/AKfycbycp82YFWx0oQyShPHqOQQADVhqCjt0kaISN34wVP1MmLmAz3uIncYPs39PNNitUSJF/exec'
+                            const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                .catch(error => console.error('Error!', error.message))
+                        }
+                    }
+
+                    if (todChoice == "Standard") {
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbx-GkhT8Zt5eHyAC89cSIivYKpobOq-eeorDC3IGHfn08IzG3revcVViYinzWCwDsrK/exec'
+                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                            .catch(error => console.error('Error!', error.message))
+                    }
+
+                    if (todChoice == "Express") {
+                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzm4De2NEaYJIC027JRLJ21HHYFC7I7KcTMbsLhWVbjM8Ant804oyhtIZrZIwzLKm7S/exec'
+                        const form = document.forms['wf-form-Guest-MOH-Order-Form']
+
+                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                            .catch(error => console.error('Error!', error.message))
+                    }
+                }
+
+                createTask();
+                getTrackingNum();
+                pushtoGsheet();
+
+                $("#pleasewait").hide();
+                $("#submitbutton").fadeIn();
             }
         });
     });

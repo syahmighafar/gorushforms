@@ -580,7 +580,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'meta_data': [{ "label": "IC", "data": customerIC }, { "label": "Patient_Number", "data": orderId }, { "label": "Remarks", "data": customerRemarks },
                     { "label": "Type", "data": jobDescription }, { "label": "Method", "data": customerPM }, { "label": "Barcode", "data": orderId },
                     { "label": "OrderOriginFrom", "data": order_Origin }, { "label": "Patient_Order_ID", "data": patientOrderId }],
-                    'team_id': '1309479',
+                    'team_id': '921691',
                     'auto_assignment': '0',
                     'has_pickup': '0',
                     'has_delivery': '1',

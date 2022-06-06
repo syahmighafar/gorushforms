@@ -76,7 +76,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("orderNow").addEventListener("click", function () {
             if ($("#agreeTC").is(":checked")) {
-                $("#beforeProceed").hide();
+                $("#tncarea").hide();
+                $("#orderNow").hide();
                 $("#grpFormInput").fadeIn();
             } else {
                 $("#grpFormInput").hide();

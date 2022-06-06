@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var gorushplussg = 0;
 
         $("#pleasewait").hide();
+        
+        $("#tncarea").hide();
+        $("#orderNow").hide();
 
         $("#itemContainsArea").hide();
 
@@ -29,6 +32,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#warehouseReferenceMALarea").hide();
         $("#warehouseReferenceSINarea").hide();
         $("#warehouseReferenceGZarea").hide();
+
+        document.getElementById("finishCalc").addEventListener("click", function () {
+            if ($("#length").val().length == 0) {
+                $("#tncarea").hide();
+                $("#orderNow").hide();
+                alert("Please do not leave the Tracking Number field empty!");
+            }
+
+            if ($("#width").val().length == 0) {
+                $("#tncarea").hide();
+                $("#orderNow").hide();
+                alert("Please do not leave the Go Rush Receiving Country field empty!");
+            }
+
+            if ($("#height").val().length == 0) {
+                $("#tncarea").hide();
+                $("#orderNow").hide();
+                alert("Please do not leave the Consignee's Name field empty!");
+            }
+
+            if ($("#parcelWeight").val().length == 0) {
+                $("#tncarea").hide();
+                $("#orderNow").hide();
+                alert("Please do not leave the Consignee's Phone Number field empty!");
+            }
+
+            if (($("#length").val().length != 0) && ($("#width").val().length != 0)
+                && ($("#height").val().length != 0) && ($("#parcelWeight").val().length != 0)) {
+                $("#tncarea").fadeIn();
+                $("#orderNow").fadeIn();
+                $("#finishCalc").hide();
+            }
+        });
 
         $(document).on("change", ".itemprice", function () {
             var sum = 0;
@@ -105,7 +141,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('warehouseDropdownGZ').value = '';
             }
         });
-
 
         document.getElementById("custDetailBtn").addEventListener("click", function () {
             if ($("#Tracking-Number").val().length == 0) {

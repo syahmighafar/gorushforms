@@ -311,6 +311,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerEmail = document.getElementById("Email").value;
 
                 var customerAddress = document.getElementById("Delivery-Address").value;
+                
+                let length = document.getElementById("length").value;
+                let width = document.getElementById("width").value;
+                let height = document.getElementById("height").value;
+                let parcelWeight = document.getElementById("parcelWeight").value;
+                let volumetricWeight = document.getElementById("volumetricWeight").value;
+                let rates = document.getElementById("rates").value;
 
                 if (gorushplusmy == 1) {
                     document.getElementById("warehouseReference").value = document.getElementById("warehouseDropdownMAL").value + " - " + conN;
@@ -573,8 +580,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         {
                             'label': 'Warehouse_Reference',
                             'data': warehouseReference
+                        },
+                        {
+                            'label': 'Length',
+                            'data': length
+                        },
+                        {
+                            'label': 'Width',
+                            'data': width
+                        },
+                        {
+                            'label': 'Height',
+                            'data': height
+                        },
+                        {
+                            'label': 'Parcel_Weight',
+                            'data': parcelWeight
+                        },
+                        {
+                            'label': 'Volumetric_Weight',
+                            'data': volumetricWeight
+                        },
+                        {
+                            'label': 'Shipping_Rates',
+                            'data': rates
                         }
-
                     ],
                     'team_id': '921691',
                     'auto_assignment': '0',

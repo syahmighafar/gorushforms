@@ -9,9 +9,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var gorushplussg = 0;
 
         $("#pleasewait").hide();
-        
-        $("#tncarea").hide();
-        $("#orderNow").hide();
 
         $("#itemContainsArea").hide();
 

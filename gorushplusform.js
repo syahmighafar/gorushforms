@@ -28,42 +28,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $("#confirmationarea").hide();
 
         $("#grpFormInput").hide();
+        
+        $("#hideCalc").hide();
+        $("#shippingCalcArea").hide();
 
         $("#warehouseReferenceMALarea").hide();
         $("#warehouseReferenceSINarea").hide();
         $("#warehouseReferenceGZarea").hide();
-
-        document.getElementById("finishCalc").addEventListener("click", function () {
-            if ($("#length").val().length == 0) {
-                $("#tncarea").hide();
-                $("#orderNow").hide();
-                alert("Please do not leave the Tracking Number field empty!");
-            }
-
-            if ($("#width").val().length == 0) {
-                $("#tncarea").hide();
-                $("#orderNow").hide();
-                alert("Please do not leave the Go Rush Receiving Country field empty!");
-            }
-
-            if ($("#height").val().length == 0) {
-                $("#tncarea").hide();
-                $("#orderNow").hide();
-                alert("Please do not leave the Consignee's Name field empty!");
-            }
-
-            if ($("#parcelWeight").val().length == 0) {
-                $("#tncarea").hide();
-                $("#orderNow").hide();
-                alert("Please do not leave the Consignee's Phone Number field empty!");
-            }
-
-            if (($("#length").val().length != 0) && ($("#width").val().length != 0)
-                && ($("#height").val().length != 0) && ($("#parcelWeight").val().length != 0)) {
-                $("#tncarea").fadeIn();
-                $("#orderNow").fadeIn();
-                $("#finishCalc").hide();
-            }
+        
+        document.getElementById("showCalc").addEventListener("click", function () {
+            $("#shippingCalcArea").fadeIn();
+            $("#showCalc").hide();
+            $("#hideCalc").fadeIn();
+        });
+        
+        document.getElementById("hideCalc").addEventListener("click", function () {
+            $("#shippingCalcArea").hide();
+            $("#hideCalc").hide();
+            $("#showCalc").fadeIn();
         });
 
         $(document).on("change", ".itemprice", function () {

@@ -701,7 +701,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productsPrevBtn").hide();
                 $("#chargessection").fadeIn();
                 $("#chargesNextBtn").fadeIn();
-                
+                $("#chargesPrevBtn").fadeIn();
             }
         });
 
@@ -712,34 +712,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#chargesPrevBtn").hide();
                 $("#agreementsection").fadeIn();
                 $("#submitBtn").fadeIn();
+                $("#agreesubmitPrevBtn").fadeIn();
             }
         });
 
         document.getElementById("productsPrevBtn").addEventListener("click", function () {
-            if (($("#paymentmethod").val().length != 0)) {
-                $("#productsPrevBtn").hide();
-                $("#productsection").hide();
-                $("#personalsection").fadeIn();
-                $("#personalNextBtn").fadeIn();
-            }
+            $("#productsPrevBtn").hide();
+            $("#productsection").hide();
+            $("#personalsection").fadeIn();
+            $("#personalNextBtn").fadeIn();
         });
 
         document.getElementById("chargesPrevBtn").addEventListener("click", function () {
-            if (($("#paymentmethod").val().length != 0)) {
-                $("#chargesPrevBtn").hide();
-                $("#chargessection").hide();
-                $("#productsection").fadeIn();
-                $("#productNextBtn").fadeIn();
-            }
+            $("#chargesPrevBtn").hide();
+            $("#chargessection").hide();
+            $("#productsection").fadeIn();
+            $("#productNextBtn").fadeIn();
         });
 
         document.getElementById("chargesPrevBtn").addEventListener("click", function () {
-            if (($("#paymentmethod").val().length != 0)) {
-                $("#chargesPrevBtn").hide();
-                $("#chargessection").hide();
-                $("#productsection").fadeIn();
-                $("#productNextBtn").fadeIn();
-            }
+            $("#chargesPrevBtn").hide();
+            $("#chargessection").hide();
+            $("#productsection").fadeIn();
+            $("#productNextBtn").fadeIn();
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {

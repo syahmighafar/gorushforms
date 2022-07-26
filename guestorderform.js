@@ -697,6 +697,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("productNextBtn").addEventListener("click", function () {
             if (($("input[name=products]").val().length != 0)) {
                 $("#productNextBtn").hide();
+                $("#productsection").hide();
                 $("#chargessection").fadeIn();
                 $("#chargesNextBtn").fadeIn();
                 $("#productsPrevBtn").fadeIn();
@@ -706,6 +707,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("chargesNextBtn").addEventListener("click", function () {
             if (($("#paymentmethod").val().length != 0)) {
                 $("#chargesNextBtn").hide();
+                $("#chargessection").hide();
                 $("#agreementsection").fadeIn();
                 $("#submitBtn").fadeIn();
                 $("#chargesPrevBtn").fadeIn();

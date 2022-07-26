@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if (($("#name").val().length != 0) && ($("#house").val().length != 0)
                 && ($("#kampong").val().length != 0) && ($("#jalan").val().length != 0)
-                && ($("#simpang").val().length != 0) && ($("input[name=district]").val().length != 0)
+                && ($("input[name=district]").val().length != 0)
                 && ($("#contact_1").val().length != 0)) {
                 $("#personalNextBtn").hide();
                 $("#personalsection").hide();

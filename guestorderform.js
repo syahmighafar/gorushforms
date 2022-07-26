@@ -113,11 +113,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please do not leave your jalan field empty!");
             }
 
-            if (($("#simpang").val().length == 0)) {
-                $("#productsection").hide();
-                alert("Please do not leave your simpang field empty!");
-            }
-
             if (($("input[name=district]").val().length == 0)) {
                 $("#productsection").hide();
                 alert("Please do not leave your district field empty!");

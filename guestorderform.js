@@ -698,9 +698,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($("input[name=products]").val().length != 0)) {
                 $("#productNextBtn").hide();
                 $("#productsection").hide();
+                $("#productsPrevBtn").hide();
                 $("#chargessection").fadeIn();
                 $("#chargesNextBtn").fadeIn();
-                $("#productsPrevBtn").fadeIn();
+                
             }
         });
 
@@ -708,9 +709,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($("#paymentmethod").val().length != 0)) {
                 $("#chargesNextBtn").hide();
                 $("#chargessection").hide();
+                $("#chargesPrevBtn").hide();
                 $("#agreementsection").fadeIn();
                 $("#submitBtn").fadeIn();
-                $("#chargesPrevBtn").fadeIn();
             }
         });
 

@@ -718,6 +718,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("productsPrevBtn").addEventListener("click", function () {
             $("#productsPrevBtn").hide();
+            $("#productNextBtn").hide();
             $("#productsection").hide();
             $("#personalsection").fadeIn();
             $("#personalNextBtn").fadeIn();
@@ -725,16 +726,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("chargesPrevBtn").addEventListener("click", function () {
             $("#chargesPrevBtn").hide();
+            $("#chargesNextBtn").hide();
             $("#chargessection").hide();
             $("#productsection").fadeIn();
             $("#productNextBtn").fadeIn();
         });
 
-        document.getElementById("chargesPrevBtn").addEventListener("click", function () {
-            $("#chargesPrevBtn").hide();
-            $("#chargessection").hide();
-            $("#productsection").fadeIn();
-            $("#productNextBtn").fadeIn();
+        document.getElementById("agreesubmitPrevBtn").addEventListener("click", function () {
+            $("#chargesPrevBtn").fadeIn();
+            $("#chargesNextBtn").fadeIn();
+            $("#chargessection").fadeIn();
+            $("#agreementsection").hide();
+            $("#submitBtn").hide();
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {

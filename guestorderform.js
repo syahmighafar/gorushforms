@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 && ($("#simpang").val().length != 0) && ($("input[name=district]").val().length != 0)
                 && ($("#contact_1").val().length != 0)) {
                 $("#personalNextBtn").hide();
+                $("#personalsection").hide();
                 $("#productNextBtn").fadeIn();
                 $("#productsPrevBtn").fadeIn();
                 $("#productsection").fadeIn();

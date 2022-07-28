@@ -254,6 +254,32 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
+        $('input[name=icpassport]').change(function () {
+            if ($(this).val().length == 0) {
+                $("#icarea").hide();
+                $("#passportarea").hide();
+
+                document.getElementById('icnumber').value = '';
+                document.getElementById('passport').value = '';
+            }
+
+            if ($(this).val() == "icnumber") {
+                $("#icarea").fadeIn();
+                $("#passportarea").hide();
+
+                document.getElementById('icnumber').value = '';
+                document.getElementById('passport').value = '';
+            }
+
+            if ($(this).val() == "passport") {
+                $("#icarea").hide();
+                $("#passportarea").fadeIn();
+
+                document.getElementById('icnumber').value = '';
+                document.getElementById('passport').value = '';
+            }
+        });
+
         $('input[name=districtAppointment]').change(function () {
             if ($(this).val().length == 0) {
                 $("#appointmentDistrictBM").hide();

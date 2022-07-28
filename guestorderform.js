@@ -756,6 +756,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#chargessection").hide();
             $("#productsection").fadeIn();
             $("#productNextBtn").fadeIn();
+            $("#productsPrevBtn").fadeIn();
         });
 
         document.getElementById("agreesubmitPrevBtn").addEventListener("click", function () {

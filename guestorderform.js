@@ -864,7 +864,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 + document.getElementById("postal").value + "</b>";
                 document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
                 document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>" + document.getElementById("contact_1").value + "</b>";
-                document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>" + document.getElementById("contact_2").value + "</b>";                
+                document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>" + document.getElementById("contact_2").value + "</b>";
+                
+                document.getElementById("productssum").innerHTML = "Product Type: <b>" + document.getElementById("products").value + "</b>";
+
+                if (($("#products").val() == "pharmacymoh") || ($("#products").val() == "pharmacyjpmc") || ($("#products").val() == "pharmacyphc")) {
+                    document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
+                    document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value + document.getElementById("passport").value + "</b>";
+                    
+                    if (($("#products").val() == "pharmacymoh")) {
+                    }
+
+                    if (($("#products").val() == "pharmacyjpmc")) {
+                    }
+
+                    if (($("#products").val() == "pharmacyphc")) {
+                    }
+
+
+                }
+
+
             }
         });
 

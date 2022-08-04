@@ -860,7 +860,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("namesum").innerText = "Name: " + document.getElementById("name").value;
                 document.getElementById("addresssum").innerText = "Address: " + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]').value + " "
+                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]').val() + " "
                 + document.getElementById("postal").value;
                 document.getElementById("emailsum").innerText = "Email: " + document.getElementById("email").value;
                 document.getElementById("contact_1sum").innerText = "Phone Number: " + document.getElementById("contact_1").value;

@@ -740,7 +740,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         }
 
-        $('input[name=receiverDistrict]').change(function () {
+        $('#receiverDistrict').change(function () {
             if ($(this).val().length == 0) {
                 $("#gostandardbm").hide();
                 $("#gostandardttg").hide();

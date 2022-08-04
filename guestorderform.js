@@ -858,13 +858,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#submitBtn").fadeIn();
                 $("#agreesubmitPrevBtn").fadeIn();
 
-                document.getElementById("namesum").innerText = "Name: <b>" + document.getElementById("name").value + "</b>";
-                document.getElementById("addresssum").innerText = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
+                document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
+                document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
                 + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]').val() + " "
                 + document.getElementById("postal").value + "</b>";
-                document.getElementById("emailsum").innerText = "Email: <b>" + document.getElementById("email").value + "</b>";
-                document.getElementById("contact_1sum").innerText = "Phone Number: <b>" + document.getElementById("contact_1").value + "</b>";
-                document.getElementById("contact_2sum").innerText = "Additional Phone Number: <b>" + document.getElementById("contact_2").value + "</b>";                
+                document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+                document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>" + document.getElementById("contact_1").value + "</b>";
+                document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>" + document.getElementById("contact_2").value + "</b>";                
             }
         });
 

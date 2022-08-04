@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('input[name=district]').change(function () {
             if ($(this).val().length == 0) {
+                $("#mohhideimm").hide();
+                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").hide();
@@ -24,6 +26,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Brunei Muara") {
+                $("#mohhideimm").fadeIn();
+                $("#mohhideexp").fadeIn();
                 $("#mohimmidiate").fadeIn();
                 $("#mohexpress").fadeIn();
                 $("#mohstandard").fadeIn();
@@ -41,6 +45,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Tutong") {
+                $("#mohhideimm").hide();
+                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").fadeIn();
@@ -58,6 +64,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Temburong") {
+                $("#mohhideimm").hide();
+                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").fadeIn();
@@ -75,19 +83,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Belait") {
-                $("#mohimmidiate").hide()
-                $("#mohexpress").hide()
+                $("#mohhideimm").hide();
+                $("#mohhideexp").hide();
+                $("#mohimmidiate").hide();
+                $("#mohexpress").hide();
                 $("#mohstandard").fadeIn();
 
-                $("#jpmcexpressbm").hide()
-                $("#jpmcstandardbm").hide()
+                $("#jpmcexpressbm").hide();
+                $("#jpmcstandardbm").hide();
                 $("#jpmcstandardttg").hide();
                 $("#jpmcstandardkb").fadeIn();
                 $("#jpmcstandardtemb").hide();
 
                 $("#phcstandardkb").fadeIn();
                 $("#phcstandardttg").hide();
-                $("#phcstandardbm").hide()
+                $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
             }
         });
@@ -286,6 +296,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").hide();
                 $("#appointmentDistrictKB").hide();
+
+                $("#mohimmidiate").hide();
+                $("#mohexpress").hide();
             }
 
             if ($(this).val() == "Brunei Muara") {
@@ -293,6 +306,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").hide();
                 $("#appointmentDistrictKB").hide();
+
+                if ((day != 0) && (day != 5)) {
+                    if ((hour >= 8) && (hour < 12)) {
+                        $("#mohimmidiate").fadeIn();
+                    } else {
+                        $("#mohimmidiate").hide();
+                    }
+                } else {
+                    $("#mohimmidiate").hide();
+                }
+
+                $("#mohexpress").fadeIn();
             }
 
             if ($(this).val() == "Tutong") {
@@ -300,6 +325,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#appointmentDistrictTTG").fadeIn();
                 $("#appointmentDistrictTEMB").hide();
                 $("#appointmentDistrictKB").hide();
+
+                $("#mohimmidiate").hide();
+                $("#mohexpress").hide();
             }
 
             if ($(this).val() == "Temburong") {
@@ -307,6 +335,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").fadeIn();
                 $("#appointmentDistrictKB").hide();
+
+                $("#mohimmidiate").hide();
+                $("#mohexpress").hide();
             }
 
             if ($(this).val() == "Belait") {
@@ -314,12 +345,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").hide();
                 $("#appointmentDistrictKB").fadeIn();
+
+                $("#mohimmidiate").hide();
+                $("#mohexpress").hide();
             }
         });
 
         $('#healthCentreBM').change(function () {
             if ($(this).val().length == 0) {
-                $("#immediateArea").hide();
+                $("#mohimmidiate").hide();
                 document.getElementById("mapSource").src = "";
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();

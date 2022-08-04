@@ -740,17 +740,101 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         }
 
+        $('input[name=receiverDistrict]').change(function () {
+            if ($(this).val().length == 0) {
+                $("#gostandardbm").hide();
+                $("#gostandardttg").hide();
+                $("#gostandardkb").hide();
+                $("#gostandardtemb").hide();
+                $("#goexpressbm").hide();
+                $("#goexpressttg").hide();
+                $("#goexpresskb").hide();
+                $("#godropoffbm").hide();
+                $("#godropoffttg").hide();
+                $("#godropoffkb").hide();
+            }
+
+            if ($(this).val() == "Brunei Muara") {
+                $("#gostandardbm").fadeIn();
+                $("#gostandardttg").hide();
+                $("#gostandardkb").hide();
+                $("#gostandardtemb").hide();
+                $("#goexpressbm").fadeIn();
+                $("#goexpressttg").hide();
+                $("#goexpresskb").hide();
+                $("#godropoffbm").fadeIn();
+                $("#godropoffttg").hide();
+                $("#godropoffkb").hide();
+            }
+
+            if ($(this).val() == "Tutong") {
+                $("#gostandardbm").hide();
+                $("#gostandardttg").fadeIn();
+                $("#gostandardkb").hide();
+                $("#gostandardtemb").hide();
+                $("#goexpressbm").hide();
+                $("#goexpressttg").fadeIn();
+                $("#goexpresskb").hide();
+                $("#godropoffbm").hide();
+                $("#godropoffttg").fadeIn();
+                $("#godropoffkb").hide();
+            }
+
+            if ($(this).val() == "Temburong") {
+                $("#gostandardbm").hide();
+                $("#gostandardttg").hide();
+                $("#gostandardkb").hide();
+                $("#gostandardtemb").fadeIn();
+                $("#goexpressbm").hide();
+                $("#goexpressttg").hide();
+                $("#goexpresskb").hide();
+                $("#godropoffbm").hide();
+                $("#godropoffttg").hide();
+                $("#godropoffkb").hide();
+            }
+
+            if ($(this).val() == "Belait") {
+                $("#gostandardbm").hide();
+                $("#gostandardttg").hide();
+                $("#gostandardkb").fadeIn();
+                $("#gostandardtemb").hide();
+                $("#goexpressbm").hide();
+                $("#goexpressttg").hide();
+                $("#goexpresskb").fadeIn();
+                $("#godropoffbm").hide();
+                $("#godropoffttg").hide();
+                $("#godropoffkb").fadeIn();
+            }
+        });
+
         $('input[name=pickupordelivery]').change(function () {
             if ($(this).val().length == 0) {
                 $("#pickupdatearea").hide();
+                $("#pickupaddressarea").hide();
             }
 
             if ($(this).val() == "deliveryonly") {
                 $("#pickupdatearea").hide();
+                $("#pickupaddressarea").hide();
             }
 
             if ($(this).val() == "pickupanddelivery") {
                 $("#pickupdatearea").fadeIn();
+                $("#pickupaddressarea").fadeIn();
+            }
+        });
+
+        $('input[name=codrequired]').change(function () {
+            if ($(this).val().length == 0) {
+                $("#codamountarea").hide();
+            }
+
+            if ($(this).val() == "Yes") {
+                $("#codamountarea").fadeIn();
+            }
+
+            if ($(this).val() == "No") {
+                $("#codamountarea").hide();
             }
         });
 

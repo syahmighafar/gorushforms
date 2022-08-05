@@ -868,7 +868,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 
                 document.getElementById("productssum").innerHTML = "Product Type: <b>" + document.getElementById("products").value + "</b>";
 
-                if (($('input[name=products]').val() == "pharmacymoh") || ($('input[name=products]').val() == "pharmacyjpmc") || ($('input[name=products]').val() == "pharmacyphc"))){
+                if (($('input[name=products]').val() == "pharmacymoh") || ($('input[name=products]').val() == "pharmacyjpmc") || ($('input[name=products]').val() == "pharmacyphc")){
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value + document.getElementById("passport").value + "</b>";

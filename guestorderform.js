@@ -860,32 +860,37 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                 document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]').val() + " "
-                + document.getElementById("postal").value + "</b>";
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]').val() + " "
+                    + document.getElementById("postal").value + "</b>";
                 document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
                 document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>" + document.getElementById("contact_1").value + "</b>";
                 document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>" + document.getElementById("contact_2").value + "</b>";
-                
-                document.getElementById("productssum").innerHTML = "Product Type: <b>" + $('input[name=products]').val() + "</b>";
 
-                if (($('input[name=products]').val() == "pharmacymoh") || ($('input[name=products]').val() == "pharmacyjpmc") || ($('input[name=products]').val() == "pharmacyphc")){
+                document.getElementById("productssum").innerHTML = "Product Type: <b>" + $('input[name=products]').val() + "</b>";
+                if (($('input[name=products]').val() == "pharmacymoh")) {
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value + document.getElementById("passport").value + "</b>";
-                    
-                    if (($('input[name=products]').val() == "pharmacymoh")) {
-                        document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
+
+                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
                         + document.getElementById("healthCentreKB").value + "</b>";
-                    }
+                }
 
-                    if (($('input[name=products]').val() == "pharmacyjpmc")) {
-                        document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]').val() + "</b>";
-                    }
+                if (($('input[name=products]').val() == "pharmacyjpmc")) {
+                    document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
+                    document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value + document.getElementById("passport").value + "</b>";
 
-                    if (($('input[name=products]').val() == "pharmacyphc")) {
-                        document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
-                    }
+                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]').val() + "</b>";
+                }
+
+                if (($('input[name=products]').val() == "pharmacyphc")) {
+                    document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
+                    document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value + document.getElementById("passport").value + "</b>";
+
+                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
                 }
             }
         });

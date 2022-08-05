@@ -885,6 +885,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("passport").value + "</b>";
 
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]').val() + "</b>";
+                    console.log("jpmc");
                 }
 
                 if (($('input[name=products]').val() == "pharmacyphc")) {
@@ -894,6 +895,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("passport").value + "</b>";
 
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
+
+                    console.log("phc");
                 }
             }
         });

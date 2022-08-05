@@ -868,22 +868,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 
                 document.getElementById("productssum").innerHTML = "Product Type: <b>" + document.getElementById("products").value + "</b>";
 
-                if (($("#products").val() == "pharmacymoh") || ($("#products").val() == "pharmacyjpmc") || ($("#products").val() == "pharmacyphc")) {
+                if (($('input[name=products]').val() == "pharmacymoh") || ($('input[name=products]').val() == "pharmacyjpmc") || ($('input[name=products]').val() == "pharmacyphc"))){
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value + document.getElementById("passport").value + "</b>";
                     
-                    if (($("#products").val() == "pharmacymoh")) {
+                    if (($('input[name=products]').val() == "pharmacymoh")) {
                         document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
                         + document.getElementById("healthCentreKB").value + "</b>";
                     }
 
-                    if (($("#products").val() == "pharmacyjpmc")) {
+                    if (($('input[name=products]').val() == "pharmacyjpmc")) {
                         document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]').val() + "</b>";
                     }
 
-                    if (($("#products").val() == "pharmacyphc")) {
+                    if (($('input[name=products]').val() == "pharmacyphc")) {
                         document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
                     }
                 }

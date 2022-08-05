@@ -866,7 +866,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>" + document.getElementById("contact_1").value + "</b>";
                 document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>" + document.getElementById("contact_2").value + "</b>";
                 
-                document.getElementById("productssum").innerHTML = "Product Type: <b>" + document.getElementById("products").value + "</b>";
+                document.getElementById("productssum").innerHTML = "Product Type: <b>" + $('input[name=products]').val() + "</b>";
 
                 if (($('input[name=products]').val() == "pharmacymoh") || ($('input[name=products]').val() == "pharmacyjpmc") || ($('input[name=products]').val() == "pharmacyphc")){
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";

@@ -871,32 +871,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                    document.getElementById("passport").value + "</b>";
+                        document.getElementById("passport").value + "</b>";
+
+                    console.log("moh before");
 
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
                         + document.getElementById("healthCentreKB").value + "</b>";
+
+                    console.log("moh after");
                 }
 
                 if (($('input[name=products]').val() == "pharmacyjpmc")) {
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                    document.getElementById("passport").value + "</b>";
-
+                        document.getElementById("passport").value + "</b>";
+                    console.log("jpmc before");
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]').val() + "</b>";
-                    console.log("jpmc");
+                    console.log("jpmc after");
                 }
 
                 if (($('input[name=products]').val() == "pharmacyphc")) {
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                    document.getElementById("passport").value + "</b>";
+                        document.getElementById("passport").value + "</b>";
+
+                    console.log("phc before");
 
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
 
-                    console.log("phc");
+                    console.log("phc after");
                 }
             }
         });

@@ -935,7 +935,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {
-            document.getElementById("guestorderform").submit();
+            document.getElementById('submitBtnfinal').click()
         });
 
         /* $('#guestorderform').submit(function(){

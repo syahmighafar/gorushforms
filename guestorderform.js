@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         // when the form's submit button is clicked 
         $emailForm.submit(function (e) {
-            customSuccessMessage = $(this).val();
+            customSuccessMessage = $name.val();
             // if the user selected an option on the select field
 
             $successText.text(`Thank you ${customSuccessMessage}! This is just for testing`);

@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         const $name = $('#name');
         const $submitForm = $('#guestorderform');
-        const $successTextName = $('.guestcustommessage');
+        const $successTextName = $('.guestcustommessagename');
+        const $successTextTN = $('.guestcustommessagetn');
 
         let customSuccessMessageName = $name.val();
         let customSuccessMessageTN = "YourTrackingNumberHere";
@@ -14,7 +15,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             // if the user selected an option on the select field
 
-            $successTextName.text(`Thank you ${customSuccessMessageName}! \n\nYour tracking number will be ${customSuccessMessageTN}`);
+            $successTextName.text(`Thank you ${customSuccessMessageName}!`);
+            $successTextTN.text(`Your tracking number will be ${customSuccessMessageTN}`);
         });
 
         const d = new Date();

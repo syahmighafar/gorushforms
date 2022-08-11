@@ -1,6 +1,30 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
 
+        const $name = $('#name');
+        const $emailForm = $('#guestorderform');
+        const $successText = $('.guestcustommessage');
+
+        let customSuccessMessage = $name.val();
+
+        // when the form's submit button is clicked 
+        $emailForm.submit(function (e) {
+            customSuccessMessage = $(this).val();
+            // if the user selected an option on the select field
+            if (customSuccessMessage) {
+                // find .insert-success-text and add this text 
+                $successText.text(`Thank you ${customSuccessMessage}! This is just for testing`);
+                // then submit the form
+                return true;
+            }
+            else {	// else if no option was selected
+                // focus on the select field
+                $name.focus();
+                // stop form submission
+                return false;
+            }
+        });
+
         const d = new Date();
         let hour = d.getHours();
         let day = d.getDay();
@@ -935,6 +959,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {
+            customSuccessMessage = $name.val();
             document.getElementById('submitBtnfinal').click()
         });
 

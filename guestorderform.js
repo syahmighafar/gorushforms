@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             // if the user selected an option on the select field
 
-            $successTextName.text(`Thank you ${customSuccessMessageName}! <br><br>Your tracking number will be ${customSuccessMessageTN}`);
+            $successTextName.text(`Thank you ${customSuccessMessageName}! \n\nYour tracking number will be ${customSuccessMessageTN}`);
         });
 
         const d = new Date();

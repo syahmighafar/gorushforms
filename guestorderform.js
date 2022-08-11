@@ -2,17 +2,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
 
         const $name = $('#name');
-        const $emailForm = $('#guestorderform');
-        const $successText = $('.guestcustommessage');
+        const $submitForm = $('#guestorderform');
+        const $successTextName = $('.guestcustommessage');
 
-        let customSuccessMessage = $name.val();
+        let customSuccessMessageName = $name.val();
+        let customSuccessMessageTN = "YourTrackingNumberHere";
 
         // when the form's submit button is clicked 
-        $emailForm.submit(function (e) {
-            customSuccessMessage = $name.val();
+        $submitForm.submit(function (e) {
+            customSuccessMessageName = $name.val();
+
             // if the user selected an option on the select field
 
-            $successText.text(`Thank you ${customSuccessMessage}! This is just for testing`);
+            $successTextName.text(`Thank you ${customSuccessMessageName}! <br><br>Your tracking number will be ${customSuccessMessageTN}`);
         });
 
         const d = new Date();

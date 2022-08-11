@@ -11,18 +11,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         $emailForm.submit(function (e) {
             customSuccessMessage = $(this).val();
             // if the user selected an option on the select field
-            if (customSuccessMessage) {
-                // find .insert-success-text and add this text 
-                $successText.text(`Thank you ${customSuccessMessage}! This is just for testing`);
-                // then submit the form
-                return true;
-            }
-            else {	// else if no option was selected
-                // focus on the select field
-                $name.focus();
-                // stop form submission
-                return false;
-            }
+
+            $successText.text(`Thank you ${customSuccessMessage}! This is just for testing`);
         });
 
         const d = new Date();

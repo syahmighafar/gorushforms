@@ -2430,7 +2430,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
 
                 let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
-                    + document.getElementById("healthCentreTEM").value + document.getElementById("healthCentreKB").value;
+                    + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
 
@@ -2707,7 +2707,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
-                    + document.getElementById("healthCentreTEM").value + document.getElementById("healthCentreKB").value;
+                    + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
 

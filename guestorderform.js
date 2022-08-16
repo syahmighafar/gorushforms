@@ -1841,7 +1841,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("productssum").innerHTML = "Product Type: <b>" + $('input[name=products]:checked').val() + "</b>";
 
-                if (($('input[name=products]').val() == "pharmacymoh")) {
+                if (($('input[name=products]:checked').val() == "pharmacymoh")) {
                     $("#productSumGRP").hide();
                     $("#productSumGD").hide();
                     $("#productSumPharmacy").fadeIn();

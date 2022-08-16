@@ -1872,8 +1872,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#deliveryTypesum").fadeIn();
                     $("#pharmacyPPsum").fadeIn();
                     $("#paymentmethodsum").fadeIn();
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=jpmcCharges]:checked').val()
-                        + $('input[name=phcCharges]:checked').val() + $('input[name=generalCharges]:checked').val() + "</b>";
+                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=jpmcCharges]:checked').val() + "</b>";
                     document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=jpmcPayingPatient]:checked').val() + "</b>";
                     document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
                 }

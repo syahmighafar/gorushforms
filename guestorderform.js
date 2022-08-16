@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(".itemprice").each(function () {
                 sum += +$(this).val();
             });
-            $("#Total-Price").val(sum);
+            $("#itemPrice").val(sum);
         });
 
         $('input[name=district]').change(function () {
@@ -1610,7 +1610,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             var newField = document.createElement('input');
             newField.setAttribute('type', 'text');
-            newField.setAttribute('class', 'text-field w-input');
+            newField.setAttribute('class', 'w-input');
             newField.setAttribute('maxlength', '256');
             newField.setAttribute('name', 'Item Description ' + (countadd + 1));
             newField.setAttribute('data-name', 'Item Description ' + (countadd + 1));
@@ -1628,7 +1628,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             var newField = document.createElement('input');
             newField.setAttribute('type', 'number');
-            newField.setAttribute('class', 'text-field w-input');
+            newField.setAttribute('class', 'w-input');
             newField.setAttribute('maxlength', '5');
             newField.setAttribute('name', 'Quantity ' + (countadd + 1));
             newField.setAttribute('data-name', 'Quantity ' + (countadd + 1));
@@ -1647,7 +1647,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             var newField = document.createElement('input');
             newField.setAttribute('type', 'number')
             newField.setAttribute('step', '.01')
-            newField.setAttribute('class', 'text-field w-input itemprice');
+            newField.setAttribute('class', 'w-input itemprice');
             newField.setAttribute('maxlength', '256');
             newField.setAttribute('name', 'Total Item Price ' + (countadd + 1));
             newField.setAttribute('data-name', 'Total Item Price ' + (countadd + 1));
@@ -2472,7 +2472,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                 }
 
-                                const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
+                                /* const scriptURL = 'https://script.google.com/macros/s/AKfycbxUP_Uj1cBh0uMgsNrdp7ygU8HYb3eXyjLqJVvqF9zZFi-FXIdjT6fIuscbQwGD4f1b/exec'
                                 const form = document.forms['guestorderform']
 
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
@@ -2575,9 +2575,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                         .catch(error => console.error('Error!', error.message))
 
-                                }
+                                } */
 
-                                document.getElementById('submitBtnfinal').click()
+                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
+                                request.setRequestHeader('Content-Type', 'application/json');
+
+                                request.onreadystatechange = function () {
+                                    if (this.readyState === 4) {
+                                        console.log('Status:', this.status);
+                                        console.log('Headers:', this.getAllResponseHeaders());
+                                        console.log('Body:', this.responseText);
+
+                                        document.getElementById('submitBtnfinal').click()
+                                    }
+                                };
+
+                                var body = {
+                                    'barcode': document.getElementById("Tookan-Tracking").value,
+                                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                };
+
+                                request.send(JSON.stringify(body));
                             }
                         };
 
@@ -2683,6 +2702,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
+                let icPassportNum = document.getElementById("icPassportNum").value;
+
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
@@ -2728,7 +2749,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                 }
 
-                                const scriptURL = 'https://script.google.com/macros/s/AKfycbx8ZYmIx4tygxtJs7m-2XlM7IxR_zikakiSjqxhXvhaVag-IGJUy_Am-61KpZfPeIza/exec'
+                                /* const scriptURL = 'https://script.google.com/macros/s/AKfycbx8ZYmIx4tygxtJs7m-2XlM7IxR_zikakiSjqxhXvhaVag-IGJUy_Am-61KpZfPeIza/exec'
                                 const form = document.forms['guestorderform']
 
                                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
@@ -2766,9 +2787,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                         .catch(error => console.error('Error!', error.message))
 
-                                }
+                                } */
 
-                                document.getElementById('submitBtnfinal').click()
+                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
+                                request.setRequestHeader('Content-Type', 'application/json');
+
+                                request.onreadystatechange = function () {
+                                    if (this.readyState === 4) {
+                                        console.log('Status:', this.status);
+                                        console.log('Headers:', this.getAllResponseHeaders());
+                                        console.log('Body:', this.responseText);
+
+                                        document.getElementById('submitBtnfinal').click()
+                                    }
+                                };
+
+                                var body = {
+                                    'barcode': document.getElementById("Tookan-Tracking").value,
+                                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                };
+
+                                request.send(JSON.stringify(body));
                             }
                         };
 
@@ -2796,7 +2836,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
                     'custom_field_template': 'Pharmacy_JPMC',
-                    'meta_data': [{ "label": "IC", "data": customerIC },
+                    'meta_data': [{ "label": "IC", "data": icPassportNum },
                     { "label": "Patient_Number", "data": orderId },
                     { "label": "Remarks", "data": customerRemarks },
                     { "label": "Type", "data": jobDescription },
@@ -2898,7 +2938,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                 }
 
-                                if (medicineDBGsheet == 1) {
+                                /* if (medicineDBGsheet == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
                                     const form = document.forms['guestorderform']
 
@@ -2912,9 +2952,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                         .catch(error => console.error('Error!', error.message))
-                                }
+                                } */
 
-                                document.getElementById('submitBtnfinal').click()
+                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
+                                request.setRequestHeader('Content-Type', 'application/json');
+
+                                request.onreadystatechange = function () {
+                                    if (this.readyState === 4) {
+                                        console.log('Status:', this.status);
+                                        console.log('Headers:', this.getAllResponseHeaders());
+                                        console.log('Body:', this.responseText);
+
+                                        document.getElementById('submitBtnfinal').click()
+                                    }
+                                };
+
+                                var body = {
+                                    'barcode': document.getElementById("Tookan-Tracking").value,
+                                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                };
+
+                                request.send(JSON.stringify(body));
                             }
                         };
 
@@ -2942,7 +3001,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
                     'custom_field_template': 'Pharmacy_PHC',
-                    'meta_data': [{ "label": "IC", "data": customerIC },
+                    'meta_data': [{ "label": "IC", "data": icPassportNum },
                     { "label": "Patient_Number", "data": orderId },
                     { "label": "Remarks", "data": customerRemarks },
                     { "label": "Type", "data": jobDescription },
@@ -3050,7 +3109,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
 
-                                if (tempSplit == 1) {
+                                /* if (tempSplit == 1) {
                                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyT31WOUuuXYtLxiKZpTDrNg0cyO7IgDQRTXij1EdOoVrq03AkRDJAa1BFshM2HJ6k5ow/exec'
                                     const form = document.forms['guestorderform']
 
@@ -3083,30 +3142,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     const form = document.forms['guestorderform']
 
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                                }
+                                } */
 
-                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
-                                request.setRequestHeader('Content-Type', 'application/json');
-
-                                request.onreadystatechange = function () {
-                                    if (this.readyState === 4) {
-                                        console.log('Status:', this.status);
-                                        console.log('Headers:', this.getAllResponseHeaders());
-                                        console.log('Body:', this.responseText);
-
-                                        document.getElementById('submitBtnfinal').click()
-                                    }
-                                };
-
-                                var body = {
-                                    'barcode': document.getElementById("Tookan-Tracking").value,
-                                    'api_key': '53626885f0400f401d527c6514516c471ae7cdfe2fdf7c38591403c4',
-                                    'job_id': document.getElementById("Tookan-Tracking").value,
-                                    'merchant_id': '1180025',
-                                    'notify': 1
-                                };
-
-                                request.send(JSON.stringify(body));
+                                document.getElementById('submitBtnfinal').click();
                             }
                         };
 
@@ -3260,11 +3298,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
 
-                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
+                        /* const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
                         const form = document.forms['guestorderform']
 
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                            .catch(error => console.error('Error!', error.message))
+                            .catch(error => console.error('Error!', error.message)) */
 
                         document.getElementById('submitBtnfinal').click()
                     }
@@ -3274,7 +3312,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
                     'order_id': '',
                     'job_description': jobDescription,
-                    'customer_email': senderEmail,
+                    'customer_email': customerEmail,
                     'customer_username': receiverName,
                     'customer_phone': '',
                     'customer_address': deliveryAddress,
@@ -3300,7 +3338,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "COD_Amount", "data": codAmount },
                         { "label": "Payment_Method", "data": customerPM },
                         { "label": "Bill_To", "data": billTo },
-                        { "label": "Customer_Order_ID", "data": customerOrderId },
+                        { "label": "Customer_Order_ID", "data": "" },
                         { "label": "Submitted_Date", "data": dateSubmitted }],
                     'team_id': '921691',
                     'auto_assignment': '0',

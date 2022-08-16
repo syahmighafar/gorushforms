@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             // if the user selected an option on the select field
 
             $successTextName.text(`Thank you ${customSuccessMessageName}!`);
-            $successTextTN.text(`Your tracking number will be ${customSuccessMessageTN}`);
+            $successTextTN.text(`Your tracking number will be ${customSuccessMessageTN}.`);
         });
 
         const d = new Date();
@@ -3305,6 +3305,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                             .catch(error => console.error('Error!', error.message)) */
+
+                        $("#successtnmessage").hide();
+                        $("#successtnmessage2").hide();
 
                         document.getElementById('submitBtnfinal').click()
                     }

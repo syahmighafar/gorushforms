@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = '';
                 document.getElementById("receiverJalan").value = '';
                 document.getElementById("receiverSimpang").value = '';
-                document.getElementById("receiverDistrict").value = '';
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = '';
                 document.getElementById("receiverEmail").value = '';
                 document.getElementById("receiverContact_1").value = '';
@@ -216,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = '';
                 document.getElementById("receiverJalan").value = '';
                 document.getElementById("receiverSimpang").value = '';
-                document.getElementById("receiverDistrict").value = '';
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = '';
                 document.getElementById("receiverEmail").value = '';
                 document.getElementById("receiverContact_1").value = '';
@@ -313,7 +313,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = '';
                 document.getElementById("receiverJalan").value = '';
                 document.getElementById("receiverSimpang").value = '';
-                document.getElementById("receiverDistrict").value = '';
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = '';
                 document.getElementById("receiverEmail").value = '';
                 document.getElementById("receiverContact_1").value = '';
@@ -410,7 +410,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = '';
                 document.getElementById("receiverJalan").value = '';
                 document.getElementById("receiverSimpang").value = '';
-                document.getElementById("receiverDistrict").value = '';
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = '';
                 document.getElementById("receiverEmail").value = '';
                 document.getElementById("receiverContact_1").value = '';
@@ -507,7 +507,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = '';
                 document.getElementById("receiverJalan").value = '';
                 document.getElementById("receiverSimpang").value = '';
-                document.getElementById("receiverDistrict").value = '';
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = '';
                 document.getElementById("receiverEmail").value = '';
                 document.getElementById("receiverContact_1").value = '';
@@ -630,7 +630,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = "";
                 document.getElementById("receiverJalan").value = "";
                 document.getElementById("receiverSimpang").value = "";
-                document.getElementById("receiverDistrict").value = "";
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = "";
                 document.getElementById("receiverEmail").value = "";
                 document.getElementById("receiverContact_1").value = "";
@@ -711,7 +711,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = "";
                 document.getElementById("receiverJalan").value = "";
                 document.getElementById("receiverSimpang").value = "";
-                document.getElementById("receiverDistrict").value = "";
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = "";
                 document.getElementById("receiverEmail").value = "";
                 document.getElementById("receiverContact_1").value = "";
@@ -792,7 +792,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = "";
                 document.getElementById("receiverJalan").value = "";
                 document.getElementById("receiverSimpang").value = "";
-                document.getElementById("receiverDistrict").value = "";
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = "";
                 document.getElementById("receiverEmail").value = "";
                 document.getElementById("receiverContact_1").value = "";
@@ -873,7 +873,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = "";
                 document.getElementById("receiverJalan").value = "";
                 document.getElementById("receiverSimpang").value = "";
-                document.getElementById("receiverDistrict").value = "";
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = "";
                 document.getElementById("receiverEmail").value = "";
                 document.getElementById("receiverContact_1").value = "";
@@ -954,7 +954,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = "";
                 document.getElementById("receiverJalan").value = "";
                 document.getElementById("receiverSimpang").value = "";
-                document.getElementById("receiverDistrict").value = "";
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = "";
                 document.getElementById("receiverEmail").value = "";
                 document.getElementById("receiverContact_1").value = "";
@@ -1035,7 +1035,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverKampong").value = "";
                 document.getElementById("receiverJalan").value = "";
                 document.getElementById("receiverSimpang").value = "";
-                document.getElementById("receiverDistrict").value = "";
+                ('input[name=receiverDistrict]').attr('checked', false);
                 document.getElementById("receiverPostal").value = "";
                 document.getElementById("receiverEmail").value = "";
                 document.getElementById("receiverContact_1").value = "";

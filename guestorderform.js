@@ -1823,129 +1823,238 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("chargesNextBtn").addEventListener("click", function () {
-            if (($("#paymentmethod").val().length != 0)) {
-                $("#chargesNextBtn").hide();
-                $("#chargessection").hide();
-                $("#chargesPrevBtn").hide();
-                $("#agreementsection").fadeIn();
-                $("#submitBtn").fadeIn();
-                $("#agreesubmitPrevBtn").fadeIn();
+            $("#chargesNextBtn").hide();
+            $("#chargessection").hide();
+            $("#chargesPrevBtn").hide();
+            $("#agreementsection").fadeIn();
+            $("#submitBtn").fadeIn();
+            $("#agreesubmitPrevBtn").fadeIn();
 
-                document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
-                document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
-                    + document.getElementById("postal").value + "</b>";
-                document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
-                document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
-                document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+            document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
+            document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
+                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                + document.getElementById("postal").value + "</b>";
+            document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+            document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
 
-                document.getElementById("productssum").innerHTML = "Product Type: <b>" + $('input[name=products]:checked').val() + "</b>";
-
-                if (($('input[name=products]:checked').val() == "pharmacymoh")) {
-                    $("#productSumGRP").hide();
-                    $("#productSumGD").hide();
-                    $("#productSumPharmacy").fadeIn();
-                    document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
-                    document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
-                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
-                        + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
-                        + document.getElementById("healthCentreKB").value + "</b>";
-                    $("#deliveryTypesum").fadeIn();
-                    $("#pharmacyPPsum").fadeIn();
-                    $("#paymentmethodsum").fadeIn();
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=mohCharges]:checked').val() + "</b>";
-                    document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=mohPayingPatient]:checked').val() + "</b>";
-                    document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
-                }
-
-                if (($('input[name=products]:checked').val() == "pharmacyjpmc")) {
-                    $("#productSumGRP").hide();
-                    $("#productSumGD").hide();
-                    $("#productSumPharmacy").fadeIn();
-                    document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
-                    document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
-                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]:checked').val() + "</b>";
-                    $("#deliveryTypesum").fadeIn();
-                    $("#pharmacyPPsum").fadeIn();
-                    $("#paymentmethodsum").fadeIn();
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=jpmcCharges]:checked').val() + "</b>";
-                    document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=jpmcPayingPatient]:checked').val() + "</b>";
-                    document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
-                }
-
-                if (($('input[name=products]:checked').val() == "pharmacyphc")) {
-                    $("#productSumGRP").hide();
-                    $("#productSumGD").hide();
-                    $("#productSumPharmacy").fadeIn();
-                    document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
-                    document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
-                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
-                    $("#deliveryTypesum").fadeIn();
-                    $("#pharmacyPPsum").fadeIn();
-                    $("#paymentmethodsum").fadeIn();
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=phcCharges]:checked').val() + "</b>";
-                    document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=phcPayingPatient]:checked').val() + "</b>";
-                    document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
-                }
-
-                if (($('input[name=products]:checked').val() == "grp")) {
-                    $("#productSumGRP").fadeIn();
-                    $("#productSumGD").hide();
-                    $("#productSumPharmacy").hide();
-                    document.getElementById("grpTracksum").innerHTML = "Parcel Tracking Number: <b>" + document.getElementById("grpTrack").value + "</b>";
-                    document.getElementById("GoRushReceivingCountrysum").innerHTML = "Go Rush Receiving Country: <b>" + document.getElementById("GoRushReceivingCountry").value + "</b>";
-                    document.getElementById("shipmentMethodsum").innerHTML = "Shipment Method: <b>" + $('input[name=shipmentMethod]:checked').val() + "</b>";
-                    document.getElementById("ecommercesum").innerHTML = "E-Commerce Name: <b>" + document.getElementById("ecommerce").value + "</b>";
-                    document.getElementById("commoditiessum").innerHTML = "Commodities: <b>" + document.getElementById("commodities").value + "</b>";
-                    document.getElementById("currencysum").innerHTML = "Currency: <b>" + document.getElementById("currency").value + "</b>";
-                    document.getElementById("weightsum").innerHTML = "Weight (KG): <b>" + document.getElementById("weight").value + "</b>";
-                    document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
-                    document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
-                    document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("itemPrice").value + "</b>";
-                    $("#deliveryTypesum").hide();
-                    $("#pharmacyPPsum").hide();
-                    $("#paymentmethodsum").hide();
-                }
-
-                if (($('input[name=products]:checked').val() == "general")) {
-                    $("#productSumGRP").hide();
-                    $("#productSumGD").fadeIn();
-                    $("#productSumPharmacy").hide();
-                    document.getElementById("pickupordeliverysum").innerHTML = "Pickup or Delivery?: <b>" + $('input[name=pickupordelivery]:checked').val() + "</b>";
-                    document.getElementById("pickupdatesum").innerHTML = "Pick-Up Date: <b>" + document.getElementById("pickupdate").value + "</b>";
-                    document.getElementById("pickupaddresssum").innerHTML = "Pick-Up Address: <b>" + document.getElementById("pickupaddress").value + "</b>";
-                    document.getElementById("productdescriptionsum").innerHTML = "Product Description: <b>" + document.getElementById("productdescription").value + "</b>";
-                    document.getElementById("producttypesum").innerHTML = "Product Type: <b>" + document.getElementById("producttype").value + "</b>";
-                    document.getElementById("productweightsum").innerHTML = "Product Weight: <b>" + $('input[name=productweight]:checked').val() + "</b>";
-                    document.getElementById("codrequiredsum").innerHTML = "COD (Cash on Delivery) required?: <b>" + $('input[name=codrequired]:checked').val() + "</b>";
-                    if ($('input[name=codrequired]:checked').val() == "Yes") {
-                        document.getElementById("codamountsum").innerHTML = "COD (Cash on Delivery) Amount: <b>" + document.getElementById("codamount").value + "</b>";
-                    }
-                    if ($('input[name=codrequired]:checked').val() == "No") {
-
-                    }
-                    document.getElementById("receiverNamesum").innerHTML = "Name: <b>" + document.getElementById("receiverName").value + "</b>";
-                    document.getElementById("receiverAddresssum").innerHTML = "Address: <b>" + document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value
-                        + " " + document.getElementById("receiverJalan").value + " " + document.getElementById("receiverSimpang").value + " " + $('input[name=receiverDistrict]:checked').val() + " "
-                        + document.getElementById("receiverPostal").value + "</b>";
-                    document.getElementById("receiverEmailsum").innerHTML = "E-mail: <b>" + document.getElementById("receiverEmail").value + "</b>";
-                    document.getElementById("receiverContact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code_3").value + document.getElementById("receiverContact_1").value + "</b>";
-                    $("#deliveryTypesum").fadeIn();
-                    $("#pharmacyPPsum").hide();
-                    $("#paymentmethodsum").fadeIn();
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=generalCharges]:checked').val() + "</b>";
-                    document.getElementById("billTosum").innerHTML = "Bill to: <b>" + document.getElementById("billto").value + "</b>";
-                    document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
-                }
-
-                document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("name").value + "</b>";
+            if ($("#contact_2").val().length == 0) {
+                document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
             }
+
+            if ($("#contact_2").val().length != 0) {
+                document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+            }
+
+            if (($('input[name=products]:checked').val() == "pharmacymoh")) {
+                document.getElementById("buyerName").value = "";
+                if (($('input[name=mohCharges]:checked').val() == "Standard")) {
+                    document.getElementById('price').value = '3';
+                }
+
+                if (($('input[name=mohCharges]:checked').val() == "Express")) {
+                    document.getElementById('price').value = '5';
+                }
+
+                if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
+                    document.getElementById('price').value = '20';
+                }
+                $("#productSumGRP").hide();
+                $("#productSumGD").hide();
+                $("#productSumPharmacy").fadeIn();
+                document.getElementById("productssum").innerHTML = "Product Type: <b>MOH Pharmacy Order</b>";
+                document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
+                document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
+                    document.getElementById("passport").value + "</b>";
+                document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
+                    + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
+                    + document.getElementById("healthCentreKB").value + "</b>";
+                $("#deliveryTypesum").fadeIn();
+                $("#amounttobepaidsum").fadeIn();
+                $("#pharmacyPPsum").fadeIn();
+                $("#paymentmethodsum").fadeIn();
+                document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=mohCharges]:checked').val() + "</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=mohPayingPatient]:checked').val() + "</b>";
+                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
+            }
+
+            if (($('input[name=products]:checked').val() == "pharmacyjpmc")) {
+                document.getElementById("buyerName").value = "";
+                if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
+                    document.getElementById('price').value = '5';
+                }
+
+                if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
+                    document.getElementById('price').value = '3';
+                }
+
+                if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
+                    document.getElementById('price').value = '7';
+                }
+
+                if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
+                    document.getElementById('price').value = '7';
+                }
+
+                if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
+                    document.getElementById('price').value = '10';
+                }
+                $("#productSumGRP").hide();
+                $("#productSumGD").hide();
+                $("#productSumPharmacy").fadeIn();
+                document.getElementById("productssum").innerHTML = "Product Type: <b>JPMC / PJSC Pharmacy Order</b>";
+                document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
+                document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
+                    document.getElementById("passport").value + "</b>";
+                document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]:checked').val() + "</b>";
+                $("#deliveryTypesum").fadeIn();
+                $("#amounttobepaidsum").fadeIn();
+                $("#pharmacyPPsum").fadeIn();
+                $("#paymentmethodsum").fadeIn();
+                document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=jpmcCharges]:checked').val() + "</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=jpmcPayingPatient]:checked').val() + "</b>";
+                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
+            }
+
+            if (($('input[name=products]:checked').val() == "pharmacyphc")) {
+                document.getElementById("buyerName").value = "";
+                if (($('input[name=phcCharges]:checked').val() == "Standard Belait")) {
+                    document.getElementById('price').value = '3';
+                }
+
+                if (($('input[name=phcCharges]:checked').val() == "Standard Tutong")) {
+                    document.getElementById('price').value = '5';
+                }
+
+                if (($('input[name=phcCharges]:checked').val() == "Standard Brunei-Muara")) {
+                    document.getElementById('price').value = '7';
+                }
+
+                if (($('input[name=phcCharges]:checked').val() == "Standard Temburong")) {
+                    document.getElementById('price').value = '10';
+                }
+                $("#productSumGRP").hide();
+                $("#productSumGD").hide();
+                $("#productSumPharmacy").fadeIn();
+                document.getElementById("productssum").innerHTML = "Product Type: <b>Panaga Health Pharmacy Order</b>";
+                document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
+                document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
+                    document.getElementById("passport").value + "</b>";
+                document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
+                $("#deliveryTypesum").fadeIn();
+                $("#amounttobepaidsum").fadeIn();
+                $("#pharmacyPPsum").fadeIn();
+                $("#paymentmethodsum").fadeIn();
+                document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=phcCharges]:checked').val() + "</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=phcPayingPatient]:checked').val() + "</b>";
+                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
+            }
+
+            if (($('input[name=products]:checked').val() == "grp")) {
+                var codeN = "/GRP";
+                var conN = document.getElementById("name").value;
+                document.getElementById("buyerName").value = conN + codeN;
+                document.getElementById('price').value = '';
+                $("#productSumGRP").fadeIn();
+                $("#productSumGD").hide();
+                $("#productSumPharmacy").hide();
+                document.getElementById("productssum").innerHTML = "Product Type: <b>Go Rush Plus</b>";
+                document.getElementById("grpTracksum").innerHTML = "Parcel Tracking Number: <b>" + document.getElementById("grpTrack").value + "</b>";
+                document.getElementById("GoRushReceivingCountrysum").innerHTML = "Go Rush Receiving Country: <b>" + document.getElementById("GoRushReceivingCountry").value + "</b>";
+                document.getElementById("shipmentMethodsum").innerHTML = "Shipment Method: <b>" + $('input[name=shipmentMethod]:checked').val() + "</b>";
+                document.getElementById("ecommercesum").innerHTML = "E-Commerce Name: <b>" + document.getElementById("ecommerce").value + "</b>";
+                document.getElementById("commoditiessum").innerHTML = "Commodities: <b>" + document.getElementById("commodities").value + "</b>";
+                document.getElementById("currencysum").innerHTML = "Currency: <b>" + document.getElementById("currency").value + "</b>";
+                document.getElementById("weightsum").innerHTML = "Weight (KG): <b>" + document.getElementById("weight").value + "</b>";
+                document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
+                document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
+                document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("itemPrice").value + "</b>";
+                $("#deliveryTypesum").hide();
+                $("#amounttobepaidsum").hide();
+                $("#pharmacyPPsum").hide();
+                $("#paymentmethodsum").hide();
+            }
+
+            if (($('input[name=products]:checked').val() == "general")) {
+                document.getElementById("buyerName").value = "";
+                if (($('input[name=generalCharges]:checked').val() == "Standard Brunei-Muara")) {
+                    document.getElementById('price').value = '4';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Standard Tutong")) {
+                    document.getElementById('price').value = '7';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Standard Belait")) {
+                    document.getElementById('price').value = '10';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Standard Temburong")) {
+                    document.getElementById('price').value = '12';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Express Brunei Muara")) {
+                    document.getElementById('price').value = '5';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Express Tutong")) {
+                    document.getElementById('price').value = '8';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Express Belait")) {
+                    document.getElementById('price').value = '12';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Drop off Brunei Muara")) {
+                    document.getElementById('price').value = '3';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Drop off Tutong")) {
+                    document.getElementById('price').value = '5';
+                }
+
+                if (($('input[name=generalCharges]:checked').val() == "Drop off Belait")) {
+                    document.getElementById('price').value = '7';
+                }
+                $("#productSumGRP").hide();
+                $("#productSumGD").fadeIn();
+                $("#productSumPharmacy").hide();
+                document.getElementById("productssum").innerHTML = "Product Type: <b>General Deliveries</b>";
+                document.getElementById("pickupordeliverysum").innerHTML = "Pickup or Delivery?: <b>" + $('input[name=pickupordelivery]:checked').val() + "</b>";
+                document.getElementById("pickupdatesum").innerHTML = "Pick-Up Date: <b>" + document.getElementById("pickupdate").value + "</b>";
+                document.getElementById("pickupaddresssum").innerHTML = "Pick-Up Address: <b>" + document.getElementById("pickupaddress").value + "</b>";
+                document.getElementById("productdescriptionsum").innerHTML = "Product Description: <b>" + document.getElementById("productdescription").value + "</b>";
+                document.getElementById("producttypesum").innerHTML = "Product Type: <b>" + document.getElementById("producttype").value + "</b>";
+                document.getElementById("productweightsum").innerHTML = "Product Weight: <b>" + $('input[name=productweight]:checked').val() + "</b>";
+                document.getElementById("codrequiredsum").innerHTML = "COD (Cash on Delivery) required?: <b>" + $('input[name=codrequired]:checked').val() + "</b>";
+                if ($('input[name=codrequired]:checked').val() == "Yes") {
+                    document.getElementById("codamountsum").innerHTML = "COD (Cash on Delivery) Amount: <b>" + document.getElementById("codamount").value + "</b>";
+                }
+                if ($('input[name=codrequired]:checked').val() == "No") {
+
+                }
+                document.getElementById("receiverNamesum").innerHTML = "Name: <b>" + document.getElementById("receiverName").value + "</b>";
+                document.getElementById("receiverAddresssum").innerHTML = "Address: <b>" + document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value
+                    + " " + document.getElementById("receiverJalan").value + " " + document.getElementById("receiverSimpang").value + " " + $('input[name=receiverDistrict]:checked').val() + " "
+                    + document.getElementById("receiverPostal").value + "</b>";
+                document.getElementById("receiverEmailsum").innerHTML = "E-mail: <b>" + document.getElementById("receiverEmail").value + "</b>";
+                document.getElementById("receiverContact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code_3").value + document.getElementById("receiverContact_1").value + "</b>";
+                $("#deliveryTypesum").fadeIn();
+                $("#amounttobepaidsum").fadeIn();
+                $("#pharmacyPPsum").hide();
+                $("#paymentmethodsum").fadeIn();
+                document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=generalCharges]:checked').val() + "</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                document.getElementById("billTosum").innerHTML = "Bill to: <b>" + document.getElementById("billto").value + "</b>";
+                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
+            }
+
+            document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
         });
 
         document.getElementById("productsPrevBtn").addEventListener("click", function () {
@@ -3083,8 +3192,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("customerPhone").value = customerPhone;
 
                 let deliveryAddress = document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value
-                + " " + document.getElementById("receiverJalan").value + " " + document.getElementById("receiverSimpang").value + " " + $('input[name=receiverDistrict]:checked').val() + " "
-                + document.getElementById("receiverPostal").value;
+                    + " " + document.getElementById("receiverJalan").value + " " + document.getElementById("receiverSimpang").value + " " + $('input[name=receiverDistrict]:checked').val() + " "
+                    + document.getElementById("receiverPostal").value;
 
                 let receiverName = document.getElementById("receiverName").value;
                 let receiverPhone = "+" + document.getElementById("code_3").value + document.getElementById("receiverContact_1").value;
@@ -3157,7 +3266,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                             .catch(error => console.error('Error!', error.message))
 
-                            document.getElementById('submitBtnfinal').click()
+                        document.getElementById('submitBtnfinal').click()
                     }
                 };
 

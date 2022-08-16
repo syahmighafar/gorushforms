@@ -9,16 +9,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var gobeliDailyReceiveSheet = 1;
 
         const $name = $('#name');
+        const $tnprovided = $('#Tookan-Tracking');
         const $submitForm = $('#guestorderform');
         const $successTextName = $('.guestcustommessagename');
         const $successTextTN = $('.guestcustommessagetn');
 
         let customSuccessMessageName = $name.val();
-        let customSuccessMessageTN = document.getElementById("Tookan-Tracking").value;
+        let customSuccessMessageTN = $tnprovided.val();
 
         // when the form's submit button is clicked 
         $submitForm.submit(function (e) {
             customSuccessMessageName = $name.val();
+            customSuccessMessageTN = $tnprovided.val();
 
             // if the user selected an option on the select field
 

@@ -1658,7 +1658,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         }
 
-        $('#receiverDistrict').change(function () {
+        $('input[name=receiverDistrict]').change(function () {
             if ($(this).val().length == 0) {
                 $("#gostandardbm").hide();
                 $("#gostandardttg").hide();

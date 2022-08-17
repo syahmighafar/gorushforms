@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $(".itemprice").each(function () {
                 sum += +$(this).val();
             });
-            $("#itemPrice").val(sum);
+            $("#itemPrice").val(sum.toFixed(2));
         });
 
         $('input[name=district]').change(function () {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 $('input[name=products]').attr('checked', false);
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 $('input[name=products]').attr('checked', false);
@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
@@ -266,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 $('input[name=products]').attr('checked', false);
@@ -326,7 +326,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
@@ -363,7 +363,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 $('input[name=products]').attr('checked', false);
@@ -423,7 +423,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
@@ -460,7 +460,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 $('input[name=products]').attr('checked', false);
@@ -520,7 +520,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
@@ -585,7 +585,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 document.getElementById('patientNumber').value = '';
@@ -643,7 +643,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -666,7 +666,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").fadeIn();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
@@ -724,7 +724,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -747,7 +747,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").fadeIn();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
@@ -805,7 +805,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -828,7 +828,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").fadeIn();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
@@ -886,7 +886,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -909,7 +909,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").hide();
+                $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
                 document.getElementById('patientNumber').value = '';
@@ -967,13 +967,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
             }
 
-            if ($(this).val() == "general") {
+            if ($(this).val() == "localdelivery") {
                 $("#sectionone").hide();
                 $("#sectiontwo").hide();
                 $("#sectionthree").fadeIn();
@@ -990,7 +990,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionmohcharges").hide();
                 $("#sectionjpmccharges").hide();
                 $("#sectionphccharges").hide();
-                $("#sectiongeneralcharges").fadeIn();
+                $("#sectionlocalcharges").fadeIn();
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
@@ -1048,7 +1048,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=jpmcPayingPatient]').attr('checked', false);
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -1617,7 +1617,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             newField.setAttribute('name', 'Item Description ' + (countadd + 1));
             newField.setAttribute('data-name', 'Item Description ' + (countadd + 1));
             newField.setAttribute('id', 'Item-Description-' + (countadd + 1));
-            newField.required = true;
+            newField.setAttribute('placeholder', 'Enter Item Description');
             document.getElementById("itemnamearea" + (countadd + 1)).appendChild(newField);
 
             var newDiv = document.createElement("div");
@@ -1635,7 +1635,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             newField.setAttribute('name', 'Quantity ' + (countadd + 1));
             newField.setAttribute('data-name', 'Quantity ' + (countadd + 1));
             newField.setAttribute('id', 'Quantity-' + (countadd + 1));
-            newField.required = true;
+            newField.setAttribute('placeholder', 'Enter Quantity');
             document.getElementById("quantityarea" + (countadd + 1)).appendChild(newField);
 
             var newDiv = document.createElement("div");
@@ -1654,7 +1654,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             newField.setAttribute('name', 'Total Item Price ' + (countadd + 1));
             newField.setAttribute('data-name', 'Total Item Price ' + (countadd + 1));
             newField.setAttribute('id', 'Total-Item-Price-' + (countadd + 1));
-            newField.required = true;
+            newField.setAttribute('placeholder', 'Enter Total Item Price');
             document.getElementById("totalitempricearea" + (countadd + 1)).appendChild(newField);
 
             countadd = countadd + 1;
@@ -1691,7 +1691,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#godropoffttg").hide();
                 $("#godropoffkb").hide();
 
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -1709,7 +1709,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#godropoffttg").hide();
                 $("#godropoffkb").hide();
 
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -1727,7 +1727,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#godropoffttg").fadeIn();
                 $("#godropoffkb").hide();
 
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -1745,7 +1745,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#godropoffttg").hide();
                 $("#godropoffkb").hide();
 
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -1763,7 +1763,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#godropoffttg").hide();
                 $("#godropoffkb").fadeIn();
 
-                $('input[name=generalCharges]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
@@ -1982,51 +1982,51 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#paymentmethodsum").hide();
             }
 
-            if (($('input[name=products]:checked').val() == "general")) {
+            if (($('input[name=products]:checked').val() == "localdelivery")) {
                 document.getElementById("buyerName").value = "";
-                if (($('input[name=generalCharges]:checked').val() == "Standard Brunei-Muara")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '4';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Tutong")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Belait")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '10';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Temburong")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '12';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Express Brunei Muara")) {
+                if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                     document.getElementById('price').value = '5';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Express Tutong")) {
+                if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
                     document.getElementById('price').value = '8';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Express Belait")) {
+                if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
                     document.getElementById('price').value = '12';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Drop off Brunei Muara")) {
+                if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                     document.getElementById('price').value = '3';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Drop off Tutong")) {
+                if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                     document.getElementById('price').value = '5';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Drop off Belait")) {
+                if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                     document.getElementById('price').value = '7';
                 }
                 $("#productSumGRP").hide();
                 $("#productSumGD").fadeIn();
                 $("#productSumPharmacy").hide();
-                document.getElementById("productssum").innerHTML = "Product Type: <b>General Deliveries</b>";
+                document.getElementById("productssum").innerHTML = "Product Type: <b>Local Delivery</b>";
                 document.getElementById("pickupordeliverysum").innerHTML = "Pickup or Delivery?: <b>" + $('input[name=pickupordelivery]:checked').val() + "</b>";
                 document.getElementById("pickupdatesum").innerHTML = "Pick-Up Date: <b>" + document.getElementById("pickupdate").value + "</b>";
                 document.getElementById("pickupaddresssum").innerHTML = "Pick-Up Address: <b>" + document.getElementById("pickupaddress").value + "</b>";
@@ -2050,7 +2050,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#amounttobepaidsum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").fadeIn();
-                document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=generalCharges]:checked').val() + "</b>";
+                document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=localCharges]:checked').val() + "</b>";
                 document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
                 document.getElementById("billTosum").innerHTML = "Bill to: <b>" + document.getElementById("billto").value + "</b>";
                 document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
@@ -3213,7 +3213,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 request.send(JSON.stringify(body));
             }
 
-            if ($('input[name=products]').val() == "general") {
+            if ($('input[name=products]').val() == "localdelivery") {
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
@@ -3221,7 +3221,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("customerAddress").value = customerAddress;
 
                 let itemDescription = document.getElementById("productdescription").value;
-                let jobDescription = $('input[name=generalCharges]:checked').val();
+                let jobDescription = $('input[name=localCharges]:checked').val();
                 let jobType = $('input[name=pickupordelivery]:checked').val();
 
                 let customerEmail = document.getElementById("email").value;
@@ -3248,43 +3248,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let customerPM = document.getElementById("paymentmethod").value;
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Brunei-Muara")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '4';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Tutong")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Belait")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '10';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Standard Temburong")) {
+                if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '12';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Express Brunei Muara")) {
+                if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                     document.getElementById('price').value = '5';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Express Tutong")) {
+                if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
                     document.getElementById('price').value = '8';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Express Belait")) {
+                if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
                     document.getElementById('price').value = '12';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Drop off Brunei Muara")) {
+                if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                     document.getElementById('price').value = '3';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Drop off Tutong")) {
+                if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                     document.getElementById('price').value = '5';
                 }
 
-                if (($('input[name=generalCharges]:checked').val() == "Drop off Belait")) {
+                if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                     document.getElementById('price').value = '7';
                 }
 

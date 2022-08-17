@@ -2253,7 +2253,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
-                var area = "";
 
                 if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
                 else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }

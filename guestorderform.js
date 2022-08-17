@@ -1759,7 +1759,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('pickupaddress').value = '';
             }
 
-            if ($(this).val() == "deliveryonly") {
+            if ($(this).val() == "Delivery Only") {
                 $("#pickupdatearea").hide();
                 $("#pickupaddressarea").hide();
 
@@ -1767,7 +1767,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('pickupaddress').value = '';
             }
 
-            if ($(this).val() == "pickupanddelivery") {
+            if ($(this).val() == "Pickup and Delivery") {
                 $("#pickupdatearea").fadeIn();
                 $("#pickupaddressarea").fadeIn();
 

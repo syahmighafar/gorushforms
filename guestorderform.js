@@ -3255,7 +3255,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let orderId = document.getElementById("grpTrack").value;
                 let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("name").value;
+                let customerUsername = document.getElementById("buyerName").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 

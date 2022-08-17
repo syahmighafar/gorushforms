@@ -2236,7 +2236,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             let jobdeliverydatetime = dateD + ' ' + timeD;
 
-            if ($('input[name=products]').val() == "pharmacymoh") {
+            if ($('input[name=products]:checked').val() == "pharmacymoh") {
                 let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let area = "";
@@ -2664,7 +2664,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 request.send(JSON.stringify(body));
             }
 
-            if ($('input[name=products]').val() == "pharmacyjpmc") {
+            if ($('input[name=products]:checked').val() == "pharmacyjpmc") {
                 var patientOrderId = "JPMCPJSC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
@@ -2863,7 +2863,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 request.send(JSON.stringify(body));
             }
 
-            if ($('input[name=products]').val() == "pharmacyphc") {
+            if ($('input[name=products]:checked').val() == "pharmacyphc") {
                 var patientOrderId = "PHC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
@@ -3028,7 +3028,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 request.send(JSON.stringify(body));
             }
 
-            if ($('input[name=products]').val() == "grp") {
+            if ($('input[name=products]:checked').val() == "grp") {
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
@@ -3213,7 +3213,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 request.send(JSON.stringify(body));
             }
 
-            if ($('input[name=products]').val() == "localdelivery") {
+            if ($('input[name=products]:checked').val() == "localdelivery") {
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;

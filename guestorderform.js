@@ -1955,7 +1955,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("weightsum").innerHTML = "Weight (KG): <b>" + document.getElementById("weight").value + "</b>";
                 document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
                 document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
-                document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("itemPrice").value + "</b>";
+                document.getElementById("itemPricesum").innerHTML = "Total Price: <b>$" + document.getElementById("itemPrice").value + "</b>";
                 $("#deliveryTypesum").hide();
                 $("#amounttobepaidsum").hide();
                 $("#pharmacyPPsum").hide();
@@ -2067,6 +2067,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("submitBtn").addEventListener("click", function () {
             $("#agreementsection").hide();
+            $("#controlarea").hide();
             $("#loading").fadeIn();
 
             document.getElementById("customerthank").innerText = "Thank you " + document.getElementById("name").value + "!";
@@ -3221,31 +3222,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("buyerName").value = conN + codeN;
 
                 if (document.getElementById("GoRushReceivingCountry").value == "MALAYSIA") {
-                    if ($('input[name=shipmentMethod]:checked').val() == "air") {
+                    if ($('input[name=shipmentMethod]:checked').val() == "Air Freight") {
                         document.getElementById("warehouseReference").value = "MAL/AIRGRP" + " - " + conN;
                     }
 
-                    if ($('input[name=shipmentMethod]:checked').val() == "sea") {
+                    if ($('input[name=shipmentMethod]:checked').val() == "Sea Freight") {
                         document.getElementById("warehouseReference").value = "MAL/GRP" + " - " + conN;
                     }
                 }
 
                 if (document.getElementById("GoRushReceivingCountry").value == "CHINA") {
-                    if ($('input[name=shipmentMethod]:checked').val() == "air") {
+                    if ($('input[name=shipmentMethod]:checked').val() == "Air Freight") {
                         document.getElementById("warehouseReference").value = "GZ/AIRGRP" + " - " + conN;
                     }
 
-                    if ($('input[name=shipmentMethod]:checked').val() == "sea") {
+                    if ($('input[name=shipmentMethod]:checked').val() == "Sea Freight") {
                         document.getElementById("warehouseReference").value = "GZ/GRP" + " - " + conN;
                     }
                 }
 
                 if (document.getElementById("GoRushReceivingCountry").value == "SINGAPORE") {
-                    if ($('input[name=shipmentMethod]:checked').val() == "air") {
+                    if ($('input[name=shipmentMethod]:checked').val() == "Air Freight") {
                         document.getElementById("warehouseReference").value = "SIN/AIRGRP" + " - " + conN;
                     }
 
-                    if ($('input[name=shipmentMethod]:checked').val() == "sea") {
+                    if ($('input[name=shipmentMethod]:checked').val() == "Sea Freight") {
                         document.getElementById("warehouseReference").value = "SIN/GRP" + " - " + conN;
                     }
                 }

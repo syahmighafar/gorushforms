@@ -8,26 +8,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var gsheetPanagaHC = 1;
         var gobeliDailyReceiveSheet = 1;
 
-        const $name = $('#name');
-        const $tnprovided = $('#Tookan-Tracking');
-        const $submitForm = $('#guestorderform');
-        const $successTextName = $('.guestcustommessagename');
-        const $successTextTN = $('.guestcustommessagetn');
-
-        let customSuccessMessageName = $name.val();
-        let customSuccessMessageTN = $tnprovided.val();
-
-        // when the form's submit button is clicked 
-        $submitForm.submit(function (e) {
-            customSuccessMessageName = $name.val();
-            customSuccessMessageTN = $tnprovided.val();
-
-            // if the user selected an option on the select field
-
-            $successTextName.text(`Thank you ${customSuccessMessageName}!`);
-            $successTextTN.text(`Your tracking number will be ${customSuccessMessageTN}.`);
-        });
-
         const d = new Date();
         let hour = d.getHours();
         let day = d.getDay();
@@ -2088,8 +2068,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("submitBtn").addEventListener("click", function () {
             $("#agreementsection").hide();
             $("#loading").fadeIn();
-            customSuccessMessage = $name.val();
 
+            document.getElementById("customerthank").innerText = "Thank you " + document.getElementById("name").value + "!";
             document.getElementById("finalsummaryarea").innerHTML = document.getElementById("finalsummary").innerHTML
            
             //getSubmittedDate
@@ -2783,7 +2763,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         console.log('Headers:', this.getAllResponseHeaders());
                                         console.log('Body:', this.responseText);
 
-                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value
+                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -2995,7 +2975,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         console.log('Headers:', this.getAllResponseHeaders());
                                         console.log('Body:', this.responseText);
 
-                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value
+                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -3164,7 +3144,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         console.log('Headers:', this.getAllResponseHeaders());
                                         console.log('Body:', this.responseText);
 
-                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value
+                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -3353,7 +3333,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                                 } */
 
-                                document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value
+                                document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                                 document.getElementById('submitBtnfinal').click();
                             }
@@ -3517,7 +3497,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             .catch(error => console.error('Error!', error.message)) */
 
                         $("#successtnmessage").hide();
-                        $("#successtnmessage2").hide();
                         $("#finaltrackingnumarea").hide();
 
                         document.getElementById('submitBtnfinal').click()

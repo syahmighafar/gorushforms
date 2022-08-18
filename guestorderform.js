@@ -1044,7 +1044,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
             }
 
-            if ($(this).val() == "icnumber") {
+            if ($(this).val() == "IC Number") {
                 $("#icarea").fadeIn();
                 $("#passportarea").hide();
 
@@ -1052,7 +1052,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
             }
 
-            if ($(this).val() == "passport") {
+            if ($(this).val() == "Passport") {
                 $("#icarea").hide();
                 $("#passportarea").fadeIn();
 

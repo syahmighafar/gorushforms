@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         var medicineDBjpmcGsheet = 1;
         var gsheetPanagaHC = 1;
         var gobeliDailyReceiveSheet = 1;
+        var tempSplit = 1;
 
         const d = new Date();
         let hour = d.getHours();

@@ -128,9 +128,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
-
-                patientMask.destroy();
-                icMask.destroy();
             }
 
             if ($(this).val() == "Brunei Muara") {
@@ -228,9 +225,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
-
-                patientMask.destroy();
-                icMask.destroy();
             }
 
             if ($(this).val() == "Tutong") {
@@ -328,9 +322,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
-
-                patientMask.destroy();
-                icMask.destroy();
             }
 
             if ($(this).val() == "Temburong") {
@@ -428,9 +419,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
-
-                patientMask.destroy();
-                icMask.destroy();
             }
 
             if ($(this).val() == "Belait") {
@@ -528,9 +516,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = '';
                 document.getElementById("paymentmethod").value = '';
                 document.getElementById("remarks").value = '';
-
-                patientMask.destroy();
-                icMask.destroy();
             }
         });
 
@@ -654,9 +639,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
-
-                patientMask.destroy();
-                icMask.destroy();
             }
 
             if ($(this).val() == "pharmacymoh") {
@@ -741,10 +723,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("patientnumlabel").innerText = "Bru-HIMs Number:*";
                 $("#patientNumber").attr("placeholder", "Enter Bru-HIMs Number");
-
-                patientMask = IMask(patientNumElement, {
-                    mask: '{BN}00000000',
-                });
 
                 $("#patientNumber").attr("minlength", "");
                 $("#patientNumber").attr("maxlength", "");
@@ -833,10 +811,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("patientnumlabel").innerText = "Patient Number:*";
                 $("#patientNumber").attr("placeholder", "Enter Patient Number");
 
-                patientMask = IMask(patientNumElement, {
-                    mask: '{BN}00000000',
-                });
-
                 $("#patientNumber").attr("minlength", "6");
                 $("#patientNumber").attr("maxlength", "8");
             }
@@ -924,9 +898,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("patientnumlabel").innerText = "Patient Number:*";
                 $("#patientNumber").attr("placeholder", "Enter Patient Number");
 
-                patientMask.destroy();
-                icMask.destroy();
-
                 $("#patientNumber").attr("minlength", "");
                 $("#patientNumber").attr("maxlength", "");
             }
@@ -1010,9 +981,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
-
-                patientMask.destroy();
-                icMask.destroy();
             }
 
             if ($(this).val() == "localdelivery") {
@@ -1094,9 +1062,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
-
-                patientMask.destroy();
-                icMask.destroy();
             }
         });
 
@@ -1107,8 +1072,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById('icnumber').value = '';
                 document.getElementById('passport').value = '';
-
-                icMask.destroy();
             }
 
             if ($(this).val() == "IC Number") {
@@ -1117,10 +1080,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById('icnumber').value = '';
                 document.getElementById('passport').value = '';
-
-                icMask = IMask(icNumberElement, {
-                    mask: '00000000',
-                });
             }
 
             if ($(this).val() == "Passport") {
@@ -1129,8 +1088,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById('icnumber').value = '';
                 document.getElementById('passport').value = '';
-
-                icMask.destroy();
             }
         });
 

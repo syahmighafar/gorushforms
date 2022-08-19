@@ -656,10 +656,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
 
-                $("#sectionone").hide();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
                 $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
@@ -753,10 +749,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").hide()
                 $("#phcstandardtemb").fadeIn();
 
-                $("#sectionone").hide();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
                 $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
@@ -849,10 +841,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardttg").hide();
                 $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
-
-                $("#sectionone").hide();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
 
                 $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();

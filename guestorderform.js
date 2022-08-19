@@ -30,16 +30,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").hide();
 
                 $("#personalsection").fadeIn();
-                document.getElementById("name").value = "";
-                document.getElementById("house").value = "";
-                document.getElementById("kampong").value = "";
-                document.getElementById("jalan").value = "";
-                document.getElementById("simpang").value = "";
-                $('input[name=district]').attr('checked', false);
-                document.getElementById("postal").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("contact_1").value = "";
-                document.getElementById("contact_2").value = "";
                 $("#personalNextBtn").fadeIn();
 
                 $("#sectionone").fadeIn();
@@ -136,16 +126,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").fadeIn()
 
                 $("#personalsection").fadeIn();
-                document.getElementById("name").value = "";
-                document.getElementById("house").value = "";
-                document.getElementById("kampong").value = "";
-                document.getElementById("jalan").value = "";
-                document.getElementById("simpang").value = "";
-                $('input[name=district]').attr('checked', false);
-                document.getElementById("postal").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("contact_1").value = "";
-                document.getElementById("contact_2").value = "";
                 $("#personalNextBtn").fadeIn();
 
                 $("#sectionone").fadeIn();
@@ -242,16 +222,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").fadeIn();
 
                 $("#personalsection").fadeIn();
-                document.getElementById("name").value = "";
-                document.getElementById("house").value = "";
-                document.getElementById("kampong").value = "";
-                document.getElementById("jalan").value = "";
-                document.getElementById("simpang").value = "";
-                $('input[name=district]').attr('checked', false);
-                document.getElementById("postal").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("contact_1").value = "";
-                document.getElementById("contact_2").value = "";
                 $("#personalNextBtn").fadeIn();
 
                 $("#sectionone").fadeIn();
@@ -348,16 +318,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").hide();
 
                 $("#personalsection").fadeIn();
-                document.getElementById("name").value = "";
-                document.getElementById("house").value = "";
-                document.getElementById("kampong").value = "";
-                document.getElementById("jalan").value = "";
-                document.getElementById("simpang").value = "";
-                $('input[name=district]').attr('checked', false);
-                document.getElementById("postal").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("contact_1").value = "";
-                document.getElementById("contact_2").value = "";
                 $("#personalNextBtn").fadeIn();
 
                 $("#sectionone").hide();
@@ -449,16 +409,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").hide();
 
                 $("#personalsection").fadeIn();
-                document.getElementById("name").value = "";
-                document.getElementById("house").value = "";
-                document.getElementById("kampong").value = "";
-                document.getElementById("jalan").value = "";
-                document.getElementById("simpang").value = "";
-                $('input[name=district]').attr('checked', false);
-                document.getElementById("postal").value = "";
-                document.getElementById("email").value = "";
-                document.getElementById("contact_1").value = "";
-                document.getElementById("contact_2").value = "";
                 $("#personalNextBtn").fadeIn();
 
                 $("#sectionone").hide();
@@ -563,7 +513,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").fadeIn();
                 $("#phcstandardtemb").hide();
 
-                $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
 
@@ -656,7 +605,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
 
-                $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
 
@@ -749,7 +697,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").hide()
                 $("#phcstandardtemb").fadeIn();
 
-                $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
 
@@ -842,7 +789,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
 
-                $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
 

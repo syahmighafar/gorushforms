@@ -1650,7 +1650,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#agreementsection").fadeIn();
             $("#submitBtn").fadeIn();
             $("#agreesubmitPrevBtn").fadeIn();
-
+            $("#ensure").hide();
+            
             document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
             document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
                 + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
@@ -1911,6 +1912,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#agreementsection").hide();
             $("#agreesubmitPrevBtn").hide();
             $("#submitBtn").hide();
+            $("#ensure").fadeIn();
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {

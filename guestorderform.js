@@ -1,16 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
-        var patientNumElement = document.getElementById('patientNumber');
-        var icNumberElement = document.getElementById('icnumber');
-
-        var patientMask = IMask(patientNumElement, {
-            mask: '{BN}00000000',
-        });
-
-        var icMask = IMask(icNumberElement, {
-            mask: '00000000',
-        });
-
         var createPharmacySheet = 1;
         var medicineDBGsheet = 1;
         var gsheet2 = 1;

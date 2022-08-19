@@ -21,30 +21,354 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#itemPrice").val(sum.toFixed(2));
         });
 
-        $('input[name=district]').change(function () {
-            if ($(this).val().length == 0) {
-                $("#mohhideimm").hide();
-                $("#mohhideexp").hide();
-                $("#mohimmidiate").hide();
-                $("#mohexpress").hide();
-                $("#mohstandard").hide();
+        $('input[name=products]').change(function () {
+            if ($(this).val() == "pharmacymoh") {
+                document.getElementById("personaldetailslabel").innerText = "Personal Patient Details";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Patient Details";
 
-                $("#jpmcexpressbm").hide();
-                $("#jpmcstandardbm").hide();
-                $("#jpmcstandardttg").hide();
-                $("#jpmcstandardkb").hide();
-                $("#jpmcstandardtemb").hide();
+                $("#bruHIMSNumberTemp").fadeIn();
+                $("#patientNumberTemp").hide();
 
-                $("#phcstandardkb").hide();
-                $("#phcstandardttg").hide();
-                $("#phcstandardbm").hide();
-                $("#phcstandardtemb").hide();
+                $("#personalsection").fadeIn();
+                document.getElementById("name").value = "";
+                document.getElementById("house").value = "";
+                document.getElementById("kampong").value = "";
+                document.getElementById("jalan").value = "";
+                document.getElementById("simpang").value = "";
+                $('input[name=district]').attr('checked', false);
+                document.getElementById("postal").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("contact_1").value = "";
+                document.getElementById("contact_2").value = "";
+                $("#personalNextBtn").fadeIn();
 
-                $("#sectionone").hide();
+                $("#personalNextBtn").hide();
+                $("#sectionone").fadeIn();
+                $("#sectiontwo").hide();
+                $("#sectionthree").hide();
+
+                $("#appointmentDistrictMOH").fadeIn();
+                $("#hcAreaMapAddress").fadeIn();
+                $("#clinicAddress").fadeIn();
+
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#jpmcpjsc").hide();
+
+                $("#sectionmohcharges").fadeIn();
+                $("#sectionjpmccharges").hide();
+                $("#sectionphccharges").hide();
+                $("#sectionlocalcharges").hide();
+                $("#paymentmethodarea").fadeIn();
+
+                document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
+                document.getElementById('dateofbirth').value = '';
+                $('input[name=icpassport]').attr('checked', false);
+                $("#icarea").hide();
+                document.getElementById('icnumber').value = '';
+                $("#passportarea").hide();
+                document.getElementById('passport').value = '';
+                $('input[name=districtAppointment]').attr('checked', false);
+                document.getElementById('healthCentreBM').value = '';
+                document.getElementById("healthCentreTTG").value = "";
+                document.getElementById("healthCentreTEMB").value = "";
+                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("mapSource").src = "";
+                $('input[name=jpmcpjsc]').attr('checked', false);
+
+                document.getElementById("grpTrack").value = "";
+                document.getElementById("GoRushReceivingCountry").value = '';
+                $('input[name=shipmentMethod]').attr('checked', false);
+                document.getElementById("ecommerce").value = "";
+                document.getElementById("commodities").value = "";
+                document.getElementById("currency").value = "";
+                document.getElementById("weight").value = "";
+                $('input[name=permit]').attr('checked', false);
+                $('input[name=itemContains]').attr('checked', false);
+                document.getElementById("Item-Description").value = "";
+                document.getElementById("Quantity").value = "";
+                document.getElementById("Total-Item-Price").value = "";
+                document.getElementById("itemPrice").value = "";
+
+                $('input[name=pickupordelivery]').attr('checked', false);
+                $("#pickupdatearea").hide();
+                document.getElementById("pickupdate").value = "";
+                $("#pickupaddressarea").hide();
+                document.getElementById("pickupaddress").value = "";
+                document.getElementById("productdescription").value = "";
+                document.getElementById("producttype").value = "";
+                $('input[name=productweight]').attr('checked', false);
+                $('input[name=codrequired]').attr('checked', false);
+                document.getElementById("codamount").value = "";
+                document.getElementById("receiverName").value = "";
+                document.getElementById("receiverHouse").value = "";
+                document.getElementById("receiverKampong").value = "";
+                document.getElementById("receiverJalan").value = "";
+                document.getElementById("receiverSimpang").value = "";
+                $('input[name=receiverDistrict]').attr('checked', false);
+                document.getElementById("receiverPostal").value = "";
+                document.getElementById("receiverEmail").value = "";
+                document.getElementById("receiverContact_1").value = "";
+
+                $('input[name=mohCharges]').attr('checked', false);
+                $('input[name=mohPayingPatient]').attr('checked', false);
+                $('input[name=jpmcCharges]').attr('checked', false);
+                $('input[name=jpmcPayingPatient]').attr('checked', false);
+                $('input[name=phcCharges]').attr('checked', false);
+                $('input[name=phcPayingPatient]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
+                document.getElementById("billto").value = "";
+                document.getElementById("paymentmethod").value = "";
+                document.getElementById("remarks").value = "";
+
+                document.getElementById("patientnumlabel").innerText = "Bru-HIMs Number:*";
+
+                $("#patientNumberTemp").attr("minlength", "");
+                $("#patientNumberTemp").attr("maxlength", "");
+            }
+
+            if ($(this).val() == "pharmacyjpmc") {
+                document.getElementById("personaldetailslabel").innerText = "Personal Patient Details";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Patient Details";
+                $("#bruHIMSNumberTemp").hide();
+                $("#patientNumberTemp").fadeIn()
+
+                $("#personalsection").fadeIn();
+                document.getElementById("name").value = "";
+                document.getElementById("house").value = "";
+                document.getElementById("kampong").value = "";
+                document.getElementById("jalan").value = "";
+                document.getElementById("simpang").value = "";
+                $('input[name=district]').attr('checked', false);
+                document.getElementById("postal").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("contact_1").value = "";
+                document.getElementById("contact_2").value = "";
+                $("#personalNextBtn").fadeIn();
+
+                $("#sectionone").fadeIn();
                 $("#sectiontwo").hide();
                 $("#sectionthree").hide();
 
                 $("#appointmentDistrictMOH").hide();
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#jpmcpjsc").fadeIn();
+
+                $("#sectionmohcharges").hide();
+                $("#sectionjpmccharges").fadeIn();
+                $("#sectionphccharges").hide();
+                $("#sectionlocalcharges").hide();
+                $("#paymentmethodarea").fadeIn();
+
+                document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
+                document.getElementById('dateofbirth').value = '';
+                $('input[name=icpassport]').attr('checked', false);
+                $("#icarea").hide();
+                document.getElementById('icnumber').value = '';
+                $("#passportarea").hide();
+                document.getElementById('passport').value = '';
+                $('input[name=districtAppointment]').attr('checked', false);
+                document.getElementById('healthCentreBM').value = '';
+                document.getElementById("healthCentreTTG").value = "";
+                document.getElementById("healthCentreTEMB").value = "";
+                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("mapSource").src = "";
+                $('input[name=jpmcpjsc]').attr('checked', false);
+
+                document.getElementById("grpTrack").value = "";
+                document.getElementById("GoRushReceivingCountry").value = '';
+                $('input[name=shipmentMethod]').attr('checked', false);
+                document.getElementById("ecommerce").value = "";
+                document.getElementById("commodities").value = "";
+                document.getElementById("currency").value = "";
+                document.getElementById("weight").value = "";
+                $('input[name=permit]').attr('checked', false);
+                $('input[name=itemContains]').attr('checked', false);
+                document.getElementById("Item-Description").value = "";
+                document.getElementById("Quantity").value = "";
+                document.getElementById("Total-Item-Price").value = "";
+                document.getElementById("itemPrice").value = "";
+
+                $('input[name=pickupordelivery]').attr('checked', false);
+                $("#pickupdatearea").hide();
+                document.getElementById("pickupdate").value = "";
+                $("#pickupaddressarea").hide();
+                document.getElementById("pickupaddress").value = "";
+                document.getElementById("productdescription").value = "";
+                document.getElementById("producttype").value = "";
+                $('input[name=productweight]').attr('checked', false);
+                $('input[name=codrequired]').attr('checked', false);
+                document.getElementById("codamount").value = "";
+                document.getElementById("receiverName").value = "";
+                document.getElementById("receiverHouse").value = "";
+                document.getElementById("receiverKampong").value = "";
+                document.getElementById("receiverJalan").value = "";
+                document.getElementById("receiverSimpang").value = "";
+                $('input[name=receiverDistrict]').attr('checked', false);
+                document.getElementById("receiverPostal").value = "";
+                document.getElementById("receiverEmail").value = "";
+                document.getElementById("receiverContact_1").value = "";
+
+                $('input[name=mohCharges]').attr('checked', false);
+                $('input[name=mohPayingPatient]').attr('checked', false);
+                $('input[name=jpmcCharges]').attr('checked', false);
+                $('input[name=jpmcPayingPatient]').attr('checked', false);
+                $('input[name=phcCharges]').attr('checked', false);
+                $('input[name=phcPayingPatient]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
+                document.getElementById("billto").value = "";
+                document.getElementById("paymentmethod").value = "";
+                document.getElementById("remarks").value = "";
+
+                document.getElementById("patientnumlabel").innerText = "Patient Number:*";
+
+                $("#patientNumberTemp").attr("minlength", "6");
+                $("#patientNumberTemp").attr("maxlength", "8");
+            }
+
+            if ($(this).val() == "pharmacyphc") {
+                document.getElementById("personaldetailslabel").innerText = "Personal Patient Details";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Patient Details";
+                $("#bruHIMSNumberTemp").hide();
+                $("#patientNumberTemp").fadeIn();
+
+                $("#personalsection").fadeIn();
+                document.getElementById("name").value = "";
+                document.getElementById("house").value = "";
+                document.getElementById("kampong").value = "";
+                document.getElementById("jalan").value = "";
+                document.getElementById("simpang").value = "";
+                $('input[name=district]').attr('checked', false);
+                document.getElementById("postal").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("contact_1").value = "";
+                document.getElementById("contact_2").value = "";
+                $("#personalNextBtn").fadeIn();
+
+                $("#sectionone").fadeIn();
+                $("#sectiontwo").hide();
+                $("#sectionthree").hide();
+
+                $("#appointmentDistrictMOH").hide();
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#jpmcpjsc").hide();
+
+                $("#sectionmohcharges").hide();
+                $("#sectionjpmccharges").hide();
+                $("#sectionphccharges").fadeIn();
+                $("#sectionlocalcharges").hide();
+                $("#paymentmethodarea").fadeIn();
+
+                document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
+                document.getElementById('dateofbirth').value = '';
+                $('input[name=icpassport]').attr('checked', false);
+                $("#icarea").hide();
+                document.getElementById('icnumber').value = '';
+                $("#passportarea").hide();
+                document.getElementById('passport').value = '';
+                $('input[name=districtAppointment]').attr('checked', false);
+                document.getElementById('healthCentreBM').value = '';
+                document.getElementById("healthCentreTTG").value = "";
+                document.getElementById("healthCentreTEMB").value = "";
+                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("mapSource").src = "";
+                $('input[name=jpmcpjsc]').attr('checked', false);
+
+                document.getElementById("grpTrack").value = "";
+                document.getElementById("GoRushReceivingCountry").value = '';
+                $('input[name=shipmentMethod]').attr('checked', false);
+                document.getElementById("ecommerce").value = "";
+                document.getElementById("commodities").value = "";
+                document.getElementById("currency").value = "";
+                document.getElementById("weight").value = "";
+                $('input[name=permit]').attr('checked', false);
+                $('input[name=itemContains]').attr('checked', false);
+                document.getElementById("Item-Description").value = "";
+                document.getElementById("Quantity").value = "";
+                document.getElementById("Total-Item-Price").value = "";
+                document.getElementById("itemPrice").value = "";
+
+                $('input[name=pickupordelivery]').attr('checked', false);
+                $("#pickupdatearea").hide();
+                document.getElementById("pickupdate").value = "";
+                $("#pickupaddressarea").hide();
+                document.getElementById("pickupaddress").value = "";
+                document.getElementById("productdescription").value = "";
+                document.getElementById("producttype").value = "";
+                $('input[name=productweight]').attr('checked', false);
+                $('input[name=codrequired]').attr('checked', false);
+                document.getElementById("codamount").value = "";
+                document.getElementById("receiverName").value = "";
+                document.getElementById("receiverHouse").value = "";
+                document.getElementById("receiverKampong").value = "";
+                document.getElementById("receiverJalan").value = "";
+                document.getElementById("receiverSimpang").value = "";
+                $('input[name=receiverDistrict]').attr('checked', false);
+                document.getElementById("receiverPostal").value = "";
+                document.getElementById("receiverEmail").value = "";
+                document.getElementById("receiverContact_1").value = "";
+
+                $('input[name=mohCharges]').attr('checked', false);
+                $('input[name=mohPayingPatient]').attr('checked', false);
+                $('input[name=jpmcCharges]').attr('checked', false);
+                $('input[name=jpmcPayingPatient]').attr('checked', false);
+                $('input[name=phcCharges]').attr('checked', false);
+                $('input[name=phcPayingPatient]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
+                document.getElementById("billto").value = "";
+                document.getElementById("paymentmethod").value = "";
+                document.getElementById("remarks").value = "";
+
+                document.getElementById("patientnumlabel").innerText = "Patient Number:*";
+
+                $("#patientNumberTemp").attr("minlength", "");
+                $("#patientNumberTemp").attr("maxlength", "");
+            }
+
+            if ($(this).val() == "grp") {
+                document.getElementById("personaldetailslabel").innerText = "Personal Buyer Details";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Buyer Details";
+                $("#bruHIMSNumberTemp").hide();
+                $("#patientNumberTemp").hide();
+
+                $("#personalsection").fadeIn();
+                document.getElementById("name").value = "";
+                document.getElementById("house").value = "";
+                document.getElementById("kampong").value = "";
+                document.getElementById("jalan").value = "";
+                document.getElementById("simpang").value = "";
+                $('input[name=district]').attr('checked', false);
+                document.getElementById("postal").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("contact_1").value = "";
+                document.getElementById("contact_2").value = "";
+                $("#personalNextBtn").fadeIn();
+
+                $("#sectionone").hide();
+                $("#sectiontwo").fadeIn();
+                $("#sectionthree").hide();
+
+                $("#appointmentDistrictMOH").hide();
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
 
@@ -56,9 +380,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
-                $('input[name=products]').attr('checked', false);
-
                 document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
                 document.getElementById('dateofbirth').value = '';
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
@@ -67,45 +391,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
                 $('input[name=districtAppointment]').attr('checked', false);
                 document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = '';
-                document.getElementById("healthCentreTEMB").value = '';
-                document.getElementById("healthCentreKB").value = '';
+                document.getElementById("healthCentreTTG").value = "";
+                document.getElementById("healthCentreTEMB").value = "";
+                document.getElementById("healthCentreKB").value = "";
                 document.getElementById("mapSource").src = "";
                 $('input[name=jpmcpjsc]').attr('checked', false);
 
-                document.getElementById("grpTrack").value = '';
+                document.getElementById("grpTrack").value = "";
                 document.getElementById("GoRushReceivingCountry").value = '';
                 $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = '';
-                document.getElementById("commodities").value = '';
-                document.getElementById("currency").value = '';
-                document.getElementById("weight").value = '';
+                document.getElementById("ecommerce").value = "";
+                document.getElementById("commodities").value = "";
+                document.getElementById("currency").value = "";
+                document.getElementById("weight").value = "";
                 $('input[name=permit]').attr('checked', false);
                 $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = '';
-                document.getElementById("Quantity").value = '';
-                document.getElementById("Total-Item-Price").value = '';
-                document.getElementById("itemPrice").value = '';
+                document.getElementById("Item-Description").value = "";
+                document.getElementById("Quantity").value = "";
+                document.getElementById("Total-Item-Price").value = "";
+                document.getElementById("itemPrice").value = "";
 
                 $('input[name=pickupordelivery]').attr('checked', false);
                 $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = '';
+                document.getElementById("pickupdate").value = "";
                 $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = '';
-                document.getElementById("productdescription").value = '';
-                document.getElementById("producttype").value = '';
+                document.getElementById("pickupaddress").value = "";
+                document.getElementById("productdescription").value = "";
+                document.getElementById("producttype").value = "";
                 $('input[name=productweight]').attr('checked', false);
                 $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = '';
-                document.getElementById("receiverName").value = '';
-                document.getElementById("receiverHouse").value = '';
-                document.getElementById("receiverKampong").value = '';
-                document.getElementById("receiverJalan").value = '';
-                document.getElementById("receiverSimpang").value = '';
+                document.getElementById("codamount").value = "";
+                document.getElementById("receiverName").value = "";
+                document.getElementById("receiverHouse").value = "";
+                document.getElementById("receiverKampong").value = "";
+                document.getElementById("receiverJalan").value = "";
+                document.getElementById("receiverSimpang").value = "";
                 $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = '';
-                document.getElementById("receiverEmail").value = '';
-                document.getElementById("receiverContact_1").value = '';
+                document.getElementById("receiverPostal").value = "";
+                document.getElementById("receiverEmail").value = "";
+                document.getElementById("receiverContact_1").value = "";
 
                 $('input[name=mohCharges]').attr('checked', false);
                 $('input[name=mohPayingPatient]').attr('checked', false);
@@ -114,11 +438,114 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=phcCharges]').attr('checked', false);
                 $('input[name=phcPayingPatient]').attr('checked', false);
                 $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = '';
-                document.getElementById("paymentmethod").value = '';
-                document.getElementById("remarks").value = '';
+                document.getElementById("billto").value = "";
+                document.getElementById("paymentmethod").value = "";
+                document.getElementById("remarks").value = "";
             }
 
+            if ($(this).val() == "localdelivery") {
+                document.getElementById("personaldetailslabel").innerText = "Personal Sender Details";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Sender Details";
+                $("#bruHIMSNumberTemp").hide();
+                $("#patientNumberTemp").hide();
+
+                $("#personalsection").fadeIn();
+                document.getElementById("name").value = "";
+                document.getElementById("house").value = "";
+                document.getElementById("kampong").value = "";
+                document.getElementById("jalan").value = "";
+                document.getElementById("simpang").value = "";
+                $('input[name=district]').attr('checked', false);
+                document.getElementById("postal").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("contact_1").value = "";
+                document.getElementById("contact_2").value = "";
+                $("#personalNextBtn").fadeIn();
+
+                $("#sectionone").hide();
+                $("#sectiontwo").hide();
+                $("#sectionthree").fadeIn();
+
+                $("#appointmentDistrictMOH").hide();
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#hcAreaMapAddress").hide();
+                $("#clinicAddress").hide();
+
+                $("#jpmcpjsc").hide();
+
+                $("#sectionmohcharges").hide();
+                $("#sectionjpmccharges").hide();
+                $("#sectionphccharges").hide();
+                $("#sectionlocalcharges").fadeIn();
+                $("#paymentmethodarea").fadeIn();
+
+                document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
+                document.getElementById('dateofbirth').value = '';
+                $('input[name=icpassport]').attr('checked', false);
+                $("#icarea").hide();
+                document.getElementById('icnumber').value = '';
+                $("#passportarea").hide();
+                document.getElementById('passport').value = '';
+                $('input[name=districtAppointment]').attr('checked', false);
+                document.getElementById('healthCentreBM').value = '';
+                document.getElementById("healthCentreTTG").value = "";
+                document.getElementById("healthCentreTEMB").value = "";
+                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("mapSource").src = "";
+                $('input[name=jpmcpjsc]').attr('checked', false);
+
+                document.getElementById("grpTrack").value = "";
+                document.getElementById("GoRushReceivingCountry").value = '';
+                $('input[name=shipmentMethod]').attr('checked', false);
+                document.getElementById("ecommerce").value = "";
+                document.getElementById("commodities").value = "";
+                document.getElementById("currency").value = "";
+                document.getElementById("weight").value = "";
+                $('input[name=permit]').attr('checked', false);
+                $('input[name=itemContains]').attr('checked', false);
+                document.getElementById("Item-Description").value = "";
+                document.getElementById("Quantity").value = "";
+                document.getElementById("Total-Item-Price").value = "";
+                document.getElementById("itemPrice").value = "";
+
+                $('input[name=pickupordelivery]').attr('checked', false);
+                $("#pickupdatearea").hide();
+                document.getElementById("pickupdate").value = "";
+                $("#pickupaddressarea").hide();
+                document.getElementById("pickupaddress").value = "";
+                document.getElementById("productdescription").value = "";
+                document.getElementById("producttype").value = "";
+                $('input[name=productweight]').attr('checked', false);
+                $('input[name=codrequired]').attr('checked', false);
+                document.getElementById("codamount").value = "";
+                document.getElementById("receiverName").value = "";
+                document.getElementById("receiverHouse").value = "";
+                document.getElementById("receiverKampong").value = "";
+                document.getElementById("receiverJalan").value = "";
+                document.getElementById("receiverSimpang").value = "";
+                $('input[name=receiverDistrict]').attr('checked', false);
+                document.getElementById("receiverPostal").value = "";
+                document.getElementById("receiverEmail").value = "";
+                document.getElementById("receiverContact_1").value = "";
+
+                $('input[name=mohCharges]').attr('checked', false);
+                $('input[name=mohPayingPatient]').attr('checked', false);
+                $('input[name=jpmcCharges]').attr('checked', false);
+                $('input[name=jpmcPayingPatient]').attr('checked', false);
+                $('input[name=phcCharges]').attr('checked', false);
+                $('input[name=phcPayingPatient]').attr('checked', false);
+                $('input[name=localCharges]').attr('checked', false);
+                document.getElementById("billto").value = "";
+                document.getElementById("paymentmethod").value = "";
+                document.getElementById("remarks").value = "";
+            }
+        });
+
+        $('input[name=district]').change(function () {
             if ($(this).val() == "Brunei Muara") {
                 $("#mohhideimm").fadeIn();
                 $("#mohhideexp").fadeIn();
@@ -137,10 +564,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").fadeIn();
                 $("#phcstandardtemb").hide();
 
-                $("#sectionone").hide();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
                 $("#appointmentDistrictMOH").hide();
                 $("#hcAreaMapAddress").hide();
                 $("#clinicAddress").hide();
@@ -153,9 +576,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
-                $('input[name=products]').attr('checked', false);
-
                 document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
                 document.getElementById('dateofbirth').value = '';
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
@@ -250,9 +673,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
-                $('input[name=products]').attr('checked', false);
-
                 document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
                 document.getElementById('dateofbirth').value = '';
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
@@ -347,9 +770,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
-                $('input[name=products]').attr('checked', false);
-
                 document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
                 document.getElementById('dateofbirth').value = '';
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
@@ -444,9 +867,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectionlocalcharges").hide();
                 $("#paymentmethodarea").hide();
 
-                $('input[name=products]').attr('checked', false);
-
                 document.getElementById('patientNumber').value = '';
+                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumberTemp').value = '';
                 document.getElementById('dateofbirth').value = '';
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
@@ -548,509 +971,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productNextBtn").fadeIn();
                 $("#productsPrevBtn").fadeIn();
                 $("#productsection").fadeIn();
-            }
-        });
-
-        $('input[name=products]').change(function () {
-            if ($(this).val().length == 0) {
-                $("#sectionone").hide();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
-                $("#appointmentDistrictMOH").hide();
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").hide();
-
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('dateofbirth').value = '';
-                $('input[name=icpassport]').attr('checked', false);
-                $("#icarea").hide();
-                document.getElementById('icnumber').value = '';
-                $("#passportarea").hide();
-                document.getElementById('passport').value = '';
-                $('input[name=districtAppointment]').attr('checked', false);
-                document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
-                document.getElementById("mapSource").src = "";
-                $('input[name=jpmcpjsc]').attr('checked', false);
-
-                document.getElementById("grpTrack").value = "";
-                document.getElementById("GoRushReceivingCountry").value = '';
-                $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
-                $('input[name=permit]').attr('checked', false);
-                $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
-
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
-                $('input[name=productweight]').attr('checked', false);
-                $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
-
-                $('input[name=mohCharges]').attr('checked', false);
-                $('input[name=mohPayingPatient]').attr('checked', false);
-                $('input[name=jpmcCharges]').attr('checked', false);
-                $('input[name=jpmcPayingPatient]').attr('checked', false);
-                $('input[name=phcCharges]').attr('checked', false);
-                $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = "";
-                document.getElementById("paymentmethod").value = "";
-                document.getElementById("remarks").value = "";
-            }
-
-            if ($(this).val() == "pharmacymoh") {
-                $("#sectionone").fadeIn();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
-                $("#appointmentDistrictMOH").fadeIn();
-                $("#hcAreaMapAddress").fadeIn();
-                $("#clinicAddress").fadeIn();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").fadeIn();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").fadeIn();
-
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('dateofbirth').value = '';
-                $('input[name=icpassport]').attr('checked', false);
-                $("#icarea").hide();
-                document.getElementById('icnumber').value = '';
-                $("#passportarea").hide();
-                document.getElementById('passport').value = '';
-                $('input[name=districtAppointment]').attr('checked', false);
-                document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
-                document.getElementById("mapSource").src = "";
-                $('input[name=jpmcpjsc]').attr('checked', false);
-
-                document.getElementById("grpTrack").value = "";
-                document.getElementById("GoRushReceivingCountry").value = '';
-                $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
-                $('input[name=permit]').attr('checked', false);
-                $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
-
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
-                $('input[name=productweight]').attr('checked', false);
-                $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
-
-                $('input[name=mohCharges]').attr('checked', false);
-                $('input[name=mohPayingPatient]').attr('checked', false);
-                $('input[name=jpmcCharges]').attr('checked', false);
-                $('input[name=jpmcPayingPatient]').attr('checked', false);
-                $('input[name=phcCharges]').attr('checked', false);
-                $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = "";
-                document.getElementById("paymentmethod").value = "";
-                document.getElementById("remarks").value = "";
-
-                document.getElementById("patientnumlabel").innerText = "Bru-HIMs Number:*";
-                $("#patientNumber").attr("placeholder", "Enter Bru-HIMs Number");
-
-                $("#patientNumber").attr("minlength", "");
-                $("#patientNumber").attr("maxlength", "");
-            }
-
-            if ($(this).val() == "pharmacyjpmc") {
-                $("#sectionone").fadeIn();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
-                $("#appointmentDistrictMOH").hide();
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").fadeIn();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").fadeIn();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").fadeIn();
-
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('dateofbirth').value = '';
-                $('input[name=icpassport]').attr('checked', false);
-                $("#icarea").hide();
-                document.getElementById('icnumber').value = '';
-                $("#passportarea").hide();
-                document.getElementById('passport').value = '';
-                $('input[name=districtAppointment]').attr('checked', false);
-                document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
-                document.getElementById("mapSource").src = "";
-                $('input[name=jpmcpjsc]').attr('checked', false);
-
-                document.getElementById("grpTrack").value = "";
-                document.getElementById("GoRushReceivingCountry").value = '';
-                $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
-                $('input[name=permit]').attr('checked', false);
-                $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
-
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
-                $('input[name=productweight]').attr('checked', false);
-                $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
-
-                $('input[name=mohCharges]').attr('checked', false);
-                $('input[name=mohPayingPatient]').attr('checked', false);
-                $('input[name=jpmcCharges]').attr('checked', false);
-                $('input[name=jpmcPayingPatient]').attr('checked', false);
-                $('input[name=phcCharges]').attr('checked', false);
-                $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = "";
-                document.getElementById("paymentmethod").value = "";
-                document.getElementById("remarks").value = "";
-
-                document.getElementById("patientnumlabel").innerText = "Patient Number:*";
-                $("#patientNumber").attr("placeholder", "Enter Patient Number");
-
-                $("#patientNumber").attr("minlength", "6");
-                $("#patientNumber").attr("maxlength", "8");
-            }
-
-            if ($(this).val() == "pharmacyphc") {
-                $("#sectionone").fadeIn();
-                $("#sectiontwo").hide();
-                $("#sectionthree").hide();
-
-                $("#appointmentDistrictMOH").hide();
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").fadeIn();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").fadeIn();
-
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('dateofbirth').value = '';
-                $('input[name=icpassport]').attr('checked', false);
-                $("#icarea").hide();
-                document.getElementById('icnumber').value = '';
-                $("#passportarea").hide();
-                document.getElementById('passport').value = '';
-                $('input[name=districtAppointment]').attr('checked', false);
-                document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
-                document.getElementById("mapSource").src = "";
-                $('input[name=jpmcpjsc]').attr('checked', false);
-
-                document.getElementById("grpTrack").value = "";
-                document.getElementById("GoRushReceivingCountry").value = '';
-                $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
-                $('input[name=permit]').attr('checked', false);
-                $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
-
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
-                $('input[name=productweight]').attr('checked', false);
-                $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
-
-                $('input[name=mohCharges]').attr('checked', false);
-                $('input[name=mohPayingPatient]').attr('checked', false);
-                $('input[name=jpmcCharges]').attr('checked', false);
-                $('input[name=jpmcPayingPatient]').attr('checked', false);
-                $('input[name=phcCharges]').attr('checked', false);
-                $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = "";
-                document.getElementById("paymentmethod").value = "";
-                document.getElementById("remarks").value = "";
-
-                document.getElementById("patientnumlabel").innerText = "Patient Number:*";
-                $("#patientNumber").attr("placeholder", "Enter Patient Number");
-
-                $("#patientNumber").attr("minlength", "");
-                $("#patientNumber").attr("maxlength", "");
-            }
-
-            if ($(this).val() == "grp") {
-                $("#sectionone").hide();
-                $("#sectiontwo").fadeIn();
-                $("#sectionthree").hide();
-
-                $("#appointmentDistrictMOH").hide();
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").hide();
-
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('dateofbirth').value = '';
-                $('input[name=icpassport]').attr('checked', false);
-                $("#icarea").hide();
-                document.getElementById('icnumber').value = '';
-                $("#passportarea").hide();
-                document.getElementById('passport').value = '';
-                $('input[name=districtAppointment]').attr('checked', false);
-                document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
-                document.getElementById("mapSource").src = "";
-                $('input[name=jpmcpjsc]').attr('checked', false);
-
-                document.getElementById("grpTrack").value = "";
-                document.getElementById("GoRushReceivingCountry").value = '';
-                $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
-                $('input[name=permit]').attr('checked', false);
-                $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
-
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
-                $('input[name=productweight]').attr('checked', false);
-                $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
-
-                $('input[name=mohCharges]').attr('checked', false);
-                $('input[name=mohPayingPatient]').attr('checked', false);
-                $('input[name=jpmcCharges]').attr('checked', false);
-                $('input[name=jpmcPayingPatient]').attr('checked', false);
-                $('input[name=phcCharges]').attr('checked', false);
-                $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = "";
-                document.getElementById("paymentmethod").value = "";
-                document.getElementById("remarks").value = "";
-            }
-
-            if ($(this).val() == "localdelivery") {
-                $("#sectionone").hide();
-                $("#sectiontwo").hide();
-                $("#sectionthree").fadeIn();
-
-                $("#appointmentDistrictMOH").hide();
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").fadeIn();
-                $("#paymentmethodarea").fadeIn();
-
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('dateofbirth').value = '';
-                $('input[name=icpassport]').attr('checked', false);
-                $("#icarea").hide();
-                document.getElementById('icnumber').value = '';
-                $("#passportarea").hide();
-                document.getElementById('passport').value = '';
-                $('input[name=districtAppointment]').attr('checked', false);
-                document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
-                document.getElementById("mapSource").src = "";
-                $('input[name=jpmcpjsc]').attr('checked', false);
-
-                document.getElementById("grpTrack").value = "";
-                document.getElementById("GoRushReceivingCountry").value = '';
-                $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
-                $('input[name=permit]').attr('checked', false);
-                $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
-
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
-                $('input[name=productweight]').attr('checked', false);
-                $('input[name=codrequired]').attr('checked', false);
-                document.getElementById("codamount").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
-
-                $('input[name=mohCharges]').attr('checked', false);
-                $('input[name=mohPayingPatient]').attr('checked', false);
-                $('input[name=jpmcCharges]').attr('checked', false);
-                $('input[name=jpmcPayingPatient]').attr('checked', false);
-                $('input[name=phcCharges]').attr('checked', false);
-                $('input[name=phcPayingPatient]').attr('checked', false);
-                $('input[name=localCharges]').attr('checked', false);
-                document.getElementById("billto").value = "";
-                document.getElementById("paymentmethod").value = "";
-                document.getElementById("remarks").value = "";
             }
         });
 
@@ -1813,14 +1733,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("productNextBtn").addEventListener("click", function () {
-            if (($("input[name=products]").val().length != 0)) {
-                $("#productNextBtn").hide();
-                $("#productsection").hide();
-                $("#productsPrevBtn").hide();
-                $("#chargessection").fadeIn();
-                $("#chargesNextBtn").fadeIn();
-                $("#chargesPrevBtn").fadeIn();
+            if (($('input[name=products]:checked').val() == "pharmacymoh")) {
+                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
             }
+
+            if (($('input[name=products]:checked').val() == "pharmacyjpmc")) {
+                document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
+            }
+
+            if (($('input[name=products]:checked').val() == "pharmacyphc")) {
+                document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
+            }
+
+            $("#productNextBtn").hide();
+            $("#productsection").hide();
+            $("#productsPrevBtn").hide();
+            $("#chargessection").fadeIn();
+            $("#chargesNextBtn").fadeIn();
+            $("#chargesPrevBtn").fadeIn();
         });
 
         document.getElementById("chargesNextBtn").addEventListener("click", function () {

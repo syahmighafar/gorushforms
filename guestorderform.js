@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
-        let patientNumElement = document.getElementById('patientNumber');
-        let icNumberElement = document.getElementById('icnumber');
+        var patientNumElement = document.getElementById('patientNumber');
+        var icNumberElement = document.getElementById('icnumber');
 
         var patientMask = IMask(patientNumElement, {
             mask: '{BN}00000000',

@@ -513,17 +513,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").fadeIn();
                 $("#phcstandardtemb").hide();
 
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").hide();
-
                 document.getElementById('patientNumber').value = '';
                 document.getElementById('bruHIMSNumberTemp').value = '';
                 document.getElementById('patientNumberTemp').value = '';
@@ -604,17 +593,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardttg").fadeIn();
                 $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").hide();
 
                 document.getElementById('patientNumber').value = '';
                 document.getElementById('bruHIMSNumberTemp').value = '';
@@ -697,17 +675,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").hide()
                 $("#phcstandardtemb").fadeIn();
 
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").hide();
-
                 document.getElementById('patientNumber').value = '';
                 document.getElementById('bruHIMSNumberTemp').value = '';
                 document.getElementById('patientNumberTemp').value = '';
@@ -788,17 +755,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardttg").hide();
                 $("#phcstandardbm").hide();
                 $("#phcstandardtemb").hide();
-
-                $("#hcAreaMapAddress").hide();
-                $("#clinicAddress").hide();
-
-                $("#jpmcpjsc").hide();
-
-                $("#sectionmohcharges").hide();
-                $("#sectionjpmccharges").hide();
-                $("#sectionphccharges").hide();
-                $("#sectionlocalcharges").hide();
-                $("#paymentmethodarea").hide();
 
                 document.getElementById('patientNumber').value = '';
                 document.getElementById('bruHIMSNumberTemp').value = '';

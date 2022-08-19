@@ -23,8 +23,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('input[name=products]').change(function () {
             if ($(this).val() == "pharmacymoh") {
-                document.getElementById("personaldetailslabel").innerText = "Personal Patient Details";
-                document.getElementById("personaldetailslabelsum").innerText = "Personal Patient Details";
+                document.getElementById("personaldetailslabel").innerText = "Personal Details (Patient)";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Patient)";
 
                 $("#bruHIMSNumberTemp").fadeIn();
                 $("#patientNumberTemp").hide();
@@ -131,8 +131,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "pharmacyjpmc") {
-                document.getElementById("personaldetailslabel").innerText = "Personal Patient Details";
-                document.getElementById("personaldetailslabelsum").innerText = "Personal Patient Details";
+                document.getElementById("personaldetailslabel").innerText = "Personal Details (Patient)";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Patient)";
                 $("#bruHIMSNumberTemp").hide();
                 $("#patientNumberTemp").fadeIn()
 
@@ -237,8 +237,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "pharmacyphc") {
-                document.getElementById("personaldetailslabel").innerText = "Personal Patient Details";
-                document.getElementById("personaldetailslabelsum").innerText = "Personal Patient Details";
+                document.getElementById("personaldetailslabel").innerText = "Personal Details (Patient)";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Patient)";
                 $("#bruHIMSNumberTemp").hide();
                 $("#patientNumberTemp").fadeIn();
 
@@ -343,8 +343,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "grp") {
-                document.getElementById("personaldetailslabel").innerText = "Personal Buyer Details";
-                document.getElementById("personaldetailslabelsum").innerText = "Personal Buyer Details";
+                document.getElementById("personaldetailslabel").innerText = "Personal Details (Buyer)";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Buyer)";
                 $("#bruHIMSNumberTemp").hide();
                 $("#patientNumberTemp").hide();
 
@@ -444,8 +444,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "localdelivery") {
-                document.getElementById("personaldetailslabel").innerText = "Personal Sender Details";
-                document.getElementById("personaldetailslabelsum").innerText = "Personal Sender Details";
+                document.getElementById("personaldetailslabel").innerText = "Personal Details (Sender)";
+                document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Sender)";
                 $("#bruHIMSNumberTemp").hide();
                 $("#patientNumberTemp").hide();
 

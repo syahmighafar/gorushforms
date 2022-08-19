@@ -42,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("contact_2").value = "";
                 $("#personalNextBtn").fadeIn();
 
-                $("#personalNextBtn").hide();
                 $("#sectionone").fadeIn();
                 $("#sectiontwo").hide();
                 $("#sectionthree").hide();

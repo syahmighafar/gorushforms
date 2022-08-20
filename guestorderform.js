@@ -2529,7 +2529,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (($('input[name=mohCharges]:checked').val() == "Standard")) {
                     document.getElementById('price').value = '3';
                     var deliveryTypeCode = "STD";
-                    document.getElementById("deliveryType").value = deliveryTypeCode;
+                    document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Express")) {

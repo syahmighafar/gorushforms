@@ -117,6 +117,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 $("#patientNumberTemp").attr("minlength", "");
                 $("#patientNumberTemp").attr("maxlength", "");
+
+                document.getElementById("name").focus();
             }
 
             if ($(this).val() == "pharmacyjpmc") {
@@ -213,6 +215,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 $("#patientNumberTemp").attr("minlength", "6");
                 $("#patientNumberTemp").attr("maxlength", "8");
+
+                document.getElementById("name").focus();
             }
 
             if ($(this).val() == "pharmacyphc") {
@@ -309,6 +313,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 $("#patientNumberTemp").attr("minlength", "");
                 $("#patientNumberTemp").attr("maxlength", "");
+
+                document.getElementById("name").focus();
             }
 
             if ($(this).val() == "grp") {
@@ -400,6 +406,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
+
+                document.getElementById("name").focus();
             }
 
             if ($(this).val() == "localdelivery") {
@@ -491,6 +499,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
+
+                document.getElementById("name").focus();
             }
         });
 
@@ -861,6 +871,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productNextBtn").fadeIn();
                 $("#productsPrevBtn").fadeIn();
                 $("#productsection").fadeIn();
+
+                document.getElementById("productsection").focus();
             }
         });
 
@@ -1641,6 +1653,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#chargessection").fadeIn();
             $("#chargesNextBtn").fadeIn();
             $("#chargesPrevBtn").fadeIn();
+
+            document.getElementById("chargessection").focus();
         });
 
         document.getElementById("chargesNextBtn").addEventListener("click", function () {
@@ -1679,15 +1693,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("buyerName").value = "";
                 if (($('input[name=mohCharges]:checked').val() == "Standard")) {
                     document.getElementById('price').value = '3';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Express")) {
                     document.getElementById('price').value = '5';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-4 Working Days</b>";
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
                     document.getElementById('price').value = '20';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within 3 Hours</b>";
                 }
+                $("#deliveryDurationsum").fadeIn();
                 $("#productSumGRP").hide();
                 $("#productSumGD").hide();
                 $("#productSumPharmacy").fadeIn();
@@ -1713,23 +1731,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("buyerName").value = "";
                 if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
                     document.getElementById('price').value = '5';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-4 Working Days</b>";
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '3';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '7';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '10';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
+                $("#deliveryDurationsum").fadeIn();
                 $("#productSumGRP").hide();
                 $("#productSumGD").hide();
                 $("#productSumPharmacy").fadeIn();
@@ -1753,19 +1777,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("buyerName").value = "";
                 if (($('input[name=phcCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '3';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '5';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '7';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '10';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
                 }
+                $("#deliveryDurationsum").fadeIn();
                 $("#productSumGRP").hide();
                 $("#productSumGD").hide();
                 $("#productSumPharmacy").fadeIn();
@@ -1786,6 +1815,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($('input[name=products]:checked').val() == "grp")) {
+                $("#deliveryDurationsum").hide();
                 var codeN = "/GRP";
                 var conN = document.getElementById("name").value;
                 document.getElementById("buyerName").value = conN + codeN;
@@ -1814,42 +1844,59 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("buyerName").value = "";
                 if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '4';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '10';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '12';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                     document.getElementById('price').value = '5';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
                     document.getElementById('price').value = '8';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
                     document.getElementById('price').value = '12';
+                    document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
+                    $("#deliveryDurationsum").fadeIn();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                     document.getElementById('price').value = '3';
+                    $("#deliveryDurationsum").hide();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                     document.getElementById('price').value = '5';
+                    $("#deliveryDurationsum").hide();
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                     document.getElementById('price').value = '7';
+                    $("#deliveryDurationsum").hide();
                 }
                 $("#productSumGRP").hide();
                 $("#productSumGD").fadeIn();
@@ -1885,6 +1932,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
+
+            document.getElementById("agreementsection").focus();
         });
 
         document.getElementById("productsPrevBtn").addEventListener("click", function () {
@@ -1894,6 +1943,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#productselectionsection").fadeIn();
             $("#personalsection").fadeIn();
             $("#personalNextBtn").fadeIn();
+
+            document.getElementById("personalsection").focus();
         });
 
         document.getElementById("chargesPrevBtn").addEventListener("click", function () {
@@ -1903,6 +1954,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#productsection").fadeIn();
             $("#productNextBtn").fadeIn();
             $("#productsPrevBtn").fadeIn();
+
+            document.getElementById("productsection").focus();
         });
 
         document.getElementById("agreesubmitPrevBtn").addEventListener("click", function () {
@@ -1913,6 +1966,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#agreesubmitPrevBtn").hide();
             $("#submitBtn").hide();
             $("#ensure").fadeIn();
+
+            document.getElementById("chargessection").focus();
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {
@@ -1953,7 +2008,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             let dateSubmitted = date + ' ' + time;
 
-            document.getElementById("dateSubmitted").value = dateSubmitted;
+            document.getElementById("dateSubmitted").value = moment().format('DD-MM-YYYY h:mm a');;
+
+            document.getElementById("finalsubmitteddate").innerText = moment().format('Do MMMM YYYY, h:mm a');
 
             //getCompletionDate
             var todaysDate = new Date();

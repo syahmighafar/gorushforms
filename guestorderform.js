@@ -872,7 +872,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productsPrevBtn").fadeIn();
                 $("#productsection").fadeIn();
 
-                document.getElementById("ensure").focus();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
 
@@ -1654,7 +1654,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#chargesNextBtn").fadeIn();
             $("#chargesPrevBtn").fadeIn();
 
-            document.getElementById("ensure").focus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         document.getElementById("chargesNextBtn").addEventListener("click", function () {
@@ -1933,7 +1933,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
 
-            document.getElementById("personaldetailslabelsum").focus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         document.getElementById("productsPrevBtn").addEventListener("click", function () {
@@ -1944,7 +1944,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#personalsection").fadeIn();
             $("#personalNextBtn").fadeIn();
 
-            document.getElementById("ensure").focus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         document.getElementById("chargesPrevBtn").addEventListener("click", function () {
@@ -1955,7 +1955,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#productNextBtn").fadeIn();
             $("#productsPrevBtn").fadeIn();
 
-            document.getElementById("ensure").focus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         document.getElementById("agreesubmitPrevBtn").addEventListener("click", function () {
@@ -1967,7 +1967,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#submitBtn").hide();
             $("#ensure").fadeIn();
 
-            document.getElementById("ensure").focus();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         document.getElementById("submitBtn").addEventListener("click", function () {

@@ -3784,7 +3784,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#successtnmessage").hide();
                         $("#finaltrackingnumarea").hide();
 
-                        document.getElementById('submitBtnfinal').click()
+                        document.getElementById('submitBtnfinal').click();
                     }
                 };
 

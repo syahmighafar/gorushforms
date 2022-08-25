@@ -3354,6 +3354,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
+                let icPassportNum = document.getElementById("icPassportNum").value;
+
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 document.getElementById("customerPhone").value = customerPhone;

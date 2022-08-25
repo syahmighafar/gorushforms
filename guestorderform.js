@@ -1913,7 +1913,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("codamountsum").innerHTML = "COD (Cash on Delivery) Amount: <b>" + document.getElementById("codamount").value + "</b>";
                 }
                 if ($('input[name=codrequired]:checked').val() == "No") {
-
+                    document.getElementById("codamountsum").innerHTML = "COD (Cash on Delivery) Amount: <b>N/A</b>";
                 }
                 document.getElementById("receiverNamesum").innerHTML = "Name: <b>" + document.getElementById("receiverName").value + "</b>";
                 document.getElementById("receiverAddresssum").innerHTML = "Address: <b>" + document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value

@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        $('#submitBtnfinal').attr('disabled',true);
+
         var createPharmacySheet = 1;
         var medicineDBGsheet = 1;
         var gsheet2 = 1;
@@ -2676,7 +2678,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
-                                        document.getElementById("submitBtnfinal").disabled = false;
+                                        $('#submitBtnfinal').attr('disabled',false);
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -2893,7 +2895,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
-                                        document.getElementById("submitBtnfinal").disabled = false;
+                                        $('#submitBtnfinal').attr('disabled',false);
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -3433,7 +3435,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
-                                        document.getElementById("submitBtnfinal").disabled = false;
+                                        $('#submitBtnfinal').attr('disabled',false);
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -3623,7 +3625,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
-                                document.getElementById("submitBtnfinal").disabled = false;
+                                $('#submitBtnfinal').attr('disabled',false);
 
                                 document.getElementById('submitBtnfinal').click();
                             }
@@ -3794,7 +3796,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#successtnmessage").hide();
                         $("#finaltrackingnumarea").hide();
 
-                        document.getElementById("submitBtnfinal").disabled = false;
+                        $('#submitBtnfinal').attr('disabled',false);
 
                         document.getElementById('submitBtnfinal').click();
                     }

@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
-        document.getElementById("submitBtnfinal").disabled = true;
-
         var createPharmacySheet = 1;
         var medicineDBGsheet = 1;
         var gsheet2 = 1;

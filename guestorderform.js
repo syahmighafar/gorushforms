@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        document.getElementById("submitBtnfinal").disabled = true;
+
         var createPharmacySheet = 1;
         var medicineDBGsheet = 1;
         var gsheet2 = 1;
@@ -1665,7 +1667,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#submitBtn").fadeIn();
             $("#agreesubmitPrevBtn").fadeIn();
             $("#ensure").hide();
-            
+
             document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
             document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
                 + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
@@ -2676,6 +2678,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
+                                        document.getElementById("submitBtnfinal").disabled = false;
+
                                         document.getElementById('submitBtnfinal').click()
                                     }
                                 };
@@ -2890,6 +2894,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         console.log('Body:', this.responseText);
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
+
+                                        document.getElementById("submitBtnfinal").disabled = false;
 
                                         document.getElementById('submitBtnfinal').click()
                                     }
@@ -3429,6 +3435,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
+                                        document.getElementById("submitBtnfinal").disabled = false;
+
                                         document.getElementById('submitBtnfinal').click()
                                     }
                                 };
@@ -3617,6 +3625,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
+                                document.getElementById("submitBtnfinal").disabled = false;
+
                                 document.getElementById('submitBtnfinal').click();
                             }
                         };
@@ -3785,6 +3795,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         $("#successtnmessage").hide();
                         $("#finaltrackingnumarea").hide();
+
+                        document.getElementById("submitBtnfinal").disabled = false;
 
                         document.getElementById('submitBtnfinal').click();
                     }

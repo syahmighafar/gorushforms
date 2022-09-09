@@ -2201,7 +2201,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose your payment method!");
                 }
 
-                if (($('input[name=mohCharges]:checked').val() == undefined) && ($('input[name=mohPayingPatient]:checked').val() != undefined)
+                if (($('input[name=mohCharges]:checked').val() != undefined) && ($('input[name=mohPayingPatient]:checked').val() != undefined)
                     && ($("#paymentmethod").val().length != 0)) {
                     $("#chargesNextBtn").hide();
                     $("#chargessection").hide();
@@ -2292,7 +2292,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose your payment method!");
                 }
 
-                if (($('input[name=jpmcCharges]:checked').val() == undefined) && ($('input[name=jpmcPayingPatient]:checked').val() != undefined)
+                if (($('input[name=jpmcCharges]:checked').val() != undefined) && ($('input[name=jpmcPayingPatient]:checked').val() != undefined)
                     && ($("#paymentmethod").val().length != 0)) {
                     $("#chargesNextBtn").hide();
                     $("#chargessection").hide();
@@ -2391,7 +2391,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose your payment method!");
                 }
 
-                if (($('input[name=phcCharges]:checked').val() == undefined) && ($('input[name=phcPayingPatient]:checked').val() != undefined)
+                if (($('input[name=phcCharges]:checked').val() != undefined) && ($('input[name=phcPayingPatient]:checked').val() != undefined)
                     && ($("#paymentmethod").val().length != 0)) {
                     $("#chargesNextBtn").hide();
                     $("#chargessection").hide();
@@ -2546,7 +2546,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose who to bill!");
                 }
 
-                if (($('input[name=localCharges]:checked').val() == undefined) && ($('input[name=billto]:checked').val() != undefined)
+                if (($('input[name=localCharges]:checked').val() != undefined) && ($('input[name=billto]:checked').val() != undefined)
                     && ($("#paymentmethod").val().length != 0)) {
                     $("#chargesNextBtn").hide();
                     $("#chargessection").hide();

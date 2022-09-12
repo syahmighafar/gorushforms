@@ -2536,9 +2536,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose one of the charges!");
                 }
 
-                if ($('input[name=billto]:checked').val() == undefined) {
+                if (($("#billto").val().length == 0)) {
                     $("#agreementsection").hide();
-                    alert("Please choose if you are a paying patient or not!");
+                    alert("Please choose for billing to sender or receiver!");
                 }
 
                 if (($("#paymentmethod").val().length == 0)) {
@@ -2546,7 +2546,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose who to bill!");
                 }
 
-                if (($('input[name=localCharges]:checked').val() != undefined) && ($('input[name=billto]:checked').val() != undefined)
+                if (($('input[name=localCharges]:checked').val() != undefined) && ($("#billto").val().length != 0)
                     && ($("#paymentmethod").val().length != 0)) {
                     $("#chargesNextBtn").hide();
                     $("#chargessection").hide();

@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#ensure").fadeIn();
             $("#controlarea").fadeIn();
             $("#loading").hide();
-            
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
@@ -62,6 +62,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 alert("Please do not leave your district field empty!");
             }
 
+            if (($("#email").val().length == 0)) {
+                $("#applicationsection").hide();
+                alert("Please do not leave your email field empty!");
+            }
+
             if (($("#contact_1").val().length == 0)) {
                 $("#applicationsection").hide();
                 alert("Please do not leave your phone number field empty!");
@@ -71,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 && ($("#dateofbirth").val().length != 0) && ($("#icnumber").val().length != 0)
                 && ($("#kampong").val().length != 0) && ($("#jalan").val().length != 0)
                 && ($('input[name=district]:checked').val() != undefined)
-                && ($("#contact_1").val().length != 0)) {
+                && ($("#email").val().length != 0) && ($("#contact_1").val().length != 0)) {
                 $("#personalNextBtn").hide();
                 $("#personalsection").hide();
                 $("#applicationNextBtn").fadeIn();

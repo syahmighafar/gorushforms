@@ -1,5 +1,31 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     $(document).ready(function () {
+        document.getElementById("applybutton").addEventListener("click", function () {
+            $("#vacanciesarea").hide();
+            $("#applicationformarea").fadeIn();
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        document.getElementById("cancelapplication").addEventListener("click", function () {
+            $("#vacanciesarea").fadeIn();
+            $("#applicationformarea").hide();
+
+            $("#personalNextBtn").fadeIn();
+            $("#personalsection").fadeIn();
+            $("#applicationNextBtn").hide();
+            $("#applicationPrevBtn").hide();
+            $("#applicationsection").hide();
+            $("#submitBtn").hide();
+            $("#agreesubmitPrevBtn").hide();
+            $("#agreementsection").hide();
+            $("#ensure").fadeIn();
+            $("#controlarea").fadeIn();
+            $("#loading").hide();
+            
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if (($("#name").val().length == 0)) {
                 $("#applicationsection").hide();

@@ -4432,6 +4432,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "localdelivery") {
+                let localDeliveryOrderId = "LD" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
+
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
@@ -4523,25 +4525,69 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         console.log('Headers:', this.getAllResponseHeaders());
                         console.log('Body:', this.responseText);
 
-                        //General Order [Database]
-                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
-                        const form = document.forms['guestorderform']
+                        request.open('POST', 'https://api.tookanapp.com/v2/get_job_details_by_order_id');
 
-                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                            .catch(error => console.error('Error!', error.message))
+                        request.setRequestHeader('Content-Type', 'application/json');
 
-                        $("#successtnmessage").hide();
-                        $("#finaltrackingnumarea").hide();
+                        request.onreadystatechange = function () {
+                            if (this.readyState === 4) {
+                                console.log('Status:', this.status);
+                                console.log('Headers:', this.getAllResponseHeaders());
+                                console.log('Body:', this.responseText);
 
-                        $('#submitBtnfinal').attr('disabled', false);
+                                responseo = this.responseText;
+                                json_responseo = JSON.parse(responseo);
 
-                        document.getElementById('submitBtnfinal').click();
+                                document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
+
+                                //General Order [Database]
+                                const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
+                                const form = document.forms['guestorderform']
+
+                                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                                    .catch(error => console.error('Error!', error.message))
+
+                                request.open('POST', 'https://api.tookanapp.com/v2/edit_task');
+                                request.setRequestHeader('Content-Type', 'application/json');
+
+                                request.onreadystatechange = function () {
+                                    if (this.readyState === 4) {
+                                        console.log('Status:', this.status);
+                                        console.log('Headers:', this.getAllResponseHeaders());
+                                        console.log('Body:', this.responseText);
+
+                                        document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
+
+                                        $('#submitBtnfinal').attr('disabled', false);
+
+                                        document.getElementById('submitBtnfinal').click()
+                                    }
+                                };
+
+                                var body = {
+                                    'barcode': document.getElementById("Tookan-Tracking").value,
+                                    'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                };
+
+                                request.send(JSON.stringify(body));
+                            }
+                        };
+
+                        var body = {
+                            'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
+                            'order_ids': [
+                                localDeliveryOrderId
+                            ],
+                            'include_task_history': 0
+                        };
+                        request.send(JSON.stringify(body));
                     }
                 };
 
                 var body = {
                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                    'order_id': '',
+                    'order_id': localDeliveryOrderId,
                     'job_description': jobDescription,
                     'customer_email': customerEmail,
                     'customer_username': receiverName,

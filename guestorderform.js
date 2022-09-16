@@ -3313,12 +3313,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
 
-                if (document.getElementById("contact_2").value.length != 0) {
-                    let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
-                    document.getElementById("additionalPhone").value = additionalPhone;
-                }
+                let additionalPhoneNoPlus = "";
 
-                let additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                let additionalPhone = "";
+
+                if (document.getElementById("contact_2").value.length != 0) {
+                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = additionalPhone;
+                    additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                }
 
                 let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
                     + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
@@ -3431,11 +3434,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 };
 
                                 var body = {
+                                    'job_id': document.getElementById("Tookan-Tracking").value,
                                     'barcode': document.getElementById("Tookan-Tracking").value,
                                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                    'custom_field_template': 'Pharmacy_MOH',
+                                    'meta_data': [
+                                        { "label": "Tracking_Number", "data": document.getElementById("Tookan-Tracking").value }
+                                    ]
                                 };
-
                                 request.send(JSON.stringify(body));
                             }
                         };
@@ -3466,7 +3472,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'job_delivery_datetime': jobdeliverydatetime,
                     'custom_field_template': 'Pharmacy_MOH',
                     'meta_data': [
-                        { "label": "Quarantine_Order", "data": "" },
+                        { "label": "Tracking_Number", "data": "" },
                         { "label": "Contact_Name", "data": customerUsername },
                         { "label": "Address", "data": customerAddress },
                         { "label": "Area", "data": area },
@@ -3533,7 +3539,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let customerRemarks = document.getElementById("remarks").value;
                 let customerPM = document.getElementById("paymentmethod").value;
-                let order_Origin = document.getElementById("orderOrigin").value;
 
                 let orderId = document.getElementById("patientNumber").value;
                 let jobDescription = $('input[name=jpmcCharges]:checked').val();
@@ -3542,19 +3547,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
-                let icPassportNum = document.getElementById("icPassportNum").value;
-
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
-                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
-                    + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
+                let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
 
-                document.getElementById("customerPhone").value = customerPhone;
+                let appointmentPlace = $('input[name=jpmcpjsc]:checked').val();
 
                 document.getElementById("appointmentPlace").value = appointmentPlace;
 
+                document.getElementById("customerPhone").value = customerPhone;
+
                 document.getElementById("deliveryType").value = $('input[name=jpmcCharges]:checked').val();
                 document.getElementById("payingPatient").value = $('input[name=jpmcPayingPatient]:checked').val();
+
+                let additionalPhoneNoPlus = "";
+
+                let additionalPhone = "";
+
+                if (document.getElementById("contact_2").value.length != 0) {
+                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = additionalPhone;
+                    additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                }
 
                 var request = new XMLHttpRequest();
 
@@ -3584,8 +3598,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 var counttaskhistory = json_responseo.data["length"];
 
                                 for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 7) {
-                                        if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
+                                    if (json_responseo.data[i].custom_field["length"] == 12) {
+                                        if (json_responseo.data[i].custom_field[11].data == patientOrderId) {
                                             document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
                                             i = counttaskhistory;
                                         }
@@ -3648,11 +3662,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 };
 
                                 var body = {
+                                    'job_id': document.getElementById("Tookan-Tracking").value,
                                     'barcode': document.getElementById("Tookan-Tracking").value,
                                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                    'custom_field_template': 'Pharmacy_JPMC',
+                                    'meta_data': [
+                                        { "label": "Tracking_Number", "data": document.getElementById("Tookan-Tracking").value }
+                                    ]
                                 };
-
                                 request.send(JSON.stringify(body));
                             }
                         };
@@ -3681,14 +3698,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
                     'custom_field_template': 'Pharmacy_JPMC',
-                    'meta_data': [{ "label": "IC", "data": icPassportNum },
-                    { "label": "Patient_Number", "data": orderId },
-                    { "label": "Remarks", "data": customerRemarks },
-                    { "label": "Type", "data": jobDescription },
-                    { "label": "Method", "data": customerPM },
-                    { "label": "Barcode", "data": orderId },
-                    { "label": "OrderOriginFrom", "data": order_Origin },
-                    { "label": "Patient_Order_ID", "data": patientOrderId }],
+                    'meta_data': [
+                        { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
+                        { "label": "Phone_Number", "data": customerPhoneNoPlus },
+                        { "label": "Date_Submitted", "data": dateSubmitted },
+                        { "label": "Payment_Type", "data": customerPM },
+                        { "label": "Delivery_Type", "data": jobDescription },
+                        { "label": "Patient_Name", "data": customerUsername },
+                        { "label": "Patient_Number", "data": orderId },
+                        { "label": "Delivery_Address", "data": customerAddress },
+                        { "label": "Remarks", "data": customerRemarks },
+                        { "label": "Location", "data": appointmentPlace },
+                        { "label": "Tracking_Number", "data": "" },
+                        { "label": "Patient_Order_ID", "data": patientOrderId }
+                    ],
                     'team_id': '921691',
                     'auto_assignment': '0',
                     'has_pickup': '0',
@@ -4097,7 +4120,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let customerRemarks = document.getElementById("remarks").value;
                 let customerPM = document.getElementById("paymentmethod").value;
-                let order_Origin = document.getElementById("orderOrigin").value;
 
                 let orderId = document.getElementById("patientNumber").value;
                 let jobDescription = $('input[name=phcCharges]:checked').val();
@@ -4106,9 +4128,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
-                let icPassportNum = document.getElementById("icPassportNum").value;
-
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+
+                let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
+
+                let additionalPhoneNoPlus = "";
+
+                let additionalPhone = "";
+
+                if (document.getElementById("contact_2").value.length != 0) {
+                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = additionalPhone;
+                    additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                }
 
                 document.getElementById("customerPhone").value = customerPhone;
 
@@ -4117,6 +4149,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("deliveryType").value = $('input[name=phcCharges]:checked').val();
                 document.getElementById("payingPatient").value = $('input[name=phcPayingPatient]:checked').val();
 
+                let customerDOB = document.getElementById("dateofbirth").value;
+                
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -4144,8 +4178,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 var counttaskhistory = json_responseo.data["length"];
 
                                 for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 7) {
-                                        if (json_responseo.data[i].custom_field[6].data == patientOrderId) {
+                                    if (json_responseo.data[i].custom_field["length"] == 12) {
+                                        if (json_responseo.data[i].custom_field[11].data == patientOrderId) {
                                             document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
                                             i = counttaskhistory;
                                         }
@@ -4188,9 +4222,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 };
 
                                 var body = {
+                                    'job_id': document.getElementById("Tookan-Tracking").value,
                                     'barcode': document.getElementById("Tookan-Tracking").value,
                                     'api_key': '51676580f24b091114132d38111925401ee4c2f328d978375e1f03',
-                                    'job_id': document.getElementById("Tookan-Tracking").value
+                                    'custom_field_template': 'Pharmacy_PHC',
+                                    'meta_data': [
+                                        { "label": "Tracking_Number", "data": document.getElementById("Tookan-Tracking").value }
+                                    ]
                                 };
 
                                 request.send(JSON.stringify(body));
@@ -4221,14 +4259,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'longitude': '',
                     'job_delivery_datetime': jobdeliverydatetime,
                     'custom_field_template': 'Pharmacy_PHC',
-                    'meta_data': [{ "label": "IC", "data": icPassportNum },
-                    { "label": "Patient_Number", "data": orderId },
-                    { "label": "Remarks", "data": customerRemarks },
-                    { "label": "Type", "data": jobDescription },
-                    { "label": "Method", "data": customerPM },
-                    { "label": "Barcode", "data": orderId },
-                    { "label": "OrderOriginFrom", "data": order_Origin },
-                    { "label": "Patient_Order_ID", "data": patientOrderId }],
+                    'meta_data': [
+                        { "label": "Tracking_Number", "data": "" },
+                        { "label": "Patient_Number", "data": orderId },
+                        { "label": "Patient_Name", "data": customerUsername },
+                        { "label": "Delivery_Address", "data": customerAddress },
+                        { "label": "Phone_Number", "data": customerPhoneNoPlus },
+                        { "label": "Additional_Phone_Number", "data": additionalPhoneNoPlus },
+                        { "label": "DOB", "data": customerDOB },
+                        { "label": "Delivery_Type", "data": jobDescription },
+                        { "label": "Payment_Type", "data": customerPM },
+                        { "label": "Remarks", "data": customerRemarks },
+                        { "label": "Date_Submitted", "data": dateSubmitted },
+                        { "label": "Patient_Order_ID", "data": patientOrderId }
+                    ],
                     'team_id': '921691',
                     'auto_assignment': '0',
                     'has_pickup': '0',

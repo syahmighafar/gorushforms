@@ -3267,7 +3267,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (document.querySelector('input[name=districtAppointment]:checked').value == "Belait") {
-                    document.getElementById("sendOrderTo").value = "SSPH";
+                    document.getElementById("sendOrderTo").value = "SSBH";
                 }
 
                 if (document.querySelector('input[name=districtAppointment]:checked').value == "Temburong") {

@@ -3502,7 +3502,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': 'MEDS,MOH',
+                    'tags': 'MOH',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -3726,7 +3726,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': 'MEDS,JPMC',
+                    'tags': 'JPMC',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -4290,7 +4290,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': 'MEDS,PHC',
+                    'tags': 'PHC',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));

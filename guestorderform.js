@@ -3570,6 +3570,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
+                let price = document.getElementById('price').value;
+
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -3598,7 +3600,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 var counttaskhistory = json_responseo.data["length"];
 
                                 for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 12) {
+                                    if (json_responseo.data[i].custom_field["length"] == 13) {
                                         if (json_responseo.data[i].custom_field[11].data == patientOrderId) {
                                             document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
                                             i = counttaskhistory;
@@ -3710,7 +3712,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Remarks", "data": customerRemarks },
                         { "label": "Location", "data": appointmentPlace },
                         { "label": "Tracking_Number", "data": "" },
-                        { "label": "Patient_Order_ID", "data": patientOrderId }
+                        { "label": "Patient_Order_ID", "data": patientOrderId },
+                        { "label": "Price", "data": price }
                     ],
                     'team_id': '921691',
                     'auto_assignment': '0',
@@ -4151,6 +4154,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let customerDOB = document.getElementById("dateofbirth").value;
 
+                let price = document.getElementById('price').value;
+
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -4178,7 +4183,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 var counttaskhistory = json_responseo.data["length"];
 
                                 for (let i = 0; i < counttaskhistory; i++) {
-                                    if (json_responseo.data[i].custom_field["length"] == 12) {
+                                    if (json_responseo.data[i].custom_field["length"] == 13) {
                                         if (json_responseo.data[i].custom_field[11].data == patientOrderId) {
                                             document.getElementById("Tookan-Tracking").value = json_responseo.data[i].job_id;
                                             i = counttaskhistory;
@@ -4271,7 +4276,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Payment_Type", "data": customerPM },
                         { "label": "Remarks", "data": customerRemarks },
                         { "label": "Date_Submitted", "data": dateSubmitted },
-                        { "label": "Patient_Order_ID", "data": patientOrderId }
+                        { "label": "Patient_Order_ID", "data": patientOrderId },
+                        { "label": "Price", "data": price }
                     ],
                     'team_id': '921691',
                     'auto_assignment': '0',
@@ -4566,6 +4572,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("deliveryType").value = $('input[name=localCharges]:checked').val();
 
+                let price = document.getElementById('price').value;
+
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -4669,7 +4677,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Payment_Method", "data": customerPM },
                         { "label": "Bill_To", "data": billTo },
                         { "label": "Customer_Order_ID", "data": "" },
-                        { "label": "Submitted_Date", "data": dateSubmitted }],
+                        { "label": "Submitted_Date", "data": dateSubmitted },
+                        { "label": "Price", "data": price }
+                    ],
                     'team_id': '921691',
                     'auto_assignment': '0',
                     'has_pickup': '0',

@@ -3502,7 +3502,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': '',
+                    'tags': 'MEDS,MOH',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -3723,7 +3723,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': '',
+                    'tags': 'MEDS,JPMC',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -4150,7 +4150,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("payingPatient").value = $('input[name=phcPayingPatient]:checked').val();
 
                 let customerDOB = document.getElementById("dateofbirth").value;
-                
+
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -4284,7 +4284,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': '',
+                    'tags': 'MEDS,PHC',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -4477,7 +4477,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'fleet_id': '',
                     'ref_images': [],
                     'notify': 1,
-                    'tags': '',
+                    'tags': 'GRP',
                     'geofence': 0
 
                 };
@@ -4681,7 +4681,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': '',
+                    'tags': 'LD',
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));

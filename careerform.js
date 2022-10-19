@@ -165,9 +165,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.getElementById("customerthank").innerText = "Thank you " + document.getElementById("name").value + "!";
             document.getElementById("finalsummaryarea").innerHTML = document.getElementById("finalsummary").innerHTML
 
-            document.getElementById("dateSubmitted").value = moment().format('DD-MM-YYYY h:mm a');;
-
-            document.getElementById("finalsubmitteddate").innerText = moment().format('Do MMMM YYYY, h:mm a');
+            document.getElementById("dateSubmitted").value = moment().format('DD-MM-YYYY h:mm a');
 
             let address = document.getElementById("house").value + " " + document.getElementById("kampong").value
                 + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
@@ -183,6 +181,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 document.getElementById("additionalPhone").value = additionalPhone;
             }
+            
+            //GGLSB Job Application [Job Applicants]
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbxH_w8sGcdu2uwc15rRT-XxCDQK-TngOd0L1-k3iIT_oRSpIDEPqnC3_0e8OpjMkeMsAA/exec'
+            const form = document.forms['careerapplicationform']
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .catch(error => console.error('Error!', error.message))
 
             $('#submitBtnfinal').attr('disabled', false);
 

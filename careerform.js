@@ -181,6 +181,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 document.getElementById("additionalPhone").value = additionalPhone;
             }
+
+            document.getElementById("finalsubmitteddate").innerText = moment().format('Do MMMM YYYY, h:mm a');
             
             //GGLSB Job Application [Job Applicants]
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxH_w8sGcdu2uwc15rRT-XxCDQK-TngOd0L1-k3iIT_oRSpIDEPqnC3_0e8OpjMkeMsAA/exec'

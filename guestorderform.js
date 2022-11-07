@@ -3333,6 +3333,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("deliveryType").value = $('input[name=mohCharges]:checked').val();
                 document.getElementById("payingPatient").value = $('input[name=mohPayingPatient]:checked').val();
 
+                if ($('input[name=mohPayingPatient]:checked').val() == 'Yes'){
+                    var finalTags = 'MOH, PP';
+                }
+
+                if ($('input[name=mohPayingPatient]:checked').val() == 'No'){
+                    var finalTags = 'MOH';
+                }
+
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -3502,7 +3510,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': 'MOH',
+                    'tags': finalTags,
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -3571,6 +3579,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 let price = document.getElementById('price').value;
+
+                if ($('input[name=jpmcPayingPatient]:checked').val() == 'Yes'){
+                    var finalTags = 'JPMC, PP';
+                }
+
+                if ($('input[name=jpmcPayingPatient]:checked').val() == 'No'){
+                    var finalTags = 'JPMC';
+                }
 
                 var request = new XMLHttpRequest();
 
@@ -3726,7 +3742,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': 'JPMC',
+                    'tags': finalTags,
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));
@@ -4156,6 +4172,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 let price = document.getElementById('price').value;
 
+                if ($('input[name=phcPayingPatient]:checked').val() == 'Yes'){
+                    var finalTags = 'PHC, PP';
+                }
+
+                if ($('input[name=phcPayingPatient]:checked').val() == 'No'){
+                    var finalTags = 'PHC';
+                }
+
                 var request = new XMLHttpRequest();
 
                 request.open('POST', 'https://api.tookanapp.com/v2/create_task');
@@ -4290,7 +4314,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     'ref_images': [
                     ],
                     'notify': 1,
-                    'tags': 'PHC',
+                    'tags': finalTags,
                     'geofence': 0
                 };
                 request.send(JSON.stringify(body));

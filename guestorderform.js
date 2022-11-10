@@ -4698,7 +4698,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         { "label": "Product_Weight", "data": productWeight },
                         { "label": "COD_Required", "data": codRequired },
                         { "label": "COD_Amount", "data": codAmount },
-                        { "label": "Payment_Method", "data": customerPM },
+                        { "label": "Payment_Type", "data": customerPM },
                         { "label": "Bill_To", "data": billTo },
                         { "label": "Customer_Order_ID", "data": "" },
                         { "label": "Submitted_Date", "data": dateSubmitted },

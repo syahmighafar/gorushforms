@@ -3435,19 +3435,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                         document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
-                                        let trackingNumber = document.getElementById("Tookan-Tracking").value
-                                        let msg = `Hello%2C%0A%0AWe+have+received+your+order.+Please+refer+to+the+following+for+your+reference.%0A%0ATracking+Number%3A+${trackingNumber}%0A%0AOur+team+will+process+your+order.+Thank+you`
-                                        let SEND_TRACKER_URL = `https://media.smsgupshup.com/GatewayAPI/rest?userid=2000215252&password=6@SemFzr&send_to=006737257190&v=1.1&format=json&msg_type=TEXT&method=SENDMESSAGE&msg=${msg}&isTemplate=true&header=Order+Confirmation&footer=Go+Rush+Express`
-
-                                        fetch(SEND_TRACKER_URL).then(
-                                            (response) => {
-                                                return response.json()
-                                            },
-                                            (err) => {
-                                                console.log(err)
-                                            }
-                                        )
-
                                         $('#submitBtnfinal').attr('disabled', false);
 
                                         document.getElementById('submitBtnfinal').click()

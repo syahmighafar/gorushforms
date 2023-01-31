@@ -4025,7 +4025,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let itemCurrency = document.getElementById("currency").value;
                 let itemContains = document.querySelector('input[name=itemContains]:checked').value
 
-                document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
+                //document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
 
                 //Go Rush Plus Orders V2 [database]
                 if (tempSplit == 1) {

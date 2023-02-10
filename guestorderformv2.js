@@ -3343,31 +3343,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (createPharmacySheet == 1) {
                     //MOH Orders [STD Guest Order]
-                    if (($('input[name=mohCharges]:checked').val() == "Standard")) {
+                    /* if (($('input[name=mohCharges]:checked').val() == "Standard")) {
                         const scriptURL = 'https://script.google.com/macros/s/AKfycbxxRcpKi-hcJiyKBvvB12ZYbEeZ6YS2XE9byGVO3031_91nXja45Qa62jieHfZ3cLPOdw/exec'
                         const form = document.forms['guestorderform']
 
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                             .catch(error => console.error('Error!', error.message))
-                    }
+                    } */
 
                     //MOH Orders [EXP Guest Order]
-                    if (($('input[name=mohCharges]:checked').val() == "Express")) {
+                    /* if (($('input[name=mohCharges]:checked').val() == "Express")) {
                         const scriptURL = 'https://script.google.com/macros/s/AKfycbwFchxYwmJ5DWf3KLb0ER1uIfWUmGST2h1EAo02gNIXXmYGHMNSg98N0hsr0913c1hqeQ/exec'
                         const form = document.forms['guestorderform']
 
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                             .catch(error => console.error('Error!', error.message))
-                    }
+                    } */
 
                     //MOH Orders [IMM Member Order]
-                    if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
+                    /* if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
                         const scriptURL = 'https://script.google.com/macros/s/AKfycbzo0mbf6Rh8rJBRJ-FO6JaxiuhUt0lzDpKwkO63m8kwaPLn2LtVe5CZPLZqxYDA6xeouA/exec'
                         const form = document.forms['guestorderform']
 
                         fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                             .catch(error => console.error('Error!', error.message))
-                    }
+                    } */
                 }
 
                 //Medicine DB [database]
@@ -3495,7 +3495,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 //JPMC PJSC Forms [Guest Orders]
-                if (split == 1) {
+                /* if (split == 1) {
 
                     const scriptURL = 'https://script.google.com/macros/s/AKfycby_15K0elbIbyOTUUn_Npwyu7qyXqchQ5HCthw7IBqb7qiA3L6RQ11lTyWrmeuGeLTuSg/exec'
                     const form = document.forms['guestorderform']
@@ -3503,7 +3503,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
 
-                }
+                } */
 
                 //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
@@ -3954,13 +3954,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 //Panaga HC [GUEST ORDERS]
-                if (gsheetPanagaHC == 1) {
+                /* if (gsheetPanagaHC == 1) {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbxlggx7CrM8psD-yaX4Sb2JRgTk_1Q7UQSLEzT-gvzkEP_nX59MGcJvaTa86jWWxAvfSQ/exec'
                     const form = document.forms['guestorderform']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
-                }
+                } */
 
                 //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
@@ -4044,28 +4044,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 //Warehouse Entrance Reference for GRP Malaysia [Database]
-                if (document.getElementById("GoRushReceivingCountry").value == "MALAYSIA") {
+                /* if (document.getElementById("GoRushReceivingCountry").value == "MALAYSIA") {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbyoJMDxUwWvWoKjv1o_Us0Xu79WsrKVF6GJldTc5IXlP9x6eNICQIm-reiRih0cis1iHQ/exec'
                     const form = document.forms['guestorderform']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                }
+                } */
 
                 //Warehouse Entrance Reference for GRP China [Database]
-                if (document.getElementById("GoRushReceivingCountry").value == "CHINA") {
+                /* if (document.getElementById("GoRushReceivingCountry").value == "CHINA") {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbzHDabrr8LnVfL4hlO7-JPbf6BJWi98UkiaX7tsRu_EQdBZjmhRC2B17qC7hwNv3iVh/exec'
                     const form = document.forms['guestorderform']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                }
+                } */
 
                 //Warehouse Enterance Reference for GRP Singapore [Database]
-                if (document.getElementById("GoRushReceivingCountry").value == "SINGAPORE") {
+                /* if (document.getElementById("GoRushReceivingCountry").value == "SINGAPORE") {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwh8fwGxsFuXLRmc6NI1WW65iSq7ClLoBGBrOOLXwSgVS4Oae-bMAYTR8EGIdE_hVnU7w/exec'
                     const form = document.forms['guestorderform']
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                }
+                } */
 
                 //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
@@ -4161,11 +4161,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 //document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
 
                 //General Order [Database]
-                const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
+                /* const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
                 const form = document.forms['guestorderform']
 
                 fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .catch(error => console.error('Error!', error.message))
+                    .catch(error => console.error('Error!', error.message)) */
 
                 //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 

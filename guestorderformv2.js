@@ -4294,20 +4294,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let itemContains = document.querySelector('input[name=itemContains]:checked').value;
 
                 if (moment().format('h') < 12) {
-                    if (moment().add(4, 'days').format('d') == 0) {
-                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                    if (moment().add(13, 'days').format('d') == 0) {
+                        document.getElementById("deliveryDate").value = moment().add(14, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(20, 'days').format('YYYY-MM-DD');
                     } else {
-                        document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        document.getElementById("deliveryDate").value = moment().add(13, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(19, 'days').format('YYYY-MM-DD');
                     }
                 } else {
-                    if (moment().add(5, 'days').format('d') == 0) {
-                        document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                    if (moment().add(14, 'days').format('d') == 0) {
+                        document.getElementById("deliveryDate").value = moment().add(15, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(21, 'days').format('YYYY-MM-DD');
                     } else {
-                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                        document.getElementById("deliveryDate").value = moment().add(14, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(20, 'days').format('YYYY-MM-DD');
                     }
                 }
 

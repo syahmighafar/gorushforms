@@ -2881,7 +2881,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "pharmacymoh") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
@@ -3387,6 +3387,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
                     additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
                 let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
@@ -3462,12 +3463,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "pharmacyjpmc") {
-                document.getElementById("productdescription").value = "Medicine";
-                document.getElementById("itemQuantity").value = "1";
-
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+
+                document.getElementById("productdescription").value = "Medicine";
+                document.getElementById("itemQuantity").value = "1";
 
                 var patientOrderId = "JPMCPJSC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
@@ -3664,6 +3665,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
                     additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
                 let price = document.getElementById('price').value;
@@ -3722,12 +3724,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "pharmacyphc") {
-                document.getElementById("productdescription").value = "Medicine";
-                document.getElementById("itemQuantity").value = "1";
-
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+
+                document.getElementById("productdescription").value = "Medicine";
+                document.getElementById("itemQuantity").value = "1";
 
                 var patientOrderId = "PHC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
@@ -4168,6 +4170,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
                     additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
                 document.getElementById("customerPhone").value = customerPhone;
@@ -4215,12 +4218,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "grp") {
-                document.getElementById("productdescription").value = document.getElementById("Item-Description").value;
-                document.getElementById("itemQuantity").value = document.getElementById("Quantity").value;
-
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+
+                document.getElementById("productdescription").value = document.getElementById("Item-Description").value;
+                document.getElementById("itemQuantity").value = document.getElementById("Quantity").value;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
@@ -4346,6 +4349,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "localdelivery") {
+                document.getElementById("senderName").value = document.getElementById("name").value;
+                document.getElementById("senderEmail").value = document.getElementById("email").value;
+                document.getElementById("senderPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+
                 document.getElementById("itemQuantity").value = "1";
 
                 let localDeliveryOrderId = "LD" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
@@ -4355,6 +4362,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
+                document.getElementById("senderAddress").value = customerAddress;
 
                 let itemDescription = document.getElementById("productdescription").value;
                 let jobDescription = $('input[name=localCharges]:checked').val();

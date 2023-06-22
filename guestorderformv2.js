@@ -2879,6 +2879,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             let jobdeliverydatetime = dateD + ' ' + timeD;
 
             if ($('input[name=products]:checked').val() == "pharmacymoh") {
+                document.getElementById("productdescription").value = "Medicine";
+                document.getElementById("itemQuantity").value = "1";
+
                 let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let area = "";
@@ -3284,22 +3287,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(4, 'days').format('d') == 5) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(5, 'days').format('d') == 5) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3311,22 +3320,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(1, 'days').format('d') == 5) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(1, 'days').format('d') != 0) || (moment().add(1, 'days').format('d') != 5)) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(2, 'days').format('d') == 5) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(2, 'days').format('d') != 0) || (moment().add(2, 'days').format('d') != 5)) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3336,6 +3351,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var deliveryTypeCode = "IMM";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                     document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                    document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                 }
 
                 let price = document.getElementById('price').value;
@@ -3442,6 +3458,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "pharmacyjpmc") {
+                document.getElementById("productdescription").value = "Medicine";
+                document.getElementById("itemQuantity").value = "1";
+
                 var patientOrderId = "JPMCPJSC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
@@ -3456,22 +3475,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(1, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(1, 'days').format('d') != 0) || (moment().add(1, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(2, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(2, 'days').format('d') != 0) || (moment().add(2, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3481,22 +3506,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3506,22 +3537,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3531,22 +3568,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3556,22 +3599,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                         }
                         if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -3665,6 +3714,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "pharmacyphc") {
+                document.getElementById("productdescription").value = "Medicine";
+                document.getElementById("itemQuantity").value = "1";
+
                 var patientOrderId = "PHC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
@@ -4040,101 +4092,45 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '3';
-                    if (moment().format('h') < 12){
-                        if (moment().add(4, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(4, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                    } else {
-                        if (moment().add(5, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(5, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                    }
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '5';
-                    if (moment().format('h') < 12){
-                        if (moment().add(4, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(4, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                    } else {
-                        if (moment().add(5, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(5, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                    }
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '7';
-                    if (moment().format('h') < 12){
-                        if (moment().add(4, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(4, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                    } else {
-                        if (moment().add(5, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(5, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                    }
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '10';
-                    if (moment().format('h') < 12){
-                        if (moment().add(4, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(4, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                    } else {
-                        if (moment().add(5, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(5, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
+                }
+
+                if (moment().format('h') < 12){
+                    if (moment().add(4, 'days').format('d') == 0) {
+                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                    }
+                    if (moment().add(4, 'days').format('d') == 5) {
+                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                    }
+                    if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                        document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                    }
+                } else {
+                    if (moment().add(5, 'days').format('d') == 0) {
+                        document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                    }
+                    if (moment().add(5, 'days').format('d') == 5) {
+                        document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                    }
+                    if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                     }
                 }
 
@@ -4207,6 +4203,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "grp") {
+                document.getElementById("productdescription").value = document.getElementById("Item-Description").value;
+                document.getElementById("itemQuantity").value = document.getElementById("Quantity").value;
+
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
@@ -4266,14 +4265,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (moment().format('h') < 12){
                     if (moment().add(4, 'days').format('d') == 0) {
                         document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                     } else {
                         document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
                     }
                 } else {
                     if (moment().add(5, 'days').format('d') == 0) {
                         document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
                     } else {
                         document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
                     }
                 }
 
@@ -4327,6 +4330,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($('input[name=products]:checked').val() == "localdelivery") {
+                document.getElementById("itemQuantity").value = "1";
+
                 let localDeliveryOrderId = "LD" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
@@ -4371,14 +4376,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4388,14 +4397,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4405,14 +4418,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4422,14 +4439,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4439,14 +4460,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4456,14 +4481,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4473,14 +4502,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4490,14 +4523,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4507,14 +4544,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }
@@ -4524,14 +4565,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12){
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                         }
                     }
                 }

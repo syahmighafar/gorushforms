@@ -2879,6 +2879,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             let jobdeliverydatetime = dateD + ' ' + timeD;
 
             if ($('input[name=products]:checked').val() == "pharmacymoh") {
+                document.getElementById("receiverName").value = document.getElementById("name").value;
+                document.getElementById("receiverEmail").value = document.getElementById("email").value;
+                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
 
@@ -3284,7 +3288,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById('price').value = '3';
                     var deliveryTypeCode = "STD";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -3317,7 +3321,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById('price').value = '5';
                     var deliveryTypeCode = "EXP";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
@@ -3461,6 +3465,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
 
+                document.getElementById("receiverName").value = document.getElementById("name").value;
+                document.getElementById("receiverEmail").value = document.getElementById("email").value;
+                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+
                 var patientOrderId = "JPMCPJSC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
@@ -3472,7 +3480,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
                     document.getElementById('price').value = '5';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
@@ -3503,7 +3511,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '3';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -3534,7 +3542,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -3565,7 +3573,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '7';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -3596,7 +3604,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '10';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -3716,6 +3724,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "pharmacyphc") {
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
+
+                document.getElementById("receiverName").value = document.getElementById("name").value;
+                document.getElementById("receiverEmail").value = document.getElementById("email").value;
+                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
 
                 var patientOrderId = "PHC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
@@ -4106,7 +4118,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById('price').value = '10';
                 }
 
-                if (moment().format('h') < 12){
+                if (moment().format('h') < 12) {
                     if (moment().add(4, 'days').format('d') == 0) {
                         document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                         document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -4206,6 +4218,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("productdescription").value = document.getElementById("Item-Description").value;
                 document.getElementById("itemQuantity").value = document.getElementById("Quantity").value;
 
+                document.getElementById("receiverName").value = document.getElementById("name").value;
+                document.getElementById("receiverEmail").value = document.getElementById("email").value;
+                document.getElementById("receiverPhone").value = document.getElementById("customerPhone").value;
+
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
@@ -4262,7 +4278,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let itemCurrency = document.getElementById("currency").value;
                 let itemContains = document.querySelector('input[name=itemContains]:checked').value;
 
-                if (moment().format('h') < 12){
+                if (moment().format('h') < 12) {
                     if (moment().add(4, 'days').format('d') == 0) {
                         document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
                         document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
@@ -4373,7 +4389,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '4';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
@@ -4394,7 +4410,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
@@ -4415,7 +4431,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '10';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
@@ -4436,7 +4452,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '12';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
@@ -4457,7 +4473,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                     document.getElementById('price').value = '5';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
@@ -4478,7 +4494,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
                     document.getElementById('price').value = '8';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
@@ -4499,7 +4515,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
                     document.getElementById('price').value = '12';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
@@ -4520,7 +4536,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                     document.getElementById('price').value = '3';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
@@ -4541,7 +4557,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                     document.getElementById('price').value = '5';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
@@ -4562,7 +4578,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                     document.getElementById('price').value = '7';
-                    if (moment().format('h') < 12){
+                    if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');

@@ -2756,9 +2756,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             let dateSubmitted = date + ' ' + time;
 
-            document.getElementById("dateSubmitted").value = moment().format('DD-MM-YYYY h:mm a');;
+            document.getElementById("dateSubmitted").value = moment().format('DD-MM-YYYY h:mm a');
 
             document.getElementById("finalsubmitteddate").innerText = moment().format('Do MMMM YYYY, h:mm a');
+
+            document.getElementById("creationDate").value = moment().format('YYYY-MM-DD');
 
             //getCompletionDate
             var todaysDate = new Date();
@@ -2886,6 +2888,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
+                document.getElementById("receiverAddress").value = customerAddress;
 
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
@@ -3278,18 +3281,61 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById('price').value = '3';
                     var deliveryTypeCode = "STD";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Express")) {
                     document.getElementById('price').value = '5';
                     var deliveryTypeCode = "EXP";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
+                    if (moment().format('h') < 12){
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(1, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(1, 'days').format('d') != 0) || (moment().add(1, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(2, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(2, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(2, 'days').format('d') != 0) || (moment().add(2, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
                     document.getElementById('price').value = '20';
                     var deliveryTypeCode = "IMM";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
+                    document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
                 }
 
                 let price = document.getElementById('price').value;
@@ -3403,25 +3449,131 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
+                document.getElementById("receiverAddress").value = customerAddress;
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
                     document.getElementById('price').value = '5';
+                    if (moment().format('h') < 12){
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(1, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(1, 'days').format('d') != 0) || (moment().add(1, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(2, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(2, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(2, 'days').format('d') != 0) || (moment().add(2, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '3';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '7';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '10';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 let customerRemarks = document.getElementById("remarks").value;
@@ -3520,6 +3672,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
+                document.getElementById("receiverAddress").value = customerAddress;
 
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
@@ -3887,18 +4040,102 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '3';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '5';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '7';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=phcCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '10';
+                    if (moment().format('h') < 12){
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(4, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if (moment().add(5, 'days').format('d') == 5) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        }
+                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 let customerRemarks = document.getElementById("remarks").value;
@@ -3975,6 +4212,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
+                document.getElementById("receiverAddress").value = customerAddress;
 
                 var codeN = "/GRP";
                 var conN = document.getElementById("name").value;
@@ -4023,7 +4261,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let commodity = document.getElementById("commodities").value;
                 let totalPrice = document.getElementById("itemPrice").value;
                 let itemCurrency = document.getElementById("currency").value;
-                let itemContains = document.querySelector('input[name=itemContains]:checked').value
+                let itemContains = document.querySelector('input[name=itemContains]:checked').value;
+
+                if (moment().format('h') < 12){
+                    if (moment().add(4, 'days').format('d') == 0) {
+                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                    } else {
+                        document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                    }
+                } else {
+                    if (moment().add(5, 'days').format('d') == 0) {
+                        document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                    } else {
+                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                    }
+                }
 
                 //document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
 
@@ -4116,42 +4368,172 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '4';
+                    if (moment().format('h') < 12){
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(2, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                     document.getElementById('price').value = '7';
+                    if (moment().format('h') < 12){
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(2, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                     document.getElementById('price').value = '10';
+                    if (moment().format('h') < 12){
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(2, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                     document.getElementById('price').value = '12';
+                    if (moment().format('h') < 12){
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(2, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                     document.getElementById('price').value = '5';
+                    if (moment().format('h') < 12){
+                        if (moment().format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
                     document.getElementById('price').value = '8';
+                    if (moment().format('h') < 12){
+                        if (moment().format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
                     document.getElementById('price').value = '12';
+                    if (moment().format('h') < 12){
+                        if (moment().format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                     document.getElementById('price').value = '3';
+                    if (moment().format('h') < 12){
+                        if (moment().format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                     document.getElementById('price').value = '5';
+                    if (moment().format('h') < 12){
+                        if (moment().format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                     document.getElementById('price').value = '7';
+                    if (moment().format('h') < 12){
+                        if (moment().format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                        }
+                    } else {
+                        if (moment().add(1, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                        }
+                    }
                 }
 
                 document.getElementById("deliveryType").value = $('input[name=localCharges]:checked').val();

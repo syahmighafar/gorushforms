@@ -2762,6 +2762,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             document.getElementById("creationDate").value = moment().format('YYYY-MM-DD');
 
+            document.getElementById("qbCreationDate").value = moment().format('DD/MM/YYYY');
+
             //getCompletionDate
             var todaysDate = new Date();
 
@@ -3290,30 +3292,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var deliveryTypeCode = "STD";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                     if (moment().format('h') < 12) {
-                        if (moment().add(4, 'days').format('d') == 0) {
+                        if ((moment().add(4, 'days').format('d') == 0)||(moment().add(4, 'days').format('d') == 5)) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(4, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
-                        if (moment().add(5, 'days').format('d') == 0) {
+                        if ((moment().add(5, 'days').format('d') == 0)||(moment().add(5, 'days').format('d') == 5)) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(5, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3324,30 +3324,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var deliveryTypeCode = "EXP";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                     if (moment().format('h') < 12) {
-                        if (moment().add(1, 'days').format('d') == 0) {
+                        if ((moment().add(1, 'days').format('d') == 0)||(moment().add(1, 'days').format('d') == 5)) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(1, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(1, 'days').format('d') != 0) || (moment().add(1, 'days').format('d') != 5)) {
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                        } else{
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
-                        if (moment().add(2, 'days').format('d') == 0) {
+                        if ((moment().add(2, 'days').format('d') == 0)||(moment().add(2, 'days').format('d') == 5)) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if (moment().add(2, 'days').format('d') == 5) {
-                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(2, 'days').format('d') != 0) || (moment().add(2, 'days').format('d') != 5)) {
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3358,7 +3356,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var deliveryTypeCode = "IMM";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                     document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                    document.getElementById("qbServiceDate").value = moment().format('YYYY-MM-DD');
                     document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                    document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                 }
 
                 let price = document.getElementById('price').value;
@@ -3411,35 +3411,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var finalTags = 'MOH';
                 }
 
-                if (createPharmacySheet == 1) {
-                    //MOH Orders [STD Guest Order]
-                    /* if (($('input[name=mohCharges]:checked').val() == "Standard")) {
-                        const scriptURL = 'https://script.google.com/macros/s/AKfycbxxRcpKi-hcJiyKBvvB12ZYbEeZ6YS2XE9byGVO3031_91nXja45Qa62jieHfZ3cLPOdw/exec'
-                        const form = document.forms['guestorderform']
-
-                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                            .catch(error => console.error('Error!', error.message))
-                    } */
-
-                    //MOH Orders [EXP Guest Order]
-                    /* if (($('input[name=mohCharges]:checked').val() == "Express")) {
-                        const scriptURL = 'https://script.google.com/macros/s/AKfycbwFchxYwmJ5DWf3KLb0ER1uIfWUmGST2h1EAo02gNIXXmYGHMNSg98N0hsr0913c1hqeQ/exec'
-                        const form = document.forms['guestorderform']
-
-                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                            .catch(error => console.error('Error!', error.message))
-                    } */
-
-                    //MOH Orders [IMM Member Order]
-                    /* if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
-                        const scriptURL = 'https://script.google.com/macros/s/AKfycbzo0mbf6Rh8rJBRJ-FO6JaxiuhUt0lzDpKwkO63m8kwaPLn2LtVe5CZPLZqxYDA6xeouA/exec'
-                        const form = document.forms['guestorderform']
-
-                        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                            .catch(error => console.error('Error!', error.message))
-                    } */
-                }
-
                 //Medicine DB [database]
                 if (medicineDBGsheet == 1) {
                     const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
@@ -3458,7 +3429,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         .catch(error => console.error('Error!', error.message))
                 }
 
-                //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                 $('#submitBtnfinal').attr('disabled', false);
 
@@ -3488,28 +3458,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(1, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(1, 'days').format('d') != 0) || (moment().add(1, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(2, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if ((moment().add(2, 'days').format('d') != 0) || (moment().add(2, 'days').format('d') != 6)) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3520,28 +3501,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(9, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(9, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3552,28 +3543,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(9, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(9, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3584,28 +3585,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(9, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(9, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3616,28 +3627,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(4, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(5, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
                         }
                         if (moment().add(5, 'days').format('d') == 6) {
-                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                        }
-                        if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 6)) {
+                            document.getElementById("deliveryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(9, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(9, 'days').format('DD/MM/YYYY');
+                        } else {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -3712,19 +3733,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
                 }
-
-                //JPMC PJSC Forms [Guest Orders]
-                /* if (split == 1) {
-
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycby_15K0elbIbyOTUUn_Npwyu7qyXqchQ5HCthw7IBqb7qiA3L6RQ11lTyWrmeuGeLTuSg/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-
-                } */
-
-                //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                 $('#submitBtnfinal').attr('disabled', false);
 
@@ -4133,30 +4141,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (moment().format('h') < 12) {
-                    if (moment().add(4, 'days').format('d') == 0) {
+                    if ((moment().add(4, 'days').format('d') == 0)||(moment().add(4, 'days').format('d') == 5)) {
                         document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                         document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                    }
-                    if (moment().add(4, 'days').format('d') == 5) {
-                        document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
-                        document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
-                    }
-                    if ((moment().add(4, 'days').format('d') != 0) || (moment().add(4, 'days').format('d') != 5)) {
+                        document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                    } else {
                         document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
                         document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
                     }
                 } else {
-                    if (moment().add(5, 'days').format('d') == 0) {
+                    if ((moment().add(5, 'days').format('d') == 0)||(moment().add(5, 'days').format('d') == 5)) {
                         document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
                         document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                    }
-                    if (moment().add(5, 'days').format('d') == 5) {
-                        document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
-                        document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
-                    }
-                    if ((moment().add(5, 'days').format('d') != 0) || (moment().add(5, 'days').format('d') != 5)) {
+                        document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('DD/MM/YYYY');
+                    } else {
                         document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
                         document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                     }
                 }
 
@@ -4212,17 +4218,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                         .catch(error => console.error('Error!', error.message))
                 }
-
-                //Panaga HC [GUEST ORDERS]
-                /* if (gsheetPanagaHC == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbxlggx7CrM8psD-yaX4Sb2JRgTk_1Q7UQSLEzT-gvzkEP_nX59MGcJvaTa86jWWxAvfSQ/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-                } */
-
-                //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                 $('#submitBtnfinal').attr('disabled', false);
 
@@ -4296,22 +4291,30 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (moment().format('h') < 12) {
                     if (moment().add(13, 'days').format('d') == 0) {
                         document.getElementById("deliveryDate").value = moment().add(14, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(14, 'days').format('DD/MM/YYYY');
                         document.getElementById("expiryDate").value = moment().add(20, 'days').format('YYYY-MM-DD');
+                        document.getElementById("expiryDate").value = moment().add(20, 'days').format('YYYY-MM-DD');
+
+                        
                     } else {
                         document.getElementById("deliveryDate").value = moment().add(13, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(13, 'days').format('DD/MM/YYYY');
+                        document.getElementById("expiryDate").value = moment().add(19, 'days').format('YYYY-MM-DD');
                         document.getElementById("expiryDate").value = moment().add(19, 'days').format('YYYY-MM-DD');
                     }
                 } else {
                     if (moment().add(14, 'days').format('d') == 0) {
                         document.getElementById("deliveryDate").value = moment().add(15, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(15, 'days').format('DD/MM/YYYY');
+                        document.getElementById("expiryDate").value = moment().add(21, 'days').format('YYYY-MM-DD');
                         document.getElementById("expiryDate").value = moment().add(21, 'days').format('YYYY-MM-DD');
                     } else {
                         document.getElementById("deliveryDate").value = moment().add(14, 'days').format('YYYY-MM-DD');
+                        document.getElementById("qbServiceDate").value = moment().add(14, 'days').format('DD/MM/YYYY');
+                        document.getElementById("expiryDate").value = moment().add(20, 'days').format('YYYY-MM-DD');
                         document.getElementById("expiryDate").value = moment().add(20, 'days').format('YYYY-MM-DD');
                     }
                 }
-
-                //document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
 
                 //Go Rush Plus Orders V2 [database]
                 if (tempSplit == 1) {
@@ -4328,32 +4331,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 }
-
-                //Warehouse Entrance Reference for GRP Malaysia [Database]
-                /* if (document.getElementById("GoRushReceivingCountry").value == "MALAYSIA") {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbyoJMDxUwWvWoKjv1o_Us0Xu79WsrKVF6GJldTc5IXlP9x6eNICQIm-reiRih0cis1iHQ/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                } */
-
-                //Warehouse Entrance Reference for GRP China [Database]
-                /* if (document.getElementById("GoRushReceivingCountry").value == "CHINA") {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbzHDabrr8LnVfL4hlO7-JPbf6BJWi98UkiaX7tsRu_EQdBZjmhRC2B17qC7hwNv3iVh/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                } */
-
-                //Warehouse Enterance Reference for GRP Singapore [Database]
-                /* if (document.getElementById("GoRushReceivingCountry").value == "SINGAPORE") {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwh8fwGxsFuXLRmc6NI1WW65iSq7ClLoBGBrOOLXwSgVS4Oae-bMAYTR8EGIdE_hVnU7w/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                } */
-
-                //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                 $('#submitBtnfinal').attr('disabled', false);
 
@@ -4413,18 +4390,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4435,18 +4420,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4457,18 +4450,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4479,18 +4480,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(2, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(3, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4501,18 +4510,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4523,18 +4540,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4545,18 +4570,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4567,18 +4600,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4589,18 +4630,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4611,18 +4660,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     } else {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         } else {
                             document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
                             document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
                         }
                     }
                 }
@@ -4630,17 +4687,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("deliveryType").value = $('input[name=localCharges]:checked').val();
 
                 let price = document.getElementById('price').value;
-
-                //document.getElementById("Tookan-Tracking").value = json_responseo.data[0].job_id;
-
-                //General Order [Database]
-                /* const scriptURL = 'https://script.google.com/macros/s/AKfycbzvzp-lNIC5HV2fqyjKOfWxtURgUdE7xx6509Jzj8OhdCpMBu70-6T14FCY-RJ-187a/exec'
-                const form = document.forms['guestorderform']
-
-                fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                    .catch(error => console.error('Error!', error.message)) */
-
-                //document.getElementById("finaltrackingnumarea").innerText = document.getElementById("Tookan-Tracking").value;
 
                 $('#submitBtnfinal').attr('disabled', false);
 

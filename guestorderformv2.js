@@ -2724,37 +2724,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#loading").fadeIn();
 
             document.getElementById("customerthank").innerText = "Thank you " + document.getElementById("name").value + "!";
-            document.getElementById("finalsummaryarea").innerHTML = document.getElementById("finalsummary").innerHTML
-
-            //getSubmittedDate
-            var today = new Date();
-            var date = today.getDate() + '/' + (today.getMonth() + 1) + '/' + today.getFullYear();
-
-            var ampmhour = '';
-            var ampmmin = '';
-            var ampmNum = '';
-
-            if (today.getHours() < 12) {
-                ampmNum = 0;
-                ampmhour = (today.getHours());
-            }
-
-            if (today.getHours() >= 12) {
-                ampmNum = 1;
-                ampmhour = (today.getHours());
-            }
-
-            if (today.getMinutes() < 10) {
-                ampmmin = "0" + (today.getMinutes());
-            }
-
-            if (today.getMinutes() >= 10) {
-                ampmmin = (today.getMinutes());
-            }
-
-            var time = ampmhour + ":" + ampmmin;
-
-            let dateSubmitted = date + ' ' + time;
+            document.getElementById("finalsummaryarea").innerHTML = document.getElementById("finalsummary").innerHTML;
 
             document.getElementById("dateSubmitted").value = moment().format('DD-MM-YYYY h:mm a');
 
@@ -2764,122 +2734,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             document.getElementById("qbCreationDate").value = moment().format('DD/MM/YYYY');
 
-            //getCompletionDate
-            var todaysDate = new Date();
-
-            //31 January to Feburary
-            if (todaysDate.getMonth() == 0) {
-                if (todaysDate.getDate() < 31) {
-                    var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                }
-                if (todaysDate.getDate() >= 31) {
-                    if (todaysDate.getHours() < 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                    }
-                    if (todaysDate.getHours() >= 12) {
-                        if ((0 == todaysDate.getFullYear() % 4) && (0 != todaysDate.getFullYear() % 100) || (0 == todaysDate.getFullYear() % 400)) {
-                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-29';
-                        } else {
-                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-28';
-                        }
-                    }
-                }
-            }
-
-            //February
-            if (todaysDate.getMonth() == 1) {
-                //Leap year
-                if ((0 == todaysDate.getFullYear() % 4) && (0 != todaysDate.getFullYear() % 100) || (0 == todaysDate.getFullYear() % 400)) {
-                    if (todaysDate.getDate() < 29) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-29';
-                    }
-                    if (todaysDate.getDate() >= 29) {
-                        if (todaysDate.getHours() < 12) {
-                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-29';
-                        }
-                        if (todaysDate.getHours() >= 12) {
-                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
-                        }
-                    }
-                } else {
-                    if (todaysDate.getDate() < 28) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
-                    }
-                    if (todaysDate.getDate() >= 28) {
-                        if (todaysDate.getHours() < 12) {
-                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-28';
-                        }
-                        if (todaysDate.getHours() >= 12) {
-                            var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
-                        }
-                    }
-                }
-            }
-
-            //31 July to August
-            if (todaysDate.getMonth() == 6) {
-                if (todaysDate.getDate() < 31) {
-                    var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                }
-                if (todaysDate.getDate() >= 31) {
-                    if (todaysDate.getHours() < 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                    }
-                    if (todaysDate.getHours() >= 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
-                    }
-                }
-            }
-
-            //December
-            if (todaysDate.getMonth() == 11) {
-                if (todaysDate.getDate() < 31) {
-                    var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                }
-                if (todaysDate.getDate() >= 31) {
-                    if (todaysDate.getHours() < 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                    }
-                    if (todaysDate.getHours() >= 12) {
-                        var dateD = (todaysDate.getFullYear() + 1) + '-01-31';
-                    }
-                }
-            }
-
-            //31
-            if ((todaysDate.getMonth() == 2) || (todaysDate.getMonth() == 4) || (todaysDate.getMonth() == 7) || (todaysDate.getMonth() == 9)) {
-                if (todaysDate.getDate() < 31) {
-                    var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                }
-                if (todaysDate.getDate() >= 31) {
-                    if (todaysDate.getHours() < 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-31';
-                    }
-                    if (todaysDate.getHours() >= 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-30';
-                    }
-                }
-            }
-
-            //30
-            if ((todaysDate.getMonth() == 3) || (todaysDate.getMonth() == 5) || (todaysDate.getMonth() == 8) || (todaysDate.getMonth() == 10)) {
-                if (todaysDate.getDate() < 30) {
-                    var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-30';
-                }
-                if (todaysDate.getDate() >= 30) {
-                    if (todaysDate.getHours() < 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 1) + '-30';
-                    }
-                    if (todaysDate.getHours() >= 12) {
-                        var dateD = todaysDate.getFullYear() + '-' + (todaysDate.getMonth() + 2) + '-31';
-                    }
-                }
-            }
-
-            var timeD = "23:59:00";
-
-            let jobdeliverydatetime = dateD + ' ' + timeD;
-
             if ($('input[name=products]:checked').val() == "pharmacymoh") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
@@ -2887,8 +2741,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
-
-                let patientOrderId = "MOH" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let area = "";
 
@@ -3263,15 +3115,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("area").value = area;
 
-                if (document.querySelector('input[name=districtAppointment]:checked').value == "Brunei Muara") {
-                    if ((document.getElementById("healthCentreBM").value == "Raja Isteri Pengiran Anak Saleha Hospital") ||
-                        (document.getElementById("healthCentreBM").value == "Rimba Dialysis Centre") || (document.getElementById("healthCentreBM").value == "Pengkalan Batu Health Centre") ||
-                        (document.getElementById("healthCentreBM").value == "PJSC") || (document.getElementById("healthCentreBM").value == "JPMC") ||
-                        (document.getElementById("healthCentreBM").value == "Psychiatry Department, Ministry of Health")) {
-                        document.getElementById("sendOrderTo").value = "OPD";
-                    } else {
-                        document.getElementById("sendOrderTo").value = "BHC";
-                    }
+                if ((document.querySelector('input[name=districtAppointment]:checked').value == "Brunei Muara") || (document.querySelector('input[name=districtAppointment]:checked').value == "Temburong")) {
+                    document.getElementById("sendOrderTo").value = "OPD";
                 }
 
                 if (document.querySelector('input[name=districtAppointment]:checked').value == "Tutong") {
@@ -3280,10 +3125,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (document.querySelector('input[name=districtAppointment]:checked').value == "Belait") {
                     document.getElementById("sendOrderTo").value = "SSBH";
-                }
-
-                if (document.querySelector('input[name=districtAppointment]:checked').value == "Temburong") {
-                    document.getElementById("sendOrderTo").value = "OPD";
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Standard")) {
@@ -3361,40 +3202,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
                 }
 
-                let price = document.getElementById('price').value;
-                let appointmentPlaceDistrict = document.querySelector('input[name=districtAppointment]:checked').value;
-                let sendOrderTo = document.getElementById("sendOrderTo").value;
-
-                let customerRemarks = document.getElementById("remarks").value;
-                let customerPM = document.getElementById("paymentmethod").value;
-                let order_Origin = document.getElementById("orderOrigin").value;
-
-                let orderId = document.getElementById("patientNumber").value;
-                let jobDescription = $('input[name=mohCharges]:checked').val();
-                let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("name").value;
-
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
-                let icPassportNum = document.getElementById("icPassportNum").value;
-
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
-
-                let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
-
-                let additionalPhoneNoPlus = "";
 
                 let additionalPhone = "";
 
                 if (document.getElementById("contact_2").value.length != 0) {
                     additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
-                    additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
-                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value
-                    + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
+                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value;
+                + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
 
@@ -3411,25 +3232,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     var finalTags = 'MOH';
                 }
 
-                //Medicine DB [database]
-                if (medicineDBGsheet == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-                }
-
-                //Pharmacy + Local 2.0 to Gsheet [database]
-                if (gsheet2 == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-                }
-
-
                 $('#submitBtnfinal').attr('disabled', false);
 
                 document.getElementById('submitBtnfinal').click();
@@ -3442,8 +3244,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
-
-                var patientOrderId = "JPMCPJSC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
@@ -4027,19 +3827,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                let customerRemarks = document.getElementById("remarks").value;
-                let customerPM = document.getElementById("paymentmethod").value;
-
-                let orderId = document.getElementById("patientNumber").value;
-                let jobDescription = $('input[name=jpmcCharges]:checked').val();
-                let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("name").value;
-
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
-
-                let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 let appointmentPlace = $('input[name=jpmcpjsc]:checked').val();
 
@@ -4050,18 +3840,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("deliveryType").value = $('input[name=jpmcCharges]:checked').val();
                 document.getElementById("payingPatient").value = $('input[name=jpmcPayingPatient]:checked').val();
 
-                let additionalPhoneNoPlus = "";
-
                 let additionalPhone = "";
 
                 if (document.getElementById("contact_2").value.length != 0) {
                     additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
-                    additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
-
-                let price = document.getElementById('price').value;
 
                 if ($('input[name=jpmcPayingPatient]:checked').val() == 'Yes') {
                     var finalTags = 'JPMC, PP';
@@ -4069,33 +3854,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if ($('input[name=jpmcPayingPatient]:checked').val() == 'No') {
                     var finalTags = 'JPMC';
-                }
-
-                //Medicine DB [database]
-                if (medicineDBGsheet == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-                }
-
-                //Medicine DB [jpmc database]
-                if (medicineDBjpmcGsheet == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbypovbPZ5icrus4WPpW_V5wAKc9Rgu0gfx5HnKpP9jYvxa3prL35Yb2e98DNyvyW92ZpA/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
-                }
-
-                //Pharmacy + Local 2.0 to Gsheet [database]
-                if (gsheet2 == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycby6nF1eowr8aTVlTK7xSO5MAdcoRhWYOtaXPGkcqjfgihOAA8nKWoNmF6f1yPKYEvX-1A/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
                 }
 
                 $('#submitBtnfinal').attr('disabled', false);
@@ -4110,8 +3868,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
-
-                var patientOrderId = "PHC" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
@@ -4530,28 +4286,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                let customerRemarks = document.getElementById("remarks").value;
-                let customerPM = document.getElementById("paymentmethod").value;
-
-                let orderId = document.getElementById("patientNumber").value;
-                let jobDescription = $('input[name=phcCharges]:checked').val();
-                let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("name").value;
-
                 document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
-
-                let customerPhoneNoPlus = document.getElementById("code").value + document.getElementById("contact_1").value;
-
-                let additionalPhoneNoPlus = "";
 
                 let additionalPhone = "";
 
                 if (document.getElementById("contact_2").value.length != 0) {
                     additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = additionalPhone;
-                    additionalPhoneNoPlus = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                     document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
@@ -4562,25 +4305,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("deliveryType").value = $('input[name=phcCharges]:checked').val();
                 document.getElementById("payingPatient").value = $('input[name=phcPayingPatient]:checked').val();
 
-                let customerDOB = document.getElementById("dateofbirth").value;
-
-                let price = document.getElementById('price').value;
-
                 if ($('input[name=phcPayingPatient]:checked').val() == 'Yes') {
                     var finalTags = 'PHC, PP';
                 }
 
                 if ($('input[name=phcPayingPatient]:checked').val() == 'No') {
                     var finalTags = 'PHC';
-                }
-
-                //Medicine DB [database]
-                if (medicineDBGsheet == 1) {
-                    const scriptURL = 'https://script.google.com/macros/s/AKfycbwbdICh1LrT62N7ySvkgIOMq825LEKvM7KRcVREBOJVzzZSbopF4LowFZGZb4-_XMhZNQ/exec'
-                    const form = document.forms['guestorderform']
-
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .catch(error => console.error('Error!', error.message))
                 }
 
                 $('#submitBtnfinal').attr('disabled', false);
@@ -5001,20 +4731,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                let warehouseReference = document.getElementById("warehouseReference").value;
-
-                let orderId = document.getElementById("grpTrack").value;
-                let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("buyerName").value;
-
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
-
-                let commodity = document.getElementById("commodities").value;
-                let totalPrice = document.getElementById("itemPrice").value;
-                let itemCurrency = document.getElementById("currency").value;
-                let itemContains = document.querySelector('input[name=itemContains]:checked').value;
 
                 if (moment().format('h') < 12) {
                     if (moment().add(13, 'days').format('d') == 0) {
@@ -5072,16 +4791,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("itemQuantity").value = "1";
 
-                let localDeliveryOrderId = "LD" + today.getDate() + (today.getMonth() + 1) + today.getFullYear() + ampmhour + ampmmin + ampmNum;
-
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
 
+                let deliveryAddress = document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value
+                    + " " + document.getElementById("receiverJalan").value + " " + document.getElementById("receiverSimpang").value + " " + $('input[name=receiverDistrict]:checked').val() + " "
+                    + document.getElementById("receiverPostal").value;
+
+                document.getElementById("receiverAddress").value = deliveryAddress;
                 document.getElementById("customerAddress").value = customerAddress;
                 document.getElementById("senderAddress").value = customerAddress;
 
-                let address = customerAddress.toUpperCase();
+                let address = deliveryAddress.toUpperCase();
                 var kampong = "";
 
                 if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
@@ -5445,36 +5167,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("area").value = area;
 
-                let itemDescription = document.getElementById("productdescription").value;
-                let jobDescription = $('input[name=localCharges]:checked').val();
-                let jobType = $('input[name=pickupordelivery]:checked').val();
-
-                let customerEmail = document.getElementById("email").value;
-                let customerUsername = document.getElementById("name").value;
-
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
 
-                let deliveryAddress = document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value
-                    + " " + document.getElementById("receiverJalan").value + " " + document.getElementById("receiverSimpang").value + " " + $('input[name=receiverDistrict]:checked').val() + " "
-                    + document.getElementById("receiverPostal").value;
-
-                document.getElementById("receiverAddress").value = deliveryAddress;
-
-                let receiverName = document.getElementById("receiverName").value;
                 let receiverPhone = "+" + document.getElementById("code_3").value + document.getElementById("receiverContact_1").value;
                 document.getElementById("receiverPhone").value = receiverPhone;
-                let productType = document.getElementById("producttype").value;
-                let productWeight = $('input[name=productweight]:checked').val();
-                let codRequired = $('input[name=codrequired]:checked').val();
-                let codAmount = document.getElementById("codamount").value;
-                let billTo = document.getElementById("billto").value;
-
-                let pickupAddress = document.getElementById("pickupaddress").value;
-                let pickupDate = document.getElementById("pickupdate").value;
-
-                let customerPM = document.getElementById("paymentmethod").value;
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     document.getElementById('price').value = '4';
@@ -5777,8 +5475,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 document.getElementById("deliveryType").value = $('input[name=localCharges]:checked').val();
-
-                let price = document.getElementById('price').value;
 
                 $('#submitBtnfinal').attr('disabled', false);
 

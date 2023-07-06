@@ -2748,8 +2748,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
 
-                document.getElementById("customerAddress").value = customerAddress;
                 document.getElementById("receiverAddress").value = customerAddress;
+                document.getElementById("customerAddress").value = customerAddress;
 
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
@@ -3249,8 +3249,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
 
-                document.getElementById("customerAddress").value = customerAddress;
                 document.getElementById("receiverAddress").value = customerAddress;
+                document.getElementById("customerAddress").value = customerAddress;
 
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
@@ -3873,9 +3873,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
 
-                document.getElementById("customerAddress").value = customerAddress;
                 document.getElementById("receiverAddress").value = customerAddress;
-
+                document.getElementById("customerAddress").value = customerAddress;
+                
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 
@@ -4330,9 +4330,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                     + document.getElementById("postal").value;
 
-                document.getElementById("customerAddress").value = customerAddress;
                 document.getElementById("receiverAddress").value = customerAddress;
-
+                document.getElementById("customerAddress").value = customerAddress;
+                
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 

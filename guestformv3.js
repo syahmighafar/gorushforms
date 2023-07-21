@@ -2508,7 +2508,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (4).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2518,7 +2518,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (7).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2528,7 +2528,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (12).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2538,7 +2538,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (12).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2548,7 +2548,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (5).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2558,7 +2558,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (8).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2568,7 +2568,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (12).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -2578,7 +2578,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (3).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
                         }
                         $("#deliveryDurationsum").hide();
                     }
@@ -2587,7 +2587,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (5).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                         }
                         $("#deliveryDurationsum").hide();
                     }
@@ -2596,7 +2596,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (document.getElementById("productweight").value <= 3) {
                             document.getElementById("price").value = (7).toFixed(2)
                         } else {
-                            document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                         }
                         $("#deliveryDurationsum").hide();
                     }

@@ -17,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $("#productweight").on('keyup', function(){
             if (document.getElementById("productweight").value <= 3) {
-                document.getElementById("additionalCharge").innerText = (0).toFixed(2)
+                document.getElementById("additionalCharge").value = (0).toFixed(2)
             } else {
-                document.getElementById('additionalCharge').innerText = Number((document.getElementById("productweight").value) - 3).toFixed(2)
+                document.getElementById('additionalCharge').value = Number((document.getElementById("productweight").value) - 3).toFixed(2)
             }
         });
 

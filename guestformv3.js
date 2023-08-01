@@ -2576,12 +2576,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>Local Delivery</b>";
                     document.getElementById("pickupordeliverysum").innerHTML = "Pickup or Delivery?: <b>" + $('input[name=pickupordelivery]:checked').val() + "</b>";
 
-                    if (($('input[name=localCharges]:checked').val() == "Delivery Only")) {
+                    if (($('input[name=pickupordelivery]:checked').val() == "Delivery Only")) {
                         document.getElementById("pickupdatesum").innerHTML = "Pick-Up Date: <b>N/A</b>";
                         document.getElementById("pickupaddresssum").innerHTML = "Pick-Up Address: <b>N/A</b>";
                     }
 
-                    if (($('input[name=localCharges]:checked').val() == "Pickup and Delivery")) {
+                    if (($('input[name=pickupordelivery]:checked').val() == "Pickup and Delivery")) {
                         document.getElementById("pickupdatesum").innerHTML = "Pick-Up Date: <b>" + document.getElementById("pickupdate").value + "</b>";
                         document.getElementById("pickupaddresssum").innerHTML = "Pick-Up Address: <b>" + document.getElementById("pickupaddress").value + "</b>";
                     }

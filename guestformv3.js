@@ -1495,8 +1495,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#gostandardkb").hide();
                 $("#gostandardtemb").hide();
                 $("#goexpressbm").hide();
-                $("#goexpressttg").hide();
-                $("#goexpresskb").hide();
                 $("#godropoffbm").hide();
                 $("#godropoffttg").hide();
                 $("#godropoffkb").hide();
@@ -1513,8 +1511,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#gostandardkb").hide();
                 $("#gostandardtemb").hide();
                 $("#goexpressbm").fadeIn();
-                $("#goexpressttg").hide();
-                $("#goexpresskb").hide();
                 $("#godropoffbm").fadeIn();
                 $("#godropoffttg").hide();
                 $("#godropoffkb").hide();
@@ -1531,8 +1527,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#gostandardkb").hide();
                 $("#gostandardtemb").hide();
                 $("#goexpressbm").hide();
-                $("#goexpressttg").fadeIn();
-                $("#goexpresskb").hide();
                 $("#godropoffbm").hide();
                 $("#godropoffttg").fadeIn();
                 $("#godropoffkb").hide();
@@ -1549,8 +1543,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#gostandardkb").hide();
                 $("#gostandardtemb").fadeIn();
                 $("#goexpressbm").hide();
-                $("#goexpressttg").hide();
-                $("#goexpresskb").hide();
                 $("#godropoffbm").hide();
                 $("#godropoffttg").hide();
                 $("#godropoffkb").hide();
@@ -1567,8 +1559,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#gostandardkb").fadeIn();
                 $("#gostandardtemb").hide();
                 $("#goexpressbm").hide();
-                $("#goexpressttg").hide();
-                $("#goexpresskb").fadeIn();
                 $("#godropoffbm").hide();
                 $("#godropoffttg").hide();
                 $("#godropoffkb").fadeIn();
@@ -2549,26 +2539,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("price").value = (5).toFixed(2)
                         } else {
                             document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
-                        }
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
-                        $("#deliveryDurationsum").fadeIn();
-                    }
-
-                    if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
-                        if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (8).toFixed(2)
-                        } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
-                        }
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
-                        $("#deliveryDurationsum").fadeIn();
-                    }
-
-                    if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
-                        if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (12).toFixed(2)
-                        } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -5279,76 +5249,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     } else {
                         document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
-                    }
-                    if (moment().format('h') < 12) {
-                        if (moment().format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        } else {
-                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        }
-                    } else {
-                        if (moment().add(1, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        } else {
-                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        }
-                    }
-                }
-
-                if (($('input[name=localCharges]:checked').val() == "Express Tutong")) {
-                    if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (8).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (8).toFixed(2)
-                    } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
-                    }
-                    if (moment().format('h') < 12) {
-                        if (moment().format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        } else {
-                            document.getElementById("deliveryDate").value = moment().format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        }
-                    } else {
-                        if (moment().add(1, 'days').format('d') == 0) {
-                            document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().add(2, 'days').format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(3, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        } else {
-                            document.getElementById("deliveryDate").value = moment().add(1, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbServiceDate").value = moment().add(1, 'days').format('DD/MM/YYYY');
-                            document.getElementById("expiryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
-                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
-                        }
-                    }
-                }
-
-                if (($('input[name=localCharges]:checked').val() == "Express Belait")) {
-                    if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (12).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (12).toFixed(2)
-                    } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {

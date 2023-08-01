@@ -5136,7 +5136,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (4).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (4).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
                     }
 
@@ -5172,7 +5172,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (7).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (7).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5207,7 +5207,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (12).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (12).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5242,7 +5242,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (12).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (12).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5277,7 +5277,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (5).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (5).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5312,7 +5312,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (8).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (8).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5347,7 +5347,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (12).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (12).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5382,7 +5382,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (3).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (3).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5417,7 +5417,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (5).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (5).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
@@ -5452,7 +5452,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("price").value = (7).toFixed(2)
                         document.getElementById('Total-Item-Price').value = (7).toFixed(2)
                     } else {
-                        document.getElementById('price').innerText = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                         document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                     }
                     if (moment().format('h') < 12) {

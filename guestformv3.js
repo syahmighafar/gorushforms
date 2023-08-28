@@ -3141,8 +3141,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
-                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value;
-                + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
+                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
 
                 document.getElementById("customerPhone").value = customerPhone;
 

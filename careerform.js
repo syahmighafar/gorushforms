@@ -183,13 +183,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             document.getElementById("finalsubmitteddate").innerText = moment().format('Do MMMM YYYY, h:mm a');
-            
-            //GGLSB Job Application [Job Applicants]
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbxH_w8sGcdu2uwc15rRT-XxCDQK-TngOd0L1-k3iIT_oRSpIDEPqnC3_0e8OpjMkeMsAA/exec'
-            const form = document.forms['careerapplicationform']
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                .catch(error => console.error('Error!', error.message))
 
             $('#submitBtnfinal').attr('disabled', false);
 

@@ -5670,6 +5670,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
+                document.getElementById("receiverAddress").value = customerAddress;
 
                 let address = customerAddress.toUpperCase();
                 var kampong = "";

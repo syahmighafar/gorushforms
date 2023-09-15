@@ -5659,7 +5659,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
                 document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
 
-                document.getElementById("grptrack").value = document.getElementById("GB-RS-Track").value;
+                document.getElementById("grpTrack").value = document.getElementById("GB-RS-Track").value;
                 document.getElementById("ecommerce").value = document.getElementById("GB-RS-Courier").value;
                 document.getElementById("productdescription").value = document.getElementById("gbrsItemDescription").value;
                 document.getElementById("itemQuantity").value = document.getElementById("GB-RS-Quantity").value;

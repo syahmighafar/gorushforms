@@ -2859,6 +2859,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productSumGD").hide();
                 $("#productSumPharmacy").hide();
                 $("#productSumRS").fadeIn();
+                document.getElementById("productssum").innerHTML = "Product Type: <b>Runner Service</b>";
                 document.getElementById("gbrsTracksum").innerHTML = "Original Tracking Number: <b>" + document.getElementById("GB-RS-Track").value + "</b>";
                 document.getElementById("gbrsCouriersum").innerHTML = "Courier: <b>" + document.getElementById("GB-RS-Courier").value + "</b>";
                 document.getElementById("gbrsItemDescsum").innerHTML = "Item Description: <b>" + document.getElementById("gbrsItemDescription").value + "</b>";

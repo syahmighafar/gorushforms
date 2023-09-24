@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.getElementById("contact_1").readOnly = true;
             document.getElementById("contact_2").readOnly = true;
             document.getElementById("dateofbirth").readOnly = true;
-            document.getElementById("icPassportNum").readOnly = true;
+            document.getElementById("icnumber").readOnly = true;
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });

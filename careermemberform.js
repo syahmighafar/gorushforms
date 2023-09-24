@@ -6,6 +6,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             document.getElementById("code").value = '673';
             document.getElementById("code_2").value = '673';
+            document.getElementById("name").readOnly = true;
+            document.getElementById("house").readOnly = true;
+            document.getElementById("kampong").readOnly = true;
+            document.getElementById("jalan").readOnly = true;
+            document.getElementById("simpang").readOnly = true;
+            document.getElementById("district").readOnly = true;
+            document.getElementById("postal").readOnly = true;
+            document.getElementById("email").readOnly = true;
+            document.getElementById("contact_1").readOnly = true;
+            document.getElementById("contact_2").readOnly = true;
+            document.getElementById("dateofbirth").readOnly = true;
+            document.getElementById("icPassportNum").readOnly = true;
 
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });

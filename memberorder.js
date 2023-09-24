@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         $('input[name=products]').change(function () {
+            document.getElementById("code").value = '673';
+            document.getElementById("code_2").value = '673';
+            document.getElementById("code_3").value= '673';
             document.getElementById("name").readOnly = true;
             document.getElementById("house").readOnly = true;
             document.getElementById("kampong").readOnly = true;

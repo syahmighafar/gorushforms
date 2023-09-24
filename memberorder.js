@@ -34,6 +34,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.getElementById("email").readOnly = true;
             document.getElementById("contact_1").readOnly = true;
             document.getElementById("contact_2").readOnly = true;
+            document.getElementById("dateofbirth").readOnly = true;
+            document.getElementById("icPassportNum").readOnly = true;
 
             if ($(this).val() == "pharmacymoh") {
                 $('#submitBtnfinal').attr('disabled', true);
@@ -2120,8 +2122,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>MOH Pharmacy Order</b>";
                     document.getElementById("patientNumbersum").innerHTML = "Bru-HIMs Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
                         + document.getElementById("healthCentreKB").value + "</b>";
@@ -2222,8 +2223,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>JPMC / PJSC Pharmacy Order</b>";
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]:checked').val() + "</b>";
                     $("#deliveryTypesum").fadeIn();
                     $("#amounttobepaidsum").fadeIn();
@@ -2318,8 +2318,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>Panaga Health Pharmacy Order</b>";
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
                     $("#deliveryTypesum").fadeIn();
                     $("#amounttobepaidsum").fadeIn();

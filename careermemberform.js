@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#vacanciesarea").hide();
             $("#applicationformarea").fadeIn();
 
+            document.getElementById("code").value = '673';
+            document.getElementById("code_2").value = '673';
+
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 

@@ -73,14 +73,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
 
-                document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ","") + "</b>";
 
                 if ($("#contact_2").val().length == 0) {
                     document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
                 }
 
                 if ($("#contact_2").val().length != 0) {
-                    document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                    document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ","") + "</b>";
                 }
 
                 document.getElementById("positionappliedsum").innerHTML = "Position Applied: <b>" + document.getElementById("positionapplied").value + "</b>";
@@ -137,12 +137,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             document.getElementById("address").value = address;
 
-            let phoneNumber = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+            let phoneNumber = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ","");
 
             document.getElementById("phoneNumber").value = phoneNumber;
 
             if (($("#contact_2").val().length != 0)) {
-                let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ","");
                 document.getElementById("additionalPhone").value = additionalPhone;
             }
 

@@ -546,7 +546,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("personalNextBtn").focus();
             }
 
-            if ($(this).val() == "runnerservice") {
+            if ($(this).val() == "cbsl") {
                 $('#submitBtnfinal').attr('disabled', true);
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Buyer)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Buyer)";
@@ -2010,7 +2010,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
             }
 
-            if (($('input[name=products]:checked').val() == "runnerservice")) {
+            if (($('input[name=products]:checked').val() == "cbsl")) {
                 if (($("#GB-RS-Track").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the parcel tracking number field empty!");
@@ -2570,7 +2570,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
             }
 
-            if (($('input[name=products]:checked').val() == "runnerservice")) {
+            if (($('input[name=products]:checked').val() == "cbsl")) {
                 $("#chargesNextBtn").hide();
                 $("#chargessection").hide();
                 $("#chargesPrevBtn").hide();
@@ -2579,7 +2579,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#agreesubmitPrevBtn").fadeIn();
                 $("#ensure").hide();
 
-                document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "/GobeliStore</b>";
+                document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                 document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
                     + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value + "</b>";
@@ -2611,7 +2611,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productSumGD").hide();
                 $("#productSumPharmacy").hide();
                 $("#productSumRS").fadeIn();
-                document.getElementById("productssum").innerHTML = "Product Type: <b>Runner Service</b>";
+                document.getElementById("productssum").innerHTML = "Product Type: <b>Cross Border Service (Limbang)</b>";
                 document.getElementById("gbrsTracksum").innerHTML = "Original Tracking Number: <b>" + document.getElementById("GB-RS-Track").value + "</b>";
                 document.getElementById("gbrsCouriersum").innerHTML = "Courier: <b>" + document.getElementById("GB-RS-Courier").value + "</b>";
                 document.getElementById("gbrsItemDescsum").innerHTML = "Item Description: <b>" + document.getElementById("gbrsItemDescription").value + "</b>";
@@ -5400,7 +5400,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('submitBtnfinal').click()
             }
 
-            if ($('input[name=products]:checked').val() == "runnerservice") {
+            if ($('input[name=products]:checked').val() == "cbsl") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
                 document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ","");
@@ -5782,9 +5782,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("area").value = area;
 
-                var codeN = "/GobeliStore";
                 var conN = document.getElementById("name").value;
-                document.getElementById("buyerName").value = conN + codeN;
+                document.getElementById("buyerName").value = document.getElementById("name").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ","");
 

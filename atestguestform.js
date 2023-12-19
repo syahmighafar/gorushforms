@@ -2257,7 +2257,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     && ($('input[name=itemContains]:checked').val() != undefined) && ($("#Item-Description").val().length != 0)
                     && ($("#Quantity").val().length != 0) && ($("#Total-Item-Price").val().length != 0)) {
 
-                    if ($('input[name=pickupordeliverygrp]:checked').val() == pickup) {
+                    if ($('input[name=pickupordeliverygrp]:checked').val() == "pickup") {
                         $("#sectiongrpcharges").hide();
 
                     } else {
@@ -2404,7 +2404,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     && ($("#gbrsItemDescription").val().length != 0) && ($("#GB-RS-Quantity").val().length != 0)
                     && ($("#GB-RS-Total-Amount").val().length != 0)) {
 
-                    if ($('input[name=pickupordeliverycbsl]:checked').val() == pickup) {
+                    if ($('input[name=pickupordeliverycbsl]:checked').val() == "pickup") {
                         $("#sectioncbslcharges").hide();
 
                     } else {

@@ -2249,13 +2249,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#chargessection").hide();
                     alert("Please do not leave the total item price field empty!");
                 }
-                
+
                 if (($('input[name=pickupordeliverygrp]:checked').val() != undefined) && ($("#grpTrack").val().length != 0) && ($("#GoRushReceivingCountry").val().length != 0)
                     && ($('input[name=shipmentMethod]:checked').val() != undefined) && ($("#ecommerce").val().length != 0)
                     && ($("#commodities").val().length != 0) && ($("#currency").val().length != 0)
                     && ($("#weight").val().length != 0) && ($('input[name=permit]:checked').val() != undefined)
                     && ($('input[name=itemContains]:checked').val() != undefined) && ($("#Item-Description").val().length != 0)
                     && ($("#Quantity").val().length != 0) && ($("#Total-Item-Price").val().length != 0)) {
+
+                    if ($('input[name=pickupordeliverygrp]:checked').val() == pickup) {
+                        $("#sectiongrpcharges").hide();
+
+                    } else {
+                        $("#sectiongrpcharges").fadeIn();
+                    }
+
                     $("#productNextBtn").hide();
                     $("#productsection").hide();
                     $("#productsPrevBtn").hide();
@@ -2366,7 +2374,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#chargessection").hide();
                     alert("Please choose either pickup or delivery!");
                 }
-                
+
                 if (($("#GB-RS-Track").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the parcel tracking number field empty!");
@@ -2395,6 +2403,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (($('input[name=pickupordeliverycbsl]:checked').val() != undefined) && ($("#GB-RS-Track").val().length != 0) && ($("#GB-RS-Courier").val().length != 0)
                     && ($("#gbrsItemDescription").val().length != 0) && ($("#GB-RS-Quantity").val().length != 0)
                     && ($("#GB-RS-Total-Amount").val().length != 0)) {
+
+                    if ($('input[name=pickupordeliverycbsl]:checked').val() == pickup) {
+                        $("#sectioncbslcharges").hide();
+
+                    } else {
+                        $("#sectioncbslcharges").fadeIn();
+                    }
+
                     $("#productNextBtn").hide();
                     $("#productsection").hide();
                     $("#productsPrevBtn").hide();
@@ -6194,7 +6210,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 else { area = "N/A" }
 
                 document.getElementById("area").value = area;
-                
+
                 document.getElementById("buyerName").value = document.getElementById("name").value;
 
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;

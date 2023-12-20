@@ -3024,12 +3024,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount (RM): <b>" + document.getElementById("GB-RS-Total-Amount").value + "</b>";
                 document.getElementById("gbrsQuantitysum").innerHTML = "Quantity: <b>" + document.getElementById("GB-RS-Quantity").value + "</b>";
                 $("#deliveryTypesum").hide();
-                $("#amounttobepaidsum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").hide();
                 $("#chargeHeadingsum").hide();
-
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + " (excluding other charges)</b>";
 
                 if (($('input[name=pickupordeliverycbsl]:checked').val() == "pickup")) {
                     $("#amounttobepaidsum").hide();
@@ -3056,6 +3053,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                     $("#amounttobepaidsum").fadeIn();
                 }
+
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + " (excluding other charges)</b>";
 
                 document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
 

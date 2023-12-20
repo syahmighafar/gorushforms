@@ -2771,34 +2771,39 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
                 document.getElementById("itemPricesum").innerHTML = "Total Price: <b>$" + document.getElementById("itemPrice").value + "</b>";
                 $("#deliveryTypesum").hide();
-                $("#amounttobepaidsum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").hide();
                 $("#chargeHeadingsum").hide();
 
                 document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
 
-                if (($('input[name=grpCharges]:checked').val() == "Immediate Brunei Muara")) {
-                    document.getElementById("price").value = (20).toFixed(2)
+                if (($('input[name=pickupordeliverygrp]:checked').val() == "pickup")) {
+                    $("#amounttobepaidsum").hide();
+                    document.getElementById("price").value = 0
+                } else {
+                    if (($('input[name=grpCharges]:checked').val() == "Immediate Brunei Muara")) {
+                        document.getElementById("price").value = (20).toFixed(2)
+                    }
+
+                    if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
+                        document.getElementById("price").value = (3).toFixed(2)
+                    }
+
+                    if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
+                        document.getElementById("price").value = (5).toFixed(2)
+                    }
+
+                    if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
+                        document.getElementById("price").value = (7).toFixed(2)
+                    }
+
+                    if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
+                        document.getElementById("price").value = (10).toFixed(2)
+                    }
+                    $("#amounttobepaidsum").fadeIn();
                 }
 
-                if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
-                    document.getElementById("price").value = (3).toFixed(2)
-                }
-
-                if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
-                    document.getElementById("price").value = (5).toFixed(2)
-                }
-
-                if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
-                    document.getElementById("price").value = (7).toFixed(2)
-                }
-
-                if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
-                    document.getElementById("price").value = (10).toFixed(2)
-                }
-
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + " (excluding other charges)</b>";
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -3003,26 +3008,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
                 }
 
-                if (($('input[name=cbslCharges]:checked').val() == "Immediate Brunei Muara")) {
-                    document.getElementById("price").value = (20).toFixed(2)
-                }
-
-                if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
-                    document.getElementById("price").value = (3).toFixed(2)
-                }
-
-                if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
-                    document.getElementById("price").value = (5).toFixed(2)
-                }
-
-                if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
-                    document.getElementById("price").value = (7).toFixed(2)
-                }
-
-                if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
-                    document.getElementById("price").value = (10).toFixed(2)
-                }
-
                 $("#deliveryDurationsum").hide();
                 var codeN = "/GobeliStore";
                 var conN = document.getElementById("name").value;
@@ -3044,7 +3029,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#paymentmethodsum").hide();
                 $("#chargeHeadingsum").hide();
 
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + " (excluding other charges)</b>";
+
+                if (($('input[name=pickupordeliverycbsl]:checked').val() == "pickup")) {
+                    $("#amounttobepaidsum").hide();
+                    document.getElementById("price").value = 0
+                } else {
+                    if (($('input[name=cbslCharges]:checked').val() == "Immediate Brunei Muara")) {
+                        document.getElementById("price").value = (20).toFixed(2)
+                    }
+
+                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
+                        document.getElementById("price").value = (3).toFixed(2)
+                    }
+
+                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
+                        document.getElementById("price").value = (5).toFixed(2)
+                    }
+
+                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
+                        document.getElementById("price").value = (7).toFixed(2)
+                    }
+
+                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
+                        document.getElementById("price").value = (10).toFixed(2)
+                    }
+                    $("#amounttobepaidsum").fadeIn();
+                }
 
                 document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
 

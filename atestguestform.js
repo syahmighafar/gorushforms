@@ -2771,7 +2771,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
                 document.getElementById("itemPricesum").innerHTML = "Total Price: <b>$" + document.getElementById("itemPrice").value + "</b>";
                 $("#deliveryTypesum").hide();
-                $("#amounttobepaidsum").hide();
+                $("#amounttobepaidsum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").hide();
                 $("#chargeHeadingsum").hide();
@@ -3039,7 +3039,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount (RM): <b>" + document.getElementById("GB-RS-Total-Amount").value + "</b>";
                 document.getElementById("gbrsQuantitysum").innerHTML = "Quantity: <b>" + document.getElementById("GB-RS-Quantity").value + "</b>";
                 $("#deliveryTypesum").hide();
-                $("#amounttobepaidsum").hide();
+                $("#amounttobepaidsum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").hide();
                 $("#chargeHeadingsum").hide();

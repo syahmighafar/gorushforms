@@ -730,7 +730,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#cbsldropoffkb").hide();
                 $("#cbsldropofftemb").hide();
 
-                if ((day != 0) && (day != 5)) {
+                if (day != 0) {
                     if ((hour >= 8) && (hour < 15)) {
                         $("#grpimmediatebm").fadeIn();
                         $("#cbslimmediatebm").fadeIn();

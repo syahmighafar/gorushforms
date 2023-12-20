@@ -2252,7 +2252,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#pharmacyPPsum").fadeIn();
                     $("#paymentmethodsum").fadeIn();
                     document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=mohCharges]:checked').val() + "</b>";
-                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+
+                    if($('input[name=mohPayingPatient]:checked').val() == 'No'){
+                        document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + "</b>";
+                    } else {
+                        document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
+                    }
+
                     document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=mohPayingPatient]:checked').val() + "</b>";
                     document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
 
@@ -2352,7 +2358,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#paymentmethodsum").fadeIn();
                     $("#chargeHeadingsum").fadeIn();
                     document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=jpmcCharges]:checked').val() + "</b>";
-                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND" + document.getElementById("price").value + "</b>";
                     document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=jpmcPayingPatient]:checked').val() + "</b>";
                     document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
 
@@ -2447,7 +2453,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#paymentmethodsum").fadeIn();
                     $("#chargeHeadingsum").fadeIn();
                     document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=phcCharges]:checked').val() + "</b>";
-                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + "</b>";
                     document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=phcPayingPatient]:checked').val() + "</b>";
                     document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
 
@@ -2508,7 +2514,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("weightsum").innerHTML = "Weight (KG): <b>" + document.getElementById("weight").value + "</b>";
                 document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
                 document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
-                document.getElementById("itemPricesum").innerHTML = "Total Price: <b>$" + document.getElementById("itemPrice").value + "</b>";
+                document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("currency").value + ' ' + document.getElementById("itemPrice").value + "</b>";
                 $("#deliveryTypesum").hide();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").hide();
@@ -2542,7 +2548,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#amounttobepaidsum").fadeIn();
                 }
 
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + " (excluding other charges)</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
@@ -2705,7 +2711,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#paymentmethodsum").fadeIn();
                     $("#chargeHeadingsum").fadeIn();
                     document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=localCharges]:checked').val() + "</b>";
-                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + "</b>";
+                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + "</b>";
                     document.getElementById("billTosum").innerHTML = "Bill to: <b>" + document.getElementById("billto").value + "</b>";
                     document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
 
@@ -2756,11 +2762,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#productSumGD").hide();
                 $("#productSumPharmacy").hide();
                 $("#productSumRS").fadeIn();
-                document.getElementById("productssum").innerHTML = "Product Type: <b>Cross Border Service (Limbang)</b>";
+                document.getElementById("productssum").innerHTML = "Product Type: <b>Go Beli Cross Border Service (Limbang)</b>";
                 document.getElementById("gbrsTracksum").innerHTML = "Original Tracking Number: <b>" + document.getElementById("GB-RS-Track").value + "</b>";
                 document.getElementById("gbrsCouriersum").innerHTML = "Courier: <b>" + document.getElementById("GB-RS-Courier").value + "</b>";
                 document.getElementById("gbrsItemDescsum").innerHTML = "Item Description: <b>" + document.getElementById("gbrsItemDescription").value + "</b>";
-                document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount (RM): <b>" + document.getElementById("GB-RS-Total-Amount").value + "</b>";
+                document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount: <b>MYR " + document.getElementById("GB-RS-Total-Amount").value + "</b>";
                 document.getElementById("gbrsQuantitysum").innerHTML = "Quantity: <b>" + document.getElementById("GB-RS-Quantity").value + "</b>";
                 $("#deliveryTypesum").hide();
                 $("#pharmacyPPsum").hide();
@@ -2793,7 +2799,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#amounttobepaidsum").fadeIn();
                 }
 
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>$" + document.getElementById("price").value + " (excluding other charges)</b>";
+                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
 
                 document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
 

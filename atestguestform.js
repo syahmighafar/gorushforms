@@ -115,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").show();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").hide();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").show();
                 $("#paymentnotegr").fadeIn();
                 $("#paymentnotegb").hide();
 
@@ -229,6 +230,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").show();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").hide();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").show();
                 $("#paymentnotegr").fadeIn();
                 $("#paymentnotegb").hide();
 
@@ -343,6 +345,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").show();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").hide();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").show();
                 $("#paymentnotegr").fadeIn();
                 $("#paymentnotegb").hide();
 
@@ -457,6 +460,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").show();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").hide();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").show();
                 $("#paymentnotegr").fadeIn();
                 $("#paymentnotegb").hide();
 
@@ -566,6 +570,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").show();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").hide();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").show();
                 $("#paymentnotegr").fadeIn();
                 $("#paymentnotegb").hide();
 
@@ -675,6 +680,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").hide();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").show();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").hide();
                 $("#paymentnotegr").hide();
                 $("#paymentnotegb").fadeIn();
 
@@ -714,17 +720,28 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#phcstandardbm").fadeIn();
                 $("#phcstandardtemb").hide();
 
-                $("#grpimmediatebm").fadeIn();
                 $("#grpdropoffbm").fadeIn();
                 $("#grpdropoffttg").hide();
                 $("#grpdropoffkb").hide();
                 $("#grpdropofftemb").hide();
 
-                $("#cbslimmediatebm").fadeIn();
                 $("#cbsldropoffbm").fadeIn();
                 $("#cbsldropoffttg").hide();
                 $("#cbsldropoffkb").hide();
                 $("#cbsldropofftemb").hide();
+
+                if ((day != 0) && (day != 5)) {
+                    if ((hour >= 8) && (hour < 15)) {
+                        $("#grpimmediatebm").fadeIn();
+                        $("#cbslimmediatebm").fadeIn();
+                    } else {
+                        $("#grpimmediatebm").hide();
+                        $("#cbslimmediatebm").hide();
+                    }
+                } else {
+                    $("#grpimmediatebm").hide();
+                    $("#cbslimmediatebm").hide();
+                }
 
                 document.getElementById('patientNumber').value = '';
                 document.getElementById('bruHIMSNumberTemp').value = '';

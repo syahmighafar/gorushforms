@@ -2548,7 +2548,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#paymentmethodsum").fadeIn();
                     document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=mohCharges]:checked').val() + "</b>";
 
-                    if($('input[name=mohPayingPatient]:checked').val() == 'No'){
+                    if ($('input[name=mohPayingPatient]:checked').val() == 'No') {
                         document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + "</b>";
                     } else {
                         document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
@@ -2761,98 +2761,111 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($('input[name=products]:checked').val() == "grp")) {
-                $("#chargesNextBtn").hide();
-                $("#chargessection").hide();
-                $("#chargesPrevBtn").hide();
-                $("#agreementsection").fadeIn();
-                $("#submitBtn").fadeIn();
-                $("#agreesubmitPrevBtn").fadeIn();
-                $("#ensure").hide();
-
-                document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
-                document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
-                    + document.getElementById("postal").value + "</b>";
-
-                if ($("#email").val().length == 0) {
-                    document.getElementById("emailsum").innerHTML = "Email: <b>N/A</b>";
+                if ($('input[name=grpCharges]:checked').val() == undefined) {
+                    $("#agreementsection").hide();
+                    alert("Please choose one of the charges!");
                 }
 
-                if ($("#email").val().length != 0) {
-                    document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+                if (($("#paymentmethod").val().length == 0)) {
+                    $("#agreementsection").hide();
+                    alert("Please choose your payment method!");
                 }
 
-                document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                if (($('input[name=grpCharges]:checked').val() != undefined) && ($("#paymentmethod").val().length != 0)) {
+                    $("#chargesNextBtn").hide();
+                    $("#chargessection").hide();
+                    $("#chargesPrevBtn").hide();
+                    $("#agreementsection").fadeIn();
+                    $("#submitBtn").fadeIn();
+                    $("#agreesubmitPrevBtn").fadeIn();
+                    $("#ensure").hide();
 
-                if ($("#contact_2").val().length == 0) {
-                    document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
+                    document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
+                    document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
+                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                        + document.getElementById("postal").value + "</b>";
+
+                    if ($("#email").val().length == 0) {
+                        document.getElementById("emailsum").innerHTML = "Email: <b>N/A</b>";
+                    }
+
+                    if ($("#email").val().length != 0) {
+                        document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+                    }
+
+                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+
+                    if ($("#contact_2").val().length == 0) {
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
+                    }
+
+                    if ($("#contact_2").val().length != 0) {
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                    }
+
+                    document.getElementById("pickupordeliverysum").innerHTML = "Pickup or Delivery?: <b>" + $('input[name=pickupordeliverycbsl]:checked').val() + "</b>";
+
+                    $("#deliveryDurationsum").hide();
+                    var codeN = "/GRP";
+                    var conN = document.getElementById("name").value;
+                    document.getElementById("buyerName").value = conN + codeN;
+                    document.getElementById('price').value = '';
+                    $("#productSumGRP").fadeIn();
+                    $("#productSumGD").hide();
+                    $("#productSumPharmacy").hide();
+                    $("#productSumRS").hide();
+                    document.getElementById("productssum").innerHTML = "Product Type: <b>Go Rush Plus</b>";
+                    document.getElementById("grpTracksum").innerHTML = "Parcel Tracking Number: <b>" + document.getElementById("grpTrack").value + "</b>";
+                    document.getElementById("GoRushReceivingCountrysum").innerHTML = "Go Rush Receiving Country: <b>" + document.getElementById("GoRushReceivingCountry").value + "</b>";
+                    document.getElementById("shipmentMethodsum").innerHTML = "Shipment Method: <b>" + $('input[name=shipmentMethod]:checked').val() + "</b>";
+                    document.getElementById("ecommercesum").innerHTML = "E-Commerce Name: <b>" + document.getElementById("ecommerce").value + "</b>";
+                    document.getElementById("commoditiessum").innerHTML = "Commodities: <b>" + document.getElementById("commodities").value + "</b>";
+                    document.getElementById("currencysum").innerHTML = "Currency: <b>" + document.getElementById("currency").value + "</b>";
+                    document.getElementById("weightsum").innerHTML = "Weight (KG): <b>" + document.getElementById("weight").value + "</b>";
+                    document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
+                    document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
+                    document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("currency").value + ' ' + document.getElementById("itemPrice").value + "</b>";
+                    document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
+                    $("#deliveryTypesum").fadeIn();
+                    $("#pharmacyPPsum").hide();
+                    $("#paymentmethodsum").fadeIn();
+                    $("#chargeHeadingsum").hide();
+
+                    document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
+
+                    if (($('input[name=pickupordeliverygrp]:checked').val() == "pickup")) {
+                        $("#amounttobepaidsum").hide();
+                        document.getElementById("price").value = 0
+                        document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>Pickup</b>";
+                    } else {
+                        if (($('input[name=grpCharges]:checked').val() == "Immediate Brunei Muara")) {
+                            document.getElementById("price").value = (20).toFixed(2)
+                        }
+
+                        if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
+                            document.getElementById("price").value = (3).toFixed(2)
+                        }
+
+                        if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
+                            document.getElementById("price").value = (5).toFixed(2)
+                        }
+
+                        if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
+                            document.getElementById("price").value = (7).toFixed(2)
+                        }
+
+                        if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
+                            document.getElementById("price").value = (10).toFixed(2)
+                        }
+                        document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=grpCharges]:checked').val() + "</b>";
+                        $("#amounttobepaidsum").fadeIn();
+                    }
+
+                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
 
-                if ($("#contact_2").val().length != 0) {
-                    document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
-                }
-
-                document.getElementById("pickupordeliverysum").innerHTML = "Pickup or Delivery?: <b>" + $('input[name=pickupordeliverycbsl]:checked').val() + "</b>";
-
-                $("#deliveryDurationsum").hide();
-                var codeN = "/GRP";
-                var conN = document.getElementById("name").value;
-                document.getElementById("buyerName").value = conN + codeN;
-                document.getElementById('price').value = '';
-                $("#productSumGRP").fadeIn();
-                $("#productSumGD").hide();
-                $("#productSumPharmacy").hide();
-                $("#productSumRS").hide();
-                document.getElementById("productssum").innerHTML = "Product Type: <b>Go Rush Plus</b>";
-                document.getElementById("grpTracksum").innerHTML = "Parcel Tracking Number: <b>" + document.getElementById("grpTrack").value + "</b>";
-                document.getElementById("GoRushReceivingCountrysum").innerHTML = "Go Rush Receiving Country: <b>" + document.getElementById("GoRushReceivingCountry").value + "</b>";
-                document.getElementById("shipmentMethodsum").innerHTML = "Shipment Method: <b>" + $('input[name=shipmentMethod]:checked').val() + "</b>";
-                document.getElementById("ecommercesum").innerHTML = "E-Commerce Name: <b>" + document.getElementById("ecommerce").value + "</b>";
-                document.getElementById("commoditiessum").innerHTML = "Commodities: <b>" + document.getElementById("commodities").value + "</b>";
-                document.getElementById("currencysum").innerHTML = "Currency: <b>" + document.getElementById("currency").value + "</b>";
-                document.getElementById("weightsum").innerHTML = "Weight (KG): <b>" + document.getElementById("weight").value + "</b>";
-                document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
-                document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
-                document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("currency").value + ' ' + document.getElementById("itemPrice").value + "</b>";
-                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
-                $("#deliveryTypesum").fadeIn();
-                $("#pharmacyPPsum").hide();
-                $("#paymentmethodsum").fadeIn();
-                $("#chargeHeadingsum").hide();
-
-                document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
-
-                if (($('input[name=pickupordeliverygrp]:checked').val() == "pickup")) {
-                    $("#amounttobepaidsum").hide();
-                    document.getElementById("price").value = 0
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>Pickup</b>";
-                } else {
-                    if (($('input[name=grpCharges]:checked').val() == "Immediate Brunei Muara")) {
-                        document.getElementById("price").value = (20).toFixed(2)
-                    }
-
-                    if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
-                        document.getElementById("price").value = (3).toFixed(2)
-                    }
-
-                    if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
-                        document.getElementById("price").value = (5).toFixed(2)
-                    }
-
-                    if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
-                        document.getElementById("price").value = (7).toFixed(2)
-                    }
-
-                    if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
-                        document.getElementById("price").value = (10).toFixed(2)
-                    }
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=grpCharges]:checked').val() + "</b>";
-                    $("#amounttobepaidsum").fadeIn();
-                }
-
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
-
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
             if (($('input[name=products]:checked').val() == "localdelivery")) {
@@ -3024,91 +3037,103 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($('input[name=products]:checked').val() == "cbsl")) {
-                $("#chargesNextBtn").hide();
-                $("#chargessection").hide();
-                $("#chargesPrevBtn").hide();
-                $("#agreementsection").fadeIn();
-                $("#submitBtn").fadeIn();
-                $("#agreesubmitPrevBtn").fadeIn();
-                $("#ensure").hide();
-
-                document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
-                document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
-                    + document.getElementById("postal").value + "</b>";
-
-                if ($("#email").val().length == 0) {
-                    document.getElementById("emailsum").innerHTML = "Email: <b>N/A</b>";
+                if ($('input[name=cbslCharges]:checked').val() == undefined) {
+                    $("#agreementsection").hide();
+                    alert("Please choose one of the charges!");
                 }
 
-                if ($("#email").val().length != 0) {
-                    document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+                if (($("#paymentmethod").val().length == 0)) {
+                    $("#agreementsection").hide();
+                    alert("Please choose your payment method!");
                 }
 
-                document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                if (($('input[name=cbslCharges]:checked').val() != undefined) && ($("#paymentmethod").val().length != 0)) {
+                    $("#chargesNextBtn").hide();
+                    $("#chargessection").hide();
+                    $("#chargesPrevBtn").hide();
+                    $("#agreementsection").fadeIn();
+                    $("#submitBtn").fadeIn();
+                    $("#agreesubmitPrevBtn").fadeIn();
+                    $("#ensure").hide();
 
-                if ($("#contact_2").val().length == 0) {
-                    document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
+                    document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
+                    document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
+                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                        + document.getElementById("postal").value + "</b>";
+
+                    if ($("#email").val().length == 0) {
+                        document.getElementById("emailsum").innerHTML = "Email: <b>N/A</b>";
+                    }
+
+                    if ($("#email").val().length != 0) {
+                        document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+                    }
+
+                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+
+                    if ($("#contact_2").val().length == 0) {
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
+                    }
+
+                    if ($("#contact_2").val().length != 0) {
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                    }
+
+                    $("#deliveryDurationsum").hide();
+                    var codeN = "/GobeliStore";
+                    var conN = document.getElementById("name").value;
+                    document.getElementById("buyerName").value = conN + codeN;
+                    document.getElementById('price').value = '';
+                    $("#productSumGRP").hide();
+                    $("#productSumGD").hide();
+                    $("#productSumPharmacy").hide();
+                    $("#productSumRS").fadeIn();
+                    document.getElementById("productssum").innerHTML = "Product Type: <b>Go Beli Cross Border Service (Limbang)</b>";
+                    document.getElementById("gbrsTracksum").innerHTML = "Original Tracking Number: <b>" + document.getElementById("GB-RS-Track").value + "</b>";
+                    document.getElementById("gbrsCouriersum").innerHTML = "Courier: <b>" + document.getElementById("GB-RS-Courier").value + "</b>";
+                    document.getElementById("gbrsItemDescsum").innerHTML = "Item Description: <b>" + document.getElementById("gbrsItemDescription").value + "</b>";
+                    document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount: <b>MYR " + document.getElementById("GB-RS-Total-Amount").value + "</b>";
+                    document.getElementById("gbrsQuantitysum").innerHTML = "Quantity: <b>" + document.getElementById("GB-RS-Quantity").value + "</b>";
+                    document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
+                    $("#deliveryTypesum").fadeIn();
+                    $("#pharmacyPPsum").hide();
+                    $("#paymentmethodsum").fadeIn();
+                    $("#chargeHeadingsum").hide();
+
+                    if (($('input[name=pickupordeliverycbsl]:checked').val() == "pickup")) {
+                        $("#amounttobepaidsum").hide();
+                        document.getElementById("price").value = 0
+                        document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>Pickup</b>";
+                    } else {
+                        if (($('input[name=cbslCharges]:checked').val() == "Immediate Brunei Muara")) {
+                            document.getElementById("price").value = (20).toFixed(2)
+                        }
+
+                        if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
+                            document.getElementById("price").value = (3).toFixed(2)
+                        }
+
+                        if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
+                            document.getElementById("price").value = (5).toFixed(2)
+                        }
+
+                        if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
+                            document.getElementById("price").value = (7).toFixed(2)
+                        }
+
+                        if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
+                            document.getElementById("price").value = (10).toFixed(2)
+                        }
+                        document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=cbslCharges]:checked').val() + "</b>";
+                        $("#amounttobepaidsum").fadeIn();
+                    }
+
+                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
+
+                    document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
-
-                if ($("#contact_2").val().length != 0) {
-                    document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
-                }
-
-                $("#deliveryDurationsum").hide();
-                var codeN = "/GobeliStore";
-                var conN = document.getElementById("name").value;
-                document.getElementById("buyerName").value = conN + codeN;
-                document.getElementById('price').value = '';
-                $("#productSumGRP").hide();
-                $("#productSumGD").hide();
-                $("#productSumPharmacy").hide();
-                $("#productSumRS").fadeIn();
-                document.getElementById("productssum").innerHTML = "Product Type: <b>Go Beli Cross Border Service (Limbang)</b>";
-                document.getElementById("gbrsTracksum").innerHTML = "Original Tracking Number: <b>" + document.getElementById("GB-RS-Track").value + "</b>";
-                document.getElementById("gbrsCouriersum").innerHTML = "Courier: <b>" + document.getElementById("GB-RS-Courier").value + "</b>";
-                document.getElementById("gbrsItemDescsum").innerHTML = "Item Description: <b>" + document.getElementById("gbrsItemDescription").value + "</b>";
-                document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount: <b>MYR " + document.getElementById("GB-RS-Total-Amount").value + "</b>";
-                document.getElementById("gbrsQuantitysum").innerHTML = "Quantity: <b>" + document.getElementById("GB-RS-Quantity").value + "</b>";
-                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
-                $("#deliveryTypesum").fadeIn();
-                $("#pharmacyPPsum").hide();
-                $("#paymentmethodsum").fadeIn();
-                $("#chargeHeadingsum").hide();
-
-                if (($('input[name=pickupordeliverycbsl]:checked').val() == "pickup")) {
-                    $("#amounttobepaidsum").hide();
-                    document.getElementById("price").value = 0
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>Pickup</b>";
-                } else {
-                    if (($('input[name=cbslCharges]:checked').val() == "Immediate Brunei Muara")) {
-                        document.getElementById("price").value = (20).toFixed(2)
-                    }
-
-                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
-                        document.getElementById("price").value = (3).toFixed(2)
-                    }
-
-                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
-                        document.getElementById("price").value = (5).toFixed(2)
-                    }
-
-                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
-                        document.getElementById("price").value = (7).toFixed(2)
-                    }
-
-                    if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
-                        document.getElementById("price").value = (10).toFixed(2)
-                    }
-                    document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=cbslCharges]:checked').val() + "</b>";
-                    $("#amounttobepaidsum").fadeIn();
-                }
-
-                document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
-
-                document.getElementById("remarkssum").innerHTML = "Remarks: <b>" + document.getElementById("remarks").value + "</b>";
-
-                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
         });
 

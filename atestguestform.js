@@ -2814,6 +2814,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("permitsum").innerHTML = "Permit Application?: <b>" + $('input[name=permit]:checked').val() + "</b>";
                 document.getElementById("itemContainssum").innerHTML = "Does your item contains one of the following?: <b>" + $('input[name=itemContains]:checked').val() + "</b>";
                 document.getElementById("itemPricesum").innerHTML = "Total Price: <b>" + document.getElementById("currency").value + ' ' + document.getElementById("itemPrice").value + "</b>";
+                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
                 $("#deliveryTypesum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").fadeIn();
@@ -3069,6 +3070,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("gbrsItemDescsum").innerHTML = "Item Description: <b>" + document.getElementById("gbrsItemDescription").value + "</b>";
                 document.getElementById("gbrsTotalAmountsum").innerHTML = "Total Amount: <b>MYR " + document.getElementById("GB-RS-Total-Amount").value + "</b>";
                 document.getElementById("gbrsQuantitysum").innerHTML = "Quantity: <b>" + document.getElementById("GB-RS-Quantity").value + "</b>";
+                document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
                 $("#deliveryTypesum").fadeIn();
                 $("#pharmacyPPsum").hide();
                 $("#paymentmethodsum").fadeIn();

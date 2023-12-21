@@ -5206,6 +5206,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 }
 
+                document.getElementById("deliveryType").value = $('input[name=grpCharges]:checked').val();
+
                 $('#submitBtnfinal').attr('disabled', false);
 
                 document.getElementById('submitBtnfinal').click();
@@ -6304,6 +6306,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("qbExpiryDate").value = moment().add(20, 'days').format('MM/DD/YYYY');
                     }
                 }
+
+                document.getElementById("deliveryType").value = $('input[name=cbslCharges]:checked').val();
 
                 $('#submitBtnfinal').attr('disabled', false);
 

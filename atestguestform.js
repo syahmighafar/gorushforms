@@ -2766,6 +2766,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose your payment method!");
                 }
 
+                if ($('input[name=grpCharges]:checked').val() == undefined) {
+                    if ($('input[name=pickupordeliverygrp]:checked').val() == "delivery") {
+                        $("#agreementsection").hide();
+                            alert("Please choose one of the charges!");
+                    }
+                }
+
                 if ($("#paymentmethod").val().length != 0) {
                     if ($('input[name=pickupordeliverygrp]:checked').val() == "delivery") {
                         if ($('input[name=grpCharges]:checked').val() != undefined) {
@@ -2861,10 +2868,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + " (excluding other charges)</b>";
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                        } else {
-                            $("#agreementsection").hide();
-                            alert("Please choose one of the charges!");
-                        }
+                        } 
                     }
 
                     if ($('input[name=pickupordeliverygrp]:checked').val() == "pickup") {
@@ -3139,6 +3143,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose your payment method!");
                 }
 
+                if ($('input[name=cbslCharges]:checked').val() == undefined) {
+                    if ($('input[name=pickupordeliverycbsl]:checked').val() == "delivery") {
+                        $("#agreementsection").hide();
+                        alert("Please choose one of the charges!");
+                    }
+                }
+
                 if ($("#paymentmethod").val().length != 0) {
                     if ($('input[name=pickupordeliverycbsl]:checked').val() == "delivery") {
                         if ($('input[name=cbslCharges]:checked').val() != undefined) {
@@ -3228,9 +3239,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
-                    } else {
-                        $("#agreementsection").hide();
-                        alert("Please choose one of the charges!");
                     }
 
                     if ($('input[name=pickupordeliverycbsl]:checked').val() == "pickup") {

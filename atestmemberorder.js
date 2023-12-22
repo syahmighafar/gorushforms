@@ -5162,7 +5162,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     fetch(scriptURL, { method: 'POST', body: new FormData(form) })
                 }
 
-                document.getElementById("deliveryType").value = $('input[name=grpCharges]:checked').val();
+                if ($('input[name=pickupordeliverygrp]:checked').val() == "pickup") {
+                    document.getElementById("deliveryType").value = "Pickup"
+                }else{
+                    document.getElementById("deliveryType").value = $('input[name=grpCharges]:checked').val();
+                }
 
                 $('#submitBtnfinal').attr('disabled', false);
 
@@ -6264,7 +6268,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                document.getElementById("deliveryType").value = $('input[name=cbslCharges]:checked').val();
+                if ($('input[name=pickupordeliverycbsl]:checked').val() == "pickup") {
+                    document.getElementById("deliveryType").value = "Pickup"
+                }else{
+                    document.getElementById("deliveryType").value = $('input[name=cbslCharges]:checked').val();
+                }
 
                 $('#submitBtnfinal').attr('disabled', false);
 

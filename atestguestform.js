@@ -3163,7 +3163,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                             document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
+                                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                                 + document.getElementById("postal").value + "</b>";
 
                             if ($("#email").val().length == 0) {
@@ -3252,7 +3252,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                         document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
+                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
                             + document.getElementById("postal").value + "</b>";
 
                         if ($("#email").val().length == 0) {

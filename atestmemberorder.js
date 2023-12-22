@@ -42,6 +42,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if ($(this).val() == "pharmacymoh") {
                 $('#submitBtnfinal').attr('disabled', true);
+
+                $("#paymentonlinegr").fadeIn();
+                $("#paymentonlinegb").hide();
+
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Patient)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Patient)";
 
@@ -155,6 +159,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if ($(this).val() == "pharmacyjpmc") {
                 $('#submitBtnfinal').attr('disabled', true);
+
+                $("#paymentonlinegr").fadeIn();
+                $("#paymentonlinegb").hide();
+
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Patient)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Patient)";
                 $("#bruHIMSNumberTemp").hide();
@@ -269,6 +277,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if ($(this).val() == "pharmacyphc") {
                 $('#submitBtnfinal').attr('disabled', true);
+
+                $("#paymentonlinegr").fadeIn();
+                $("#paymentonlinegb").hide();
+
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Patient)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Patient)";
                 $("#bruHIMSNumberTemp").hide();
@@ -382,6 +394,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if ($(this).val() == "grp") {
                 $('#submitBtnfinal').attr('disabled', true);
+
+                $("#paymentonlinegr").fadeIn();
+                $("#paymentonlinegb").hide();
+
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Buyer)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Buyer)";
                 $("#bruHIMSNumberTemp").hide();
@@ -491,6 +507,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if ($(this).val() == "localdelivery") {
                 $('#submitBtnfinal').attr('disabled', true);
+
+                $("#paymentonlinegr").fadeIn();
+                $("#paymentonlinegb").hide();
+
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Sender)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Sender)";
                 $("#bruHIMSNumberTemp").hide();
@@ -600,6 +620,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if ($(this).val() == "cbsl") {
                 $('#submitBtnfinal').attr('disabled', true);
+
+                $("#paymentonlinegr").hide();
+                $("#paymentonlinegb").fadeIn();
+
                 document.getElementById("personaldetailslabel").innerText = "Personal Details (Buyer)";
                 document.getElementById("personaldetailslabelsum").innerText = "Personal Details (Buyer)";
                 $("#bruHIMSNumberTemp").hide();

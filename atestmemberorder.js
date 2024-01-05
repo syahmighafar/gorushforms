@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("GB-RS-Total-Amount").value = "";
                 $("#paymentmethod option[value='Bank Transfer (Baiduri)']").show();
                 $("#paymentmethod option[value='Bank Transfer (BIBD)']").hide();
+                $("#paymentmethod option[value='Bill Payment (BIBD)']").show();
                 $("#paymentnotegr").fadeIn();
                 $("#paymentnotegb").hide();
 

@@ -1347,9 +1347,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Raja Isteri Pengiran Anak Saleha Hospital") {
-
                 if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
+                    if ((hour >= 8) && (hour < 15)) {
                         $("#mohimmidiate").fadeIn();
                     } else {
                         $("#mohimmidiate").hide();

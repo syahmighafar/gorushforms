@@ -24,6 +24,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         $('input[name=products]').change(function () {
+            document.getElementById("code").value = '673';
+            document.getElementById("code_2").value = '673';
+            document.getElementById("code_3").value = '673';
+            document.getElementById("name").readOnly = true;
+            document.getElementById("house").readOnly = true;
+            document.getElementById("kampong").readOnly = true;
+            document.getElementById("jalan").readOnly = true;
+            document.getElementById("simpang").readOnly = true;
+            document.getElementById("district").readOnly = true;
+            document.getElementById("postal").readOnly = true;
+            document.getElementById("email").readOnly = true;
+            document.getElementById("contact_1").readOnly = true;
+            document.getElementById("contact_2").readOnly = true;
+            document.getElementById("dateofbirth").readOnly = true;
+            document.getElementById("icPassportNum").readOnly = true;
+
             if ($(this).val() == "pharmacymoh") {
                 $('#submitBtnfinal').attr('disabled', true);
 
@@ -61,10 +77,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectioncbslcharges").hide();
                 $("#paymentmethodarea").fadeIn();
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
+                document.getElementById('patientNumber').value = document.getElementById('bruHIMSNumberTemp').value;
                 document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -78,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("mapSource").src = "";
                 $('input[name=jpmcpjsc]').attr('checked', false);
 
-                $('input[name=pickupordeliverygrp]').attr('checked', false);
                 document.getElementById("grpTrack").value = "";
                 document.getElementById("GoRushReceivingCountry").value = '';
                 $('input[name=shipmentMethod]').attr('checked', false);
@@ -141,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").attr("minlength", "");
                 $("#patientNumberTemp").attr("maxlength", "");
 
-                document.getElementById("name").focus();
+                document.getElementById("personalNextBtn").focus();
             }
 
             if ($(this).val() == "pharmacyjpmc") {
@@ -180,10 +194,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectioncbslcharges").hide();
                 $("#paymentmethodarea").fadeIn();
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
-                document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                document.getElementById('patientNumber').value = document.getElementById('patientNumberJPMCTemp').value;
+                document.getElementById('patientNumberTemp').value = document.getElementById('patientNumberJPMCTemp').value;
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -260,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#patientNumberTemp").attr("minlength", "6");
                 $("#patientNumberTemp").attr("maxlength", "8");
 
-                document.getElementById("name").focus();
+                document.getElementById("personalNextBtn").focus();
             }
 
             if ($(this).val() == "pharmacyphc") {
@@ -299,10 +312,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#sectioncbslcharges").hide();
                 $("#paymentmethodarea").fadeIn();
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
-                document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                document.getElementById('patientNumber').value = document.getElementById('patientNumberPHCTemp').value;
+                document.getElementById('patientNumberTemp').value = document.getElementById('patientNumberPHCTemp').value;
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -373,13 +385,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("billto").value = "";
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
-
                 document.getElementById("patientnumlabel").innerText = "Patient Number:*";
 
                 $("#patientNumberTemp").attr("minlength", "");
                 $("#patientNumberTemp").attr("maxlength", "");
 
-                document.getElementById("name").focus();
+                document.getElementById("personalNextBtn").focus();
             }
 
             if ($(this).val() == "grp") {
@@ -419,9 +430,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
                 document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -493,7 +503,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
 
-                document.getElementById("name").focus();
+                document.getElementById("personalNextBtn").focus();
             }
 
             if ($(this).val() == "localdelivery") {
@@ -533,9 +543,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
                 document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -607,7 +616,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
 
-                document.getElementById("name").focus();
+                document.getElementById("personalNextBtn").focus();
             }
 
             if ($(this).val() == "cbsl") {
@@ -647,9 +656,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#paymentmethodarea").fadeIn();
 
                 document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
                 document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -721,12 +729,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
 
-                document.getElementById("name").focus();
+                document.getElementById("personalNextBtn").focus();
             }
         });
 
-        $('input[name=district]').change(function () {
-            if ($(this).val() == "Brunei Muara") {
+        document.getElementById("personalNextBtn").addEventListener("click", function () {
+            if ($('#district').val() == "brunei-muara") {
                 $("#mohhideimm").fadeIn();
                 $("#mohhideexp").fadeIn();
                 $("#mohimmidiate").fadeIn();
@@ -767,10 +775,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#cbslimmediatebm").hide();
                 }
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
-                document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -778,44 +783,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
                 $('input[name=districtAppointment]').attr('checked', false);
                 document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("healthCentreTTG").value = '';
+                document.getElementById("healthCentreTEMB").value = '';
+                document.getElementById("healthCentreKB").value = '';
                 document.getElementById("mapSource").src = "";
                 $('input[name=jpmcpjsc]').attr('checked', false);
 
                 $('input[name=pickupordeliverygrp]').attr('checked', false);
-                document.getElementById("grpTrack").value = "";
+                document.getElementById("grpTrack").value = '';
                 document.getElementById("GoRushReceivingCountry").value = '';
                 $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
+                document.getElementById("ecommerce").value = '';
+                document.getElementById("commodities").value = '';
+                document.getElementById("currency").value = '';
+                document.getElementById("weight").value = '';
                 $('input[name=permit]').attr('checked', false);
                 $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
+                document.getElementById("Item-Description").value = '';
+                document.getElementById("Quantity").value = '';
+                document.getElementById("Total-Item-Price").value = '';
+                document.getElementById("itemPrice").value = '';
 
                 $('input[name=pickupordelivery]').attr('checked', false);
                 $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
+                document.getElementById("pickupdate").value = '';
                 $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
+                document.getElementById("pickupaddress").value = '';
+                document.getElementById("productdescription").value = '';
+                document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
+                document.getElementById("receiverName").value = '';
+                document.getElementById("receiverHouse").value = '';
+                document.getElementById("receiverKampong").value = '';
+                document.getElementById("receiverJalan").value = '';
+                document.getElementById("receiverSimpang").value = '';
                 $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
+                document.getElementById("receiverPostal").value = '';
+                document.getElementById("receiverEmail").value = '';
+                document.getElementById("receiverContact_1").value = '';
 
                 $('input[name=pickupordeliverycbsl]').attr('checked', false);
                 document.getElementById("GB-RS-Track").value = "";
@@ -838,7 +843,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("remarks").value = "";
             }
 
-            if ($(this).val() == "Tutong") {
+            if ($('#district').val() == "tutong") {
                 $("#mohhideimm").hide();
                 $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
@@ -868,10 +873,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#cbsldropoffkb").hide();
                 $("#cbsldropofftemb").hide();
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
-                document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -879,44 +881,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
                 $('input[name=districtAppointment]').attr('checked', false);
                 document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("healthCentreTTG").value = '';
+                document.getElementById("healthCentreTEMB").value = '';
+                document.getElementById("healthCentreKB").value = '';
                 document.getElementById("mapSource").src = "";
                 $('input[name=jpmcpjsc]').attr('checked', false);
 
                 $('input[name=pickupordeliverygrp]').attr('checked', false);
-                document.getElementById("grpTrack").value = "";
+                document.getElementById("grpTrack").value = '';
                 document.getElementById("GoRushReceivingCountry").value = '';
                 $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
+                document.getElementById("ecommerce").value = '';
+                document.getElementById("commodities").value = '';
+                document.getElementById("currency").value = '';
+                document.getElementById("weight").value = '';
                 $('input[name=permit]').attr('checked', false);
                 $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
+                document.getElementById("Item-Description").value = '';
+                document.getElementById("Quantity").value = '';
+                document.getElementById("Total-Item-Price").value = '';
+                document.getElementById("itemPrice").value = '';
 
                 $('input[name=pickupordelivery]').attr('checked', false);
                 $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
+                document.getElementById("pickupdate").value = '';
                 $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
+                document.getElementById("pickupaddress").value = '';
+                document.getElementById("productdescription").value = '';
+                document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
+                document.getElementById("receiverName").value = '';
+                document.getElementById("receiverHouse").value = '';
+                document.getElementById("receiverKampong").value = '';
+                document.getElementById("receiverJalan").value = '';
+                document.getElementById("receiverSimpang").value = '';
                 $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
+                document.getElementById("receiverPostal").value = '';
+                document.getElementById("receiverEmail").value = '';
+                document.getElementById("receiverContact_1").value = '';
 
                 $('input[name=pickupordeliverycbsl]').attr('checked', false);
                 document.getElementById("GB-RS-Track").value = "";
@@ -939,7 +941,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("remarks").value = "";
             }
 
-            if ($(this).val() == "Temburong") {
+            if ($('#district').val() == "temburong") {
                 $("#mohhideimm").hide();
                 $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
@@ -969,10 +971,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#cbsldropoffkb").hide();
                 $("#cbsldropofftemb").fadeIn();
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
-                document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -980,44 +979,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
                 $('input[name=districtAppointment]').attr('checked', false);
                 document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("healthCentreTTG").value = '';
+                document.getElementById("healthCentreTEMB").value = '';
+                document.getElementById("healthCentreKB").value = '';
                 document.getElementById("mapSource").src = "";
                 $('input[name=jpmcpjsc]').attr('checked', false);
 
                 $('input[name=pickupordeliverygrp]').attr('checked', false);
-                document.getElementById("grpTrack").value = "";
+                document.getElementById("grpTrack").value = '';
                 document.getElementById("GoRushReceivingCountry").value = '';
                 $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
+                document.getElementById("ecommerce").value = '';
+                document.getElementById("commodities").value = '';
+                document.getElementById("currency").value = '';
+                document.getElementById("weight").value = '';
                 $('input[name=permit]').attr('checked', false);
                 $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
+                document.getElementById("Item-Description").value = '';
+                document.getElementById("Quantity").value = '';
+                document.getElementById("Total-Item-Price").value = '';
+                document.getElementById("itemPrice").value = '';
 
                 $('input[name=pickupordelivery]').attr('checked', false);
                 $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
+                document.getElementById("pickupdate").value = '';
                 $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
+                document.getElementById("pickupaddress").value = '';
+                document.getElementById("productdescription").value = '';
+                document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
+                document.getElementById("receiverName").value = '';
+                document.getElementById("receiverHouse").value = '';
+                document.getElementById("receiverKampong").value = '';
+                document.getElementById("receiverJalan").value = '';
+                document.getElementById("receiverSimpang").value = '';
                 $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
+                document.getElementById("receiverPostal").value = '';
+                document.getElementById("receiverEmail").value = '';
+                document.getElementById("receiverContact_1").value = '';
 
                 $('input[name=pickupordeliverycbsl]').attr('checked', false);
                 document.getElementById("GB-RS-Track").value = "";
@@ -1040,7 +1039,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("remarks").value = "";
             }
 
-            if ($(this).val() == "Belait") {
+            if ($('#district').val() == "belait") {
                 $("#mohhideimm").hide();
                 $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
@@ -1070,10 +1069,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#cbsldropoffkb").fadeIn();
                 $("#cbsldropofftemb").hide();
 
-                document.getElementById('patientNumber').value = '';
-                document.getElementById('bruHIMSNumberTemp').value = '';
-                document.getElementById('patientNumberTemp').value = '';
-                document.getElementById('dateofbirth').value = '';
+                $("#icpassportChoice").hide();
                 $('input[name=icpassport]').attr('checked', false);
                 $("#icarea").hide();
                 document.getElementById('icnumber').value = '';
@@ -1081,44 +1077,44 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('passport').value = '';
                 $('input[name=districtAppointment]').attr('checked', false);
                 document.getElementById('healthCentreBM').value = '';
-                document.getElementById("healthCentreTTG").value = "";
-                document.getElementById("healthCentreTEMB").value = "";
-                document.getElementById("healthCentreKB").value = "";
+                document.getElementById("healthCentreTTG").value = '';
+                document.getElementById("healthCentreTEMB").value = '';
+                document.getElementById("healthCentreKB").value = '';
                 document.getElementById("mapSource").src = "";
                 $('input[name=jpmcpjsc]').attr('checked', false);
 
                 $('input[name=pickupordeliverygrp]').attr('checked', false);
-                document.getElementById("grpTrack").value = "";
+                document.getElementById("grpTrack").value = '';
                 document.getElementById("GoRushReceivingCountry").value = '';
                 $('input[name=shipmentMethod]').attr('checked', false);
-                document.getElementById("ecommerce").value = "";
-                document.getElementById("commodities").value = "";
-                document.getElementById("currency").value = "";
-                document.getElementById("weight").value = "";
+                document.getElementById("ecommerce").value = '';
+                document.getElementById("commodities").value = '';
+                document.getElementById("currency").value = '';
+                document.getElementById("weight").value = '';
                 $('input[name=permit]').attr('checked', false);
                 $('input[name=itemContains]').attr('checked', false);
-                document.getElementById("Item-Description").value = "";
-                document.getElementById("Quantity").value = "";
-                document.getElementById("Total-Item-Price").value = "";
-                document.getElementById("itemPrice").value = "";
+                document.getElementById("Item-Description").value = '';
+                document.getElementById("Quantity").value = '';
+                document.getElementById("Total-Item-Price").value = '';
+                document.getElementById("itemPrice").value = '';
 
                 $('input[name=pickupordelivery]').attr('checked', false);
                 $("#pickupdatearea").hide();
-                document.getElementById("pickupdate").value = "";
+                document.getElementById("pickupdate").value = '';
                 $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = "";
-                document.getElementById("productdescription").value = "";
-                document.getElementById("producttype").value = "";
+                document.getElementById("pickupaddress").value = '';
+                document.getElementById("productdescription").value = '';
+                document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";
-                document.getElementById("receiverName").value = "";
-                document.getElementById("receiverHouse").value = "";
-                document.getElementById("receiverKampong").value = "";
-                document.getElementById("receiverJalan").value = "";
-                document.getElementById("receiverSimpang").value = "";
+                document.getElementById("receiverName").value = '';
+                document.getElementById("receiverHouse").value = '';
+                document.getElementById("receiverKampong").value = '';
+                document.getElementById("receiverJalan").value = '';
+                document.getElementById("receiverSimpang").value = '';
                 $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = "";
-                document.getElementById("receiverEmail").value = "";
-                document.getElementById("receiverContact_1").value = "";
+                document.getElementById("receiverPostal").value = '';
+                document.getElementById("receiverEmail").value = '';
+                document.getElementById("receiverContact_1").value = '';
 
                 $('input[name=pickupordeliverycbsl]').attr('checked', false);
                 document.getElementById("GB-RS-Track").value = "";
@@ -1140,78 +1136,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("paymentmethod").value = "";
                 document.getElementById("remarks").value = "";
             }
-        });
 
-        document.getElementById("personalNextBtn").addEventListener("click", function () {
-            if (($("#name").val().length == 0)) {
-                $("#productsection").hide();
-                alert("Please do not leave your name field empty!");
-            }
+            $("#productselectionsection").hide();
+            $("#personalNextBtn").hide();
+            $("#personalsection").hide();
+            $("#productNextBtn").fadeIn();
+            $("#productsPrevBtn").fadeIn();
+            $("#productsection").fadeIn();
 
-            if (($("#house").val().length == 0)) {
-                $("#productsection").hide();
-                alert("Please do not leave your house/unit number field empty!");
-            }
-
-            if (($("#kampong").val().length == 0)) {
-                $("#productsection").hide();
-                alert("Please do not leave your kampong field empty!");
-            }
-
-            if (($("#jalan").val().length == 0)) {
-                $("#productsection").hide();
-                alert("Please do not leave your jalan field empty!");
-            }
-
-            if ($('input[name=district]:checked').val() == undefined) {
-                $("#chargessection").hide();
-                alert("Please do not leave your district field empty!");
-            }
-
-            if (($("#contact_1").val().length == 0)) {
-                $("#productsection").hide();
-                alert("Please do not leave your phone number field empty!");
-            }
-
-            if (($("#name").val().length != 0) && ($("#house").val().length != 0)
-                && ($("#kampong").val().length != 0) && ($("#jalan").val().length != 0)
-                && ($('input[name=district]:checked').val() != undefined)
-                && ($("#contact_1").val().length != 0)) {
-                $("#productselectionsection").hide();
-                $("#personalNextBtn").hide();
-                $("#personalsection").hide();
-                $("#productNextBtn").fadeIn();
-                $("#productsPrevBtn").fadeIn();
-                $("#productsection").fadeIn();
-
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        });
-
-        $('input[name=icpassport]').change(function () {
-            if ($(this).val().length == 0) {
-                $("#icarea").hide();
-                $("#passportarea").hide();
-
-                document.getElementById('icnumber').value = '';
-                document.getElementById('passport').value = '';
-            }
-
-            if ($(this).val() == "IC Number") {
-                $("#icarea").fadeIn();
-                $("#passportarea").hide();
-
-                document.getElementById('icnumber').value = '';
-                document.getElementById('passport').value = '';
-            }
-
-            if ($(this).val() == "Passport") {
-                $("#icarea").hide();
-                $("#passportarea").fadeIn();
-
-                document.getElementById('icnumber').value = '';
-                document.getElementById('passport').value = '';
-            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
         $('input[name=districtAppointment]').change(function () {
@@ -1347,6 +1280,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Raja Isteri Pengiran Anak Saleha Hospital") {
+
                 if ((day != 0) && (day != 5)) {
                     if ((hour >= 8) && (hour < 15)) {
                         $("#mohimmidiate").fadeIn();
@@ -1925,33 +1859,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please do not leave the patient's Bru-HIMs number field empty!");
                 }
 
-                if (($("#dateofbirth").val().length == 0)) {
-                    $("#chargessection").hide();
-                    alert("Please do not leave the patient's date of birth field empty!");
-                }
-
-                if ($('input[name=icpassport]:checked').val() == undefined) {
-                    $("#chargessection").hide();
-                    alert("Please choose one, IC-Number or Passport!");
-                }
-
                 if ($('input[name=districtAppointment]:checked').val() == undefined) {
                     $("#chargessection").hide();
                     alert("Please choose one of the appointment districts!");
-                }
-
-                if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                    if (($("#icnumber").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the patient's IC-Number field empty!");
-                    }
-                }
-
-                if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                    if (($("#passport").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the patient's Passport field empty!");
-                    }
                 }
 
                 if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
@@ -1982,134 +1892,64 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                if (($("#bruHIMSNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0)
-                    && ($('input[name=icpassport]:checked').val() != undefined) && ($('input[name=districtAppointment]:checked').val() != undefined)) {
-                    if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                        if (($("#icnumber").val().length != 0)) {
-                            if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
-                                if (($("#healthCentreBM").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                if (($("#bruHIMSNumberTemp").val().length != 0) && ($('input[name=districtAppointment]:checked').val() != undefined)) {
+                    if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
+                        if (($("#healthCentreBM").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
-
-                            if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                                if (($("#healthCentreTTG").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
-
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
-
-                            if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                                if (($("#healthCentreTEMB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
-
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
-
-                            if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                                if (($("#healthCentreKB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
-
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
-
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
 
-                    if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                        if (($("#passport").val().length != 0)) {
-                            if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
-                                if (($("#healthCentreBM").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                    if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
+                        if (($("#healthCentreTTG").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    }
 
-                            if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                                if (($("#healthCentreTTG").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                    if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
+                        if (($("#healthCentreTEMB").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }
+                    }
 
-                            if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                                if (($("#healthCentreTEMB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                    if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
+                        if (($("#healthCentreKB").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
-
-                            if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                                if (($("#healthCentreKB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
-
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
-                            }
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
                 }
@@ -2121,129 +1961,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please do not leave the patient's number field empty!");
                 }
 
-                if (($("#dateofbirth").val().length == 0)) {
-                    $("#chargessection").hide();
-                    alert("Please do not leave the patient's date of birth field empty!");
-                }
-
-                if ($('input[name=icpassport]:checked').val() == undefined) {
-                    $("#chargessection").hide();
-                    alert("Please choose one, IC-Number or Passport!");
-                }
-
-                if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                    if (($("#icnumber").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the patient's IC-Number field empty!");
-                    }
-                }
-
-                if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                    if (($("#passport").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the patient's Passport field empty!");
-                    }
-                }
-
                 if ($('input[name=jpmcpjsc]:checked').val() == undefined) {
                     $("#chargessection").hide();
                     alert("Please choose one, JPMC or PJSC!");
                 }
 
-                if (($("#patientNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0)
-                    && ($('input[name=icpassport]:checked').val() != undefined) && ($('input[name=jpmcpjsc]:checked').val() != undefined)) {
-                    if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                        if (($("#icnumber").val().length != 0)) {
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
+                if (($("#patientNumberTemp").val().length != 0) && ($('input[name=jpmcpjsc]:checked').val() != undefined)) {
+                    $("#productNextBtn").hide();
+                    $("#productsection").hide();
+                    $("#productsPrevBtn").hide();
+                    $("#chargessection").fadeIn();
+                    $("#chargesNextBtn").fadeIn();
+                    $("#chargesPrevBtn").fadeIn();
 
-                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
+                    document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-                    }
-
-                    if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                        if (($("#passport").val().length != 0)) {
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
-
-                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-                    }
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             }
 
             if (($('input[name=products]:checked').val() == "pharmacyphc")) {
+
                 if (($("#patientNumberTemp").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the patient's number field empty!");
                 }
 
-                if (($("#dateofbirth").val().length == 0)) {
-                    $("#chargessection").hide();
-                    alert("Please do not leave the patient's date of birth field empty!");
-                }
+                if ($("#patientNumberTemp").val().length != 0) {
+                    $("#productNextBtn").hide();
+                    $("#productsection").hide();
+                    $("#productsPrevBtn").hide();
+                    $("#chargessection").fadeIn();
+                    $("#chargesNextBtn").fadeIn();
+                    $("#chargesPrevBtn").fadeIn();
 
-                if ($('input[name=icpassport]:checked').val() == undefined) {
-                    $("#chargessection").hide();
-                    alert("Please choose one, IC-Number or Passport!");
-                }
+                    document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
-                if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                    if (($("#icnumber").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the patient's IC-Number field empty!");
-                    }
-                }
-
-                if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                    if (($("#passport").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the patient's Passport field empty!");
-                    }
-                }
-
-                if (($("#patientNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0) && ($('input[name=icpassport]:checked').val() != undefined)) {
-                    if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                        if (($("#icnumber").val().length != 0)) {
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
-
-                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-                    }
-
-                    if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                        if (($("#passport").val().length != 0)) {
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
-
-                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
-                    }
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             }
 
@@ -2252,7 +2006,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#chargessection").hide();
                     alert("Please choose one of the methods!");
                 }
-
                 if (($("#grpTrack").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the parcel tracking number field empty!");
@@ -2433,11 +2186,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($('input[name=products]:checked').val() == "cbsl")) {
-                if ($('input[name=pickupordeliverycbsl]:checked').val() == undefined) {
-                    $("#chargessection").hide();
-                    alert("Please choose either pickup or delivery!");
-                }
-
                 if (($("#GB-RS-Track").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the parcel tracking number field empty!");
@@ -2515,7 +2263,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                     document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                         + document.getElementById("postal").value + "</b>";
 
                     if ($("#email").val().length == 0) {
@@ -2526,14 +2274,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
                     }
 
-                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "") + "</b>";
 
                     if ($("#contact_2").val().length == 0) {
                         document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
                     }
 
                     if ($("#contact_2").val().length != 0) {
-                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "") + "</b>";
                     }
 
                     document.getElementById("buyerName").value = "";
@@ -2560,8 +2308,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>MOH Pharmacy Order</b>";
                     document.getElementById("patientNumbersum").innerHTML = "Bru-HIMs Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
                         + document.getElementById("healthCentreKB").value + "</b>";
@@ -2614,7 +2361,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                     document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                         + document.getElementById("postal").value + "</b>";
 
                     if ($("#email").val().length == 0) {
@@ -2625,14 +2372,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
                     }
 
-                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "") + "</b>";
 
                     if ($("#contact_2").val().length == 0) {
                         document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
                     }
 
                     if ($("#contact_2").val().length != 0) {
-                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "") + "</b>";
                     }
 
                     document.getElementById("buyerName").value = "";
@@ -2668,8 +2415,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>JPMC / PJSC Pharmacy Order</b>";
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + $('input[name=jpmcpjsc]:checked').val() + "</b>";
                     $("#deliveryTypesum").fadeIn();
                     $("#amounttobepaidsum").fadeIn();
@@ -2677,7 +2423,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#paymentmethodsum").fadeIn();
                     $("#chargeHeadingsum").fadeIn();
                     document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=jpmcCharges]:checked').val() + "</b>";
-                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND " + document.getElementById("price").value + "</b>";
+                    document.getElementById("amounttobepaidsum").innerHTML = "Amount to be paid: <b>BND" + document.getElementById("price").value + "</b>";
                     document.getElementById("pharmacyPPsum").innerHTML = "Paying Patient?: <b>" + $('input[name=jpmcPayingPatient]:checked').val() + "</b>";
                     document.getElementById("paymentmethodsum").innerHTML = "Payment Method: <b>" + document.getElementById("paymentmethod").value + "</b>";
 
@@ -2715,7 +2461,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                     document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                         + document.getElementById("postal").value + "</b>";
 
                     if ($("#email").val().length == 0) {
@@ -2726,14 +2472,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
                     }
 
-                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "") + "</b>";
 
                     if ($("#contact_2").val().length == 0) {
                         document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
                     }
 
                     if ($("#contact_2").val().length != 0) {
-                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "") + "</b>";
                     }
 
                     document.getElementById("buyerName").value = "";
@@ -2764,8 +2510,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("productssum").innerHTML = "Product Type: <b>Panaga Health Pharmacy Order</b>";
                     document.getElementById("patientNumbersum").innerHTML = "Patient's Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
-                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
-                        document.getElementById("passport").value + "</b>";
+                    document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
                     document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>Panaga Health</b>";
                     $("#deliveryTypesum").fadeIn();
                     $("#amounttobepaidsum").fadeIn();
@@ -2809,7 +2554,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                             document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                                 + document.getElementById("postal").value + "</b>";
 
                             if ($("#email").val().length == 0) {
@@ -2905,7 +2650,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                         document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                             + document.getElementById("postal").value + "</b>";
 
                         if ($("#email").val().length == 0) {
@@ -2989,7 +2734,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 }
-
             }
 
             if (($('input[name=products]:checked').val() == "localdelivery")) {
@@ -3020,7 +2764,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                     document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                        + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                         + document.getElementById("postal").value + "</b>";
 
                     if ($("#email").val().length == 0) {
@@ -3031,14 +2775,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
                     }
 
-                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+                    document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "") + "</b>";
 
                     if ($("#contact_2").val().length == 0) {
                         document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
                     }
 
                     if ($("#contact_2").val().length != 0) {
-                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                        document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "") + "</b>";
                     }
 
                     document.getElementById("buyerName").value = "";
@@ -3186,7 +2930,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                             document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                                + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                                 + document.getElementById("postal").value + "</b>";
 
                             if ($("#email").val().length == 0) {
@@ -3275,7 +3019,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                         document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
-                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                             + document.getElementById("postal").value + "</b>";
 
                         if ($("#email").val().length == 0) {
@@ -3408,7 +3152,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "pharmacymoh") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
@@ -3416,7 +3160,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let area = "";
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value;
 
                 document.getElementById("receiverAddress").value = customerAddress;
@@ -3873,16 +3617,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
                 }
 
-                document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
-
-                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 let additionalPhone = "";
 
                 if (document.getElementById("contact_2").value.length != 0) {
-                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                     document.getElementById("additionalPhone").value = additionalPhone;
-                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                 }
 
                 let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
@@ -3910,13 +3652,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "pharmacyjpmc") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value;
 
                 document.getElementById("receiverAddress").value = customerAddress;
@@ -4497,9 +4239,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
-
-                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 let appointmentPlace = $('input[name=jpmcpjsc]:checked').val();
 
@@ -4513,9 +4253,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let additionalPhone = "";
 
                 if (document.getElementById("contact_2").value.length != 0) {
-                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                     document.getElementById("additionalPhone").value = additionalPhone;
-                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                 }
 
                 if ($('input[name=jpmcPayingPatient]:checked').val() == 'Yes') {
@@ -4534,13 +4274,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "pharmacyphc") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("productdescription").value = "Medicine";
                 document.getElementById("itemQuantity").value = "1";
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value;
 
                 document.getElementById("receiverAddress").value = customerAddress;
@@ -4956,16 +4696,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                document.getElementById("icPassportNum").value = document.getElementById("icnumber").value + document.getElementById("passport").value;
-
-                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 let additionalPhone = "";
 
                 if (document.getElementById("contact_2").value.length != 0) {
-                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                     document.getElementById("additionalPhone").value = additionalPhone;
-                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
+                    document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                 }
 
                 document.getElementById("customerPhone").value = customerPhone;
@@ -4991,13 +4729,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "grp") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("productdescription").value = document.getElementById("Item-Description").value;
                 document.getElementById("itemQuantity").value = document.getElementById("Quantity").value;
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value;
 
                 document.getElementById("receiverAddress").value = customerAddress;
@@ -5401,7 +5139,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("customerPhone").value = customerPhone;
 
@@ -5463,12 +5201,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "localdelivery") {
                 document.getElementById("senderName").value = document.getElementById("name").value;
                 document.getElementById("senderEmail").value = document.getElementById("email").value;
-                document.getElementById("senderPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+                document.getElementById("senderPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("itemQuantity").value = "1";
 
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value;
 
                 let deliveryAddress = document.getElementById("receiverHouse").value + " " + document.getElementById("receiverKampong").value
@@ -5843,7 +5581,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("area").value = area;
 
-                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("customerPhone").value = customerPhone;
 
@@ -6141,7 +5879,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if ($('input[name=products]:checked').val() == "cbsl") {
                 document.getElementById("receiverName").value = document.getElementById("name").value;
                 document.getElementById("receiverEmail").value = document.getElementById("email").value;
-                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value;
+                document.getElementById("receiverPhone").value = document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("grpTrack").value = document.getElementById("GB-RS-Track").value;
                 document.getElementById("ecommerce").value = document.getElementById("GB-RS-Courier").value;
@@ -6149,10 +5887,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("itemQuantity").value = document.getElementById("GB-RS-Quantity").value;
                 document.getElementById("cargoPrice").value = "RM " + document.getElementById("GB-RS-Total-Amount").value;
 
-                let area = "";
-
                 let customerAddress = document.getElementById("house").value + " " + document.getElementById("kampong").value
-                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                    + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
                     + document.getElementById("postal").value;
 
                 document.getElementById("customerAddress").value = customerAddress;
@@ -6522,9 +6258,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("area").value = area;
 
+                var conN = document.getElementById("name").value;
                 document.getElementById("buyerName").value = document.getElementById("name").value;
 
-                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value;
+                let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 document.getElementById("customerPhone").value = customerPhone;
 

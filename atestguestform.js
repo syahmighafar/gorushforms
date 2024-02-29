@@ -2538,19 +2538,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("buyerName").value = "";
                     if (($('input[name=mohCharges]:checked').val() == "Standard")) {
-                        document.getElementById('price').value = (3).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById('price').value = (4).toFixed(2);
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
                     if (($('input[name=mohCharges]:checked').val() == "Express")) {
-                        document.getElementById('price').value = (5).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-4 Working Days</b>";
+                        document.getElementById('price').value = (5.5).toFixed(2);
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
                     }
 
                     if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
                         document.getElementById('price').value = (20).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within 3 Hours</b>";
                     }
+
                     $("#deliveryDurationsum").fadeIn();
                     $("#productSumGRP").hide();
                     $("#productSumGD").hide();
@@ -2638,27 +2639,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("buyerName").value = "";
                     if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
                         document.getElementById('price').value = (5).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-4 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
                         document.getElementById('price').value = (3).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
                         document.getElementById('price').value = (7).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
                         document.getElementById('price').value = (7).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
                         document.getElementById('price').value = (10).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
                     $("#deliveryDurationsum").fadeIn();
                     $("#productSumGRP").hide();
@@ -2739,22 +2740,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("buyerName").value = "";
                     if (($('input[name=phcCharges]:checked').val() == "Standard Belait")) {
                         document.getElementById('price').value = (3).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day</b>";
                     }
 
                     if (($('input[name=phcCharges]:checked').val() == "Standard Tutong")) {
                         document.getElementById('price').value = (5).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day</b>";
                     }
 
                     if (($('input[name=phcCharges]:checked').val() == "Standard Brunei-Muara")) {
                         document.getElementById('price').value = (7).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day</b>";
                     }
 
                     if (($('input[name=phcCharges]:checked').val() == "Standard Temburong")) {
                         document.getElementById('price').value = (10).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>5-7 Working Days</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day</b>";
                     }
                     $("#deliveryDurationsum").fadeIn();
                     $("#productSumGRP").hide();
@@ -2870,19 +2871,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
-                                    document.getElementById("price").value = (3).toFixed(2)
+                                    document.getElementById("price").value = (4).toFixed(2)
                                 }
 
                                 if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
-                                    document.getElementById("price").value = (5).toFixed(2)
+                                    document.getElementById("price").value = (6).toFixed(2)
                                 }
 
                                 if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
-                                    document.getElementById("price").value = (7).toFixed(2)
+                                    document.getElementById("price").value = (8).toFixed(2)
                                 }
 
                                 if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
-                                    document.getElementById("price").value = (10).toFixed(2)
+                                    document.getElementById("price").value = (11).toFixed(2)
                                 }
                                 document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=grpCharges]:checked').val() + "</b>";
                                 $("#amounttobepaidsum").fadeIn();
@@ -2966,19 +2967,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
-                                document.getElementById("price").value = (3).toFixed(2)
+                                document.getElementById("price").value = (4).toFixed(2)
                             }
 
                             if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
-                                document.getElementById("price").value = (5).toFixed(2)
+                                document.getElementById("price").value = (6).toFixed(2)
                             }
 
                             if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
-                                document.getElementById("price").value = (7).toFixed(2)
+                                document.getElementById("price").value = (8).toFixed(2)
                             }
 
                             if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
-                                document.getElementById("price").value = (10).toFixed(2)
+                                document.getElementById("price").value = (11).toFixed(2)
                             }
                             document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=grpCharges]:checked').val() + "</b>";
                             $("#amounttobepaidsum").fadeIn();
@@ -3044,9 +3045,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("buyerName").value = "";
                     if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (4).toFixed(2)
+                            document.getElementById("price").value = (5).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -3054,9 +3055,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (7).toFixed(2)
+                            document.getElementById("price").value = (8).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -3064,9 +3065,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (12).toFixed(2)
+                            document.getElementById("price").value = (15).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 15).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -3074,9 +3075,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (12).toFixed(2)
+                            document.getElementById("price").value = (15).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 15).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -3084,9 +3085,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (5).toFixed(2)
+                            document.getElementById("price").value = (7).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                         }
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
@@ -3094,27 +3095,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (3).toFixed(2)
+                            document.getElementById("price").value = (4).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
                         }
                         $("#deliveryDurationsum").hide();
                     }
 
                     if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (5).toFixed(2)
+                            document.getElementById("price").value = (6).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 6).toFixed(2)
                         }
                         $("#deliveryDurationsum").hide();
                     }
 
                     if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                         if (document.getElementById("productweight").value <= 3) {
-                            document.getElementById("price").value = (7).toFixed(2)
+                            document.getElementById("price").value = (8).toFixed(2)
                         } else {
-                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                            document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                         }
                         $("#deliveryDurationsum").hide();
                     }
@@ -3238,19 +3239,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
-                                    document.getElementById("price").value = (3).toFixed(2)
+                                    document.getElementById("price").value = (4).toFixed(2)
                                 }
 
                                 if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
-                                    document.getElementById("price").value = (5).toFixed(2)
+                                    document.getElementById("price").value = (6).toFixed(2)
                                 }
 
                                 if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
-                                    document.getElementById("price").value = (7).toFixed(2)
+                                    document.getElementById("price").value = (8).toFixed(2)
                                 }
 
                                 if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
-                                    document.getElementById("price").value = (10).toFixed(2)
+                                    document.getElementById("price").value = (11).toFixed(2)
                                 }
                                 document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=cbslCharges]:checked').val() + "</b>";
                                 $("#amounttobepaidsum").fadeIn();
@@ -3327,19 +3328,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
-                                document.getElementById("price").value = (3).toFixed(2)
+                                document.getElementById("price").value = (4).toFixed(2)
                             }
 
                             if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
-                                document.getElementById("price").value = (5).toFixed(2)
+                                document.getElementById("price").value = (6).toFixed(2)
                             }
 
                             if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
-                                document.getElementById("price").value = (7).toFixed(2)
+                                document.getElementById("price").value = (8).toFixed(2)
                             }
 
                             if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
-                                document.getElementById("price").value = (10).toFixed(2)
+                                document.getElementById("price").value = (11).toFixed(2)
                             }
                             document.getElementById("deliveryTypesum").innerHTML = "Delivery Type: <b>" + $('input[name=cbslCharges]:checked').val() + "</b>";
                             $("#amounttobepaidsum").fadeIn();
@@ -3799,8 +3800,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Standard")) {
-                    document.getElementById('price').value = '3';
-                    document.getElementById('Total-Item-Price').value = '3';
+                    document.getElementById('price').value = '4';
+                    document.getElementById('Total-Item-Price').value = '4';
                     var deliveryTypeCode = "STD";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                     if (moment().format('h') < 12) {
@@ -3831,8 +3832,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (($('input[name=mohCharges]:checked').val() == "Express")) {
-                    document.getElementById('price').value = '5';
-                    document.getElementById('Total-Item-Price').value = '5';
+                    document.getElementById('price').value = '5.5';
+                    document.getElementById('Total-Item-Price').value = '5.5';
                     var deliveryTypeCode = "EXP";
                     document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
                     if (moment().format('h') < 12) {
@@ -5455,6 +5456,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("deliveryType").value = $('input[name=grpCharges]:checked').val();
                 }
 
+                if (($('input[name=grpCharges]:checked').val() == "Immediate Brunei Muara")) {
+                    document.getElementById("price").value = (20).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (20).toFixed(2)
+                
+                }
+                
+                if (($('input[name=grpCharges]:checked').val() == "Drop off Brunei Muara")) {
+                    document.getElementById("price").value = (4).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (4).toFixed(2)
+                
+                }
+                
+                if (($('input[name=grpCharges]:checked').val() == "Drop off Tutong")) {
+                    document.getElementById("price").value = (6).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (6).toFixed(2)
+                }
+                
+                if (($('input[name=grpCharges]:checked').val() == "Drop off Belait")) {
+                    document.getElementById("price").value = (8).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (8).toFixed(2)
+                }
+                
+                if (($('input[name=grpCharges]:checked').val() == "Drop off Temburong")) {
+                    document.getElementById("price").value = (11).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (11).toFixed(2)
+                }
+
                 $('#submitBtnfinal').attr('disabled', false);
 
                 document.getElementById('submitBtnfinal').click();
@@ -5852,11 +5880,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (4).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (4).toFixed(2)
+                        document.getElementById("price").value = (5).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (5).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
                     }
 
                     if (moment().format('h') < 12) {
@@ -5888,11 +5916,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Tutong")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (7).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (7).toFixed(2)
+                        document.getElementById("price").value = (8).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (8).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
@@ -5923,11 +5951,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Belait")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (12).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (12).toFixed(2)
+                        document.getElementById("price").value = (15).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (15).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 15).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 15).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
@@ -5958,11 +5986,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Standard Temburong")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (12).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (12).toFixed(2)
+                        document.getElementById("price").value = (15).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (15).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 12).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 15).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 15).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
@@ -5993,11 +6021,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Express Brunei Muara")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (5).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (5).toFixed(2)
+                        document.getElementById("price").value = (7).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (7).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
@@ -6028,11 +6056,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (3).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (3).toFixed(2)
+                        document.getElementById("price").value = (4).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (4).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 3).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 4).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
@@ -6063,11 +6091,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Tutong")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (5).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (5).toFixed(2)
+                        document.getElementById("price").value = (6).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (6).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 5).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 6).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 6).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
@@ -6098,11 +6126,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Belait")) {
                     if (document.getElementById("productweight").value <= 3) {
-                        document.getElementById("price").value = (7).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = (7).toFixed(2)
+                        document.getElementById("price").value = (8).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = (8).toFixed(2)
                     } else {
-                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
-                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 7).toFixed(2)
+                        document.getElementById('price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
+                        document.getElementById('Total-Item-Price').value = Number(((document.getElementById("productweight").value) - 3) + 8).toFixed(2)
                     }
                     if (moment().format('h') < 12) {
                         if (moment().format('d') == 0) {
@@ -6560,6 +6588,33 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("deliveryType").value = "Pickup"
                 }else{
                     document.getElementById("deliveryType").value = $('input[name=cbslCharges]:checked').val();
+                }
+
+                if (($('input[name=cbslCharges]:checked').val() == "Immediate Brunei Muara")) {
+                    document.getElementById("price").value = (20).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (20).toFixed(2)
+                
+                }
+                
+                if (($('input[name=cbslCharges]:checked').val() == "Drop off Brunei Muara")) {
+                    document.getElementById("price").value = (4).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (4).toFixed(2)
+                
+                }
+                
+                if (($('input[name=cbslCharges]:checked').val() == "Drop off Tutong")) {
+                    document.getElementById("price").value = (6).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (6).toFixed(2)
+                }
+                
+                if (($('input[name=cbslCharges]:checked').val() == "Drop off Belait")) {
+                    document.getElementById("price").value = (8).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (8).toFixed(2)
+                }
+                
+                if (($('input[name=cbslCharges]:checked').val() == "Drop off Temburong")) {
+                    document.getElementById("price").value = (11).toFixed(2)
+                    document.getElementById('Total-Item-Price').value = (11).toFixed(2)
                 }
 
                 $('#submitBtnfinal').attr('disabled', false);

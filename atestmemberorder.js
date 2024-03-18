@@ -2384,12 +2384,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("buyerName").value = "";
                     if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
-                        document.getElementById('price').value = (5).toFixed(2);
+                        document.getElementById('price').value = (5.5).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
-                        document.getElementById('price').value = (3).toFixed(2);
+                        document.getElementById('price').value = (4).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
@@ -4029,8 +4029,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("area").value = area;
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
-                    document.getElementById('price').value = '5';
-                    document.getElementById('Total-Item-Price').value = '5';
+                    document.getElementById('price').value = '5.5';
+                    document.getElementById('Total-Item-Price').value = '5.5';
                     if (moment().format('h') < 12) {
                         if (moment().add(1, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(2, 'days').format('YYYY-MM-DD');
@@ -4072,8 +4072,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
-                    document.getElementById('price').value = '3';
-                    document.getElementById('Total-Item-Price').value = '3';
+                    document.getElementById('price').value = '4';
+                    document.getElementById('Total-Item-Price').value = '4';
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');

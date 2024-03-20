@@ -2394,17 +2394,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
-                        document.getElementById('price').value = (7).toFixed(2);
+                        document.getElementById('price').value = (8).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
-                        document.getElementById('price').value = (7).toFixed(2);
+                        document.getElementById('price').value = (8).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
-                        document.getElementById('price').value = (10).toFixed(2);
+                        document.getElementById('price').value = (11).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
                     $("#deliveryDurationsum").fadeIn();
@@ -4114,8 +4114,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Tutong")) {
-                    document.getElementById('price').value = '7';
-                    document.getElementById('Total-Item-Price').value = '7';
+                    document.getElementById('price').value = '8';
+                    document.getElementById('Total-Item-Price').value = '8';
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
@@ -4156,8 +4156,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Belait")) {
-                    document.getElementById('price').value = '7';
-                    document.getElementById('Total-Item-Price').value = '7';
+                    document.getElementById('price').value = '8';
+                    document.getElementById('Total-Item-Price').value = '8';
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
@@ -4198,8 +4198,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (($('input[name=jpmcCharges]:checked').val() == "Standard Temburong")) {
-                    document.getElementById('price').value = '10';
-                    document.getElementById('Total-Item-Price').value = '10';
+                    document.getElementById('price').value = '11';
+                    document.getElementById('Total-Item-Price').value = '11';
                     if (moment().format('h') < 12) {
                         if (moment().add(4, 'days').format('d') == 0) {
                             document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');

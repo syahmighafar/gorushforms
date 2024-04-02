@@ -805,15 +805,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("productdescription").value = '';
                 document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";
-                document.getElementById("receiverName").value = '';
-                document.getElementById("receiverHouse").value = '';
-                document.getElementById("receiverKampong").value = '';
+                document.getElementById("receiverName").value = 'Joybean Hua Ho Manggis';
+                document.getElementById("receiverHouse").value = 'Basement 1, Hua Ho Department store';
+                document.getElementById("receiverKampong").value = 'Kg Manggis';
                 document.getElementById("receiverJalan").value = '';
                 document.getElementById("receiverSimpang").value = '';
-                $('input[name=receiverDistrict]').attr('checked', false);
-                document.getElementById("receiverPostal").value = '';
+                $('input[name=receiverDistrict][value="Brunei Muara"]').prop('checked', true);
+                document.getElementById("receiverPostal").value = 'BC3615';
                 document.getElementById("receiverEmail").value = '';
-                document.getElementById("receiverContact_1").value = '';
+                document.getElementById("receiverContact_1").value = '7359759';
 
                 $('input[name=pickupordeliverycbsl]').attr('checked', false);
                 document.getElementById("GB-RS-Track").value = "";
@@ -2229,6 +2229,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($('input[name=products]:checked').val() == "localdelivery")) {
+                if (document.getElementById('accessGroupName').value == "Joybean") {
+                    $("#billto").val("Sender");
+                    $("#paymentmethod").val("Bill Payment (BIBD)");
+                }
+
                 if ($('input[name=pickupordelivery]:checked').val() == undefined) {
                     $("#chargessection").hide();
                     alert("Please choose either pickup or delivery!");
@@ -2322,6 +2327,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
+
+
                     }
                 } else {
                     if (($('input[name=pickupordelivery]:checked').val() != undefined) && ($("#productdescription").val().length != 0)
@@ -3039,7 +3046,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Same Day Delivery</b>";
                         $("#deliveryDurationsum").fadeIn();
                     }
-                    
+
                     $("#productSumGRP").hide();
                     $("#productSumGD").fadeIn();
                     $("#productSumPharmacy").hide();

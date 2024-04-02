@@ -6016,6 +6016,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
                         }
                     }
+
+                    $('input[name=products][value="localdeliveryjb"]').prop('checked', true);
                 }
 
                 if (($('input[name=localCharges]:checked').val() == "Drop off Brunei Muara")) {

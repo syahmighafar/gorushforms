@@ -2243,7 +2243,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#godropoffkb").hide();
                     $("#goexpressjb").fadeIn();
 
-                    $('input[name=localCharges]').attr('checked', false);
+                    $('input[name=localCharges][value="Express Joybean"]').prop('checked', true);
                 }
 
                 if ($('input[name=pickupordelivery]:checked').val() == undefined) {

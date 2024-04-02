@@ -808,7 +808,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("receiverName").value = 'Joybean Hua Ho Manggis';
                 document.getElementById("receiverHouse").value = 'Basement 1, Hua Ho Department store';
                 document.getElementById("receiverKampong").value = 'Kg Manggis';
-                document.getElementById("receiverJalan").value = '';
+                document.getElementById("receiverJalan").value = 'Jln Muara';
                 document.getElementById("receiverSimpang").value = '';
                 $('input[name=receiverDistrict][value="Brunei Muara"]').prop('checked', true);
                 document.getElementById("receiverPostal").value = 'BC3615';
@@ -2232,6 +2232,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (document.getElementById('accessGroupName').value == "Joybean") {
                     $("#billto").val("Sender");
                     $("#paymentmethod").val("Bill Payment (BIBD)");
+
+                    $("#gostandardbm").hide();
+                    $("#gostandardttg").hide();
+                    $("#gostandardkb").hide();
+                    $("#gostandardtemb").hide();
+                    $("#goexpressbm").hide();
+                    $("#godropoffbm").hide();
+                    $("#godropoffttg").hide();
+                    $("#godropoffkb").hide();
+                    $("#goexpressjb").fadeIn();
+
+                    $('input[name=localCharges]').attr('checked', false);
                 }
 
                 if ($('input[name=pickupordelivery]:checked').val() == undefined) {

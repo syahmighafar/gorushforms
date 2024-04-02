@@ -735,7 +735,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if (document.getElementById('accessGroupName').value == "Joybean") {
-                $("#mohhideimm").fadeIn();
+                $("#mohhideimm").hide();
                 $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
@@ -797,11 +797,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("Total-Item-Price").value = '';
                 document.getElementById("itemPrice").value = '';
 
-                $('input[name=pickupordelivery]').attr('checked', false);
-                $("#pickupdatearea").hide();
+                $('input[name=pickupordelivery][value="Pickup and Delivery"]').prop('checked', true);
+                $("#pickupdatearea").fadeIn();
                 document.getElementById("pickupdate").value = '';
-                $("#pickupaddressarea").hide();
-                document.getElementById("pickupaddress").value = '';
+                $("#pickupaddressarea").fadeIn();
+                document.getElementById("pickupaddress").value = 'Unit GK5 Grd Floor Mid Valley Shopping Centre';
                 document.getElementById("productdescription").value = '';
                 document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";

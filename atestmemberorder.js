@@ -2231,7 +2231,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($('input[name=products]:checked').val() == "localdelivery")) {
                 if (document.getElementById('accessGroupName').value == "Joybean") {
                     $("#billto").val("Sender");
-                    $("#paymentmethod").val("Bill Payment (BIBD)");
+                    $("#paymentmethod").val("Cash");
 
                     $("#gostandardbm").hide();
                     $("#gostandardttg").hide();

@@ -801,7 +801,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#pickupdatearea").fadeIn();
                 document.getElementById("pickupdate").value = '';
                 $("#pickupaddressarea").fadeIn();
-                document.getElementById("pickupaddress").value = 'Unit GK5 Grd Floor Mid Valley Shopping Centre';
+                document.getElementById("pickupaddress").value = 'Grd Flr, Kiosk GK 5, Spg 58 Mid Valley Shopping Centre';
                 document.getElementById("productdescription").value = '';
                 document.getElementById("producttype").value = '';
                 document.getElementById("productweight").value = "";

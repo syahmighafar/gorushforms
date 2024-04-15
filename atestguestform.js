@@ -5875,7 +5875,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
   
                 document.getElementById("customerPhone").value = customerPhone;
   
-                let receiverPhone = "+" + document.getElementById("code_3").value + document.getElementById("receiverContact_1").value;
+                let receiverPhone = document.getElementById("code_3").value + document.getElementById("receiverContact_1").value;
                 document.getElementById("receiverPhone").value = receiverPhone;
   
                 if (($('input[name=localCharges]:checked').val() == "Standard Brunei-Muara")) {

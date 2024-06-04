@@ -1187,6 +1187,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 && ($("#kampong").val().length != 0) && ($("#jalan").val().length != 0)
                 && ($('input[name=district]:checked').val() != undefined)
                 && ($("#contact_1").val().length != 0)) {
+                $("#orderTypeSelection").hide();
                 $("#productselectionsection").hide();
                 $("#personalNextBtn").hide();
                 $("#personalsection").hide();
@@ -3370,6 +3371,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#productsPrevBtn").hide();
             $("#productNextBtn").hide();
             $("#productsection").hide();
+            $("#orderTypeSelection").fadeIn();
             $("#productselectionsection").fadeIn();
             $("#personalsection").fadeIn();
             $("#personalNextBtn").fadeIn();

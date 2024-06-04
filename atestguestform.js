@@ -1177,6 +1177,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#chargessection").hide();
                 alert("Please do not leave your district field empty!");
             }
+
+            if ($('input[name=products]:checked').val() == undefined) {
+                $("#chargessection").hide();
+                alert("Please do not leave your product field empty!");
+            }
   
             if (($("#contact_1").val().length == 0)) {
                 $("#productsection").hide();
@@ -1186,7 +1191,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($("#name").val().length != 0) && ($("#house").val().length != 0)
                 && ($("#kampong").val().length != 0) && ($("#jalan").val().length != 0)
                 && ($('input[name=district]:checked').val() != undefined)
-                && ($("#contact_1").val().length != 0)) {
+                && ($("#contact_1").val().length != 0)
+                && ($('input[name=products]:checked').val() != undefined)) {
                 $("#orderTypeSelection").hide();
                 $("#productselectionsection").hide();
                 $("#personalNextBtn").hide();

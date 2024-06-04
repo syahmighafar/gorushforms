@@ -23,6 +23,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
+        $('input[name=orderType]').change(function () {
+            if ($(this).val() == "Pharmacy") {
+                $("#productselectionsection").fadeIn();
+                $("#pharmacySelection").fadeIn();
+                $("#othersSelection").hide();
+
+                $('input[name=products]').attr('checked', false);
+            }
+
+            if ($(this).val() == "Others") {
+                $("#productselectionsection").fadeIn();
+                $("#pharmacySelection").hide();
+                $("#othersSelection").fadeIn();
+
+                $('input[name=products]').attr('checked', false);
+            }
+        });
+
         $('input[name=products]').change(function () {
             document.getElementById("code").value = '673';
             document.getElementById("code_2").value = '673';
@@ -735,8 +753,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if (document.getElementById('accessGroupName').value == "Joybean") {
-                $("#mohhideimm").hide();
-                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").hide();
@@ -836,8 +852,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("remarks").value = "";
             } else {
                 if ($('#district').val() == "brunei-muara") {
-                    $("#mohhideimm").fadeIn();
-                    $("#mohhideexp").fadeIn();
                     $("#mohimmidiate").fadeIn();
                     $("#mohexpress").fadeIn();
                     $("#mohstandard").fadeIn();
@@ -948,8 +962,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if ($('#district').val() == "tutong") {
-                    $("#mohhideimm").hide();
-                    $("#mohhideexp").hide();
                     $("#mohimmidiate").hide();
                     $("#mohexpress").hide();
                     $("#mohstandard").fadeIn();
@@ -1049,8 +1061,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if ($('#district').val() == "temburong") {
-                    $("#mohhideimm").hide();
-                    $("#mohhideexp").hide();
                     $("#mohimmidiate").hide();
                     $("#mohexpress").hide();
                     $("#mohstandard").fadeIn();
@@ -1150,8 +1160,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if ($('#district').val() == "belait") {
-                    $("#mohhideimm").hide();
-                    $("#mohhideexp").hide();
                     $("#mohimmidiate").hide();
                     $("#mohexpress").hide();
                     $("#mohstandard").fadeIn();
@@ -1250,6 +1258,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("remarks").value = "";
                 }
             }
+            $("#orderTypeSelection").hide();
             $("#productselectionsection").hide();
             $("#personalNextBtn").hide();
             $("#personalsection").hide();
@@ -3300,6 +3309,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             $("#productsPrevBtn").hide();
             $("#productNextBtn").hide();
             $("#productsection").hide();
+            $("#orderTypeSelection").fadeIn();
             $("#productselectionsection").fadeIn();
             $("#personalsection").fadeIn();
             $("#personalNextBtn").fadeIn();

@@ -22,6 +22,24 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById('additionalCharge').value = Number((document.getElementById("productweight").value) - 3).toFixed(2)
             }
         });
+
+        $('input[name=orderType]').change(function () {
+            if ($(this).val() == "Pharmacy") {
+                $("#productselectionsection").fadeIn();
+                $("#pharmacySelection").fadeIn();
+                $("#othersSelection").hide();
+
+                $('input[name=products]').attr('checked', false);
+            }
+
+            if ($(this).val() == "Others") {
+                $("#productselectionsection").fadeIn();
+                $("#pharmacySelection").hide();
+                $("#othersSelection").fadeIn();
+
+                $('input[name=products]').attr('checked', false);
+            }
+        });
   
         $('input[name=products]').change(function () {
             if ($(this).val() == "pharmacymoh") {
@@ -727,8 +745,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
   
         $('input[name=district]').change(function () {
             if ($(this).val() == "Brunei Muara") {
-                $("#mohhideimm").fadeIn();
-                $("#mohhideexp").fadeIn();
                 $("#mohimmidiate").fadeIn();
                 $("#mohexpress").fadeIn();
                 $("#mohstandard").fadeIn();
@@ -839,8 +855,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
   
             if ($(this).val() == "Tutong") {
-                $("#mohhideimm").hide();
-                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").fadeIn();
@@ -940,8 +954,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
   
             if ($(this).val() == "Temburong") {
-                $("#mohhideimm").hide();
-                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").fadeIn();
@@ -1041,8 +1053,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
   
             if ($(this).val() == "Belait") {
-                $("#mohhideimm").hide();
-                $("#mohhideexp").hide();
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
                 $("#mohstandard").fadeIn();

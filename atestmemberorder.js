@@ -866,9 +866,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             } else {
                                 $("#mohexpress").fadeIn();
                             }
-                        } else if ((day == 5) || (day == 6)) {
+                        }
+        
+                        if ((day == 5) || (day == 6)) {
                             $("#mohexpress").hide();
-                        } else {
+                        }
+        
+                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
                             $("#mohexpress").fadeIn();
                         }
 
@@ -1333,9 +1337,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     } else {
                         $("#mohexpress").fadeIn();
                     }
-                } else if ((day == 5) || (day == 6)) {
+                }
+
+                if ((day == 5) || (day == 6)) {
                     $("#mohexpress").hide();
-                } else {
+                }
+
+                if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
                     $("#mohexpress").fadeIn();
                 }
 

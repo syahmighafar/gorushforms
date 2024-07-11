@@ -863,6 +863,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         if (day == 4) {
                             if (hour >= 11) {
                                 $("#mohexpress").hide();
+                            } else {
+                                $("#mohexpress").fadeIn();
                             }
                         } else if ((day == 5) || (day == 6)) {
                             $("#mohexpress").hide();
@@ -1328,6 +1330,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (day == 4) {
                     if (hour >= 11) {
                         $("#mohexpress").hide();
+                    } else {
+                        $("#mohexpress").fadeIn();
                     }
                 } else if ((day == 5) || (day == 6)) {
                     $("#mohexpress").hide();

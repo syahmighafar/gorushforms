@@ -859,7 +859,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 } else {
                     if ($('#district').val() == "brunei-muara") {
                         $("#mohimmidiate").fadeIn();
-                        $("#mohexpress").fadeIn();
+                        
+                        if (day == 4) {
+                            if (hour >= 11) {
+                                $("#mohexpress").hide();
+                            }
+                        } else if ((day == 5) || (day == 6)) {
+                            $("#mohexpress").hide();
+                        } else {
+                            $("#mohexpress").fadeIn();
+                        }
+
                         $("#mohstandard").fadeIn();
     
                         $("#jpmcexpressbm").fadeIn();
@@ -1315,7 +1325,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     $("#mohimmidiate").hide();
                 }
 
-                $("#mohexpress").fadeIn();
+                if (day == 4) {
+                    if (hour >= 11) {
+                        $("#mohexpress").hide();
+                    }
+                } else if ((day == 5) || (day == 6)) {
+                    $("#mohexpress").hide();
+                } else {
+                    $("#mohexpress").fadeIn();
+                }
 
                 document.getElementById('healthCentreBM').value = '';
                 document.getElementById("healthCentreTTG").value = "";

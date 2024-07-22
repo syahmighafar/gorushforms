@@ -1923,7 +1923,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohexpress").fadeIn();
                                         }
 
-                                        if (($('#healthCentreBM').val() != "SG Bunga") || ($('#healthCentreBM').val() != "KG Bolkiah") || ($('#healthCentreBM').val().length != 0)) {
+                                        if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
                                             if ((day != 0) && (day != 5)) {
                                                 if ((hour >= 8) && (hour < 12)) {
                                                     $("#mohimmidiate").fadeIn();
@@ -2030,7 +2030,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohexpress").fadeIn();
                                         }
 
-                                        if (($('#healthCentreBM').val() != "SG Bunga") || ($('#healthCentreBM').val() != "KG Bolkiah") || ($('#healthCentreBM').val().length != 0)) {
+                                        if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
                                             if ((day != 0) && (day != 5)) {
                                                 if ((hour >= 8) && (hour < 12)) {
                                                     $("#mohimmidiate").fadeIn();

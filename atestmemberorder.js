@@ -1977,6 +1977,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     } else {
                                         $("#mohimmidiate").hide();
                                     }
+                                } else {
+                                    $("#mohimmidiate").hide();
                                 }
                             }
 

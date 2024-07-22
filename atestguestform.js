@@ -745,25 +745,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('input[name=district]').change(function () {
             if ($(this).val() == "Brunei Muara") {
-                $("#mohimmidiate").fadeIn();
-
-                if (day == 4) {
-                    if (hour >= 11) {
-                        $("#mohexpress").hide();
-                    } else {
-                        $("#mohexpress").fadeIn();
-                    }
-                }
-
-                if ((day == 5) || (day == 6)) {
-                    $("#mohexpress").hide();
-                }
-
-                if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                    $("#mohexpress").fadeIn();
-                }
-
                 $("#mohstandard").fadeIn();
+                $("#mohexpress").hide();
+                $("#mohimmidiate").hide();
 
                 $("#jpmcexpressbm").fadeIn();
                 $("#jpmcstandardbm").fadeIn();
@@ -1276,31 +1260,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#appointmentDistrictTEMB").hide();
                 $("#appointmentDistrictKB").hide();
 
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
-
-                if (day == 4) {
-                    if (hour >= 11) {
-                        $("#mohexpress").hide();
-                    } else {
-                        $("#mohexpress").fadeIn();
-                    }
-                }
-
-                if ((day == 5) || (day == 6)) {
-                    $("#mohexpress").hide();
-                }
-
-                if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                    $("#mohexpress").fadeIn();
-                }
+                $("#mohimmidiate").hide();
+                $("#mohexpress").hide();
 
                 document.getElementById('healthCentreBM').value = '';
                 document.getElementById("healthCentreTTG").value = "";
@@ -1394,16 +1355,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Raja Isteri Pengiran Anak Saleha Hospital") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 15)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
-
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.2805202346863!2d114.93130540523119!3d4.892630019678778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32228acb18b46725%3A0x9118155b10d353ca!2sRaja%20Isteri%20Pengiran%20Anak%20Saleha%20Hospital!5e0!3m2!1sen!2sbn!4v1634281650713!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1413,17 +1365,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Pengkalan Batu Health Centre") {
-
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
-
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.9930134353094!2d114.81397081532558!3d4.771159642369682!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x322263643d7b9bf9%3A0xab86d8cb5835ceda!2sPengkalan%20Batu%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285210387!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1434,15 +1376,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
             if ($(this).val() == "Jubli Perak Sengkurong Health Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.2877506842783!2d114.84314291532539!3d4.891412441334922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32226084b479a23b%3A0xf3137ef638ed3cfd!2sJubli%20Perak%20Sengkurong%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285543314!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1452,15 +1386,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Jubli Emas Kg Perpindahan Bunut Health Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.547397189751!2d114.88291741532552!3d4.847486841715639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x322261c61f38a619%3A0x3a6a37bd46269d3a!2sJubli%20Emas%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285599556!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1470,15 +1396,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Pengiran Anak Puteri Hajah Rashidah Sa'adatul Bolkiah Health Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.3769360804904!2d114.9340483153255!3d4.876369041465689!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32228ac25aec45df%3A0x8707ccd2be1d106b!2sPAPHRSB%20SG%20ASAM%20HEALTH%20CENTRE!5e0!3m2!1sen!2sbn!4v1634285838280!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1488,15 +1406,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Pengiran Anak Puteri Hajah Muta-Wakillah Hayatul Bolkiah Health Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.0479626441015!2d114.90431041532548!3d4.9316318409836315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f57fa2c50b8f%3A0x5e99dc6cafc60b21!2sPengiran%20Anak%20Puteri%20Hajah%20Muta-Wakillah%20Hayatul%20Bolkiah%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285881919!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1506,15 +1416,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Rimba Dialysis Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d993.762589183511!2d114.9064117!3d4.9312319!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f57fb34628ab%3A0xe11b4fd5ed3d2ce1!2sRimba%20Dialysis%20Centre!5e0!3m2!1sen!2sbn!4v1636339406654!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1524,15 +1426,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Berakas Health Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.828175459776!2d114.9636824153256!3d4.96821124066185!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f42787932131%3A0xf9ab86325b87674!2sPusat%20Kesihatan%20Berakas!5e0!3m2!1sen!2sbn!4v1634285920206!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1542,15 +1436,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Muara Health Centre") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3974.4576007276696!2d115.06447081532535!3d5.029285440119686!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f06dcb40542b%3A0xdce8b6a5b55c836d!2sMuara%20Health%20Centre!5e0!3m2!1sen!2sbn!4v1634285963322!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1560,15 +1446,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Psychiatry Department, Ministry of Health") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3975.254386052767!2d114.90992181532567!3d4.897028391286052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3222f553a7c821df%3A0x65c23364c25df9!2sPsychiatry%20Department%2C%20Ministry%20of%20Health!5e0!3m2!1sen!2sbn!4v1634992947581!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1598,15 +1476,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "JPMC") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.7582787740073!2d114.82977193840651!3d4.948768090298503!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32225e93638da5b1%3A0x90bf9d36cc534c7c!2sJerudong%20Park%20Medical%20Centre!5e0!3m2!1sen!2sbn!4v1637046171509!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -1616,15 +1486,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "PJSC") {
-                if ((day != 0) && (day != 5)) {
-                    if ((hour >= 8) && (hour < 12)) {
-                        $("#mohimmidiate").fadeIn();
-                    } else {
-                        $("#mohimmidiate").hide();
-                    }
-                } else {
-                    $("#mohimmidiate").hide();
-                }
+                $("#mohimmidiate").hide();
                 $("#clinicAddress").hide();
                 document.getElementById("mapSource").src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1181.7576714939253!2d114.83085643710163!3d4.949108116049822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x32225e9367a66cc1%3A0x3a6601d28e30b574!2sPantai%20Jerudong%20Specialist%20Centre%20(PJSC)!5e0!3m2!1sen!2sbn!4v1637046289863!5m2!1sen!2sbn";
                 $("#hcAreaMapAddress").fadeIn();
@@ -2044,6 +1906,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                        if (day == 4) {
+                                            if (hour >= 11) {
+                                                $("#mohexpress").hide();
+                                            } else {
+                                                $("#mohexpress").fadeIn();
+                                            }
+                                        }
+
+                                        if ((day == 5) || (day == 6)) {
+                                            $("#mohexpress").hide();
+                                        }
+
+                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                            $("#mohexpress").fadeIn();
+                                        }
+
+                                        if (($('#healthCentreBM').val() != "SG Bunga") || ($('#healthCentreBM').val() != "KG Bolkiah") || ($('#healthCentreBM').val().length != 0)) {
+                                            if ((day != 0) && (day != 5)) {
+                                                if ((hour >= 8) && (hour < 12)) {
+                                                    $("#mohimmidiate").fadeIn();
+                                                } else {
+                                                    $("#mohimmidiate").hide();
+                                                }
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                            }
+                                        }
+                                    }
+
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
                             }
@@ -2058,6 +1950,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     $("#chargesPrevBtn").fadeIn();
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
 
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
@@ -2074,6 +1969,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
+
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
                             }
@@ -2089,10 +1987,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
+
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
                             }
-
                         }
                     }
 
@@ -2109,6 +2009,36 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                        if (day == 4) {
+                                            if (hour >= 11) {
+                                                $("#mohexpress").hide();
+                                            } else {
+                                                $("#mohexpress").fadeIn();
+                                            }
+                                        }
+
+                                        if ((day == 5) || (day == 6)) {
+                                            $("#mohexpress").hide();
+                                        }
+
+                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                            $("#mohexpress").fadeIn();
+                                        }
+
+                                        if (($('#healthCentreBM').val() != "SG Bunga") || ($('#healthCentreBM').val() != "KG Bolkiah") || ($('#healthCentreBM').val().length != 0)) {
+                                            if ((day != 0) && (day != 5)) {
+                                                if ((hour >= 8) && (hour < 12)) {
+                                                    $("#mohimmidiate").fadeIn();
+                                                } else {
+                                                    $("#mohimmidiate").hide();
+                                                }
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                            }
+                                        }
+                                    }
+
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
                             }
@@ -2123,6 +2053,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     $("#chargesPrevBtn").fadeIn();
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
 
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
@@ -2139,6 +2072,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
+
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }
                             }
@@ -2153,6 +2089,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     $("#chargesPrevBtn").fadeIn();
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
 
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
                                 }

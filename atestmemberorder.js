@@ -1980,6 +1980,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 } else {
                                     $("#mohimmidiate").hide();
                                 }
+                            } else {
+                                $("#mohimmidiate").hide();
                             }
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });

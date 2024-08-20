@@ -2434,13 +2434,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=mohCharges]:checked').val() == "Express")) {
                         document.getElementById('price').value = (5.5).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day after medicine collected from Pharmacy</b>";
                     }
 
                     if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
                         document.getElementById('price').value = (20).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within 3 Hours</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within 3 Hours after medicine collected from Pharmacy</b>";
                     }
+
+                    if (($('input[name=mohCharges]:checked').val() == "Self Collect")) {
+                        document.getElementById('price').value = (4).toFixed(2);
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
+                    }
+
                     $("#deliveryDurationsum").fadeIn();
                     $("#productSumGRP").hide();
                     $("#productSumGD").hide();
@@ -2527,7 +2533,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("buyerName").value = "";
                     if (($('input[name=jpmcCharges]:checked').val() == "Express Brunei-Muara")) {
                         document.getElementById('price').value = (5.5).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day after medicine collected from Pharmacy</b>";
                     }
 
                     if (($('input[name=jpmcCharges]:checked').val() == "Standard Brunei-Muara")) {
@@ -2549,6 +2555,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById('price').value = (11).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>2-3 Working Days</b>";
                     }
+
+                    if (($('input[name=jpmcCharges]:checked').val() == "Self Collect")) {
+                        document.getElementById('price').value = (4).toFixed(2);
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
+                    }
+
                     $("#deliveryDurationsum").fadeIn();
                     $("#productSumGRP").hide();
                     $("#productSumGD").hide();
@@ -3319,124 +3331,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 
-                if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
-                else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }
-                else if (address.includes("ANGGREK DESA") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("ANGGREK") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("PULAIE") == true) { area = "B1", kampong = "PULAIE" }
-                else if (address.includes("LAMBAK") == true) { area = "B1", kampong = "LAMBAK" }
-                else if (address.includes("TERUNJING") == true) { area = "B1", kampong = "TERUNJING" }
-                else if (address.includes("MADANG") == true) { area = "B1", kampong = "MADANG" }
-                else if (address.includes("AIRPORT") == true) { area = "B1", kampong = "AIRPORT" }
-                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("OKBI") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("SERUSOP") == true) { area = "B1", kampong = "SERUSOP" }
-                else if (address.includes("BURONG PINGAI") == true) { area = "B1", kampong = "BURONG PINGAI" }
-                else if (address.includes("SETIA NEGARA") == true) { area = "B1", kampong = "SETIA NEGARA" }
-                else if (address.includes("PASIR BERAKAS") == true) { area = "B1", kampong = "PASIR BERAKAS" }
-                else if (address.includes("MENTERI BESAR") == true) { area = "B1", kampong = "MENTERI BESAR" }
-                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B1", kampong = "KEBANGSAAN LAMA" }
-                else if (address.includes("BATU MARANG") == true) { area = "B2", kampong = "BATU MARANG" }
-                else if (address.includes("DATO GANDI") == true) { area = "B2", kampong = "DATO GANDI" }
-                else if (address.includes("KAPOK") == true) { area = "B2", kampong = "KAPOK" }
-                else if (address.includes("KOTA BATU") == true) { area = "B2", kampong = "KOTA BATU" }
-                else if (address.includes("MENTIRI") == true) { area = "B2", kampong = "MENTIRI" }
-                else if (address.includes("MERAGANG") == true) { area = "B2", kampong = "MERAGANG" }
-                else if (address.includes("PELAMBAIAN") == true) { area = "B2", kampong = "PELAMBAIAN" }
-                else if (address.includes("PINTU MALIM") == true) { area = "B2", kampong = "PINTU MALIM" }
-                else if (address.includes("SALAMBIGAR") == true) { area = "B2", kampong = "SALAMBIGAR" }
-                else if (address.includes("SALAR") == true) { area = "B2", kampong = "SALAR" }
-                else if (address.includes("SERASA") == true) { area = "B2", kampong = "SERASA" }
-                else if (address.includes("SERDANG") == true) { area = "B2", kampong = "SERDANG" }
-                else if (address.includes("SUNGAI BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SG BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SG BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SUNGAI HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SG HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SUNGAI TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SG TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SUBOK") == true) { area = "B2", kampong = "SUBOK" }
-                else if (address.includes("SUNGAI AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SG AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SUNGAI BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("SG BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("TANAH JAMBU") == true) { area = "B2", kampong = "TANAH JAMBU" }
-                else if (address.includes("SUNGAI OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("SG OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("KATOK") == true) { area = "G1", kampong = "KATOK" }
-                else if (address.includes("MATA-MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("MATA MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("RIMBA") == true) { area = "G1", kampong = "RIMBA" }
-                else if (address.includes("TUNGKU") == true) { area = "G1", kampong = "TUNGKU" }
-                else if (address.includes("UBD") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("JIS") == true) { area = "G1" }
-                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G1", kampong = "JIS" }
-                else if (address.includes("BERANGAN") == true) { area = "G2", kampong = "BERANGAN" }
-                else if (address.includes("BERIBI") == true) { area = "G2", kampong = "BERIBI" }
-                else if (address.includes("KIULAP") == true) { area = "G2", kampong = "KIULAP" }
-                else if (address.includes("RIPAS") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("KIARONG") == true) { area = "G2", kampong = "KIARONG" }
-                else if (address.includes("PUSAR ULAK") == true) { area = "G2", kampong = "PUSAR ULAK" }
-                else if (address.includes("KUMBANG PASANG") == true) { area = "G2", kampong = "KUMBANG PASANG" }
-                else if (address.includes("MENGLAIT") == true) { area = "G2", kampong = "MENGLAIT" }
-                else if (address.includes("MABOHAI") == true) { area = "G2", kampong = "MABOHAI" }
-                else if (address.includes("ONG SUM PING") == true) { area = "G2", kampong = "ONG SUM PING" }
-                else if (address.includes("GADONG") == true) { area = "G2", kampong = "GADONG" }
-                else if (address.includes("TASEK LAMA") == true) { area = "G2", kampong = "TASEK LAMA" }
-                else if (address.includes("BANDAR TOWN") == true) { area = "G2", kampong = "BANDAR TOWN" }
-                else if (address.includes("BATU SATU") == true) { area = "JT1", kampong = "BATU SATU" }
-                else if (address.includes("BENGKURONG") == true) { area = "JT1", kampong = "BENGKURONG" }
-                else if (address.includes("BUNUT") == true) { area = "JT1", kampong = "BUNUT" }
-                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT1", kampong = "JALAN BABU RAJA" }
-                else if (address.includes("JALAN ISTANA") == true) { area = "JT1", kampong = "JALAN ISTANA" }
-                else if (address.includes("JUNJONGAN") == true) { area = "JT1", kampong = "JUNJONGAN" }
-                else if (address.includes("KASAT") == true) { area = "JT1", kampong = "KASAT" }
-                else if (address.includes("LUMAPAS") == true) { area = "JT1", kampong = "LUMAPAS" }
-                else if (address.includes("JALAN HALUS") == true) { area = "JT1", kampong = "JALAN HALUS" }
-                else if (address.includes("MADEWA") == true) { area = "JT1", kampong = "MADEWA" }
-                else if (address.includes("PUTAT") == true) { area = "JT1", kampong = "PUTAT" }
-                else if (address.includes("SINARUBAI") == true) { area = "JT1", kampong = "SINARUBAI" }
-                else if (address.includes("TASEK MERADUN") == true) { area = "JT1", kampong = "TASEK MERADUN" }
-                else if (address.includes("TELANAI") == true) { area = "JT1", kampong = "TELANAI" }
-                else if (address.includes("BAN 1") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 2") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 3") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 4") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 5") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 6") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BATONG") == true) { area = "JT2", kampong = "BATONG" }
-                else if (address.includes("BATU AMPAR") == true) { area = "JT2", kampong = "BATU AMPAR" }
-                else if (address.includes("BEBATIK") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("BEBULOH") == true) { area = "JT2", kampong = "BEBULOH" }
-                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("DADAP") == true) { area = "JT2", kampong = "DADAP" }
-                else if (address.includes("KUALA LURAH") == true) { area = "JT2", kampong = "KUALA LURAH" }
-                else if (address.includes("KULAPIS") == true) { area = "JT2", kampong = "KULAPIS" }
-                else if (address.includes("LIMAU MANIS") == true) { area = "JT2", kampong = "LIMAU MANIS" }
-                else if (address.includes("MASIN") == true) { area = "JT2", kampong = "MASIN" }
-                else if (address.includes("MULAUT") == true) { area = "JT2", kampong = "MULAUT" }
-                else if (address.includes("PANCHOR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANCHUR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANGKALAN BATU") == true) { area = "JT2", kampong = "PANGKALAN BATU" }
-                else if (address.includes("PASAI") == true) { area = "JT2", kampong = "PASAI" }
-                else if (address.includes("WASAN") == true) { area = "JT2", kampong = "WASAN" }
-                else if (address.includes("PARIT") == true) { area = "JT2", kampong = "PARIT" }
-                else if (address.includes("EMPIRE") == true) { area = "JT3", kampong = "EMPIRE" }
-                else if (address.includes("JANGSAK") == true) { area = "JT3", kampong = "JANGSAK" }
-                else if (address.includes("JERUDONG") == true) { area = "JT3", kampong = "JERUDONG" }
-                else if (address.includes("KATIMAHAR") == true) { area = "JT3", kampong = "KATIMAHAR" }
-                else if (address.includes("LUGU") == true) { area = "JT3", kampong = "LUGU" }
-                else if (address.includes("SENGKURONG") == true) { area = "JT3", kampong = "SENGKURONG" }
-                else if (address.includes("TANJONG NANGKA") == true) { area = "JT3", kampong = "TANJONG NANGKA" }
-                else if (address.includes("TANJONG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT3", kampung = "SUNGAI TAMPOI" }
-                else if (address.includes("SG TAMPOI") == true) { area = "JT3", kampong = "SUNGAI TAMPOI" }
-                else if (address.includes("MUARA") == true) { area = "B2", kampong = "MUARA" }
+                if (address.includes("MANGGIS") == true) { area = "B", kampong = "MANGGIS" }
+                else if (address.includes("DELIMA") == true) { area = "B", kampong = "DELIMA" }
+                else if (address.includes("ANGGREK DESA") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("ANGGREK") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("PULAIE") == true) { area = "B", kampong = "PULAIE" }
+                else if (address.includes("LAMBAK") == true) { area = "B", kampong = "LAMBAK" }
+                else if (address.includes("TERUNJING") == true) { area = "B", kampong = "TERUNJING" }
+                else if (address.includes("MADANG") == true) { area = "B", kampong = "MADANG" }
+                else if (address.includes("AIRPORT") == true) { area = "B", kampong = "AIRPORT" }
+                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("OKBI") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("SERUSOP") == true) { area = "B", kampong = "SERUSOP" }
+                else if (address.includes("BURONG PINGAI") == true) { area = "B", kampong = "BURONG PINGAI" }
+                else if (address.includes("SETIA NEGARA") == true) { area = "B", kampong = "SETIA NEGARA" }
+                else if (address.includes("PASIR BERAKAS") == true) { area = "B", kampong = "PASIR BERAKAS" }
+                else if (address.includes("MENTERI BESAR") == true) { area = "B", kampong = "MENTERI BESAR" }
+                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B", kampong = "KEBANGSAAN LAMA" }
+                else if (address.includes("BATU MARANG") == true) { area = "B", kampong = "BATU MARANG" }
+                else if (address.includes("DATO GANDI") == true) { area = "B", kampong = "DATO GANDI" }
+                else if (address.includes("KAPOK") == true) { area = "B", kampong = "KAPOK" }
+                else if (address.includes("KOTA BATU") == true) { area = "B", kampong = "KOTA BATU" }
+                else if (address.includes("MENTIRI") == true) { area = "B", kampong = "MENTIRI" }
+                else if (address.includes("MERAGANG") == true) { area = "B", kampong = "MERAGANG" }
+                else if (address.includes("PELAMBAIAN") == true) { area = "B", kampong = "PELAMBAIAN" }
+                else if (address.includes("PINTU MALIM") == true) { area = "B", kampong = "PINTU MALIM" }
+                else if (address.includes("SALAMBIGAR") == true) { area = "B", kampong = "SALAMBIGAR" }
+                else if (address.includes("SALAR") == true) { area = "B", kampong = "SALAR" }
+                else if (address.includes("SERASA") == true) { area = "B", kampong = "SERASA" }
+                else if (address.includes("SERDANG") == true) { area = "B", kampong = "SERDANG" }
+                else if (address.includes("SUNGAI BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SG BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SG BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SUNGAI HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SG HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SUNGAI TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SG TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SUBOK") == true) { area = "B", kampong = "SUBOK" }
+                else if (address.includes("SUNGAI AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SG AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SUNGAI BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("SG BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("TANAH JAMBU") == true) { area = "B", kampong = "TANAH JAMBU" }
+                else if (address.includes("SUNGAI OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("SG OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("KATOK") == true) { area = "G", kampong = "KATOK" }
+                else if (address.includes("MATA-MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("MATA MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("RIMBA") == true) { area = "G", kampong = "RIMBA" }
+                else if (address.includes("TUNGKU") == true) { area = "G", kampong = "TUNGKU" }
+                else if (address.includes("UBD") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("JIS") == true) { area = "G" }
+                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G", kampong = "JIS" }
+                else if (address.includes("BERANGAN") == true) { area = "G", kampong = "BERANGAN" }
+                else if (address.includes("BERIBI") == true) { area = "G", kampong = "BERIBI" }
+                else if (address.includes("KIULAP") == true) { area = "G", kampong = "KIULAP" }
+                else if (address.includes("RIPAS") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("KIARONG") == true) { area = "G", kampong = "KIARONG" }
+                else if (address.includes("PUSAR ULAK") == true) { area = "G", kampong = "PUSAR ULAK" }
+                else if (address.includes("KUMBANG PASANG") == true) { area = "G", kampong = "KUMBANG PASANG" }
+                else if (address.includes("MENGLAIT") == true) { area = "G", kampong = "MENGLAIT" }
+                else if (address.includes("MABOHAI") == true) { area = "G", kampong = "MABOHAI" }
+                else if (address.includes("ONG SUM PING") == true) { area = "G", kampong = "ONG SUM PING" }
+                else if (address.includes("GADONG") == true) { area = "G", kampong = "GADONG" }
+                else if (address.includes("TASEK LAMA") == true) { area = "G", kampong = "TASEK LAMA" }
+                else if (address.includes("BANDAR TOWN") == true) { area = "G", kampong = "BANDAR TOWN" }
+                else if (address.includes("BATU SATU") == true) { area = "JT", kampong = "BATU SATU" }
+                else if (address.includes("BENGKURONG") == true) { area = "JT", kampong = "BENGKURONG" }
+                else if (address.includes("BUNUT") == true) { area = "JT", kampong = "BUNUT" }
+                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT", kampong = "JALAN BABU RAJA" }
+                else if (address.includes("JALAN ISTANA") == true) { area = "JT", kampong = "JALAN ISTANA" }
+                else if (address.includes("JUNJONGAN") == true) { area = "JT", kampong = "JUNJONGAN" }
+                else if (address.includes("KASAT") == true) { area = "JT", kampong = "KASAT" }
+                else if (address.includes("LUMAPAS") == true) { area = "JT", kampong = "LUMAPAS" }
+                else if (address.includes("JALAN HALUS") == true) { area = "JT", kampong = "JALAN HALUS" }
+                else if (address.includes("MADEWA") == true) { area = "JT", kampong = "MADEWA" }
+                else if (address.includes("PUTAT") == true) { area = "JT", kampong = "PUTAT" }
+                else if (address.includes("SINARUBAI") == true) { area = "JT", kampong = "SINARUBAI" }
+                else if (address.includes("TASEK MERADUN") == true) { area = "JT", kampong = "TASEK MERADUN" }
+                else if (address.includes("TELANAI") == true) { area = "JT", kampong = "TELANAI" }
+                else if (address.includes("BAN 1") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 2") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 3") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 4") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 5") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 6") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BATONG") == true) { area = "JT", kampong = "BATONG" }
+                else if (address.includes("BATU AMPAR") == true) { area = "JT", kampong = "BATU AMPAR" }
+                else if (address.includes("BEBATIK") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("BEBULOH") == true) { area = "JT", kampong = "BEBULOH" }
+                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("DADAP") == true) { area = "JT", kampong = "DADAP" }
+                else if (address.includes("KUALA LURAH") == true) { area = "JT", kampong = "KUALA LURAH" }
+                else if (address.includes("KULAPIS") == true) { area = "JT", kampong = "KULAPIS" }
+                else if (address.includes("LIMAU MANIS") == true) { area = "JT", kampong = "LIMAU MANIS" }
+                else if (address.includes("MASIN") == true) { area = "JT", kampong = "MASIN" }
+                else if (address.includes("MULAUT") == true) { area = "JT", kampong = "MULAUT" }
+                else if (address.includes("PANCHOR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANCHUR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANGKALAN BATU") == true) { area = "JT", kampong = "PANGKALAN BATU" }
+                else if (address.includes("PASAI") == true) { area = "JT", kampong = "PASAI" }
+                else if (address.includes("WASAN") == true) { area = "JT", kampong = "WASAN" }
+                else if (address.includes("PARIT") == true) { area = "JT", kampong = "PARIT" }
+                else if (address.includes("EMPIRE") == true) { area = "JT", kampong = "EMPIRE" }
+                else if (address.includes("JANGSAK") == true) { area = "JT", kampong = "JANGSAK" }
+                else if (address.includes("JERUDONG") == true) { area = "JT", kampong = "JERUDONG" }
+                else if (address.includes("KATIMAHAR") == true) { area = "JT", kampong = "KATIMAHAR" }
+                else if (address.includes("LUGU") == true) { area = "JT", kampong = "LUGU" }
+                else if (address.includes("SENGKURONG") == true) { area = "JT", kampong = "SENGKURONG" }
+                else if (address.includes("TANJONG NANGKA") == true) { area = "JT", kampong = "TANJONG NANGKA" }
+                else if (address.includes("TANJONG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT", kampung = "SUNGAI TAMPOI" }
+                else if (address.includes("SG TAMPOI") == true) { area = "JT", kampong = "SUNGAI TAMPOI" }
+                else if (address.includes("MUARA") == true) { area = "B", kampong = "MUARA" }
                 //TU
                 else if (address.includes("SENGKARAI") == true) { area = "TUTONG", kampong = "SENGKARAI" }
                 else if (address.includes("PANCHOR") == true) { area = "TUTONG", kampong = "PANCHOR" }
@@ -3767,6 +3779,38 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
                 }
 
+                if (($('input[name=mohCharges]:checked').val() == "Self Collect")) {
+                    document.getElementById('price').value = '4';
+                    document.getElementById('Total-Item-Price').value = '4';
+                    var deliveryTypeCode = "STD";
+                    document.getElementById("deliveryTypeCode").value = deliveryTypeCode;
+                    if (moment().format('h') < 12) {
+                        if ((moment().add(4, 'days').format('d') == 0) || (moment().add(4, 'days').format('d') == 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        }
+                    } else {
+                        if ((moment().add(5, 'days').format('d') == 0) || (moment().add(5, 'days').format('d') == 5)) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        }
+                    }
+                }
+
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 let additionalPhone = "";
@@ -3817,124 +3861,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 
-                if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
-                else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }
-                else if (address.includes("ANGGREK DESA") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("ANGGREK") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("PULAIE") == true) { area = "B1", kampong = "PULAIE" }
-                else if (address.includes("LAMBAK") == true) { area = "B1", kampong = "LAMBAK" }
-                else if (address.includes("TERUNJING") == true) { area = "B1", kampong = "TERUNJING" }
-                else if (address.includes("MADANG") == true) { area = "B1", kampong = "MADANG" }
-                else if (address.includes("AIRPORT") == true) { area = "B1", kampong = "AIRPORT" }
-                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("OKBI") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("SERUSOP") == true) { area = "B1", kampong = "SERUSOP" }
-                else if (address.includes("BURONG PINGAI") == true) { area = "B1", kampong = "BURONG PINGAI" }
-                else if (address.includes("SETIA NEGARA") == true) { area = "B1", kampong = "SETIA NEGARA" }
-                else if (address.includes("PASIR BERAKAS") == true) { area = "B1", kampong = "PASIR BERAKAS" }
-                else if (address.includes("MENTERI BESAR") == true) { area = "B1", kampong = "MENTERI BESAR" }
-                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B1", kampong = "KEBANGSAAN LAMA" }
-                else if (address.includes("BATU MARANG") == true) { area = "B2", kampong = "BATU MARANG" }
-                else if (address.includes("DATO GANDI") == true) { area = "B2", kampong = "DATO GANDI" }
-                else if (address.includes("KAPOK") == true) { area = "B2", kampong = "KAPOK" }
-                else if (address.includes("KOTA BATU") == true) { area = "B2", kampong = "KOTA BATU" }
-                else if (address.includes("MENTIRI") == true) { area = "B2", kampong = "MENTIRI" }
-                else if (address.includes("MERAGANG") == true) { area = "B2", kampong = "MERAGANG" }
-                else if (address.includes("PELAMBAIAN") == true) { area = "B2", kampong = "PELAMBAIAN" }
-                else if (address.includes("PINTU MALIM") == true) { area = "B2", kampong = "PINTU MALIM" }
-                else if (address.includes("SALAMBIGAR") == true) { area = "B2", kampong = "SALAMBIGAR" }
-                else if (address.includes("SALAR") == true) { area = "B2", kampong = "SALAR" }
-                else if (address.includes("SERASA") == true) { area = "B2", kampong = "SERASA" }
-                else if (address.includes("SERDANG") == true) { area = "B2", kampong = "SERDANG" }
-                else if (address.includes("SUNGAI BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SG BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SG BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SUNGAI HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SG HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SUNGAI TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SG TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SUBOK") == true) { area = "B2", kampong = "SUBOK" }
-                else if (address.includes("SUNGAI AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SG AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SUNGAI BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("SG BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("TANAH JAMBU") == true) { area = "B2", kampong = "TANAH JAMBU" }
-                else if (address.includes("SUNGAI OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("SG OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("KATOK") == true) { area = "G1", kampong = "KATOK" }
-                else if (address.includes("MATA-MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("MATA MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("RIMBA") == true) { area = "G1", kampong = "RIMBA" }
-                else if (address.includes("TUNGKU") == true) { area = "G1", kampong = "TUNGKU" }
-                else if (address.includes("UBD") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("JIS") == true) { area = "G1" }
-                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G1", kampong = "JIS" }
-                else if (address.includes("BERANGAN") == true) { area = "G2", kampong = "BERANGAN" }
-                else if (address.includes("BERIBI") == true) { area = "G2", kampong = "BERIBI" }
-                else if (address.includes("KIULAP") == true) { area = "G2", kampong = "KIULAP" }
-                else if (address.includes("RIPAS") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("KIARONG") == true) { area = "G2", kampong = "KIARONG" }
-                else if (address.includes("PUSAR ULAK") == true) { area = "G2", kampong = "PUSAR ULAK" }
-                else if (address.includes("KUMBANG PASANG") == true) { area = "G2", kampong = "KUMBANG PASANG" }
-                else if (address.includes("MENGLAIT") == true) { area = "G2", kampong = "MENGLAIT" }
-                else if (address.includes("MABOHAI") == true) { area = "G2", kampong = "MABOHAI" }
-                else if (address.includes("ONG SUM PING") == true) { area = "G2", kampong = "ONG SUM PING" }
-                else if (address.includes("GADONG") == true) { area = "G2", kampong = "GADONG" }
-                else if (address.includes("TASEK LAMA") == true) { area = "G2", kampong = "TASEK LAMA" }
-                else if (address.includes("BANDAR TOWN") == true) { area = "G2", kampong = "BANDAR TOWN" }
-                else if (address.includes("BATU SATU") == true) { area = "JT1", kampong = "BATU SATU" }
-                else if (address.includes("BENGKURONG") == true) { area = "JT1", kampong = "BENGKURONG" }
-                else if (address.includes("BUNUT") == true) { area = "JT1", kampong = "BUNUT" }
-                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT1", kampong = "JALAN BABU RAJA" }
-                else if (address.includes("JALAN ISTANA") == true) { area = "JT1", kampong = "JALAN ISTANA" }
-                else if (address.includes("JUNJONGAN") == true) { area = "JT1", kampong = "JUNJONGAN" }
-                else if (address.includes("KASAT") == true) { area = "JT1", kampong = "KASAT" }
-                else if (address.includes("LUMAPAS") == true) { area = "JT1", kampong = "LUMAPAS" }
-                else if (address.includes("JALAN HALUS") == true) { area = "JT1", kampong = "JALAN HALUS" }
-                else if (address.includes("MADEWA") == true) { area = "JT1", kampong = "MADEWA" }
-                else if (address.includes("PUTAT") == true) { area = "JT1", kampong = "PUTAT" }
-                else if (address.includes("SINARUBAI") == true) { area = "JT1", kampong = "SINARUBAI" }
-                else if (address.includes("TASEK MERADUN") == true) { area = "JT1", kampong = "TASEK MERADUN" }
-                else if (address.includes("TELANAI") == true) { area = "JT1", kampong = "TELANAI" }
-                else if (address.includes("BAN 1") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 2") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 3") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 4") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 5") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 6") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BATONG") == true) { area = "JT2", kampong = "BATONG" }
-                else if (address.includes("BATU AMPAR") == true) { area = "JT2", kampong = "BATU AMPAR" }
-                else if (address.includes("BEBATIK") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("BEBULOH") == true) { area = "JT2", kampong = "BEBULOH" }
-                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("DADAP") == true) { area = "JT2", kampong = "DADAP" }
-                else if (address.includes("KUALA LURAH") == true) { area = "JT2", kampong = "KUALA LURAH" }
-                else if (address.includes("KULAPIS") == true) { area = "JT2", kampong = "KULAPIS" }
-                else if (address.includes("LIMAU MANIS") == true) { area = "JT2", kampong = "LIMAU MANIS" }
-                else if (address.includes("MASIN") == true) { area = "JT2", kampong = "MASIN" }
-                else if (address.includes("MULAUT") == true) { area = "JT2", kampong = "MULAUT" }
-                else if (address.includes("PANCHOR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANCHUR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANGKALAN BATU") == true) { area = "JT2", kampong = "PANGKALAN BATU" }
-                else if (address.includes("PASAI") == true) { area = "JT2", kampong = "PASAI" }
-                else if (address.includes("WASAN") == true) { area = "JT2", kampong = "WASAN" }
-                else if (address.includes("PARIT") == true) { area = "JT2", kampong = "PARIT" }
-                else if (address.includes("EMPIRE") == true) { area = "JT3", kampong = "EMPIRE" }
-                else if (address.includes("JANGSAK") == true) { area = "JT3", kampong = "JANGSAK" }
-                else if (address.includes("JERUDONG") == true) { area = "JT3", kampong = "JERUDONG" }
-                else if (address.includes("KATIMAHAR") == true) { area = "JT3", kampong = "KATIMAHAR" }
-                else if (address.includes("LUGU") == true) { area = "JT3", kampong = "LUGU" }
-                else if (address.includes("SENGKURONG") == true) { area = "JT3", kampong = "SENGKURONG" }
-                else if (address.includes("TANJONG NANGKA") == true) { area = "JT3", kampong = "TANJONG NANGKA" }
-                else if (address.includes("TANJONG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT3", kampung = "SUNGAI TAMPOI" }
-                else if (address.includes("SG TAMPOI") == true) { area = "JT3", kampong = "SUNGAI TAMPOI" }
-                else if (address.includes("MUARA") == true) { area = "B2", kampong = "MUARA" }
+                if (address.includes("MANGGIS") == true) { area = "B", kampong = "MANGGIS" }
+                else if (address.includes("DELIMA") == true) { area = "B", kampong = "DELIMA" }
+                else if (address.includes("ANGGREK DESA") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("ANGGREK") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("PULAIE") == true) { area = "B", kampong = "PULAIE" }
+                else if (address.includes("LAMBAK") == true) { area = "B", kampong = "LAMBAK" }
+                else if (address.includes("TERUNJING") == true) { area = "B", kampong = "TERUNJING" }
+                else if (address.includes("MADANG") == true) { area = "B", kampong = "MADANG" }
+                else if (address.includes("AIRPORT") == true) { area = "B", kampong = "AIRPORT" }
+                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("OKBI") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("SERUSOP") == true) { area = "B", kampong = "SERUSOP" }
+                else if (address.includes("BURONG PINGAI") == true) { area = "B", kampong = "BURONG PINGAI" }
+                else if (address.includes("SETIA NEGARA") == true) { area = "B", kampong = "SETIA NEGARA" }
+                else if (address.includes("PASIR BERAKAS") == true) { area = "B", kampong = "PASIR BERAKAS" }
+                else if (address.includes("MENTERI BESAR") == true) { area = "B", kampong = "MENTERI BESAR" }
+                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B", kampong = "KEBANGSAAN LAMA" }
+                else if (address.includes("BATU MARANG") == true) { area = "B", kampong = "BATU MARANG" }
+                else if (address.includes("DATO GANDI") == true) { area = "B", kampong = "DATO GANDI" }
+                else if (address.includes("KAPOK") == true) { area = "B", kampong = "KAPOK" }
+                else if (address.includes("KOTA BATU") == true) { area = "B", kampong = "KOTA BATU" }
+                else if (address.includes("MENTIRI") == true) { area = "B", kampong = "MENTIRI" }
+                else if (address.includes("MERAGANG") == true) { area = "B", kampong = "MERAGANG" }
+                else if (address.includes("PELAMBAIAN") == true) { area = "B", kampong = "PELAMBAIAN" }
+                else if (address.includes("PINTU MALIM") == true) { area = "B", kampong = "PINTU MALIM" }
+                else if (address.includes("SALAMBIGAR") == true) { area = "B", kampong = "SALAMBIGAR" }
+                else if (address.includes("SALAR") == true) { area = "B", kampong = "SALAR" }
+                else if (address.includes("SERASA") == true) { area = "B", kampong = "SERASA" }
+                else if (address.includes("SERDANG") == true) { area = "B", kampong = "SERDANG" }
+                else if (address.includes("SUNGAI BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SG BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SG BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SUNGAI HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SG HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SUNGAI TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SG TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SUBOK") == true) { area = "B", kampong = "SUBOK" }
+                else if (address.includes("SUNGAI AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SG AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SUNGAI BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("SG BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("TANAH JAMBU") == true) { area = "B", kampong = "TANAH JAMBU" }
+                else if (address.includes("SUNGAI OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("SG OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("KATOK") == true) { area = "G", kampong = "KATOK" }
+                else if (address.includes("MATA-MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("MATA MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("RIMBA") == true) { area = "G", kampong = "RIMBA" }
+                else if (address.includes("TUNGKU") == true) { area = "G", kampong = "TUNGKU" }
+                else if (address.includes("UBD") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("JIS") == true) { area = "G" }
+                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G", kampong = "JIS" }
+                else if (address.includes("BERANGAN") == true) { area = "G", kampong = "BERANGAN" }
+                else if (address.includes("BERIBI") == true) { area = "G", kampong = "BERIBI" }
+                else if (address.includes("KIULAP") == true) { area = "G", kampong = "KIULAP" }
+                else if (address.includes("RIPAS") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("KIARONG") == true) { area = "G", kampong = "KIARONG" }
+                else if (address.includes("PUSAR ULAK") == true) { area = "G", kampong = "PUSAR ULAK" }
+                else if (address.includes("KUMBANG PASANG") == true) { area = "G", kampong = "KUMBANG PASANG" }
+                else if (address.includes("MENGLAIT") == true) { area = "G", kampong = "MENGLAIT" }
+                else if (address.includes("MABOHAI") == true) { area = "G", kampong = "MABOHAI" }
+                else if (address.includes("ONG SUM PING") == true) { area = "G", kampong = "ONG SUM PING" }
+                else if (address.includes("GADONG") == true) { area = "G", kampong = "GADONG" }
+                else if (address.includes("TASEK LAMA") == true) { area = "G", kampong = "TASEK LAMA" }
+                else if (address.includes("BANDAR TOWN") == true) { area = "G", kampong = "BANDAR TOWN" }
+                else if (address.includes("BATU SATU") == true) { area = "JT", kampong = "BATU SATU" }
+                else if (address.includes("BENGKURONG") == true) { area = "JT", kampong = "BENGKURONG" }
+                else if (address.includes("BUNUT") == true) { area = "JT", kampong = "BUNUT" }
+                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT", kampong = "JALAN BABU RAJA" }
+                else if (address.includes("JALAN ISTANA") == true) { area = "JT", kampong = "JALAN ISTANA" }
+                else if (address.includes("JUNJONGAN") == true) { area = "JT", kampong = "JUNJONGAN" }
+                else if (address.includes("KASAT") == true) { area = "JT", kampong = "KASAT" }
+                else if (address.includes("LUMAPAS") == true) { area = "JT", kampong = "LUMAPAS" }
+                else if (address.includes("JALAN HALUS") == true) { area = "JT", kampong = "JALAN HALUS" }
+                else if (address.includes("MADEWA") == true) { area = "JT", kampong = "MADEWA" }
+                else if (address.includes("PUTAT") == true) { area = "JT", kampong = "PUTAT" }
+                else if (address.includes("SINARUBAI") == true) { area = "JT", kampong = "SINARUBAI" }
+                else if (address.includes("TASEK MERADUN") == true) { area = "JT", kampong = "TASEK MERADUN" }
+                else if (address.includes("TELANAI") == true) { area = "JT", kampong = "TELANAI" }
+                else if (address.includes("BAN 1") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 2") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 3") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 4") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 5") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 6") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BATONG") == true) { area = "JT", kampong = "BATONG" }
+                else if (address.includes("BATU AMPAR") == true) { area = "JT", kampong = "BATU AMPAR" }
+                else if (address.includes("BEBATIK") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("BEBULOH") == true) { area = "JT", kampong = "BEBULOH" }
+                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("DADAP") == true) { area = "JT", kampong = "DADAP" }
+                else if (address.includes("KUALA LURAH") == true) { area = "JT", kampong = "KUALA LURAH" }
+                else if (address.includes("KULAPIS") == true) { area = "JT", kampong = "KULAPIS" }
+                else if (address.includes("LIMAU MANIS") == true) { area = "JT", kampong = "LIMAU MANIS" }
+                else if (address.includes("MASIN") == true) { area = "JT", kampong = "MASIN" }
+                else if (address.includes("MULAUT") == true) { area = "JT", kampong = "MULAUT" }
+                else if (address.includes("PANCHOR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANCHUR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANGKALAN BATU") == true) { area = "JT", kampong = "PANGKALAN BATU" }
+                else if (address.includes("PASAI") == true) { area = "JT", kampong = "PASAI" }
+                else if (address.includes("WASAN") == true) { area = "JT", kampong = "WASAN" }
+                else if (address.includes("PARIT") == true) { area = "JT", kampong = "PARIT" }
+                else if (address.includes("EMPIRE") == true) { area = "JT", kampong = "EMPIRE" }
+                else if (address.includes("JANGSAK") == true) { area = "JT", kampong = "JANGSAK" }
+                else if (address.includes("JERUDONG") == true) { area = "JT", kampong = "JERUDONG" }
+                else if (address.includes("KATIMAHAR") == true) { area = "JT", kampong = "KATIMAHAR" }
+                else if (address.includes("LUGU") == true) { area = "JT", kampong = "LUGU" }
+                else if (address.includes("SENGKURONG") == true) { area = "JT", kampong = "SENGKURONG" }
+                else if (address.includes("TANJONG NANGKA") == true) { area = "JT", kampong = "TANJONG NANGKA" }
+                else if (address.includes("TANJONG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT", kampung = "SUNGAI TAMPOI" }
+                else if (address.includes("SG TAMPOI") == true) { area = "JT", kampong = "SUNGAI TAMPOI" }
+                else if (address.includes("MUARA") == true) { area = "B", kampong = "MUARA" }
                 //TU
                 else if (address.includes("SENGKARAI") == true) { area = "TUTONG", kampong = "SENGKARAI" }
                 else if (address.includes("PANCHOR") == true) { area = "TUTONG", kampong = "PANCHOR" }
@@ -4389,6 +4433,48 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
+                if (($('input[name=jpmcCharges]:checked').val() == "Self Collect")) {
+                    document.getElementById('price').value = '4';
+                    document.getElementById('Total-Item-Price').value = '4';
+                    if (moment().format('h') < 12) {
+                        if (moment().add(4, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        }
+                        if (moment().add(4, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('MM/DD/YYYY');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(4, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(4, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        }
+                    } else {
+                        if (moment().add(5, 'days').format('d') == 0) {
+                            document.getElementById("deliveryDate").value = moment().add(6, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(6, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(8, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(8, 'days').format('MM/DD/YYYY');
+                        }
+                        if (moment().add(5, 'days').format('d') == 6) {
+                            document.getElementById("deliveryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(7, 'days').format('DD/MM/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(9, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(9, 'days').format('MM/DD/YYYY');
+                        } else {
+                            document.getElementById("deliveryDate").value = moment().add(5, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbServiceDate").value = moment().add(5, 'days').format('MM/DD/YYYY');
+                            document.getElementById("expiryDate").value = moment().add(7, 'days').format('YYYY-MM-DD');
+                            document.getElementById("qbExpiryDate").value = moment().add(7, 'days').format('MM/DD/YYYY');
+                        }
+                    }
+                }
+
                 let customerPhone = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
                 let appointmentPlace = $('input[name=jpmcpjsc]:checked').val();
@@ -4439,124 +4525,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 
-                if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
-                else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }
-                else if (address.includes("ANGGREK DESA") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("ANGGREK") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("PULAIE") == true) { area = "B1", kampong = "PULAIE" }
-                else if (address.includes("LAMBAK") == true) { area = "B1", kampong = "LAMBAK" }
-                else if (address.includes("TERUNJING") == true) { area = "B1", kampong = "TERUNJING" }
-                else if (address.includes("MADANG") == true) { area = "B1", kampong = "MADANG" }
-                else if (address.includes("AIRPORT") == true) { area = "B1", kampong = "AIRPORT" }
-                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("OKBI") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("SERUSOP") == true) { area = "B1", kampong = "SERUSOP" }
-                else if (address.includes("BURONG PINGAI") == true) { area = "B1", kampong = "BURONG PINGAI" }
-                else if (address.includes("SETIA NEGARA") == true) { area = "B1", kampong = "SETIA NEGARA" }
-                else if (address.includes("PASIR BERAKAS") == true) { area = "B1", kampong = "PASIR BERAKAS" }
-                else if (address.includes("MENTERI BESAR") == true) { area = "B1", kampong = "MENTERI BESAR" }
-                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B1", kampong = "KEBANGSAAN LAMA" }
-                else if (address.includes("BATU MARANG") == true) { area = "B2", kampong = "BATU MARANG" }
-                else if (address.includes("DATO GANDI") == true) { area = "B2", kampong = "DATO GANDI" }
-                else if (address.includes("KAPOK") == true) { area = "B2", kampong = "KAPOK" }
-                else if (address.includes("KOTA BATU") == true) { area = "B2", kampong = "KOTA BATU" }
-                else if (address.includes("MENTIRI") == true) { area = "B2", kampong = "MENTIRI" }
-                else if (address.includes("MERAGANG") == true) { area = "B2", kampong = "MERAGANG" }
-                else if (address.includes("PELAMBAIAN") == true) { area = "B2", kampong = "PELAMBAIAN" }
-                else if (address.includes("PINTU MALIM") == true) { area = "B2", kampong = "PINTU MALIM" }
-                else if (address.includes("SALAMBIGAR") == true) { area = "B2", kampong = "SALAMBIGAR" }
-                else if (address.includes("SALAR") == true) { area = "B2", kampong = "SALAR" }
-                else if (address.includes("SERASA") == true) { area = "B2", kampong = "SERASA" }
-                else if (address.includes("SERDANG") == true) { area = "B2", kampong = "SERDANG" }
-                else if (address.includes("SUNGAI BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SG BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SG BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SUNGAI HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SG HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SUNGAI TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SG TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SUBOK") == true) { area = "B2", kampong = "SUBOK" }
-                else if (address.includes("SUNGAI AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SG AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SUNGAI BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("SG BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("TANAH JAMBU") == true) { area = "B2", kampong = "TANAH JAMBU" }
-                else if (address.includes("SUNGAI OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("SG OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("KATOK") == true) { area = "G1", kampong = "KATOK" }
-                else if (address.includes("MATA-MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("MATA MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("RIMBA") == true) { area = "G1", kampong = "RIMBA" }
-                else if (address.includes("TUNGKU") == true) { area = "G1", kampong = "TUNGKU" }
-                else if (address.includes("UBD") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("JIS") == true) { area = "G1" }
-                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G1", kampong = "JIS" }
-                else if (address.includes("BERANGAN") == true) { area = "G2", kampong = "BERANGAN" }
-                else if (address.includes("BERIBI") == true) { area = "G2", kampong = "BERIBI" }
-                else if (address.includes("KIULAP") == true) { area = "G2", kampong = "KIULAP" }
-                else if (address.includes("RIPAS") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("KIARONG") == true) { area = "G2", kampong = "KIARONG" }
-                else if (address.includes("PUSAR ULAK") == true) { area = "G2", kampong = "PUSAR ULAK" }
-                else if (address.includes("KUMBANG PASANG") == true) { area = "G2", kampong = "KUMBANG PASANG" }
-                else if (address.includes("MENGLAIT") == true) { area = "G2", kampong = "MENGLAIT" }
-                else if (address.includes("MABOHAI") == true) { area = "G2", kampong = "MABOHAI" }
-                else if (address.includes("ONG SUM PING") == true) { area = "G2", kampong = "ONG SUM PING" }
-                else if (address.includes("GADONG") == true) { area = "G2", kampong = "GADONG" }
-                else if (address.includes("TASEK LAMA") == true) { area = "G2", kampong = "TASEK LAMA" }
-                else if (address.includes("BANDAR TOWN") == true) { area = "G2", kampong = "BANDAR TOWN" }
-                else if (address.includes("BATU SATU") == true) { area = "JT1", kampong = "BATU SATU" }
-                else if (address.includes("BENGKURONG") == true) { area = "JT1", kampong = "BENGKURONG" }
-                else if (address.includes("BUNUT") == true) { area = "JT1", kampong = "BUNUT" }
-                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT1", kampong = "JALAN BABU RAJA" }
-                else if (address.includes("JALAN ISTANA") == true) { area = "JT1", kampong = "JALAN ISTANA" }
-                else if (address.includes("JUNJONGAN") == true) { area = "JT1", kampong = "JUNJONGAN" }
-                else if (address.includes("KASAT") == true) { area = "JT1", kampong = "KASAT" }
-                else if (address.includes("LUMAPAS") == true) { area = "JT1", kampong = "LUMAPAS" }
-                else if (address.includes("JALAN HALUS") == true) { area = "JT1", kampong = "JALAN HALUS" }
-                else if (address.includes("MADEWA") == true) { area = "JT1", kampong = "MADEWA" }
-                else if (address.includes("PUTAT") == true) { area = "JT1", kampong = "PUTAT" }
-                else if (address.includes("SINARUBAI") == true) { area = "JT1", kampong = "SINARUBAI" }
-                else if (address.includes("TASEK MERADUN") == true) { area = "JT1", kampong = "TASEK MERADUN" }
-                else if (address.includes("TELANAI") == true) { area = "JT1", kampong = "TELANAI" }
-                else if (address.includes("BAN 1") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 2") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 3") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 4") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 5") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 6") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BATONG") == true) { area = "JT2", kampong = "BATONG" }
-                else if (address.includes("BATU AMPAR") == true) { area = "JT2", kampong = "BATU AMPAR" }
-                else if (address.includes("BEBATIK") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("BEBULOH") == true) { area = "JT2", kampong = "BEBULOH" }
-                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("DADAP") == true) { area = "JT2", kampong = "DADAP" }
-                else if (address.includes("KUALA LURAH") == true) { area = "JT2", kampong = "KUALA LURAH" }
-                else if (address.includes("KULAPIS") == true) { area = "JT2", kampong = "KULAPIS" }
-                else if (address.includes("LIMAU MANIS") == true) { area = "JT2", kampong = "LIMAU MANIS" }
-                else if (address.includes("MASIN") == true) { area = "JT2", kampong = "MASIN" }
-                else if (address.includes("MULAUT") == true) { area = "JT2", kampong = "MULAUT" }
-                else if (address.includes("PANCHOR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANCHUR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANGKALAN BATU") == true) { area = "JT2", kampong = "PANGKALAN BATU" }
-                else if (address.includes("PASAI") == true) { area = "JT2", kampong = "PASAI" }
-                else if (address.includes("WASAN") == true) { area = "JT2", kampong = "WASAN" }
-                else if (address.includes("PARIT") == true) { area = "JT2", kampong = "PARIT" }
-                else if (address.includes("EMPIRE") == true) { area = "JT3", kampong = "EMPIRE" }
-                else if (address.includes("JANGSAK") == true) { area = "JT3", kampong = "JANGSAK" }
-                else if (address.includes("JERUDONG") == true) { area = "JT3", kampong = "JERUDONG" }
-                else if (address.includes("KATIMAHAR") == true) { area = "JT3", kampong = "KATIMAHAR" }
-                else if (address.includes("LUGU") == true) { area = "JT3", kampong = "LUGU" }
-                else if (address.includes("SENGKURONG") == true) { area = "JT3", kampong = "SENGKURONG" }
-                else if (address.includes("TANJONG NANGKA") == true) { area = "JT3", kampong = "TANJONG NANGKA" }
-                else if (address.includes("TANJONG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT3", kampung = "SUNGAI TAMPOI" }
-                else if (address.includes("SG TAMPOI") == true) { area = "JT3", kampong = "SUNGAI TAMPOI" }
-                else if (address.includes("MUARA") == true) { area = "B2", kampong = "MUARA" }
+                if (address.includes("MANGGIS") == true) { area = "B", kampong = "MANGGIS" }
+                else if (address.includes("DELIMA") == true) { area = "B", kampong = "DELIMA" }
+                else if (address.includes("ANGGREK DESA") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("ANGGREK") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("PULAIE") == true) { area = "B", kampong = "PULAIE" }
+                else if (address.includes("LAMBAK") == true) { area = "B", kampong = "LAMBAK" }
+                else if (address.includes("TERUNJING") == true) { area = "B", kampong = "TERUNJING" }
+                else if (address.includes("MADANG") == true) { area = "B", kampong = "MADANG" }
+                else if (address.includes("AIRPORT") == true) { area = "B", kampong = "AIRPORT" }
+                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("OKBI") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("SERUSOP") == true) { area = "B", kampong = "SERUSOP" }
+                else if (address.includes("BURONG PINGAI") == true) { area = "B", kampong = "BURONG PINGAI" }
+                else if (address.includes("SETIA NEGARA") == true) { area = "B", kampong = "SETIA NEGARA" }
+                else if (address.includes("PASIR BERAKAS") == true) { area = "B", kampong = "PASIR BERAKAS" }
+                else if (address.includes("MENTERI BESAR") == true) { area = "B", kampong = "MENTERI BESAR" }
+                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B", kampong = "KEBANGSAAN LAMA" }
+                else if (address.includes("BATU MARANG") == true) { area = "B", kampong = "BATU MARANG" }
+                else if (address.includes("DATO GANDI") == true) { area = "B", kampong = "DATO GANDI" }
+                else if (address.includes("KAPOK") == true) { area = "B", kampong = "KAPOK" }
+                else if (address.includes("KOTA BATU") == true) { area = "B", kampong = "KOTA BATU" }
+                else if (address.includes("MENTIRI") == true) { area = "B", kampong = "MENTIRI" }
+                else if (address.includes("MERAGANG") == true) { area = "B", kampong = "MERAGANG" }
+                else if (address.includes("PELAMBAIAN") == true) { area = "B", kampong = "PELAMBAIAN" }
+                else if (address.includes("PINTU MALIM") == true) { area = "B", kampong = "PINTU MALIM" }
+                else if (address.includes("SALAMBIGAR") == true) { area = "B", kampong = "SALAMBIGAR" }
+                else if (address.includes("SALAR") == true) { area = "B", kampong = "SALAR" }
+                else if (address.includes("SERASA") == true) { area = "B", kampong = "SERASA" }
+                else if (address.includes("SERDANG") == true) { area = "B", kampong = "SERDANG" }
+                else if (address.includes("SUNGAI BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SG BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SG BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SUNGAI HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SG HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SUNGAI TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SG TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SUBOK") == true) { area = "B", kampong = "SUBOK" }
+                else if (address.includes("SUNGAI AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SG AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SUNGAI BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("SG BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("TANAH JAMBU") == true) { area = "B", kampong = "TANAH JAMBU" }
+                else if (address.includes("SUNGAI OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("SG OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("KATOK") == true) { area = "G", kampong = "KATOK" }
+                else if (address.includes("MATA-MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("MATA MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("RIMBA") == true) { area = "G", kampong = "RIMBA" }
+                else if (address.includes("TUNGKU") == true) { area = "G", kampong = "TUNGKU" }
+                else if (address.includes("UBD") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("JIS") == true) { area = "G" }
+                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G", kampong = "JIS" }
+                else if (address.includes("BERANGAN") == true) { area = "G", kampong = "BERANGAN" }
+                else if (address.includes("BERIBI") == true) { area = "G", kampong = "BERIBI" }
+                else if (address.includes("KIULAP") == true) { area = "G", kampong = "KIULAP" }
+                else if (address.includes("RIPAS") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("KIARONG") == true) { area = "G", kampong = "KIARONG" }
+                else if (address.includes("PUSAR ULAK") == true) { area = "G", kampong = "PUSAR ULAK" }
+                else if (address.includes("KUMBANG PASANG") == true) { area = "G", kampong = "KUMBANG PASANG" }
+                else if (address.includes("MENGLAIT") == true) { area = "G", kampong = "MENGLAIT" }
+                else if (address.includes("MABOHAI") == true) { area = "G", kampong = "MABOHAI" }
+                else if (address.includes("ONG SUM PING") == true) { area = "G", kampong = "ONG SUM PING" }
+                else if (address.includes("GADONG") == true) { area = "G", kampong = "GADONG" }
+                else if (address.includes("TASEK LAMA") == true) { area = "G", kampong = "TASEK LAMA" }
+                else if (address.includes("BANDAR TOWN") == true) { area = "G", kampong = "BANDAR TOWN" }
+                else if (address.includes("BATU SATU") == true) { area = "JT", kampong = "BATU SATU" }
+                else if (address.includes("BENGKURONG") == true) { area = "JT", kampong = "BENGKURONG" }
+                else if (address.includes("BUNUT") == true) { area = "JT", kampong = "BUNUT" }
+                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT", kampong = "JALAN BABU RAJA" }
+                else if (address.includes("JALAN ISTANA") == true) { area = "JT", kampong = "JALAN ISTANA" }
+                else if (address.includes("JUNJONGAN") == true) { area = "JT", kampong = "JUNJONGAN" }
+                else if (address.includes("KASAT") == true) { area = "JT", kampong = "KASAT" }
+                else if (address.includes("LUMAPAS") == true) { area = "JT", kampong = "LUMAPAS" }
+                else if (address.includes("JALAN HALUS") == true) { area = "JT", kampong = "JALAN HALUS" }
+                else if (address.includes("MADEWA") == true) { area = "JT", kampong = "MADEWA" }
+                else if (address.includes("PUTAT") == true) { area = "JT", kampong = "PUTAT" }
+                else if (address.includes("SINARUBAI") == true) { area = "JT", kampong = "SINARUBAI" }
+                else if (address.includes("TASEK MERADUN") == true) { area = "JT", kampong = "TASEK MERADUN" }
+                else if (address.includes("TELANAI") == true) { area = "JT", kampong = "TELANAI" }
+                else if (address.includes("BAN 1") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 2") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 3") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 4") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 5") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 6") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BATONG") == true) { area = "JT", kampong = "BATONG" }
+                else if (address.includes("BATU AMPAR") == true) { area = "JT", kampong = "BATU AMPAR" }
+                else if (address.includes("BEBATIK") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("BEBULOH") == true) { area = "JT", kampong = "BEBULOH" }
+                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("DADAP") == true) { area = "JT", kampong = "DADAP" }
+                else if (address.includes("KUALA LURAH") == true) { area = "JT", kampong = "KUALA LURAH" }
+                else if (address.includes("KULAPIS") == true) { area = "JT", kampong = "KULAPIS" }
+                else if (address.includes("LIMAU MANIS") == true) { area = "JT", kampong = "LIMAU MANIS" }
+                else if (address.includes("MASIN") == true) { area = "JT", kampong = "MASIN" }
+                else if (address.includes("MULAUT") == true) { area = "JT", kampong = "MULAUT" }
+                else if (address.includes("PANCHOR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANCHUR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANGKALAN BATU") == true) { area = "JT", kampong = "PANGKALAN BATU" }
+                else if (address.includes("PASAI") == true) { area = "JT", kampong = "PASAI" }
+                else if (address.includes("WASAN") == true) { area = "JT", kampong = "WASAN" }
+                else if (address.includes("PARIT") == true) { area = "JT", kampong = "PARIT" }
+                else if (address.includes("EMPIRE") == true) { area = "JT", kampong = "EMPIRE" }
+                else if (address.includes("JANGSAK") == true) { area = "JT", kampong = "JANGSAK" }
+                else if (address.includes("JERUDONG") == true) { area = "JT", kampong = "JERUDONG" }
+                else if (address.includes("KATIMAHAR") == true) { area = "JT", kampong = "KATIMAHAR" }
+                else if (address.includes("LUGU") == true) { area = "JT", kampong = "LUGU" }
+                else if (address.includes("SENGKURONG") == true) { area = "JT", kampong = "SENGKURONG" }
+                else if (address.includes("TANJONG NANGKA") == true) { area = "JT", kampong = "TANJONG NANGKA" }
+                else if (address.includes("TANJONG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT", kampung = "SUNGAI TAMPOI" }
+                else if (address.includes("SG TAMPOI") == true) { area = "JT", kampong = "SUNGAI TAMPOI" }
+                else if (address.includes("MUARA") == true) { area = "B", kampong = "MUARA" }
                 //TU
                 else if (address.includes("SENGKARAI") == true) { area = "TUTONG", kampong = "SENGKARAI" }
                 else if (address.includes("PANCHOR") == true) { area = "TUTONG", kampong = "PANCHOR" }
@@ -4894,124 +4980,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 
-                if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
-                else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }
-                else if (address.includes("ANGGREK DESA") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("ANGGREK") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("PULAIE") == true) { area = "B1", kampong = "PULAIE" }
-                else if (address.includes("LAMBAK") == true) { area = "B1", kampong = "LAMBAK" }
-                else if (address.includes("TERUNJING") == true) { area = "B1", kampong = "TERUNJING" }
-                else if (address.includes("MADANG") == true) { area = "B1", kampong = "MADANG" }
-                else if (address.includes("AIRPORT") == true) { area = "B1", kampong = "AIRPORT" }
-                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("OKBI") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("SERUSOP") == true) { area = "B1", kampong = "SERUSOP" }
-                else if (address.includes("BURONG PINGAI") == true) { area = "B1", kampong = "BURONG PINGAI" }
-                else if (address.includes("SETIA NEGARA") == true) { area = "B1", kampong = "SETIA NEGARA" }
-                else if (address.includes("PASIR BERAKAS") == true) { area = "B1", kampong = "PASIR BERAKAS" }
-                else if (address.includes("MENTERI BESAR") == true) { area = "B1", kampong = "MENTERI BESAR" }
-                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B1", kampong = "KEBANGSAAN LAMA" }
-                else if (address.includes("BATU MARANG") == true) { area = "B2", kampong = "BATU MARANG" }
-                else if (address.includes("DATO GANDI") == true) { area = "B2", kampong = "DATO GANDI" }
-                else if (address.includes("KAPOK") == true) { area = "B2", kampong = "KAPOK" }
-                else if (address.includes("KOTA BATU") == true) { area = "B2", kampong = "KOTA BATU" }
-                else if (address.includes("MENTIRI") == true) { area = "B2", kampong = "MENTIRI" }
-                else if (address.includes("MERAGANG") == true) { area = "B2", kampong = "MERAGANG" }
-                else if (address.includes("PELAMBAIAN") == true) { area = "B2", kampong = "PELAMBAIAN" }
-                else if (address.includes("PINTU MALIM") == true) { area = "B2", kampong = "PINTU MALIM" }
-                else if (address.includes("SALAMBIGAR") == true) { area = "B2", kampong = "SALAMBIGAR" }
-                else if (address.includes("SALAR") == true) { area = "B2", kampong = "SALAR" }
-                else if (address.includes("SERASA") == true) { area = "B2", kampong = "SERASA" }
-                else if (address.includes("SERDANG") == true) { area = "B2", kampong = "SERDANG" }
-                else if (address.includes("SUNGAI BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SG BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SG BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SUNGAI HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SG HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SUNGAI TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SG TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SUBOK") == true) { area = "B2", kampong = "SUBOK" }
-                else if (address.includes("SUNGAI AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SG AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SUNGAI BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("SG BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("TANAH JAMBU") == true) { area = "B2", kampong = "TANAH JAMBU" }
-                else if (address.includes("SUNGAI OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("SG OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("KATOK") == true) { area = "G1", kampong = "KATOK" }
-                else if (address.includes("MATA-MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("MATA MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("RIMBA") == true) { area = "G1", kampong = "RIMBA" }
-                else if (address.includes("TUNGKU") == true) { area = "G1", kampong = "TUNGKU" }
-                else if (address.includes("UBD") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("JIS") == true) { area = "G1" }
-                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G1", kampong = "JIS" }
-                else if (address.includes("BERANGAN") == true) { area = "G2", kampong = "BERANGAN" }
-                else if (address.includes("BERIBI") == true) { area = "G2", kampong = "BERIBI" }
-                else if (address.includes("KIULAP") == true) { area = "G2", kampong = "KIULAP" }
-                else if (address.includes("RIPAS") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("KIARONG") == true) { area = "G2", kampong = "KIARONG" }
-                else if (address.includes("PUSAR ULAK") == true) { area = "G2", kampong = "PUSAR ULAK" }
-                else if (address.includes("KUMBANG PASANG") == true) { area = "G2", kampong = "KUMBANG PASANG" }
-                else if (address.includes("MENGLAIT") == true) { area = "G2", kampong = "MENGLAIT" }
-                else if (address.includes("MABOHAI") == true) { area = "G2", kampong = "MABOHAI" }
-                else if (address.includes("ONG SUM PING") == true) { area = "G2", kampong = "ONG SUM PING" }
-                else if (address.includes("GADONG") == true) { area = "G2", kampong = "GADONG" }
-                else if (address.includes("TASEK LAMA") == true) { area = "G2", kampong = "TASEK LAMA" }
-                else if (address.includes("BANDAR TOWN") == true) { area = "G2", kampong = "BANDAR TOWN" }
-                else if (address.includes("BATU SATU") == true) { area = "JT1", kampong = "BATU SATU" }
-                else if (address.includes("BENGKURONG") == true) { area = "JT1", kampong = "BENGKURONG" }
-                else if (address.includes("BUNUT") == true) { area = "JT1", kampong = "BUNUT" }
-                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT1", kampong = "JALAN BABU RAJA" }
-                else if (address.includes("JALAN ISTANA") == true) { area = "JT1", kampong = "JALAN ISTANA" }
-                else if (address.includes("JUNJONGAN") == true) { area = "JT1", kampong = "JUNJONGAN" }
-                else if (address.includes("KASAT") == true) { area = "JT1", kampong = "KASAT" }
-                else if (address.includes("LUMAPAS") == true) { area = "JT1", kampong = "LUMAPAS" }
-                else if (address.includes("JALAN HALUS") == true) { area = "JT1", kampong = "JALAN HALUS" }
-                else if (address.includes("MADEWA") == true) { area = "JT1", kampong = "MADEWA" }
-                else if (address.includes("PUTAT") == true) { area = "JT1", kampong = "PUTAT" }
-                else if (address.includes("SINARUBAI") == true) { area = "JT1", kampong = "SINARUBAI" }
-                else if (address.includes("TASEK MERADUN") == true) { area = "JT1", kampong = "TASEK MERADUN" }
-                else if (address.includes("TELANAI") == true) { area = "JT1", kampong = "TELANAI" }
-                else if (address.includes("BAN 1") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 2") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 3") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 4") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 5") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 6") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BATONG") == true) { area = "JT2", kampong = "BATONG" }
-                else if (address.includes("BATU AMPAR") == true) { area = "JT2", kampong = "BATU AMPAR" }
-                else if (address.includes("BEBATIK") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("BEBULOH") == true) { area = "JT2", kampong = "BEBULOH" }
-                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("DADAP") == true) { area = "JT2", kampong = "DADAP" }
-                else if (address.includes("KUALA LURAH") == true) { area = "JT2", kampong = "KUALA LURAH" }
-                else if (address.includes("KULAPIS") == true) { area = "JT2", kampong = "KULAPIS" }
-                else if (address.includes("LIMAU MANIS") == true) { area = "JT2", kampong = "LIMAU MANIS" }
-                else if (address.includes("MASIN") == true) { area = "JT2", kampong = "MASIN" }
-                else if (address.includes("MULAUT") == true) { area = "JT2", kampong = "MULAUT" }
-                else if (address.includes("PANCHOR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANCHUR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANGKALAN BATU") == true) { area = "JT2", kampong = "PANGKALAN BATU" }
-                else if (address.includes("PASAI") == true) { area = "JT2", kampong = "PASAI" }
-                else if (address.includes("WASAN") == true) { area = "JT2", kampong = "WASAN" }
-                else if (address.includes("PARIT") == true) { area = "JT2", kampong = "PARIT" }
-                else if (address.includes("EMPIRE") == true) { area = "JT3", kampong = "EMPIRE" }
-                else if (address.includes("JANGSAK") == true) { area = "JT3", kampong = "JANGSAK" }
-                else if (address.includes("JERUDONG") == true) { area = "JT3", kampong = "JERUDONG" }
-                else if (address.includes("KATIMAHAR") == true) { area = "JT3", kampong = "KATIMAHAR" }
-                else if (address.includes("LUGU") == true) { area = "JT3", kampong = "LUGU" }
-                else if (address.includes("SENGKURONG") == true) { area = "JT3", kampong = "SENGKURONG" }
-                else if (address.includes("TANJONG NANGKA") == true) { area = "JT3", kampong = "TANJONG NANGKA" }
-                else if (address.includes("TANJONG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT3", kampung = "SUNGAI TAMPOI" }
-                else if (address.includes("SG TAMPOI") == true) { area = "JT3", kampong = "SUNGAI TAMPOI" }
-                else if (address.includes("MUARA") == true) { area = "B2", kampong = "MUARA" }
+                if (address.includes("MANGGIS") == true) { area = "B", kampong = "MANGGIS" }
+                else if (address.includes("DELIMA") == true) { area = "B", kampong = "DELIMA" }
+                else if (address.includes("ANGGREK DESA") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("ANGGREK") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("PULAIE") == true) { area = "B", kampong = "PULAIE" }
+                else if (address.includes("LAMBAK") == true) { area = "B", kampong = "LAMBAK" }
+                else if (address.includes("TERUNJING") == true) { area = "B", kampong = "TERUNJING" }
+                else if (address.includes("MADANG") == true) { area = "B", kampong = "MADANG" }
+                else if (address.includes("AIRPORT") == true) { area = "B", kampong = "AIRPORT" }
+                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("OKBI") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("SERUSOP") == true) { area = "B", kampong = "SERUSOP" }
+                else if (address.includes("BURONG PINGAI") == true) { area = "B", kampong = "BURONG PINGAI" }
+                else if (address.includes("SETIA NEGARA") == true) { area = "B", kampong = "SETIA NEGARA" }
+                else if (address.includes("PASIR BERAKAS") == true) { area = "B", kampong = "PASIR BERAKAS" }
+                else if (address.includes("MENTERI BESAR") == true) { area = "B", kampong = "MENTERI BESAR" }
+                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B", kampong = "KEBANGSAAN LAMA" }
+                else if (address.includes("BATU MARANG") == true) { area = "B", kampong = "BATU MARANG" }
+                else if (address.includes("DATO GANDI") == true) { area = "B", kampong = "DATO GANDI" }
+                else if (address.includes("KAPOK") == true) { area = "B", kampong = "KAPOK" }
+                else if (address.includes("KOTA BATU") == true) { area = "B", kampong = "KOTA BATU" }
+                else if (address.includes("MENTIRI") == true) { area = "B", kampong = "MENTIRI" }
+                else if (address.includes("MERAGANG") == true) { area = "B", kampong = "MERAGANG" }
+                else if (address.includes("PELAMBAIAN") == true) { area = "B", kampong = "PELAMBAIAN" }
+                else if (address.includes("PINTU MALIM") == true) { area = "B", kampong = "PINTU MALIM" }
+                else if (address.includes("SALAMBIGAR") == true) { area = "B", kampong = "SALAMBIGAR" }
+                else if (address.includes("SALAR") == true) { area = "B", kampong = "SALAR" }
+                else if (address.includes("SERASA") == true) { area = "B", kampong = "SERASA" }
+                else if (address.includes("SERDANG") == true) { area = "B", kampong = "SERDANG" }
+                else if (address.includes("SUNGAI BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SG BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SG BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SUNGAI HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SG HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SUNGAI TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SG TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SUBOK") == true) { area = "B", kampong = "SUBOK" }
+                else if (address.includes("SUNGAI AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SG AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SUNGAI BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("SG BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("TANAH JAMBU") == true) { area = "B", kampong = "TANAH JAMBU" }
+                else if (address.includes("SUNGAI OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("SG OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("KATOK") == true) { area = "G", kampong = "KATOK" }
+                else if (address.includes("MATA-MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("MATA MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("RIMBA") == true) { area = "G", kampong = "RIMBA" }
+                else if (address.includes("TUNGKU") == true) { area = "G", kampong = "TUNGKU" }
+                else if (address.includes("UBD") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("JIS") == true) { area = "G" }
+                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G", kampong = "JIS" }
+                else if (address.includes("BERANGAN") == true) { area = "G", kampong = "BERANGAN" }
+                else if (address.includes("BERIBI") == true) { area = "G", kampong = "BERIBI" }
+                else if (address.includes("KIULAP") == true) { area = "G", kampong = "KIULAP" }
+                else if (address.includes("RIPAS") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("KIARONG") == true) { area = "G", kampong = "KIARONG" }
+                else if (address.includes("PUSAR ULAK") == true) { area = "G", kampong = "PUSAR ULAK" }
+                else if (address.includes("KUMBANG PASANG") == true) { area = "G", kampong = "KUMBANG PASANG" }
+                else if (address.includes("MENGLAIT") == true) { area = "G", kampong = "MENGLAIT" }
+                else if (address.includes("MABOHAI") == true) { area = "G", kampong = "MABOHAI" }
+                else if (address.includes("ONG SUM PING") == true) { area = "G", kampong = "ONG SUM PING" }
+                else if (address.includes("GADONG") == true) { area = "G", kampong = "GADONG" }
+                else if (address.includes("TASEK LAMA") == true) { area = "G", kampong = "TASEK LAMA" }
+                else if (address.includes("BANDAR TOWN") == true) { area = "G", kampong = "BANDAR TOWN" }
+                else if (address.includes("BATU SATU") == true) { area = "JT", kampong = "BATU SATU" }
+                else if (address.includes("BENGKURONG") == true) { area = "JT", kampong = "BENGKURONG" }
+                else if (address.includes("BUNUT") == true) { area = "JT", kampong = "BUNUT" }
+                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT", kampong = "JALAN BABU RAJA" }
+                else if (address.includes("JALAN ISTANA") == true) { area = "JT", kampong = "JALAN ISTANA" }
+                else if (address.includes("JUNJONGAN") == true) { area = "JT", kampong = "JUNJONGAN" }
+                else if (address.includes("KASAT") == true) { area = "JT", kampong = "KASAT" }
+                else if (address.includes("LUMAPAS") == true) { area = "JT", kampong = "LUMAPAS" }
+                else if (address.includes("JALAN HALUS") == true) { area = "JT", kampong = "JALAN HALUS" }
+                else if (address.includes("MADEWA") == true) { area = "JT", kampong = "MADEWA" }
+                else if (address.includes("PUTAT") == true) { area = "JT", kampong = "PUTAT" }
+                else if (address.includes("SINARUBAI") == true) { area = "JT", kampong = "SINARUBAI" }
+                else if (address.includes("TASEK MERADUN") == true) { area = "JT", kampong = "TASEK MERADUN" }
+                else if (address.includes("TELANAI") == true) { area = "JT", kampong = "TELANAI" }
+                else if (address.includes("BAN 1") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 2") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 3") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 4") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 5") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 6") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BATONG") == true) { area = "JT", kampong = "BATONG" }
+                else if (address.includes("BATU AMPAR") == true) { area = "JT", kampong = "BATU AMPAR" }
+                else if (address.includes("BEBATIK") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("BEBULOH") == true) { area = "JT", kampong = "BEBULOH" }
+                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("DADAP") == true) { area = "JT", kampong = "DADAP" }
+                else if (address.includes("KUALA LURAH") == true) { area = "JT", kampong = "KUALA LURAH" }
+                else if (address.includes("KULAPIS") == true) { area = "JT", kampong = "KULAPIS" }
+                else if (address.includes("LIMAU MANIS") == true) { area = "JT", kampong = "LIMAU MANIS" }
+                else if (address.includes("MASIN") == true) { area = "JT", kampong = "MASIN" }
+                else if (address.includes("MULAUT") == true) { area = "JT", kampong = "MULAUT" }
+                else if (address.includes("PANCHOR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANCHUR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANGKALAN BATU") == true) { area = "JT", kampong = "PANGKALAN BATU" }
+                else if (address.includes("PASAI") == true) { area = "JT", kampong = "PASAI" }
+                else if (address.includes("WASAN") == true) { area = "JT", kampong = "WASAN" }
+                else if (address.includes("PARIT") == true) { area = "JT", kampong = "PARIT" }
+                else if (address.includes("EMPIRE") == true) { area = "JT", kampong = "EMPIRE" }
+                else if (address.includes("JANGSAK") == true) { area = "JT", kampong = "JANGSAK" }
+                else if (address.includes("JERUDONG") == true) { area = "JT", kampong = "JERUDONG" }
+                else if (address.includes("KATIMAHAR") == true) { area = "JT", kampong = "KATIMAHAR" }
+                else if (address.includes("LUGU") == true) { area = "JT", kampong = "LUGU" }
+                else if (address.includes("SENGKURONG") == true) { area = "JT", kampong = "SENGKURONG" }
+                else if (address.includes("TANJONG NANGKA") == true) { area = "JT", kampong = "TANJONG NANGKA" }
+                else if (address.includes("TANJONG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT", kampung = "SUNGAI TAMPOI" }
+                else if (address.includes("SG TAMPOI") == true) { area = "JT", kampong = "SUNGAI TAMPOI" }
+                else if (address.includes("MUARA") == true) { area = "B", kampong = "MUARA" }
                 //TU
                 else if (address.includes("SENGKARAI") == true) { area = "TUTONG", kampong = "SENGKARAI" }
                 else if (address.includes("PANCHOR") == true) { area = "TUTONG", kampong = "PANCHOR" }
@@ -5397,124 +5483,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let address = deliveryAddress.toUpperCase();
                 var kampong = "";
 
-                if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
-                else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }
-                else if (address.includes("ANGGREK DESA") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("ANGGREK") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("PULAIE") == true) { area = "B1", kampong = "PULAIE" }
-                else if (address.includes("LAMBAK") == true) { area = "B1", kampong = "LAMBAK" }
-                else if (address.includes("TERUNJING") == true) { area = "B1", kampong = "TERUNJING" }
-                else if (address.includes("MADANG") == true) { area = "B1", kampong = "MADANG" }
-                else if (address.includes("AIRPORT") == true) { area = "B1", kampong = "AIRPORT" }
-                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("OKBI") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("SERUSOP") == true) { area = "B1", kampong = "SERUSOP" }
-                else if (address.includes("BURONG PINGAI") == true) { area = "B1", kampong = "BURONG PINGAI" }
-                else if (address.includes("SETIA NEGARA") == true) { area = "B1", kampong = "SETIA NEGARA" }
-                else if (address.includes("PASIR BERAKAS") == true) { area = "B1", kampong = "PASIR BERAKAS" }
-                else if (address.includes("MENTERI BESAR") == true) { area = "B1", kampong = "MENTERI BESAR" }
-                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B1", kampong = "KEBANGSAAN LAMA" }
-                else if (address.includes("BATU MARANG") == true) { area = "B2", kampong = "BATU MARANG" }
-                else if (address.includes("DATO GANDI") == true) { area = "B2", kampong = "DATO GANDI" }
-                else if (address.includes("KAPOK") == true) { area = "B2", kampong = "KAPOK" }
-                else if (address.includes("KOTA BATU") == true) { area = "B2", kampong = "KOTA BATU" }
-                else if (address.includes("MENTIRI") == true) { area = "B2", kampong = "MENTIRI" }
-                else if (address.includes("MERAGANG") == true) { area = "B2", kampong = "MERAGANG" }
-                else if (address.includes("PELAMBAIAN") == true) { area = "B2", kampong = "PELAMBAIAN" }
-                else if (address.includes("PINTU MALIM") == true) { area = "B2", kampong = "PINTU MALIM" }
-                else if (address.includes("SALAMBIGAR") == true) { area = "B2", kampong = "SALAMBIGAR" }
-                else if (address.includes("SALAR") == true) { area = "B2", kampong = "SALAR" }
-                else if (address.includes("SERASA") == true) { area = "B2", kampong = "SERASA" }
-                else if (address.includes("SERDANG") == true) { area = "B2", kampong = "SERDANG" }
-                else if (address.includes("SUNGAI BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SG BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SG BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SUNGAI HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SG HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SUNGAI TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SG TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SUBOK") == true) { area = "B2", kampong = "SUBOK" }
-                else if (address.includes("SUNGAI AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SG AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SUNGAI BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("SG BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("TANAH JAMBU") == true) { area = "B2", kampong = "TANAH JAMBU" }
-                else if (address.includes("SUNGAI OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("SG OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("KATOK") == true) { area = "G1", kampong = "KATOK" }
-                else if (address.includes("MATA-MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("MATA MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("RIMBA") == true) { area = "G1", kampong = "RIMBA" }
-                else if (address.includes("TUNGKU") == true) { area = "G1", kampong = "TUNGKU" }
-                else if (address.includes("UBD") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("JIS") == true) { area = "G1" }
-                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G1", kampong = "JIS" }
-                else if (address.includes("BERANGAN") == true) { area = "G2", kampong = "BERANGAN" }
-                else if (address.includes("BERIBI") == true) { area = "G2", kampong = "BERIBI" }
-                else if (address.includes("KIULAP") == true) { area = "G2", kampong = "KIULAP" }
-                else if (address.includes("RIPAS") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("KIARONG") == true) { area = "G2", kampong = "KIARONG" }
-                else if (address.includes("PUSAR ULAK") == true) { area = "G2", kampong = "PUSAR ULAK" }
-                else if (address.includes("KUMBANG PASANG") == true) { area = "G2", kampong = "KUMBANG PASANG" }
-                else if (address.includes("MENGLAIT") == true) { area = "G2", kampong = "MENGLAIT" }
-                else if (address.includes("MABOHAI") == true) { area = "G2", kampong = "MABOHAI" }
-                else if (address.includes("ONG SUM PING") == true) { area = "G2", kampong = "ONG SUM PING" }
-                else if (address.includes("GADONG") == true) { area = "G2", kampong = "GADONG" }
-                else if (address.includes("TASEK LAMA") == true) { area = "G2", kampong = "TASEK LAMA" }
-                else if (address.includes("BANDAR TOWN") == true) { area = "G2", kampong = "BANDAR TOWN" }
-                else if (address.includes("BATU SATU") == true) { area = "JT1", kampong = "BATU SATU" }
-                else if (address.includes("BENGKURONG") == true) { area = "JT1", kampong = "BENGKURONG" }
-                else if (address.includes("BUNUT") == true) { area = "JT1", kampong = "BUNUT" }
-                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT1", kampong = "JALAN BABU RAJA" }
-                else if (address.includes("JALAN ISTANA") == true) { area = "JT1", kampong = "JALAN ISTANA" }
-                else if (address.includes("JUNJONGAN") == true) { area = "JT1", kampong = "JUNJONGAN" }
-                else if (address.includes("KASAT") == true) { area = "JT1", kampong = "KASAT" }
-                else if (address.includes("LUMAPAS") == true) { area = "JT1", kampong = "LUMAPAS" }
-                else if (address.includes("JALAN HALUS") == true) { area = "JT1", kampong = "JALAN HALUS" }
-                else if (address.includes("MADEWA") == true) { area = "JT1", kampong = "MADEWA" }
-                else if (address.includes("PUTAT") == true) { area = "JT1", kampong = "PUTAT" }
-                else if (address.includes("SINARUBAI") == true) { area = "JT1", kampong = "SINARUBAI" }
-                else if (address.includes("TASEK MERADUN") == true) { area = "JT1", kampong = "TASEK MERADUN" }
-                else if (address.includes("TELANAI") == true) { area = "JT1", kampong = "TELANAI" }
-                else if (address.includes("BAN 1") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 2") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 3") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 4") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 5") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 6") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BATONG") == true) { area = "JT2", kampong = "BATONG" }
-                else if (address.includes("BATU AMPAR") == true) { area = "JT2", kampong = "BATU AMPAR" }
-                else if (address.includes("BEBATIK") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("BEBULOH") == true) { area = "JT2", kampong = "BEBULOH" }
-                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("DADAP") == true) { area = "JT2", kampong = "DADAP" }
-                else if (address.includes("KUALA LURAH") == true) { area = "JT2", kampong = "KUALA LURAH" }
-                else if (address.includes("KULAPIS") == true) { area = "JT2", kampong = "KULAPIS" }
-                else if (address.includes("LIMAU MANIS") == true) { area = "JT2", kampong = "LIMAU MANIS" }
-                else if (address.includes("MASIN") == true) { area = "JT2", kampong = "MASIN" }
-                else if (address.includes("MULAUT") == true) { area = "JT2", kampong = "MULAUT" }
-                else if (address.includes("PANCHOR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANCHUR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANGKALAN BATU") == true) { area = "JT2", kampong = "PANGKALAN BATU" }
-                else if (address.includes("PASAI") == true) { area = "JT2", kampong = "PASAI" }
-                else if (address.includes("WASAN") == true) { area = "JT2", kampong = "WASAN" }
-                else if (address.includes("PARIT") == true) { area = "JT2", kampong = "PARIT" }
-                else if (address.includes("EMPIRE") == true) { area = "JT3", kampong = "EMPIRE" }
-                else if (address.includes("JANGSAK") == true) { area = "JT3", kampong = "JANGSAK" }
-                else if (address.includes("JERUDONG") == true) { area = "JT3", kampong = "JERUDONG" }
-                else if (address.includes("KATIMAHAR") == true) { area = "JT3", kampong = "KATIMAHAR" }
-                else if (address.includes("LUGU") == true) { area = "JT3", kampong = "LUGU" }
-                else if (address.includes("SENGKURONG") == true) { area = "JT3", kampong = "SENGKURONG" }
-                else if (address.includes("TANJONG NANGKA") == true) { area = "JT3", kampong = "TANJONG NANGKA" }
-                else if (address.includes("TANJONG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT3", kampung = "SUNGAI TAMPOI" }
-                else if (address.includes("SG TAMPOI") == true) { area = "JT3", kampong = "SUNGAI TAMPOI" }
-                else if (address.includes("MUARA") == true) { area = "B2", kampong = "MUARA" }
+                if (address.includes("MANGGIS") == true) { area = "B", kampong = "MANGGIS" }
+                else if (address.includes("DELIMA") == true) { area = "B", kampong = "DELIMA" }
+                else if (address.includes("ANGGREK DESA") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("ANGGREK") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("PULAIE") == true) { area = "B", kampong = "PULAIE" }
+                else if (address.includes("LAMBAK") == true) { area = "B", kampong = "LAMBAK" }
+                else if (address.includes("TERUNJING") == true) { area = "B", kampong = "TERUNJING" }
+                else if (address.includes("MADANG") == true) { area = "B", kampong = "MADANG" }
+                else if (address.includes("AIRPORT") == true) { area = "B", kampong = "AIRPORT" }
+                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("OKBI") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("SERUSOP") == true) { area = "B", kampong = "SERUSOP" }
+                else if (address.includes("BURONG PINGAI") == true) { area = "B", kampong = "BURONG PINGAI" }
+                else if (address.includes("SETIA NEGARA") == true) { area = "B", kampong = "SETIA NEGARA" }
+                else if (address.includes("PASIR BERAKAS") == true) { area = "B", kampong = "PASIR BERAKAS" }
+                else if (address.includes("MENTERI BESAR") == true) { area = "B", kampong = "MENTERI BESAR" }
+                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B", kampong = "KEBANGSAAN LAMA" }
+                else if (address.includes("BATU MARANG") == true) { area = "B", kampong = "BATU MARANG" }
+                else if (address.includes("DATO GANDI") == true) { area = "B", kampong = "DATO GANDI" }
+                else if (address.includes("KAPOK") == true) { area = "B", kampong = "KAPOK" }
+                else if (address.includes("KOTA BATU") == true) { area = "B", kampong = "KOTA BATU" }
+                else if (address.includes("MENTIRI") == true) { area = "B", kampong = "MENTIRI" }
+                else if (address.includes("MERAGANG") == true) { area = "B", kampong = "MERAGANG" }
+                else if (address.includes("PELAMBAIAN") == true) { area = "B", kampong = "PELAMBAIAN" }
+                else if (address.includes("PINTU MALIM") == true) { area = "B", kampong = "PINTU MALIM" }
+                else if (address.includes("SALAMBIGAR") == true) { area = "B", kampong = "SALAMBIGAR" }
+                else if (address.includes("SALAR") == true) { area = "B", kampong = "SALAR" }
+                else if (address.includes("SERASA") == true) { area = "B", kampong = "SERASA" }
+                else if (address.includes("SERDANG") == true) { area = "B", kampong = "SERDANG" }
+                else if (address.includes("SUNGAI BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SG BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SG BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SUNGAI HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SG HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SUNGAI TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SG TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SUBOK") == true) { area = "B", kampong = "SUBOK" }
+                else if (address.includes("SUNGAI AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SG AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SUNGAI BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("SG BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("TANAH JAMBU") == true) { area = "B", kampong = "TANAH JAMBU" }
+                else if (address.includes("SUNGAI OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("SG OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("KATOK") == true) { area = "G", kampong = "KATOK" }
+                else if (address.includes("MATA-MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("MATA MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("RIMBA") == true) { area = "G", kampong = "RIMBA" }
+                else if (address.includes("TUNGKU") == true) { area = "G", kampong = "TUNGKU" }
+                else if (address.includes("UBD") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("JIS") == true) { area = "G" }
+                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G", kampong = "JIS" }
+                else if (address.includes("BERANGAN") == true) { area = "G", kampong = "BERANGAN" }
+                else if (address.includes("BERIBI") == true) { area = "G", kampong = "BERIBI" }
+                else if (address.includes("KIULAP") == true) { area = "G", kampong = "KIULAP" }
+                else if (address.includes("RIPAS") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("KIARONG") == true) { area = "G", kampong = "KIARONG" }
+                else if (address.includes("PUSAR ULAK") == true) { area = "G", kampong = "PUSAR ULAK" }
+                else if (address.includes("KUMBANG PASANG") == true) { area = "G", kampong = "KUMBANG PASANG" }
+                else if (address.includes("MENGLAIT") == true) { area = "G", kampong = "MENGLAIT" }
+                else if (address.includes("MABOHAI") == true) { area = "G", kampong = "MABOHAI" }
+                else if (address.includes("ONG SUM PING") == true) { area = "G", kampong = "ONG SUM PING" }
+                else if (address.includes("GADONG") == true) { area = "G", kampong = "GADONG" }
+                else if (address.includes("TASEK LAMA") == true) { area = "G", kampong = "TASEK LAMA" }
+                else if (address.includes("BANDAR TOWN") == true) { area = "G", kampong = "BANDAR TOWN" }
+                else if (address.includes("BATU SATU") == true) { area = "JT", kampong = "BATU SATU" }
+                else if (address.includes("BENGKURONG") == true) { area = "JT", kampong = "BENGKURONG" }
+                else if (address.includes("BUNUT") == true) { area = "JT", kampong = "BUNUT" }
+                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT", kampong = "JALAN BABU RAJA" }
+                else if (address.includes("JALAN ISTANA") == true) { area = "JT", kampong = "JALAN ISTANA" }
+                else if (address.includes("JUNJONGAN") == true) { area = "JT", kampong = "JUNJONGAN" }
+                else if (address.includes("KASAT") == true) { area = "JT", kampong = "KASAT" }
+                else if (address.includes("LUMAPAS") == true) { area = "JT", kampong = "LUMAPAS" }
+                else if (address.includes("JALAN HALUS") == true) { area = "JT", kampong = "JALAN HALUS" }
+                else if (address.includes("MADEWA") == true) { area = "JT", kampong = "MADEWA" }
+                else if (address.includes("PUTAT") == true) { area = "JT", kampong = "PUTAT" }
+                else if (address.includes("SINARUBAI") == true) { area = "JT", kampong = "SINARUBAI" }
+                else if (address.includes("TASEK MERADUN") == true) { area = "JT", kampong = "TASEK MERADUN" }
+                else if (address.includes("TELANAI") == true) { area = "JT", kampong = "TELANAI" }
+                else if (address.includes("BAN 1") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 2") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 3") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 4") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 5") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 6") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BATONG") == true) { area = "JT", kampong = "BATONG" }
+                else if (address.includes("BATU AMPAR") == true) { area = "JT", kampong = "BATU AMPAR" }
+                else if (address.includes("BEBATIK") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("BEBULOH") == true) { area = "JT", kampong = "BEBULOH" }
+                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("DADAP") == true) { area = "JT", kampong = "DADAP" }
+                else if (address.includes("KUALA LURAH") == true) { area = "JT", kampong = "KUALA LURAH" }
+                else if (address.includes("KULAPIS") == true) { area = "JT", kampong = "KULAPIS" }
+                else if (address.includes("LIMAU MANIS") == true) { area = "JT", kampong = "LIMAU MANIS" }
+                else if (address.includes("MASIN") == true) { area = "JT", kampong = "MASIN" }
+                else if (address.includes("MULAUT") == true) { area = "JT", kampong = "MULAUT" }
+                else if (address.includes("PANCHOR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANCHUR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANGKALAN BATU") == true) { area = "JT", kampong = "PANGKALAN BATU" }
+                else if (address.includes("PASAI") == true) { area = "JT", kampong = "PASAI" }
+                else if (address.includes("WASAN") == true) { area = "JT", kampong = "WASAN" }
+                else if (address.includes("PARIT") == true) { area = "JT", kampong = "PARIT" }
+                else if (address.includes("EMPIRE") == true) { area = "JT", kampong = "EMPIRE" }
+                else if (address.includes("JANGSAK") == true) { area = "JT", kampong = "JANGSAK" }
+                else if (address.includes("JERUDONG") == true) { area = "JT", kampong = "JERUDONG" }
+                else if (address.includes("KATIMAHAR") == true) { area = "JT", kampong = "KATIMAHAR" }
+                else if (address.includes("LUGU") == true) { area = "JT", kampong = "LUGU" }
+                else if (address.includes("SENGKURONG") == true) { area = "JT", kampong = "SENGKURONG" }
+                else if (address.includes("TANJONG NANGKA") == true) { area = "JT", kampong = "TANJONG NANGKA" }
+                else if (address.includes("TANJONG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT", kampung = "SUNGAI TAMPOI" }
+                else if (address.includes("SG TAMPOI") == true) { area = "JT", kampong = "SUNGAI TAMPOI" }
+                else if (address.includes("MUARA") == true) { area = "B", kampong = "MUARA" }
                 //TU
                 else if (address.includes("SENGKARAI") == true) { area = "TUTONG", kampong = "SENGKARAI" }
                 else if (address.includes("PANCHOR") == true) { area = "TUTONG", kampong = "PANCHOR" }
@@ -6106,124 +6192,124 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 let address = customerAddress.toUpperCase();
                 var kampong = "";
 
-                if (address.includes("MANGGIS") == true) { area = "B1", kampong = "MANGGIS" }
-                else if (address.includes("DELIMA") == true) { area = "B1", kampong = "DELIMA" }
-                else if (address.includes("ANGGREK DESA") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("ANGGREK") == true) { area = "B1", kampong = "ANGGREK DESA" }
-                else if (address.includes("PULAIE") == true) { area = "B1", kampong = "PULAIE" }
-                else if (address.includes("LAMBAK") == true) { area = "B1", kampong = "LAMBAK" }
-                else if (address.includes("TERUNJING") == true) { area = "B1", kampong = "TERUNJING" }
-                else if (address.includes("MADANG") == true) { area = "B1", kampong = "MADANG" }
-                else if (address.includes("AIRPORT") == true) { area = "B1", kampong = "AIRPORT" }
-                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("OKBI") == true) { area = "B1", kampong = "OKBI" }
-                else if (address.includes("SERUSOP") == true) { area = "B1", kampong = "SERUSOP" }
-                else if (address.includes("BURONG PINGAI") == true) { area = "B1", kampong = "BURONG PINGAI" }
-                else if (address.includes("SETIA NEGARA") == true) { area = "B1", kampong = "SETIA NEGARA" }
-                else if (address.includes("PASIR BERAKAS") == true) { area = "B1", kampong = "PASIR BERAKAS" }
-                else if (address.includes("MENTERI BESAR") == true) { area = "B1", kampong = "MENTERI BESAR" }
-                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B1", kampong = "KEBANGSAAN LAMA" }
-                else if (address.includes("BATU MARANG") == true) { area = "B2", kampong = "BATU MARANG" }
-                else if (address.includes("DATO GANDI") == true) { area = "B2", kampong = "DATO GANDI" }
-                else if (address.includes("KAPOK") == true) { area = "B2", kampong = "KAPOK" }
-                else if (address.includes("KOTA BATU") == true) { area = "B2", kampong = "KOTA BATU" }
-                else if (address.includes("MENTIRI") == true) { area = "B2", kampong = "MENTIRI" }
-                else if (address.includes("MERAGANG") == true) { area = "B2", kampong = "MERAGANG" }
-                else if (address.includes("PELAMBAIAN") == true) { area = "B2", kampong = "PELAMBAIAN" }
-                else if (address.includes("PINTU MALIM") == true) { area = "B2", kampong = "PINTU MALIM" }
-                else if (address.includes("SALAMBIGAR") == true) { area = "B2", kampong = "SALAMBIGAR" }
-                else if (address.includes("SALAR") == true) { area = "B2", kampong = "SALAR" }
-                else if (address.includes("SERASA") == true) { area = "B2", kampong = "SERASA" }
-                else if (address.includes("SERDANG") == true) { area = "B2", kampong = "SERDANG" }
-                else if (address.includes("SUNGAI BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SG BASAR") == true) { area = "B2", kampong = "SUNGAI BASAR" }
-                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SG BELUKUT") == true) { area = "B2", kampong = "SUNGAI BELUKUT" }
-                else if (address.includes("SUNGAI HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SG HANCHING") == true) { area = "B2", kampong = "SUNGAI HANCHING" }
-                else if (address.includes("SUNGAI TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SG TILONG") == true) { area = "B2", kampong = "SUNGAI TILONG" }
-                else if (address.includes("SUBOK") == true) { area = "B2", kampong = "SUBOK" }
-                else if (address.includes("SUNGAI AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SG AKAR") == true) { area = "B2", kampong = "SUNGAI AKAR" }
-                else if (address.includes("SUNGAI BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("SG BULOH") == true) { area = "B2", kampong = "SUNGAI BULOH" }
-                else if (address.includes("TANAH JAMBU") == true) { area = "B2", kampong = "TANAH JAMBU" }
-                else if (address.includes("SUNGAI OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("SG OROK") == true) { area = "B2", kampong = "SUNGAI OROK" }
-                else if (address.includes("KATOK") == true) { area = "G1", kampong = "KATOK" }
-                else if (address.includes("MATA-MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("MATA MATA") == true) { area = "G1", kampong = "MATA-MATA" }
-                else if (address.includes("RIMBA") == true) { area = "G1", kampong = "RIMBA" }
-                else if (address.includes("TUNGKU") == true) { area = "G1", kampong = "TUNGKU" }
-                else if (address.includes("UBD") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G1", kampong = "UBD" }
-                else if (address.includes("JIS") == true) { area = "G1" }
-                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G1", kampong = "JIS" }
-                else if (address.includes("BERANGAN") == true) { area = "G2", kampong = "BERANGAN" }
-                else if (address.includes("BERIBI") == true) { area = "G2", kampong = "BERIBI" }
-                else if (address.includes("KIULAP") == true) { area = "G2", kampong = "KIULAP" }
-                else if (address.includes("RIPAS") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G2", kampong = "RIPAS" }
-                else if (address.includes("KIARONG") == true) { area = "G2", kampong = "KIARONG" }
-                else if (address.includes("PUSAR ULAK") == true) { area = "G2", kampong = "PUSAR ULAK" }
-                else if (address.includes("KUMBANG PASANG") == true) { area = "G2", kampong = "KUMBANG PASANG" }
-                else if (address.includes("MENGLAIT") == true) { area = "G2", kampong = "MENGLAIT" }
-                else if (address.includes("MABOHAI") == true) { area = "G2", kampong = "MABOHAI" }
-                else if (address.includes("ONG SUM PING") == true) { area = "G2", kampong = "ONG SUM PING" }
-                else if (address.includes("GADONG") == true) { area = "G2", kampong = "GADONG" }
-                else if (address.includes("TASEK LAMA") == true) { area = "G2", kampong = "TASEK LAMA" }
-                else if (address.includes("BANDAR TOWN") == true) { area = "G2", kampong = "BANDAR TOWN" }
-                else if (address.includes("BATU SATU") == true) { area = "JT1", kampong = "BATU SATU" }
-                else if (address.includes("BENGKURONG") == true) { area = "JT1", kampong = "BENGKURONG" }
-                else if (address.includes("BUNUT") == true) { area = "JT1", kampong = "BUNUT" }
-                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT1", kampong = "JALAN BABU RAJA" }
-                else if (address.includes("JALAN ISTANA") == true) { area = "JT1", kampong = "JALAN ISTANA" }
-                else if (address.includes("JUNJONGAN") == true) { area = "JT1", kampong = "JUNJONGAN" }
-                else if (address.includes("KASAT") == true) { area = "JT1", kampong = "KASAT" }
-                else if (address.includes("LUMAPAS") == true) { area = "JT1", kampong = "LUMAPAS" }
-                else if (address.includes("JALAN HALUS") == true) { area = "JT1", kampong = "JALAN HALUS" }
-                else if (address.includes("MADEWA") == true) { area = "JT1", kampong = "MADEWA" }
-                else if (address.includes("PUTAT") == true) { area = "JT1", kampong = "PUTAT" }
-                else if (address.includes("SINARUBAI") == true) { area = "JT1", kampong = "SINARUBAI" }
-                else if (address.includes("TASEK MERADUN") == true) { area = "JT1", kampong = "TASEK MERADUN" }
-                else if (address.includes("TELANAI") == true) { area = "JT1", kampong = "TELANAI" }
-                else if (address.includes("BAN 1") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 2") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 3") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 4") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 5") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BAN 6") == true) { area = "JT2", kampong = "BAN" }
-                else if (address.includes("BATONG") == true) { area = "JT2", kampong = "BATONG" }
-                else if (address.includes("BATU AMPAR") == true) { area = "JT2", kampong = "BATU AMPAR" }
-                else if (address.includes("BEBATIK") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("BEBULOH") == true) { area = "JT2", kampong = "BEBULOH" }
-                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("KILANAS") == true) { area = "JT2", kampong = "BEBATIK KILANAS" }
-                else if (address.includes("DADAP") == true) { area = "JT2", kampong = "DADAP" }
-                else if (address.includes("KUALA LURAH") == true) { area = "JT2", kampong = "KUALA LURAH" }
-                else if (address.includes("KULAPIS") == true) { area = "JT2", kampong = "KULAPIS" }
-                else if (address.includes("LIMAU MANIS") == true) { area = "JT2", kampong = "LIMAU MANIS" }
-                else if (address.includes("MASIN") == true) { area = "JT2", kampong = "MASIN" }
-                else if (address.includes("MULAUT") == true) { area = "JT2", kampong = "MULAUT" }
-                else if (address.includes("PANCHOR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANCHUR MURAI") == true) { area = "JT2", kampong = "PANCHOR MURAI" }
-                else if (address.includes("PANGKALAN BATU") == true) { area = "JT2", kampong = "PANGKALAN BATU" }
-                else if (address.includes("PASAI") == true) { area = "JT2", kampong = "PASAI" }
-                else if (address.includes("WASAN") == true) { area = "JT2", kampong = "WASAN" }
-                else if (address.includes("PARIT") == true) { area = "JT2", kampong = "PARIT" }
-                else if (address.includes("EMPIRE") == true) { area = "JT3", kampong = "EMPIRE" }
-                else if (address.includes("JANGSAK") == true) { area = "JT3", kampong = "JANGSAK" }
-                else if (address.includes("JERUDONG") == true) { area = "JT3", kampong = "JERUDONG" }
-                else if (address.includes("KATIMAHAR") == true) { area = "JT3", kampong = "KATIMAHAR" }
-                else if (address.includes("LUGU") == true) { area = "JT3", kampong = "LUGU" }
-                else if (address.includes("SENGKURONG") == true) { area = "JT3", kampong = "SENGKURONG" }
-                else if (address.includes("TANJONG NANGKA") == true) { area = "JT3", kampong = "TANJONG NANGKA" }
-                else if (address.includes("TANJONG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT3", kampong = "TANJONG BUNUT" }
-                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT3", kampung = "SUNGAI TAMPOI" }
-                else if (address.includes("SG TAMPOI") == true) { area = "JT3", kampong = "SUNGAI TAMPOI" }
-                else if (address.includes("MUARA") == true) { area = "B2", kampong = "MUARA" }
+                if (address.includes("MANGGIS") == true) { area = "B", kampong = "MANGGIS" }
+                else if (address.includes("DELIMA") == true) { area = "B", kampong = "DELIMA" }
+                else if (address.includes("ANGGREK DESA") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("ANGGREK") == true) { area = "B", kampong = "ANGGREK DESA" }
+                else if (address.includes("PULAIE") == true) { area = "B", kampong = "PULAIE" }
+                else if (address.includes("LAMBAK") == true) { area = "B", kampong = "LAMBAK" }
+                else if (address.includes("TERUNJING") == true) { area = "B", kampong = "TERUNJING" }
+                else if (address.includes("MADANG") == true) { area = "B", kampong = "MADANG" }
+                else if (address.includes("AIRPORT") == true) { area = "B", kampong = "AIRPORT" }
+                else if (address.includes("ORANG KAYA BESAR IMAS") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("OKBI") == true) { area = "B", kampong = "OKBI" }
+                else if (address.includes("SERUSOP") == true) { area = "B", kampong = "SERUSOP" }
+                else if (address.includes("BURONG PINGAI") == true) { area = "B", kampong = "BURONG PINGAI" }
+                else if (address.includes("SETIA NEGARA") == true) { area = "B", kampong = "SETIA NEGARA" }
+                else if (address.includes("PASIR BERAKAS") == true) { area = "B", kampong = "PASIR BERAKAS" }
+                else if (address.includes("MENTERI BESAR") == true) { area = "B", kampong = "MENTERI BESAR" }
+                else if (address.includes("KEBANGSAAN LAMA") == true) { area = "B", kampong = "KEBANGSAAN LAMA" }
+                else if (address.includes("BATU MARANG") == true) { area = "B", kampong = "BATU MARANG" }
+                else if (address.includes("DATO GANDI") == true) { area = "B", kampong = "DATO GANDI" }
+                else if (address.includes("KAPOK") == true) { area = "B", kampong = "KAPOK" }
+                else if (address.includes("KOTA BATU") == true) { area = "B", kampong = "KOTA BATU" }
+                else if (address.includes("MENTIRI") == true) { area = "B", kampong = "MENTIRI" }
+                else if (address.includes("MERAGANG") == true) { area = "B", kampong = "MERAGANG" }
+                else if (address.includes("PELAMBAIAN") == true) { area = "B", kampong = "PELAMBAIAN" }
+                else if (address.includes("PINTU MALIM") == true) { area = "B", kampong = "PINTU MALIM" }
+                else if (address.includes("SALAMBIGAR") == true) { area = "B", kampong = "SALAMBIGAR" }
+                else if (address.includes("SALAR") == true) { area = "B", kampong = "SALAR" }
+                else if (address.includes("SERASA") == true) { area = "B", kampong = "SERASA" }
+                else if (address.includes("SERDANG") == true) { area = "B", kampong = "SERDANG" }
+                else if (address.includes("SUNGAI BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SG BASAR") == true) { area = "B", kampong = "SUNGAI BASAR" }
+                else if (address.includes("SUNGAI BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SG BELUKUT") == true) { area = "B", kampong = "SUNGAI BELUKUT" }
+                else if (address.includes("SUNGAI HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SG HANCHING") == true) { area = "B", kampong = "SUNGAI HANCHING" }
+                else if (address.includes("SUNGAI TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SG TILONG") == true) { area = "B", kampong = "SUNGAI TILONG" }
+                else if (address.includes("SUBOK") == true) { area = "B", kampong = "SUBOK" }
+                else if (address.includes("SUNGAI AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SG AKAR") == true) { area = "B", kampong = "SUNGAI AKAR" }
+                else if (address.includes("SUNGAI BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("SG BULOH") == true) { area = "B", kampong = "SUNGAI BULOH" }
+                else if (address.includes("TANAH JAMBU") == true) { area = "B", kampong = "TANAH JAMBU" }
+                else if (address.includes("SUNGAI OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("SG OROK") == true) { area = "B", kampong = "SUNGAI OROK" }
+                else if (address.includes("KATOK") == true) { area = "G", kampong = "KATOK" }
+                else if (address.includes("MATA-MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("MATA MATA") == true) { area = "G", kampong = "MATA-MATA" }
+                else if (address.includes("RIMBA") == true) { area = "G", kampong = "RIMBA" }
+                else if (address.includes("TUNGKU") == true) { area = "G", kampong = "TUNGKU" }
+                else if (address.includes("UBD") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("UNIVERSITI BRUNEI DARUSSALAM") == true) { area = "G", kampong = "UBD" }
+                else if (address.includes("JIS") == true) { area = "G" }
+                else if (address.includes("JERUDONG INTERNATIONAL SCHOOL") == true) { area = "G", kampong = "JIS" }
+                else if (address.includes("BERANGAN") == true) { area = "G", kampong = "BERANGAN" }
+                else if (address.includes("BERIBI") == true) { area = "G", kampong = "BERIBI" }
+                else if (address.includes("KIULAP") == true) { area = "G", kampong = "KIULAP" }
+                else if (address.includes("RIPAS") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("RAJA ISTERI PENGIRAN ANAK SALLEHA") == true) { area = "G", kampong = "RIPAS" }
+                else if (address.includes("KIARONG") == true) { area = "G", kampong = "KIARONG" }
+                else if (address.includes("PUSAR ULAK") == true) { area = "G", kampong = "PUSAR ULAK" }
+                else if (address.includes("KUMBANG PASANG") == true) { area = "G", kampong = "KUMBANG PASANG" }
+                else if (address.includes("MENGLAIT") == true) { area = "G", kampong = "MENGLAIT" }
+                else if (address.includes("MABOHAI") == true) { area = "G", kampong = "MABOHAI" }
+                else if (address.includes("ONG SUM PING") == true) { area = "G", kampong = "ONG SUM PING" }
+                else if (address.includes("GADONG") == true) { area = "G", kampong = "GADONG" }
+                else if (address.includes("TASEK LAMA") == true) { area = "G", kampong = "TASEK LAMA" }
+                else if (address.includes("BANDAR TOWN") == true) { area = "G", kampong = "BANDAR TOWN" }
+                else if (address.includes("BATU SATU") == true) { area = "JT", kampong = "BATU SATU" }
+                else if (address.includes("BENGKURONG") == true) { area = "JT", kampong = "BENGKURONG" }
+                else if (address.includes("BUNUT") == true) { area = "JT", kampong = "BUNUT" }
+                else if (address.includes("JALAN BABU RAJA") == true) { area = "JT", kampong = "JALAN BABU RAJA" }
+                else if (address.includes("JALAN ISTANA") == true) { area = "JT", kampong = "JALAN ISTANA" }
+                else if (address.includes("JUNJONGAN") == true) { area = "JT", kampong = "JUNJONGAN" }
+                else if (address.includes("KASAT") == true) { area = "JT", kampong = "KASAT" }
+                else if (address.includes("LUMAPAS") == true) { area = "JT", kampong = "LUMAPAS" }
+                else if (address.includes("JALAN HALUS") == true) { area = "JT", kampong = "JALAN HALUS" }
+                else if (address.includes("MADEWA") == true) { area = "JT", kampong = "MADEWA" }
+                else if (address.includes("PUTAT") == true) { area = "JT", kampong = "PUTAT" }
+                else if (address.includes("SINARUBAI") == true) { area = "JT", kampong = "SINARUBAI" }
+                else if (address.includes("TASEK MERADUN") == true) { area = "JT", kampong = "TASEK MERADUN" }
+                else if (address.includes("TELANAI") == true) { area = "JT", kampong = "TELANAI" }
+                else if (address.includes("BAN 1") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 2") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 3") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 4") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 5") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BAN 6") == true) { area = "JT", kampong = "BAN" }
+                else if (address.includes("BATONG") == true) { area = "JT", kampong = "BATONG" }
+                else if (address.includes("BATU AMPAR") == true) { area = "JT", kampong = "BATU AMPAR" }
+                else if (address.includes("BEBATIK") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("BEBULOH") == true) { area = "JT", kampong = "BEBULOH" }
+                else if (address.includes("BEBATIK KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("KILANAS") == true) { area = "JT", kampong = "BEBATIK KILANAS" }
+                else if (address.includes("DADAP") == true) { area = "JT", kampong = "DADAP" }
+                else if (address.includes("KUALA LURAH") == true) { area = "JT", kampong = "KUALA LURAH" }
+                else if (address.includes("KULAPIS") == true) { area = "JT", kampong = "KULAPIS" }
+                else if (address.includes("LIMAU MANIS") == true) { area = "JT", kampong = "LIMAU MANIS" }
+                else if (address.includes("MASIN") == true) { area = "JT", kampong = "MASIN" }
+                else if (address.includes("MULAUT") == true) { area = "JT", kampong = "MULAUT" }
+                else if (address.includes("PANCHOR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANCHUR MURAI") == true) { area = "JT", kampong = "PANCHOR MURAI" }
+                else if (address.includes("PANGKALAN BATU") == true) { area = "JT", kampong = "PANGKALAN BATU" }
+                else if (address.includes("PASAI") == true) { area = "JT", kampong = "PASAI" }
+                else if (address.includes("WASAN") == true) { area = "JT", kampong = "WASAN" }
+                else if (address.includes("PARIT") == true) { area = "JT", kampong = "PARIT" }
+                else if (address.includes("EMPIRE") == true) { area = "JT", kampong = "EMPIRE" }
+                else if (address.includes("JANGSAK") == true) { area = "JT", kampong = "JANGSAK" }
+                else if (address.includes("JERUDONG") == true) { area = "JT", kampong = "JERUDONG" }
+                else if (address.includes("KATIMAHAR") == true) { area = "JT", kampong = "KATIMAHAR" }
+                else if (address.includes("LUGU") == true) { area = "JT", kampong = "LUGU" }
+                else if (address.includes("SENGKURONG") == true) { area = "JT", kampong = "SENGKURONG" }
+                else if (address.includes("TANJONG NANGKA") == true) { area = "JT", kampong = "TANJONG NANGKA" }
+                else if (address.includes("TANJONG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("TANJUNG BUNUT") == true) { area = "JT", kampong = "TANJONG BUNUT" }
+                else if (address.includes("SUNGAI TAMPOI") == true) { area = "JT", kampung = "SUNGAI TAMPOI" }
+                else if (address.includes("SG TAMPOI") == true) { area = "JT", kampong = "SUNGAI TAMPOI" }
+                else if (address.includes("MUARA") == true) { area = "B", kampong = "MUARA" }
                 //TU
                 else if (address.includes("SENGKARAI") == true) { area = "TUTONG", kampong = "SENGKARAI" }
                 else if (address.includes("PANCHOR") == true) { area = "TUTONG", kampong = "PANCHOR" }

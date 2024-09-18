@@ -4944,7 +4944,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 document.getElementById("customerPhone").value = customerPhone;
 
-                document.getElementById("appointmentPlace").value = appointmentPlace;
+                document.getElementById("appointmentPlace").value = "PHC";
 
                 document.getElementById("deliveryType").value = $('input[name=phcCharges]:checked').val();
                 document.getElementById("payingPatient").value = $('input[name=phcPayingPatient]:checked').val();

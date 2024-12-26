@@ -1834,9 +1834,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
 
                 if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
-                    if ($('input[name=districtAppointment]:checked').val() !== "Brunei Muara") {
+                    if ($('input[name=district]:checked').val() !== "Brunei Muara") {
                         $("#chargessection").hide();
-                        alert("Standard order is not available for today.");
+                        alert("We sincerely apologize. Standard order is not available for today. Please refer to the latest announcement for more details.");
                         return; // Stop further execution if this condition is met
                     }
                 }

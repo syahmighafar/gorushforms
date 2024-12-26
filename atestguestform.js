@@ -28,6 +28,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('input[name=orderType]').change(function () {
             if ($(this).val() == "Pharmacy") {
+                if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
+                    $("#phcChoice").hide();
+                }
+
                 $("#productselectionsection").fadeIn();
                 $("#pharmacySelection").fadeIn();
                 $("#othersSelection").hide();
@@ -43,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=products]').attr('checked', false);
             }
         });
-
+        
         $('input[name=products]').change(function () {
             if ($(this).val() == "pharmacymoh") {
                 $('#submitBtnfinal').attr('disabled', true);
@@ -1156,6 +1160,26 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
+            if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
+                if ($('input[name=products]').val() === "pharmacyphc") {
+                    $("#productsection").hide();
+                    alert("We sincerely apologize. Standard order is not available for today. Please refer to the latest announcement for more details.");
+                    return; // Stop further execution if this condition is met
+                }
+        
+                if (
+                    (
+                        $('input[name=products]').val() === "pharmacymoh" || 
+                        $('input[name=products]').val() === "pharmacyjpmc"
+                    ) && 
+                    $('input[name=district]:checked').val() !== "Brunei Muara"
+                ) {
+                    $("#productsection").hide();
+                    alert("We sincerely apologize. Standard order is not available for today. Please refer to the latest announcement for more details.");
+                    return; // Stop further execution if this condition is met
+                }
+            }
+
             if (($("#name").val().length == 0)) {
                 $("#productsection").hide();
                 alert("Please do not leave your name field empty!");
@@ -1834,7 +1858,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
                 if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
                     if (
-                        $('input[name=district]:checked').val() !== "Brunei Muara" ||
                         $('input[name=districtAppointment]:checked').val() !== "Brunei Muara"
                     ) {
                         $("#chargessection").hide();
@@ -2199,6 +2222,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
+                            // Specific date conditions take priority for mohexpress
+                            if (year === 2024 && month === 11) { // Check for December 2024
+                                if (date === 30) {
+                                    $("#jpmcstandardbm").hide();
+                                    $("#jpmcstandardttg").hide();
+                                    $("#jpmcstandardkb").hide();
+                                    $("#jpmcstandardtemb").hide();
+                                    $("#jpmcselfcollect").hide();
+                                }
+                                if (date === 31) {
+                                    $("#jpmcexpressbm").hide();
+                                }
+                            }
+
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
@@ -2213,6 +2250,20 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             $("#chargesPrevBtn").fadeIn();
 
                             document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
+
+                            // Specific date conditions take priority for mohexpress
+                            if (year === 2024 && month === 11) { // Check for December 2024
+                                if (date === 30) {
+                                    $("#jpmcstandardbm").hide();
+                                    $("#jpmcstandardttg").hide();
+                                    $("#jpmcstandardkb").hide();
+                                    $("#jpmcstandardtemb").hide();
+                                    $("#jpmcselfcollect").hide();
+                                }
+                                if (date === 31) {
+                                    $("#jpmcexpressbm").hide();
+                                }
+                            }
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }

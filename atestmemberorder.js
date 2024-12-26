@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             document.getElementById("kampong").readOnly = true;
             document.getElementById("jalan").readOnly = true;
             document.getElementById("simpang").readOnly = true;
-            document.getElementById("district").readOnly = true;
+            /* document.getElementById("district").readOnly = true; */
             document.getElementById("postal").readOnly = true;
             document.getElementById("email").readOnly = true;
             document.getElementById("contact_1").readOnly = true;
@@ -759,6 +759,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
+            if ($('#district').val() == undefined){
+                alert("We sincerely apologize as there are temporary issue with the district field in our database. Please choose your district to proceed your order.");
+            }
             if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
                 if ($('input[name=products]').val() === "pharmacyphc") {
                     $("#productsection").hide();

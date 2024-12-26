@@ -759,7 +759,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
-            if ($('#district').val() == undefined){
+            if ($('#district').val().length == 0){
                 alert("We sincerely apologize as there are temporary issue with the district field in our database. Please choose your district to proceed your order.");
             }
             if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024

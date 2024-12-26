@@ -760,7 +760,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if ($('#district').val().length == 0){
+                $("#productsection").hide();
                 alert("We sincerely apologize as there are temporary issue with the district field in our database. Please choose your district to proceed your order.");
+                return; // Stop further execution if this condition is met
             }
             if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
                 if ($('input[name=products]').val() === "pharmacyphc") {

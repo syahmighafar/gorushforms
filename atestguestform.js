@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
         const d = new Date();
         let hour = d.getHours();
         let day = d.getDay();
+        let date = d.getDate();
+        let month = d.getMonth(); // Note: getMonth() returns 0-based month index (0 = January, 11 = December)
+        let year = d.getFullYear();
 
         $(document).on("change", ".itemprice", function () {
             var sum = 0;
@@ -1829,6 +1832,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("productNextBtn").addEventListener("click", function () {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
+
+                if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
+                    if ($('input[name=districtAppointment]:checked').val() !== "Brunei Muara") {
+                        $("#chargessection").hide();
+                        alert("Standard order is not available for today.");
+                        return; // Stop further execution if this condition is met
+                    }
+                }
+
                 if (($("#bruHIMSNumberTemp").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the patient's Bru-HIMs number field empty!");
@@ -1906,21 +1918,35 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                        if (day == 4) {
-                                            if (hour >= 11) {
-                                                $("#mohexpress").hide();
-                                            } else {
-                                                $("#mohexpress").fadeIn();
-                                            }
+                                    // Specific date conditions take priority for mohexpress
+                                    if (year === 2024 && month === 11) { // Check for December 2024
+                                        if (date === 30) {
+                                            $("#mohstandard").hide();
+                                            $("#mohselfcollect").hide();
                                         }
-
-                                        if ((day == 5) || (day == 6)) {
+                                        if (date === 31) {
                                             $("#mohexpress").hide();
                                         }
+                                    }
 
-                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                                            $("#mohexpress").fadeIn();
+                                    // Other conditions
+                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                        if (year !== 2024 || month !== 11 || date !== 31) { // Ensure specific date condition for mohexpress is prioritized
+                                            if (day == 4) {
+                                                if (hour >= 11) {
+                                                    $("#mohexpress").hide();
+                                                } else {
+                                                    $("#mohexpress").fadeIn();
+                                                }
+                                            }
+
+                                            if ((day == 5) || (day == 6)) {
+                                                $("#mohexpress").hide();
+                                            }
+
+                                            if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                                $("#mohexpress").fadeIn();
+                                            }
                                         }
 
                                         if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
@@ -2013,21 +2039,35 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                        if (day == 4) {
-                                            if (hour >= 11) {
-                                                $("#mohexpress").hide();
-                                            } else {
-                                                $("#mohexpress").fadeIn();
-                                            }
+                                    // Specific date conditions take priority for mohexpress
+                                    if (year === 2024 && month === 11) { // Check for December 2024
+                                        if (date === 30) {
+                                            $("#mohstandard").hide();
+                                            $("#mohselfcollect").hide();
                                         }
-
-                                        if ((day == 5) || (day == 6)) {
+                                        if (date === 31) {
                                             $("#mohexpress").hide();
                                         }
+                                    }
 
-                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                                            $("#mohexpress").fadeIn();
+                                    // Other conditions
+                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                        if (year !== 2024 || month !== 11 || date !== 31) { // Ensure specific date condition for mohexpress is prioritized
+                                            if (day == 4) {
+                                                if (hour >= 11) {
+                                                    $("#mohexpress").hide();
+                                                } else {
+                                                    $("#mohexpress").fadeIn();
+                                                }
+                                            }
+
+                                            if ((day == 5) || (day == 6)) {
+                                                $("#mohexpress").hide();
+                                            }
+
+                                            if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                                $("#mohexpress").fadeIn();
+                                            }
                                         }
 
                                         if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {

@@ -917,7 +917,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#cbsldropofftemb").hide();
 
                         if (day != 0) {
-                            if ((hour >= 8) && (hour < 10)) {
+                            if ((hour >= 5) && (hour < 6)) {
                                 $("#grpimmediatebm").fadeIn();
                                 $("#cbslimmediatebm").fadeIn();
                             } else {
@@ -2023,7 +2023,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
                                     if ((day != 0) && (day != 5)) {
-                                        if ((hour >= 8) && (hour < 10)) {
+                                        if ((hour >= 5) && (hour < 6)) {
                                             $("#mohimmidiate").fadeIn();
                                         } else {
                                             $("#mohimmidiate").hide();

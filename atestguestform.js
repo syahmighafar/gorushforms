@@ -1873,7 +1873,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#mohimmidiate").hide();
                         $("#mohexpress").hide();
                     }
-    
+
                     if (date === 30) { // 30th January (Thursday)
                         $("#mohimmidiate").hide();
                     }
@@ -1971,7 +1971,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohimmidiate").hide();
                                             $("#mohexpress").hide();
                                         }
-                        
+
                                         if (date === 30) { // 30th January (Thursday)
                                             $("#mohimmidiate").hide();
                                         }
@@ -1990,7 +1990,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     // Other conditions
                                     if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                        if (year !== 2024 || month !== 11 || date !== 31) { // Ensure specific date condition for mohexpress is prioritized
+                                        if (
+                                            (year !== 2024 || month !== 11 || date !== 31) &&
+                                            (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
+                                        ) { // Ensure specific date conditions are prioritized
                                             if (day == 4) {
                                                 if (hour >= 11) {
                                                     $("#mohexpress").hide();
@@ -2022,6 +2025,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohimmidiate").hide();
                                         }
                                     } else {
+                                        if (year === 2025 && month === 0 && (date === 27 || date === 28 || date === 29)) {
+                                            $("#mohexpress").hide();
+                                            $("#mohimmidiate").hide();
+                                        }
+                                        if (year === 2025 && month === 0 && date === 30) {
+                                            $("#mohimmidiate").hide();
+                                        }
                                         $("#mohimmidiate").hide();
                                     }
 
@@ -2103,7 +2113,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohimmidiate").hide();
                                             $("#mohexpress").hide();
                                         }
-                        
+
                                         if (date === 30) { // 30th January (Thursday)
                                             $("#mohimmidiate").hide();
                                         }

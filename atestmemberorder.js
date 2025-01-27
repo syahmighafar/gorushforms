@@ -1949,6 +1949,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
                         $("#mohimmidiate").hide();
                         $("#mohexpress").hide();
+                        $("#mohselfcollect").hide();
                     }
 
                     if (date === 30) { // 30th January (Thursday)
@@ -2019,6 +2020,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
                                     $("#mohimmidiate").hide();
                                     $("#mohexpress").hide();
+                                    $("#mohselfcollect").hide();
                                 }
 
                                 if (date === 30) { // 30th January (Thursday)
@@ -2075,6 +2077,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 if (year === 2025 && month === 0 && (date === 27 || date === 28 || date === 29)) {
                                     $("#mohexpress").hide();
                                     $("#mohimmidiate").hide();
+                                    $("#mohselfcollect").hide();
                                 }
                                 if (year === 2025 && month === 0 && date === 30) {
                                     $("#mohimmidiate").hide();
@@ -2167,6 +2170,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
                         if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
                             $("#jpmcexpressbm").hide();
+                            $("#jpmcselfcollect").hide();
                         }
                     }
 

@@ -2061,14 +2061,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
-                                    if ((day != 0) && (day != 5)) {
-                                        if ((hour >= 8) && (hour < 15)) {
-                                            $("#mohimmidiate").fadeIn();
+                                    if (
+                                        (year !== 2024 || month !== 11 || date !== 31) &&
+                                        (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
+                                    ) {
+                                        if ((day != 0) && (day != 5)) {
+                                            if ((hour >= 8) && (hour < 15)) {
+                                                $("#mohimmidiate").fadeIn();
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                            }
                                         } else {
                                             $("#mohimmidiate").hide();
                                         }
-                                    } else {
-                                        $("#mohimmidiate").hide();
                                     }
                                 } else {
                                     $("#mohimmidiate").hide();

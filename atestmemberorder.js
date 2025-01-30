@@ -759,24 +759,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
-            if ($('#district').val().length == 0) {
+            if ($('#district').val().length == 0){
                 $("#productsection").hide();
                 alert("We sincerely apologize as there are temporary issue with the district field in our database. Please choose your district to proceed your order.");
                 return; // Stop further execution if this condition is met
             }
-
-            if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
-                    $("#mohimmidiate").hide();
-                    $("#mohexpress").hide();
-                    $("#jpmcexpressbm").hide();
-                }
-
-                if (date === 30) { // 30th January (Thursday)
-                    $("#mohimmidiate").hide();
-                }
-            }
-
             if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
                 if ($('input[name=products]').val() === "pharmacyphc") {
                     $("#productsection").hide();
@@ -930,7 +917,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#cbsldropofftemb").hide();
 
                         if (day != 0) {
-                            if ((hour >= 5) && (hour < 6)) {
+                            if ((hour >= 8) && (hour < 10)) {
                                 $("#grpimmediatebm").fadeIn();
                                 $("#cbslimmediatebm").fadeIn();
                             } else {
@@ -1945,17 +1932,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("productNextBtn").addEventListener("click", function () {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
-                if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                    if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
-                        $("#mohimmidiate").hide();
-                        $("#mohexpress").hide();
-                        $("#mohselfcollect").hide();
-                    }
-
-                    if (date === 30) { // 30th January (Thursday)
-                        $("#mohimmidiate").hide();
-                    }
-                }
                 if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024
                     if (
                         $('input[name=districtAppointment]:checked').val() !== "Brunei Muara"
@@ -2016,18 +1992,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                             // Specific date conditions take priority for mohexpress
-                            if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                                if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
-                                    $("#mohselfcollect").hide();
-                                }
-
-                                if (date === 30) { // 30th January (Thursday)
-                                    $("#mohimmidiate").hide();
-                                }
-                            }
-
                             if (year === 2024 && month === 11) { // Check for December 2024
                                 if (date === 30) {
                                     $("#mohstandard").hide();
@@ -2039,10 +2003,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             if ($('#district').val() == "brunei-muara") {
-                                if (
-                                    (year !== 2024 || month !== 11 || date !== 31) &&
-                                    (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
-                                ) { // Ensure specific date conditions are prioritized
+                                if (year !== 2024 || month !== 11 || date !== 31) { // Ensure specific date condition for mohexpress is prioritized
                                     if (day == 4) {
                                         if (hour >= 11) {
                                             $("#mohexpress").hide();
@@ -2061,32 +2022,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
-                                    if (
-                                        (year !== 2024 || month !== 11 || date !== 31) &&
-                                        (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
-                                    ) {
-                                        if ((day != 0) && (day != 5)) {
-                                            if ((hour >= 8) && (hour < 15)) {
-                                                $("#mohimmidiate").fadeIn();
-                                            } else {
-                                                $("#mohimmidiate").hide();
-                                            }
+                                    if ((day != 0) && (day != 5)) {
+                                        if ((hour >= 8) && (hour < 11)) {
+                                            $("#mohimmidiate").fadeIn();
                                         } else {
                                             $("#mohimmidiate").hide();
                                         }
+                                    } else {
+                                        $("#mohimmidiate").hide();
                                     }
                                 } else {
                                     $("#mohimmidiate").hide();
                                 }
                             } else {
-                                if (year === 2025 && month === 0 && (date === 27 || date === 28 || date === 29)) {
-                                    $("#mohexpress").hide();
-                                    $("#mohimmidiate").hide();
-                                    $("#mohselfcollect").hide();
-                                }
-                                if (year === 2025 && month === 0 && date === 30) {
-                                    $("#mohimmidiate").hide();
-                                }
                                 $("#mohimmidiate").hide();
                             }
 
@@ -2172,13 +2120,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                     // Specific date conditions take priority for mohexpress
-                    if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                        if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
-                            $("#jpmcexpressbm").hide();
-                            $("#jpmcselfcollect").hide();
-                        }
-                    }
-
                     if (year === 2024 && month === 11) { // Check for December 2024
                         if (date === 30) {
                             $("#jpmcstandardbm").hide();

@@ -778,7 +778,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#cbsldropofftemb").hide();
 
                 if (day != 0) {
-                    if ((hour >= 5) && (hour < 6)) {
+                    if ((hour >= 8) && (hour < 15)) {
                         $("#grpimmediatebm").fadeIn();
                         $("#cbslimmediatebm").fadeIn();
                     } else {
@@ -2021,7 +2021,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                                 (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
                                             ) {
                                                 if ((day != 0) && (day != 5)) {
-                                                    if ((hour >= 8) && (hour < 11)) {
+                                                    if ((hour >= 8) && (hour < 15)) {
                                                         $("#mohimmidiate").fadeIn();
                                                     } else {
                                                         $("#mohimmidiate").hide();
@@ -2170,7 +2170,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                                 (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
                                             ) {
                                                 if ((day != 0) && (day != 5)) {
-                                                    if ((hour >= 8) && (hour < 11)) {
+                                                    if ((hour >= 8) && (hour < 15)) {
                                                         $("#mohimmidiate").fadeIn();
                                                     } else {
                                                         $("#mohimmidiate").hide();

@@ -778,7 +778,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#cbsldropofftemb").hide();
 
                 if (day != 0) {
-                    if ((hour >= 8) && (hour < 15)) {
+                    if ((hour >= 1) && (hour < 2)) {
                         $("#grpimmediatebm").fadeIn();
                         $("#cbslimmediatebm").fadeIn();
                     } else {
@@ -1160,17 +1160,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
-            if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
+            if (year === 2025 && month === 1) { // Check for January 2025 (month 0 = January)
+                if (date === 23 || date === 24) { // 27th, 28th, and 29th January (Monday-Wednesday)
                     $("#mohimmidiate").hide();
                     $("#mohexpress").hide();
                     $("#jpmcexpressbm").hide();
                     $("#mohselfcollect").hide();
                     $("#jpmcselfcollect").hide();
-                }
-
-                if (date === 30) { // 30th January (Thursday)
-                    $("#mohimmidiate").hide();
                 }
             }
 
@@ -1870,15 +1866,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("productNextBtn").addEventListener("click", function () {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
-                if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                    if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
+                if (year === 2025 && month === 1) { // Check for January 2025 (month 0 = January)
+                    if (date === 23 || date === 24) { // 27th, 28th, and 29th January (Monday-Wednesday)
                         $("#mohimmidiate").hide();
                         $("#mohexpress").hide();
                         $("#mohselfcollect").hide();
-                    }
-
-                    if (date === 30) { // 30th January (Thursday)
-                        $("#mohimmidiate").hide();
                     }
                 }
 
@@ -1969,26 +1961,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                                        if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
+                                    if (year === 2025 && month === 1) { // Check for January 2025 (month 0 = January)
+                                        if (date === 23 || date === 24) { // 27th, 28th, and 29th January (Monday-Wednesday)
                                             $("#mohimmidiate").hide();
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
-                                        }
-
-                                        if (date === 30) { // 30th January (Thursday)
-                                            $("#mohimmidiate").hide();
-                                        }
-                                    }
-
-                                    // Specific date conditions take priority for mohexpress
-                                    if (year === 2024 && month === 11) { // Check for December 2024
-                                        if (date === 30) {
-                                            $("#mohstandard").hide();
-                                            $("#mohselfcollect").hide();
-                                        }
-                                        if (date === 31) {
-                                            $("#mohexpress").hide();
                                         }
                                     }
 
@@ -1996,7 +1973,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                         if (
                                             (year !== 2024 || month !== 11 || date !== 31) &&
-                                            (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
+                                            (year !== 2025 || month !== 1 || (date !== 23 && date !== 24))
                                         ) { // Ensure specific date conditions are prioritized
                                             if (day == 4) {
                                                 if (hour >= 11) {
@@ -2018,7 +1995,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
                                             if (
                                                 (year !== 2024 || month !== 11 || date !== 31) &&
-                                                (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
+                                                (year !== 2025 || month !== 1 || (date !== 23 && date !== 24))
                                             ) {
                                                 if ((day != 0) && (day != 5)) {
                                                     if ((hour >= 8) && (hour < 15)) {
@@ -2034,13 +2011,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohimmidiate").hide();
                                         }
                                     } else {
-                                        if (year === 2025 && month === 0 && (date === 27 || date === 28 || date === 29)) {
+                                        if (year === 2025 && month === 1 && (date === 23 || date === 24)) {
                                             $("#mohexpress").hide();
                                             $("#mohimmidiate").hide();
                                             $("#mohselfcollect").hide();
-                                        }
-                                        if (year === 2025 && month === 0 && date === 30) {
-                                            $("#mohimmidiate").hide();
                                         }
                                         $("#mohimmidiate").hide();
                                     }
@@ -2118,26 +2092,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                                        if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
+                                    if (year === 2025 && month === 1) { // Check for January 2025 (month 0 = January)
+                                        if (date === 23 || date === 24) { // 27th, 28th, and 29th January (Monday-Wednesday)
                                             $("#mohimmidiate").hide();
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
-                                        }
-
-                                        if (date === 30) { // 30th January (Thursday)
-                                            $("#mohimmidiate").hide();
-                                        }
-                                    }
-
-                                    // Specific date conditions take priority for mohexpress
-                                    if (year === 2024 && month === 11) { // Check for December 2024
-                                        if (date === 30) {
-                                            $("#mohstandard").hide();
-                                            $("#mohselfcollect").hide();
-                                        }
-                                        if (date === 31) {
-                                            $("#mohexpress").hide();
                                         }
                                     }
 
@@ -2145,7 +2104,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                         if (
                                             (year !== 2024 || month !== 11 || date !== 31) &&
-                                            (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
+                                            (year !== 2025 || month !== 1 || (date !== 23 && date !== 24))
                                         ) { // Ensure specific date conditions are prioritized
                                             if (day == 4) {
                                                 if (hour >= 11) {
@@ -2167,7 +2126,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
                                             if (
                                                 (year !== 2024 || month !== 11 || date !== 31) &&
-                                                (year !== 2025 || month !== 0 || (date !== 27 && date !== 28 && date !== 29 && date !== 30))
+                                                (year !== 2025 || month !== 1 || (date !== 23 && date !== 24))
                                             ) {
                                                 if ((day != 0) && (day != 5)) {
                                                     if ((hour >= 8) && (hour < 15)) {
@@ -2183,13 +2142,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohimmidiate").hide();
                                         }
                                     } else {
-                                        if (year === 2025 && month === 0 && (date === 27 || date === 28 || date === 29)) {
+                                        if (year === 2025 && month === 1 && (date === 23 || date === 24)) {
                                             $("#mohexpress").hide();
                                             $("#mohimmidiate").hide();
                                             $("#mohselfcollect").hide();
-                                        }
-                                        if (year === 2025 && month === 0 && date === 30) {
-                                            $("#mohimmidiate").hide();
                                         }
                                         $("#mohimmidiate").hide();
                                     }
@@ -2305,8 +2261,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                             // Specific date conditions take priority for mohexpress
-                            if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                                if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
+                            if (year === 2025 && month === 1) { // Check for January 2025 (month 0 = January)
+                                if (date === 23 || date === 24) { // 27th, 28th, and 29th January (Monday-Wednesday)
                                     $("#jpmcexpressbm").hide();
                                     $("#jpmcselfcollect").hide();
                                 }
@@ -2341,8 +2297,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                             // Specific date conditions take priority for mohexpress
-                            if (year === 2025 && month === 0) { // Check for January 2025 (month 0 = January)
-                                if (date === 27 || date === 28 || date === 29) { // 27th, 28th, and 29th January (Monday-Wednesday)
+                            if (year === 2025 && month === 1) { // Check for January 2025 (month 0 = January)
+                                if (date === 23 || date === 24) { // 27th, 28th, and 29th January (Monday-Wednesday)
                                     $("#jpmcexpressbm").hide();
                                     $("#jpmcselfcollect").hide();
                                 }

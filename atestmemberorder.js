@@ -2036,7 +2036,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         (year !== 2025 || month !== 2 || (date !== 2 && date !== 3))
                                     ) {
                                         if ((day != 0) && (day != 5)) {
-                                            if ((hour >= 8) && (hour < 15)) {
+                                            if ((hour >= 8) && (hour < 11)) {
                                                 $("#mohimmidiate").fadeIn();
                                             } else {
                                                 $("#mohimmidiate").hide();

@@ -2011,7 +2011,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             if ($('#district').val() == "brunei-muara") {
                                 if (
                                     (year !== 2024 || month !== 11 || date !== 31) &&
-                                    (year !== 2025 || month !== 3 || (date !== 17 && date !== 18))
+                                    (year !== 2025 || month !== 2 || (date !== 17 && date !== 18))
                                 ) { // Ensure specific date condition for mohexpress is prioritized
                                     if (day == 4) {
                                         if (hour >= 11) {
@@ -2033,7 +2033,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
                                     if (
                                         (year !== 2024 || month !== 11 || date !== 31) &&
-                                        (year !== 2025 || month !== 3 || (date !== 17 && date !== 18))
+                                        (year !== 2025 || month !== 2 || (date !== 17 && date !== 18))
                                     ) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 11)) {

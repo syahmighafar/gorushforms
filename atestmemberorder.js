@@ -1942,7 +1942,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 } */
 
-                if (year === 2025 && month === 3) { // Check for January 2025 (month 0 = January)
+                if (year === 2025 && month === 2) { // Check for January 2025 (month 0 = January)
                     if (date === 17 || date === 18) { // 27th, 28th, and 29th January (Monday-Wednesday)
                         $("#mohimmidiate").hide();
                         $("#mohexpress").hide();
@@ -2000,7 +2000,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                            if (year === 2025 && month === 3) { // Check for January 2025 (month 0 = January)
+                            if (year === 2025 && month === 2) { // Check for January 2025 (month 0 = January)
                                 if (date === 17 || date === 18) { // 27th, 28th, and 29th January (Monday-Wednesday)
                                     $("#mohimmidiate").hide();
                                     $("#mohexpress").hide();
@@ -2139,7 +2139,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                     // Specific date conditions take priority for mohexpress
-                    if (year === 2025 && month === 3) { // Check for January 2025 (month 0 = January)
+                    if (year === 2025 && month === 2) { // Check for January 2025 (month 0 = January)
                         if (date === 17 || date === 18) { // 27th, 28th, and 29th January (Monday-Wednesday)
                             $("#jpmcexpressbm").hide();
                             $("#jpmcselfcollect").hide();

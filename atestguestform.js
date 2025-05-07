@@ -26,6 +26,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
+        $('input[name=mohCharges]').change(function () {
+            if ($('input[name=mohCharges]:checked').val() == 'Self Collect') {
+                $("#selfcollectnotice").fadeIn();
+            } else {
+                $("#selfcollectnotice").hide();
+            }
+        })
+
+        $('input[name=jpmcCharges]').change(function () {
+            if ($('input[name=jpmcCharges]:checked').val() == 'Self Collect') {
+                $("#selfcollectnotice").fadeIn();
+            } else {
+                $("#selfcollectnotice").hide();
+            }
+        })
+
         $('input[name=orderType]').change(function () {
             if ($(this).val() == "Pharmacy") {
                 if (year === 2024 && month === 11 && date === 30) { // Check for 30 December 2024

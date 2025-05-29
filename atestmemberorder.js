@@ -1327,10 +1327,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         $('input[name=districtAppointment]').change(function () {
             if ($(this).val().length == 0) {
-                $("#appointmentDistrictBM").hide();
+                /* $("#appointmentDistrictBM").hide();
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").hide();
-                $("#appointmentDistrictKB").hide();
+                $("#appointmentDistrictKB").hide(); */
 
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
@@ -1349,10 +1349,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Brunei Muara") {
-                $("#appointmentDistrictBM").fadeIn();
+                /* $("#appointmentDistrictBM").fadeIn();
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").hide();
-                $("#appointmentDistrictKB").hide();
+                $("#appointmentDistrictKB").hide(); */
 
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
@@ -1371,10 +1371,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Tutong") {
-                $("#appointmentDistrictBM").hide();
+                /* $("#appointmentDistrictBM").hide();
                 $("#appointmentDistrictTTG").fadeIn();
                 $("#appointmentDistrictTEMB").hide();
-                $("#appointmentDistrictKB").hide();
+                $("#appointmentDistrictKB").hide(); */
 
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
@@ -1393,10 +1393,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Temburong") {
-                $("#appointmentDistrictBM").hide();
+                /* $("#appointmentDistrictBM").hide();
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").fadeIn();
-                $("#appointmentDistrictKB").hide();
+                $("#appointmentDistrictKB").hide(); */
 
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();
@@ -1415,10 +1415,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if ($(this).val() == "Belait") {
-                $("#appointmentDistrictBM").hide();
+                /* $("#appointmentDistrictBM").hide();
                 $("#appointmentDistrictTTG").hide();
                 $("#appointmentDistrictTEMB").hide();
-                $("#appointmentDistrictKB").fadeIn();
+                $("#appointmentDistrictKB").fadeIn(); */
 
                 $("#mohimmidiate").hide();
                 $("#mohexpress").hide();

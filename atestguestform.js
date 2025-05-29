@@ -2183,7 +2183,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                                if (($("#healthCentreTEMB").val().length != 0)) {
+                                /* if (($("#healthCentreTEMB").val().length != 0)) { */
                                     $("#productNextBtn").hide();
                                     $("#productsection").hide();
                                     $("#productsPrevBtn").hide();
@@ -2197,7 +2197,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     $("#mohexpress").hide();
 
                                     window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
+                                /* } */
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Belait")) {

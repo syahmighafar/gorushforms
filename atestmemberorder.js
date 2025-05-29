@@ -1437,7 +1437,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
-        $('#healthCentreBM').change(function () {
+        /* $('#healthCentreBM').change(function () {
             if ($(this).val().length == 0) {
                 $("#mohimmidiate").hide();
                 document.getElementById("mapSource").src = "";
@@ -1721,7 +1721,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=mohCharges]').attr('checked', false);
                 $('input[name=mohPayingPatient]').attr('checked', false);
             }
-        });
+        }); */
 
         $("#remove_fields").hide();
 
@@ -2004,7 +2004,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose one of the appointment districts!");
                 }
 
-                if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
+                /* if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
                     if (($("#healthCentreBM").val().length == 0)) {
                         $("#chargessection").hide();
                         alert("Please choose one of the Brunei Muara Health Centres!");
@@ -2030,11 +2030,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#chargessection").hide();
                         alert("Please choose one of the Belait Health Centres!");
                     }
-                }
+                } */
 
                 if (($("#bruHIMSNumberTemp").val().length != 0) && ($('input[name=districtAppointment]:checked').val() != undefined)) {
                     if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
-                        if (($("#healthCentreBM").val().length != 0)) {
+                        /* if (($("#healthCentreBM").val().length != 0)) { */
                             $("#productNextBtn").hide();
                             $("#productsection").hide();
                             $("#productsPrevBtn").hide();
@@ -2100,7 +2100,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                 }
 
-                                if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
+                                /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
                                     if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1 && date !== 2))
                                     ) {
                                         if ((day != 0) && (day != 5)) {
@@ -2113,9 +2113,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             $("#mohimmidiate").hide();
                                         }
                                     }
-                                } else {
+                                /* } else {
                                     $("#mohimmidiate").hide();
-                                }
+                                } */
                             } else {
                                 if (year === 2025) {
                                     if (month === 2) {
@@ -2157,11 +2157,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
+                        /* } */
                     }
 
                     if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                        if (($("#healthCentreTTG").val().length != 0)) {
+                        /* if (($("#healthCentreTTG").val().length != 0)) { */
                             $("#productNextBtn").hide();
                             $("#productsection").hide();
                             $("#productsPrevBtn").hide();
@@ -2175,11 +2175,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             $("#mohexpress").hide();
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
+                        /* } */
                     }
 
                     if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                        if (($("#healthCentreTEMB").val().length != 0)) {
+                        /* if (($("#healthCentreTEMB").val().length != 0)) { */
                             $("#productNextBtn").hide();
                             $("#productsection").hide();
                             $("#productsPrevBtn").hide();
@@ -2193,11 +2193,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             $("#mohexpress").hide();
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
+                        /* } */
                     }
 
                     if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                        if (($("#healthCentreKB").val().length != 0)) {
+                        /* if (($("#healthCentreKB").val().length != 0)) { */
                             $("#productNextBtn").hide();
                             $("#productsection").hide();
                             $("#productsPrevBtn").hide();
@@ -2211,7 +2211,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             $("#mohexpress").hide();
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
-                        }
+                        /* } */
                     }
                 }
             }
@@ -2666,9 +2666,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("patientNumbersum").innerHTML = "Bru-HIMs Number: <b>" + document.getElementById("patientNumber").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icPassportNum").value + "</b>";
-                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
+                    /* document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
-                        + document.getElementById("healthCentreKB").value + "</b>";
+                        + document.getElementById("healthCentreKB").value + "</b>"; */
                     $("#deliveryTypesum").fadeIn();
                     $("#amounttobepaidsum").fadeIn();
                     $("#pharmacyPPsum").fadeIn();
@@ -4030,7 +4030,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                 }
 
-                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
+                let appointmentPlace = /* document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value; */ "N/A"
 
                 document.getElementById("customerPhone").value = customerPhone;
 

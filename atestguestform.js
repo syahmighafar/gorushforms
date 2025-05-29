@@ -1439,7 +1439,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
         });
 
-        $('#healthCentreBM').change(function () {
+        /* $('#healthCentreBM').change(function () {
             if ($(this).val().length == 0) {
                 $("#mohimmidiate").hide();
                 document.getElementById("mapSource").src = "";
@@ -1722,7 +1722,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $('input[name=mohCharges]').attr('checked', false);
                 $('input[name=mohPayingPatient]').attr('checked', false);
             }
-        });
+        }); */
 
         $("#remove_fields").hide();
 
@@ -2005,7 +2005,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
 
-                if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
+                /* if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
                     if (($("#healthCentreBM").val().length == 0)) {
                         $("#chargessection").hide();
                         alert("Please choose one of the Brunei Muara Health Centres!");
@@ -2031,23 +2031,97 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         $("#chargessection").hide();
                         alert("Please choose one of the Belait Health Centres!");
                     }
-                }
+                } */
 
                 if (($("#bruHIMSNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0)
                     && ($('input[name=icpassport]:checked').val() != undefined) && ($('input[name=districtAppointment]:checked').val() != undefined)) {
                     if (($('input[name=icpassport]:checked').val() == "IC Number")) {
                         if (($("#icnumber").val().length != 0)) {
                             if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
-                                if (($("#healthCentreBM").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreBM").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                if (year === 2025) {
+                                    if (month === 2) {
+                                        if (date === 28) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 29) {
+                                            if (hour < 10) {
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            }
+                                        }
+                                        if (date === 30 || date === 31) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                    }
+                                    if (month === 3) {
+                                        if (date === 1) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 2) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                    }
+                                }
+
+                                // Other conditions
+                                if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1))
+                                    ) { // Ensure specific date conditions are prioritized
+                                        if (day == 4) {
+                                            if (hour >= 11) {
+                                                $("#mohexpress").hide();
+                                            } else {
+                                                $("#mohexpress").fadeIn();
+                                            }
+                                        }
+
+                                        if ((day == 5) || (day == 6)) {
+                                            $("#mohexpress").hide();
+                                        }
+
+                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                            $("#mohexpress").fadeIn();
+                                        }
+                                    }
+
+                                    /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1 && date !== 2))
+                                    ) {
+                                        if ((day != 0) && (day != 5)) {
+                                            if ((hour >= 8) && (hour < 15)) {
+                                                $("#mohimmidiate").fadeIn();
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                            }
+                                        } else {
+                                            $("#mohimmidiate").hide();
+                                        }
+                                    }
+                                    /* } else {
+                                        $("#mohimmidiate").hide();
+                                    } */
+                                } else {
                                     if (year === 2025) {
                                         if (month === 2) {
                                             if (date === 28) {
@@ -2083,103 +2157,29 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             }
                                         }
                                     }
-
-                                    // Other conditions
-                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                        if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1))
-                                        ) { // Ensure specific date conditions are prioritized
-                                            if (day == 4) {
-                                                if (hour >= 11) {
-                                                    $("#mohexpress").hide();
-                                                } else {
-                                                    $("#mohexpress").fadeIn();
-                                                }
-                                            }
-
-                                            if ((day == 5) || (day == 6)) {
-                                                $("#mohexpress").hide();
-                                            }
-
-                                            if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                                                $("#mohexpress").fadeIn();
-                                            }
-                                        }
-
-                                        if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
-                                            if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1 && date !== 2))
-                                            ) {
-                                                if ((day != 0) && (day != 5)) {
-                                                    if ((hour >= 8) && (hour < 15)) {
-                                                        $("#mohimmidiate").fadeIn();
-                                                    } else {
-                                                        $("#mohimmidiate").hide();
-                                                    }
-                                                } else {
-                                                    $("#mohimmidiate").hide();
-                                                }
-                                            }
-                                        } else {
-                                            $("#mohimmidiate").hide();
-                                        }
-                                    } else {
-                                        if (year === 2025) {
-                                            if (month === 2) {
-                                                if (date === 28) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                                if (date === 29) {
-                                                    if (hour < 10) {
-                                                        $("#mohexpress").hide();
-                                                        $("#mohselfcollect").hide();
-                                                    } else {
-                                                        $("#mohimmidiate").hide();
-                                                        $("#mohexpress").hide();
-                                                        $("#mohselfcollect").hide();
-                                                    }
-                                                }
-                                                if (date === 30 || date === 31) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                            }
-                                            if (month === 3) {
-                                                if (date === 1) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                                if (date === 2) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                            }
-                                        }
-                                        $("#mohimmidiate").hide();
-                                    }
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    $("#mohimmidiate").hide();
                                 }
+
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                                if (($("#healthCentreTTG").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreTTG").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
@@ -2201,21 +2201,21 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                                if (($("#healthCentreKB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreKB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
                         }
                     }
@@ -2223,16 +2223,90 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (($('input[name=icpassport]:checked').val() == "Passport")) {
                         if (($("#passport").val().length != 0)) {
                             if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
-                                if (($("#healthCentreBM").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreBM").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                                if (year === 2025) {
+                                    if (month === 2) {
+                                        if (date === 28) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 29) {
+                                            if (hour < 10) {
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            }
+                                        }
+                                        if (date === 30 || date === 31) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                    }
+                                    if (month === 3) {
+                                        if (date === 1) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 2) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                    }
+                                }
+
+                                // Other conditions
+                                if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1))
+                                    ) { // Ensure specific date conditions are prioritized
+                                        if (day == 4) {
+                                            if (hour >= 15) {
+                                                $("#mohexpress").hide();
+                                            } else {
+                                                $("#mohexpress").fadeIn();
+                                            }
+                                        }
+
+                                        if ((day == 5) || (day == 6)) {
+                                            $("#mohexpress").hide();
+                                        }
+
+                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                            $("#mohexpress").fadeIn();
+                                        }
+                                    }
+
+                                    /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
+                                        if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1 && date !== 2))
+                                        ) {
+                                            if ((day != 0) && (day != 5)) {
+                                                if ((hour >= 8) && (hour < 15)) {
+                                                    $("#mohimmidiate").fadeIn();
+                                                } else {
+                                                    $("#mohimmidiate").hide();
+                                                }
+                                            } else {
+                                                $("#mohimmidiate").hide();
+                                            }
+                                        }
+                                    /* } else {
+                                        $("#mohimmidiate").hide();
+                                    } */
+                                } else {
                                     if (year === 2025) {
                                         if (month === 2) {
                                             if (date === 28) {
@@ -2268,139 +2342,65 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             }
                                         }
                                     }
-
-                                    // Other conditions
-                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                        if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1))
-                                        ) { // Ensure specific date conditions are prioritized
-                                            if (day == 4) {
-                                                if (hour >= 15) {
-                                                    $("#mohexpress").hide();
-                                                } else {
-                                                    $("#mohexpress").fadeIn();
-                                                }
-                                            }
-
-                                            if ((day == 5) || (day == 6)) {
-                                                $("#mohexpress").hide();
-                                            }
-
-                                            if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                                                $("#mohexpress").fadeIn();
-                                            }
-                                        }
-
-                                        if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) {
-                                            if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 3 || (date !== 1 && date !== 2))
-                                            ) {
-                                                if ((day != 0) && (day != 5)) {
-                                                    if ((hour >= 8) && (hour < 15)) {
-                                                        $("#mohimmidiate").fadeIn();
-                                                    } else {
-                                                        $("#mohimmidiate").hide();
-                                                    }
-                                                } else {
-                                                    $("#mohimmidiate").hide();
-                                                }
-                                            }
-                                        } else {
-                                            $("#mohimmidiate").hide();
-                                        }
-                                    } else {
-                                        if (year === 2025) {
-                                            if (month === 2) {
-                                                if (date === 28) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                                if (date === 29) {
-                                                    if (hour < 10) {
-                                                        $("#mohexpress").hide();
-                                                        $("#mohselfcollect").hide();
-                                                    } else {
-                                                        $("#mohimmidiate").hide();
-                                                        $("#mohexpress").hide();
-                                                        $("#mohselfcollect").hide();
-                                                    }
-                                                }
-                                                if (date === 30 || date === 31) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                            }
-                                            if (month === 3) {
-                                                if (date === 1) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                                if (date === 2) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                            }
-                                        }
-                                        $("#mohimmidiate").hide();
-                                    }
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                                    $("#mohimmidiate").hide();
                                 }
+
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                                if (($("#healthCentreTTG").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreTTG").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                                if (($("#healthCentreTEMB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreTEMB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
 
                             if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                                if (($("#healthCentreKB").val().length != 0)) {
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                /* if (($("#healthCentreKB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                }
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
                         }
                     }
@@ -2934,9 +2934,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("dateofbirthsum").innerHTML = "Patient's Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumberpassportsum").innerHTML = "IC-Number / Passport: <b>" + document.getElementById("icnumber").value +
                         document.getElementById("passport").value + "</b>";
-                    document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
+                    /* document.getElementById("healthcentresum").innerHTML = "Health Centre: <b>" + document.getElementById("healthCentreBM").value
                         + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value
-                        + document.getElementById("healthCentreKB").value + "</b>";
+                        + document.getElementById("healthCentreKB").value + "</b>"; */
                     $("#deliveryTypesum").fadeIn();
                     $("#amounttobepaidsum").fadeIn();
                     $("#pharmacyPPsum").fadeIn();
@@ -4296,7 +4296,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("additionalPhone").value = document.getElementById("code_2").value + document.getElementById("contact_2").value;
                 }
 
-                let appointmentPlace = document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value;
+                let appointmentPlace = /* document.getElementById("healthCentreBM").value + document.getElementById("healthCentreTTG").value + document.getElementById("healthCentreTEMB").value + document.getElementById("healthCentreKB").value; */ "N/A";
 
                 document.getElementById("customerPhone").value = customerPhone;
 

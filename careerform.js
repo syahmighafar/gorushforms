@@ -194,18 +194,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("highestachievementsum").innerHTML = "Highest Qualification Achieved: <b>" + document.getElementById("highestachievement").value + "</b>";
 
-                            document.getElementById("partTimeDurationsum").innerHTML = "Intention on duration of Part-Time work: <b>" + document.getElementById("partTimeDuration").value + "</b>";
+                            document.getElementById("partTimeDurationsum").innerHTML = "Duration of Part-Time work expected: <b>" + document.getElementById("partTimeDuration").value + "</b>";
 
                             document.getElementById("carOwnsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwnsum").value + "</b>";
 
-                            document.getElementById("deliverBeforesum").innerHTML = "Done delivery work?: <b>" + document.getElementById("deliverBefore").value + "</b>";
+                            document.getElementById("deliverBeforesum").innerHTML = "Done delivery work before?: <b>" + document.getElementById("deliverBefore").value + "</b>";
 
                             document.getElementById("experienceDeliverysum").innerHTML = "Duration of past delivery work: <b>" + document.getElementById("experienceDelivery").value + "</b>";
 
                             document.getElementById("parcelNumsum").innerHTML = "Estimated parcels delivered in a day: <b>" + document.getElementById("parcelNum").value + "</b>";
 
                             $("#partTimeDurationsum").fadeIn();
-                            $("#carOwnsumsum").fadeIn();
+                            $("#carOwnsum").fadeIn();
                             $("#deliverBeforesum").fadeIn();
                             $("#experienceDeliverysum").fadeIn();
                             $("#parcelNumsum").fadeIn();
@@ -247,18 +247,18 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("highestachievementsum").innerHTML = "Highest Qualification Achieved: <b>" + document.getElementById("highestachievement").value + "</b>";
 
-                    document.getElementById("partTimeDurationsum").innerHTML = "Intention on duration of Part-Time work: <b>" + document.getElementById("partTimeDuration").value + "</b>";
+                    document.getElementById("partTimeDurationsum").innerHTML = "Duration of Part-Time work expected: <b>" + document.getElementById("partTimeDuration").value + "</b>";
 
                     document.getElementById("carOwnsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwnsum").value + "</b>";
 
-                    document.getElementById("deliverBeforesum").innerHTML = "Done delivery work?: <b>" + document.getElementById("deliverBefore").value + "</b>";
+                    document.getElementById("deliverBeforesum").innerHTML = "Done delivery work before?: <b>" + document.getElementById("deliverBefore").value + "</b>";
 
                     document.getElementById("experienceDeliverysum").innerHTML = "";
 
                     document.getElementById("parcelNumsum").innerHTML = "";
 
                     $("#partTimeDurationsum").fadeIn();
-                    $("#carOwnsumsum").fadeIn();
+                    $("#carOwnsum").fadeIn();
                     $("#deliverBeforesum").fadeIn();
                     $("#experienceDeliverysum").hide();
                     $("#parcelNumsum").hide();

@@ -196,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             document.getElementById("partTimeDurationsum").innerHTML = "Intention on duration of Part-Time work: <b>" + document.getElementById("partTimeDuration").value + "</b>";
 
-                            document.getElementById("carOwnsumsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwnsum").value + "</b>";
+                            document.getElementById("carOwnsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwnsum").value + "</b>";
 
                             document.getElementById("deliverBeforesum").innerHTML = "Done delivery work?: <b>" + document.getElementById("deliverBefore").value + "</b>";
 
@@ -249,7 +249,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("partTimeDurationsum").innerHTML = "Intention on duration of Part-Time work: <b>" + document.getElementById("partTimeDuration").value + "</b>";
 
-                    document.getElementById("carOwnsumsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwnsum").value + "</b>";
+                    document.getElementById("carOwnsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwnsum").value + "</b>";
 
                     document.getElementById("deliverBeforesum").innerHTML = "Done delivery work?: <b>" + document.getElementById("deliverBefore").value + "</b>";
 

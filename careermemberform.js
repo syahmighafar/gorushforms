@@ -42,6 +42,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
         });
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
+            if ($('#district').val().length == 0) {
+                $("#personalNextBtn").fadeIn();
+                $("#personalsection").fadeIn();
+                $("#applicationNextBtn").fadeIn();
+                $("#applicationPrevBtn").hide();
+                $("#applicationsection").hide();
+                alert("We sincerely apologize as there are temporary issue with the district field in our database. Please choose your district to proceed your order.");
+                return; // Stop further execution if this condition is met
+            } else {
                 $("#personalNextBtn").hide();
                 $("#personalsection").hide();
                 $("#applicationNextBtn").hide();
@@ -49,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#applicationsection").fadeIn();
 
                 window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         });
 
         $('#positionapplied').change(function () {
@@ -111,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (($("#positionapplied").val().length != 0) && ($("#highestachievement").val().length != 0)) {
-if ($("#positionapplied").val() == "Freelancer") {
+                if ($("#positionapplied").val() == "Freelancer") {
                     if (($("#partTimeDuration").val().length == 0)) {
                         alert("Please choose on how long do you intend to stay in the part time role!");
                     }
@@ -277,12 +287,12 @@ if ($("#positionapplied").val() == "Freelancer") {
 
             document.getElementById("address").value = address;
 
-            let phoneNumber = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ","");
+            let phoneNumber = "+" + document.getElementById("code").value + document.getElementById("contact_1").value.replace(" ", "");
 
             document.getElementById("phoneNumber").value = phoneNumber;
 
             if (($("#contact_2").val().length != 0)) {
-                let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ","");
+                let additionalPhone = "+" + document.getElementById("code_2").value + document.getElementById("contact_2").value.replace(" ", "");
                 document.getElementById("additionalPhone").value = additionalPhone;
             }
 

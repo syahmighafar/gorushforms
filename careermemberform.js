@@ -43,14 +43,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if ($('#district').val().length == 0) {
-                $("#personalNextBtn").fadeIn();
-                $("#personalsection").fadeIn();
-                $("#applicationNextBtn").fadeIn();
-                $("#applicationPrevBtn").hide();
                 $("#applicationsection").hide();
                 alert("We sincerely apologize as there are temporary issue with the district field in our database. Please choose your district to proceed your order.");
                 return; // Stop further execution if this condition is met
-            } else {
+            }
+
+            if ($('#district').val().length != 0) {
                 $("#personalNextBtn").hide();
                 $("#personalsection").hide();
                 $("#applicationNextBtn").hide();
@@ -78,6 +76,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($(this).val() == "Freelancer")) {
                 $("#partTimeDurationArea").fadeIn();
                 $("#freelancerArea").fadeIn();
+                $("#experienceDeliveryArea").hide();
+                document.getElementById("partTimeDuration").value = "";
+                document.getElementById("carOwn").value = "";
+                document.getElementById("deliverBefore").value = "";
+                document.getElementById("experienceDelivery").value = "";
+                document.getElementById("parcelNum").value = "";
+
+                $("#applicationNextBtn").fadeIn();
+            }
+
+            if (($(this).val() == "Customer Service")) {
+                $("#partTimeDurationArea").hide();
+                $("#freelancerArea").hide();
                 $("#experienceDeliveryArea").hide();
                 document.getElementById("partTimeDuration").value = "";
                 document.getElementById("carOwn").value = "";
@@ -194,9 +205,60 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
+
+                    if (($("#deliverBefore").val() == "No")) {
+                        document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
+                        document.getElementById("dateofbirthsum").innerHTML = "Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                        document.getElementById("icnumbersum").innerHTML = "IC Number: <b>" + document.getElementById("icnumber").value + "</b>";
+                        document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
+                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + document.getElementById("district").value + " "
+                            + document.getElementById("postal").value + "</b>";
+
+                        document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+
+                        document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+
+                        if ($("#contact_2").val().length == 0) {
+                            document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
+                        }
+
+                        if ($("#contact_2").val().length != 0) {
+                            document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                        }
+
+                        document.getElementById("positionappliedsum").innerHTML = "Position Applied: <b>" + document.getElementById("positionapplied").value + "</b>";
+
+                        document.getElementById("highestachievementsum").innerHTML = "Highest Qualification Achieved: <b>" + document.getElementById("highestachievement").value + "</b>";
+
+                        document.getElementById("partTimeDurationsum").innerHTML = "Duration of Part-Time work expected: <b>" + document.getElementById("partTimeDuration").value + "</b>";
+
+                        document.getElementById("carOwnsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwn").value + "</b>";
+
+                        document.getElementById("deliverBeforesum").innerHTML = "Done delivery work before?: <b>" + document.getElementById("deliverBefore").value + "</b>";
+
+                        document.getElementById("experienceDeliverysum").innerHTML = "";
+
+                        document.getElementById("parcelNumsum").innerHTML = "";
+
+                        $("#partTimeDurationsum").fadeIn();
+                        $("#carOwnsum").fadeIn();
+                        $("#deliverBeforesum").fadeIn();
+                        $("#experienceDeliverysum").hide();
+                        $("#parcelNumsum").hide();
+
+                        $("#applicationNextBtn").hide();
+                        $("#applicationPrevBtn").hide();
+                        $("#applicationsection").hide();
+                        $("#submitBtn").fadeIn();
+                        $("#agreesubmitPrevBtn").fadeIn();
+                        $("#agreementsection").fadeIn();
+                        $("#ensure").hide();
+
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
                 }
 
-                if (($("#deliverBefore").val() == "No")) {
+                if ($("#positionapplied").val() == "Customer Service") {
                     document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumbersum").innerHTML = "IC Number: <b>" + document.getElementById("icnumber").value + "</b>";
@@ -220,19 +282,19 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     document.getElementById("highestachievementsum").innerHTML = "Highest Qualification Achieved: <b>" + document.getElementById("highestachievement").value + "</b>";
 
-                    document.getElementById("partTimeDurationsum").innerHTML = "Duration of Part-Time work expected: <b>" + document.getElementById("partTimeDuration").value + "</b>";
+                    document.getElementById("partTimeDurationsum").innerHTML = "";
 
-                    document.getElementById("carOwnsum").innerHTML = "Type of transportation own: <b>" + document.getElementById("carOwn").value + "</b>";
+                    document.getElementById("carOwnsum").innerHTML = "";
 
-                    document.getElementById("deliverBeforesum").innerHTML = "Done delivery work before?: <b>" + document.getElementById("deliverBefore").value + "</b>";
+                    document.getElementById("deliverBeforesum").innerHTML = "";
 
                     document.getElementById("experienceDeliverysum").innerHTML = "";
 
                     document.getElementById("parcelNumsum").innerHTML = "";
 
-                    $("#partTimeDurationsum").fadeIn();
-                    $("#carOwnsum").fadeIn();
-                    $("#deliverBeforesum").fadeIn();
+                    $("#partTimeDurationsum").hide();
+                    $("#carOwnsum").hide();
+                    $("#deliverBeforesum").hide();
                     $("#experienceDeliverysum").hide();
                     $("#parcelNumsum").hide();
 

@@ -1177,13 +1177,15 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if (year === 2025) {
-                if (month === 6) {
-                    if (date === 28) {
-                        $("#mohimmidiate").hide();
+                if (month === 7) {
+                    if (date === 14) {
                         $("#mohexpress").hide();
                         $("#jpmcexpressbm").hide();
                         $("#mohselfcollect").hide();
                         $("#jpmcselfcollect").hide();
+                    }
+                    if (date === 15) {
+                        $("#mohimmidiate").hide();
                     }
                     /* if (date === 29) {
                         if (hour < 10) {
@@ -1920,11 +1922,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("productNextBtn").addEventListener("click", function () {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
                 if (year === 2025) {
-                    if (month === 6) {
-                        if (date === 28) {
-                            $("#mohimmidiate").hide();
+                    if (month === 7) {
+                        if (date === 14) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
+                        }
+                        if (date === 15) {
+                            $("#mohimmidiate").hide();
                         }
                         /*  if (date === 29) {
                              if (hour < 10) {
@@ -1970,6 +1974,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please do not leave the patient's Bru-HIMs number field empty!");
                 }
 
+                if (($("#bruHIMSNumberTemp").val() == "BN40073797")) {
+                    $("#chargessection").hide();
+                    alert(
+                        "🚫 We're unable to process your order.\n\n" +
+                        "Please contact our customer service team for assistance:\n\n" +
+                        "📱 WhatsApp: +673 875 2065\n" +
+                        "📞 Call: +673 235 3259 / +673 233 2065\n\n" +
+                        "Thank you for your understanding."
+                    );
+                }
+
                 if (($("#dateofbirth").val().length == 0)) {
                     $("#chargessection").hide();
                     alert("Please do not leave the patient's date of birth field empty!");
@@ -1989,6 +2004,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (($("#icnumber").val().length == 0)) {
                         $("#chargessection").hide();
                         alert("Please do not leave the patient's IC-Number field empty!");
+                    }
+
+                    if (($("#icnumber").val() == "01101663")) {
+                        $("#chargessection").hide();
+                        alert(
+                            "🚫 We're unable to process your order.\n\n" +
+                            "Please contact our customer service team for assistance:\n\n" +
+                            "📱 WhatsApp: +673 875 2065\n" +
+                            "📞 Call: +673 235 3259 / +673 233 2065\n\n" +
+                            "Thank you for your understanding."
+                        );
                     }
                 }
 
@@ -2027,9 +2053,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 } */
 
-                if (($("#bruHIMSNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0)
+                if (($("#bruHIMSNumberTemp").val().length != 0) && ($("#bruHIMSNumberTemp").val() != "BN40073797") && ($("#dateofbirth").val().length != 0)
                     && ($('input[name=icpassport]:checked').val() != undefined) && ($('input[name=districtAppointment]:checked').val() != undefined)) {
-                    if (($('input[name=icpassport]:checked').val() == "IC Number")) {
+                    if (($('input[name=icpassport]:checked').val() == "IC Number") && ($("#icnumber").val() != "01101663")) {
                         if (($("#icnumber").val().length != 0)) {
                             if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
                                 /* if (($("#healthCentreBM").val().length != 0)) { */
@@ -2043,11 +2069,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                                 if (year === 2025) {
-                                    if (month === 2) {
-                                        if (date === 28) {
-                                            $("#mohimmidiate").hide();
+                                    if (month === 7) {
+                                        if (date === 14) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 15) {
+                                            $("#mohimmidiate").hide();
                                         }
                                         /* if (date === 29) {
                                             if (hour < 10) {
@@ -2080,7 +2108,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 6 || (date !== 28))
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 14))
                                     ) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 11) {
@@ -2100,7 +2128,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 6 || (date !== 28))
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 15))
                                     ) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 15)) {
@@ -2117,11 +2145,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     } */
                                 } else {
                                     if (year === 2025) {
-                                        if (month === 6) {
-                                            if (date === 28) {
-                                                $("#mohimmidiate").hide();
+                                        if (month === 7) {
+                                            if (date === 14) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
+                                            }
+                                            if (date === 15) {
+                                                $("#mohimmidiate").hide();
                                             }
                                             /* if (date === 29) {
                                                 if (hour < 10) {
@@ -2228,11 +2258,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                                 if (year === 2025) {
-                                    if (month === 2) {
-                                        if (date === 28) {
-                                            $("#mohimmidiate").hide();
+                                    if (month === 7) {
+                                        if (date === 14) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 15) {
+                                            $("#mohimmidiate").hide();
                                         }
                                         /* if (date === 29) {
                                             if (hour < 10) {
@@ -2265,7 +2297,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 6 || (date !== 28))
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 14))
                                     ) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 15) {
@@ -2285,7 +2317,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 6 || (date !== 28))
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 15))
                                     ) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 15)) {
@@ -2302,11 +2334,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     } */
                                 } else {
                                     if (year === 2025) {
-                                        if (month === 2) {
-                                            if (date === 28) {
-                                                $("#mohimmidiate").hide();
+                                        if (month === 7) {
+                                            if (date === 14) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
+                                            }
+                                            if (date === 15) {
+                                                $("#mohimmidiate").hide();
                                             }
                                             /* if (date === 29) {
                                                 if (hour < 10) {

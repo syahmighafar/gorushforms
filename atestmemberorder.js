@@ -1959,11 +1959,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 } */
 
                     if (year === 2025) {
-                        if (month === 6) {
-                            if (date === 28) {
-                                $("#mohimmidiate").hide();
+                        if (month === 7) {
+                            if (date === 14) {
                                 $("#mohexpress").hide();
                                 $("#mohselfcollect").hide();
+                            }
+                            if (date === 15) {
+                                $("#mohimmidiate").hide();
                             }
                             /* if (date === 29) {
                                 if (hour < 10) {
@@ -1999,9 +2001,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please do not leave the patient's Bru-HIMs number field empty!");
                 }
 
+                if (($("#bruHIMSNumberTemp").val() == "BN40073797")) {
+                    $("#chargessection").hide();
+                    alert(
+                        "🚫 We're unable to process your order.\n\n" +
+                        "Please contact our customer service team for assistance:\n\n" +
+                        "📱 WhatsApp: +673 875 2065\n" +
+                        "📞 Call: +673 235 3259 / +673 233 2065\n\n" +
+                        "Thank you for your understanding."
+                    );
+                }
+
                 if ($('input[name=districtAppointment]:checked').val() == undefined) {
                     $("#chargessection").hide();
                     alert("Please choose one of the appointment districts!");
+                }
+
+                if ($("#icPassportNum").val() == "01101663"){
+                    $("#chargessection").hide();
+                    alert(
+                        "🚫 We're unable to process your order.\n\n" +
+                        "Please contact our customer service team for assistance:\n\n" +
+                        "📱 WhatsApp: +673 875 2065\n" +
+                        "📞 Call: +673 235 3259 / +673 233 2065\n\n" +
+                        "Thank you for your understanding."
+                    );
                 }
 
                 /* if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
@@ -2032,7 +2056,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 } */
 
-                if (($("#bruHIMSNumberTemp").val().length != 0) && ($('input[name=districtAppointment]:checked').val() != undefined)) {
+                if (($("#bruHIMSNumberTemp").val().length != 0) && ($("#bruHIMSNumberTemp").val() != "BN40073797") && ($("#icnumber").val() != "01101663") && ($('input[name=districtAppointment]:checked').val() != undefined)) {
                     if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
                         /* if (($("#healthCentreBM").val().length != 0)) { */
                             $("#productNextBtn").hide();
@@ -2045,11 +2069,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                             if (year === 2025) {
-                                if (month === 6) {
-                                    if (date === 28) {
-                                        $("#mohimmidiate").hide();
+                                if (month === 7) {
+                                    if (date === 14) {
                                         $("#mohexpress").hide();
                                         $("#mohselfcollect").hide();
+                                    }
+                                    if (date === 15) {
+                                        $("#mohimmidiate").hide();
                                     }
                                     /* if (date === 29) {
                                         if (hour < 10) {
@@ -2081,7 +2107,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
 
                             if ($('#district').val() == "brunei-muara") {
-                                if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 6 || (date !== 28))
+                                if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 14))
                                 ) { // Ensure specific date condition for mohexpress is prioritized
                                     if (day == 4) {
                                         if (hour >= 11) {
@@ -2101,7 +2127,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 6 || (date !== 28))
+                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 15))
                                     ) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 15)) {
@@ -2118,11 +2144,13 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 } */
                             } else {
                                 if (year === 2025) {
-                                    if (month === 6) {
-                                        if (date === 28) {
-                                            $("#mohimmidiate").hide();
+                                    if (month === 7) {
+                                        if (date === 14) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 15) {
+                                            $("#mohimmidiate").hide();
                                         }
                                         /* if (date === 29) {
                                             if (hour < 10) {

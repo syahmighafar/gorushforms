@@ -1958,43 +1958,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 } */
 
-                    if (year === 2025) {
-                        if (month === 7) {
-                            if (date === 14) {
-                                $("#mohexpress").hide();
-                                $("#mohselfcollect").hide();
-                            }
-                            if (date === 15) {
-                                $("#mohimmidiate").hide();
-                            }
-                            /* if (date === 29) {
-                                if (hour < 10) {
-                                    $("#mohexpress").hide();
-                                    $("#mohselfcollect").hide();
-                                } else {
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
-                                    $("#mohselfcollect").hide();
-                                }
-                            }
-                            if (date === 30 || date === 31) {
-                                $("#mohimmidiate").hide();
-                                $("#mohexpress").hide();
-                                $("#mohselfcollect").hide();
-                            } */
+                if (year === 2025) {
+                    if (month === 7) {
+                        if (date === 14) {
+                            $("#mohexpress").hide();
+                            $("#mohselfcollect").hide();
                         }
-                        /* if (month === 3) {
-                            if (date === 1) {
+                        if (date === 15) {
+                            $("#mohimmidiate").hide();
+                        }
+                        /* if (date === 29) {
+                            if (hour < 10) {
+                                $("#mohexpress").hide();
+                                $("#mohselfcollect").hide();
+                            } else {
                                 $("#mohimmidiate").hide();
                                 $("#mohexpress").hide();
                                 $("#mohselfcollect").hide();
                             }
-                            if (date === 2) {
-                                $("#mohimmidiate").hide();
-                                $("#mohselfcollect").hide();
-                            }
+                        }
+                        if (date === 30 || date === 31) {
+                            $("#mohimmidiate").hide();
+                            $("#mohexpress").hide();
+                            $("#mohselfcollect").hide();
                         } */
                     }
+                    /* if (month === 3) {
+                        if (date === 1) {
+                            $("#mohimmidiate").hide();
+                            $("#mohexpress").hide();
+                            $("#mohselfcollect").hide();
+                        }
+                        if (date === 2) {
+                            $("#mohimmidiate").hide();
+                            $("#mohselfcollect").hide();
+                        }
+                    } */
+                }
 
                 if (($("#bruHIMSNumberTemp").val().length == 0)) {
                     $("#chargessection").hide();
@@ -2017,7 +2017,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     alert("Please choose one of the appointment districts!");
                 }
 
-                if ($("#icPassportNum").val() == "01101663"){
+                if ($("#icPassportNum").val() == "01101663") {
                     $("#chargessection").hide();
                     alert(
                         "🚫 We're unable to process your order.\n\n" +
@@ -2059,15 +2059,92 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 if (($("#bruHIMSNumberTemp").val().length != 0) && ($("#bruHIMSNumberTemp").val() != "BN40073797") && ($("#icnumber").val() != "01101663") && ($('input[name=districtAppointment]:checked').val() != undefined)) {
                     if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
                         /* if (($("#healthCentreBM").val().length != 0)) { */
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
+                        $("#productNextBtn").hide();
+                        $("#productsection").hide();
+                        $("#productsPrevBtn").hide();
+                        $("#chargessection").fadeIn();
+                        $("#chargesNextBtn").fadeIn();
+                        $("#chargesPrevBtn").fadeIn();
 
-                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                        document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
+                        if (year === 2025) {
+                            if (month === 7) {
+                                if (date === 14) {
+                                    $("#mohexpress").hide();
+                                    $("#mohselfcollect").hide();
+                                }
+                                if (date === 15) {
+                                    $("#mohimmidiate").hide();
+                                }
+                                /* if (date === 29) {
+                                    if (hour < 10) {
+                                        $("#mohexpress").hide();
+                                        $("#mohselfcollect").hide();
+                                    } else {
+                                        $("#mohimmidiate").hide();
+                                        $("#mohexpress").hide();
+                                        $("#mohselfcollect").hide();
+                                    }
+                                }
+                                if (date === 30 || date === 31) {
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
+                                    $("#mohselfcollect").hide();
+                                } */
+                            }
+                            /* if (month === 3) {
+                                if (date === 1) {
+                                    $("#mohimmidiate").hide();
+                                    $("#mohexpress").hide();
+                                    $("#mohselfcollect").hide();
+                                }
+                                if (date === 2) {
+                                    $("#mohimmidiate").hide();
+                                    $("#mohselfcollect").hide();
+                                }
+                            } */
+                        }
+
+                        if ($('#district').val() == "brunei-muara") {
+                            if (!(
+                                (year === 2025 && month === 7 && date === 14)
+                            )) { // Ensure specific date condition for mohexpress is prioritized
+                                if (day == 4) {
+                                    if (hour >= 11) {
+                                        $("#mohexpress").hide();
+                                    } else {
+                                        $("#mohexpress").fadeIn();
+                                    }
+                                }
+
+                                if ((day == 5) || (day == 6)) {
+                                    $("#mohexpress").hide();
+                                }
+
+                                if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                    $("#mohexpress").fadeIn();
+                                }
+                            }
+
+                            /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
+                            if (!(
+                                (year === 2025 && month === 7 && date === 15)
+                            )) {
+                                if ((day != 0) && (day != 5)) {
+                                    if ((hour >= 8) && (hour < 15)) {
+                                        $("#mohimmidiate").fadeIn();
+                                    } else {
+                                        $("#mohimmidiate").hide();
+                                    }
+                                } else {
+                                    $("#mohimmidiate").hide();
+                                }
+                            }
+                            /* } else {
+                                $("#mohimmidiate").hide();
+                            } */
+                        } else {
                             if (year === 2025) {
                                 if (month === 7) {
                                     if (date === 14) {
@@ -2105,139 +2182,64 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                 } */
                             }
+                            $("#mohimmidiate").hide();
+                        }
 
-                            if ($('#district').val() == "brunei-muara") {
-                                if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 14))
-                                ) { // Ensure specific date condition for mohexpress is prioritized
-                                    if (day == 4) {
-                                        if (hour >= 11) {
-                                            $("#mohexpress").hide();
-                                        } else {
-                                            $("#mohexpress").fadeIn();
-                                        }
-                                    }
-
-                                    if ((day == 5) || (day == 6)) {
-                                        $("#mohexpress").hide();
-                                    }
-
-                                    if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
-                                        $("#mohexpress").fadeIn();
-                                    }
-                                }
-
-                                /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 15))
-                                    ) {
-                                        if ((day != 0) && (day != 5)) {
-                                            if ((hour >= 8) && (hour < 15)) {
-                                                $("#mohimmidiate").fadeIn();
-                                            } else {
-                                                $("#mohimmidiate").hide();
-                                            }
-                                        } else {
-                                            $("#mohimmidiate").hide();
-                                        }
-                                    }
-                                /* } else {
-                                    $("#mohimmidiate").hide();
-                                } */
-                            } else {
-                                if (year === 2025) {
-                                    if (month === 7) {
-                                        if (date === 14) {
-                                            $("#mohexpress").hide();
-                                            $("#mohselfcollect").hide();
-                                        }
-                                        if (date === 15) {
-                                            $("#mohimmidiate").hide();
-                                        }
-                                        /* if (date === 29) {
-                                            if (hour < 10) {
-                                                $("#mohexpress").hide();
-                                                $("#mohselfcollect").hide();
-                                            } else {
-                                                $("#mohimmidiate").hide();
-                                                $("#mohexpress").hide();
-                                                $("#mohselfcollect").hide();
-                                            }
-                                        }
-                                        if (date === 30 || date === 31) {
-                                            $("#mohimmidiate").hide();
-                                            $("#mohexpress").hide();
-                                            $("#mohselfcollect").hide();
-                                        } */
-                                    }
-                                    /* if (month === 3) {
-                                        if (date === 1) {
-                                            $("#mohimmidiate").hide();
-                                            $("#mohexpress").hide();
-                                            $("#mohselfcollect").hide();
-                                        }
-                                        if (date === 2) {
-                                            $("#mohimmidiate").hide();
-                                            $("#mohselfcollect").hide();
-                                        }
-                                    } */
-                                }
-                                $("#mohimmidiate").hide();
-                            }
-
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                         /* } */
                     }
 
                     if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
                         /* if (($("#healthCentreTTG").val().length != 0)) { */
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
+                        $("#productNextBtn").hide();
+                        $("#productsection").hide();
+                        $("#productsPrevBtn").hide();
+                        $("#chargessection").fadeIn();
+                        $("#chargesNextBtn").fadeIn();
+                        $("#chargesPrevBtn").fadeIn();
 
-                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                        document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                            $("#mohimmidiate").hide();
-                            $("#mohexpress").hide();
+                        $("#mohimmidiate").hide();
+                        $("#mohexpress").hide();
 
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                         /* } */
                     }
 
                     if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
                         /* if (($("#healthCentreTEMB").val().length != 0)) { */
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
+                        $("#productNextBtn").hide();
+                        $("#productsection").hide();
+                        $("#productsPrevBtn").hide();
+                        $("#chargessection").fadeIn();
+                        $("#chargesNextBtn").fadeIn();
+                        $("#chargesPrevBtn").fadeIn();
 
-                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                        document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                            $("#mohimmidiate").hide();
-                            $("#mohexpress").hide();
+                        $("#mohimmidiate").hide();
+                        $("#mohexpress").hide();
 
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                         /* } */
                     }
 
                     if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
                         /* if (($("#healthCentreKB").val().length != 0)) { */
-                            $("#productNextBtn").hide();
-                            $("#productsection").hide();
-                            $("#productsPrevBtn").hide();
-                            $("#chargessection").fadeIn();
-                            $("#chargesNextBtn").fadeIn();
-                            $("#chargesPrevBtn").fadeIn();
+                        $("#productNextBtn").hide();
+                        $("#productsection").hide();
+                        $("#productsPrevBtn").hide();
+                        $("#chargessection").fadeIn();
+                        $("#chargesNextBtn").fadeIn();
+                        $("#chargesPrevBtn").fadeIn();
 
-                            document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                        document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                            $("#mohimmidiate").hide();
-                            $("#mohexpress").hide();
+                        $("#mohimmidiate").hide();
+                        $("#mohexpress").hide();
 
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                         /* } */
                     }
                 }
@@ -2265,12 +2267,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                     if (year === 2025) {
-                        if (month === 6) {
-                            if (date === 28) {
-                                if (hour > 10) {
+                        if (month === 7) {
+                            if (date === 14) {
+                                /* if (hour > 10) { */
                                     $("#jpmcexpressbm").hide();
                                     $("#jpmcselfcollect").hide();
-                                }
+                                /* } */
                             }
                             /* if (date === 29 || date === 30 || date === 31) {
                                 $("#jpmcexpressbm").hide();

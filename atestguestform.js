@@ -2108,8 +2108,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 14))
-                                    ) { // Ensure specific date conditions are prioritized
+                                    if (!(
+                                        (year === 2025 && month === 7 && date === 14)
+                                    )) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 11) {
                                                 $("#mohexpress").hide();
@@ -2128,8 +2129,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 15))
-                                    ) {
+                                    if (!(
+                                        (year === 2025 && month === 7 && date === 15)
+                                    )) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 15)) {
                                                 $("#mohimmidiate").fadeIn();
@@ -2297,8 +2299,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 14))
-                                    ) { // Ensure specific date conditions are prioritized
+                                    if (!(
+                                        (year === 2025 && month === 7 && date === 14)
+                                    )) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 15) {
                                                 $("#mohexpress").hide();
@@ -2317,8 +2320,9 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                    if ((year !== 2025 || month !== 2 || (date !== 28 && date !== 29 && date !== 30 && date !== 31)) && (year !== 2025 || month !== 7 || (date !== 15))
-                                    ) {
+                                    if (!(
+                                        (year === 2025 && month === 7 && date === 15)
+                                    )) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 15)) {
                                                 $("#mohimmidiate").fadeIn();
@@ -2484,8 +2488,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                             if (year === 2025) {
-                                if (month === 2) {
-                                    if (date === 28) {
+                                if (month === 7) {
+                                    if (date === 14) {
                                         $("#jpmcexpressbm").hide();
                                         $("#jpmcselfcollect").hide();
                                     }
@@ -2534,8 +2538,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                             if (year === 2025) {
-                                if (month === 2) {
-                                    if (date === 28) {
+                                if (month === 7) {
+                                    if (date === 14) {
                                         $("#jpmcexpressbm").hide();
                                         $("#jpmcselfcollect").hide();
                                     }

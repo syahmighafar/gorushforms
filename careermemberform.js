@@ -71,9 +71,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("parcelNum").value = "";
 
                 $("#applicationNextBtn").hide();
-            }
 
-            if (($(this).val() == "Freelancer")) {
+            } else if (($(this).val() == "Freelancer")) {
                 $("#partTimeDurationArea").fadeIn();
                 $("#freelancerArea").fadeIn();
                 $("#experienceDeliveryArea").hide();
@@ -84,9 +83,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("parcelNum").value = "";
 
                 $("#applicationNextBtn").fadeIn();
-            }
-
-            if (($(this).val() == "Customer Service")) {
+                
+            } else {
                 $("#partTimeDurationArea").hide();
                 $("#freelancerArea").hide();
                 $("#experienceDeliveryArea").hide();

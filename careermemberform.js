@@ -256,9 +256,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
-                }
-
-                if ($("#positionapplied").val() == "Customer Service") {
+                } else {
                     document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
                     document.getElementById("dateofbirthsum").innerHTML = "Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
                     document.getElementById("icnumbersum").innerHTML = "IC Number: <b>" + document.getElementById("icnumber").value + "</b>";

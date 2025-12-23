@@ -1959,12 +1959,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 } */
 
                 if (year === 2025) {
-                    if (month === 8) {
-                        if (date === 4 || date === 5 || date === 6) {
+                    if (month === 11) {
+                        if (date === 23 || date === 24) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
                         }
-                        if (date === 6) {
+                        if (date === 25) {
                             $("#mohimmidiate").hide();
                         }
                         /* if (date === 29) {
@@ -2069,12 +2069,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                         if (year === 2025) {
-                            if (month === 8) {
-                                if (date === 4 || date === 5 || date === 6) {
+                            if (month === 11) {
+                                if (date === 23 || date === 24) {
                                     $("#mohexpress").hide();
                                     $("#mohselfcollect").hide();
                                 }
-                                if (date === 6) {
+                                if (date === 25) {
                                     $("#mohimmidiate").hide();
                                 }
                                 /* if (date === 29) {
@@ -2108,7 +2108,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         if ($('#district').val() == "brunei-muara") {
                             if (!(
-                                (year === 2025 && month === 8 && date === 4)
+                                (year === 2025 && month === 8 && (date === 23 || date === 24))
                             )) { // Ensure specific date condition for mohexpress is prioritized
                                 if (day == 4) {
                                     if (hour >= 11) {
@@ -2129,7 +2129,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
                             if (!(
-                                (year === 2025 && month === 8 && date === 6)
+                                (year === 2025 && month === 11 && (date === 23 || date === 24))
                             )) {
                                 if ((day != 0) && (day != 5)) {
                                     if ((hour >= 8) && (hour < 15)) {
@@ -2146,12 +2146,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             } */
                         } else {
                             if (year === 2025) {
-                                if (month === 8) {
-                                    if (date === 4 || date === 5 || date === 6) {
+                                if (month === 11) {
+                                    if (date === 23 || date === 24) {
                                         $("#mohexpress").hide();
                                         $("#mohselfcollect").hide();
                                     }
-                                    if (date === 6) {
+                                    if (date === 25) {
                                         $("#mohimmidiate").hide();
                                     }
                                     /* if (date === 29) {
@@ -2267,8 +2267,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
                     if (year === 2025) {
-                        if (month === 8) {
-                            if (date === 4 || date === 5 || date === 6) {
+                        if (month === 11) {
+                            if (date === 23 || date === 24) {
                                 /* if (hour > 10) { */
                                 $("#jpmcexpressbm").hide();
                                 $("#jpmcselfcollect").hide();

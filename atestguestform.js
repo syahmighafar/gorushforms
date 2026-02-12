@@ -1177,14 +1177,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if (year === 2026) {
-                if (month === 0) {
-                    /* if (date === 31) {
+                if (month === 1) {
+                    if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
                         $("#mohexpress").hide();
                         $("#jpmcexpressbm").hide();
                         $("#mohselfcollect").hide();
                         $("#jpmcselfcollect").hide();
-                    } */
-                    if (date === 17) {
+                    }
+                    if ((date === 17) || (date === 19) || (date === 23)) {
                         $("#mohimmidiate").hide();
                     }
                     /* if (date === 29) {
@@ -1226,12 +1226,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
             }
 
             if (year === 2026) {
-                if (month === 0) {
-                    if (date === 17) {
-                        /* $("#mohexpress").hide();
+                if (month === 1) {
+                    if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                        $("#mohexpress").hide();
                         $("#jpmcexpressbm").hide();
                         $("#mohselfcollect").hide();
-                        $("#jpmcselfcollect").hide(); */
+                        $("#jpmcselfcollect").hide();
+                    }
+                    if ((date === 17) || (date === 19) || (date === 23)) {
                         $("#mohimmidiate").hide();
                     }
                 }
@@ -1934,12 +1936,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("productNextBtn").addEventListener("click", function () {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
                 if (year === 2026) {
-                    if (month === 0) {
-                        /* if (date === 31) {
+                    if (month === 1) {
+                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
-                        } */
-                        if (date === 17) {
+                        }
+                        if ((date === 17) || (date === 19) || (date === 23)) {
                             $("#mohimmidiate").hide();
                         }
                         /*  if (date === 29) {
@@ -1972,10 +1974,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (year === 2026) {
-                    if (month === 0) {
-                        if (date === 17) {
-                            /* $("#mohexpress").hide();
-                            $("#mohselfcollect").hide(); */
+                    if (month === 1) {
+                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                            $("#mohexpress").hide();
+                            $("#mohselfcollect").hide();
+                        }
+                        if ((date === 17) || (date === 19) || (date === 23)) {
                             $("#mohimmidiate").hide();
                         }
                     }
@@ -2091,12 +2095,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                                 if (year === 2026) {
-                                    if (month === 0) {
-                                        /* if (date === 17) {
+                                    if (month === 1) {
+                                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
-                                        } */
-                                        if (date === 17) {
+                                        }
+                                        if ((date === 17) || (date === 19) || (date === 23)) {
                                             $("#mohimmidiate").hide();
                                         }
                                         /* if (date === 29) {
@@ -2129,10 +2133,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 }
 
                                 if (year === 2026) {
-                                    if (month === 0) {
-                                        if (date === 17) {
-                                            /* $("#mohexpress").hide();
-                                            $("#mohselfcollect").hide(); */
+                                    if (month === 1) {
+                                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if ((date === 17) || (date === 19) || (date === 23)) {
                                             $("#mohimmidiate").hide();
                                         }
                                     }
@@ -2141,7 +2147,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                     if (!(
-                                        (year === 2026 && month === 0 && date === 17)
+                                        (year === 2026 && month === 1 && ((date === 16) || (date === 18) || (date === 19) || (date === 22)))
                                     )) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 11) {
@@ -2162,7 +2168,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
                                     if (!(
-                                        (year === 2026 && month === 0 && date === 17)
+                                        (year === 2026 && month === 1 && ((date === 17) || (date === 19) || (date === 23)))
                                     )) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 15)) {
@@ -2179,12 +2185,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     } */
                                 } else {
                                     if (year === 2026) {
-                                        if (month === 0) {
-                                            /* if (date === 31) {
+                                        if (month === 1) {
+                                            if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
-                                            } */
-                                            if (date === 17) {
+                                            }
+                                            if ((date === 17) || (date === 19) || (date === 23)) {
                                                 $("#mohimmidiate").hide();
                                             }
                                             /* if (date === 29) {
@@ -2216,682 +2222,676 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         } */
                                     }
                                     if (year === 2026) {
-                                        if (month === 0) {
-                                            if (date === 17) {
-                                                /* $("#mohexpress").hide();
-                                                $("#mohselfcollect").hide(); */
+                                        if (month === 1) {
+                                            if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            }
+                                            if ((date === 17) || (date === 19) || (date === 23)) {
                                                 $("#mohimmidiate").hide();
                                             }
                                         }
                                     }
-                                        $("#mohimmidiate").hide();
-                                    }
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
-                                }
-
-                                if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                                    /* if (($("#healthCentreTTG").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
-
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
-
                                     $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
                                 }
 
-                                if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                                    /* if (($("#healthCentreTEMB").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
+                            }
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
+                                /* if (($("#healthCentreTTG").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
-                                }
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                                    /* if (($("#healthCentreKB").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
+                            }
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
+                                /* if (($("#healthCentreTEMB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
-                                }
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
+
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
+                            }
+
+                            if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
+                                /* if (($("#healthCentreKB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
+
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
+
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
                         }
+                    }
 
-                        if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                            if (($("#passport").val().length != 0)) {
-                                if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
-                                    /* if (($("#healthCentreBM").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                    if (($('input[name=icpassport]:checked').val() == "Passport")) {
+                        if (($("#passport").val().length != 0)) {
+                            if (($('input[name=districtAppointment]:checked').val() == "Brunei Muara")) {
+                                /* if (($("#healthCentreBM").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    if (year === 2026) {
-                                        if (month === 0) {
-                                            /* if (date === 31) {
-                                                $("#mohexpress").hide();
-                                                $("#mohselfcollect").hide();
-                                            } */
-                                            if (date === 17) {
-                                                $("#mohimmidiate").hide();
-                                            }
-                                            /* if (date === 29) {
-                                                if (hour < 10) {
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                } else {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
-                                            }
-                                            if (date === 30 || date === 31) {
-                                                $("#mohimmidiate").hide();
-                                                $("#mohexpress").hide();
-                                                $("#mohselfcollect").hide();
-                                            } */
+                                if (year === 2026) {
+                                    if (month === 1) {
+                                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
                                         }
-                                        /* if (month === 3) {
-                                            if (date === 1) {
+                                        if ((date === 17) || (date === 19) || (date === 23)) {
+                                            $("#mohimmidiate").hide();
+                                        }
+                                        /* if (date === 29) {
+                                            if (hour < 10) {
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            } else {
                                                 $("#mohimmidiate").hide();
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
                                             }
-                                            if (date === 2) {
-                                                $("#mohimmidiate").hide();
-                                                $("#mohselfcollect").hide();
-                                            }
+                                        }
+                                        if (date === 30 || date === 31) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
                                         } */
                                     }
+                                    /* if (month === 3) {
+                                        if (date === 1) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if (date === 2) {
+                                            $("#mohimmidiate").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                    } */
+                                }
 
-                                    if (year === 2026) {
-                                        if (month === 0) {
-                                            if (date === 17) {
-                                                /* $("#mohexpress").hide();
-                                                $("#mohselfcollect").hide(); */
-                                                $("#mohimmidiate").hide();
-                                            }
+                                if (year === 2026) {
+                                    if (month === 1) {
+                                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                            $("#mohexpress").hide();
+                                            $("#mohselfcollect").hide();
+                                        }
+                                        if ((date === 17) || (date === 19) || (date === 23)) {
+                                            $("#mohimmidiate").hide();
                                         }
                                     }
+                                }
 
-                                    // Other conditions
-                                    if ($('input[name=district]:checked').val() == "Brunei Muara") {
-                                        if (!(
-                                            (year === 2026 && month === 0 && date === 17)
-                                        )) { // Ensure specific date conditions are prioritized
-                                            if (day == 4) {
-                                                if (hour >= 15) {
-                                                    $("#mohexpress").hide();
-                                                } else {
-                                                    $("#mohexpress").fadeIn();
-                                                }
-                                            }
-
-                                            if ((day == 5) || (day == 6)) {
+                                // Other conditions
+                                if ($('input[name=district]:checked').val() == "Brunei Muara") {
+                                    if (!(
+                                        (year === 2026 && month === 1 && ((date === 16) || (date === 18) || (date === 19) || (date === 22)))
+                                    )) { // Ensure specific date conditions are prioritized
+                                        if (day == 4) {
+                                            if (hour >= 15) {
                                                 $("#mohexpress").hide();
-                                            }
-
-                                            if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                            } else {
                                                 $("#mohexpress").fadeIn();
                                             }
                                         }
 
-                                        /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
-                                        if (!(
-                                            (year === 2026 && month === 0 && date === 17)
-                                        )) {
-                                            if ((day != 0) && (day != 5)) {
-                                                if ((hour >= 8) && (hour < 15)) {
-                                                    $("#mohimmidiate").fadeIn();
-                                                } else {
-                                                    $("#mohimmidiate").hide();
-                                                }
+                                        if ((day == 5) || (day == 6)) {
+                                            $("#mohexpress").hide();
+                                        }
+
+                                        if ((day == 0) || (day == 1) || (day == 2) || (day == 3)) {
+                                            $("#mohexpress").fadeIn();
+                                        }
+                                    }
+
+                                    /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
+                                    if (!(
+                                        (year === 2026 && month === 0 && ((date === 17) || (date === 19) || (date === 23)))
+                                    )) {
+                                        if ((day != 0) && (day != 5)) {
+                                            if ((hour >= 8) && (hour < 15)) {
+                                                $("#mohimmidiate").fadeIn();
                                             } else {
                                                 $("#mohimmidiate").hide();
                                             }
-                                        }
-                                        /* } else {
+                                        } else {
                                             $("#mohimmidiate").hide();
-                                        } */
-                                    } else {
-                                        if (year === 2026) {
-                                            if (month === 0) {
-                                                /* if (date === 31) {
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                } */
-                                                if (date === 17) {
-                                                    $("#mohimmidiate").hide();
-                                                }
-                                                /* if (date === 29) {
-                                                    if (hour < 10) {
-                                                        $("#mohexpress").hide();
-                                                        $("#mohselfcollect").hide();
-                                                    } else {
-                                                        $("#mohimmidiate").hide();
-                                                        $("#mohexpress").hide();
-                                                        $("#mohselfcollect").hide();
-                                                    }
-                                                }
-                                                if (date === 30 || date === 31) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide();
-                                                } */
+                                        }
+                                    }
+                                    /* } else {
+                                        $("#mohimmidiate").hide();
+                                    } */
+                                } else {
+                                    if (year === 2026) {
+                                        if (month === 1) {
+                                            if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
                                             }
-                                            /* if (month === 3) {
-                                                if (date === 1) {
+                                            if ((date === 17) || (date === 19) || (date === 23)) {
+                                                $("#mohimmidiate").hide();
+                                            }
+                                            /* if (date === 29) {
+                                                if (hour < 10) {
+                                                    $("#mohexpress").hide();
+                                                    $("#mohselfcollect").hide();
+                                                } else {
                                                     $("#mohimmidiate").hide();
                                                     $("#mohexpress").hide();
                                                     $("#mohselfcollect").hide();
                                                 }
-                                                if (date === 2) {
-                                                    $("#mohimmidiate").hide();
-                                                    $("#mohselfcollect").hide();
-                                                }
+                                            }
+                                            if (date === 30 || date === 31) {
+                                                $("#mohimmidiate").hide();
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
                                             } */
                                         }
-                                        if (year === 2026) {
-                                            if (month === 0) {
-                                                if (date === 17) {
-                                                    /* $("#mohexpress").hide();
-                                                    $("#mohselfcollect").hide(); */
-                                                    $("#mohimmidiate").hide();
-                                                }
+                                        /* if (month === 3) {
+                                            if (date === 1) {
+                                                $("#mohimmidiate").hide();
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            }
+                                            if (date === 2) {
+                                                $("#mohimmidiate").hide();
+                                                $("#mohselfcollect").hide();
+                                            }
+                                        } */
+                                    }
+                                    if (year === 2026) {
+                                        if (month === 1) {
+                                            if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                                $("#mohexpress").hide();
+                                                $("#mohselfcollect").hide();
+                                            }
+                                            if ((date === 17) || (date === 19) || (date === 23)) {
+                                                $("#mohimmidiate").hide();
                                             }
                                         }
-                                        $("#mohimmidiate").hide();
                                     }
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
-                                }
-
-                                if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
-                                    /* if (($("#healthCentreTTG").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
-
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
-
                                     $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
-
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
                                 }
 
-                                if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
-                                    /* if (($("#healthCentreTEMB").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
+                            }
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            if (($('input[name=districtAppointment]:checked').val() == "Tutong")) {
+                                /* if (($("#healthCentreTTG").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
-                                }
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
 
-                                if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
-                                    /* if (($("#healthCentreKB").val().length != 0)) { */
-                                    $("#productNextBtn").hide();
-                                    $("#productsection").hide();
-                                    $("#productsPrevBtn").hide();
-                                    $("#chargessection").fadeIn();
-                                    $("#chargesNextBtn").fadeIn();
-                                    $("#chargesPrevBtn").fadeIn();
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
+                            }
 
-                                    document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+                            if (($('input[name=districtAppointment]:checked').val() == "Temburong")) {
+                                /* if (($("#healthCentreTEMB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
 
-                                    $("#mohimmidiate").hide();
-                                    $("#mohexpress").hide();
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
-                                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                                    /* } */
-                                }
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
+
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
+                            }
+
+                            if (($('input[name=districtAppointment]:checked').val() == "Belait")) {
+                                /* if (($("#healthCentreKB").val().length != 0)) { */
+                                $("#productNextBtn").hide();
+                                $("#productsection").hide();
+                                $("#productsPrevBtn").hide();
+                                $("#chargessection").fadeIn();
+                                $("#chargesNextBtn").fadeIn();
+                                $("#chargesPrevBtn").fadeIn();
+
+                                document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
+
+                                $("#mohimmidiate").hide();
+                                $("#mohexpress").hide();
+
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                /* } */
                             }
                         }
                     }
                 }
+            }
 
-                if (($('input[name=products]:checked').val() == "pharmacyjpmc")) {
-                    if (($("#patientNumberTemp").val().length == 0)) {
+            if (($('input[name=products]:checked').val() == "pharmacyjpmc")) {
+                if (($("#patientNumberTemp").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the patient's number field empty!");
+                }
+
+                if (($("#dateofbirth").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the patient's date of birth field empty!");
+                }
+
+                if ($('input[name=icpassport]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose one, IC-Number or Passport!");
+                }
+
+                if (($('input[name=icpassport]:checked').val() == "IC Number")) {
+                    if (($("#icnumber").val().length == 0)) {
                         $("#chargessection").hide();
-                        alert("Please do not leave the patient's number field empty!");
+                        alert("Please do not leave the patient's IC-Number field empty!");
                     }
+                }
 
-                    if (($("#dateofbirth").val().length == 0)) {
+                if (($('input[name=icpassport]:checked').val() == "Passport")) {
+                    if (($("#passport").val().length == 0)) {
                         $("#chargessection").hide();
-                        alert("Please do not leave the patient's date of birth field empty!");
+                        alert("Please do not leave the patient's Passport field empty!");
                     }
+                }
 
-                    if ($('input[name=icpassport]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose one, IC-Number or Passport!");
-                    }
+                if ($('input[name=jpmcpjsc]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose one, JPMC or PJSC!");
+                }
 
+                if (($("#patientNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0)
+                    && ($('input[name=icpassport]:checked').val() != undefined) && ($('input[name=jpmcpjsc]:checked').val() != undefined)) {
                     if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                        if (($("#icnumber").val().length == 0)) {
-                            $("#chargessection").hide();
-                            alert("Please do not leave the patient's IC-Number field empty!");
+                        if (($("#icnumber").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
+
+                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
+
+                            if (year === 2025) {
+                                if (month === 11) {
+                                    if (date === 31) {
+                                        $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    }
+                                    /* if (date === 29 || date === 30 || date === 31) {
+                                        $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    } */
+                                }
+                                /* if (month === 3) {
+                                    if (date === 1) {
+                                        $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    }
+                                    if (date === 2) {
+                                        $("#jpmcselfcollect").hide();
+                                    }
+                                } */
+                            }
+
+                            if (year === 2026) {
+                                if (month === 1) {
+                                    if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                        $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    }
+                                }
+                            }
+
+                            /* if (year === 2024 && month === 11) { // Check for December 2024
+                                if (date === 30) {
+                                    $("#jpmcstandardbm").hide();
+                                    $("#jpmcstandardttg").hide();
+                                    $("#jpmcstandardkb").hide();
+                                    $("#jpmcstandardtemb").hide();
+                                    $("#jpmcselfcollect").hide();
+                                }
+                                if (date === 31) {
+                                    $("#jpmcexpressbm").hide();
+                                }
+                            } */
+
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
 
                     if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                        if (($("#passport").val().length == 0)) {
-                            $("#chargessection").hide();
-                            alert("Please do not leave the patient's Passport field empty!");
-                        }
-                    }
+                        if (($("#passport").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
 
-                    if ($('input[name=jpmcpjsc]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose one, JPMC or PJSC!");
-                    }
+                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
-                    if (($("#patientNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0)
-                        && ($('input[name=icpassport]:checked').val() != undefined) && ($('input[name=jpmcpjsc]:checked').val() != undefined)) {
-                        if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                            if (($("#icnumber").val().length != 0)) {
-                                $("#productNextBtn").hide();
-                                $("#productsection").hide();
-                                $("#productsPrevBtn").hide();
-                                $("#chargessection").fadeIn();
-                                $("#chargesNextBtn").fadeIn();
-                                $("#chargesPrevBtn").fadeIn();
-
-                                document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                                if (year === 2025) {
-                                    if (month === 11) {
-                                        if (date === 31) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                        /* if (date === 29 || date === 30 || date === 31) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        } */
-                                    }
-                                    /* if (month === 3) {
-                                        if (date === 1) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                        if (date === 2) {
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                    } */
-                                }
-
-                                if (year === 2026) {
-                                    if (month === 0) {
-                                        if (date === 1) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                    }
-                                }
-
-                                /* if (year === 2024 && month === 11) { // Check for December 2024
-                                    if (date === 30) {
-                                        $("#jpmcstandardbm").hide();
-                                        $("#jpmcstandardttg").hide();
-                                        $("#jpmcstandardkb").hide();
-                                        $("#jpmcstandardtemb").hide();
-                                        $("#jpmcselfcollect").hide();
-                                    }
+                            if (year === 2025) {
+                                if (month === 11) {
                                     if (date === 31) {
                                         $("#jpmcexpressbm").hide();
-                                    }
-                                } */
-
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }
-                        }
-
-                        if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                            if (($("#passport").val().length != 0)) {
-                                $("#productNextBtn").hide();
-                                $("#productsection").hide();
-                                $("#productsPrevBtn").hide();
-                                $("#chargessection").fadeIn();
-                                $("#chargesNextBtn").fadeIn();
-                                $("#chargesPrevBtn").fadeIn();
-
-                                document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                                if (year === 2025) {
-                                    if (month === 11) {
-                                        if (date === 31) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                        /* if (date === 29 || date === 30 || date === 31) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        } */
-                                    }
-                                    /* if (month === 3) {
-                                        if (date === 1) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                        if (date === 2) {
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                    } */
-                                }
-
-                                if (year === 2026) {
-                                    if (month === 0) {
-                                        if (date === 1) {
-                                            $("#jpmcexpressbm").hide();
-                                            $("#jpmcselfcollect").hide();
-                                        }
-                                    }
-                                }
-
-                                /* if (year === 2024 && month === 11) { // Check for December 2024
-                                    if (date === 30) {
-                                        $("#jpmcstandardbm").hide();
-                                        $("#jpmcstandardttg").hide();
-                                        $("#jpmcstandardkb").hide();
-                                        $("#jpmcstandardtemb").hide();
                                         $("#jpmcselfcollect").hide();
                                     }
-                                    if (date === 31) {
+                                    /* if (date === 29 || date === 30 || date === 31) {
                                         $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    } */
+                                }
+                                /* if (month === 3) {
+                                    if (date === 1) {
+                                        $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    }
+                                    if (date === 2) {
+                                        $("#jpmcselfcollect").hide();
                                     }
                                 } */
-
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
                             }
+
+                            if (year === 2026) {
+                                if (month === 1) {
+                                    if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                        $("#jpmcexpressbm").hide();
+                                        $("#jpmcselfcollect").hide();
+                                    }
+                                }
+                            }
+
+                            /* if (year === 2024 && month === 11) { // Check for December 2024
+                                if (date === 30) {
+                                    $("#jpmcstandardbm").hide();
+                                    $("#jpmcstandardttg").hide();
+                                    $("#jpmcstandardkb").hide();
+                                    $("#jpmcstandardtemb").hide();
+                                    $("#jpmcselfcollect").hide();
+                                }
+                                if (date === 31) {
+                                    $("#jpmcexpressbm").hide();
+                                }
+                            } */
+
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
                 }
+            }
 
-                if (($('input[name=products]:checked').val() == "pharmacyphc")) {
-                    if (($("#patientNumberTemp").val().length == 0)) {
+            if (($('input[name=products]:checked').val() == "pharmacyphc")) {
+                if (($("#patientNumberTemp").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the patient's number field empty!");
+                }
+
+                if (($("#dateofbirth").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the patient's date of birth field empty!");
+                }
+
+                if ($('input[name=icpassport]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose one, IC-Number or Passport!");
+                }
+
+                if (($('input[name=icpassport]:checked').val() == "IC Number")) {
+                    if (($("#icnumber").val().length == 0)) {
                         $("#chargessection").hide();
-                        alert("Please do not leave the patient's number field empty!");
+                        alert("Please do not leave the patient's IC-Number field empty!");
                     }
+                }
 
-                    if (($("#dateofbirth").val().length == 0)) {
+                if (($('input[name=icpassport]:checked').val() == "Passport")) {
+                    if (($("#passport").val().length == 0)) {
                         $("#chargessection").hide();
-                        alert("Please do not leave the patient's date of birth field empty!");
+                        alert("Please do not leave the patient's Passport field empty!");
                     }
+                }
 
-                    if ($('input[name=icpassport]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose one, IC-Number or Passport!");
-                    }
-
+                if (($("#patientNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0) && ($('input[name=icpassport]:checked').val() != undefined)) {
                     if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                        if (($("#icnumber").val().length == 0)) {
-                            $("#chargessection").hide();
-                            alert("Please do not leave the patient's IC-Number field empty!");
+                        if (($("#icnumber").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
+
+                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
+
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
 
                     if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                        if (($("#passport").val().length == 0)) {
-                            $("#chargessection").hide();
-                            alert("Please do not leave the patient's Passport field empty!");
-                        }
-                    }
+                        if (($("#passport").val().length != 0)) {
+                            $("#productNextBtn").hide();
+                            $("#productsection").hide();
+                            $("#productsPrevBtn").hide();
+                            $("#chargessection").fadeIn();
+                            $("#chargesNextBtn").fadeIn();
+                            $("#chargesPrevBtn").fadeIn();
 
-                    if (($("#patientNumberTemp").val().length != 0) && ($("#dateofbirth").val().length != 0) && ($('input[name=icpassport]:checked').val() != undefined)) {
-                        if (($('input[name=icpassport]:checked').val() == "IC Number")) {
-                            if (($("#icnumber").val().length != 0)) {
-                                $("#productNextBtn").hide();
-                                $("#productsection").hide();
-                                $("#productsPrevBtn").hide();
-                                $("#chargessection").fadeIn();
-                                $("#chargesNextBtn").fadeIn();
-                                $("#chargesPrevBtn").fadeIn();
+                            document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
 
-                                document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }
-                        }
-
-                        if (($('input[name=icpassport]:checked').val() == "Passport")) {
-                            if (($("#passport").val().length != 0)) {
-                                $("#productNextBtn").hide();
-                                $("#productsection").hide();
-                                $("#productsPrevBtn").hide();
-                                $("#chargessection").fadeIn();
-                                $("#chargesNextBtn").fadeIn();
-                                $("#chargesPrevBtn").fadeIn();
-
-                                document.getElementById("patientNumber").value = document.getElementById("patientNumberTemp").value;
-
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
                 }
+            }
 
-                if (($('input[name=products]:checked').val() == "grp")) {
-                    if ($('input[name=pickupordeliverygrp]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose one of the methods!");
+            if (($('input[name=products]:checked').val() == "grp")) {
+                if ($('input[name=pickupordeliverygrp]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose one of the methods!");
+                }
+
+                if (($("#grpTrack").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the parcel tracking number field empty!");
+                }
+
+                if (($("#GoRushReceivingCountry").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the Go Rush Receiving Country field empty!");
+                }
+
+                if ($('input[name=shipmentMethod]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose one of the shipment methods!");
+                }
+
+                if (($("#ecommerce").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the E-Commerce name field empty!");
+                }
+
+                if (($("#commodities").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the commodities field empty!");
+                }
+
+                if (($("#currency").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the currency field empty!");
+                }
+
+                if (($("#weight").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the weight field empty!");
+                }
+
+                if ($('input[name=permit]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose if there is permit or not!");
+                }
+
+                if ($('input[name=itemContains]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose if your item contains the following or not!");
+                }
+
+                if (($("#Item-Description").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the item description field empty!");
+                }
+
+                if (($("#Quantity").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the quantity field empty!");
+                }
+
+                if (($("#Total-Item-Price").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the total item price field empty!");
+                }
+
+                if (($('input[name=pickupordeliverygrp]:checked').val() != undefined) && ($("#grpTrack").val().length != 0) && ($("#GoRushReceivingCountry").val().length != 0)
+                    && ($('input[name=shipmentMethod]:checked').val() != undefined) && ($("#ecommerce").val().length != 0)
+                    && ($("#commodities").val().length != 0) && ($("#currency").val().length != 0)
+                    && ($("#weight").val().length != 0) && ($('input[name=permit]:checked').val() != undefined)
+                    && ($('input[name=itemContains]:checked').val() != undefined) && ($("#Item-Description").val().length != 0)
+                    && ($("#Quantity").val().length != 0) && ($("#Total-Item-Price").val().length != 0)) {
+
+                    if ($('input[name=pickupordeliverygrp]:checked').val() == "pickup") {
+                        $("#sectiongrpcharges").hide();
+
+                    } else {
+                        $("#sectiongrpcharges").fadeIn();
                     }
 
-                    if (($("#grpTrack").val().length == 0)) {
+                    $("#productNextBtn").hide();
+                    $("#productsection").hide();
+                    $("#productsPrevBtn").hide();
+                    $("#chargessection").fadeIn();
+                    $("#chargesNextBtn").fadeIn();
+                    $("#chargesPrevBtn").fadeIn();
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+
+            if (($('input[name=products]:checked').val() == "localdelivery")) {
+                if ($('input[name=pickupordelivery]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose either pickup or delivery!");
+                }
+
+                if (($('input[name=pickupordelivery]:checked').val() == "Pickup and Delivery")) {
+                    if (($("#pickupdate").val().length == 0)) {
                         $("#chargessection").hide();
-                        alert("Please do not leave the parcel tracking number field empty!");
+                        alert("Please do not leave the pick-up date field empty!");
                     }
 
-                    if (($("#GoRushReceivingCountry").val().length == 0)) {
+                    if (($("#pickupaddress").val().length == 0)) {
                         $("#chargessection").hide();
-                        alert("Please do not leave the Go Rush Receiving Country field empty!");
-                    }
-
-                    if ($('input[name=shipmentMethod]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose one of the shipment methods!");
-                    }
-
-                    if (($("#ecommerce").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the E-Commerce name field empty!");
-                    }
-
-                    if (($("#commodities").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the commodities field empty!");
-                    }
-
-                    if (($("#currency").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the currency field empty!");
-                    }
-
-                    if (($("#weight").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the weight field empty!");
-                    }
-
-                    if ($('input[name=permit]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose if there is permit or not!");
-                    }
-
-                    if ($('input[name=itemContains]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose if your item contains the following or not!");
-                    }
-
-                    if (($("#Item-Description").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the item description field empty!");
-                    }
-
-                    if (($("#Quantity").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the quantity field empty!");
-                    }
-
-                    if (($("#Total-Item-Price").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the total item price field empty!");
-                    }
-
-                    if (($('input[name=pickupordeliverygrp]:checked').val() != undefined) && ($("#grpTrack").val().length != 0) && ($("#GoRushReceivingCountry").val().length != 0)
-                        && ($('input[name=shipmentMethod]:checked').val() != undefined) && ($("#ecommerce").val().length != 0)
-                        && ($("#commodities").val().length != 0) && ($("#currency").val().length != 0)
-                        && ($("#weight").val().length != 0) && ($('input[name=permit]:checked').val() != undefined)
-                        && ($('input[name=itemContains]:checked').val() != undefined) && ($("#Item-Description").val().length != 0)
-                        && ($("#Quantity").val().length != 0) && ($("#Total-Item-Price").val().length != 0)) {
-
-                        if ($('input[name=pickupordeliverygrp]:checked').val() == "pickup") {
-                            $("#sectiongrpcharges").hide();
-
-                        } else {
-                            $("#sectiongrpcharges").fadeIn();
-                        }
-
-                        $("#productNextBtn").hide();
-                        $("#productsection").hide();
-                        $("#productsPrevBtn").hide();
-                        $("#chargessection").fadeIn();
-                        $("#chargesNextBtn").fadeIn();
-                        $("#chargesPrevBtn").fadeIn();
-
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                        alert("Please do not leave the pick-up address field empty!");
                     }
                 }
 
-                if (($('input[name=products]:checked').val() == "localdelivery")) {
-                    if ($('input[name=pickupordelivery]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose either pickup or delivery!");
-                    }
+                if (($("#productdescription").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the product description field empty!");
+                }
 
+                if (($("#producttype").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the product type field empty!");
+                }
+
+                if ($("#productweight").val().length == 0) {
+                    $("#chargessection").hide();
+                    alert("Please choose the product weight!");
+                }
+
+                if (($("#receiverName").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the receiver name field empty!");
+                }
+
+                if (($("#receiverHouse").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the receiver house/unit number field empty!");
+                }
+
+                if (($("#receiverKampong").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the receiver kampong field empty!");
+                }
+
+                if (($("#receiverJalan").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the receiver jalan field empty!");
+                }
+
+                if ($('input[name=receiverDistrict]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose the receiver's district!");
+                }
+
+                if (($("#receiverContact_1").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the receiver phone number field empty!");
+                }
+
+                if (($('input[name=pickupordelivery]:checked').val() != undefined) && ($("#productdescription").val().length != 0)
+                    && ($("#producttype").val().length != 0) && ($("#productweight").val().length != 0)
+                    && ($("#receiverName").val().length != 0) && ($("#receiverHouse").val().length != 0)
+                    && ($("#receiverKampong").val().length != 0) && ($("#receiverJalan").val().length != 0)
+                    && ($('input[name=receiverDistrict]:checked').val() != undefined) && ($("#receiverContact_1").val().length != 0)) {
                     if (($('input[name=pickupordelivery]:checked').val() == "Pickup and Delivery")) {
-                        if (($("#pickupdate").val().length == 0)) {
-                            $("#chargessection").hide();
-                            alert("Please do not leave the pick-up date field empty!");
-                        }
-
-                        if (($("#pickupaddress").val().length == 0)) {
-                            $("#chargessection").hide();
-                            alert("Please do not leave the pick-up address field empty!");
-                        }
-                    }
-
-                    if (($("#productdescription").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the product description field empty!");
-                    }
-
-                    if (($("#producttype").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the product type field empty!");
-                    }
-
-                    if ($("#productweight").val().length == 0) {
-                        $("#chargessection").hide();
-                        alert("Please choose the product weight!");
-                    }
-
-                    if (($("#receiverName").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the receiver name field empty!");
-                    }
-
-                    if (($("#receiverHouse").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the receiver house/unit number field empty!");
-                    }
-
-                    if (($("#receiverKampong").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the receiver kampong field empty!");
-                    }
-
-                    if (($("#receiverJalan").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the receiver jalan field empty!");
-                    }
-
-                    if ($('input[name=receiverDistrict]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose the receiver's district!");
-                    }
-
-                    if (($("#receiverContact_1").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the receiver phone number field empty!");
-                    }
-
-                    if (($('input[name=pickupordelivery]:checked').val() != undefined) && ($("#productdescription").val().length != 0)
-                        && ($("#producttype").val().length != 0) && ($("#productweight").val().length != 0)
-                        && ($("#receiverName").val().length != 0) && ($("#receiverHouse").val().length != 0)
-                        && ($("#receiverKampong").val().length != 0) && ($("#receiverJalan").val().length != 0)
-                        && ($('input[name=receiverDistrict]:checked').val() != undefined) && ($("#receiverContact_1").val().length != 0)) {
-                        if (($('input[name=pickupordelivery]:checked').val() == "Pickup and Delivery")) {
-                            if (($("#pickupdate").val().length != 0) && ($("#pickupaddress").val().length != 0)) {
-                                $("#productNextBtn").hide();
-                                $("#productsection").hide();
-                                $("#productsPrevBtn").hide();
-                                $("#chargessection").fadeIn();
-                                $("#chargesNextBtn").fadeIn();
-                                $("#chargesPrevBtn").fadeIn();
-
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
-                            }
-                        }
-
-                        if (($('input[name=pickupordelivery]:checked').val() == "Delivery Only")) {
+                        if (($("#pickupdate").val().length != 0) && ($("#pickupaddress").val().length != 0)) {
                             $("#productNextBtn").hide();
                             $("#productsection").hide();
                             $("#productsPrevBtn").hide();
@@ -2902,50 +2902,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
                     }
-                }
 
-                if (($('input[name=products]:checked').val() == "cbsl")) {
-                    if ($('input[name=pickupordeliverycbsl]:checked').val() == undefined) {
-                        $("#chargessection").hide();
-                        alert("Please choose either pickup or delivery!");
-                    }
-
-                    if (($("#GB-RS-Track").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the parcel tracking number field empty!");
-                    }
-
-                    if (($("#GB-RS-Courier").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the courier field empty!");
-                    }
-
-                    if (($("#gbrsItemDescription").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the item description field empty!");
-                    }
-
-                    if (($("#GB-RS-Quantity").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the quantity field empty!");
-                    }
-
-                    if (($("#GB-RS-Total-Amount").val().length == 0)) {
-                        $("#chargessection").hide();
-                        alert("Please do not leave the total item price field empty!");
-                    }
-
-                    if (($('input[name=pickupordeliverycbsl]:checked').val() != undefined) && ($("#GB-RS-Track").val().length != 0) && ($("#GB-RS-Courier").val().length != 0)
-                        && ($("#gbrsItemDescription").val().length != 0) && ($("#GB-RS-Quantity").val().length != 0)
-                        && ($("#GB-RS-Total-Amount").val().length != 0)) {
-
-                        if ($('input[name=pickupordeliverycbsl]:checked').val() == "pickup") {
-                            $("#sectioncbslcharges").hide();
-
-                        } else {
-                            $("#sectioncbslcharges").fadeIn();
-                        }
-
+                    if (($('input[name=pickupordelivery]:checked').val() == "Delivery Only")) {
                         $("#productNextBtn").hide();
                         $("#productsection").hide();
                         $("#productsPrevBtn").hide();
@@ -2956,7 +2914,61 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 }
-            });
+            }
+
+            if (($('input[name=products]:checked').val() == "cbsl")) {
+                if ($('input[name=pickupordeliverycbsl]:checked').val() == undefined) {
+                    $("#chargessection").hide();
+                    alert("Please choose either pickup or delivery!");
+                }
+
+                if (($("#GB-RS-Track").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the parcel tracking number field empty!");
+                }
+
+                if (($("#GB-RS-Courier").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the courier field empty!");
+                }
+
+                if (($("#gbrsItemDescription").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the item description field empty!");
+                }
+
+                if (($("#GB-RS-Quantity").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the quantity field empty!");
+                }
+
+                if (($("#GB-RS-Total-Amount").val().length == 0)) {
+                    $("#chargessection").hide();
+                    alert("Please do not leave the total item price field empty!");
+                }
+
+                if (($('input[name=pickupordeliverycbsl]:checked').val() != undefined) && ($("#GB-RS-Track").val().length != 0) && ($("#GB-RS-Courier").val().length != 0)
+                    && ($("#gbrsItemDescription").val().length != 0) && ($("#GB-RS-Quantity").val().length != 0)
+                    && ($("#GB-RS-Total-Amount").val().length != 0)) {
+
+                    if ($('input[name=pickupordeliverycbsl]:checked').val() == "pickup") {
+                        $("#sectioncbslcharges").hide();
+
+                    } else {
+                        $("#sectioncbslcharges").fadeIn();
+                    }
+
+                    $("#productNextBtn").hide();
+                    $("#productsection").hide();
+                    $("#productsPrevBtn").hide();
+                    $("#chargessection").fadeIn();
+                    $("#chargesNextBtn").fadeIn();
+                    $("#chargesPrevBtn").fadeIn();
+
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            }
+        });
 
         document.getElementById("chargesNextBtn").addEventListener("click", function () {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {

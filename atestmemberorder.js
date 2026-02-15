@@ -1960,7 +1960,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (year === 2026) {
                     if (month === 1) {
-                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                        if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
                         }
@@ -1998,7 +1998,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (year === 2026) {
                     if (month === 1) {
-                        if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                        if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
                         }
@@ -2082,7 +2082,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         if (year === 2026) {
                             if (month === 1) {
-                                if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                                     $("#mohexpress").hide();
                                     $("#mohselfcollect").hide();
                                 }
@@ -2120,7 +2120,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         if (year === 2026) {
                             if (month === 1) {
-                                if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                                     $("#mohexpress").hide();
                                     $("#mohselfcollect").hide();
                                 }
@@ -2132,7 +2132,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         if ($('#district').val() == "brunei-muara") {
                             if (!(
-                                (year === 2026 && month === 1 && ((date === 16) || (date === 18) || (date === 19) || (date === 22)))
+                                (year === 2026 && month === 1 && ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)))
                             )) { // Ensure specific date condition for mohexpress is prioritized
                                 if (day == 4) {
                                     if (hour >= 11) {
@@ -2171,7 +2171,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         } else {
                             if (year === 2026) {
                                 if (month === 1) {
-                                    if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                    if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                                         $("#mohexpress").hide();
                                         $("#mohselfcollect").hide();
                                     }
@@ -2208,7 +2208,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             }
                             if (year === 2026) {
                                 if (month === 1) {
-                                    if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                                    if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                                         $("#mohexpress").hide();
                                         $("#mohselfcollect").hide();
                                     }
@@ -2327,7 +2327,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (year === 2026) {
                         if (month === 1) {
-                            if ((date === 16) || (date === 18) || (date === 19) || (date === 22)) {
+                            if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
                                 $("#jpmcexpressbm").hide();
                                 $("#jpmcselfcollect").hide();
                             }

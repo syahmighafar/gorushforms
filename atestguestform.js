@@ -2171,7 +2171,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         (year === 2026 && month === 1 && ((date === 17) || (date === 19) || (date === 23)))
                                     )) {
                                         if ((day != 0) && (day != 5)) {
-                                            if ((hour >= 8) && (hour < 15)) {
+                                            if ((hour >= 8) && (hour < 11)) {
                                                 $("#mohimmidiate").fadeIn();
                                             } else {
                                                 $("#mohimmidiate").hide();
@@ -2364,7 +2364,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         (year === 2026 && month === 1 && ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)))
                                     )) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
-                                            if (hour >= 15) {
+                                            if (hour >= 11) {
                                                 $("#mohexpress").hide();
                                             } else {
                                                 $("#mohexpress").fadeIn();
@@ -2385,7 +2385,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         (year === 2026 && month === 0 && ((date === 17) || (date === 19) || (date === 23)))
                                     )) {
                                         if ((day != 0) && (day != 5)) {
-                                            if ((hour >= 8) && (hour < 15)) {
+                                            if ((hour >= 8) && (hour < 11)) {
                                                 $("#mohimmidiate").fadeIn();
                                             } else {
                                                 $("#mohimmidiate").hide();

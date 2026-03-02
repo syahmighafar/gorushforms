@@ -1178,11 +1178,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
         document.getElementById("personalNextBtn").addEventListener("click", function () {
             if (year === 2026) {
                 if (month === 2) {
-                    if ((date === 6) || (date === 7)) {
+                    if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                         $("#mohexpress").hide();
                         $("#jpmcexpressbm").hide();
                         $("#mohselfcollect").hide();
                         $("#jpmcselfcollect").hide();
+                        $("#mohimmidiate").hide();
+                    }
+                    if (date === 24) {
                         $("#mohimmidiate").hide();
                     }
                     /* if (date === 29) {
@@ -1225,11 +1228,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
             if (year === 2026) {
                 if (month === 2) {
-                    if ((date === 6) || (date === 7)) {
+                    if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                         $("#mohexpress").hide();
                         $("#jpmcexpressbm").hide();
                         $("#mohselfcollect").hide();
                         $("#jpmcselfcollect").hide();
+                        $("#mohimmidiate").hide();
+                    }
+                    if (date === 24) {
                         $("#mohimmidiate").hide();
                     }
                 }
@@ -1933,9 +1939,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
             if (($('input[name=products]:checked').val() == "pharmacymoh")) {
                 if (year === 2026) {
                     if (month === 2) {
-                        if ((date === 6) || (date === 7)) {
+                        if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
+                            $("#mohimmidiate").hide();
+                        }
+                        if (date === 24) {
                             $("#mohimmidiate").hide();
                         }
                         /*  if (date === 29) {
@@ -1969,9 +1978,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 if (year === 2026) {
                     if (month === 2) {
-                        if ((date === 6) || (date === 7)) {
+                        if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
+                            $("#mohimmidiate").hide();
+                        }
+                        if (date === 24) {
                             $("#mohimmidiate").hide();
                         }
                     }
@@ -2088,9 +2100,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if (year === 2026) {
                                     if (month === 2) {
-                                        if ((date === 6) || (date === 7)) {
+                                        if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                            $("#mohimmidiate").hide();
+                                        }
+                                        if (date === 24) {
                                             $("#mohimmidiate").hide();
                                         }
                                         /* if (date === 29) {
@@ -2124,9 +2139,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if (year === 2026) {
                                     if (month === 2) {
-                                        if ((date === 6) || (date === 7)) {
+                                        if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                            $("#mohimmidiate").hide();
+                                        }
+                                        if (date === 24) {
                                             $("#mohimmidiate").hide();
                                         }
                                     }
@@ -2135,7 +2153,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                     if (!(
-                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7)))
+                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)))
                                     )) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 11) {
@@ -2156,7 +2174,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
                                     if (!(
-                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7)))
+                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23) || (date === 24)))
                                     )) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 11)) {
@@ -2174,9 +2192,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 } else {
                                     if (year === 2026) {
                                         if (month === 2) {
-                                            if ((date === 6) || (date === 7)) {
+                                            if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
+                                                $("#mohimmidiate").hide();
+                                            }
+                                            if (date === 24) {
                                                 $("#mohimmidiate").hide();
                                             }
                                             /* if (date === 29) {
@@ -2209,9 +2230,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                     if (year === 2026) {
                                         if (month === 2) {
-                                            if ((date === 6) || (date === 7)) {
+                                            if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
+                                                $("#mohimmidiate").hide();
+                                            }
+                                            if (date === 24) {
                                                 $("#mohimmidiate").hide();
                                             }
                                         }
@@ -2294,9 +2318,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if (year === 2026) {
                                     if (month === 2) {
-                                        if ((date === 6) || (date === 7)) {
+                                        if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                            $("#mohimmidiate").hide();
+                                        }
+                                        if (date === 24) {
                                             $("#mohimmidiate").hide();
                                         }
                                         /* if (date === 29) {
@@ -2330,9 +2357,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if (year === 2026) {
                                     if (month === 2) {
-                                        if ((date === 6) || (date === 7)) {
+                                        if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                             $("#mohexpress").hide();
                                             $("#mohselfcollect").hide();
+                                            $("#mohimmidiate").hide();
+                                        }
+                                        if (date === 24) {
                                             $("#mohimmidiate").hide();
                                         }
                                     }
@@ -2341,7 +2371,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 // Other conditions
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                     if (!(
-                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7)))
+                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)))
                                     )) { // Ensure specific date conditions are prioritized
                                         if (day == 4) {
                                             if (hour >= 11) {
@@ -2362,7 +2392,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                     /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
                                     if (!(
-                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7)))
+                                        (year === 2026 && month === 2 && ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23) || (date === 24)))
                                     )) {
                                         if ((day != 0) && (day != 5)) {
                                             if ((hour >= 8) && (hour < 11)) {
@@ -2380,9 +2410,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 } else {
                                     if (year === 2026) {
                                         if (month === 2) {
-                                            if ((date === 6) || (date === 7)) {
+                                            if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
+                                                $("#mohimmidiate").hide();
+                                            }
+                                            if (date === 24) {
                                                 $("#mohimmidiate").hide();
                                             }
                                             /* if (date === 29) {
@@ -2415,9 +2448,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                     }
                                     if (year === 2026) {
                                         if (month === 2) {
-                                            if ((date === 6) || (date === 7)) {
+                                            if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
+                                                $("#mohimmidiate").hide();
+                                            }
+                                            if (date === 24) {
                                                 $("#mohimmidiate").hide();
                                             }
                                         }
@@ -2559,7 +2595,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             if (year === 2026) {
                                 if (month === 2) {
-                                    if ((date === 6) || (date === 7)) {
+                                    if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                         $("#jpmcexpressbm").hide();
                                         $("#jpmcselfcollect").hide();
                                     }
@@ -2618,7 +2654,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             if (year === 2026) {
                                 if (month === 2) {
-                                    if ((date === 6) || (date === 7)) {
+                                    if ((date === 6) || (date === 7) || (date === 20) || (date === 21) || (date === 22) || (date === 23)) {
                                         $("#jpmcexpressbm").hide();
                                         $("#jpmcselfcollect").hide();
                                     }

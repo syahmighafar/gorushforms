@@ -1959,12 +1959,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 } */
 
                 if (year === 2026) {
-                    if (month === 1) {
-                        if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                    if (month === 2) {
+                        if ((date === 6) || (date === 7)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
-                        }
-                        if ((date === 17) || (date === 19) || (date === 23)) {
                             $("#mohimmidiate").hide();
                         }
                         /* if (date === 29) {
@@ -1997,12 +1995,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 }
 
                 if (year === 2026) {
-                    if (month === 1) {
-                        if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                    if (month === 2) {
+                        if ((date === 6) || (date === 7)) {
                             $("#mohexpress").hide();
                             $("#mohselfcollect").hide();
-                        }
-                        if ((date === 17) || (date === 19) || (date === 23)) {
                             $("#mohimmidiate").hide();
                         }
                     }
@@ -2081,12 +2077,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         document.getElementById("patientNumber").value = document.getElementById("bruHIMSNumberTemp").value;
 
                         if (year === 2026) {
-                            if (month === 1) {
-                                if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                            if (month === 2) {
+                                if ((date === 6) || (date === 7)) {
                                     $("#mohexpress").hide();
                                     $("#mohselfcollect").hide();
-                                }
-                                if ((date === 17) || (date === 19) || (date === 23)) {
                                     $("#mohimmidiate").hide();
                                 }
                                 /* if (date === 29) {
@@ -2119,12 +2113,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                         }
 
                         if (year === 2026) {
-                            if (month === 1) {
-                                if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                            if (month === 2) {
+                                if ((date === 6) || (date === 7)) {
                                     $("#mohexpress").hide();
                                     $("#mohselfcollect").hide();
-                                }
-                                if ((date === 17) || (date === 19) || (date === 23)) {
                                     $("#mohimmidiate").hide();
                                 }
                             }
@@ -2132,7 +2124,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                         if ($('#district').val() == "brunei-muara") {
                             if (!(
-                                (year === 2026 && month === 1 && ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)))
+                                (year === 2026 && month === 2 && ((date === 6) || (date === 7)))
                             )) { // Ensure specific date condition for mohexpress is prioritized
                                 if (day == 4) {
                                     if (hour >= 11) {
@@ -2153,7 +2145,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             /* if (($('#healthCentreBM').val() != "SG Bunga") && ($('#healthCentreBM').val() != "KG Bolkiah") && ($('#healthCentreBM').val().length != 0)) { */
                             if (!(
-                                (year === 2026 && month === 1 && ((date === 17) || (date === 19) || (date === 23)))
+                                (year === 2026 && month === 2 && ((date === 6) || (date === 7)))
                             )) {
                                 if ((day != 0) && (day != 5)) {
                                     if ((hour >= 8) && (hour < 11)) {
@@ -2170,12 +2162,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                             } */
                         } else {
                             if (year === 2026) {
-                                if (month === 1) {
-                                    if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                                if (month === 2) {
+                                    if ((date === 6) || (date === 7)) {
                                         $("#mohexpress").hide();
                                         $("#mohselfcollect").hide();
-                                    }
-                                    if ((date === 17) || (date === 19) || (date === 23)) {
                                         $("#mohimmidiate").hide();
                                     }
                                     /* if (date === 29) {
@@ -2207,12 +2197,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 } */
                             }
                             if (year === 2026) {
-                                if (month === 1) {
-                                    if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                                if (month === 2) {
+                                    if ((date === 6) || (date === 7)) {
                                         $("#mohexpress").hide();
                                         $("#mohselfcollect").hide();
-                                    }
-                                    if ((date === 17) || (date === 19) || (date === 23)) {
                                         $("#mohimmidiate").hide();
                                     }
                                 }
@@ -2326,8 +2314,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
 
                     if (year === 2026) {
-                        if (month === 1) {
-                            if ((date === 15) || (date === 16) || (date === 17) || (date === 18) || (date === 19) || (date === 22)) {
+                        if (month === 2) {
+                            if ((date === 6) || (date === 7)) {
                                 $("#jpmcexpressbm").hide();
                                 $("#jpmcselfcollect").hide();
                             }

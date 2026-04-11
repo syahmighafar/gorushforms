@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 $("#partTimeDurationArea").hide();
                 $("#freelancerArea").hide();
                 $("#deliverArea").hide();
-                $("#dispatcherArea").hide();
+                $("#dispatcherArea").fadeIn();
                 $("#drivingLicenseArea").fadeIn();
                 $("#experienceDeliveryArea").hide();
                 document.getElementById("partTimeDuration").value = "";

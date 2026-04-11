@@ -136,6 +136,22 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                 $("#applicationNextBtn").fadeIn();
 
+            } else if (($(this).val() == "Helper")) {
+                $("#partTimeDurationArea").hide();
+                $("#freelancerArea").hide();
+                $("#deliverArea").hide();
+                $("#dispatcherArea").hide();
+                $("#drivingLicenseArea").fadeIn();
+                $("#experienceDeliveryArea").hide();
+                document.getElementById("partTimeDuration").value = "";
+                document.getElementById("carOwn").value = "";
+                document.getElementById("deliverBefore").value = "";
+                document.getElementById("experienceDelivery").value = "";
+                document.getElementById("parcelNum").value = "";
+                document.getElementById("driveManual").value = "";
+
+                $("#applicationNextBtn").fadeIn();
+
             } else if (($(this).val() == "Operation Support")) {
                 $("#partTimeDurationArea").hide();
                 $("#freelancerArea").hide();
@@ -461,6 +477,64 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             window.scrollTo({ top: 0, behavior: 'smooth' });
                         }
+                    }
+                } else if ($("#positionapplied").val() == "Helper") {
+                    if (($("#driveManual").val().length == 0)) {
+                        alert("Please choose if you know how to drive manual or not!");
+                    }
+
+                    if ($("#driveManual").val().length != 0) {
+                        document.getElementById("namesum").innerHTML = "Name: <b>" + document.getElementById("name").value + "</b>";
+                        document.getElementById("dateofbirthsum").innerHTML = "Date of Birth: <b>" + document.getElementById("dateofbirth").value + "</b>";
+                        document.getElementById("icnumbersum").innerHTML = "IC Number: <b>" + document.getElementById("icnumber").value + "</b>";
+                        document.getElementById("addresssum").innerHTML = "Address: <b>" + document.getElementById("house").value + " " + document.getElementById("kampong").value
+                            + " " + document.getElementById("jalan").value + " " + document.getElementById("simpang").value + " " + $('input[name=district]:checked').val() + " "
+                            + document.getElementById("postal").value + "</b>";
+
+                        document.getElementById("emailsum").innerHTML = "Email: <b>" + document.getElementById("email").value + "</b>";
+
+                        document.getElementById("contact_1sum").innerHTML = "Phone Number: <b>+" + document.getElementById("code").value + document.getElementById("contact_1").value + "</b>";
+
+                        if ($("#contact_2").val().length == 0) {
+                            document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>N/A</b>";
+                        }
+
+                        if ($("#contact_2").val().length != 0) {
+                            document.getElementById("contact_2sum").innerHTML = "Additional Phone Number: <b>+" + document.getElementById("code_2").value + document.getElementById("contact_2").value + "</b>";
+                        }
+
+                        document.getElementById("positionappliedsum").innerHTML = "Position Applied: <b>" + document.getElementById("positionapplied").value + "</b>";
+
+                        document.getElementById("highestachievementsum").innerHTML = "Highest Qualification Achieved: <b>" + document.getElementById("highestachievement").value + "</b>";
+
+                        document.getElementById("partTimeDurationsum").innerHTML = "";
+
+                        document.getElementById("carOwnsum").innerHTML = "";
+
+                        document.getElementById("deliverBeforesum").innerHTML = "";
+
+                        document.getElementById("experienceDeliverysum").innerHTML = "";
+
+                        document.getElementById("parcelNumsum").innerHTML = "";
+
+                        document.getElementById("driveManualsum").innerHTML = "Drive manual?: <b>" + document.getElementById("driveManual").value + "</b>";
+
+                        $("#partTimeDurationsum").hide();
+                        $("#carOwnsum").hide();
+                        $("#deliverBeforesum").hide();
+                        $("#experienceDeliverysum").hide();
+                        $("#parcelNumsum").hide();
+                        $("#driveManualsum").fadeIn();
+
+                        $("#applicationNextBtn").hide();
+                        $("#applicationPrevBtn").hide();
+                        $("#applicationsection").hide();
+                        $("#submitBtn").fadeIn();
+                        $("#agreesubmitPrevBtn").fadeIn();
+                        $("#agreementsection").fadeIn();
+                        $("#ensure").hide();
+
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                     }
                 } else if ($("#positionapplied").val() == "Operation Support") {
                     if (($("#driveManual").val().length == 0)) {

@@ -1882,7 +1882,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 if (!(
                                     (year === 2026 && (((month === 4 && (date === 27))) || (month === 5 && ((date === 1) || (date === 17)))))
                                 )) {
-                                    if ((day != 0) && (day != 5)) {
+                                    if (day != 0) {
                                         if ((hour >= 8) && (hour < 11)) {
                                             $("#jpmcimmidiate").fadeIn();
                                         } else {
@@ -1956,7 +1956,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                 if (!(
                                     (year === 2026 && (((month === 4 && (date === 27))) || (month === 5 && ((date === 1) || (date === 17)))))
                                 )) {
-                                    if ((day != 0) && (day != 5)) {
+                                    if (day != 0) {
                                         if ((hour >= 8) && (hour < 11)) {
                                             $("#jpmcimmidiate").fadeIn();
                                         } else {

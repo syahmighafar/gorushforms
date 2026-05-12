@@ -1361,7 +1361,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
                 document.getElementById("remarks").value = "";
             }
         });
-        
+
         $("#remove_fields").hide();
 
         document.getElementById("add_more_fields").addEventListener("click", addItems);
@@ -2324,7 +2324,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                     if (($('input[name=mohCharges]:checked').val() == "Immediate")) {
                         document.getElementById('price').value = (20).toFixed(2);
-                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within 3 Hours after medicine collected from Pharmacy</b>";
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within same working day after medicine collected from Pharmacy</b>";
                     }
 
                     $("#deliveryDurationsum").fadeIn();
@@ -2440,6 +2440,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     if (($('input[name=jpmcCharges]:checked').val() == "Self Collect")) {
                         document.getElementById('price').value = (4).toFixed(2);
                         document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Next Working Day</b>";
+                    }
+
+                    if (($('input[name=jpmcCharges]:checked').val() == "Immediate")) {
+                        document.getElementById('price').value = (20).toFixed(2);
+                        document.getElementById("deliveryDurationsum").innerHTML = "Delivery Duration: <b>Within same working day after medicine collected from Pharmacy</b>";
                     }
 
                     $("#deliveryDurationsum").fadeIn();

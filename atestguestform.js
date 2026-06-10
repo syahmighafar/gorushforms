@@ -1194,6 +1194,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
                     }
                 }
                 if (month === 5) {
+                    if (date === 15) {
+                        if (hour >= 10) {
+                            $("#mohexpress").hide();
+                            $("#jpmcexpressbm").hide();
+                            $("#mohselfcollect").hide();
+                            $("#jpmcselfcollect").hide();
+                        }
+                    }
                     if (date === 16) {
                         $("#mohexpress").hide();
                         $("#jpmcexpressbm").hide();
@@ -1645,7 +1653,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                     if (!(
-                                        (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (date === 16))))
+                                        (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (((date === 15) && (hour >= 10)) || (date === 16)))))
                                     )) {
                                         if (day == 4) {
                                             if (hour >= 11) {
@@ -1689,6 +1697,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             }
                                         }
                                         if (month === 5) {
+                                            if (date === 15) {
+                                                if (hour >= 10) {
+                                                    $("#mohexpress").hide();
+                                                    $("#mohselfcollect").hide();
+                                                }
+                                            }
                                             if (date === 16) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
@@ -1734,7 +1748,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                                 if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                     if (!(
-                                       (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (date === 16))))
+                                        (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (((date === 15) && (hour >= 10)) || (date === 16)))))
                                     )) {
                                         if (day == 4) {
                                             if (hour >= 11) {
@@ -1778,6 +1792,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                             }
                                         }
                                         if (month === 5) {
+                                            if (date === 15) {
+                                                if (hour >= 10) {
+                                                    $("#mohexpress").hide();
+                                                    $("#mohselfcollect").hide();
+                                                }
+                                            }
                                             if (date === 16) {
                                                 $("#mohexpress").hide();
                                                 $("#mohselfcollect").hide();
@@ -1860,7 +1880,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                 if (!(
-                                    (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (date === 16))))
+                                    (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (((date === 15) && (hour >= 10)) || (date === 16)))))
                                 )) {
                                     if (day == 4) {
                                         if (hour >= 11) {
@@ -1904,11 +1924,17 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         }
                                     }
                                     if (month === 5) {
+                                        if (date === 15) {
+                                            if (hour >= 10) {
+                                                $("#jpmcexpressbm").hide();
+                                                $("#jpmcselfcollect").hide();
+                                            }
+                                        }
                                         if (date === 16) {
                                             $("#jpmcexpressbm").hide();
                                             $("#jpmcselfcollect").hide();
                                         }
-                                        if ((date === 1)||(date === 17)) {
+                                        if ((date === 1) || (date === 17)) {
                                             $("#jpmcimmidiate").hide();
                                         }
                                     }
@@ -1934,7 +1960,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
                             if ($('input[name=district]:checked').val() == "Brunei Muara") {
                                 if (!(
-                                    (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (date === 16))))
+                                    (year === 2026 && (((month === 4 && ((date === 26) || (date === 27)))) || (month === 5 && (((date === 15) && (hour >= 10)) || (date === 16)))))
                                 )) {
                                     if (day == 4) {
                                         if (hour >= 11) {
@@ -1978,6 +2004,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
                                         }
                                     }
                                     if (month === 5) {
+                                        if (date === 15) {
+                                            if (hour >= 10) {
+                                                $("#jpmcexpressbm").hide();
+                                                $("#jpmcselfcollect").hide();
+                                            }
+                                        }
                                         if (date === 16) {
                                             $("#jpmcexpressbm").hide();
                                             $("#jpmcselfcollect").hide();
